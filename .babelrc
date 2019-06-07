@@ -1,0 +1,16 @@
+{
+  "env": {
+    "production": {
+      "presets": [
+        "@babel/preset-react",
+        "@emotion/babel-preset-css-prop"
+      ]
+    },
+    "development": {
+      "presets": [
+        "@babel/preset-react",
+        ["@emotion/babel-preset-css-prop", { "sourceMap": true }]
+      ]
+    }
+  }
+}
