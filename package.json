@@ -1,6 +1,6 @@
 {
   "name": "@ferpection/uikit",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Technical implementation of the Ferpection design system",
   "main": "dist/index.js",
   "repository": "https://github.com/ferpection/uikit",
@@ -11,12 +11,9 @@
     "build": "parcel build src/index.js --global @ferpection/uikit",
     "build:dev": "parcel src/index.js",
     "build:storybook": "build-storybook",
-
     "start": "yarn build:dev",
     "start:storybook": "start-storybook -p 6006",
-
     "test:lint": "eslint src/** stories/**",
-
     "format": "prettier --write '{src, stories}/**/*.{js, jsx}'"
   },
   "dependencies": {
