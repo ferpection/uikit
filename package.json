@@ -15,7 +15,7 @@
     "start:storybook": "start-storybook -p 6006",
     "test:lint": "eslint src/** stories/**",
     "format": "prettier --write '{src, stories}/**/*.{js, jsx}'",
-    "prepublishOnly": "yarn format && yarn test:lint && yarn version && yarn build"
+    "prepublishOnly": "yarn format && yarn test:lint && yarn build"
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
