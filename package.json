@@ -28,12 +28,12 @@
     "react-dom": "^16.8.6"
   },
   "peerDependencies": {
-    "@emotion/core": "^10.0.10",
-    "@fortawesome/fontawesome-svg-core": "^1.2.19",
-    "@fortawesome/free-solid-svg-icons": "^5.9.0",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "@emotion/core": "10.x",
+    "@fortawesome/fontawesome-svg-core": "1.x",
+    "@fortawesome/free-brands-svg-icons": "5.x",
+    "@fortawesome/free-solid-svg-icons": "5.x",
+    "react": "16.8.x",
+    "react-dom": "16.8.x"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
