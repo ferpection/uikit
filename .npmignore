@@ -6,3 +6,4 @@ stories/
 
 .babelrc
 .gitignore
+.rollup.config.js
