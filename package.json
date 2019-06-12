@@ -8,8 +8,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "parcel build src/index.js --global @ferpection/uikit",
-    "build:dev": "parcel src/index.js",
+    "build": "rollup -c",
+    "build:dev": "yarn build -w",
     "build:storybook": "build-storybook",
     "start": "yarn build:dev",
     "start:storybook": "start-storybook -p 6006",
