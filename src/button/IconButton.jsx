@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
 
-import { Button } from '../Button/Button.jsx'
+import { Button } from './Button/Button.jsx'
 
 export const IconButton = props => {
   const { icon: iconName, prefix = 'fas', ...args } = props
