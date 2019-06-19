@@ -1,6 +1,6 @@
 import { PRIMARY_COLORSET } from '../../helpers/colors'
 
-export const styles = ({ isFilled = false }) => ({
+export const styles = ({ isFilled = false } = {}) => ({
   padding: '15px 20px',
   borderWidth: '1.4px',
   borderColor: PRIMARY_COLORSET.ACTION_BLUE,
