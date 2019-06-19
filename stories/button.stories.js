@@ -10,9 +10,21 @@ import { Button } from '../src/index'
 storiesOf('Components|Button/Button', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
-  .add('with text', () => <Button onClick={action('clicked')} disabled={boolean('Disabled', false)}>{text('Label', 'Validate')}</Button>)
+  .add('with text', () => (
+    <Button
+      onClick={action('clicked')}
+      isDisabled={boolean('disabled', false)}
+      isFilled={boolean('filled', false)}
+    >
+      {text('label', 'Validate')}
+    </Button>
+  ))
   .add('with some emoji', () => (
-    <Button onClick={action('clicked')} disabled={boolean('Disabled', false)}>
+    <Button
+      onClick={action('clicked')}
+      isDisabled={boolean('disabled', false)}
+      isFilled={boolean('filled', false)}
+    >
       <span role="img" aria-label="so cool">
         😀 😎 👍 💯
       </span>
