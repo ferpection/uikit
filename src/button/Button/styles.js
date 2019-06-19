@@ -1,11 +1,13 @@
+import { PRIMARY_COLORSET } from '../../helpers/colors'
+
 export const styles = ({ isFilled = false }) => ({
   padding: '15px 20px',
   borderWidth: '1.4px',
-  borderColor: '#24D58D',
+  borderColor: PRIMARY_COLORSET.ACTION_BLUE,
   borderRadius: '100px',
   textDecoration: 'none',
-  color: isFilled ? 'white' : '#24D58D',
-  backgroundColor: isFilled ? '#24D58D' : 'transparent',
+  color: isFilled ? 'white' : PRIMARY_COLORSET.ACTION_BLUE,
+  backgroundColor: isFilled ? PRIMARY_COLORSET.ACTION_BLUE : 'transparent',
   fontSize: '15px',
   transition: 'box-shadow .3s ease-in-out',
   '&:hover': {
