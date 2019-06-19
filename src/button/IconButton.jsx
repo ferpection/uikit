@@ -1,4 +1,5 @@
 import React from 'react'
+import propTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
 
@@ -16,4 +17,10 @@ export const IconButton = props => {
   return (
     <Button {...args}><FontAwesomeIcon icon={icon} size="lg" /></Button>
   )
+}
+
+IconButton.propTypes = {
+  ...Button.propTypes,
+  icon: propTypes.string,
+  prefix: propTypes.string,
 }
