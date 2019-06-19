@@ -15,6 +15,7 @@
     "start:storybook": "start-storybook -p 6006",
     "test:lint": "eslint src/** stories/**",
     "format": "prettier --write '{src, stories}/**/*.{js, jsx}'",
+    "publish:storybook": "yarn build:storybook && gh-pages -d storybook-static",
     "prepublishOnly": "yarn format && yarn test:lint && yarn build"
   },
   "dependencies": {
