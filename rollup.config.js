@@ -17,4 +17,19 @@ export default [
       }),
     ],
   },
+  {
+    input: './src/colors/index.js',
+    output: [
+      {
+        file: 'dist/colors.js',
+        format: 'esm',
+      },
+    ],
+    external: Object.keys(pkg.dependencies),
+    plugins: [
+      babel({
+        exclude: ['node_modules/**'],
+      }),
+    ],
+  },
 ]
