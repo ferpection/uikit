@@ -1,4 +1,4 @@
-import { PRIMARY_COLORSET } from '../../helpers/colors'
+import { PRIMARY_COLORSET } from '../../colors/colors.js'
 
 export const styles = ({ isFilled = false } = {}) => ({
   padding: '15px 20px',
