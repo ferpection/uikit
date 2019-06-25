@@ -15,7 +15,9 @@ export const IconButton = props => {
   const icon = findIconDefinition({ prefix, iconName })
 
   return (
-    <Button {...args}><FontAwesomeIcon icon={icon} size="lg" /></Button>
+    <Button {...args}>
+      <FontAwesomeIcon icon={icon} size="lg" />
+    </Button>
   )
 }
 
