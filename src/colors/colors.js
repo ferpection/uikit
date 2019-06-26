@@ -20,3 +20,11 @@ export const P400_COLOR = '#9654CB'
 /* Blues */
 export const B400_COLOR = '#4A9CED'
 export const B100_COLOR = '#E5F1F0'
+
+/* Neutrals */
+export const N500_COLOR = '#363636'
+export const N400_COLOR = '#555555'
+export const N300_COLOR = '#7B7B7B'
+export const N200_COLOR = '#B0B0B0'
+export const N100_COLOR = '#DDDDDD'
+export const N75_COLOR = '#F1F1F1'
