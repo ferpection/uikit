@@ -3,11 +3,11 @@ import { PRIMARY_COLORSET } from '../../../colors/colorsets.js'
 export const styles = ({ isFilled = false } = {}) => ({
   padding: '15px 20px',
   borderWidth: '1.4px',
-  borderColor: PRIMARY_COLORSET.ACTION_BLUE,
+  borderColor: PRIMARY_COLORSET.ROBINS_EGG_BLUE,
   borderRadius: '100px',
   textDecoration: 'none',
-  color: isFilled ? 'white' : PRIMARY_COLORSET.ACTION_BLUE,
-  backgroundColor: isFilled ? PRIMARY_COLORSET.ACTION_BLUE : 'transparent',
+  color: isFilled ? 'white' : PRIMARY_COLORSET.ROBINS_EGG_BLUE,
+  backgroundColor: isFilled ? PRIMARY_COLORSET.ROBINS_EGG_BLUE : 'transparent',
   fontSize: '15px',
   transition: 'box-shadow .3s ease-in-out',
   '&:hover': {
