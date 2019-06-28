@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- New CHANGELOG file to easily store change logs before tagging
 
 ## [v0.0.3] - 2019-06-12
 ### Added
