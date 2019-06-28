@@ -7,7 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
-- New CHANGELOG file to easily store change logs before tagging
+- There is now neutral colors exposed (`N75` to `N500`)
+- New entrypoints to optimize bunles size (tree shaking):
+    - `@ferpection/uikit/colors` to load only colors
+    - `@ferpection/uikit/components` to load only components
+- Creation of a CHANGELOG file to easily store change logs before tagging
+
+### Changed
+- Colors' names has been updated
+
+### Fixed
+- **Internal**: JSX is also formated using prettier
 
 ## [v0.0.3] - 2019-06-12
 ### Added
