@@ -24,11 +24,11 @@ The package expose some UI component you can use in your own project using a cla
 import { Button } from '@ferpection/uikit'
 ```
 
-For a detail of what this package provides, please see the storybook section of this README.
+For a detail of what this package provides and what is the usage of a specific component, please see the storybook section of this README.
 
 ### Start the project (development mode)
 
-In development mode, you may need to watch and compile the project. As we recommend using the storybook commands below, you can also have a light build using parcel.
+In development mode, you may need to watch and compile the project. As we recommend using the storybook commands below, you can also have a light build using rollupjs.
 
 ```sh
 yarn start
@@ -40,15 +40,15 @@ yarn build:dev
 
 ### Storybook
 
-A storybook is available to help navigate onto the list of components.
+A storybook is available to help navigate onto the list of components. You can access to [the last generated storybook](https://ferpection.github.io/uikit/) on GitHub Pages to see the last published version of `@ferpection/uikit`.
 
-You can start the storybook:
+You can also start the storybook locally for development purpose:
 
 ```sh
 yarn start:storybook
 ```
 
-To build a static version of the storybook:
+Or build a static version (HTML/CSS/JS) of the storybook:
 
 ```sh
 yarn build:storybook
@@ -88,6 +88,14 @@ yarn format
 Prettier only format the code. It doesn't (can't) rewrite the code to pass code-quality rules checks.
 You still need to run the linter sometimes to be able to refactor before asking for a review.
 
+## Changelog
+
+Changes are logged into a CHANGELOG.md file and reported to the release panel of the repository when a new built package is published on NPM servers.
+
+So, to see released version changelogs, go to [the release panel](https://github.com/ferpection/uikit/releases) of the repository. To see unreleased changelog, go to [the CHANGELOG.md](https://github.com/ferpection/uikit/blob/master/CHANGELOG.md) file.
+
 ## License
 
 This repository is under the MIT license. Please refer to the LICENSE file for more information.
+
+_Copyright (c) 2019 Ferpection_
