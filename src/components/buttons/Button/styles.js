@@ -1,7 +1,8 @@
 import { PRIMARY_COLORSET } from '../../../colors/colorsets.js'
 
 export const styles = ({ isFilled = false } = {}) => ({
-  padding: '15px 20px',
+  cursor: 'pointer',
+  padding: '12px 20px',
   borderWidth: '1.4px',
   borderColor: PRIMARY_COLORSET.ROBINS_EGG_BLUE,
   borderRadius: '100px',
