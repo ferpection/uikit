@@ -3,6 +3,7 @@ import { PRIMARY_COLORSET, FULL_COLORSET } from '../../../colors/colorsets.js'
 export const styles = ({
   isFilled = false,
   color = PRIMARY_COLORSET.ROBINS_EGG_BLUE,
+  darkerColor = FULL_COLORSET.BLUE_LAGOON,
 } = {}) => ({
   cursor: 'pointer',
   padding: '12px 20px',
@@ -30,7 +31,7 @@ export const styles = ({
   ],
   '&:hover': {
     boxShadow: '0 1px 4px 1px rgba(0,0,0,0.3)',
-    backgroundColor: isFilled ? FULL_COLORSET.BLUE_LAGOON : null,
+    backgroundColor: isFilled ? darkerColor : null,
   },
   '&[disabled]': {
     opacity: '.5',
