@@ -5,22 +5,22 @@ import { action } from '@storybook/addon-actions'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
-import { Button } from '../src/components/index.js'
+import { PositiveButton } from '../src/components/index.js'
 
-storiesOf('Components|Button/Button', module)
+storiesOf('Components|Button/PositiveButton', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('with text', () => (
-    <Button
+    <PositiveButton
       onClick={action('clicked')}
       isDisabled={boolean('disabled', false)}
       isFilled={boolean('filled', false)}
     >
       {text('label', 'Validate')}
-    </Button>
+    </PositiveButton>
   ))
   .add('with some emoji', () => (
-    <Button
+    <PositiveButton
       onClick={action('clicked')}
       isDisabled={boolean('disabled', false)}
       isFilled={boolean('filled', false)}
@@ -28,5 +28,5 @@ storiesOf('Components|Button/Button', module)
       <span role="img" aria-label="so cool">
         😀 😎 👍 💯
       </span>
-    </Button>
+    </PositiveButton>
   ))

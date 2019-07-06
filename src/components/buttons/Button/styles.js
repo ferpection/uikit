@@ -1,13 +1,13 @@
 import { PRIMARY_COLORSET, FULL_COLORSET } from '../../../colors/colorsets.js'
 
-export const styles = ({ isFilled = false } = {}) => ({
+export const styles = ({ isFilled = false, color = PRIMARY_COLORSET.ROBINS_EGG_BLUE } = {}) => ({
   cursor: 'pointer',
   padding: '12px 20px',
   borderWidth: '1.4px',
-  borderColor: PRIMARY_COLORSET.ROBINS_EGG_BLUE,
+  borderColor: color,
   borderRadius: '100px',
-  color: isFilled ? 'white' : PRIMARY_COLORSET.ROBINS_EGG_BLUE,
-  backgroundColor: isFilled ? PRIMARY_COLORSET.ROBINS_EGG_BLUE : 'transparent',
+  color: isFilled ? 'white' : color,
+  backgroundColor: isFilled ? color : 'transparent',
   fontSize: '18px',
   fontWeight: 600,
   fontFamily: [

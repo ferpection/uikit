@@ -9,11 +9,16 @@ export const Button = props => {
     disabled = false,
     isFilled,
     isDisabled = disabled,
+    color,
     ...args
   } = props
 
   return (
-    <button css={styles({ isFilled })} disabled={isDisabled} {...args}>
+    <button
+      css={styles({ isFilled, color })}
+      disabled={isDisabled}
+      {...args}
+    >
       {children}
     </button>
   )

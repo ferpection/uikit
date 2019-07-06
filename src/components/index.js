@@ -5,4 +5,5 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 iconLibrary.add(fas, fab)
 
 export { Button } from './buttons/Button/Button.jsx'
+export { PositiveButton } from './buttons/PositiveButton.jsx'
 export { IconButton } from './buttons/IconButton.jsx'
