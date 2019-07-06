@@ -1,4 +1,4 @@
-import { PRIMARY_COLORSET } from '../../../colors/colorsets.js'
+import { PRIMARY_COLORSET, FULL_COLORSET } from '../../../colors/colorsets.js'
 
 export const styles = ({ isFilled = false } = {}) => ({
   cursor: 'pointer',
@@ -21,9 +21,10 @@ export const styles = ({ isFilled = false } = {}) => ({
     'sans-serif',
   ],
   textDecoration: 'none',
-  transition: 'box-shadow .3s ease-in-out',
+  transition: ['box-shadow .3s ease-in-out', 'background-color .3s ease-in-out'],
   '&:hover': {
     boxShadow: '0 1px 4px 1px rgba(0,0,0,0.3)',
+    backgroundColor: isFilled ? FULL_COLORSET.BLUE_LAGOON : null,
   },
   '&[disabled]': {
     opacity: '.5',
