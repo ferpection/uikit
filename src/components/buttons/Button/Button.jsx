@@ -16,7 +16,11 @@ export const Button = props => {
   // TODO: computes darker color from main color
 
   return (
-    <button css={styles({ isFilled, color, darkerColor: color })} disabled={isDisabled} {...args}>
+    <button
+      css={styles({ isFilled, color, darkerColor: color })}
+      disabled={isDisabled}
+      {...args}
+    >
       {children}
     </button>
   )
