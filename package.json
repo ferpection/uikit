@@ -19,7 +19,7 @@
     "prepublishOnly": "yarn format && yarn test:lint && yarn build"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.10",
+    "@emotion/core": "^10.0.14",
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
@@ -37,27 +37,27 @@
     "react-dom": "16.8.x"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
+    "@babel/core": "^7.5.0",
     "@babel/preset-react": "^7.0.0",
-    "@emotion/babel-preset-css-prop": "^10.0.9",
-    "@storybook/addon-a11y": "^5.1.8",
-    "@storybook/addon-actions": "^5.1.3",
-    "@storybook/addon-knobs": "^5.1.8",
-    "@storybook/addon-links": "^5.1.3",
-    "@storybook/addon-viewport": "^5.1.8",
-    "@storybook/addons": "^5.1.3",
-    "@storybook/react": "^5.1.3",
+    "@emotion/babel-preset-css-prop": "^10.0.14",
+    "@storybook/addon-a11y": "^5.1.9",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-knobs": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addon-viewport": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9",
     "babel-loader": "^8.0.6",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-promise": "^4.1.1",
-    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-standard": "^4.0.0",
     "gh-pages": "^2.0.1",
-    "prettier": "1.18.0",
-    "rollup": "^1.15.1",
-    "rollup-plugin-babel": "^4.3.2"
+    "prettier": "1.18.2",
+    "rollup": "^1.16.6",
+    "rollup-plugin-babel": "^4.3.3"
   }
 }
