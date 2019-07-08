@@ -29,10 +29,12 @@ export const styles = ({
   transition: [
     'box-shadow .3s ease-in-out',
     'background-color .3s ease-in-out',
+    'color .3s ease-in-out',
   ],
   '&:hover': {
     boxShadow: '0 1px 4px 1px rgba(0,0,0,0.3)',
     backgroundColor: isFilled ? darkerColor : null,
+    color: isFilled ? 'white' : darkerColor,
     borderColor: darkerColor,
   },
   '&[disabled]': {
