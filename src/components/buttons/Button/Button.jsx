@@ -10,12 +10,13 @@ export const Button = props => {
     isFilled,
     isDisabled = disabled,
     color,
+    hoverColor,
     ...args
   } = props
 
   return (
     <button
-      css={styles({ isFilled, color })}
+      css={styles({ isFilled, color, darkerColor: hoverColor })}
       disabled={isDisabled}
       {...args}
     >
@@ -27,4 +28,6 @@ export const Button = props => {
 Button.propTypes = {
   isFilled: propTypes.bool,
   isDisabled: propTypes.bool,
+  color: propTypes.string,
+  hoverColor: propTypes.string,
 }
