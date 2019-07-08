@@ -1,9 +1,10 @@
-import { PRIMARY_COLORSET, FULL_COLORSET } from '../../../colors/colorsets.js'
+import { PRIMARY_COLORSET } from '../../../colors/colorsets.js'
+import { colorShades } from '../../../utils/colors.js'
 
 export const styles = ({
   isFilled = false,
   color = PRIMARY_COLORSET.ROBINS_EGG_BLUE,
-  darkerColor = FULL_COLORSET.BLUE_LAGOON,
+  darkerColor = colorShades(color, -20),
 } = {}) => ({
   cursor: 'pointer',
   padding: '12px 20px',
@@ -32,6 +33,7 @@ export const styles = ({
   '&:hover': {
     boxShadow: '0 1px 4px 1px rgba(0,0,0,0.3)',
     backgroundColor: isFilled ? darkerColor : null,
+    borderColor: darkerColor,
   },
   '&[disabled]': {
     opacity: '.5',
