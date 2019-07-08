@@ -12,12 +12,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - `@ferpection/uikit/colors` to load only colors
     - `@ferpection/uikit/components` to load only components
 - Creation of a CHANGELOG file to easily store change logs before tagging
+- It is possible to change `Button`s color using the `color` attribute.
+- New `PositiveButton` and `NegativeButton` to express sentiment about actions
+- `Button`s automatically calculates hover color based on main color
 
 ### Changed
 - Colors' names has been updated
+- Basic default button's [color is `C200`](https://ferpection.slab.com/posts/colors-175fg3yl#cyans).
 
 ### Fixed
 - **Internal**: JSX is also formated using prettier
+- `Button`s now follow Ferpection's website design rules (borders, font, animations, etc)
 
 ## [v0.0.3] - 2019-06-12
 ### Added
