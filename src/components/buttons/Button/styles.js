@@ -53,3 +53,10 @@ export const filledState = ({
     borderColor: darkerColor,
   },
 })
+
+export const iconState = {
+  boxSizing: 'border-box',
+  height: '48px',
+  width: '48px',
+  padding: 'unset',
+}
