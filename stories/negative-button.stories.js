@@ -16,17 +16,26 @@ storiesOf('Components|Button/NegativeButton', module)
       isDisabled={boolean('disabled', false)}
       isFilled={boolean('filled', false)}
     >
-      {text('label', 'Validate')}
+      {text('label', 'Cancel')}
     </NegativeButton>
   ))
-  .add('with some emoji', () => (
+  .add('with text and icon', () => (
     <NegativeButton
+      icon={text('icon', 'times')}
+      iconPrefix={text('icon prefix', 'fas')}
       onClick={action('clicked')}
       isDisabled={boolean('disabled', false)}
       isFilled={boolean('filled', false)}
     >
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
+      {text('label', 'Cancel')}
     </NegativeButton>
+  ))
+  .add('with icon only', () => (
+    <NegativeButton
+      icon={text('icon', 'twitter')}
+      iconPrefix={text('icon prefix', 'fab')}
+      onClick={action('clicked')}
+      isDisabled={boolean('disabled', false)}
+      isFilled={boolean('filled', false)}
+    />
   ))

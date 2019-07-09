@@ -16,33 +16,24 @@ storiesOf('Components|Button/Button', module)
       isDisabled={boolean('disabled', false)}
       isFilled={boolean('filled', false)}
     >
-      {text('label', 'Validate')}
-    </Button>
-  ))
-  .add('with some emoji', () => (
-    <Button
-      onClick={action('clicked')}
-      isDisabled={boolean('disabled', false)}
-      isFilled={boolean('filled', false)}
-    >
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
+      {text('label', 'Action')}
     </Button>
   ))
   .add('with text and icon', () => (
     <Button
-      icon="check"
+      icon={text('icon', 'arrow-left')}
+      iconPrefix={text('icon prefix', 'fas')}
       onClick={action('clicked')}
       isDisabled={boolean('disabled', false)}
       isFilled={boolean('filled', false)}
     >
-      {text('label', 'Validate')}
+      {text('label', 'Action')}
     </Button>
   ))
   .add('with icon only', () => (
     <Button
-      icon="times"
+      icon={text('icon', 'instagram')}
+      iconPrefix={text('icon prefix', 'fab')}
       onClick={action('clicked')}
       isDisabled={boolean('disabled', false)}
       isFilled={boolean('filled', false)}

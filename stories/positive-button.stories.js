@@ -19,14 +19,23 @@ storiesOf('Components|Button/PositiveButton', module)
       {text('label', 'Validate')}
     </PositiveButton>
   ))
-  .add('with some emoji', () => (
+  .add('with text and icon', () => (
     <PositiveButton
+      icon={text('icon', 'check')}
+      iconPrefix={text('icon prefix', 'fas')}
       onClick={action('clicked')}
       isDisabled={boolean('disabled', false)}
       isFilled={boolean('filled', false)}
     >
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
+      {text('label', 'Validate')}
     </PositiveButton>
+  ))
+  .add('with icon only', () => (
+    <PositiveButton
+      icon={text('icon', 'google')}
+      iconPrefix={text('icon prefix', 'fab')}
+      onClick={action('clicked')}
+      isDisabled={boolean('disabled', false)}
+      isFilled={boolean('filled', false)}
+    />
   ))
