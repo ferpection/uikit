@@ -15,25 +15,29 @@ export const Button = props => {
     hoverColor,
     icon: iconName,
     iconPrefix = 'fas',
+    ariaLabel,
     ...args
   } = props
 
   const icon = findIconDefinition({ prefix: iconPrefix, iconName })
   const iconExist = icon != null
   const childrenExist = children != null
+  const onlyIconExist = iconExist && !childrenExist
 
   const baseState = prepareBaseState({ color, darkerColor: hoverColor })
   const filledState = prepareFilledState({ color, darkerColor: hoverColor })
 
   return (
     <button
+      {...args}
       css={[
         baseState,
         isFilled ? filledState : null,
-        iconExist && !childrenExist ? iconOnlyState : null,
+        onlyIconExist ? iconOnlyState : null,
       ]}
+      type="button"
+      ariaLabel={ariaLabel || (onlyIconExist ? iconName.replace(/-/g, '') : null)}
       disabled={isDisabled}
-      {...args}
     >
       {iconExist ? (
         <FontAwesomeIcon icon={icon} size="m" />
