@@ -14,12 +14,12 @@ export const Button = props => {
     color,
     hoverColor,
     icon: iconName,
-    iconPrefix = 'fas',
+    iconStore = 'fas',
     ariaLabel,
     ...args
   } = props
 
-  const icon = findIconDefinition({ prefix: iconPrefix, iconName })
+  const icon = findIconDefinition({ prefix: iconStore, iconName })
   const iconExist = icon != null
   const childrenExist = children != null
   const onlyIconExist = iconExist && !childrenExist
@@ -58,5 +58,5 @@ Button.propTypes = {
   color: propTypes.string,
   hoverColor: propTypes.string,
   icon: propTypes.string,
-  iconPrefix: propTypes.string,
+  iconStore: propTypes.string,
 }

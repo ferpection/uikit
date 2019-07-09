@@ -22,7 +22,7 @@ storiesOf('Components|Button/NegativeButton', module)
   .add('with text and icon', () => (
     <NegativeButton
       icon={text('icon', 'times')}
-      iconPrefix={text('icon prefix', 'fas')}
+      iconStore={text('icon store', 'fas')}
       onClick={action('clicked')}
       isDisabled={boolean('disabled', false)}
       isFilled={boolean('filled', false)}
@@ -33,7 +33,7 @@ storiesOf('Components|Button/NegativeButton', module)
   .add('with icon only', () => (
     <NegativeButton
       icon={text('icon', 'twitter')}
-      iconPrefix={text('icon prefix', 'fab')}
+      iconStore={text('icon store', 'fab')}
       onClick={action('clicked')}
       isDisabled={boolean('disabled', false)}
       isFilled={boolean('filled', false)}

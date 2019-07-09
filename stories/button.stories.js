@@ -22,7 +22,7 @@ storiesOf('Components|Button/Button', module)
   .add('with text and icon', () => (
     <Button
       icon={text('icon', 'arrow-left')}
-      iconPrefix={text('icon prefix', 'fas')}
+      iconStore={text('icon store', 'fas')}
       onClick={action('clicked')}
       isDisabled={boolean('disabled', false)}
       isFilled={boolean('filled', false)}
@@ -33,7 +33,7 @@ storiesOf('Components|Button/Button', module)
   .add('with icon only', () => (
     <Button
       icon={text('icon', 'instagram')}
-      iconPrefix={text('icon prefix', 'fab')}
+      iconStore={text('icon store', 'fab')}
       onClick={action('clicked')}
       isDisabled={boolean('disabled', false)}
       isFilled={boolean('filled', false)}
