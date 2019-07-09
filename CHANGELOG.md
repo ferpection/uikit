@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v0.0.4] - 2019-07-09
 ### Added
 - There is now neutral colors exposed (`N75` to `N500`).
 - New entrypoints to optimize bunles size (tree shaking):
@@ -51,6 +52,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.4]: https://github.com/ferpection/uikit/tree/v0.0.4
 [v0.0.3]: https://github.com/ferpection/uikit/tree/v0.0.3
 [v0.0.2]: https://github.com/ferpection/uikit/tree/v0.0.2
 [v0.0.1]: https://github.com/ferpection/uikit/tree/v0.0.1
