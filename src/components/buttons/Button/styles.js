@@ -1,7 +1,7 @@
 import { PRIMARY_COLORSET } from '../../../colors/colorsets.js'
 import { colorShades } from '../../../utils/colors.js'
 
-export const baseState = ({
+export const prepareBaseState = ({
   color = PRIMARY_COLORSET.ROBINS_EGG_BLUE,
   darkerColor = colorShades(color, -20),
 } = {}) => ({
@@ -40,7 +40,7 @@ export const baseState = ({
   },
 })
 
-export const filledState = ({
+export const prepareFilledState = ({
   color = PRIMARY_COLORSET.ROBINS_EGG_BLUE,
   darkerColor = colorShades(color, -20),
 } = {}) => ({
@@ -54,7 +54,7 @@ export const filledState = ({
   },
 })
 
-export const iconState = {
+export const iconOnlyState = {
   boxSizing: 'border-box',
   height: '48px',
   width: '48px',
