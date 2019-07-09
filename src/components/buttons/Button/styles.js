@@ -1,8 +1,7 @@
 import { PRIMARY_COLORSET } from '../../../colors/colorsets.js'
 import { colorShades } from '../../../utils/colors.js'
 
-export const styles = ({
-  isFilled = false,
+export const baseState = ({
   color = PRIMARY_COLORSET.ROBINS_EGG_BLUE,
   darkerColor = colorShades(color, -20),
 } = {}) => ({
@@ -11,8 +10,7 @@ export const styles = ({
   borderWidth: '1.4px',
   borderColor: color,
   borderRadius: '100px',
-  color: isFilled ? 'white' : color,
-  backgroundColor: isFilled ? color : 'transparent',
+  color: color,
   fontSize: '18px',
   fontWeight: 600,
   fontFamily: [
@@ -33,12 +31,25 @@ export const styles = ({
   ],
   '&:hover': {
     boxShadow: '0 1px 4px 1px rgba(0,0,0,0.3)',
-    backgroundColor: isFilled ? darkerColor : null,
-    color: isFilled ? 'white' : darkerColor,
+    color: darkerColor,
     borderColor: darkerColor,
   },
   '&[disabled]': {
     opacity: '.5',
     pointerEvents: 'none',
+  },
+})
+
+export const filledState = ({
+  color = PRIMARY_COLORSET.ROBINS_EGG_BLUE,
+  darkerColor = colorShades(color, -20),
+} = {}) => ({
+  color: 'white',
+  backgroundColor: color,
+  '&:hover': {
+    boxShadow: '0 1px 4px 1px rgba(0,0,0,0.3)',
+    backgroundColor: darkerColor,
+    color: 'white',
+    borderColor: darkerColor,
   },
 })
