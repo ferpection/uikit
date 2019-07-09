@@ -30,3 +30,21 @@ storiesOf('Components|Button/Button', module)
       </span>
     </Button>
   ))
+  .add('with text and icon', () => (
+    <Button
+      icon="check"
+      onClick={action('clicked')}
+      isDisabled={boolean('disabled', false)}
+      isFilled={boolean('filled', false)}
+    >
+      {text('label', 'Validate')}
+    </Button>
+  ))
+  .add('with icon only', () => (
+    <Button
+      icon="times"
+      onClick={action('clicked')}
+      isDisabled={boolean('disabled', false)}
+      isFilled={boolean('filled', false)}
+    />
+  ))
