@@ -3,7 +3,11 @@ import propTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
 
-import { prepareBaseState, prepareFilledState, iconOnlyState } from './styles.js'
+import {
+  prepareBaseState,
+  prepareFilledState,
+  iconOnlyState,
+} from './styles.js'
 
 export const Button = props => {
   const {
@@ -27,6 +31,11 @@ export const Button = props => {
   const baseState = prepareBaseState({ color, darkerColor: hoverColor })
   const filledState = prepareFilledState({ color, darkerColor: hoverColor })
 
+  let ariaLabelForIcon = ''
+  if (onlyIconExist) {
+    ariaLabelForIcon = iconName.replace(/-/g, '')
+  }
+
   return (
     <button
       {...args}
@@ -36,16 +45,12 @@ export const Button = props => {
         onlyIconExist ? iconOnlyState : null,
       ]}
       type="button"
-      ariaLabel={ariaLabel || (onlyIconExist ? iconName.replace(/-/g, '') : null)}
+      ariaLabel={ariaLabel || ariaLabelForIcon}
       disabled={isDisabled}
     >
-      {iconExist ? (
-        <FontAwesomeIcon icon={icon} size="m" />
-      ) : null}
+      {iconExist ? <FontAwesomeIcon icon={icon} size="m" /> : null}
 
-      {iconExist && childrenExist ? (
-        <>&nbsp;</>
-      ) : null}
+      {iconExist && childrenExist ? <>&nbsp;</> : null}
 
       {children}
     </button>
