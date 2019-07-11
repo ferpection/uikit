@@ -1,22 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
 
+import { ThemeContext } from '../../contexts/ThemeContext.js'
 import {
   prepareBaseState,
   prepareFilledState,
   iconOnlyState,
 } from './styles.js'
-import { PRIMARY_COLORSET } from '../../../colors/index.js'
-
-const COLORS = {
-  action: PRIMARY_COLORSET.ROBINS_EGG_BLUE,
-  positive: PRIMARY_COLORSET.SHAMROCK,
-  negative: PRIMARY_COLORSET.SUNGLOW,
-}
 
 export const Button = props => {
+  const theme = useContext(ThemeContext)
   const {
     children,
     disabled = false,
@@ -35,14 +30,10 @@ export const Button = props => {
   const iconExist = icon != null
   const childrenExist = children != null
   const onlyIconExist = iconExist && !childrenExist
+  const mainColor = color || theme.colors[actionType] || theme.colors.action
 
-  let baseState = prepareBaseState({ color, darkerColor: hoverColor })
-  let filledState = prepareFilledState({ color, darkerColor: hoverColor })
-
-  if (color == null) {
-    baseState = prepareBaseState({ color: COLORS[actionType] || COLORS['action'] })
-    filledState = prepareFilledState({ color: COLORS[actionType] || COLORS['action'] })
-  }
+  const baseState = prepareBaseState({ color: mainColor, darkerColor: hoverColor })
+  const filledState = prepareFilledState({ color: mainColor, darkerColor: hoverColor })
 
   let ariaLabelForIcon = ''
 
