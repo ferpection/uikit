@@ -7,3 +7,4 @@ iconLibrary.add(fas, fab)
 export { Button } from './buttons/Button/Button.jsx'
 export { PositiveButton } from './buttons/PositiveButton.jsx'
 export { NegativeButton } from './buttons/NegativeButton.jsx'
+export { ThemeProvider } from './contexts/ThemeContext.js'
