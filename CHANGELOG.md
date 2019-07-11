@@ -5,8 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since v1.0.0.
 
 ## [Unreleased]
+### Added
+- Button have a `actionType` attribute to express if the action is "positive", "negative" or normal ("default").
+
 ### Changed
 - Automatically set `aria-label` field for text button
+- Removing `NegativeButton` and `PositiveButton`. DX was not cool w/ these two.
 
 ## [v0.0.4] - 2019-07-09
 ### Added
