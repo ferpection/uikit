@@ -53,7 +53,6 @@ export const Button = props => {
         isFilled ? filledState : null,
         onlyIconExist ? iconOnlyState : null,
       ]}
-      type="button"
       ariaLabel={ariaLabel || ariaLabelForIcon}
       disabled={isDisabled}
     >
