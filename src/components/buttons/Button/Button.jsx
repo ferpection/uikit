@@ -8,6 +8,13 @@ import {
   prepareFilledState,
   iconOnlyState,
 } from './styles.js'
+import { PRIMARY_COLORSET } from '../../../colors/index.js'
+
+const COLORS = {
+  action: PRIMARY_COLORSET.ROBINS_EGG_BLUE,
+  positive: PRIMARY_COLORSET.SHAMROCK,
+  negative: PRIMARY_COLORSET.SUNGLOW,
+}
 
 export const Button = props => {
   const {
@@ -20,6 +27,7 @@ export const Button = props => {
     icon: iconName,
     iconStore = 'fas',
     ariaLabel,
+    actionType = 'default',
     ...args
   } = props
 
@@ -28,8 +36,13 @@ export const Button = props => {
   const childrenExist = children != null
   const onlyIconExist = iconExist && !childrenExist
 
-  const baseState = prepareBaseState({ color, darkerColor: hoverColor })
-  const filledState = prepareFilledState({ color, darkerColor: hoverColor })
+  let baseState = prepareBaseState({ color, darkerColor: hoverColor })
+  let filledState = prepareFilledState({ color, darkerColor: hoverColor })
+
+  if (color == null) {
+    baseState = prepareBaseState({ color: COLORS[actionType] || COLORS['action'] })
+    filledState = prepareFilledState({ color: COLORS[actionType] || COLORS['action'] })
+  }
 
   let ariaLabelForIcon = ''
 
@@ -69,4 +82,5 @@ Button.propTypes = {
   hoverColor: propTypes.string,
   icon: propTypes.string,
   iconStore: propTypes.string,
+  actionType: propTypes.oneOf(['default', 'positive', 'negative']),
 }
