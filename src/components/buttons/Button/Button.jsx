@@ -32,6 +32,11 @@ export const Button = props => {
   const filledState = prepareFilledState({ color, darkerColor: hoverColor })
 
   let ariaLabelForIcon = ''
+
+  if (typeof children === 'string') {
+    ariaLabelForIcon = children
+  }
+
   if (onlyIconExist) {
     ariaLabelForIcon = iconName.replace(/-/g, '')
   }
