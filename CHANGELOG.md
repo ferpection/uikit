@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- Button have a `actionType` attribute to express if the action is "positive", "negative" or normal ("default").
+- Button have a `actionType` attribute to express if the action is "positive", "negative" or normal ("default")
+- New `ThemeProvider` component. It is a context provider for theming data. Used by the UIkit components
 
 ### Changed
 - Automatically set `aria-label` field for text button
