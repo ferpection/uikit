@@ -32,8 +32,14 @@ export const Button = props => {
   const onlyIconExist = iconExist && !childrenExist
   const mainColor = color || theme.colors[actionType] || theme.colors.action
 
-  const baseState = prepareBaseState({ color: mainColor, darkerColor: hoverColor })
-  const filledState = prepareFilledState({ color: mainColor, darkerColor: hoverColor })
+  const baseState = prepareBaseState({
+    color: mainColor,
+    darkerColor: hoverColor,
+  })
+  const filledState = prepareFilledState({
+    color: mainColor,
+    darkerColor: hoverColor,
+  })
 
   let ariaLabelForIcon = ''
 

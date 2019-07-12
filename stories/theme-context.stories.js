@@ -23,11 +23,7 @@ storiesOf('Contexts|ThemeProvider', module)
     return (
       <ThemeProvider value={theme}>
         <pre>Button w/ action color:</pre>
-        <Button
-          icon="search"
-          onClick={action('[action] clicked')}
-          isFilled
-        >
+        <Button icon="search" onClick={action('[action] clicked')} isFilled>
           Review study
         </Button>
         <pre>Button w/ positive color:</pre>
