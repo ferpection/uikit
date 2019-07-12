@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since v1.0.0.
 
 ## [Unreleased]
+
+## [v0.0.5] - 2019-07-12
 ### Added
 - Button have a `actionType` attribute to express if the action is "positive", "negative" or normal ("default")
 - New `ThemeProvider` component. It is a context provider for theming data. Used by the UIkit components
@@ -59,6 +61,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.5]: https://github.com/ferpection/uikit/tree/v0.0.5
 [v0.0.4]: https://github.com/ferpection/uikit/tree/v0.0.4
 [v0.0.3]: https://github.com/ferpection/uikit/tree/v0.0.3
 [v0.0.2]: https://github.com/ferpection/uikit/tree/v0.0.2
