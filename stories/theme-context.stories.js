@@ -14,7 +14,7 @@ storiesOf('Contexts|ThemeProvider', module)
   .add('colors', () => {
     const theme = {
       colors: {
-        action: color('Default color', '#00BECD'),
+        action: color('Action color', '#00BECD'),
         positive: color('Positive color', '#24D58D'),
         negative: color('Negative color', '#FEC138'),
       },
@@ -22,28 +22,31 @@ storiesOf('Contexts|ThemeProvider', module)
 
     return (
       <ThemeProvider value={theme}>
-        <pre>Button w/ default color:</pre>
+        <pre>Button w/ action color:</pre>
         <Button
-          onClick={action('[default] clicked')}
+          icon="search"
+          onClick={action('[action] clicked')}
           isFilled
         >
-          Action
+          Review study
         </Button>
         <pre>Button w/ positive color:</pre>
         <Button
+          icon="rocket"
           actionType="positive"
           onClick={action('[positive] clicked')}
           isFilled
         >
-          Action
+          Launch study
         </Button>
         <pre>Button w/ negative color:</pre>
         <Button
+          icon="trash"
           actionType="negative"
           onClick={action('[negative] clicked')}
           isFilled
         >
-          Action
+          Delete study
         </Button>
       </ThemeProvider>
     )
