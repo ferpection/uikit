@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { PRIMARY_COLORSET } from '../../colors'
+import { PRIMARY_COLORSET } from '../../colors/index.js'
 
 export const ThemeContext = React.createContext({
   colors: {
