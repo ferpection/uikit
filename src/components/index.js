@@ -5,5 +5,6 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 iconLibrary.add(fas, fab)
 
 export { Button } from './buttons/Button/Button.jsx'
+export { RadioButton } from './forms/RadioButton/RadioButtons.jsx'
+
 export { ThemeProvider } from './contexts/ThemeContext.js'
-export { RadioButton } from './forms/Radio/RadioButtons.jsx'
