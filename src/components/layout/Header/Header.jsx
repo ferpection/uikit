@@ -1,18 +1,21 @@
 import React, { Children, isValidElement, cloneElement } from 'react'
 
-import { defaultHeaderStyles, buttonListStyle } from './styles'
+import { defaultHeaderStyles, buttonListStyle, lightHeaderStyle } from './styles'
 import { PRIMARY_COLORSET } from '../../../colors';
 
 export const Header = (props) => {
-  const { homeUrl = 'https://ferpection.com/', children } = props
+  const { homeUrl = 'https://ferpection.com/', children, isLightVersion } = props
   const buttonList = Children
     .toArray(children)
     .filter(child => isValidElement(child))
     .map(child => cloneElement(child, { isFilled: false, color: PRIMARY_COLORSET.CINNABAR }))
-    .map(child => <li>{child}</li>)
+    .map((child, i) => <li key={i}>{child}</li>)
 
   return (
-    <header css={[defaultHeaderStyles]}>
+    <header css={[
+      defaultHeaderStyles,
+      isLightVersion ? lightHeaderStyle : null,
+    ]}>
       <div>
         <a href={homeUrl} title="Go to homepage"><img alt=""/></a>
       </div>

@@ -11,6 +11,11 @@ export const defaultHeaderStyles = {
   boxShadow: '0 0 3px 2px rgba(0, 0, 0, .2)',
 }
 
+export const lightHeaderStyle = {
+  color: FULL_COLORSET.CINNABAR,
+  backgroundColor: 'white',
+}
+
 export const buttonListStyle = {
   margin: '0',
   listStyle: 'none',
