@@ -8,7 +8,7 @@ export const Header = (props) => {
   const buttonList = Children
     .toArray(children)
     .filter(child => isValidElement(child))
-    .map(child => cloneElement(child, { isFilled: false, color: PRIMARY_COLORSET.CINNABAR }))
+    .map(child => cloneElement(child, { isFilled: false, color: PRIMARY_COLORSET.CINNABAR, headerLigthVersion: isLightVersion }))
     .map((child, i) => <li key={i}>{child}</li>)
 
   return (

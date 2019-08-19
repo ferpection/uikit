@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Button have a `to` attribute where the target can be specified. Depending on the type of target Button will
 be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
+- New `HeaderLink` component to be use as light header links.
+- New `Header` component to centralise common header style. It's customizable using the `Button` and `HeaderLink` components
 
 ## [v0.0.5] - 2019-07-12
 ### Added

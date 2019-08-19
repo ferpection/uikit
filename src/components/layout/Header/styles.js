@@ -20,6 +20,7 @@ export const buttonListStyle = {
   margin: '0',
   listStyle: 'none',
   display: 'flex',
+  alignItems: 'center',
   '& > li': {
     margin: '0 2px',
   },
