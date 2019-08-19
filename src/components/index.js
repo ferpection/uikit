@@ -6,3 +6,4 @@ iconLibrary.add(fas, fab)
 
 export { Button } from './buttons/Button/Button.jsx'
 export { ThemeProvider } from './contexts/ThemeContext.js'
+export { Header } from './layout/Header/Header.jsx'
