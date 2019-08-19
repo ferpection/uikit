@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
+import { Link } from 'react-router-dom'
 
 import { ThemeContext } from '../../contexts/ThemeContext.js'
 import {
@@ -23,6 +24,7 @@ export const Button = props => {
     iconStore = 'fas',
     ariaLabel,
     actionType = 'default',
+    to,
     ...args
   } = props
 
@@ -51,8 +53,20 @@ export const Button = props => {
     ariaLabelForIcon = iconName.replace(/-/g, '')
   }
 
+  const Container = (props) => {
+    if (typeof to !== 'string') {
+      return <button {...props}>{props.children}</button>
+    }
+
+    if (to.includes('https://') || to.includes('http://') || to.includes('//')) {
+      return <a {...props} href={to}>{props.children}</a>
+    }
+
+    return <Link {...props} to={to}>{props.children}</Link>
+  }
+
   return (
-    <button
+    <Container
       {...args}
       css={[
         baseState,
@@ -67,7 +81,7 @@ export const Button = props => {
       {iconExist && childrenExist ? <>&nbsp;</> : null}
 
       {children}
-    </button>
+    </Container>
   )
 }
 
@@ -79,4 +93,5 @@ Button.propTypes = {
   icon: propTypes.string,
   iconStore: propTypes.string,
   actionType: propTypes.oneOf(['default', 'positive', 'negative']),
+  to: propTypes.string,
 }
