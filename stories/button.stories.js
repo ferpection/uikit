@@ -39,3 +39,15 @@ storiesOf('Components|Button/Button', module)
       isFilled={boolean('filled', false)}
     />
   ))
+  .add('as row link', () => (
+    <Button
+      icon="twitter"
+      iconStore="fab"
+      onClick={action('clicked')}
+      isDisabled={boolean('disabled', false)}
+      isFilled={boolean('filled', false)}
+      isRaw={boolean('raw', true)}
+    >
+      Tweet it!
+    </Button>
+  ))

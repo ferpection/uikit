@@ -9,6 +9,7 @@ import {
   prepareBaseState,
   prepareFilledState,
   iconOnlyState,
+  rawLinkState,
 } from './styles.js'
 
 export const Button = props => {
@@ -17,6 +18,7 @@ export const Button = props => {
     children,
     disabled = false,
     isFilled,
+    isRaw,
     isDisabled = disabled,
     color,
     hoverColor,
@@ -70,8 +72,9 @@ export const Button = props => {
       {...args}
       css={[
         baseState,
-        isFilled ? filledState : null,
+        isFilled && !isRaw ? filledState : null,
         onlyIconExist ? iconOnlyState : null,
+        isRaw ? rawLinkState : null,
       ]}
       ariaLabel={ariaLabel || ariaLabelForIcon}
       disabled={isDisabled}
@@ -88,6 +91,7 @@ export const Button = props => {
 Button.propTypes = {
   isFilled: propTypes.bool,
   isDisabled: propTypes.bool,
+  isRaw: propTypes.bool,
   color: propTypes.string,
   hoverColor: propTypes.string,
   icon: propTypes.string,

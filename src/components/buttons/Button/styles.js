@@ -65,3 +65,12 @@ export const iconOnlyState = {
   width: '48px',
   padding: 'unset',
 }
+
+export const rawLinkState = {
+  backgroundColor: 'transparent',
+  borderWidth: '0px',
+  padding: '5px',
+  '&:hover': {
+    boxShadow: 'none',
+  },
+}
