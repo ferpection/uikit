@@ -1,7 +1,9 @@
 import React, { Children, isValidElement, cloneElement } from 'react'
 
-import { defaultHeaderStyles, buttonListStyle, lightHeaderStyle } from './styles'
-import { PRIMARY_COLORSET } from '../../../colors';
+import { PRIMARY_COLORSET } from '../../../colors'
+import { FerpectionLogo } from '../../logos/FerpectionLogo.jsx'
+
+import { defaultHeaderStyles, buttonListStyle, lightHeaderStyle, logoStyles } from './styles'
 
 export const Header = (props) => {
   const { homeUrl = 'https://ferpection.com/', children, isLightVersion } = props
@@ -16,8 +18,10 @@ export const Header = (props) => {
       defaultHeaderStyles,
       isLightVersion ? lightHeaderStyle : null,
     ]}>
-      <div>
-        <a href={homeUrl} title="Go to homepage"><img alt=""/></a>
+      <div css={logoStyles}>
+        <a href={homeUrl} title="Go to homepage">
+          <FerpectionLogo color={isLightVersion ? PRIMARY_COLORSET.CINNABAR : '#FFFFFF'}/>
+        </a>
       </div>
       <nav>
         <ul css={[buttonListStyle]}>

@@ -25,3 +25,9 @@ export const buttonListStyle = {
     margin: '0 2px',
   },
 }
+
+export const logoStyles = {
+  padding: '10px 0',
+  boxSizing: 'border-box',
+  height: '100%',
+}
