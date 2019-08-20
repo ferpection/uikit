@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - New `Header` component to centralise common header style. It's customizable using the `Button` and `HeaderLink` components
 - Expose a customizable ferpection's logo via `FerpectionLogo` component.
 
-### Chnaged
+### Changed
 - Button have a `to` attribute where the target can be specified. Depending on the type of target Button will
 be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 
