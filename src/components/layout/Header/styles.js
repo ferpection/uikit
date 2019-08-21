@@ -1,4 +1,4 @@
-import { FULL_COLORSET } from '../../../colors'
+import { FULL_COLORSET } from '../../../colors/index.js'
 
 export const defaultHeaderStyles = {
   backgroundColor: FULL_COLORSET.CINNABAR,
