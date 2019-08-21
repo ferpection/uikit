@@ -88,7 +88,7 @@ export const Button = props => {
         onlyIconExist ? iconOnlyState : null,
         isRaw ? rawLinkState : null,
       ]}
-      ariaLabel={ariaLabel || ariaLabelForIcon}
+      aria-label={ariaLabel || ariaLabelForIcon}
       disabled={isDisabled}
     >
       {iconExist ? <FontAwesomeIcon icon={icon} size="m" /> : null}
