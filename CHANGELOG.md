@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ## [v0.0.6] - 2019-08-21
+### Fixed
+- `Button`s loads `sm` FontAwesome icon
+- Fix aria attributes for `Button`s
+- Fix Typos in CSS attributes
+- `HeaderLink` better share data w/ other components.
+
+## [v0.0.6] - 2019-08-21
 ### Added
 - New `HeaderLink` component to be use as light header links.
 - New `Header` component to centralise common header style. It's customizable using the `Button` and `HeaderLink` components
