@@ -6,7 +6,7 @@ export const prepareBaseState = ({
   darkerColor = colorShades(color, -20),
 } = {}) => ({
   display: 'inline-block',
-  '-webkit-appearance': 'none',
+  WebkitAppearance: 'none',
   backgroundColor: 'white',
   cursor: 'pointer',
   padding: '12px 20px',
