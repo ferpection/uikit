@@ -91,7 +91,7 @@ export const Button = props => {
       aria-label={ariaLabel || ariaLabelForIcon}
       disabled={isDisabled}
     >
-      {iconExist ? <FontAwesomeIcon icon={icon} size="m" /> : null}
+      {iconExist ? <FontAwesomeIcon icon={icon} size="sm" /> : null}
 
       {iconExist && childrenExist ? <>&nbsp;</> : null}
 
