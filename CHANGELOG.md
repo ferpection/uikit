@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v0.0.8] - 2019-08-21
+### Changed
+- All dependencies have been updated at their latest versions
+
 ## [v0.0.7] - 2019-08-21
 ### Fixed
 - `Button`s loads `sm` FontAwesome icon
@@ -78,6 +82,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.8]: https://github.com/ferpection/uikit/tree/v0.0.8
 [v0.0.7]: https://github.com/ferpection/uikit/tree/v0.0.7
 [v0.0.6]: https://github.com/ferpection/uikit/tree/v0.0.6
 [v0.0.5]: https://github.com/ferpection/uikit/tree/v0.0.5
