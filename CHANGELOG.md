@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [v0.0.8] - 2019-08-21
 ### Changed
 - All dependencies have been updated at their latest versions
+- `react`, `react-dom`, `react-router-dom` and `@emotion/core` aren't automatically installed w/ `@ferpection/uikit` right now.
 
 ## [v0.0.7] - 2019-08-21
 ### Fixed

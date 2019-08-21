@@ -18,6 +18,7 @@ const copy = function(options) {
 const globalConf = {
   external: [
     ...Object.keys(pkg.dependencies),
+    ...Object.keys(pkg.devDependencies),
     '@emotion/css',
   ],
   plugins: [

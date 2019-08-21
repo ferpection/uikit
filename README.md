@@ -2,6 +2,23 @@
 
 This repo is a technical implementation of the [Ferpection Design System](https://ferpection.slab.com/topics/design-system-v48ngrzz/posts) for ReactJS.
 
+## Prerequisites
+
+This package use [React](https://reactjs.org), [React Router](https://reacttraining.com/react-router/web/) and [EmotionJS](https://emotion.sh/).
+To avoid conflicts, those packages aren't automatically installed and doesn't come with this package.
+
+You must have those packages installed in your project in order to use `@ferpection/uikit`.
+
+```sh
+yarn add react react-dom react-router-dom @emotion/core
+```
+
+or
+
+```sh
+npm install react react-dom react-router-dom @emotion/core --save
+```
+
 ## Install
 
 Use npm or yarn to install the UI kit.
