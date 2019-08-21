@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since v1.0.0.
 
 ## [Unreleased]
+
+## [v0.0.6] - 2019-08-21
 ### Added
 - New `HeaderLink` component to be use as light header links.
 - New `Header` component to centralise common header style. It's customizable using the `Button` and `HeaderLink` components
@@ -69,6 +71,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.6]: https://github.com/ferpection/uikit/tree/v0.0.6
 [v0.0.5]: https://github.com/ferpection/uikit/tree/v0.0.5
 [v0.0.4]: https://github.com/ferpection/uikit/tree/v0.0.4
 [v0.0.3]: https://github.com/ferpection/uikit/tree/v0.0.3
