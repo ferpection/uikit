@@ -3,6 +3,7 @@
   "version": "0.0.8",
   "description": "Technical implementation of the Ferpection design system",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/ferpection/uikit",
   "author": "Ferpection <hello@ferpection.com> (https://ferpection.com)",
   "license": "MIT",
