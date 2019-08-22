@@ -22,17 +22,22 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "rollup -c",
-    "build:dev": "yarn build -w",
-    "build:storybook": "build-storybook",
-    "build:clean": "rm ./{colors,components,index}.js ./index.d.ts",
-    "start": "yarn build:dev",
-    "start:storybook": "start-storybook -p 6006",
-    "test:lint": "eslint src/** stories/**",
-    "format": "prettier --write '{src,stories}/**/*.{js,jsx}'",
-    "publish:storybook": "yarn build:storybook && gh-pages -d storybook-static",
-    "prepublishOnly": "yarn format && yarn test:lint && yarn build",
-    "postpublish": "yarn build:clean"
+    "build": "scripts/build/build.sh",
+    "build:prod": "scripts/build/prod.sh",
+    "build:dev": "scripts/build/dev.sh",
+    "build:storybook": "scripts/build/storybook.sh",
+    "build:clean": "scripts/build/clean.sh",
+
+    "start": "scripts/start/start.sh",
+    "start:storybook": "scripts/start/storybook.sh",
+
+    "test:lint": "scripts/test/lint.sh",
+
+    "format": "scripts/format/format.sh",
+
+    "publish:storybook": "scripts/publish/storybook.sh",
+    "prepublishOnly": "scripts/publish/prepublish.sh",
+    "postpublish": "scripts/publish/postpublish.sh"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
