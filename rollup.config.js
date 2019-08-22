@@ -27,7 +27,7 @@ const globalConf = {
     }),
     copy({
       src: './src/index.d.ts',
-      target: './dist/index.d.ts',
+      target: './index.d.ts',
     }),
   ],
 }
@@ -47,7 +47,7 @@ export default [
     input: './src/colors/index.js',
     output: [
       {
-        file: 'dist/colors.js',
+        file: 'colors.js',
         format: 'esm',
       },
     ],
@@ -57,7 +57,7 @@ export default [
     input: './src/components/index.js',
     output: [
       {
-        file: 'dist/components.js',
+        file: 'components.js',
         format: 'esm',
       },
     ],

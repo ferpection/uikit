@@ -2,8 +2,8 @@
   "name": "@ferpection/uikit",
   "version": "0.0.8",
   "description": "Technical implementation of the Ferpection design system",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "repository": "https://github.com/ferpection/uikit",
   "author": "Ferpection <hello@ferpection.com> (https://ferpection.com)",
   "contributors": [
@@ -14,7 +14,10 @@
       }
   ],
   "files": [
-      "dist"
+      "/colors.js",
+      "/index.js",
+      "/index.d.ts",
+      "/components.js"
   ],
   "license": "MIT",
   "private": false,
@@ -22,12 +25,14 @@
     "build": "rollup -c",
     "build:dev": "yarn build -w",
     "build:storybook": "build-storybook",
+    "build:clean": "rm ./{colors,components,index}.js ./index.d.ts",
     "start": "yarn build:dev",
     "start:storybook": "start-storybook -p 6006",
     "test:lint": "eslint src/** stories/**",
     "format": "prettier --write '{src,stories}/**/*.{js,jsx}'",
     "publish:storybook": "yarn build:storybook && gh-pages -d storybook-static",
-    "prepublishOnly": "yarn format && yarn test:lint && yarn build"
+    "prepublishOnly": "yarn format && yarn test:lint && yarn build",
+    "postpublish": "yarn build:clean"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.21",

@@ -151,7 +151,7 @@ declare module '@ferpection/uikit' {
     }> {}
 }
 
-declare module '@ferpection/uikit/dist/components' {
+declare module '@ferpection/uikit/components' {
 
     interface ButtonProps {
         isFilled?: boolean
@@ -194,7 +194,7 @@ declare module '@ferpection/uikit/dist/components' {
     }> {}
 }
 
-declare module '@ferpection/uikit/dist/colors' {
+declare module '@ferpection/uikit/colors' {
     export const R500_COLOR: string
     export const R400_COLOR: string
     export const R300_COLOR: string
