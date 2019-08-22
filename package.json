@@ -13,6 +13,9 @@
           "url": "https://nathanaelcherrier.com"
       }
   ],
+  "files": [
+      "dist"
+  ],
   "license": "MIT",
   "private": false,
   "scripts": {
