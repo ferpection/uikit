@@ -1,5 +1,6 @@
+import React from 'react'
+
 declare module '@ferpection/uikit' {
-    import React from 'react'
 
     export const R500_COLOR: string
     export const R400_COLOR: string
@@ -122,15 +123,15 @@ declare module '@ferpection/uikit' {
         to?: string
     }
 
-    class Button extends React.Component<ButtonProps> {}
+    export class Button extends React.Component<ButtonProps> {}
 
     interface HeaderLinkProps extends ButtonProps {
         headerLigthVersion?: boolean
     }
 
-    class HeaderLink extends React.Component<HeaderLinkProps> {}
+    export class HeaderLink extends React.Component<HeaderLinkProps> {}
 
-    const ThemeContext: React.Context<{
+    export const ThemeContext: React.Context<{
         colors: {
             action: string
             positive: string
@@ -143,17 +144,14 @@ declare module '@ferpection/uikit' {
         isLightVersion?: boolean
     }
 
-    class Header extends React.Component<HeaderProps> {}
+    export class Header extends React.Component<HeaderProps> {}
 
-    class FerpectionLogo extends React.Component<{
+    export class FerpectionLogo extends React.Component<{
         color: string
     }> {}
-
-    export { Button, HeaderLink, ThemeContext, Header, FerpectionLogo }
 }
 
 declare module '@ferpection/uikit/dist/components' {
-    import React from 'react'
 
     interface ButtonProps {
         isFilled?: boolean
@@ -168,15 +166,15 @@ declare module '@ferpection/uikit/dist/components' {
         to?: string
     }
 
-    class Button extends React.Component<ButtonProps> {}
+    export class Button extends React.Component<ButtonProps> {}
 
     interface HeaderLinkProps extends ButtonProps {
         headerLigthVersion?: boolean
     }
 
-    class HeaderLink extends React.Component<HeaderLinkProps> {}
+    export class HeaderLink extends React.Component<HeaderLinkProps> {}
 
-    const ThemeContext: React.Context<{
+    export const ThemeContext: React.Context<{
         colors: {
             action: string
             positive: string
@@ -189,16 +187,14 @@ declare module '@ferpection/uikit/dist/components' {
         isLightVersion?: boolean
     }
 
-    class Header extends React.Component<HeaderProps> {}
+    export class Header extends React.Component<HeaderProps> {}
 
-    class FerpectionLogo extends React.Component<{
+    export class FerpectionLogo extends React.Component<{
         color: string
     }> {}
-
-    export { Button, HeaderLink, ThemeContext, Header, FerpectionLogo }
 }
 
-declare module "@ferpection/uikit/dist/colors" {
+declare module '@ferpection/uikit/dist/colors' {
     export const R500_COLOR: string
     export const R400_COLOR: string
     export const R300_COLOR: string
