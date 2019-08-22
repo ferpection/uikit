@@ -1,10 +1,16 @@
 import React, { useState } from 'react'
 
-import { baseStyle, textareaStyle, disabledStyle } from './styles'
+import { baseStyle, textareaStyle, disabledStyle, highlightedStyle } from './styles'
 
 export const TextField = (props) => {
   const [value, setValue] = useState('')
-  const { dataType = 'text', rowCount = 1, children, isDisabled } = props
+  const {
+    dataType = 'text',
+    rowCount = 1,
+    children,
+    isDisabled,
+    isHighlighted,
+  } = props
 
   return (
     <>
@@ -13,6 +19,7 @@ export const TextField = (props) => {
           type={dataType}
           css={[
             baseStyle,
+            isHighlighted && highlightedStyle,
             isDisabled && disabledStyle,
           ]}
           value={value}
@@ -26,6 +33,7 @@ export const TextField = (props) => {
           css={[
             baseStyle,
             textareaStyle,
+            isHighlighted && highlightedStyle,
             isDisabled && disabledStyle,
           ]}
           value={value}

@@ -40,7 +40,7 @@ export const baseStyle = css`
 `
 
 export const highlightedStyle = css`
-  background-color:  #eff9f9
+  background-color:  #eff9f9;
 `
 
 export const disabledStyle = css`

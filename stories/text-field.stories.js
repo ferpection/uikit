@@ -11,28 +11,39 @@ storiesOf('Components|Forms/TextField', module)
   .addDecorator(withKnobs)
   .add('normal state', () => (
     <>
-      <TextField rowCount={1}>
-        {text('placeholder', 'This is an input')}
+      <TextField>
+        This is an input
       </TextField>
       <TextField rowCount={3}>
-        {text('placeholder', 'This is an input')}
+        This is an input
       </TextField>
     </>
   ))
   .add('disabled state', () => (
     <>
-      <TextField rowCount={1} isDisabled>
-        {text('placeholder', 'This is a disabled input')}
+      <TextField isDisabled>
+        This is a disabled input
       </TextField>
       <TextField rowCount={3} isDisabled>
-        {text('placeholder', 'This is a disabled input')}
+        This is a disabled input
+      </TextField>
+    </>
+  ))
+  .add('highlighted state', () => (
+    <>
+      <TextField isHighlighted>
+        This is a highlighted input
+      </TextField>
+      <TextField rowCount={3} isHighlighted>
+        This is a highlighted input
       </TextField>
     </>
   ))
   .add('full example', () => (
     <TextField
       rowCount={number('row count', 1)}
-      isDisabled={boolean('isDisabled', false)}
+      isDisabled={boolean('disabled', false)}
+      isHighlighted={boolean('highlighted', false)}
     >
       {text('placeholder', 'Fill the field')}
     </TextField>
