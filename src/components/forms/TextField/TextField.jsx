@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import propTypes from 'prop-types'
 
 import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle } from './styles'
 
@@ -67,4 +68,13 @@ export const TextField = (props) => {
       ) : null}
     </>
   )
+}
+
+TextField.propTypes = {
+  placeholder: propTypes.string,
+  dataType: propTypes.arrayOf('text', 'email'),
+  rowCount: propTypes.number,
+  isHighlighted: propTypes.bool,
+  isDisabled: propTypes.bool,
+  value: propTypes.string,
 }
