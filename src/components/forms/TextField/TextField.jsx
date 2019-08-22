@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 
 import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle } from './styles'
 
-const EMAIL_REGEXP = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const EMAIL_REGEXP = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
 export const TextField = (props) => {
   const {
@@ -12,15 +12,26 @@ export const TextField = (props) => {
     placeholder,
     isDisabled,
     isHighlighted,
-    value: initialValue = '',
+    value: externalValue,
   } = props
 
-  const [value, setValue] = useState(initialValue)
+  const [value, setValue] = useState(externalValue || '')
   const [errorMessages, setErrorMessages] = useState({})
   const isNotValid = Object.keys(errorMessages).length > 0
 
+  const {
+    onValueChange = () => {},
+  } = props
+
+  const handleChanges = (v) => {
+    setValue(v)
+    onValueChange(v)
+  }
+
   useEffect(() => {
-    setValue(value)
+    if (externalValue != null && externalValue !== value) {
+      setValue(externalValue)
+    }
 
     if (dataType === 'email' && !EMAIL_REGEXP.test(value)) {
       setErrorMessages({
@@ -45,7 +56,7 @@ export const TextField = (props) => {
             isDisabled && disabledStyle,
           ]}
           value={value}
-          onChange={(event) => setValue(event.target.value)}
+          onChange={(event) => handleChanges(event.target.value)}
           placeholder={placeholder}
           disabled={isDisabled}
         />
@@ -60,7 +71,7 @@ export const TextField = (props) => {
             isDisabled && disabledStyle,
           ]}
           value={value}
-          onChange={(event) => setValue(event.target.value)}
+          onChange={(event) => handleChanges(event.target.value)}
           placeholder={placeholder}
           rows={rowCount}
           disabled={isDisabled}
@@ -77,4 +88,5 @@ TextField.propTypes = {
   isHighlighted: propTypes.bool,
   isDisabled: propTypes.bool,
   value: propTypes.string,
+  onValueChange: propTypes.func,
 }
