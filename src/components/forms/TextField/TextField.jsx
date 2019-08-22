@@ -8,7 +8,7 @@ export const TextField = (props) => {
   const {
     dataType = 'text',
     rowCount = 1,
-    children,
+    placeholder,
     isDisabled,
     isHighlighted,
     value: initialValue = '',
@@ -45,7 +45,7 @@ export const TextField = (props) => {
           ]}
           value={value}
           onChange={(event) => setValue(event.target.value)}
-          placeholder={children}
+          placeholder={placeholder}
           disabled={isDisabled}
         />
       ) : null}
@@ -60,7 +60,7 @@ export const TextField = (props) => {
           ]}
           value={value}
           onChange={(event) => setValue(event.target.value)}
-          placeholder={children}
+          placeholder={placeholder}
           rows={rowCount}
           disabled={isDisabled}
         />

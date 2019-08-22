@@ -11,51 +11,60 @@ storiesOf('Components|Forms/TextField', module)
   .addDecorator(withKnobs)
   .add('normal state', () => (
     <>
-      <TextField>
-        This is an input
-      </TextField>
-      <TextField rowCount={3}>
-        This is an input
-      </TextField>
+      <TextField
+        placeholder="This is an input"
+      />
+      <TextField
+        rowCount={3}
+        placeholder="This is an textarea"
+      />
     </>
   ))
   .add('highlighted state', () => (
     <>
-      <TextField isHighlighted>
-        This is a highlighted input
-      </TextField>
-      <TextField rowCount={3} isHighlighted>
-        This is a highlighted input
-      </TextField>
+      <TextField
+        placeholder="This is a highlighted input"
+        isHighlighted
+      />
+      <TextField
+        rowCount={3}
+        placeholder="This is a highlighted textarea"
+        isHighlighted
+      />
     </>
   ))
   .add('error state', () => (
     <>
-      <TextField dataType="email" value="This is not an email">
-        This is a error input
-      </TextField>
-      <TextField rowCount={3} dataType="email" value="This isn't too">
-        This is a error input
-      </TextField>
+      <TextField
+        placeholder="This is a error input"
+        dataType="email"
+      />
+      <TextField
+        rowCount={3}
+        placeholder="This is a error textarea"
+        dataType="email"
+      />
     </>
   ))
   .add('disabled state', () => (
     <>
-      <TextField isDisabled>
-        This is a disabled input
-      </TextField>
-      <TextField rowCount={3} isDisabled>
-        This is a disabled input
-      </TextField>
+      <TextField
+        placeholder="This is a disabled input"
+        isDisabled
+      />
+      <TextField
+        rowCount={3}
+        placeholder="This is a disabled textarea"
+        isDisabled
+      />
     </>
   ))
   .add('full example', () => (
     <TextField
+      placeholder={text('placeholder', 'Fill the field')}
       dataType={select('data type', ['text', 'email'])}
       rowCount={number('row count', 1)}
-      isDisabled={boolean('disabled', false)}
       isHighlighted={boolean('highlighted', false)}
-    >
-      {text('placeholder', 'Fill the field')}
-    </TextField>
+      isDisabled={boolean('disabled', false)}
+    />
   ))
