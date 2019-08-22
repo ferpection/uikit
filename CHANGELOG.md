@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **BREACKING CHANGES**. New package endpoints.
     - `@ferpection/uikit/colors` replaces `@ferpection/uikit/dist/colors`
     - `@ferpection/uikit/components` replaces `@ferpection/uikit/dist/components`
+- Smaller `@ferpection/uikit` package size: better dependency management
 
 ## [v0.0.8] - 2019-08-21
 ### Changed
