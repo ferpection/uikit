@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Expose a declaration file to simplify the use w/ TypeScript
 
+### Changed
+- **BREACKING CHANGES**. New package endpoints.
+    - `@ferpection/uikit/colors` replaces `@ferpection/uikit/dist/colors`
+    - `@ferpection/uikit/components` replaces `@ferpection/uikit/dist/components`
+
 ## [v0.0.8] - 2019-08-21
 ### Changed
 - All dependencies have been updated at their latest versions
