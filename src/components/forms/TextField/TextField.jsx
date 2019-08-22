@@ -17,10 +17,11 @@ export const TextField = (props) => {
 
   const [value, setValue] = useState(externalValue || '')
   const [errorMessages, setErrorMessages] = useState({})
-  const isNotValid = Object.keys(errorMessages).length > 0
+  const [isValid, setValidity] = useState(true)
 
   const {
     onValueChange = () => {},
+    onErrors = (e) => setErrorMessages(e),
   } = props
 
   const handleChanges = (v) => {
@@ -33,15 +34,15 @@ export const TextField = (props) => {
       setValue(externalValue)
     }
 
+    let errors = {}
     if (dataType === 'email' && !EMAIL_REGEXP.test(value)) {
-      setErrorMessages({
+      errors = Object.assign({}, errors, {
         emailInvalid: { value },
       })
-
-      return
     }
 
-    setErrorMessages({})
+    setValidity(Object.keys(errors).length <= 0)
+    onErrors(errors)
   }, [value])
 
   return (
@@ -52,7 +53,7 @@ export const TextField = (props) => {
           css={[
             baseStyle,
             isHighlighted && highlightedStyle,
-            isNotValid && errorStyle,
+            !isValid && errorStyle,
             isDisabled && disabledStyle,
           ]}
           value={value}
@@ -67,7 +68,7 @@ export const TextField = (props) => {
             baseStyle,
             textareaStyle,
             isHighlighted && highlightedStyle,
-            isNotValid && errorStyle,
+            !isValid && errorStyle,
             isDisabled && disabledStyle,
           ]}
           value={value}
@@ -77,16 +78,18 @@ export const TextField = (props) => {
           disabled={isDisabled}
         />
       ) : null}
+      {Object.keys(errorMessages).length > 0 ? 'Errors!' : null}
     </>
   )
 }
 
 TextField.propTypes = {
   placeholder: propTypes.string,
-  dataType: propTypes.arrayOf('text', 'email'),
+  dataType: propTypes.oneOf(['text', 'email']),
   rowCount: propTypes.number,
   isHighlighted: propTypes.bool,
   isDisabled: propTypes.bool,
   value: propTypes.string,
   onValueChange: propTypes.func,
+  onErrors: propTypes.func,
 }
