@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs, text, number, boolean } from '@storybook/addon-knobs'
+import { withKnobs, text, number, boolean, select } from '@storybook/addon-knobs'
 
 import { TextField } from '../src/components/index.js'
 
@@ -19,16 +19,6 @@ storiesOf('Components|Forms/TextField', module)
       </TextField>
     </>
   ))
-  .add('disabled state', () => (
-    <>
-      <TextField isDisabled>
-        This is a disabled input
-      </TextField>
-      <TextField rowCount={3} isDisabled>
-        This is a disabled input
-      </TextField>
-    </>
-  ))
   .add('highlighted state', () => (
     <>
       <TextField isHighlighted>
@@ -39,8 +29,29 @@ storiesOf('Components|Forms/TextField', module)
       </TextField>
     </>
   ))
+  .add('error state', () => (
+    <>
+      <TextField dataType="email" value="This is not an email">
+        This is a error input
+      </TextField>
+      <TextField rowCount={3} dataType="email" value="This isn't too">
+        This is a error input
+      </TextField>
+    </>
+  ))
+  .add('disabled state', () => (
+    <>
+      <TextField isDisabled>
+        This is a disabled input
+      </TextField>
+      <TextField rowCount={3} isDisabled>
+        This is a disabled input
+      </TextField>
+    </>
+  ))
   .add('full example', () => (
     <TextField
+      dataType={select('data type', ['text', 'email'])}
       rowCount={number('row count', 1)}
       isDisabled={boolean('disabled', false)}
       isHighlighted={boolean('highlighted', false)}

@@ -27,11 +27,11 @@ export const baseStyle = css`
     border: 1px solid ${PRIMARY_COLORSET.ROBINS_EGG_BLUE};
     outline: 0;
     box-shadow: 0 0 0 8px  rgba(220, 240, 240, 0.4) /* $actionBackgroundColor ! Transparent */;
-    background-color: #eff9f9
+    background-color: #eff9f9;
   }
   &:active {
     z-index: 1;
-    box-shadow: 0 0 0 16px  rgba(220, 240, 240, 0.4)
+    box-shadow: 0 0 0 16px  rgba(220, 240, 240, 0.4);
   }
   &::placeholder {
     font-style: italic;
@@ -60,17 +60,17 @@ export const errorStyle = css`
   border-color: ${PRIMARY_COLORSET.SUNGLOW}; /* $negativeColor */
   background-color:  ${FULL_COLORSET.FLORAL_WHITE} /* $negativeBackgroundColor */;
   margin-bottom: 0;
-  box-shadow: 0 0 0 1px ${PRIMARY_COLORSET.SUNGLOW}
+  box-shadow: 0 0 0 1px ${PRIMARY_COLORSET.SUNGLOW};
   &:hover {
-    box-shadow: 0 0 0 8px rgba(253, 242, 210, 0.4)
+    box-shadow: 0 0 0 8px rgba(253, 242, 210, 0.4);
   }
   &:focus {
     background-color: #eff9f9;
     border-color: ${PRIMARY_COLORSET.ROBINS_EGG_BLUE};
-    box-shadow: 0 0 0 8px rgba(220, 240, 240, 0.4)
+    box-shadow: 0 0 0 8px rgba(220, 240, 240, 0.4);
   }
   &:active {
-    box-shadow: 0 0 0 16px rgba(220, 240, 240, 0.4)
+    box-shadow: 0 0 0 16px rgba(220, 240, 240, 0.4);
   }
 `
 
