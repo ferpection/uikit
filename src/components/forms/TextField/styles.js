@@ -14,7 +14,7 @@ export const baseStyle = css`
   font-weight: normal;
   font-style: normal;
   font-size: 15px;
-  background-color: #fff;
+  background-color: white;
   color: ${FULL_COLORSET.BOULDER};
   line-height: 1.5;
   transition: all .2s ease-in-out;
@@ -48,6 +48,9 @@ export const disabledStyle = css`
   background-color: #f8f8f8;
   box-shadow: none;
   cursor: not-allowed;
+  &:hover {
+    box-shadow: none;
+  }
   &::placeholder {
     color: #ddd;
   }
