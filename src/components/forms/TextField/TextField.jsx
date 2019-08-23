@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import propTypes from 'prop-types'
 
+import { FormErrors } from '../FormErrors/FormErrors'
+
 import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle } from './styles'
 
 const EMAIL_REGEXP = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -78,7 +80,7 @@ export const TextField = (props) => {
           disabled={isDisabled}
         />
       ) : null}
-      {Object.keys(errorMessages).length > 0 ? 'Errors!' : null}
+      <FormErrors errors={errorMessages} />
     </>
   )
 }
