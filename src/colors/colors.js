@@ -53,7 +53,7 @@ export const B200_COLOR = '#E7F1FB'
 /* Neutrals */
 export const N500_COLOR = '#363636'
 export const N400_COLOR = '#555555'
-export const N300_COLOR = '#7B7B7B'
+export const N300_COLOR = '#757575'
 export const N200_COLOR = '#B0B0B0'
 export const N100_COLOR = '#DDDDDD'
 export const N75_COLOR = '#F1F1F1'
