@@ -1,5 +1,6 @@
 import { css } from '@emotion/core'
 import { PRIMARY_COLORSET, FULL_COLORSET } from '../../../colors'
+import { SANSSERIF_FONTSET } from '../../../fonts'
 
 export const baseStyle = css`
   position: relative;
@@ -8,9 +9,9 @@ export const baseStyle = css`
   box-sizing: border-box;
   padding: 10px 5px 10px 10px;
   border-radius: 3px;
-  border: 1px solid #ddd;
+  border: 1px solid ${FULL_COLORSET.LINEN};
   width: 100%;
-  font-family: 'Open Sans', "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-family: ${`${SANSSERIF_FONTSET}`};
   font-weight: normal;
   font-style: normal;
   font-size: 15px;
@@ -27,7 +28,7 @@ export const baseStyle = css`
     border: 1px solid ${PRIMARY_COLORSET.ROBINS_EGG_BLUE};
     outline: 0;
     box-shadow: 0 0 0 8px  rgba(220, 240, 240, 0.4) /* $actionBackgroundColor ! Transparent */;
-    background-color: #eff9f9;
+    background-color: ${FULL_COLORSET.BLACK_SQUEEZE};
   }
   &:active {
     z-index: 1;
@@ -40,11 +41,11 @@ export const baseStyle = css`
 `
 
 export const highlightedStyle = css`
-  background-color:  #eff9f9;
+  background-color:  ${FULL_COLORSET.BLACK_SQUEEZE};
 `
 
 export const disabledStyle = css`
-  border-color: #dddddd;
+  border-color: ${FULL_COLORSET.LINEN};
   background-color: #f8f8f8;
   box-shadow: none;
   cursor: not-allowed;
@@ -52,7 +53,7 @@ export const disabledStyle = css`
     box-shadow: none;
   }
   &::placeholder {
-    color: #ddd;
+    color: ${FULL_COLORSET.LINEN};
   }
 `
 
@@ -65,7 +66,7 @@ export const errorStyle = css`
     box-shadow: 0 0 0 8px rgba(253, 242, 210, 0.4);
   }
   &:focus {
-    background-color: #eff9f9;
+    background-color: ${FULL_COLORSET.BLACK_SQUEEZE};
     border-color: ${PRIMARY_COLORSET.ROBINS_EGG_BLUE};
     box-shadow: 0 0 0 8px rgba(220, 240, 240, 0.4);
   }

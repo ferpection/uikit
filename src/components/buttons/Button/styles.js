@@ -1,5 +1,6 @@
 import { PRIMARY_COLORSET } from '../../../colors/colorsets.js'
 import { colorShades } from '../../../utils/colors.js'
+import { SANSSERIF_FONTSET } from '../../../fonts.js'
 
 export const prepareBaseState = ({
   color = PRIMARY_COLORSET.ROBINS_EGG_BLUE,
@@ -18,16 +19,7 @@ export const prepareBaseState = ({
   color: color,
   fontSize: '18px',
   fontWeight: 600,
-  fontFamily: [
-    'Open Sans',
-    'HelveticaNeue-Light',
-    'Helvetica Neue Light',
-    'Helvetica Neue',
-    'Helvetica',
-    'Arial',
-    'Lucida Grande',
-    'sans-serif',
-  ],
+  fontFamily: SANSSERIF_FONTSET,
   textDecoration: 'none',
   transition: [
     'box-shadow .3s ease-in-out',
