@@ -5,8 +5,8 @@ import { action } from '@storybook/addon-actions'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, color } from '@storybook/addon-knobs'
 
-import { Button } from '../src/components/index.js'
-import { ThemeProvider } from '../src/components/contexts/ThemeContext.js'
+import { Button, ThemeProvider } from '../src/components/index.js'
+import { Color } from '../src/colors/index.js'
 
 storiesOf('Contexts|ThemeProvider', module)
   .addDecorator(withA11y)
@@ -14,9 +14,9 @@ storiesOf('Contexts|ThemeProvider', module)
   .add('colors', () => {
     const theme = {
       colors: {
-        action: color('Action color', '#00BECD'),
-        positive: color('Positive color', '#24D58D'),
-        negative: color('Negative color', '#FEC138'),
+        action: Color.fromHex(color('Action color', '#00BECD')),
+        positive: Color.fromHex(color('Positive color', '#24D58D')),
+        negative: Color.fromHex(color('Negative color', '#FEC138')),
       },
     }
 

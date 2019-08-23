@@ -1,59 +1,61 @@
+import { Color } from './color.class.js'
+
 /* Reds */
-export const R500_COLOR = '#B72A2A'
-export const R400_COLOR = '#ED4A4A'
-export const R300_COLOR = '#FF5D5D'
-export const R200_COLOR = '#F8B7B7'
-export const R100_COLOR = '#FBE7E7'
+export const R500_COLOR = new Color(183, 42, 42)
+export const R400_COLOR = new Color(237, 74, 74)
+export const R300_COLOR = new Color(255, 93, 93)
+export const R200_COLOR = new Color(248, 183, 183)
+export const R100_COLOR = new Color(251, 231, 231)
 
 /* Cyans */
-export const C500_COLOR = '#00474A'
-export const C400_COLOR = '#005F67'
-export const C300_COLOR = '#008D94'
-export const C200_COLOR = '#00BECD'
-export const C100_COLOR = '#99D1D4'
-export const C75_COLOR = '#99E5EB'
-export const C50_COLOR = '#D3E9EA'
-export const C25_COLOR = '#E5F1F0'
-export const C15_COLOR = '#EFF9F9'
+export const C500_COLOR = new Color(0, 71, 74)
+export const C400_COLOR = new Color(0, 95, 103)
+export const C300_COLOR = new Color(0, 141, 148)
+export const C200_COLOR = new Color(0, 190, 205)
+export const C100_COLOR = new Color(153, 209, 212)
+export const C75_COLOR = new Color(153, 229, 235)
+export const C50_COLOR = new Color(211, 233, 234)
+export const C25_COLOR = new Color(229, 241, 240)
+export const C15_COLOR = new Color(239, 249, 249)
 
 /* Greens */
-export const G500_COLOR = '#126b47'
-export const G400_COLOR = '#24D58D'
-export const G300_COLOR = '#A7EED1'
-export const G200_COLOR = '#E9FBF4'
+export const G500_COLOR = new Color(18, 107, 71)
+export const G400_COLOR = new Color(36, 213, 141)
+export const G300_COLOR = new Color(167, 238, 209)
+export const G200_COLOR = new Color(233, 251, 244)
 
 /* Yellows */
-export const Y500_COLOR = '#F7D00F'
-export const Y400_COLOR = '#FFF173'
-export const Y300_COLOR = '#FFF9C7'
-export const Y200_COLOR = '#FFFDF0'
+export const Y500_COLOR = new Color(247, 208, 15)
+export const Y400_COLOR = new Color(255, 241, 115)
+export const Y300_COLOR = new Color(255, 249, 199)
+export const Y200_COLOR = new Color(155, 253, 240)
 
 /* Oranges */
-export const O500_COLOR = '#BD550F'
-export const O400_COLOR = '#DB8E31'
-export const O300_COLOR = '#FC883A'
-export const O200_COLOR = '#FEC138'
-export const O100_COLOR = '#FECFB0'
-export const O75_COLOR = '#FFE6AF'
-export const O50_COLOR = '#FEEFE4'
-export const O25_COLOR = '#FFFBF0'
+export const O500_COLOR = new Color(189, 85, 15)
+export const O400_COLOR = new Color(219, 142, 49)
+export const O300_COLOR = new Color(252, 136, 58)
+export const O200_COLOR = new Color(254, 193, 56)
+export const O100_COLOR = new Color(254, 207, 176)
+export const O75_COLOR = new Color(255, 230, 175)
+export const O50_COLOR = new Color(254, 239, 228)
+export const O25_COLOR = new Color(255, 251, 240)
 
 /* Purples */
-export const P500_COLOR = '#552D7C'
-export const P400_COLOR = '#9654CB'
-export const P300_COLOR = '#D5BBEA'
-export const P200_COLOR = '#EFE7F5'
+export const P500_COLOR = new Color(85, 45, 124)
+export const P400_COLOR = new Color(150, 84, 203)
+export const P300_COLOR = new Color(213, 187, 234)
+export const P200_COLOR = new Color(239, 231, 245)
 
 /* Blues */
-export const B500_COLOR = '#145182'
-export const B400_COLOR = '#4A9CED'
-export const B300_COLOR = '#B7D7F8'
-export const B200_COLOR = '#E7F1FB'
+export const B500_COLOR = new Color(20, 81, 130)
+export const B400_COLOR = new Color(74, 156, 237)
+export const B300_COLOR = new Color(183, 215, 248)
+export const B200_COLOR = new Color(231, 241, 251)
 
 /* Neutrals */
-export const N500_COLOR = '#363636'
-export const N400_COLOR = '#555555'
-export const N300_COLOR = '#757575'
-export const N200_COLOR = '#B0B0B0'
-export const N100_COLOR = '#DDDDDD'
-export const N75_COLOR = '#F1F1F1'
+export const N500_COLOR = new Color(54, 54, 54)
+export const N400_COLOR = new Color(85, 85, 85)
+export const N300_COLOR = new Color(117, 117, 117)
+export const N200_COLOR = new Color(176, 176, 176)
+export const N100_COLOR = new Color(221, 221, 221)
+export const N75_COLOR = new Color(241, 241, 241)

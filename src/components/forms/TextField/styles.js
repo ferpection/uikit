@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import { PRIMARY_COLORSET, FULL_COLORSET } from '../../../colors'
+import { C200_COLOR, O200_COLOR, O25_COLOR, C15_COLOR, N100_COLOR, N300_COLOR } from '../../../colors'
 import { SANSSERIF_FONTSET } from '../../../fonts'
 
 export const baseStyle = css`
@@ -9,30 +9,30 @@ export const baseStyle = css`
   box-sizing: border-box;
   padding: 10px 5px 10px 10px;
   border-radius: 3px;
-  border: 1px solid ${FULL_COLORSET.LINEN};
+  border: 1px solid ${`${N100_COLOR}`};
   width: 100%;
   font-family: ${`${SANSSERIF_FONTSET}`};
   font-weight: normal;
   font-style: normal;
   font-size: 15px;
   background-color: white;
-  color: ${FULL_COLORSET.BOULDER};
+  color: ${`${N300_COLOR}`};
   line-height: 1.5;
   transition: all .2s ease-in-out;
   &:hover {
     z-index: 1;
-    box-shadow: 0 0 0 8px  rgba(220, 240, 240, 0.4) /* $actionBackgroundColor ! Transparent */;
+    box-shadow: 0 0 0 8px ${C200_COLOR.rgba(0.1)};
   }
   &:focus {
     z-index: 1;
-    border: 1px solid ${PRIMARY_COLORSET.ROBINS_EGG_BLUE};
+    border: 1px solid ${`${C200_COLOR}`};
     outline: 0;
-    box-shadow: 0 0 0 8px  rgba(220, 240, 240, 0.4) /* $actionBackgroundColor ! Transparent */;
-    background-color: ${FULL_COLORSET.BLACK_SQUEEZE};
+    box-shadow: 0 0 0 8px ${C200_COLOR.rgba(0.1)};
+    background-color: ${`${C15_COLOR}`};
   }
   &:active {
     z-index: 1;
-    box-shadow: 0 0 0 16px  rgba(220, 240, 240, 0.4);
+    box-shadow: 0 0 0 16px ${C200_COLOR.rgba(0.1)};
   }
   &::placeholder {
     font-style: italic;
@@ -41,11 +41,11 @@ export const baseStyle = css`
 `
 
 export const highlightedStyle = css`
-  background-color:  ${FULL_COLORSET.BLACK_SQUEEZE};
+  background-color:  ${`${C15_COLOR}`};
 `
 
 export const disabledStyle = css`
-  border-color: ${FULL_COLORSET.LINEN};
+  border-color: ${`${N100_COLOR}`};
   background-color: #f8f8f8;
   box-shadow: none;
   cursor: not-allowed;
@@ -53,25 +53,25 @@ export const disabledStyle = css`
     box-shadow: none;
   }
   &::placeholder {
-    color: ${FULL_COLORSET.LINEN};
+    color: ${`${N100_COLOR}`};
   }
 `
 
 export const errorStyle = css`
-  border-color: ${PRIMARY_COLORSET.SUNGLOW}; /* $negativeColor */
-  background-color:  ${FULL_COLORSET.FLORAL_WHITE} /* $negativeBackgroundColor */;
+  border-color: ${`${O200_COLOR}`};
+  background-color: ${`${O25_COLOR}`};
   margin-bottom: 0;
-  box-shadow: 0 0 0 1px ${PRIMARY_COLORSET.SUNGLOW};
+  box-shadow: 0 0 0 1px ${`${O200_COLOR}`};
   &:hover {
-    box-shadow: 0 0 0 8px rgba(253, 242, 210, 0.4);
+    box-shadow: 0 0 0 8px ${`${O200_COLOR.rgba(0.1)}`};
   }
   &:focus {
-    background-color: ${FULL_COLORSET.BLACK_SQUEEZE};
-    border-color: ${PRIMARY_COLORSET.ROBINS_EGG_BLUE};
-    box-shadow: 0 0 0 8px rgba(220, 240, 240, 0.4);
+    background-color: ${`${C15_COLOR}`};
+    border-color: ${`${C200_COLOR}`};
+    box-shadow: 0 0 0 8px ${C200_COLOR.rgba(0.1)};
   }
   &:active {
-    box-shadow: 0 0 0 16px rgba(220, 240, 240, 0.4);
+    box-shadow: 0 0 0 16px ${C200_COLOR.rgba(0.1)};
   }
 `
 

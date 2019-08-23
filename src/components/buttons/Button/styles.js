@@ -1,10 +1,9 @@
-import { PRIMARY_COLORSET } from '../../../colors/colorsets.js'
-import { colorShades } from '../../../utils/colors.js'
 import { SANSSERIF_FONTSET } from '../../../fonts.js'
+import { C200_COLOR } from '../../../colors/index.js'
 
 export const prepareBaseState = ({
-  color = PRIMARY_COLORSET.ROBINS_EGG_BLUE,
-  darkerColor = colorShades(color, -20),
+  color = C200_COLOR,
+  darkerColor = color.shade(-20),
 } = {}) => ({
   display: 'inline-block',
   WebkitAppearance: 'none',
@@ -13,10 +12,10 @@ export const prepareBaseState = ({
   padding: '12px 20px',
   margin: '1px',
   borderWidth: '1.4px',
-  borderColor: color,
+  borderColor: String(color),
   borderRadius: '100px',
   borderStyle: 'solid',
-  color: color,
+  color: String(color),
   fontSize: '18px',
   fontWeight: 600,
   fontFamily: SANSSERIF_FONTSET,
@@ -28,8 +27,8 @@ export const prepareBaseState = ({
   ],
   '&:hover': {
     boxShadow: '0 1px 4px 1px rgba(0,0,0,0.3)',
-    color: darkerColor,
-    borderColor: darkerColor,
+    color: String(darkerColor),
+    borderColor: String(darkerColor),
   },
   '&[disabled]': {
     opacity: '.5',
@@ -38,16 +37,16 @@ export const prepareBaseState = ({
 })
 
 export const prepareFilledState = ({
-  color = PRIMARY_COLORSET.ROBINS_EGG_BLUE,
-  darkerColor = colorShades(color, -20),
+  color = C200_COLOR,
+  darkerColor = color.shade(-20),
 } = {}) => ({
   color: 'white',
-  backgroundColor: color,
+  backgroundColor: String(color),
   '&:hover': {
     boxShadow: '0 1px 4px 1px rgba(0,0,0,0.3)',
-    backgroundColor: darkerColor,
+    backgroundColor: String(darkerColor),
     color: 'white',
-    borderColor: darkerColor,
+    borderColor: String(darkerColor),
   },
 })
 
