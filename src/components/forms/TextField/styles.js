@@ -21,18 +21,18 @@ export const baseStyle = css`
   transition: all .2s ease-in-out;
   &:hover {
     z-index: 1;
-    box-shadow: 0 0 0 8px ${C200_COLOR.rgba(0.1)};
+    box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
   }
   &:focus {
     z-index: 1;
     border: 1px solid ${`${C200_COLOR}`};
     outline: 0;
-    box-shadow: 0 0 0 8px ${C200_COLOR.rgba(0.1)};
+    box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
     background-color: ${`${C15_COLOR}`};
   }
   &:active {
     z-index: 1;
-    box-shadow: 0 0 0 16px ${C200_COLOR.rgba(0.1)};
+    box-shadow: 0 0 0 16px ${C200_COLOR.toRGBA(0.1)};
   }
   &::placeholder {
     font-style: italic;
@@ -63,15 +63,15 @@ export const errorStyle = css`
   margin-bottom: 0;
   box-shadow: 0 0 0 1px ${`${O200_COLOR}`};
   &:hover {
-    box-shadow: 0 0 0 8px ${`${O200_COLOR.rgba(0.1)}`};
+    box-shadow: 0 0 0 8px ${`${O200_COLOR.toRGBA(0.1)}`};
   }
   &:focus {
     background-color: ${`${C15_COLOR}`};
     border-color: ${`${C200_COLOR}`};
-    box-shadow: 0 0 0 8px ${C200_COLOR.rgba(0.1)};
+    box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
   }
   &:active {
-    box-shadow: 0 0 0 16px ${C200_COLOR.rgba(0.1)};
+    box-shadow: 0 0 0 16px ${C200_COLOR.toRGBA(0.1)};
   }
 `
 

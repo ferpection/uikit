@@ -9,11 +9,11 @@ export class Color {
     if (hash !== '#' || colorArray.length !== 6) return null
 
     const colorNumber = parseInt(colorArray.join(''), 16)
-
+    console.log(colorNumber >> 16, colorNumber & 0x0000ff, (colorNumber >> 8) & 0x00ff)
     return new Color(
       colorNumber >> 16,
+      (colorNumber >> 8) & 0x00ff,
       colorNumber & 0x0000ff,
-      (colorNumber >> 8) & 0x00ff
     )
   }
 
@@ -28,15 +28,19 @@ export class Color {
     this.alfa = min(max(a, 1), 0)
   }
 
-  hex() {
-    return `#${this.red.toString(16)}${this.green.toString(16)}${this.blue.toString(16)}`
+  toHex() {
+    const redComponent = this.red.toString(16).padStart(2, '0')
+    const greenComponent = this.green.toString(16).padStart(2, '0')
+    const blueComponent = this.blue.toString(16).padStart(2, '0')
+
+    return `#${redComponent}${greenComponent}${blueComponent}`
   }
 
-  rgb() {
+  toRGB() {
     return `rgb(${this.red}, ${this.green}, ${this.blue})`
   }
 
-  rgba(alfa = this.alfa) {
+  toRGBA(alfa = this.alfa) {
     return `rgb(${this.red}, ${this.green}, ${this.blue}, ${alfa})`
   }
 
@@ -50,9 +54,9 @@ export class Color {
 
   toString() {
     if (this.alfa === 1) {
-      return this.rgb()
+      return this.toRGB()
     }
 
-    return this.rgba()
+    return this.toRGBA()
   }
 }
