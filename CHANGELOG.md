@@ -7,12 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Expose a declaration file to simplify the use w/ TypeScript
+- New `TextField` component to display textarea and inputs
+- New `FormErrors` component to give a default way of displaying errors
 
 ### Changed
 - **BREACKING CHANGES**. New package endpoints.
     - `@ferpection/uikit/colors` replaces `@ferpection/uikit/dist/colors`
     - `@ferpection/uikit/components` replaces `@ferpection/uikit/dist/components`
 - Smaller `@ferpection/uikit` package size: better dependency management
+- **BREACKING CHANGES**. Colors are not string anymore but instance of `Color` type.
+  This change give to developers the ability to work with different format and make operation on colors
+  (like applying alpha components and retreive a shape from a given color). For more information,
+  please read the `Color` class reference.
 
 ## [v0.0.8] - 2019-08-21
 ### Changed
