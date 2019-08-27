@@ -61,6 +61,8 @@ export const rawLinkState = {
   backgroundColor: 'transparent',
   borderWidth: '0px',
   padding: '5px',
+  height: 'unset',
+  width: 'unset',
   '&:hover': {
     boxShadow: 'none',
   },
