@@ -11,15 +11,16 @@ storiesOf('Components|Forms/FormErrors', module)
   .addDecorator(withKnobs)
   .add('single error', () => (
     <>
-      <FormErrors
-        errors={{ required: {} }}
-      />
+      <FormErrors errors={{ required: {} }} />
     </>
   ))
   .add('multiple errors', () => (
     <>
       <FormErrors
-        errors={object('errors', { required: {}, notAnEmail: { value: 'this is not an email' } })}
+        errors={object('errors', {
+          required: {},
+          notAnEmail: { value: 'this is not an email' },
+        })}
       />
     </>
   ))

@@ -2,34 +2,28 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs, text, number, boolean, select } from '@storybook/addon-knobs'
+import {
+  withKnobs,
+  text,
+  number,
+  boolean,
+  select,
+} from '@storybook/addon-knobs'
 
 import { SelectField } from '../src/components/index.js'
 
 storiesOf('Components|Forms/SelectField', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
-  .add('normal state', () => (
-    <SelectField
-      placeholder="This is an select"
-    />
-  ))
+  .add('normal state', () => <SelectField placeholder="This is an select" />)
   .add('highlighted state', () => (
-    <SelectField
-      placeholder="This is a highlighted select"
-      isHighlighted
-    />
+    <SelectField placeholder="This is a highlighted select" isHighlighted />
   ))
   .add('error state', () => (
-    <SelectField
-      placeholder="This is a error select"
-    />
+    <SelectField placeholder="This is a error select" />
   ))
   .add('disabled state', () => (
-    <SelectField
-      placeholder="This is a disabled select"
-      isDisabled
-    />
+    <SelectField placeholder="This is a disabled select" isDisabled />
   ))
   .add('full example', () => (
     <SelectField

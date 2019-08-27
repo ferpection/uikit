@@ -1,5 +1,12 @@
 import { css } from '@emotion/core'
-import { C200_COLOR, O200_COLOR, O25_COLOR, C15_COLOR, N100_COLOR, N300_COLOR } from '../../../colors'
+import {
+  C200_COLOR,
+  O200_COLOR,
+  O25_COLOR,
+  C15_COLOR,
+  N100_COLOR,
+  N300_COLOR,
+} from '../../../colors'
 import { SANSSERIF_FONTSET } from '../../../fonts'
 
 export const baseStyle = css`
@@ -18,7 +25,7 @@ export const baseStyle = css`
   background-color: white;
   color: ${`${N300_COLOR}`};
   line-height: 1.5;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   &:hover {
     z-index: 1;
     box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
@@ -41,7 +48,7 @@ export const baseStyle = css`
 `
 
 export const highlightedStyle = css`
-  background-color:  ${`${C15_COLOR}`};
+  background-color: ${`${C15_COLOR}`};
 `
 
 export const disabledStyle = css`

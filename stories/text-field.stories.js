@@ -2,7 +2,13 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs, text, number, boolean, select } from '@storybook/addon-knobs'
+import {
+  withKnobs,
+  text,
+  number,
+  boolean,
+  select,
+} from '@storybook/addon-knobs'
 
 import { TextField } from '../src/components/index.js'
 
@@ -11,21 +17,13 @@ storiesOf('Components|Forms/TextField', module)
   .addDecorator(withKnobs)
   .add('normal state', () => (
     <>
-      <TextField
-        placeholder="This is an input"
-      />
-      <TextField
-        rowCount={3}
-        placeholder="This is an textarea"
-      />
+      <TextField placeholder="This is an input" />
+      <TextField rowCount={3} placeholder="This is an textarea" />
     </>
   ))
   .add('highlighted state', () => (
     <>
-      <TextField
-        placeholder="This is a highlighted input"
-        isHighlighted
-      />
+      <TextField placeholder="This is a highlighted input" isHighlighted />
       <TextField
         rowCount={3}
         placeholder="This is a highlighted textarea"
@@ -35,10 +33,7 @@ storiesOf('Components|Forms/TextField', module)
   ))
   .add('error state', () => (
     <>
-      <TextField
-        placeholder="This is a error input"
-        dataType="email"
-      />
+      <TextField placeholder="This is a error input" dataType="email" />
       <TextField
         rowCount={3}
         placeholder="This is a error textarea"
@@ -48,10 +43,7 @@ storiesOf('Components|Forms/TextField', module)
   ))
   .add('disabled state', () => (
     <>
-      <TextField
-        placeholder="This is a disabled input"
-        isDisabled
-      />
+      <TextField placeholder="This is a disabled input" isDisabled />
       <TextField
         rowCount={3}
         placeholder="This is a disabled textarea"

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { errorStyle, iconStyle } from './styles'
 
-export const FormErrors = (props) => {
+export const FormErrors = props => {
   const { errors } = props
 
   return (
