@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import propTypes from 'prop-types'
 
 import { FormErrors } from '../FormErrors/FormErrors'
 
@@ -73,4 +74,14 @@ export const SelectField = props => {
       <FormErrors errors={errorMessages} />
     </>
   )
+}
+
+SelectField.propTypes = {
+  placeholder: propTypes.string,
+  isHighlighted: propTypes.bool,
+  isDisabled: propTypes.bool,
+  isRequired: propTypes.bool,
+  value: propTypes.string,
+  onValueChange: propTypes.func,
+  onErrors: propTypes.func,
 }
