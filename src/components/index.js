@@ -5,6 +5,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 iconLibrary.add(fas, fab)
 
 export { Button } from './buttons/Button/Button.jsx'
+export { PlaceholderButton } from './buttons/PlaceholderButton/PlaceholderButton.jsx'
 export { ThemeProvider } from './contexts/ThemeContext.js'
 export { HeaderLink } from './buttons/HeaderLink.jsx'
 export { Header } from './layout/Header/Header.jsx'

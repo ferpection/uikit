@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
-import { Link } from 'react-router-dom'
 
+import { processButtonContainer } from '../process-button-container.jsx'
 import { ThemeContext } from '../../contexts/ThemeContext.js'
 import { Color } from '../../../colors/index.js'
 
@@ -57,29 +57,7 @@ export const Button = props => {
     ariaLabelForIcon = iconName.replace(/-/g, '')
   }
 
-  const Container = props => {
-    if (typeof to !== 'string') {
-      return <button {...props}>{props.children}</button>
-    }
-
-    if (
-      to.includes('https://') ||
-      to.includes('http://') ||
-      to.includes('//')
-    ) {
-      return (
-        <a {...props} href={to}>
-          {props.children}
-        </a>
-      )
-    }
-
-    return (
-      <Link {...props} to={to}>
-        {props.children}
-      </Link>
-    )
-  }
+  const Container = processButtonContainer(to)
 
   return (
     <Container
