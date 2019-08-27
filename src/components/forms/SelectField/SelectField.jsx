@@ -56,6 +56,7 @@ export const SelectField = props => {
       <select
         css={[
           baseStyle,
+          isEmpty && placehoderStyle,
           isHighlighted && highlightedStyle,
           !isValid && errorStyle,
           isDisabled && disabledStyle,
@@ -64,7 +65,7 @@ export const SelectField = props => {
         onChange={event => handleChanges(event.target.value)}
         value={value}
       >
-        <option css={[placehoderStyle]} disabled={!isEmpty} defaultValue>
+        <option disabled={!isEmpty} defaultValue>
           {placeholder}
         </option>
         {children}

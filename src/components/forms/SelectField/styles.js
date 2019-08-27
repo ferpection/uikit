@@ -26,8 +26,6 @@ export const baseStyle = css`
   line-height: 1.5;
   transition: all 0.2s ease-in-out;
   height: 44px;
-  font-style: italic; /* only for the placeholder */
-  color: #aaa; /* only for the placeholder */
   &:hover {
     z-index: 1;
     box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
