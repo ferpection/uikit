@@ -3,11 +3,17 @@ import propTypes from 'prop-types'
 
 import { FormErrors } from '../FormErrors/FormErrors'
 
-import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle } from './styles'
+import {
+  baseStyle,
+  textareaStyle,
+  disabledStyle,
+  highlightedStyle,
+  errorStyle,
+} from './styles'
 
 const EMAIL_REGEXP = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
-export const TextField = (props) => {
+export const TextField = props => {
   const {
     dataType = 'text',
     rowCount = 1,
@@ -15,6 +21,7 @@ export const TextField = (props) => {
     isDisabled,
     isHighlighted,
     value: externalValue,
+    isRequired,
   } = props
 
   const [value, setValue] = useState(externalValue || '')
@@ -23,10 +30,10 @@ export const TextField = (props) => {
 
   const {
     onValueChange = () => {},
-    onErrors = (e) => setErrorMessages(e),
+    onErrors = e => setErrorMessages(e),
   } = props
 
-  const handleChanges = (v) => {
+  const handleChanges = v => {
     setValue(v)
     onValueChange(v)
   }
@@ -40,6 +47,12 @@ export const TextField = (props) => {
     if (dataType === 'email' && !EMAIL_REGEXP.test(value)) {
       errors = Object.assign({}, errors, {
         emailInvalid: { value },
+      })
+    }
+
+    if (isRequired && (value == null || value === '')) {
+      errors = Object.assign({}, errors, {
+        required: {},
       })
     }
 
@@ -59,7 +72,7 @@ export const TextField = (props) => {
             isDisabled && disabledStyle,
           ]}
           value={value}
-          onChange={(event) => handleChanges(event.target.value)}
+          onChange={event => handleChanges(event.target.value)}
           placeholder={placeholder}
           disabled={isDisabled}
         />
@@ -74,7 +87,7 @@ export const TextField = (props) => {
             isDisabled && disabledStyle,
           ]}
           value={value}
-          onChange={(event) => handleChanges(event.target.value)}
+          onChange={event => handleChanges(event.target.value)}
           placeholder={placeholder}
           rows={rowCount}
           disabled={isDisabled}
@@ -91,6 +104,7 @@ TextField.propTypes = {
   rowCount: propTypes.number,
   isHighlighted: propTypes.bool,
   isDisabled: propTypes.bool,
+  isRequired: propTypes.bool,
   value: propTypes.string,
   onValueChange: propTypes.func,
   onErrors: propTypes.func,

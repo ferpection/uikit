@@ -9,11 +9,15 @@ export class Color {
     if (hash !== '#' || colorArray.length !== 6) return null
 
     const colorNumber = parseInt(colorArray.join(''), 16)
-    console.log(colorNumber >> 16, colorNumber & 0x0000ff, (colorNumber >> 8) & 0x00ff)
+    console.log(
+      colorNumber >> 16,
+      colorNumber & 0x0000ff,
+      (colorNumber >> 8) & 0x00ff
+    )
     return new Color(
       colorNumber >> 16,
       (colorNumber >> 8) & 0x00ff,
-      colorNumber & 0x0000ff,
+      colorNumber & 0x0000ff
     )
   }
 
@@ -45,11 +49,7 @@ export class Color {
   }
 
   shade(rate = 0) {
-    return new Color(
-      this.red + rate,
-      this.green + rate,
-      this.blue + rate,
-    )
+    return new Color(this.red + rate, this.green + rate, this.blue + rate)
   }
 
   toString() {

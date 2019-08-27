@@ -1,11 +1,11 @@
 import { css } from '@emotion/core'
 import {
-  C200_COLOR,
-  O200_COLOR,
-  O25_COLOR,
-  C15_COLOR,
   N100_COLOR,
   N300_COLOR,
+  C200_COLOR,
+  C15_COLOR,
+  O200_COLOR,
+  O25_COLOR,
 } from '../../../colors'
 import { SANSSERIF_FONTSET } from '../../../fonts'
 
@@ -13,7 +13,6 @@ export const baseStyle = css`
   position: relative;
   display: block;
   margin: 10px 0;
-  box-sizing: border-box;
   padding: 10px 5px 10px 10px;
   border-radius: 3px;
   border: 1px solid ${`${N100_COLOR}`};
@@ -26,6 +25,7 @@ export const baseStyle = css`
   color: ${`${N300_COLOR}`};
   line-height: 1.5;
   transition: all 0.2s ease-in-out;
+  height: 44px;
   &:hover {
     z-index: 1;
     box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
@@ -41,10 +41,11 @@ export const baseStyle = css`
     z-index: 1;
     box-shadow: 0 0 0 16px ${C200_COLOR.toRGBA(0.1)};
   }
-  &::placeholder {
-    font-style: italic;
-    color: #aaa;
-  }
+`
+
+export const placehoderStyle = css`
+  font-style: italic;
+  color: #aaa;
 `
 
 export const highlightedStyle = css`
@@ -80,10 +81,4 @@ export const errorStyle = css`
   &:active {
     box-shadow: 0 0 0 16px ${C200_COLOR.toRGBA(0.1)};
   }
-`
-
-export const textareaStyle = css`
-  max-width: 100%;
-  min-width: 100%;
-  min-height: 75px;
 `

@@ -14,9 +14,15 @@ storiesOf('Contexts|ThemeProvider', module)
   .add('colors', () => {
     const theme = {
       colors: {
-        action: Color.fromHex(text('action color', FULL_COLORSET.ROBINS_EGG_BLUE.toHex())),
-        positive: Color.fromHex(text('positive color', FULL_COLORSET.SHAMROCK.toHex())),
-        negative: Color.fromHex(text('negative color', FULL_COLORSET.SUNGLOW.toHex())),
+        action: Color.fromHex(
+          text('action color', FULL_COLORSET.ROBINS_EGG_BLUE.toHex())
+        ),
+        positive: Color.fromHex(
+          text('positive color', FULL_COLORSET.SHAMROCK.toHex())
+        ),
+        negative: Color.fromHex(
+          text('negative color', FULL_COLORSET.SUNGLOW.toHex())
+        ),
       },
     }
 

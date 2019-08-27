@@ -35,9 +35,7 @@ export const Header = props => {
     >
       <div css={logoStyles}>
         <a href={homeUrl} title="Go to homepage">
-          <FerpectionLogo
-            color={isLightVersion ? R400_COLOR : BLACK_COLOR}
-          />
+          <FerpectionLogo color={isLightVersion ? R400_COLOR : BLACK_COLOR} />
         </a>
       </div>
       <nav>
