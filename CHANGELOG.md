@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Expose a declaration file to simplify the use w/ TypeScript
 - New `TextField` component to display textarea and inputs
 - New `FormErrors` component to give a default way of displaying errors
+- New `SelectField` component to display select box.
 
 ### Changed
 - **BREAKING CHANGES**. New package endpoints.
