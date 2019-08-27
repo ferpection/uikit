@@ -20,7 +20,7 @@ storiesOf('Components|Forms/SelectField', module)
     <SelectField placeholder="This is a highlighted select" isHighlighted />
   ))
   .add('error state', () => (
-    <SelectField placeholder="This is a error select" />
+    <SelectField placeholder="This is a error select" isRequired />
   ))
   .add('disabled state', () => (
     <SelectField placeholder="This is a disabled select" isDisabled />
