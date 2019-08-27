@@ -17,6 +17,7 @@ export const SelectField = props => {
     isDisabled,
     isRequired,
     value: externalValue,
+    children,
   } = props
 
   const [value, setValue] = useState(externalValue || '')
@@ -28,6 +29,7 @@ export const SelectField = props => {
     onErrors = e => setErrorMessages(e),
   } = props
 
+  const isEmpty = (value == null || value === '')
   const handleChanges = v => {
     setValue(v)
     onValueChange(v)
@@ -39,7 +41,7 @@ export const SelectField = props => {
     }
 
     let errors = {}
-    if (isRequired && (value == null || value === '')) {
+    if (isRequired && isEmpty) {
       errors = Object.assign({}, errors, {
         required: {},
       })
@@ -62,9 +64,10 @@ export const SelectField = props => {
         onChange={event => handleChanges(event.target.value)}
         value={value}
       >
-        <option css={[placehoderStyle]} disabled selected>
+        <option css={[placehoderStyle]} disabled={!isEmpty} defaultValue>
           {placeholder}
         </option>
+        {children}
       </select>
       <FormErrors errors={errorMessages} />
     </>
