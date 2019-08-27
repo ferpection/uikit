@@ -11,6 +11,7 @@ export const PlaceholderButton = props => {
     children = 'Add an element',
     disabled = false,
     isDisabled = disabled,
+    icon = 'plus',
     to,
     ...args
   } = props
@@ -27,8 +28,8 @@ export const PlaceholderButton = props => {
       aria-label={children}
       disabled={isDisabled}
     >
-      <FontAwesomeIcon icon="plus" />
-      &nbsp;
+      <FontAwesomeIcon icon={icon} />
+      {(icon == null || icon === '') ? null : <>&nbsp;</>}
       {children}
     </Container>
   )
