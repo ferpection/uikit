@@ -60,6 +60,7 @@ export const SelectField = props => {
         ]}
         disabled={isDisabled}
         onChange={event => handleChanges(event.target.value)}
+        value={value}
       >
         <option css={[placehoderStyle]} disabled selected>
           {placeholder}
