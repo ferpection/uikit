@@ -149,6 +149,29 @@ declare module '@ferpection/uikit' {
     export class FerpectionLogo extends React.Component<{
         color: string
     }> {}
+
+    interface Errors {
+        [errorName: string]: {
+            [dataName: string]
+        }
+    }
+
+    export class FormErrors extends React.Component<{
+        errors: Errors
+    }> {}
+
+    interface TextFieldProps {
+        dataType: string
+        rowCount: number
+        placeholder: string
+        isDisabled: boolean
+        isHighlighted: boolean
+        onValueChange: (value: string) => void
+        OnErrors: (errors: Errors) => void
+    }
+
+    export class TextField extends React.Component<TextFieldProps> {}
+
 }
 
 declare module '@ferpection/uikit/components' {

@@ -3,10 +3,10 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs, color } from '@storybook/addon-knobs'
+import { withKnobs, text } from '@storybook/addon-knobs'
 
-import { Button } from '../src/components/index.js'
-import { ThemeProvider } from '../src/components/contexts/ThemeContext.js'
+import { Button, ThemeProvider } from '../src/components/index.js'
+import { FULL_COLORSET, Color } from '../src/colors/index.js'
 
 storiesOf('Contexts|ThemeProvider', module)
   .addDecorator(withA11y)
@@ -14,9 +14,9 @@ storiesOf('Contexts|ThemeProvider', module)
   .add('colors', () => {
     const theme = {
       colors: {
-        action: color('Action color', '#00BECD'),
-        positive: color('Positive color', '#24D58D'),
-        negative: color('Negative color', '#FEC138'),
+        action: Color.fromHex(text('action color', FULL_COLORSET.ROBINS_EGG_BLUE.toHex())),
+        positive: Color.fromHex(text('positive color', FULL_COLORSET.SHAMROCK.toHex())),
+        negative: Color.fromHex(text('negative color', FULL_COLORSET.SUNGLOW.toHex())),
       },
     }
 

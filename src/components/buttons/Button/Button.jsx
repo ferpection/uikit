@@ -5,6 +5,8 @@ import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
 import { Link } from 'react-router-dom'
 
 import { ThemeContext } from '../../contexts/ThemeContext.js'
+import { Color } from '../../../colors/index.js'
+
 import {
   prepareBaseState,
   prepareFilledState,
@@ -104,8 +106,8 @@ Button.propTypes = {
   isFilled: propTypes.bool,
   isDisabled: propTypes.bool,
   isRaw: propTypes.bool,
-  color: propTypes.string,
-  hoverColor: propTypes.string,
+  color: propTypes.instanceOf(Color),
+  hoverColor: propTypes.instanceOf(Color),
   icon: propTypes.string,
   iconStore: propTypes.string,
   actionType: propTypes.oneOf(['default', 'positive', 'negative']),

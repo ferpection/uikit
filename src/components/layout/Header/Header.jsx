@@ -1,6 +1,6 @@
 import React, { Children, isValidElement, cloneElement } from 'react'
 
-import { PRIMARY_COLORSET } from '../../../colors/index.js'
+import { Color, R400_COLOR } from '../../../colors/index.js'
 import { FerpectionLogo } from '../../logos/FerpectionLogo.jsx'
 
 import {
@@ -16,12 +16,14 @@ export const Header = props => {
     children,
     isLightVersion,
   } = props
+  const BLACK_COLOR = new Color(255, 255, 255)
+
   const buttonList = Children.toArray(children)
     .filter(child => isValidElement(child))
     .map(child =>
       cloneElement(child, {
         isFilled: false,
-        color: PRIMARY_COLORSET.CINNABAR,
+        color: R400_COLOR,
         headerLigthVersion: isLightVersion,
       })
     )
@@ -34,7 +36,7 @@ export const Header = props => {
       <div css={logoStyles}>
         <a href={homeUrl} title="Go to homepage">
           <FerpectionLogo
-            color={isLightVersion ? PRIMARY_COLORSET.CINNABAR : '#FFFFFF'}
+            color={isLightVersion ? R400_COLOR : BLACK_COLOR}
           />
         </a>
       </div>

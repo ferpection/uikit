@@ -1,8 +1,8 @@
-import { FULL_COLORSET } from '../../../colors/index.js'
+import { R400_COLOR, N75_COLOR } from '../../../colors/index.js'
 
 export const defaultHeaderStyles = {
-  backgroundColor: FULL_COLORSET.CINNABAR,
-  color: FULL_COLORSET.SEASHELL,
+  backgroundColor: String(R400_COLOR),
+  color: String(N75_COLOR),
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -12,7 +12,7 @@ export const defaultHeaderStyles = {
 }
 
 export const lightHeaderStyle = {
-  color: FULL_COLORSET.CINNABAR,
+  color: String(R400_COLOR),
   backgroundColor: 'white',
 }
 
