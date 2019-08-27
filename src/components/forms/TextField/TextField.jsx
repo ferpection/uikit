@@ -21,6 +21,7 @@ export const TextField = props => {
     isDisabled,
     isHighlighted,
     value: externalValue,
+    isRequired,
   } = props
 
   const [value, setValue] = useState(externalValue || '')
@@ -46,6 +47,12 @@ export const TextField = props => {
     if (dataType === 'email' && !EMAIL_REGEXP.test(value)) {
       errors = Object.assign({}, errors, {
         emailInvalid: { value },
+      })
+    }
+
+    if (isRequired && (value == null || value === '')) {
+      errors = Object.assign({}, errors, {
+        required: {},
       })
     }
 
@@ -97,6 +104,7 @@ TextField.propTypes = {
   rowCount: propTypes.number,
   isHighlighted: propTypes.bool,
   isDisabled: propTypes.bool,
+  isRequired: propTypes.bool,
   value: propTypes.string,
   onValueChange: propTypes.func,
   onErrors: propTypes.func,
