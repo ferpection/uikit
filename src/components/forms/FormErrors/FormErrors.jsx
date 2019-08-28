@@ -1,5 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import propTypes from 'prop-types'
 
 import { errorStyle, iconStyle } from './styles'
 
@@ -16,4 +17,8 @@ export const FormErrors = props => {
       ))}
     </>
   )
+}
+
+FormErrors.propTypes = {
+  errors: propTypes.object,
 }

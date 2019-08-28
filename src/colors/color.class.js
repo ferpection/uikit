@@ -9,11 +9,7 @@ export class Color {
     if (hash !== '#' || colorArray.length !== 6) return null
 
     const colorNumber = parseInt(colorArray.join(''), 16)
-    console.log(
-      colorNumber >> 16,
-      colorNumber & 0x0000ff,
-      (colorNumber >> 8) & 0x00ff
-    )
+
     return new Color(
       colorNumber >> 16,
       (colorNumber >> 8) & 0x00ff,

@@ -1,113 +1,124 @@
 import React from 'react'
 
 declare module '@ferpection/uikit' {
+    class Color {
+        static fromHex(hex: string): Color
 
-    export const R500_COLOR: string
-    export const R400_COLOR: string
-    export const R300_COLOR: string
-    export const R200_COLOR: string
-    export const R100_COLOR: string
-    export const C500_COLOR: string
-    export const C400_COLOR: string
-    export const C300_COLOR: string
-    export const C200_COLOR: string
-    export const C100_COLOR: string
-    export const C75_COLOR : string
-    export const C50_COLOR : string
-    export const C25_COLOR : string
-    export const C15_COLOR : string
-    export const G500_COLOR: string
-    export const G400_COLOR: string
-    export const G300_COLOR: string
-    export const G200_COLOR: string
-    export const Y500_COLOR: string
-    export const Y400_COLOR: string
-    export const Y300_COLOR: string
-    export const Y200_COLOR: string
-    export const O500_COLOR: string
-    export const O400_COLOR: string
-    export const O300_COLOR: string
-    export const O200_COLOR: string
-    export const O100_COLOR: string
-    export const O75_COLOR: string
-    export const O50_COLOR: string
-    export const O25_COLOR: string
-    export const P500_COLOR: string
-    export const P400_COLOR: string
-    export const P300_COLOR: string
-    export const P200_COLOR: string
-    export const B500_COLOR: string
-    export const B400_COLOR: string
-    export const B300_COLOR: string
-    export const B200_COLOR: string
-    export const N500_COLOR: string
-    export const N400_COLOR: string
-    export const N300_COLOR: string
-    export const N200_COLOR: string
-    export const N100_COLOR: string
-    export const N75_COLOR : string
+        constructor(red: number, green: number, blue: number, alfa?: number)
+
+        toHex(): string
+        toRGB(): string
+        toRGBA(alfa?: number): string
+
+        shade(rate?: number): string
+    }
+
+    export const R500_COLOR: Color
+    export const R400_COLOR: Color
+    export const R300_COLOR: Color
+    export const R200_COLOR: Color
+    export const R100_COLOR: Color
+    export const C500_COLOR: Color
+    export const C400_COLOR: Color
+    export const C300_COLOR: Color
+    export const C200_COLOR: Color
+    export const C100_COLOR: Color
+    export const C75_COLOR : Color
+    export const C50_COLOR : Color
+    export const C25_COLOR : Color
+    export const C15_COLOR : Color
+    export const G500_COLOR: Color
+    export const G400_COLOR: Color
+    export const G300_COLOR: Color
+    export const G200_COLOR: Color
+    export const Y500_COLOR: Color
+    export const Y400_COLOR: Color
+    export const Y300_COLOR: Color
+    export const Y200_COLOR: Color
+    export const O500_COLOR: Color
+    export const O400_COLOR: Color
+    export const O300_COLOR: Color
+    export const O200_COLOR: Color
+    export const O100_COLOR: Color
+    export const O75_COLOR: Color
+    export const O50_COLOR: Color
+    export const O25_COLOR: Color
+    export const P500_COLOR: Color
+    export const P400_COLOR: Color
+    export const P300_COLOR: Color
+    export const P200_COLOR: Color
+    export const B500_COLOR: Color
+    export const B400_COLOR: Color
+    export const B300_COLOR: Color
+    export const B200_COLOR: Color
+    export const N500_COLOR: Color
+    export const N400_COLOR: Color
+    export const N300_COLOR: Color
+    export const N200_COLOR: Color
+    export const N100_COLOR: Color
+    export const N75_COLOR : Color
 
     export const PRIMARY_COLORSET: {
-        CINNABAR: string,
-        ROBINS_EGG_BLUE: string,
-        SHAMROCK: string,
-        SUNGLOW: string
+        CINNABAR: Color,
+        ROBINS_EGG_BLUE: Color,
+        SHAMROCK: Color,
+        SUNGLOW: Color
     }
 
     export const SECONDARY_COLORSET: {
-        AMETHYST: string,
-        PICTON_BLUE: string,
-        CRUSTA: string,
-        BLUE_LAGOON: string,
-        AQUA_HAZE: string,
-        PARIS_DAISY: string,
+        AMETHYST: Color,
+        PICTON_BLUE: Color,
+        CRUSTA: Color,
+        BLUE_LAGOON: Color,
+        AQUA_HAZE: Color,
+        PARIS_DAISY: Color,
     }
 
     export const FULL_COLORSET: {
-        CINNABAR: string,
-        ROBINS_EGG_BLUE: string,
-        SHAMROCK: string,
-        SUNGLOW: string,
-        AMETHYST: string,
-        PICTON_BLUE: string,
-        CRUSTA: string,
-        BLUE_LAGOON: string,
-        AQUA_HAZE: string,
-        PARIS_DAISY: string,
-        BITTERSWEET: string,
-        MINE_SHAFT: string,
-        EMPEROR: string,
-        BOULDER: string,
-        SILVER_CHALICE: string,
-        ALTO: string,
-        SEASHELL: string,
-        TALL_POPPY: string,
-        ILLUSION: string,
-        LINEN: string,
-        SHERPA_BLUE: string,
-        BLUE_STONE: string,
-        SINBAD: string,
-        BLIZZARD_BLUE: string,
-        BOTTICELLI: string,
-        BLACK_SQUEEZE: string,
-        CHATHAMS_BLUE: string,
-        SAIL: string,
-        SELAGO: string,
-        JEWEL: string,
-        MAGIC_MINT: string,
-        WHITE_ICE: string,
-        RIPE_LEMON: string,
-        LEMON_CHIFFON: string,
-        ISLAND_SPICE: string,
-        EMINENCE: string,
-        FRENCH_LILAC: string,
-        SNUFF: string,
-        TIA_MARIA: string,
-        BRANDY_PUNCH: string,
-        LIGHT_APRICOT: string,
-        PEACH: string,
-        BRIDESMAID: string,
-        FLORAL_WHITE: string,
+        CINNABAR: Color,
+        ROBINS_EGG_BLUE: Color,
+        SHAMROCK: Color,
+        SUNGLOW: Color,
+        AMETHYST: Color,
+        PICTON_BLUE: Color,
+        CRUSTA: Color,
+        BLUE_LAGOON: Color,
+        AQUA_HAZE: Color,
+        PARIS_DAISY: Color,
+        BITTERSWEET: Color,
+        MINE_SHAFT: Color,
+        EMPEROR: Color,
+        BOULDER: Color,
+        SILVER_CHALICE: Color,
+        ALTO: Color,
+        SEASHELL: Color,
+        TALL_POPPY: Color,
+        ILLUSION: Color,
+        LINEN: Color,
+        SHERPA_BLUE: Color,
+        BLUE_STONE: Color,
+        SINBAD: Color,
+        BLIZZARD_BLUE: Color,
+        BOTTICELLI: Color,
+        BLACK_SQUEEZE: Color,
+        CHATHAMS_BLUE: Color,
+        SAIL: Color,
+        SELAGO: Color,
+        JEWEL: Color,
+        MAGIC_MINT: Color,
+        WHITE_ICE: Color,
+        RIPE_LEMON: Color,
+        LEMON_CHIFFON: Color,
+        ISLAND_SPICE: Color,
+        EMINENCE: Color,
+        FRENCH_LILAC: Color,
+        SNUFF: Color,
+        TIA_MARIA: Color,
+        BRANDY_PUNCH: Color,
+        LIGHT_APRICOT: Color,
+        PEACH: Color,
+        BRIDESMAID: Color,
+        FLORAL_WHITE: Color,
     }
 
     interface ButtonProps {
@@ -121,9 +132,26 @@ declare module '@ferpection/uikit' {
         ariaLabel?: string
         actionType?: 'default'|'positive'|'negative'
         to?: string
+        children?: string
     }
 
     export class Button extends React.Component<ButtonProps> {}
+
+    interface PlaceholderButtonProps {
+        isDisabled?: boolean
+        icon?: string
+        ariaLabel?: string
+        to?: string
+        children?: string
+    }
+
+    export class PlaceholderButton extends React.Component<PlaceholderButtonProps> {}
+
+    interface FerpectionLogoProps extends ButtonProps {
+        color: Color
+    }
+
+    export class FerpectionLogo extends React.Component<FerpectionLogoProps> {}
 
     interface HeaderLinkProps extends ButtonProps {
         headerLigthVersion?: boolean
@@ -133,9 +161,9 @@ declare module '@ferpection/uikit' {
 
     export const ThemeContext: React.Context<{
         colors: {
-            action: string
-            positive: string
-            negative: string
+            action: Color
+            positive: Color
+            negative: Color
         }
     }>
 
@@ -152,7 +180,7 @@ declare module '@ferpection/uikit' {
 
     interface Errors {
         [errorName: string]: {
-            [dataName: string]
+            [dataName: string]: any
         }
     }
 
@@ -161,20 +189,63 @@ declare module '@ferpection/uikit' {
     }> {}
 
     interface TextFieldProps {
-        dataType: string
-        rowCount: number
-        placeholder: string
-        isDisabled: boolean
-        isHighlighted: boolean
-        onValueChange: (value: string) => void
-        OnErrors: (errors: Errors) => void
+        value?: string
+        dataType?: 'email' | 'text'
+        rowCount?: number
+        placeholder?: string
+        isDisabled?: boolean
+        isHighlighted?: boolean
+        isRequired?: boolean
+        hideErrors?: boolean
+        onValueChange?: (value: string) => void
+        onErrors?: (errors: Errors) => void
     }
 
     export class TextField extends React.Component<TextFieldProps> {}
 
+    interface SelectFieldProps {
+        value?: string
+        rowCount?: number
+        placeholder?: string
+        isDisabled?: boolean
+        isHighlighted?: boolean
+        isRequired?: boolean
+        hideErrors?: boolean
+        onValueChange?: (value: string) => void
+        onErrors?: (errors: Errors) => void
+    }
+
+    export class SelectField extends React.Component<SelectFieldProps> {}
+
+    interface TextFieldListProps {
+        initalFieldCount?: number
+        dataType?: 'email' | 'text'
+        displayErrorStrategy?: 'hidden' | 'on-field' | 'on-list'
+        placeholder?: string
+        buttonText?: string
+        isDisabled?: boolean
+        isEditable?: boolean
+        onValueChange?: (value: string) => void
+        onErrors?: (errors: Errors) => void
+    }
+
+    export class TextFieldList extends React.Component<TextFieldListProps> {}
+
 }
 
 declare module '@ferpection/uikit/components' {
+
+    class Color {
+        static fromHex(hex: string): Color
+
+        constructor(red: number, green: number, blue: number, alfa?: number)
+
+        toHex(): string
+        toRGB(): string
+        toRGBA(alfa?: number): string
+
+        shade(rate?: number): string
+    }
 
     interface ButtonProps {
         isFilled?: boolean
@@ -187,9 +258,26 @@ declare module '@ferpection/uikit/components' {
         ariaLabel?: string
         actionType?: 'default'|'positive'|'negative'
         to?: string
+        children?: string
     }
 
     export class Button extends React.Component<ButtonProps> {}
+
+    interface PlaceholderButtonProps {
+        isDisabled?: boolean
+        icon?: string
+        ariaLabel?: string
+        to?: string
+        children?: string
+    }
+
+    export class PlaceholderButton extends React.Component<PlaceholderButtonProps> {}
+
+    interface FerpectionLogoProps extends ButtonProps {
+        color: Color
+    }
+
+    export class FerpectionLogo extends React.Component<FerpectionLogoProps> {}
 
     interface HeaderLinkProps extends ButtonProps {
         headerLigthVersion?: boolean
@@ -199,9 +287,9 @@ declare module '@ferpection/uikit/components' {
 
     export const ThemeContext: React.Context<{
         colors: {
-            action: string
-            positive: string
-            negative: string
+            action: Color
+            positive: Color
+            negative: Color
         }
     }>
 
@@ -215,114 +303,179 @@ declare module '@ferpection/uikit/components' {
     export class FerpectionLogo extends React.Component<{
         color: string
     }> {}
+
+    interface Errors {
+        [errorName: string]: {
+            [dataName: string]: any
+        }
+    }
+
+    export class FormErrors extends React.Component<{
+        errors: Errors
+    }> {}
+
+    interface TextFieldProps {
+        value?: string
+        dataType?: 'email' | 'text'
+        rowCount?: number
+        placeholder?: string
+        isDisabled?: boolean
+        isHighlighted?: boolean
+        isRequired?: boolean
+        hideErrors?: boolean
+        onValueChange?: (value: string) => void
+        onErrors?: (errors: Errors) => void
+    }
+
+    export class TextField extends React.Component<TextFieldProps> {}
+
+    interface SelectFieldProps {
+        value?: string
+        rowCount?: number
+        placeholder?: string
+        isDisabled?: boolean
+        isHighlighted?: boolean
+        isRequired?: boolean
+        hideErrors?: boolean
+        onValueChange?: (value: string) => void
+        onErrors?: (errors: Errors) => void
+    }
+
+    export class SelectField extends React.Component<SelectFieldProps> {}
+
+    interface TextFieldListProps {
+        initalFieldCount?: number
+        dataType?: 'email' | 'text'
+        displayErrorStrategy?: 'hidden' | 'on-field' | 'on-list'
+        placeholder?: string
+        buttonText?: string
+        isDisabled?: boolean
+        isEditable?: boolean
+        onValueChange?: (value: string) => void
+        onErrors?: (errors: Errors) => void
+    }
+
+    export class TextFieldList extends React.Component<TextFieldListProps> {}
 }
 
 declare module '@ferpection/uikit/colors' {
-    export const R500_COLOR: string
-    export const R400_COLOR: string
-    export const R300_COLOR: string
-    export const R200_COLOR: string
-    export const R100_COLOR: string
-    export const C500_COLOR: string
-    export const C400_COLOR: string
-    export const C300_COLOR: string
-    export const C200_COLOR: string
-    export const C100_COLOR: string
-    export const C75_COLOR : string
-    export const C50_COLOR : string
-    export const C25_COLOR : string
-    export const C15_COLOR : string
-    export const G500_COLOR: string
-    export const G400_COLOR: string
-    export const G300_COLOR: string
-    export const G200_COLOR: string
-    export const Y500_COLOR: string
-    export const Y400_COLOR: string
-    export const Y300_COLOR: string
-    export const Y200_COLOR: string
-    export const O500_COLOR: string
-    export const O400_COLOR: string
-    export const O300_COLOR: string
-    export const O200_COLOR: string
-    export const O100_COLOR: string
-    export const O75_COLOR: string
-    export const O50_COLOR: string
-    export const O25_COLOR: string
-    export const P500_COLOR: string
-    export const P400_COLOR: string
-    export const P300_COLOR: string
-    export const P200_COLOR: string
-    export const B500_COLOR: string
-    export const B400_COLOR: string
-    export const B300_COLOR: string
-    export const B200_COLOR: string
-    export const N500_COLOR: string
-    export const N400_COLOR: string
-    export const N300_COLOR: string
-    export const N200_COLOR: string
-    export const N100_COLOR: string
-    export const N75_COLOR : string
+    class Color {
+        static fromHex(hex: string): Color
+
+        constructor(red: number, green: number, blue: number, alfa?: number)
+
+        toHex(): string
+        toRGB(): string
+        toRGBA(alfa?: number): string
+
+        shade(rate?: number): string
+    }
+
+    export const R500_COLOR: Color
+    export const R400_COLOR: Color
+    export const R300_COLOR: Color
+    export const R200_COLOR: Color
+    export const R100_COLOR: Color
+    export const C500_COLOR: Color
+    export const C400_COLOR: Color
+    export const C300_COLOR: Color
+    export const C200_COLOR: Color
+    export const C100_COLOR: Color
+    export const C75_COLOR : Color
+    export const C50_COLOR : Color
+    export const C25_COLOR : Color
+    export const C15_COLOR : Color
+    export const G500_COLOR: Color
+    export const G400_COLOR: Color
+    export const G300_COLOR: Color
+    export const G200_COLOR: Color
+    export const Y500_COLOR: Color
+    export const Y400_COLOR: Color
+    export const Y300_COLOR: Color
+    export const Y200_COLOR: Color
+    export const O500_COLOR: Color
+    export const O400_COLOR: Color
+    export const O300_COLOR: Color
+    export const O200_COLOR: Color
+    export const O100_COLOR: Color
+    export const O75_COLOR: Color
+    export const O50_COLOR: Color
+    export const O25_COLOR: Color
+    export const P500_COLOR: Color
+    export const P400_COLOR: Color
+    export const P300_COLOR: Color
+    export const P200_COLOR: Color
+    export const B500_COLOR: Color
+    export const B400_COLOR: Color
+    export const B300_COLOR: Color
+    export const B200_COLOR: Color
+    export const N500_COLOR: Color
+    export const N400_COLOR: Color
+    export const N300_COLOR: Color
+    export const N200_COLOR: Color
+    export const N100_COLOR: Color
+    export const N75_COLOR : Color
 
     export const PRIMARY_COLORSET: {
-        CINNABAR: string,
-        ROBINS_EGG_BLUE: string,
-        SHAMROCK: string,
-        SUNGLOW: string
+        CINNABAR: Color,
+        ROBINS_EGG_BLUE: Color,
+        SHAMROCK: Color,
+        SUNGLOW: Color
     }
 
     export const SECONDARY_COLORSET: {
-        AMETHYST: string,
-        PICTON_BLUE: string,
-        CRUSTA: string,
-        BLUE_LAGOON: string,
-        AQUA_HAZE: string,
-        PARIS_DAISY: string,
+        AMETHYST: Color,
+        PICTON_BLUE: Color,
+        CRUSTA: Color,
+        BLUE_LAGOON: Color,
+        AQUA_HAZE: Color,
+        PARIS_DAISY: Color,
     }
 
     export const FULL_COLORSET: {
-        CINNABAR: string,
-        ROBINS_EGG_BLUE: string,
-        SHAMROCK: string,
-        SUNGLOW: string,
-        AMETHYST: string,
-        PICTON_BLUE: string,
-        CRUSTA: string,
-        BLUE_LAGOON: string,
-        AQUA_HAZE: string,
-        PARIS_DAISY: string,
-        BITTERSWEET: string,
-        MINE_SHAFT: string,
-        EMPEROR: string,
-        BOULDER: string,
-        SILVER_CHALICE: string,
-        ALTO: string,
-        SEASHELL: string,
-        TALL_POPPY: string,
-        ILLUSION: string,
-        LINEN: string,
-        SHERPA_BLUE: string,
-        BLUE_STONE: string,
-        SINBAD: string,
-        BLIZZARD_BLUE: string,
-        BOTTICELLI: string,
-        BLACK_SQUEEZE: string,
-        CHATHAMS_BLUE: string,
-        SAIL: string,
-        SELAGO: string,
-        JEWEL: string,
-        MAGIC_MINT: string,
-        WHITE_ICE: string,
-        RIPE_LEMON: string,
-        LEMON_CHIFFON: string,
-        ISLAND_SPICE: string,
-        EMINENCE: string,
-        FRENCH_LILAC: string,
-        SNUFF: string,
-        TIA_MARIA: string,
-        BRANDY_PUNCH: string,
-        LIGHT_APRICOT: string,
-        PEACH: string,
-        BRIDESMAID: string,
-        FLORAL_WHITE: string,
+        CINNABAR: Color,
+        ROBINS_EGG_BLUE: Color,
+        SHAMROCK: Color,
+        SUNGLOW: Color,
+        AMETHYST: Color,
+        PICTON_BLUE: Color,
+        CRUSTA: Color,
+        BLUE_LAGOON: Color,
+        AQUA_HAZE: Color,
+        PARIS_DAISY: Color,
+        BITTERSWEET: Color,
+        MINE_SHAFT: Color,
+        EMPEROR: Color,
+        BOULDER: Color,
+        SILVER_CHALICE: Color,
+        ALTO: Color,
+        SEASHELL: Color,
+        TALL_POPPY: Color,
+        ILLUSION: Color,
+        LINEN: Color,
+        SHERPA_BLUE: Color,
+        BLUE_STONE: Color,
+        SINBAD: Color,
+        BLIZZARD_BLUE: Color,
+        BOTTICELLI: Color,
+        BLACK_SQUEEZE: Color,
+        CHATHAMS_BLUE: Color,
+        SAIL: Color,
+        SELAGO: Color,
+        JEWEL: Color,
+        MAGIC_MINT: Color,
+        WHITE_ICE: Color,
+        RIPE_LEMON: Color,
+        LEMON_CHIFFON: Color,
+        ISLAND_SPICE: Color,
+        EMINENCE: Color,
+        FRENCH_LILAC: Color,
+        SNUFF: Color,
+        TIA_MARIA: Color,
+        BRANDY_PUNCH: Color,
+        LIGHT_APRICOT: Color,
+        PEACH: Color,
+        BRIDESMAID: Color,
+        FLORAL_WHITE: Color,
     }
 }

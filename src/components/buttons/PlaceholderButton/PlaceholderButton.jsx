@@ -39,4 +39,7 @@ export const PlaceholderButton = props => {
 PlaceholderButton.propTypes = {
   isDisabled: propTypes.bool,
   to: propTypes.string,
+  icon: propTypes.string,
+  ariaLabel: propTypes.string,
+  children: propTypes.string,
 }
