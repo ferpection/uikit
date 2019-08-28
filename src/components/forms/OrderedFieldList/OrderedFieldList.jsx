@@ -18,13 +18,18 @@ export const OrderedFieldList = props => {
 
   const { isDisabled, isEditable } = props
 
-  const handleAddition = () => setValues([...values, { id: values.length, text: '' }])
-  const handleDeletion = (index) => setValues(values.filter(values => values.id !== index))
-  const handleChange = (userValue, index) => setValues(values.map(value => {
-    if (value.id !== index) return value
+  const handleAddition = () =>
+    setValues([...values, { id: values.length, text: '' }])
+  const handleDeletion = index =>
+    setValues(values.filter(values => values.id !== index))
+  const handleChange = (userValue, index) =>
+    setValues(
+      values.map(value => {
+        if (value.id !== index) return value
 
-    return { id: value.id, text: userValue }
-  }))
+        return { id: value.id, text: userValue }
+      })
+    )
 
   return (
     <ol css={[list]}>
@@ -38,7 +43,11 @@ export const OrderedFieldList = props => {
               onClick={() => handleDeletion(value.id)}
             />
           ) : null}
-          <TextField isDisabled={isDisabled} value={value.text} onValueChange={(userValue) => handleChange(userValue, value.id)} />
+          <TextField
+            isDisabled={isDisabled}
+            value={value.text}
+            onValueChange={userValue => handleChange(userValue, value.id)}
+          />
         </li>
       ))}
       {isEditable ? (
