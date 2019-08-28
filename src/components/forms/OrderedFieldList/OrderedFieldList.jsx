@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import propTypes from 'prop-types'
+import RandomString from 'randomstring'
 
 import { PlaceholderButton } from '../../buttons/PlaceholderButton/PlaceholderButton.jsx'
 import { TextField } from '../TextField/TextField.jsx'
@@ -14,12 +15,12 @@ import {
 } from './styles'
 
 export const OrderedFieldList = props => {
-  const [values, setValues] = useState([{ id: 1, text: '' }])
+  const [values, setValues] = useState([{ id: RandomString.generate(20), text: '' }])
 
   const { isDisabled, isEditable } = props
 
   const handleAddition = () =>
-    setValues([...values, { id: values.length, text: '' }])
+    setValues([...values, { id: RandomString.generate(20), text: '' }])
   const handleDeletion = index =>
     setValues(values.filter(values => values.id !== index))
   const handleChange = (userValue, index) =>
