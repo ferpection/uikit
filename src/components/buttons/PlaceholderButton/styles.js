@@ -14,11 +14,13 @@ export const addButtonStyles = css`
   transition: all .2s ease-in-out;
   cursor: pointer;
   &:hover {
+    z-index: 2;
     box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
     border-style: solid;
     color: ${C200_COLOR.shade(-20).toRGBA()}
   }
   &:active{
+    z-index: 2;
     box-shadow: 0 0 0 16px ${C200_COLOR.toRGBA(0.1)};
   }
 `
