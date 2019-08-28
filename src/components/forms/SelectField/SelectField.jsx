@@ -30,7 +30,7 @@ export const SelectField = props => {
     onErrors = e => setErrorMessages(e),
   } = props
 
-  const isEmpty = (value == null || value === '')
+  const isEmpty = value == null || value === ''
   const handleChanges = v => {
     setValue(v)
     onValueChange(v)

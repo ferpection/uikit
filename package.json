@@ -7,17 +7,17 @@
   "repository": "https://github.com/ferpection/uikit",
   "author": "Ferpection <hello@ferpection.com> (https://ferpection.com)",
   "contributors": [
-      {
-          "name": "Nathanaël Cherrier",
-          "email": "dev@nathanaelcherrier.com",
-          "url": "https://nathanaelcherrier.com"
-      }
+    {
+      "name": "Nathanaël Cherrier",
+      "email": "dev@nathanaelcherrier.com",
+      "url": "https://nathanaelcherrier.com"
+    }
   ],
   "files": [
-      "/colors.js",
-      "/index.js",
-      "/index.d.ts",
-      "/components.js"
+    "/colors.js",
+    "/index.js",
+    "/index.d.ts",
+    "/components.js"
   ],
   "license": "MIT",
   "private": false,
@@ -38,7 +38,8 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
     "@fortawesome/free-brands-svg-icons": "^5.10.1",
     "@fortawesome/free-solid-svg-icons": "^5.10.1",
-    "@fortawesome/react-fontawesome": "^0.1.4"
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "randomstring": "^1.1.5"
   },
   "peerDependencies": {
     "@emotion/core": ">=10.0.0",
