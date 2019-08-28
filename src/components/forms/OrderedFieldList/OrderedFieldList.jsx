@@ -14,31 +14,31 @@ import {
 } from './styles'
 
 export const OrderedFieldList = props => {
-  const [values, setValues] = useState([''])
+  const [values, setValues] = useState([{ id: 1, text: '' }])
 
   const { isDisabled, isEditable } = props
 
-  const handleAddition = () => setValues([...values, ''])
-  const handleDeletion = (index) => setValues(values.filter((_v, i) => i !== index))
-  const handleChange = (value, index) => setValues(values.map((v, i) => {
-    if (i !== index) return v
+  const handleAddition = () => setValues([...values, { id: values.length, text: '' }])
+  const handleDeletion = (index) => setValues(values.filter(values => values.id !== index))
+  const handleChange = (userValue, index) => setValues(values.map(value => {
+    if (value.id !== index) return value
 
-    return value
+    return { id: value.id, text: userValue }
   }))
 
   return (
     <ol css={[list]}>
-      {values.map((value, i) => (
-        <li key={`${i}-${value}`} css={[listItem]}>
+      {values.map(value => (
+        <li key={value.id} css={[listItem]}>
           {isEditable ? (
             <Button
               css={[icon, hideAndShowIconOnHover]}
               isRaw
               icon="trash"
-              onClick={() => handleDeletion(i)}
+              onClick={() => handleDeletion(value.id)}
             />
           ) : null}
-          <TextField isDisabled={isDisabled} value={value} onValueChange={(value) => handleChange(value, i)} />
+          <TextField isDisabled={isDisabled} value={value.text} onValueChange={(userValue) => handleChange(userValue, value.id)} />
         </li>
       ))}
       {isEditable ? (
