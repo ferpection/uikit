@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import propTypes from 'prop-types'
 import RandomString from 'randomstring'
 
@@ -16,6 +16,9 @@ import {
 
 export const OrderedFieldList = props => {
   const [values, setValues] = useState([])
+  const { onValueChange = () => {} } = props
+
+  useEffect(() => onValueChange(values.map(value => value.text)), [values])
 
   const {
     isDisabled,
@@ -94,4 +97,5 @@ OrderedFieldList.propTypes = {
   initalFieldCount: propTypes.number,
   placeholder: propTypes.string,
   buttonText: propTypes.string,
+  onValueChange: propTypes.func,
 }
