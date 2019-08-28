@@ -19,7 +19,7 @@ export const OrderedFieldList = props => {
   const { isDisabled, isEditable } = props
 
   const handleAddition = () => setValues([...values, ''])
-  const handleDeletion = () => {}
+  const handleDeletion = (index) => setValues(values.filter((_v, i) => i !== index))
 
   return (
     <ol css={[list]}>
@@ -30,7 +30,7 @@ export const OrderedFieldList = props => {
               css={[icon, hideAndShowIconOnHover]}
               isRaw
               icon="trash"
-              onClick={handleDeletion}
+              onClick={() => handleDeletion(i)}
             />
           ) : null}
           <TextField isDisabled={isDisabled} value={value} />
