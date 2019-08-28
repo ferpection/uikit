@@ -29,7 +29,7 @@ export const OrderedFieldList = props => {
   return (
     <ol css={[list]}>
       {values.map((value, i) => (
-        <li key={i} css={[listItem]}>
+        <li key={`${i}-${value}`} css={[listItem]}>
           {isEditable ? (
             <Button
               css={[icon, hideAndShowIconOnHover]}
