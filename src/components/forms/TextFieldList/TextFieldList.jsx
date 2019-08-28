@@ -37,6 +37,7 @@ export const TextFieldList = props => {
     dataType,
     initalFieldCount = 1,
     buttonText = 'Add a list item',
+    displayErrorStrategy = 'on-field',
   } = props
 
   const handleAddition = () =>
@@ -88,6 +89,7 @@ export const TextFieldList = props => {
               isDisabled={isDisabled}
               onValueChange={userValue => handleChange(userValue, value.id)}
               onErrors={errors => handleErrors(errors, value.id)}
+              hideErrors={['hidden', 'on-list'].includes(displayErrorStrategy)}
             />
           </li>
         ))}
@@ -111,9 +113,11 @@ export const TextFieldList = props => {
           </li>
         ) : null}
       </ol>
-      <div css={[listErrors]} >
-        <FormErrors errors={flatErrorMessages} />
-      </div>
+      {displayErrorStrategy === 'on-list' ? (
+        <div css={[listErrors]} >
+          <FormErrors errors={flatErrorMessages} />
+        </div>
+      ) : null}
     </>
   )
 }
@@ -126,4 +130,5 @@ TextFieldList.propTypes = {
   placeholder: propTypes.string,
   buttonText: propTypes.string,
   onValueChange: propTypes.func,
+  displayErrorStrategy: propTypes.oneOf('hidden', 'on-field', 'on-list'),
 }

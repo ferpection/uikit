@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs, boolean, number, text } from '@storybook/addon-knobs'
+import { withKnobs, boolean, number, text, select } from '@storybook/addon-knobs'
 
 import { TextFieldList } from '../src/components/index.js'
 import { N75_COLOR } from '../src/colors/index.js'
@@ -77,6 +77,7 @@ storiesOf('Components|Forms/TextFieldList', module)
             dataType="email"
             onValueChange={values => setValues(values)}
             onErrors={values => setErrors(values)}
+            displayErrorStrategy={select('display error strategy', ['on-list', 'on-field', 'hidden'], 'on-field')}
           />
           <pre
             css={{

@@ -20,6 +20,7 @@ export const TextField = props => {
     placeholder,
     isDisabled,
     isHighlighted,
+    hideErrors,
     value: externalValue,
     isRequired,
   } = props
@@ -30,7 +31,7 @@ export const TextField = props => {
 
   const {
     onValueChange = () => {},
-    onErrors = e => setErrorMessages(e),
+    onErrors = () => {},
   } = props
 
   const handleChanges = v => {
@@ -58,6 +59,10 @@ export const TextField = props => {
 
     setValidity(Object.keys(errors).length <= 0)
     onErrors(errors)
+
+    if (!hideErrors) {
+      setErrorMessages(errors)
+    }
   }, [value])
 
   return (
@@ -105,6 +110,7 @@ TextField.propTypes = {
   isHighlighted: propTypes.bool,
   isDisabled: propTypes.bool,
   isRequired: propTypes.bool,
+  hideErrors: propTypes.bool,
   value: propTypes.string,
   onValueChange: propTypes.func,
   onErrors: propTypes.func,
