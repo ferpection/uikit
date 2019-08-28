@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since v1.0.0.
 
 ## [Unreleased]
+
+## [v0.0.9] - 2019-08-28
 ### Added
 - Expose a declaration file to simplify the use w/ TypeScript
 - New `TextField` component to display textarea and inputs
@@ -99,6 +101,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.9]: https://github.com/ferpection/uikit/tree/v0.0.9
 [v0.0.8]: https://github.com/ferpection/uikit/tree/v0.0.8
 [v0.0.7]: https://github.com/ferpection/uikit/tree/v0.0.7
 [v0.0.6]: https://github.com/ferpection/uikit/tree/v0.0.6
