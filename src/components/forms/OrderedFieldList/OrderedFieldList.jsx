@@ -17,7 +17,13 @@ import {
 export const OrderedFieldList = props => {
   const [values, setValues] = useState([])
 
-  const { isDisabled, isEditable, initalFieldCount = 1 } = props
+  const {
+    isDisabled,
+    isEditable,
+    placeholder,
+    initalFieldCount = 1,
+    buttonText = 'Add a list item',
+  } = props
 
   const handleAddition = () =>
     setValues([...values, { id: RandomString.generate(20), text: '' }])
@@ -44,31 +50,38 @@ export const OrderedFieldList = props => {
         <li key={value.id} css={[listItem]}>
           {isEditable && !isDisabled ? (
             <Button
+              icon="trash"
               css={[icon, hideAndShowIconOnHover]}
               isRaw
-              icon="trash"
               isDisabled={isDisabled}
               onClick={() => handleDeletion(value.id)}
             />
           ) : null}
           <TextField
-            isDisabled={isDisabled}
+            placeholder={placeholder}
             value={value.text}
+            isDisabled={isDisabled}
             onValueChange={userValue => handleChange(userValue, value.id)}
           />
         </li>
       ))}
       {isEditable ? (
         <li css={[listItem]}>
-          <Button css={[
-            icon,
-          ]} isRaw icon="plus" isDisabled={isDisabled} onClick={handleDeletion} />
+          <Button
+            css={[icon]}
+            icon="plus"
+            isRaw
+            isDisabled={isDisabled}
+            onClick={handleDeletion}
+          />
           <PlaceholderButton
             css={[addButton]}
             icon={''}
             isDisabled={isDisabled}
             onClick={handleAddition}
-          />
+          >
+            {buttonText}
+          </PlaceholderButton>
         </li>
       ) : null}
     </ol>
@@ -79,4 +92,6 @@ OrderedFieldList.propTypes = {
   isDisabled: propTypes.bool,
   isEditable: propTypes.bool,
   initalFieldCount: propTypes.number,
+  placeholder: propTypes.string,
+  buttonText: propTypes.string,
 }
