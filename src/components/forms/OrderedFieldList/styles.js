@@ -16,11 +16,9 @@ export const listItem = css`
 
 export const icon = css`
   position: absolute;
-  left: -28px;
-  top: 2px;
+  left: -25px;
+  top: 5px;
   background-color: white /* to hide the number */;
-  border: 3px solid white /* to hide the number */;
-  box-sizing: border-box;
 `
 
 export const hideAndShowIconOnHover = css`
