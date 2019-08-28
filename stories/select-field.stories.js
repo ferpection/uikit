@@ -5,7 +5,6 @@ import { withA11y } from '@storybook/addon-a11y'
 import {
   withKnobs,
   text,
-  number,
   boolean,
   select,
 } from '@storybook/addon-knobs'
@@ -32,7 +31,6 @@ storiesOf('Components|Forms/SelectField', module)
     <SelectField
       placeholder={text('placeholder', 'Fill the field')}
       dataType={select('data type', ['text', 'email'])}
-      rowCount={number('row count', 1)}
       isHighlighted={boolean('highlighted', false)}
       isDisabled={boolean('disabled', false)}
     />

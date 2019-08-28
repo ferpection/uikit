@@ -8,6 +8,6 @@ import { PRIMARY_COLORSET } from '../src/colors/index.js'
 
 storiesOf('Components|FerpectionLogo', module)
   .addDecorator(withA11y)
-  .add('with mixed buttons', () => (
+  .add('normal state', () => (
     <FerpectionLogo color={PRIMARY_COLORSET.ROBINS_EGG_BLUE} />
   ))

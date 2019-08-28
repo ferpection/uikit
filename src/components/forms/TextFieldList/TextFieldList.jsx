@@ -100,7 +100,7 @@ export const TextFieldList = props => {
               icon="plus"
               isRaw
               isDisabled={isDisabled}
-              onClick={handleDeletion}
+              onClick={handleAddition}
             />
             <PlaceholderButton
               css={[addButton]}
