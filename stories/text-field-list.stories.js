@@ -63,6 +63,39 @@ storiesOf('Components|Forms/TextFieldList', module)
 
     return <Story />
   })
+  .add('error state', () => {
+    const Story = () => {
+      const [values, setValues] = useState([])
+      const [errors, setErrors] = useState({})
+
+      return (
+        <>
+          <TextFieldList
+            placeholder={text('placeholder', 'Add your text here')}
+            buttonText={text('button text', 'Add a list item')}
+            isEditable
+            dataType="email"
+            onValueChange={values => setValues(values)}
+            onErrors={values => setErrors(values)}
+          />
+          <pre
+            css={{
+              backgroundColor: N75_COLOR.toString(),
+              padding: 40,
+              marginTop: 40,
+            }}
+          >
+            Value: {JSON.stringify(values, null, 2)}
+            <br />
+            <br />
+            Errors: {JSON.stringify(errors, null, 2)}
+          </pre>
+        </>
+      )
+    }
+
+    return <Story />
+  })
   .add('disabled state', () => {
     const Story = () => {
       const [values, setValues] = useState([])

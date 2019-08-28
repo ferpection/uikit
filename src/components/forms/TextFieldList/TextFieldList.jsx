@@ -12,18 +12,29 @@ import {
   listItem,
   icon,
   addButton,
+  listErrors,
 } from './styles'
+import { FormErrors } from '../FormErrors/FormErrors.jsx'
 
 export const TextFieldList = props => {
   const [values, setValues] = useState([])
-  const { onValueChange = () => {} } = props
+  const [errorMessages, setErrorMessages] = useState({})
+
+  const { onValueChange = () => {}, onErrors = () => {} } = props
+  const flatErrorMessages = Object.keys(errorMessages)
+    .map(key => errorMessages[key])
+    .reduce((aggr, curr) => {
+      return Object.assign({}, aggr, curr)
+    }, {})
 
   useEffect(() => onValueChange(values.map(value => value.text)), [values])
+  useEffect(() => onErrors(flatErrorMessages), [errorMessages])
 
   const {
     isDisabled,
     isEditable,
     placeholder,
+    dataType,
     initalFieldCount = 1,
     buttonText = 'Add a list item',
   } = props
@@ -40,6 +51,15 @@ export const TextFieldList = props => {
         return { id: value.id, text: userValue }
       })
     )
+  const handleErrors = (errors, index) => {
+    const newErrors = { ...errorMessages, [index]: errors }
+
+    if (Object.keys(errors).length < 1) {
+      delete newErrors[index]
+    }
+
+    setErrorMessages(newErrors)
+  }
 
   if (values.length < initalFieldCount) {
     for (let index = values.length - 1; index < initalFieldCount; index++) {
@@ -48,50 +68,58 @@ export const TextFieldList = props => {
   }
 
   return (
-    <ol css={[list]}>
-      {values.map(value => (
-        <li key={value.id} css={[listItem]}>
-          {isEditable && !isDisabled ? (
+    <>
+      <ol css={[list]}>
+        {values.map(value => (
+          <li key={value.id} css={[listItem]}>
+            {isEditable && !isDisabled ? (
+              <Button
+                icon="trash"
+                css={[icon, hideAndShowIconOnHover]}
+                isRaw
+                isDisabled={isDisabled}
+                onClick={() => handleDeletion(value.id)}
+              />
+            ) : null}
+            <TextField
+              dataType={dataType}
+              placeholder={placeholder}
+              value={value.text}
+              isDisabled={isDisabled}
+              onValueChange={userValue => handleChange(userValue, value.id)}
+              onErrors={errors => handleErrors(errors, value.id)}
+            />
+          </li>
+        ))}
+        {isEditable ? (
+          <li css={[listItem]}>
             <Button
-              icon="trash"
-              css={[icon, hideAndShowIconOnHover]}
+              css={[icon]}
+              icon="plus"
               isRaw
               isDisabled={isDisabled}
-              onClick={() => handleDeletion(value.id)}
+              onClick={handleDeletion}
             />
-          ) : null}
-          <TextField
-            placeholder={placeholder}
-            value={value.text}
-            isDisabled={isDisabled}
-            onValueChange={userValue => handleChange(userValue, value.id)}
-          />
-        </li>
-      ))}
-      {isEditable ? (
-        <li css={[listItem]}>
-          <Button
-            css={[icon]}
-            icon="plus"
-            isRaw
-            isDisabled={isDisabled}
-            onClick={handleDeletion}
-          />
-          <PlaceholderButton
-            css={[addButton]}
-            icon={''}
-            isDisabled={isDisabled}
-            onClick={handleAddition}
-          >
-            {buttonText}
-          </PlaceholderButton>
-        </li>
-      ) : null}
-    </ol>
+            <PlaceholderButton
+              css={[addButton]}
+              icon={''}
+              isDisabled={isDisabled}
+              onClick={handleAddition}
+            >
+              {buttonText}
+            </PlaceholderButton>
+          </li>
+        ) : null}
+      </ol>
+      <div css={[listErrors]} >
+        <FormErrors errors={flatErrorMessages} />
+      </div>
+    </>
   )
 }
 
 TextFieldList.propTypes = {
+  dataType: TextField.propTypes.dataType,
   isDisabled: propTypes.bool,
   isEditable: propTypes.bool,
   initalFieldCount: propTypes.number,

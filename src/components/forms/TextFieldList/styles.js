@@ -12,6 +12,7 @@ export const list = css`
 
 export const listItem = css`
   position: relative;
+  margin-bottom: 10px;
 `
 
 export const icon = css`
@@ -37,4 +38,8 @@ export const addButton = css`
   position: relative;
   width: 100%;
   text-align: inherit;
+`
+
+export const listErrors = css`
+  margin: 10px 20px;
 `
