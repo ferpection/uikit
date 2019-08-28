@@ -18,11 +18,3 @@ storiesOf('Components|Button/PlaceholderButton', module)
       {text('label', 'Add an element')}
     </PlaceholderButton>
   ))
-  .add('used in ordered list', () => (
-    <PlaceholderButton
-      onClick={action('clicked')}
-      isDisabled={boolean('disabled', false)}
-    >
-      {text('label', 'Add an item')}
-    </PlaceholderButton>
-  ))
