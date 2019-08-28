@@ -15,9 +15,9 @@ import {
 } from './styles'
 
 export const OrderedFieldList = props => {
-  const [values, setValues] = useState([{ id: RandomString.generate(20), text: '' }])
+  const [values, setValues] = useState([])
 
-  const { isDisabled, isEditable } = props
+  const { isDisabled, isEditable, initalFieldCount = 1 } = props
 
   const handleAddition = () =>
     setValues([...values, { id: RandomString.generate(20), text: '' }])
@@ -31,6 +31,12 @@ export const OrderedFieldList = props => {
         return { id: value.id, text: userValue }
       })
     )
+
+  if (values.length < initalFieldCount) {
+    for (let index = values.length - 1; index < initalFieldCount; index++) {
+      handleAddition()
+    }
+  }
 
   return (
     <ol css={[list]}>
@@ -69,4 +75,5 @@ export const OrderedFieldList = props => {
 OrderedFieldList.propTypes = {
   isDisabled: propTypes.bool,
   isEditable: propTypes.bool,
+  initalFieldCount: propTypes.number,
 }
