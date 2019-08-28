@@ -21,14 +21,11 @@ export const PlaceholderButton = props => {
   return (
     <Container
       {...args}
-      css={[
-        addButtonStyles,
-        isDisabled && disabledStyles,
-      ]}
+      css={[addButtonStyles, isDisabled && disabledStyles]}
       aria-label={children}
       disabled={isDisabled}
     >
-      {(icon != null && icon !== '') ? (
+      {icon != null && icon !== '' ? (
         <>
           <FontAwesomeIcon icon={icon} />
           &nbsp;

@@ -25,7 +25,7 @@ export const icon = css`
 
 export const hideAndShowIconOnHover = css`
   opacity: 0;
-  transition: opacity .2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   li:hover & {
     opacity: 1;
   }

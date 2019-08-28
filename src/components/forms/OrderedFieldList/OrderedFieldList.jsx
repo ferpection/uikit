@@ -5,9 +5,15 @@ import { PlaceholderButton } from '../../buttons/PlaceholderButton/PlaceholderBu
 import { TextField } from '../TextField/TextField.jsx'
 import { Button } from '../../buttons/Button/Button.jsx'
 
-import { list, hideAndShowIconOnHover, listItem, icon, addButton } from './styles'
+import {
+  list,
+  hideAndShowIconOnHover,
+  listItem,
+  icon,
+  addButton,
+} from './styles'
 
-export const OrderedFieldList = (props) => {
+export const OrderedFieldList = props => {
   const [values, setValues] = useState([''])
 
   const { isDisabled } = props
@@ -19,13 +25,23 @@ export const OrderedFieldList = (props) => {
     <ol css={[list]}>
       {values.map((value, i) => (
         <li key={i} css={[listItem]}>
-          <Button css={[icon, hideAndShowIconOnHover]} isRaw icon="trash" onClick={handleDeletion} />
+          <Button
+            css={[icon, hideAndShowIconOnHover]}
+            isRaw
+            icon="trash"
+            onClick={handleDeletion}
+          />
           <TextField isDisabled={isDisabled} value={value} />
         </li>
       ))}
       <li css={[listItem]}>
         <Button css={[icon]} isRaw icon="plus" onClick={handleDeletion} />
-        <PlaceholderButton css={[addButton]} icon={''} isDisabled={isDisabled} onClick={handleAddition} />
+        <PlaceholderButton
+          css={[addButton]}
+          icon={''}
+          isDisabled={isDisabled}
+          onClick={handleAddition}
+        />
       </li>
     </ol>
   )

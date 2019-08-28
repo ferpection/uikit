@@ -11,15 +11,15 @@ export const addButtonStyles = css`
   border: 1px dashed #ddd;
   border-radius: 3px;
   font-size: 15px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   &:hover {
     z-index: 2;
     box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
     border-style: solid;
-    color: ${C200_COLOR.shade(-20).toRGBA()}
+    color: ${C200_COLOR.shade(-20).toRGBA()};
   }
-  &:active{
+  &:active {
     z-index: 2;
     box-shadow: 0 0 0 16px ${C200_COLOR.toRGBA(0.1)};
   }
