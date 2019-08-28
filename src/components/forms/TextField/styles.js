@@ -6,8 +6,8 @@ import {
   C15_COLOR,
   N100_COLOR,
   N300_COLOR,
-} from '../../../colors'
-import { SANSSERIF_FONTSET } from '../../../fonts'
+} from '../../../colors/index.js'
+import { SANSSERIF_FONTSET } from '../../../fonts.js'
 
 export const baseStyle = css`
   position: relative;

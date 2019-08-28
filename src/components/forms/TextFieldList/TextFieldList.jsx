@@ -114,7 +114,7 @@ export const TextFieldList = props => {
         ) : null}
       </ol>
       {displayErrorStrategy === 'on-list' ? (
-        <div css={[listErrors]} >
+        <div css={[listErrors]}>
           <FormErrors errors={flatErrorMessages} />
         </div>
       ) : null}

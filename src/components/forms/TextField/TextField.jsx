@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import propTypes from 'prop-types'
 
-import { FormErrors } from '../FormErrors/FormErrors'
+import { FormErrors } from '../FormErrors/FormErrors.jsx'
 
 import {
   baseStyle,
@@ -29,10 +29,7 @@ export const TextField = props => {
   const [errorMessages, setErrorMessages] = useState({})
   const [isValid, setValidity] = useState(true)
 
-  const {
-    onValueChange = () => {},
-    onErrors = () => {},
-  } = props
+  const { onValueChange = () => {}, onErrors = () => {} } = props
 
   const handleChanges = v => {
     setValue(v)
