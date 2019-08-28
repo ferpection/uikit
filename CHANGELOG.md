@@ -106,6 +106,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.10]: https://github.com/ferpection/uikit/tree/v0.0.10
 [v0.0.9]: https://github.com/ferpection/uikit/tree/v0.0.9
 [v0.0.8]: https://github.com/ferpection/uikit/tree/v0.0.8
 [v0.0.7]: https://github.com/ferpection/uikit/tree/v0.0.7
