@@ -8,5 +8,5 @@ import { OrderedFieldList } from '../src/components/index.js'
 storiesOf('Components|Forms/OrderedFieldList', module)
   .addDecorator(withA11y)
   .add('normal state', () => <OrderedFieldList />)
-  .add('editable state', () => <OrderedFieldList />)
+  .add('editable state', () => <OrderedFieldList isEditable />)
   .add('disabled state', () => <OrderedFieldList isDisabled />)

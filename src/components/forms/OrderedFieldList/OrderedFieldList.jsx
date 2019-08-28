@@ -16,7 +16,7 @@ import {
 export const OrderedFieldList = props => {
   const [values, setValues] = useState([''])
 
-  const { isDisabled } = props
+  const { isDisabled, isEditable } = props
 
   const handleAddition = () => setValues([...values, ''])
   const handleDeletion = () => {}
@@ -25,28 +25,33 @@ export const OrderedFieldList = props => {
     <ol css={[list]}>
       {values.map((value, i) => (
         <li key={i} css={[listItem]}>
-          <Button
-            css={[icon, hideAndShowIconOnHover]}
-            isRaw
-            icon="trash"
-            onClick={handleDeletion}
-          />
+          {isEditable ? (
+            <Button
+              css={[icon, hideAndShowIconOnHover]}
+              isRaw
+              icon="trash"
+              onClick={handleDeletion}
+            />
+          ) : null}
           <TextField isDisabled={isDisabled} value={value} />
         </li>
       ))}
-      <li css={[listItem]}>
-        <Button css={[icon]} isRaw icon="plus" onClick={handleDeletion} />
-        <PlaceholderButton
-          css={[addButton]}
-          icon={''}
-          isDisabled={isDisabled}
-          onClick={handleAddition}
-        />
-      </li>
+      {isEditable ? (
+        <li css={[listItem]}>
+          <Button css={[icon]} isRaw icon="plus" onClick={handleDeletion} />
+          <PlaceholderButton
+            css={[addButton]}
+            icon={''}
+            isDisabled={isDisabled}
+            onClick={handleAddition}
+          />
+        </li>
+      ) : null}
     </ol>
   )
 }
 
 OrderedFieldList.propTypes = {
   isDisabled: propTypes.bool,
+  isEditable: propTypes.bool,
 }
