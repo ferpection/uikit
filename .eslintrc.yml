@@ -9,6 +9,7 @@ parserOptions:
   sourceType: module
 plugins:
   - react
+  - '@typescript-eslint/eslint-plugin'
 rules: {
   react/jsx-uses-react: error,
   react/jsx-uses-vars: error,
@@ -19,3 +20,6 @@ overrides:
   - files:
       '*.ts'
     parser: '@typescript-eslint/parser'
+    rules:
+      no-useless-constructor: 0
+      '@typescript-eslint/no-useless-constructor': 2

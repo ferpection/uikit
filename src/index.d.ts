@@ -1,16 +1,16 @@
 import React from 'react'
 
 declare module '@ferpection/uikit' {
-    class Color {
-        static fromHex(hex: string): Color
+    interface Color {
+      static fromHex(hex: string): Color
 
-        constructor(red: number, green: number, blue: number, alfa?: number)
+      constructor(red: number, green: number, blue: number, alfa?: number)
 
-        toHex(): string
-        toRGB(): string
-        toRGBA(alfa?: number): string
+      toHex(): string
+      toRGB(): string
+      toRGBA(alfa?: number): string
 
-        shade(rate?: number): string
+      shade(rate?: number): string
     }
 
     export const R500_COLOR: Color
@@ -147,12 +147,6 @@ declare module '@ferpection/uikit' {
 
     export class PlaceholderButton extends React.Component<PlaceholderButtonProps> {}
 
-    interface FerpectionLogoProps extends ButtonProps {
-        color: Color
-    }
-
-    export class FerpectionLogo extends React.Component<FerpectionLogoProps> {}
-
     interface HeaderLinkProps extends ButtonProps {
         headerLigthVersion?: boolean
     }
@@ -175,7 +169,7 @@ declare module '@ferpection/uikit' {
     export class Header extends React.Component<HeaderProps> {}
 
     export class FerpectionLogo extends React.Component<{
-        color: string
+        color: Color
     }> {}
 
     interface Errors {
@@ -235,16 +229,16 @@ declare module '@ferpection/uikit' {
 
 declare module '@ferpection/uikit/components' {
 
-    class Color {
-        static fromHex(hex: string): Color
+    interface Color {
+      static fromHex(hex: string): Color
 
-        constructor(red: number, green: number, blue: number, alfa?: number)
+      constructor(red: number, green: number, blue: number, alfa?: number)
 
-        toHex(): string
-        toRGB(): string
-        toRGBA(alfa?: number): string
+      toHex(): string
+      toRGB(): string
+      toRGBA(alfa?: number): string
 
-        shade(rate?: number): string
+      shade(rate?: number): string
     }
 
     interface ButtonProps {
@@ -273,12 +267,6 @@ declare module '@ferpection/uikit/components' {
 
     export class PlaceholderButton extends React.Component<PlaceholderButtonProps> {}
 
-    interface FerpectionLogoProps extends ButtonProps {
-        color: Color
-    }
-
-    export class FerpectionLogo extends React.Component<FerpectionLogoProps> {}
-
     interface HeaderLinkProps extends ButtonProps {
         headerLigthVersion?: boolean
     }
@@ -301,7 +289,7 @@ declare module '@ferpection/uikit/components' {
     export class Header extends React.Component<HeaderProps> {}
 
     export class FerpectionLogo extends React.Component<{
-        color: string
+        color: Color
     }> {}
 
     interface Errors {
@@ -359,16 +347,16 @@ declare module '@ferpection/uikit/components' {
 }
 
 declare module '@ferpection/uikit/colors' {
-    class Color {
-        static fromHex(hex: string): Color
+    interface Color {
+      static fromHex(hex: string): Color
 
-        constructor(red: number, green: number, blue: number, alfa?: number)
+      constructor(red: number, green: number, blue: number, alfa?: number)
 
-        toHex(): string
-        toRGB(): string
-        toRGBA(alfa?: number): string
+      toHex(): string
+      toRGB(): string
+      toRGBA(alfa?: number): string
 
-        shade(rate?: number): string
+      shade(rate?: number): string
     }
 
     export const R500_COLOR: Color
