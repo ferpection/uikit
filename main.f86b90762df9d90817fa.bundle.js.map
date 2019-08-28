@@ -1,0 +1,1 @@
+{"version":3,"file":"main.f86b90762df9d90817fa.bundle.js","sources":["webpack:///./src/utils/number.js"],"sourcesContent":["export function max(num, max) {\n  if (num > max) {\n    return max\n  }\n\n  return num\n}\n\nexport function min(num, min) {\n  if (num < min) {\n    return min\n  }\n\n  return num\n}\n"],"mappings":"AAAA","sourceRoot":""}
