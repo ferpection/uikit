@@ -42,11 +42,12 @@ export const OrderedFieldList = props => {
     <ol css={[list]}>
       {values.map(value => (
         <li key={value.id} css={[listItem]}>
-          {isEditable ? (
+          {isEditable && !isDisabled ? (
             <Button
               css={[icon, hideAndShowIconOnHover]}
               isRaw
               icon="trash"
+              isDisabled={isDisabled}
               onClick={() => handleDeletion(value.id)}
             />
           ) : null}
@@ -59,7 +60,9 @@ export const OrderedFieldList = props => {
       ))}
       {isEditable ? (
         <li css={[listItem]}>
-          <Button css={[icon]} isRaw icon="plus" onClick={handleDeletion} />
+          <Button css={[
+            icon,
+          ]} isRaw icon="plus" isDisabled={isDisabled} onClick={handleDeletion} />
           <PlaceholderButton
             css={[addButton]}
             icon={''}

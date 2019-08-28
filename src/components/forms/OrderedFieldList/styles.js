@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 
 import { SANSSERIF_FONTSET } from '../../../fonts'
-import { N300_COLOR } from '../../../colors'
+import { N300_COLOR, C200_COLOR } from '../../../colors'
 
 export const list = css`
   padding-left: 20px;
@@ -19,6 +19,10 @@ export const icon = css`
   left: -25px;
   top: 5px;
   background-color: white /* to hide the number */;
+  &[disabled] {
+    opacity: 1;
+    color: ${C200_COLOR.toRGBA(0.5)};
+  }
 `
 
 export const hideAndShowIconOnHover = css`
