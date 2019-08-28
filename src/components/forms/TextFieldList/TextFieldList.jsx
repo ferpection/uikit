@@ -14,7 +14,7 @@ import {
   addButton,
 } from './styles'
 
-export const OrderedFieldList = props => {
+export const TextFieldList = props => {
   const [values, setValues] = useState([])
   const { onValueChange = () => {} } = props
 
@@ -91,7 +91,7 @@ export const OrderedFieldList = props => {
   )
 }
 
-OrderedFieldList.propTypes = {
+TextFieldList.propTypes = {
   isDisabled: propTypes.bool,
   isEditable: propTypes.bool,
   initalFieldCount: propTypes.number,

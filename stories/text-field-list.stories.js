@@ -4,10 +4,10 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, boolean, number, text } from '@storybook/addon-knobs'
 
-import { OrderedFieldList } from '../src/components/index.js'
+import { TextFieldList } from '../src/components/index.js'
 import { N75_COLOR } from '../src/colors/index.js'
 
-storiesOf('Components|Forms/OrderedFieldList', module)
+storiesOf('Components|Forms/TextFieldList', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('normal state', () => {
@@ -16,7 +16,7 @@ storiesOf('Components|Forms/OrderedFieldList', module)
 
       return (
         <>
-          <OrderedFieldList
+          <TextFieldList
             placeholder={text('placeholder', 'Add your text here')}
             initalFieldCount={number('initial field count', 3)}
             onValueChange={values => setValues(values)}
@@ -42,7 +42,7 @@ storiesOf('Components|Forms/OrderedFieldList', module)
 
       return (
         <>
-          <OrderedFieldList
+          <TextFieldList
             placeholder={text('placeholder', 'Add your text here')}
             buttonText={text('button text', 'Add a list item')}
             isEditable
@@ -69,7 +69,7 @@ storiesOf('Components|Forms/OrderedFieldList', module)
 
       return (
         <>
-          <OrderedFieldList
+          <TextFieldList
             buttonText={text('button text', 'Add a list item')}
             placeholder={text('placeholder', 'Add your text here')}
             initalFieldCount={number('initial field count', 3)}
