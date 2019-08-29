@@ -130,5 +130,5 @@ TextFieldList.propTypes = {
   placeholder: propTypes.string,
   buttonText: propTypes.string,
   onValueChange: propTypes.func,
-  displayErrorStrategy: propTypes.oneOf('hidden', 'on-field', 'on-list'),
+  displayErrorStrategy: propTypes.oneOf(['hidden', 'on-field', 'on-list']),
 }
