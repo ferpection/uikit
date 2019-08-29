@@ -9,6 +9,7 @@ export {
   PlaceholderButton,
 } from './buttons/PlaceholderButton/PlaceholderButton.jsx'
 export { ThemeProvider } from './contexts/ThemeContext.js'
+export { ThematicSection } from './layout/ThematicSection/ThematicSection.jsx'
 export { Header } from './layout/Header/Header.jsx'
 export { HeaderLink } from './buttons/HeaderLink.jsx'
 export { FerpectionLogo } from './logos/FerpectionLogo.jsx'
