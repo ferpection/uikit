@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v0.0.11] - 2019-08-29
+### Fixed
+- Import Link directly from `react-router-dom`.
+  Dependent project must have `react-router-dom` installed to be able to use the `Button` components.
+
 ## [v0.0.10] - 2019-08-28
 ### Fixed
 - On click on the plus icon, a new field is added on the `TextFieldList` component
@@ -106,6 +111,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.11]: https://github.com/ferpection/uikit/tree/v0.0.11
 [v0.0.10]: https://github.com/ferpection/uikit/tree/v0.0.10
 [v0.0.9]: https://github.com/ferpection/uikit/tree/v0.0.9
 [v0.0.8]: https://github.com/ferpection/uikit/tree/v0.0.8

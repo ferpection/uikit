@@ -1,6 +1,6 @@
 {
   "name": "@ferpection/uikit",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Technical implementation of the Ferpection design system",
   "main": "index.js",
   "types": "index.d.ts",
