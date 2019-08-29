@@ -10,5 +10,5 @@ storiesOf('Layout|ThematicSection', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('with classic buttons', () => (
-    <ThematicSection />
+    <ThematicSection title="Questions de qualification" />
   ))
