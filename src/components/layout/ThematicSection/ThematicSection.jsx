@@ -18,7 +18,10 @@ export const ThematicSection = props => (
     <header css={[headerStyles]}>
       <div css={[titleStyles]}>
         <div css={[logoStyles]}>
-          <FerpectionBadgeIcon icon={props.badgeIcon} borderColor={props.badgeColor} />
+          <FerpectionBadgeIcon
+            icon={props.badgeIcon}
+            borderColor={props.badgeColor}
+          />
         </div>
         <h2 css={[titleTextStyles]}>{props.title}</h2>
       </div>

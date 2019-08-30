@@ -39,23 +39,26 @@ storiesOf('Layout|ThematicSection', module)
     />
   ))
   .add('with form components', () => (
-    <ThematicSection title={text('title', 'Questions de qualification')} badgeIcon={select(
-      'icon',
-      [
-        'config',
-        'goals',
-        'incentive',
-        'objectives',
-        'planning',
-        'post-test',
-        'pre-test',
-        'screening',
-        'target',
-        'test',
-        'tasks',
-      ],
-      'config'
-    )}>
+    <ThematicSection
+      title={text('title', 'Questions de qualification')}
+      badgeIcon={select(
+        'icon',
+        [
+          'config',
+          'goals',
+          'incentive',
+          'objectives',
+          'planning',
+          'post-test',
+          'pre-test',
+          'screening',
+          'target',
+          'test',
+          'tasks',
+        ],
+        'config'
+      )}
+    >
       <div
         css={css`
           display: flex;
