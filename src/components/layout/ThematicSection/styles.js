@@ -1,6 +1,6 @@
 import { css } from '@emotion/core'
 
-import { N100_COLOR, N300_COLOR, R200_COLOR, N500_COLOR } from '../../../colors'
+import { N100_COLOR, N300_COLOR, N500_COLOR } from '../../../colors'
 import { SANSSERIF_FONTSET } from '../../../fonts'
 
 export const containerStyles = css`
@@ -29,15 +29,14 @@ export const titleTextStyles = css`
   color: ${`${N500_COLOR}`};
 `
 
-const logoSize = 60
+const logoSize = 85
 export const logoStyles = css`
   position: absolute;
-  left: -75px;
+  left: -83px;
+  top: -19px;
   width: ${logoSize}px;
   height: ${logoSize}px;
-  border: 5px solid ${`${R200_COLOR}`};
   border-radius: 50%;
-  background-color: white;
 `
 
 export const sectionStyles = css`

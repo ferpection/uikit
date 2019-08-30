@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 
 import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs } from '@storybook/addon-knobs'
+import { withKnobs, select, text } from '@storybook/addon-knobs'
 
 import {
   ThematicSection,
@@ -17,12 +17,45 @@ storiesOf('Layout|ThematicSection', module)
   .addDecorator(withKnobs)
   .add('with actions buttons', () => (
     <ThematicSection
-      title="Questions de qualification"
+      title={text('title', 'Questions de qualification')}
       actions={<Button icon="comment-medical" isDisabled isRaw />}
+      icon={select(
+        'icon',
+        [
+          'config',
+          'goals',
+          'incentive',
+          'objectives',
+          'planning',
+          'post-test',
+          'pre-test',
+          'screening',
+          'target',
+          'test',
+          'tasks',
+        ],
+        'config'
+      )}
     />
   ))
   .add('with form components', () => (
-    <ThematicSection title="Questions de qualification">
+    <ThematicSection title={text('title', 'Questions de qualification')} icon={select(
+      'icon',
+      [
+        'config',
+        'goals',
+        'incentive',
+        'objectives',
+        'planning',
+        'post-test',
+        'pre-test',
+        'screening',
+        'target',
+        'test',
+        'tasks',
+      ],
+      'config'
+    )}>
       <div
         css={css`
           display: flex;

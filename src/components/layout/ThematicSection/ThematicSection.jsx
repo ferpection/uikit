@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { FerpectionBadgeIcon } from '../../iconography/FerpectionBadgeIcon'
+
 import {
   containerStyles,
   headerStyles,
@@ -14,7 +16,7 @@ export const ThematicSection = props => (
     <header css={[headerStyles]}>
       <div css={[titleStyles]}>
         <div css={[logoStyles]}>
-          <img />
+          <FerpectionBadgeIcon icon={props.icon} borderColor={props.color} />
         </div>
         <h2 css={[titleTextStyles]}>{props.title}</h2>
       </div>
