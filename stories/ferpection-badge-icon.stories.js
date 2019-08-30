@@ -10,7 +10,7 @@ import { FULL_COLORSET } from '../src/colors/index.js'
 storiesOf('Iconography|FerpectionBadgeIcon', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
-  .add('normal state', () => (
+  .add('w/ default border color', () => (
     <FerpectionBadgeIcon
       icon={select(
         'icon',
