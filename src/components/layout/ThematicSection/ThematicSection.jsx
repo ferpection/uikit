@@ -1,8 +1,8 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import { FerpectionBadgeIcon } from '../../iconography/FerpectionBadgeIcon'
-import { Color } from '../../../colors'
+import { FerpectionBadgeIcon } from '../../iconography/FerpectionBadgeIcon.jsx'
+import { Color } from '../../../colors/index.js'
 
 import {
   containerStyles,
