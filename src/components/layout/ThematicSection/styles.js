@@ -5,6 +5,8 @@ import { SANSSERIF_FONTSET } from '../../../fonts'
 
 export const containerStyles = css`
   padding: 20px 40px;
+  font-family: ${`${SANSSERIF_FONTSET}`};
+  color: ${`${N500_COLOR}`};
 `
 
 export const headerStyles = css`
@@ -22,9 +24,7 @@ export const titleStyles = css`
 `
 
 export const titleTextStyles = css`
-  font-family: ${`${SANSSERIF_FONTSET}`};
   font-weight: 600;
-  color: ${`${N500_COLOR}`};
   margin: 5px;
 `
 

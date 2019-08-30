@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { Button } from '../../buttons/Button/Button'
-
 import { containerStyles, headerStyles, titleStyles, sectionStyles, titleTextStyles, logoStyles } from './styles'
 
 export const ThematicSection = (props) => (
@@ -12,7 +10,7 @@ export const ThematicSection = (props) => (
         <h2 css={[titleTextStyles]}>{props.title}</h2>
       </div>
       <div>
-        <Button icon="comment-medical" isDisabled isRaw />
+        {props.actions}
       </div>
     </header>
     <section css={[sectionStyles]}>
