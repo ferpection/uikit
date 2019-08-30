@@ -19,7 +19,7 @@ storiesOf('Layout|ThematicSection', module)
     <ThematicSection
       title={text('title', 'Questions de qualification')}
       actions={<Button icon="comment-medical" isDisabled isRaw />}
-      icon={select(
+      badgeIcon={select(
         'icon',
         [
           'config',
@@ -39,7 +39,7 @@ storiesOf('Layout|ThematicSection', module)
     />
   ))
   .add('with form components', () => (
-    <ThematicSection title={text('title', 'Questions de qualification')} icon={select(
+    <ThematicSection title={text('title', 'Questions de qualification')} badgeIcon={select(
       'icon',
       [
         'config',

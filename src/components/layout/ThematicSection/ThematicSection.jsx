@@ -1,6 +1,8 @@
 import React from 'react'
+import propTypes from 'prop-types'
 
 import { FerpectionBadgeIcon } from '../../iconography/FerpectionBadgeIcon'
+import { Color } from '../../../colors'
 
 import {
   containerStyles,
@@ -16,7 +18,7 @@ export const ThematicSection = props => (
     <header css={[headerStyles]}>
       <div css={[titleStyles]}>
         <div css={[logoStyles]}>
-          <FerpectionBadgeIcon icon={props.icon} borderColor={props.color} />
+          <FerpectionBadgeIcon icon={props.badgeIcon} borderColor={props.badgeColor} />
         </div>
         <h2 css={[titleTextStyles]}>{props.title}</h2>
       </div>
@@ -25,3 +27,10 @@ export const ThematicSection = props => (
     <section css={[sectionStyles]}>{props.children}</section>
   </div>
 )
+
+ThematicSection.propTypes = {
+  title: propTypes.string.isRequired,
+  actions: propTypes.element,
+  badgeIcon: propTypes.string,
+  badgeColor: propTypes.instanceOf(Color),
+}
