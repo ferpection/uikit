@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - New layout component called `ThematicSection`. It adds a header (icon, title, actions) to each section
 
+### Fixed
+- Fix types for `TextFieldList`
+
 ## [v0.0.11] - 2019-08-29
 ### Fixed
 - Import Link directly from `react-router-dom`.
