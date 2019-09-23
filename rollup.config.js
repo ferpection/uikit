@@ -9,7 +9,7 @@ const globalConf = {
   ],
   plugins: [
     typescript({
-      exclude: ['node_modules/**'],
+      typescript: require('typescript'),
     }),
   ],
 }

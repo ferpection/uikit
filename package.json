@@ -29,7 +29,7 @@
     "start": "yarn build:dev",
     "start:storybook": "start-storybook -p 6006",
     "test:lint": "eslint src/** stories/**",
-    "format": "prettier --write '{src,stories}/**/*.{js,jsx}'",
+    "format": "prettier --write '{src,stories}/**/*.{js,ts,tsx}'",
     "publish:storybook": "yarn build:storybook && gh-pages -d storybook-static",
     "prepublishOnly": "yarn format && yarn test:lint && yarn build",
     "postpublish": "yarn build:clean"

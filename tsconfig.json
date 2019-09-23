@@ -6,7 +6,9 @@
       "noImplicitAny": true,
       "outDir": "./dist",
       "target": "es5",
-      "jsx": "react"
+      "jsx": "react",
+      "esModuleInterop": true,
+      "moduleResolution": "node"
     },
     "include": [
       "src/**/*"
