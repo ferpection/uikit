@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
-import propTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
+import { findIconDefinition, IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core'
 
 import { processButtonContainer } from '../process-button-container'
 import { ThemeContext } from '../../contexts/ThemeContext'
@@ -14,20 +13,19 @@ import {
   rawLinkState,
 } from './styles.js'
 
-export const Button = props => {
+export const Button: React.FC<ButtonProps> = props => {
   const theme = useContext(ThemeContext)
   const {
     children,
-    disabled = false,
     isFilled,
     isRaw,
-    isDisabled = disabled,
+    isDisabled,
     color,
     hoverColor,
     icon: iconName,
     iconStore = 'fas',
     ariaLabel,
-    actionType = 'default',
+    actionType = 'action',
     to,
     ...args
   } = props
@@ -80,14 +78,15 @@ export const Button = props => {
   )
 }
 
-Button.propTypes = {
-  isFilled: propTypes.bool,
-  isDisabled: propTypes.bool,
-  isRaw: propTypes.bool,
-  color: propTypes.instanceOf(Color),
-  hoverColor: propTypes.instanceOf(Color),
-  icon: propTypes.string,
-  iconStore: propTypes.string,
-  actionType: propTypes.oneOf(['default', 'positive', 'negative']),
-  to: propTypes.string,
+export interface ButtonProps {
+  isFilled?: boolean
+  isDisabled?: boolean
+  isRaw?: boolean
+  color?: Color
+  hoverColor?: Color
+  icon?: IconName
+  iconStore?: IconPrefix
+  actionType?: 'action' | 'positive' | 'negative'
+  to?: string
+  ariaLabel?: string
 }

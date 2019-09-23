@@ -1,10 +1,10 @@
 import { min, max } from '../utils/number'
 
 export class Color {
-  static fromHex(hexColor) {
+  static fromHex(hexColor: string) {
     if (hexColor == null) return null
 
-    const [hash, ...colorArray] = hexColor
+    const [hash, ...colorArray] = Array.from(hexColor)
 
     if (hash !== '#' || colorArray.length !== 6) return null
 
@@ -17,11 +17,16 @@ export class Color {
     )
   }
 
+  private red: number
+  private green: number
+  private blue: number
+  private alfa: number
+
   get [Symbol.toStringTag]() {
     return `Color(r: ${this.red}, g: ${this.green}, b: ${this.blue}, a: ${this.alfa})`
   }
 
-  constructor(r, g, b, a = 1) {
+  constructor(r: number, g: number, b: number, a = 1) {
     this.red = min(max(r, 255), 0)
     this.green = min(max(g, 255), 0)
     this.blue = min(max(b, 255), 0)

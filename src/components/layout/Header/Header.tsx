@@ -10,7 +10,7 @@ import {
   logoStyles,
 } from './styles.js'
 
-export const Header = props => {
+export const Header: React.FC<HeaderProps> = props => {
   const {
     homeUrl = 'https://ferpection.com/',
     children,
@@ -43,4 +43,9 @@ export const Header = props => {
       </nav>
     </header>
   )
+}
+
+export interface HeaderProps {
+  homeUrl?: string
+  isLightVersion?: boolean
 }

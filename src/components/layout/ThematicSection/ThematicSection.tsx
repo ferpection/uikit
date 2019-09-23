@@ -1,7 +1,7 @@
 import React from 'react'
-import propTypes from 'prop-types'
+import { ReactElementLike } from 'prop-types'
 
-import { FerpectionBadgeIcon } from '../../iconography/FerpectionBadgeIcon'
+import { FerpectionBadgeIcon, FerpectionBadgeIconProps } from '../../iconography/FerpectionBadgeIcon'
 import { Color } from '../../../colors'
 
 import {
@@ -13,7 +13,7 @@ import {
   logoStyles,
 } from './styles'
 
-export const ThematicSection = props => (
+export const ThematicSection: React.FC<ThematicSectionProps> = props => (
   <div css={[containerStyles]}>
     <header css={[headerStyles]}>
       <div css={[titleStyles]}>
@@ -31,9 +31,9 @@ export const ThematicSection = props => (
   </div>
 )
 
-ThematicSection.propTypes = {
-  title: propTypes.string.isRequired,
-  actions: propTypes.element,
-  badgeIcon: propTypes.string,
-  badgeColor: propTypes.instanceOf(Color),
+export interface ThematicSectionProps {
+  title: string
+  actions?: ReactElementLike
+  badgeIcon?: FerpectionBadgeIconProps["icon"]
+  badgeColor?: Color
 }

@@ -1,11 +1,10 @@
 import React from 'react'
-import propTypes from 'prop-types'
 
 import { Color, R400_COLOR } from '../../colors'
 
-import { Button } from './Button/Button'
+import { Button, ButtonProps } from './Button/Button'
 
-export const HeaderLink = props => {
+export const HeaderLink: React.FC<HeaderLinkProps> = props => {
   const { headerLigthVersion, children, ...otherProps } = props
   const WHITE_COLOR = new Color(255, 255, 255)
 
@@ -20,7 +19,6 @@ export const HeaderLink = props => {
   )
 }
 
-HeaderLink.propTypes = {
-  ...Button.propTypes,
-  headerLigthVersion: propTypes.bool,
+export interface HeaderLinkProps extends ButtonProps {
+  headerLigthVersion: boolean
 }

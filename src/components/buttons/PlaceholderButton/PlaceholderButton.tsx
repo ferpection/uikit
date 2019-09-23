@@ -1,16 +1,15 @@
 import React from 'react'
-import propTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconName } from '@fortawesome/fontawesome-svg-core'
 
 import { processButtonContainer } from '../process-button-container'
 
 import { addButtonStyles, disabledStyles } from './styles'
 
-export const PlaceholderButton = props => {
+export const PlaceholderButton: React.FC<PlaceholderButtonProps> = props => {
   const {
     children = 'Add an element',
-    disabled = false,
-    isDisabled = disabled,
+    isDisabled,
     icon = 'plus',
     to,
     ...args
@@ -25,7 +24,7 @@ export const PlaceholderButton = props => {
       aria-label={children}
       disabled={isDisabled}
     >
-      {icon != null && icon !== '' ? (
+      {icon != null ? (
         <>
           <FontAwesomeIcon icon={icon} />
           &nbsp;
@@ -36,10 +35,10 @@ export const PlaceholderButton = props => {
   )
 }
 
-PlaceholderButton.propTypes = {
-  isDisabled: propTypes.bool,
-  to: propTypes.string,
-  icon: propTypes.string,
-  ariaLabel: propTypes.string,
-  children: propTypes.string,
+interface PlaceholderButtonProps {
+  isDisabled?: boolean
+  to?: string
+  icon?: IconName
+  ariaLabel?: string
+  children?: string
 }

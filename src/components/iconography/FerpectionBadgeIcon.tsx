@@ -1,10 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { css } from '@emotion/core'
 
 import { Color } from '../../colors'
 
-export const FerpectionBadgeIcon = ({
+export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
   borderColor = {
     toHex: () => {},
   },
@@ -1455,19 +1454,18 @@ export const FerpectionBadgeIcon = ({
   }
 }
 
-FerpectionBadgeIcon.propTypes = {
-  borderColor: PropTypes.instanceOf(Color),
-  icon: PropTypes.oneOf([
-    'tasks',
-    'test',
-    'target',
-    'screening',
-    'post-test',
-    'pre-test',
-    'planning',
-    'objectives',
-    'incentive',
-    'goals',
-    'config',
-  ]),
+export interface FerpectionBadgeIconProps {
+  borderColor: Color
+  icon:
+    | 'tasks'
+    | 'test'
+    | 'target'
+    | 'screening'
+    | 'post-test'
+    | 'pre-test'
+    | 'planning'
+    | 'objectives'
+    | 'incentive'
+    | 'goals'
+    | 'config'
 }
