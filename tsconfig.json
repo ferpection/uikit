@@ -1,11 +1,15 @@
 {
     "compilerOptions": {
-        "outDir": "./build",
-        "target": "es5",
-        "jsx": "react",
-        "declaration": true
+      "declaration": true,
+      "declarationDir": "./dist",
+      "module": "es6",
+      "noImplicitAny": true,
+      "outDir": "./dist",
+      "target": "es5",
+      "jsx": "react"
     },
     "include": [
-        "./src/**/*"
-    ]
+      "src/**/*"
+    ],
+    "exclude": ["node_modules"]
 }
