@@ -1,6 +1,6 @@
 import { css } from '@emotion/core'
 
-import { C200_COLOR, N100_COLOR } from '../../../colors/index.js'
+import { C200_COLOR, N100_COLOR } from '../../../colors'
 
 export const addButtonStyles = css`
   display: block;

@@ -2,9 +2,9 @@ import React from 'react'
 import propTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { processButtonContainer } from '../process-button-container.jsx'
+import { processButtonContainer } from '../process-button-container'
 
-import { addButtonStyles, disabledStyles } from './styles.js'
+import { addButtonStyles, disabledStyles } from './styles'
 
 export const PlaceholderButton = props => {
   const {

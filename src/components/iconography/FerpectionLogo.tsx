@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Color } from '../../colors/index.js'
+import { Color } from '../../colors'
 
 export const FerpectionLogo = ({ color }) => (
   <svg

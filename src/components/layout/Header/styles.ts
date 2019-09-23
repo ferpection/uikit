@@ -1,4 +1,4 @@
-import { R400_COLOR, N75_COLOR } from '../../../colors/index.js'
+import { R400_COLOR, N75_COLOR } from '../../../colors'
 
 export const defaultHeaderStyles = {
   backgroundColor: String(R400_COLOR),

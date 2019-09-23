@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 
-import { N100_COLOR, N300_COLOR, N500_COLOR } from '../../../colors/index.js'
-import { SANSSERIF_FONTSET } from '../../../fonts.js'
+import { N100_COLOR, N300_COLOR, N500_COLOR } from '../../../colors'
+import { SANSSERIF_FONTSET } from '../../../fonts'
 
 export const containerStyles = css`
   padding: 20px 40px;

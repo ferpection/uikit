@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { css } from '@emotion/core'
 
-import { Color } from '../../colors/index.js'
+import { Color } from '../../colors'
 
 export const FerpectionBadgeIcon = ({
   borderColor = {

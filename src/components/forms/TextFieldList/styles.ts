@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 
-import { SANSSERIF_FONTSET } from '../../../fonts.js'
-import { N300_COLOR, C200_COLOR } from '../../../colors/index.js'
+import { SANSSERIF_FONTSET } from '../../../fonts'
+import { N300_COLOR, C200_COLOR } from '../../../colors'
 
 export const list = css`
   padding-left: 20px;

@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 
-import { N300_COLOR, O200_COLOR } from '../../../colors/index.js'
-import { SANSSERIF_FONTSET } from '../../../fonts.js'
+import { N300_COLOR, O200_COLOR } from '../../../colors'
+import { SANSSERIF_FONTSET } from '../../../fonts'
 
 export const errorStyle = css`
   margin-top: 10px;

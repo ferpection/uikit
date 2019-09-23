@@ -3,9 +3,9 @@ import propTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
 
-import { processButtonContainer } from '../process-button-container.jsx'
-import { ThemeContext } from '../../contexts/ThemeContext.js'
-import { Color } from '../../../colors/index.js'
+import { processButtonContainer } from '../process-button-container'
+import { ThemeContext } from '../../contexts/ThemeContext'
+import { Color } from '../../../colors'
 
 import {
   prepareBaseState,

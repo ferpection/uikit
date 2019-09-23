@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import propTypes from 'prop-types'
 
-import { FormErrors } from '../FormErrors/FormErrors.jsx'
+import { FormErrors } from '../FormErrors/FormErrors'
 
 import {
   baseStyle,

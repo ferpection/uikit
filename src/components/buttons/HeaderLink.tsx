@@ -1,9 +1,9 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import { Color, R400_COLOR } from '../../colors/index.js'
+import { Color, R400_COLOR } from '../../colors'
 
-import { Button } from './Button/Button.jsx'
+import { Button } from './Button/Button'
 
 export const HeaderLink = props => {
   const { headerLigthVersion, children, ...otherProps } = props

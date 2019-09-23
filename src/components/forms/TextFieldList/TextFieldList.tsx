@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import propTypes from 'prop-types'
 import RandomString from 'randomstring'
 
-import { PlaceholderButton } from '../../buttons/PlaceholderButton/PlaceholderButton.jsx'
-import { TextField } from '../TextField/TextField.jsx'
-import { Button } from '../../buttons/Button/Button.jsx'
+import { PlaceholderButton } from '../../buttons/PlaceholderButton/PlaceholderButton'
+import { TextField } from '../TextField/TextField'
+import { Button } from '../../buttons/Button/Button'
 
 import {
   list,

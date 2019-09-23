@@ -7,7 +7,7 @@ import {
   O200_COLOR,
   O25_COLOR,
 } from '../../../colors/index.js'
-import { SANSSERIF_FONTSET } from '../../../fonts.js'
+import { SANSSERIF_FONTSET } from '../../../fonts'
 
 export const baseStyle = css`
   position: relative;

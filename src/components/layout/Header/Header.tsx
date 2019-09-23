@@ -1,7 +1,7 @@
 import React, { Children, isValidElement, cloneElement } from 'react'
 
-import { Color, R400_COLOR } from '../../../colors/index.js'
-import { FerpectionLogo } from '../../iconography/FerpectionLogo.jsx'
+import { Color, R400_COLOR } from '../../../colors/index'
+import { FerpectionLogo } from '../../iconography/FerpectionLogo'
 
 import {
   defaultHeaderStyles,

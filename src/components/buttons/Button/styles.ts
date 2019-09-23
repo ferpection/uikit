@@ -1,5 +1,5 @@
-import { SANSSERIF_FONTSET } from '../../../fonts.js'
-import { C200_COLOR } from '../../../colors/index.js'
+import { SANSSERIF_FONTSET } from '../../../fonts'
+import { C200_COLOR } from '../../../colors'
 
 export const prepareBaseState = ({
   color = C200_COLOR,

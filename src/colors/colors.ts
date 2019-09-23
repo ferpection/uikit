@@ -1,4 +1,4 @@
-import { Color } from './color.class.js'
+import { Color } from './color.class'
 
 /* Reds */
 export const R500_COLOR = new Color(183, 42, 42)

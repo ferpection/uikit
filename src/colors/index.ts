@@ -4,5 +4,5 @@ export {
   FULL_COLORSET,
 } from './colorsets.js'
 
-export * from './colors.js'
-export * from './color.class.js'
+export * from './colors'
+export * from './color.class'

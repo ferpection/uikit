@@ -9,7 +9,7 @@ import {
   headerStyles,
   questionTextStyles,
   logoOuterStyles,
-} from './styles.js'
+} from './styles'
 
 export const HelpBlock = props => {
   return (
