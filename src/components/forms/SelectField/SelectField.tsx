@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import propTypes from 'prop-types'
 
 import { FormErrors } from '../FormErrors/FormErrors'
+import { FormProps } from '../form-props'
 
 import {
   baseStyle,
@@ -11,7 +11,7 @@ import {
   errorStyle,
 } from './styles'
 
-export const SelectField = props => {
+export const SelectField: React.FC<FormProps & SelectFieldProps> = props => {
   const {
     placeholder,
     isHighlighted,
@@ -76,12 +76,6 @@ export const SelectField = props => {
   )
 }
 
-SelectField.propTypes = {
-  placeholder: propTypes.string,
-  isHighlighted: propTypes.bool,
-  isDisabled: propTypes.bool,
-  isRequired: propTypes.bool,
-  value: propTypes.string,
-  onValueChange: propTypes.func,
-  onErrors: propTypes.func,
+export interface SelectFieldProps {
+  isHighlighted: boolean
 }

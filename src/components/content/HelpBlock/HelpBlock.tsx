@@ -1,5 +1,4 @@
 import React from 'react'
-import propTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import {
@@ -11,7 +10,7 @@ import {
   logoOuterStyles,
 } from './styles'
 
-export const HelpBlock = props => {
+export const HelpBlock: React.FC<HelpBlockProps> = props => {
   return (
     <aside css={[containerStyles]}>
       <header css={headerStyles}>
@@ -27,6 +26,6 @@ export const HelpBlock = props => {
   )
 }
 
-HelpBlock.propTypes = {
-  question: propTypes.string.isRequired,
+export interface HelpBlockProps {
+  question: string
 }

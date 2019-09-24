@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import propTypes from 'prop-types'
 
 import { FormErrors } from '../FormErrors/FormErrors'
+import { FormProps } from '../form-props'
 
 import {
   baseStyle,
@@ -13,7 +13,7 @@ import {
 
 const EMAIL_REGEXP = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
-export const TextField = props => {
+export const TextField: React.FC<FormProps & TextFieldProps> = props => {
   const {
     dataType = 'text',
     rowCount = 1,
@@ -31,7 +31,7 @@ export const TextField = props => {
 
   const { onValueChange = () => {}, onErrors = () => {} } = props
 
-  const handleChanges = v => {
+  const handleChanges = (v: string) => {
     setValue(v)
     onValueChange(v)
   }
@@ -100,15 +100,9 @@ export const TextField = props => {
   )
 }
 
-TextField.propTypes = {
-  placeholder: propTypes.string,
-  dataType: propTypes.oneOf(['text', 'email']),
-  rowCount: propTypes.number,
-  isHighlighted: propTypes.bool,
-  isDisabled: propTypes.bool,
-  isRequired: propTypes.bool,
-  hideErrors: propTypes.bool,
-  value: propTypes.string,
-  onValueChange: propTypes.func,
-  onErrors: propTypes.func,
+export interface TextFieldProps {
+  dataType?: 'text' | 'email'
+  rowCount?: number
+  isHighlighted?: boolean
+  hideErrors?: boolean
 }

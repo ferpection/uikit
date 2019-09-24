@@ -38,7 +38,8 @@ export const PlaceholderButton: React.FC<PlaceholderButtonProps> = props => {
 interface PlaceholderButtonProps {
   isDisabled?: boolean
   to?: string
-  icon?: IconName
+  icon?: IconName | null
   ariaLabel?: string
   children?: string
+  onClick?: (event: Event) => void
 }

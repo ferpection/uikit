@@ -1,6 +1,10 @@
 import React, { useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { findIconDefinition, IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core'
+import {
+  findIconDefinition,
+  IconName,
+  IconPrefix,
+} from '@fortawesome/fontawesome-svg-core'
 
 import { processButtonContainer } from '../process-button-container'
 import { ThemeContext } from '../../contexts/ThemeContext'
@@ -89,4 +93,5 @@ export interface ButtonProps {
   actionType?: 'action' | 'positive' | 'negative'
   to?: string
   ariaLabel?: string
+  onClick?: (event: EventTarget) => void
 }

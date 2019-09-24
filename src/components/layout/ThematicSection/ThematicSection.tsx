@@ -1,7 +1,10 @@
 import React from 'react'
 import { ReactElementLike } from 'prop-types'
 
-import { FerpectionBadgeIcon, FerpectionBadgeIconProps } from '../../iconography/FerpectionBadgeIcon'
+import {
+  FerpectionBadgeIcon,
+  FerpectionBadgeIconProps,
+} from '../../iconography/FerpectionBadgeIcon'
 import { Color } from '../../../colors'
 
 import {
@@ -34,6 +37,6 @@ export const ThematicSection: React.FC<ThematicSectionProps> = props => (
 export interface ThematicSectionProps {
   title: string
   actions?: ReactElementLike
-  badgeIcon?: FerpectionBadgeIconProps["icon"]
+  badgeIcon?: FerpectionBadgeIconProps['icon']
   badgeColor?: Color
 }

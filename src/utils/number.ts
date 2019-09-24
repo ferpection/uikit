@@ -1,4 +1,4 @@
-export function max(num, max) {
+export function max(num: number, max: number) {
   if (num > max) {
     return max
   }
@@ -6,7 +6,7 @@ export function max(num, max) {
   return num
 }
 
-export function min(num, min) {
+export function min(num: number, min: number) {
   if (num < min) {
     return min
   }

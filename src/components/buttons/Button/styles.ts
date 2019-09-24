@@ -1,63 +1,67 @@
+import { css } from '@emotion/core'
+
 import { SANSSERIF_FONTSET } from '../../../fonts'
-import { C200_COLOR } from '../../../colors'
+import { C200_COLOR, Color } from '../../../colors'
 
 export const prepareBaseState = ({
   color = C200_COLOR,
   darkerColor = color.shade(-20),
-} = {}) => ({
-  display: 'inline-block',
-  WebkitAppearance: 'none',
-  backgroundColor: 'white',
-  cursor: 'pointer',
-  padding: '12px 20px',
-  margin: '1px',
-  borderWidth: '1.4px',
-  borderColor: String(color),
-  borderRadius: '100px',
-  borderStyle: 'solid',
-  color: String(color),
-  fontSize: '18px',
-  fontWeight: 600,
-  fontFamily: SANSSERIF_FONTSET,
-  textDecoration: 'none',
-  transition: [
-    'box-shadow .3s ease-in-out',
-    'background-color .3s ease-in-out',
-    'color .3s ease-in-out',
-  ],
-  '&:hover': {
-    boxShadow: '0 1px 4px 1px rgba(0,0,0,0.3)',
-    color: String(darkerColor),
-    borderColor: String(darkerColor),
-  },
-  '&[disabled]': {
-    opacity: '.5',
-    pointerEvents: 'none',
-  },
-})
+}: { color?: Color; darkerColor?: Color } = {}) =>
+  css({
+    display: 'inline-block',
+    WebkitAppearance: 'none',
+    backgroundColor: 'white',
+    cursor: 'pointer',
+    padding: '12px 20px',
+    margin: '1px',
+    borderWidth: '1.4px',
+    borderColor: String(color),
+    borderRadius: '100px',
+    borderStyle: 'solid',
+    color: String(color),
+    fontSize: '18px',
+    fontWeight: 600,
+    fontFamily: SANSSERIF_FONTSET,
+    textDecoration: 'none',
+    transition: [
+      'box-shadow .3s ease-in-out',
+      'background-color .3s ease-in-out',
+      'color .3s ease-in-out',
+    ],
+    '&:hover': {
+      boxShadow: '0 1px 4px 1px rgba(0,0,0,0.3)',
+      color: String(darkerColor),
+      borderColor: String(darkerColor),
+    },
+    '&[disabled]': {
+      opacity: '.5',
+      pointerEvents: 'none',
+    },
+  })
 
 export const prepareFilledState = ({
   color = C200_COLOR,
   darkerColor = color.shade(-20),
-} = {}) => ({
-  color: 'white',
-  backgroundColor: String(color),
-  '&:hover': {
-    boxShadow: '0 1px 4px 1px rgba(0,0,0,0.3)',
-    backgroundColor: String(darkerColor),
+}: { color?: Color; darkerColor?: Color } = {}) =>
+  css({
     color: 'white',
-    borderColor: String(darkerColor),
-  },
-})
+    backgroundColor: String(color),
+    '&:hover': {
+      boxShadow: '0 1px 4px 1px rgba(0,0,0,0.3)',
+      backgroundColor: String(darkerColor),
+      color: 'white',
+      borderColor: String(darkerColor),
+    },
+  })
 
-export const iconOnlyState = {
+export const iconOnlyState = css({
   boxSizing: 'border-box',
   height: '48px',
   width: '48px',
   padding: 'unset',
-}
+})
 
-export const rawLinkState = {
+export const rawLinkState = css({
   backgroundColor: 'transparent',
   borderWidth: '0px',
   padding: '5px',
@@ -66,4 +70,4 @@ export const rawLinkState = {
   '&:hover': {
     boxShadow: 'none',
   },
-}
+})

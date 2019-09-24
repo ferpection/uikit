@@ -1,4 +1,9 @@
-import React, { Children, isValidElement, cloneElement } from 'react'
+import React, {
+  Children,
+  isValidElement,
+  cloneElement,
+  ReactElement,
+} from 'react'
 
 import { Color, R400_COLOR } from '../../../colors/index'
 import { FerpectionLogo } from '../../iconography/FerpectionLogo'
@@ -20,7 +25,7 @@ export const Header: React.FC<HeaderProps> = props => {
 
   const buttonList = Children.toArray(children)
     .filter(child => isValidElement(child))
-    .map(child =>
+    .map((child: ReactElement) =>
       cloneElement(child, {
         isFilled: false,
         color: R400_COLOR,

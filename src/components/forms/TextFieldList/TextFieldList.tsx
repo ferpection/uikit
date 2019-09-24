@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import RandomString from 'randomstring'
 
 import { PlaceholderButton } from '../../buttons/PlaceholderButton/PlaceholderButton'
-import { TextField } from '../TextField/TextField'
+import { TextField, TextFieldProps } from '../TextField/TextField'
 import { Button } from '../../buttons/Button/Button'
 
 import {
@@ -15,8 +15,11 @@ import {
   listErrors,
 } from './styles'
 import { FormErrors } from '../FormErrors/FormErrors.jsx'
+import { FormProps } from '../form-props'
 
-export const TextFieldList = props => {
+export const TextFieldList: React.FC<
+  FormProps & TextFieldListProps
+> = props => {
   const [values, setValues] = useState([])
   const [errorMessages, setErrorMessages] = useState({})
 
@@ -104,7 +107,7 @@ export const TextFieldList = props => {
             />
             <PlaceholderButton
               css={[addButton]}
-              icon={''}
+              icon={null}
               isDisabled={isDisabled}
               onClick={handleAddition}
             >
@@ -122,13 +125,10 @@ export const TextFieldList = props => {
   )
 }
 
-TextFieldList.propTypes = {
-  dataType: TextField.propTypes.dataType,
-  isDisabled: propTypes.bool,
-  isEditable: propTypes.bool,
-  initalFieldCount: propTypes.number,
-  placeholder: propTypes.string,
-  buttonText: propTypes.string,
-  onValueChange: propTypes.func,
-  displayErrorStrategy: propTypes.oneOf(['hidden', 'on-field', 'on-list']),
+export interface TextFieldListProps {
+  dataType?: TextFieldProps['dataType']
+  isEditable?: boolean
+  initalFieldCount?: number
+  buttonText?: string
+  displayErrorStrategy?: 'hidden' | 'on-field' | 'on-list'
 }
