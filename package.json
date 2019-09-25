@@ -2,8 +2,9 @@
   "name": "@ferpection/uikit",
   "version": "0.0.12",
   "description": "Technical implementation of the Ferpection design system",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/ferpection/uikit",
   "author": "Ferpection <hello@ferpection.com> (https://ferpection.com)",
   "contributors": [
@@ -14,10 +15,7 @@
     }
   ],
   "files": [
-    "/colors.js",
-    "/index.js",
-    "/index.d.ts",
-    "/components.js"
+    "./dist"
   ],
   "license": "MIT",
   "private": false,
@@ -25,7 +23,7 @@
     "build": "rollup -c",
     "build:dev": "yarn build -w",
     "build:storybook": "build-storybook",
-    "build:clean": "rm -rf ./{colors,components,index}.js ./index.d.ts ./storybook-static",
+    "build:clean": "rm -rf ./{colors,components,index}.js ./index.d.ts ./storybook-static ./dist",
     "start": "yarn build:dev",
     "start:storybook": "start-storybook -p 6006",
     "test:lint": "eslint src/** stories/**",

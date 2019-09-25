@@ -19,28 +19,12 @@ export default [
     input: './src/index.ts',
     output: [
       {
+        file: pkg.module,
+        format: 'esm',
+      },
+      {
         file: pkg.main,
-        format: 'esm',
-      },
-    ],
-    ...globalConf,
-  },
-  {
-    input: './src/colors/index.ts',
-    output: [
-      {
-        file: 'colors.js',
-        format: 'esm',
-      },
-    ],
-    ...globalConf,
-  },
-  {
-    input: './src/components/index.ts',
-    output: [
-      {
-        file: 'components.js',
-        format: 'esm',
+        format: 'cjs',
       },
     ],
     ...globalConf,
