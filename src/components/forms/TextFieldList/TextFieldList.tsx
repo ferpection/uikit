@@ -20,8 +20,8 @@ import { FormProps } from '../form-props'
 export const TextFieldList: React.FC<
   FormProps & TextFieldListProps
 > = props => {
-  const [values, setValues] = useState([])
-  const [errorMessages, setErrorMessages] = useState({})
+  const [values, setValues] = useState<{ id: string, text: string }[]>([])
+  const [errorMessages, setErrorMessages] = useState<{ [errorKey: string]: any }>({})
 
   const { onValueChange = () => {}, onErrors = () => {} } = props
   const flatErrorMessages = Object.keys(errorMessages)
@@ -45,9 +45,9 @@ export const TextFieldList: React.FC<
 
   const handleAddition = () =>
     setValues([...values, { id: RandomString.generate(20), text: '' }])
-  const handleDeletion = index =>
+  const handleDeletion = (index: string) =>
     setValues(values.filter(values => values.id !== index))
-  const handleChange = (userValue, index) =>
+  const handleChange = (userValue: string, index: string) =>
     setValues(
       values.map(value => {
         if (value.id !== index) return value
@@ -55,7 +55,7 @@ export const TextFieldList: React.FC<
         return { id: value.id, text: userValue }
       })
     )
-  const handleErrors = (errors, index) => {
+  const handleErrors = (errors: { [errorkey: string]: any }, index: string) => {
     const newErrors = { ...errorMessages, [index]: errors }
 
     if (Object.keys(errors).length < 1) {
@@ -131,4 +131,5 @@ export interface TextFieldListProps {
   initalFieldCount?: number
   buttonText?: string
   displayErrorStrategy?: 'hidden' | 'on-field' | 'on-list'
+  onValueChange: (values: string[]) => void
 }

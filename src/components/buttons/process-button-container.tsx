@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const processButtonContainer = (to: string): React.FC => props => {
+export const processButtonContainer = (to: string): React.FC<{ disabled?: boolean }> => props => {
   if (typeof to !== 'string') {
     return <button {...props}>{props.children}</button>
   }

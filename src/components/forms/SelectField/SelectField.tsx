@@ -27,11 +27,11 @@ export const SelectField: React.FC<FormProps & SelectFieldProps> = props => {
 
   const {
     onValueChange = () => {},
-    onErrors = e => setErrorMessages(e),
+    onErrors = (e: { [errorKey: string]: any }) => setErrorMessages(e),
   } = props
 
   const isEmpty = value == null || value === ''
-  const handleChanges = v => {
+  const handleChanges = (v: string) => {
     setValue(v)
     onValueChange(v)
   }
@@ -66,7 +66,7 @@ export const SelectField: React.FC<FormProps & SelectFieldProps> = props => {
         onChange={event => handleChanges(event.target.value)}
         value={value}
       >
-        <option disabled={!isEmpty} defaultValue>
+        <option disabled={!isEmpty}>
           {placeholder}
         </option>
         {children}

@@ -12,16 +12,16 @@ export const prepareBaseState = ({
     WebkitAppearance: 'none',
     backgroundColor: 'white',
     cursor: 'pointer',
-    padding: '12px 20px',
-    margin: '1px',
-    borderWidth: '1.4px',
+    padding: [12, 20],
+    margin: 1,
+    borderWidth: 1.4,
     borderColor: String(color),
-    borderRadius: '100px',
+    borderRadius: 100,
     borderStyle: 'solid',
     color: String(color),
-    fontSize: '18px',
+    fontSize: 18,
     fontWeight: 600,
-    fontFamily: SANSSERIF_FONTSET,
+    fontFamily: SANSSERIF_FONTSET.map(font => font), //
     textDecoration: 'none',
     transition: [
       'box-shadow .3s ease-in-out',
@@ -34,7 +34,7 @@ export const prepareBaseState = ({
       borderColor: String(darkerColor),
     },
     '&[disabled]': {
-      opacity: '.5',
+      opacity: 0.5,
       pointerEvents: 'none',
     },
   })
