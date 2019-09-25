@@ -21,7 +21,9 @@ export const prepareBaseState = ({
     color: String(color),
     fontSize: 18,
     fontWeight: 600,
-    fontFamily: SANSSERIF_FONTSET.map(font => font), //
+    // We have to use a mutable version of SANSSERIF_FONTSET
+    // for typescript to not complain
+    fontFamily: SANSSERIF_FONTSET.map(font => font),
     textDecoration: 'none',
     transition: [
       'box-shadow .3s ease-in-out',
