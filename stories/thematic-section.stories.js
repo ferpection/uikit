@@ -10,7 +10,7 @@ import {
   Button,
   TextFieldList,
   HelpBlock,
-} from '../src/components/index.js'
+} from '../src/components/index.ts'
 
 storiesOf('Layout|ThematicSection', module)
   .addDecorator(withA11y)

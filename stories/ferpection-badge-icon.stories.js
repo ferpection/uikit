@@ -4,8 +4,8 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, select } from '@storybook/addon-knobs'
 
-import { FerpectionBadgeIcon } from '../src/components/index.js'
-import { FULL_COLORSET } from '../src/colors/index.js'
+import { FerpectionBadgeIcon } from '../src/components/index.ts'
+import { FULL_COLORSET } from '../src/colors/index.ts'
 
 storiesOf('Iconography|FerpectionBadgeIcon', module)
   .addDecorator(withA11y)
