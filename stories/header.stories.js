@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { boolean, withKnobs } from '@storybook/addon-knobs'
 
-import { Header, Button, HeaderLink } from '../src/components/index.js'
+import { Header, Button, HeaderLink } from '../src/components/index.ts'
 
 storiesOf('Layout|Header', module)
   .addDecorator(withA11y)

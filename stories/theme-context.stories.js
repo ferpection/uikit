@@ -5,8 +5,8 @@ import { action } from '@storybook/addon-actions'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, text } from '@storybook/addon-knobs'
 
-import { Button, ThemeProvider } from '../src/components/index.js'
-import { FULL_COLORSET, Color } from '../src/colors/index.js'
+import { Button, ThemeProvider } from '../src/components/index.ts'
+import { FULL_COLORSET, Color } from '../src/colors/index.ts'
 
 storiesOf('Contexts|ThemeProvider', module)
   .addDecorator(withA11y)

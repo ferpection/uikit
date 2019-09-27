@@ -10,7 +10,7 @@ import {
   select,
 } from '@storybook/addon-knobs'
 
-import { TextField } from '../src/components/index.js'
+import { TextField } from '../src/components/index.ts'
 
 storiesOf('Components|Forms/TextField', module)
   .addDecorator(withA11y)

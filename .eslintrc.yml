@@ -10,12 +10,11 @@ parserOptions:
 plugins:
   - react
   - '@typescript-eslint/eslint-plugin'
-rules: {
-  react/jsx-uses-react: error,
-  react/jsx-uses-vars: error,
-  space-before-function-paren: [error, never],
+rules:
+  react/jsx-uses-react: error
+  react/jsx-uses-vars: error
+  space-before-function-paren: [error, never]
   comma-dangle: [error, always-multiline]
-}
 overrides:
   - files:
       '*.ts'

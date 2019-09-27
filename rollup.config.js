@@ -1,19 +1,5 @@
-import fs from 'fs'
-import path from 'path'
-import babel from 'rollup-plugin-babel'
+import typescript from 'rollup-plugin-typescript2'
 import pkg from './package.json'
-
-const copy = function(options) {
-  return {
-    generateBundle() {
-      const targDir = path.dirname(options.target)
-      if (!fs.existsSync(targDir)) {
-        fs.mkdirSync(targDir)
-      }
-      fs.writeFileSync(options.target, fs.readFileSync(options.src))
-    },
-  }
-}
 
 const globalConf = {
   external: [
@@ -22,43 +8,23 @@ const globalConf = {
     '@emotion/css',
   ],
   plugins: [
-    babel({
-      exclude: ['node_modules/**'],
-    }),
-    copy({
-      src: './src/index.d.ts',
-      target: './index.d.ts',
+    typescript({
+      typescript: require('typescript'),
     }),
   ],
 }
 
 export default [
   {
-    input: './src/index.js',
+    input: './src/index.ts',
     output: [
+      {
+        file: pkg.module,
+        format: 'esm',
+      },
       {
         file: pkg.main,
-        format: 'esm',
-      },
-    ],
-    ...globalConf,
-  },
-  {
-    input: './src/colors/index.js',
-    output: [
-      {
-        file: 'colors.js',
-        format: 'esm',
-      },
-    ],
-    ...globalConf,
-  },
-  {
-    input: './src/components/index.js',
-    output: [
-      {
-        file: 'components.js',
-        format: 'esm',
+        format: 'cjs',
       },
     ],
     ...globalConf,

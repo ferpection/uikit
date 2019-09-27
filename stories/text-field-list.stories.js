@@ -10,8 +10,8 @@ import {
   select,
 } from '@storybook/addon-knobs'
 
-import { TextFieldList } from '../src/components/index.js'
-import { N75_COLOR } from '../src/colors/index.js'
+import { TextFieldList } from '../src/components/index.ts'
+import { N75_COLOR } from '../src/colors/index.ts'
 
 storiesOf('Components|Forms/TextFieldList', module)
   .addDecorator(withA11y)

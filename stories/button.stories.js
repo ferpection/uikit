@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
-import { Button } from '../src/components/index.js'
+import { Button } from '../src/components/index.ts'
 
 storiesOf('Components|Button/Button', module)
   .addDecorator(withA11y)
