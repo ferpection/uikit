@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+/** @jsx jsx */
+import React, { useState, useEffect, Fragment } from 'react'
+import { jsx } from '@emotion/core'
 
 import { FormErrors } from '../FormErrors/FormErrors'
 import { FormProps } from '../form-props'
@@ -63,7 +65,7 @@ export const TextField: React.FC<FormProps & TextFieldProps> = props => {
   }, [value])
 
   return (
-    <>
+    <Fragment>
       {rowCount < 2 ? (
         <input
           type={dataType}
@@ -96,7 +98,7 @@ export const TextField: React.FC<FormProps & TextFieldProps> = props => {
         />
       ) : null}
       <FormErrors errors={errorMessages} />
-    </>
+    </Fragment>
   )
 }
 

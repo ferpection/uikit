@@ -1,9 +1,11 @@
+/** @jsx jsx */
 import React, {
   Children,
   isValidElement,
   cloneElement,
   ReactElement,
 } from 'react'
+import { jsx } from '@emotion/core'
 
 import { Color, R400_COLOR } from '../../../colors/index'
 import { FerpectionLogo } from '../../iconography/FerpectionLogo'
@@ -13,7 +15,7 @@ import {
   buttonListStyle,
   lightHeaderStyle,
   logoStyles,
-} from './styles.js'
+} from './styles'
 
 export const Header: React.FC<HeaderProps> = props => {
   const {

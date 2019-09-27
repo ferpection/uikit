@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+/** @jsx jsx */
+import React, { useState, useEffect, Fragment } from 'react'
+import { jsx } from '@emotion/core'
 
 import { FormErrors } from '../FormErrors/FormErrors'
 import { FormProps } from '../form-props'
@@ -53,7 +55,7 @@ export const SelectField: React.FC<FormProps & SelectFieldProps> = props => {
   }, [value])
 
   return (
-    <>
+    <Fragment>
       <select
         css={[
           baseStyle,
@@ -66,13 +68,11 @@ export const SelectField: React.FC<FormProps & SelectFieldProps> = props => {
         onChange={event => handleChanges(event.target.value)}
         value={value}
       >
-        <option disabled={!isEmpty}>
-          {placeholder}
-        </option>
+        <option disabled={!isEmpty}>{placeholder}</option>
         {children}
       </select>
       <FormErrors errors={errorMessages} />
-    </>
+    </Fragment>
   )
 }
 

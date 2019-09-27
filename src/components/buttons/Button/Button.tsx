@@ -1,10 +1,12 @@
-import React, { useContext } from 'react'
+/** @jsx jsx */
+import React, { useContext, Fragment } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   findIconDefinition,
   IconName,
   IconPrefix,
 } from '@fortawesome/fontawesome-svg-core'
+import { jsx } from '@emotion/core'
 
 import { processButtonContainer } from '../process-button-container'
 import { ThemeContext } from '../../contexts/ThemeContext'
@@ -15,7 +17,7 @@ import {
   prepareFilledState,
   iconOnlyState,
   rawLinkState,
-} from './styles.js'
+} from './styles'
 
 export const Button: React.FC<ButtonProps> = props => {
   const theme = useContext(ThemeContext)
@@ -75,7 +77,7 @@ export const Button: React.FC<ButtonProps> = props => {
     >
       {iconExist ? <FontAwesomeIcon icon={icon} size="sm" /> : null}
 
-      {iconExist && childrenExist ? <>&nbsp;</> : null}
+      {iconExist && childrenExist ? <Fragment>&nbsp;</Fragment> : null}
 
       {children}
     </Container>

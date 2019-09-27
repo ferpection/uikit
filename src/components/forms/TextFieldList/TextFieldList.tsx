@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import propTypes from 'prop-types'
+/** @jsx jsx */
+import React, { useState, useEffect, Fragment } from 'react'
 import RandomString from 'randomstring'
+import { jsx } from '@emotion/core'
 
 import { PlaceholderButton } from '../../buttons/PlaceholderButton/PlaceholderButton'
 import { TextField, TextFieldProps } from '../TextField/TextField'
@@ -14,14 +15,16 @@ import {
   addButton,
   listErrors,
 } from './styles'
-import { FormErrors } from '../FormErrors/FormErrors.jsx'
+import { FormErrors } from '../FormErrors/FormErrors'
 import { FormProps } from '../form-props'
 
 export const TextFieldList: React.FC<
   FormProps & TextFieldListProps
 > = props => {
-  const [values, setValues] = useState<{ id: string, text: string }[]>([])
-  const [errorMessages, setErrorMessages] = useState<{ [errorKey: string]: any }>({})
+  const [values, setValues] = useState<{ id: string; text: string }[]>([])
+  const [errorMessages, setErrorMessages] = useState<{
+    [errorKey: string]: any
+  }>({})
 
   const { onValueChange = () => {}, onErrors = () => {} } = props
   const flatErrorMessages = Object.keys(errorMessages)
@@ -72,7 +75,7 @@ export const TextFieldList: React.FC<
   }
 
   return (
-    <>
+    <Fragment>
       <ol css={[list]}>
         {values.map(value => (
           <li key={value.id} css={[listItem]}>
@@ -121,7 +124,7 @@ export const TextFieldList: React.FC<
           <FormErrors errors={flatErrorMessages} />
         </div>
       ) : null}
-    </>
+    </Fragment>
   )
 }
 

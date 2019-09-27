@@ -1,6 +1,8 @@
-import React from 'react'
+/** @jsx jsx */
+import React, { Fragment } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconName } from '@fortawesome/fontawesome-svg-core'
+import { jsx } from '@emotion/core'
 
 import { processButtonContainer } from '../process-button-container'
 
@@ -25,10 +27,10 @@ export const PlaceholderButton: React.FC<PlaceholderButtonProps> = props => {
       disabled={isDisabled}
     >
       {icon != null ? (
-        <>
+        <Fragment>
           <FontAwesomeIcon icon={icon} />
           &nbsp;
-        </>
+        </Fragment>
       ) : null}
       {children}
     </Container>
