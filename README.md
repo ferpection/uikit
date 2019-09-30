@@ -41,22 +41,6 @@ The package expose some UI components you can use in your own project using a cl
 import { Button } from '@ferpection/uikit'
 ```
 
-For a better code splitting you can also use sub-endpoints of the package.
-
-When only brand colors are needed:
-
-```js
-import { PRIMARY_COLORSET } from '@ferpection/uikit/colors'
-```
-
-When only react components are needed:
-
-```js
-import { Button } from '@ferpection/uikit/components'
-```
-
-Using the sub-endpoints results in smaller tarbal size.
-
 For a detail of what this package provides and what is the usage of a specific component, please see the storybook section of this README.
 
 ### Start the project (development mode)
