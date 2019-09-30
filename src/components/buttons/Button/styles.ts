@@ -12,7 +12,7 @@ export const prepareBaseState = ({
     WebkitAppearance: 'none',
     backgroundColor: 'white',
     cursor: 'pointer',
-    padding: [12, 20],
+    padding: '12px 20px',
     margin: 1,
     borderWidth: 1.4,
     borderColor: String(color),
