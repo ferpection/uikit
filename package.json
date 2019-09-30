@@ -26,7 +26,7 @@
     "build:clean": "rm -rf ./{colors,components,index}.js ./index.d.ts ./storybook-static ./dist",
     "start": "yarn build:dev",
     "start:storybook": "start-storybook -p 6006",
-    "test:lint": "eslint src/** stories/**",
+    "test:lint": "eslint src/**/*.{ts,tsx} stories/**",
     "format": "prettier --write '{src,stories,.storybook}/**/*.{js,ts,tsx}'",
     "publish:storybook": "yarn build:storybook && gh-pages -d storybook-static",
     "prepublishOnly": "yarn format && yarn test:lint && yarn build",
