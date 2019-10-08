@@ -25,6 +25,7 @@ export const TextField: React.FC<FormProps & TextFieldProps> = props => {
     hideErrors,
     value: externalValue,
     isRequired,
+    className,
   } = props
 
   const [value, setValue] = useState(externalValue || '')
@@ -75,6 +76,7 @@ export const TextField: React.FC<FormProps & TextFieldProps> = props => {
             !isValid && errorStyle,
             isDisabled && disabledStyle,
           ]}
+          className={className}
           value={value}
           onChange={event => handleChanges(event.target.value)}
           placeholder={placeholder}
@@ -90,6 +92,7 @@ export const TextField: React.FC<FormProps & TextFieldProps> = props => {
             !isValid && errorStyle,
             isDisabled && disabledStyle,
           ]}
+          className={className}
           value={value}
           onChange={event => handleChanges(event.target.value)}
           placeholder={placeholder}
@@ -107,4 +110,5 @@ export interface TextFieldProps {
   rowCount?: number
   isHighlighted?: boolean
   hideErrors?: boolean
+  className?: string
 }
