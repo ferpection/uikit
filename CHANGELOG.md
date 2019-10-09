@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Using TypeScript as main languages
 - **BREACKING CHANGES**. Existing alternative package endpoints are removed for now.
 
+### Fixed
+- Link in `HelpBlock`s' body are gray
+
 ## [v0.0.12] - 2019-08-30
 ### Added
 - New layout component called `ThematicSection`. It adds a header (icon, title, actions) to each section
