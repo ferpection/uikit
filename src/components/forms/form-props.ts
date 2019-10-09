@@ -1,5 +1,5 @@
 export interface FormProps {
-  value: string
+  value?: string
   placeholder?: string
   isDisabled?: boolean
   isRequired?: boolean
