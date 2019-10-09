@@ -49,4 +49,7 @@ export const questionTextStyles = css`
   p {
     margin-top: 0;
   }
+  a {
+    color: ${`${N300_COLOR}`};
+  }
 `
