@@ -16,5 +16,8 @@ storiesOf('Components|HelpBlock', module)
         <li>choix deux</li>
         <li>choix trois</li>
       </ul>
+      <p>
+        <a href="https://google.com">Ceci est un lien</a>
+      </p>
     </HelpBlock>
   ))
