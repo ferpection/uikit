@@ -20,5 +20,5 @@ export const HeaderLink: React.FC<HeaderLinkProps> = props => {
 }
 
 export interface HeaderLinkProps extends ButtonProps {
-  headerLigthVersion: boolean
+  headerLigthVersion?: boolean
 }
