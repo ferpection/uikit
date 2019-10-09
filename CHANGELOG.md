@@ -8,9 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - `className`support for `TextField`
 - `onBlur`support for `TextField`
+- Font constants are exposed
 
 ### Changed
-- Using TypeScript as main languages
+- Using TypeScript as main language
 - **BREACKING CHANGES**. Existing alternative package endpoints are removed for now.
 
 ### Fixed
