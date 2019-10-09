@@ -134,5 +134,5 @@ export interface TextFieldListProps {
   initalFieldCount?: number
   buttonText?: string
   displayErrorStrategy?: 'hidden' | 'on-field' | 'on-list'
-  onValueChange: (values: string[]) => void
+  onValueChange?: (values: string[]) => void
 }
