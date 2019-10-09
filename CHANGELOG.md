@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since v1.0.0.
 
 ## [Unreleased]
+
+## [v0.0.13] - 2019-10-09
 ### Added
 - `className`support for `TextField`
 - `onBlur`support for `TextField`
@@ -130,6 +132,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.13]: https://github.com/ferpection/uikit/tree/v0.0.13
 [v0.0.12]: https://github.com/ferpection/uikit/tree/v0.0.12
 [v0.0.11]: https://github.com/ferpection/uikit/tree/v0.0.11
 [v0.0.10]: https://github.com/ferpection/uikit/tree/v0.0.10
