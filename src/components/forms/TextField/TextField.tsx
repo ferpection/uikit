@@ -32,7 +32,7 @@ export const TextField: React.FC<FormProps & TextFieldProps> = props => {
   const [errorMessages, setErrorMessages] = useState({})
   const [isValid, setValidity] = useState(true)
 
-  const { onValueChange = () => {}, onErrors = () => {} } = props
+  const { onValueChange = () => {}, onErrors = () => {}, onBlur = () => {} } = props
 
   const handleChanges = (v: string) => {
     setValue(v)
@@ -81,6 +81,7 @@ export const TextField: React.FC<FormProps & TextFieldProps> = props => {
           onChange={event => handleChanges(event.target.value)}
           placeholder={placeholder}
           disabled={isDisabled}
+          onBlur={() => onBlur()}
         />
       ) : null}
       {rowCount >= 2 ? (
@@ -98,6 +99,7 @@ export const TextField: React.FC<FormProps & TextFieldProps> = props => {
           placeholder={placeholder}
           rows={rowCount}
           disabled={isDisabled}
+          onBlur={() => onBlur()}
         />
       ) : null}
       <FormErrors errors={errorMessages} />

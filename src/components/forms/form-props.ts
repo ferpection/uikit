@@ -5,4 +5,5 @@ export interface FormProps {
   isRequired?: boolean
   onValueChange?: (value: string) => void
   onErrors?: (errors: { [errorKey: string]: any }) => void
+  onBlur?: () => void
 }
