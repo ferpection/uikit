@@ -21,14 +21,16 @@ import { FormProps } from '../form-props'
 export const TextFieldList: React.FC<
   FormProps & TextFieldListProps
 > = props => {
-  const intialValues = props.value != null
-    ? props.value
-        .map(el => ({
+  const intialValues =
+    props.value != null
+      ? props.value.map(el => ({
           id: RandomString.generate(20),
-          text: el
+          text: el,
         }))
-    : []
-  const [values, setValues] = useState<{ id: string; text: string }[]>(intialValues)
+      : []
+  const [values, setValues] = useState<{ id: string; text: string }[]>(
+    intialValues
+  )
   const [errorMessages, setErrorMessages] = useState<{
     [errorKey: string]: any
   }>({})

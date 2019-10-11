@@ -18,7 +18,9 @@ storiesOf('Components|Forms/TextFieldList', module)
   .addDecorator(withKnobs)
   .add('normal state', () => {
     const Story = () => {
-      const intialValues = boolean('inital field values', true) ? ['yes', 'no', 'maybe'] : []
+      const intialValues = boolean('inital field values', true)
+        ? ['yes', 'no', 'maybe']
+        : []
       const [values, setValues] = useState(intialValues)
 
       return (
