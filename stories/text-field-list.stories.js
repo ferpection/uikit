@@ -24,7 +24,8 @@ storiesOf('Components|Forms/TextFieldList', module)
         <>
           <TextFieldList
             placeholder={text('placeholder', 'Add your text here')}
-            initalFieldCount={number('initial field count', 3)}
+            initialFieldCount={number('initial field count', 2)}
+            value={values}
             onValueChange={values => setValues(values)}
           />
           <pre
