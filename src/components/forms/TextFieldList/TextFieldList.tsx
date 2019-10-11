@@ -24,9 +24,9 @@ export const TextFieldList: React.FC<
   const intialValues =
     props.value != null
       ? props.value.map(el => ({
-          id: RandomString.generate(20),
-          text: el,
-        }))
+        id: RandomString.generate(20),
+        text: el,
+      }))
       : []
   const [values, setValues] = useState<{ id: string; text: string }[]>(
     intialValues
