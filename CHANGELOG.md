@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since v1.0.0.
 
 ## [Unreleased]
+### Added
+- `TextFieldList` uses its `value` attribute as expected (to set the values)
+
+### Fixed
+- `TextFieldList`'s `value` attribute has a new type which is `string[]`!
+
 ## [v0.0.14] - 2019-10-09
 ### Fixed
 - `value` is now optional on all form components
