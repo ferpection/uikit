@@ -18,13 +18,15 @@ storiesOf('Components|Forms/TextFieldList', module)
   .addDecorator(withKnobs)
   .add('normal state', () => {
     const Story = () => {
-      const [values, setValues] = useState([])
+      const intialValues = boolean('inital field values', true) ? ['yes', 'no', 'maybe'] : []
+      const [values, setValues] = useState(intialValues)
 
       return (
         <>
           <TextFieldList
             placeholder={text('placeholder', 'Add your text here')}
-            initalFieldCount={number('initial field count', 3)}
+            initalFieldCount={number('initial field count', 2)}
+            value={values}
             onValueChange={values => setValues(values)}
           />
           <pre
