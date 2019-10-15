@@ -43,4 +43,6 @@ interface PlaceholderButtonProps {
   onClick?: (event: SyntheticEvent) => void
   onMouseUp?: (event?: SyntheticEvent) => void
   onMouseDown?: (event?: SyntheticEvent) => void
+  onFocus?: (event?: SyntheticEvent) => void
+  onBlur?: (event?: SyntheticEvent) => void
 }

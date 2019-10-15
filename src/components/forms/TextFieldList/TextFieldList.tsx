@@ -97,9 +97,11 @@ export const TextFieldList: React.FC<
                 css={[icon, hideAndShowIconOnHover]}
                 isRaw
                 isDisabled={isDisabled}
-                onMouseDown={() => handleFocus()}
-                onMouseUp={() => handleBlur()}
-                onClick={() => handleDeletion(value.id)}
+                onFocus={() => handleFocus()}
+                onClick={() => {
+                  handleBlur()
+                  handleDeletion(value.id)}
+                }
               />
             ) : null}
             <TextField
@@ -122,16 +124,16 @@ export const TextFieldList: React.FC<
               icon="plus"
               isRaw
               isDisabled={isDisabled}
-              onMouseDown={() => handleFocus()}
-              onMouseUp={() => handleBlur()}
+              onFocus={() => handleFocus()}
+              onBlur={() => handleBlur()}
               onClick={() => handleAddition()}
             />
             <PlaceholderButton
               css={[addButton]}
               icon={null}
               isDisabled={isDisabled}
-              onMouseDown={() => handleFocus()}
-              onMouseUp={() => handleBlur()}
+              onFocus={() => handleFocus()}
+              onBlur={() => handleBlur()}
               onClick={() => handleAddition()}
             >
               {buttonText}
@@ -142,8 +144,8 @@ export const TextFieldList: React.FC<
       {displayErrorStrategy === 'on-list' ? (
         <div
           css={[listErrors]}
-          onMouseDown={() => handleFocus()}
-          onMouseUp={() => handleBlur()}
+          onFocus={() => handleFocus()}
+          onBlur={() => handleBlur()}
         >
           <FormErrors errors={flatErrorMessages} />
         </div>
