@@ -8,7 +8,7 @@ import { TextField, TextFieldProps } from '../TextField/TextField'
 import { Button } from '../../buttons/Button/Button'
 import { FormErrors } from '../FormErrors/FormErrors'
 import { FormProps } from '../form-props'
-import { useAggregatedFocus } from './useAggregatedFocus'
+import { useMergedFocusEvents } from './useMergedFocusEvents'
 
 import {
   list,
@@ -36,14 +36,14 @@ export const TextFieldList: React.FC<
     [errorKey: string]: any
   }>({})
 
-  const { onValueChange = () => {}, onErrors = () => {}, onFocus = () => {}, onBlur } = props
+  const { onValueChange = () => {}, onErrors = () => {} } = props
   const flatErrorMessages = Object.keys(errorMessages)
     .map(key => errorMessages[key])
     .reduce((aggr, curr) => {
       return Object.assign({}, aggr, curr)
     }, {})
 
-  const [handleFocus, handleBlur] = useAggregatedFocus({ userOnFocus: onFocus, userOnBlur: onBlur })
+  const [handleFocus, handleBlur] = useMergedFocusEvents(props)
 
   useEffect(() => onValueChange(values.map(value => value.text)), [values])
   useEffect(() => onErrors(flatErrorMessages), [errorMessages])

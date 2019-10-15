@@ -1,21 +1,31 @@
 import { useRef, useEffect, useState, SyntheticEvent } from 'react'
 
 interface HookArgs {
-  userOnFocus: (event?: SyntheticEvent) => void,
-  userOnBlur: (event?: SyntheticEvent) => void,
+  onFocus?: (event?: SyntheticEvent) => void,
+  onBlur?: (event?: SyntheticEvent) => void,
 }
 
-export function useAggregatedFocus({ userOnFocus, userOnBlur }: HookArgs) {
+/**
+ * Simplify the focus handling for composite components.
+ * It makes several field act like on field for the focus and blur event.
+ *
+ * @param options - All the options
+ * @param options.onFocus - The public handler triggered when user enters a field
+ * @param options.onBlur - The public handler triggered when user leaves a field
+ *
+ * @returns The private handlers for the focus and blur event as a tuple
+ */
+export function useMergedFocusEvents({ onFocus = () => {}, onBlur = () => {} }: HookArgs): [() => void, () => void] {
   const [isFocused, setFocus] = useState(false)
   const focusRef = useRef({ timeout: null, initialRender: true })
 
   useEffect(() => {
     if (isFocused && !focusRef.current.initialRender) {
-      userOnFocus()
+      onFocus()
     }
 
     if (!isFocused && !focusRef.current.initialRender) {
-      userOnBlur()
+      onBlur()
     }
 
     focusRef.current.initialRender = false
