@@ -97,6 +97,8 @@ export const TextFieldList: React.FC<
                 css={[icon, hideAndShowIconOnHover]}
                 isRaw
                 isDisabled={isDisabled}
+                onMouseDown={() => handleFocus()}
+                onMouseUp={() => handleBlur()}
                 onClick={() => handleDeletion(value.id)}
               />
             ) : null}
@@ -108,7 +110,8 @@ export const TextFieldList: React.FC<
               onValueChange={userValue => handleChange(userValue, value.id)}
               onErrors={errors => handleErrors(errors, value.id)}
               hideErrors={['hidden', 'on-list'].includes(displayErrorStrategy)}
-              onFocus={() => handleFocus()} onBlur={() => handleBlur()}
+              onFocus={() => handleFocus()}
+              onBlur={() => handleBlur()}
             />
           </li>
         ))}
@@ -119,13 +122,17 @@ export const TextFieldList: React.FC<
               icon="plus"
               isRaw
               isDisabled={isDisabled}
-              onClick={handleAddition}
+              onMouseDown={() => handleFocus()}
+              onMouseUp={() => handleBlur()}
+              onClick={() => handleAddition()}
             />
             <PlaceholderButton
               css={[addButton]}
               icon={null}
               isDisabled={isDisabled}
-              onClick={handleAddition}
+              onMouseDown={() => handleFocus()}
+              onMouseUp={() => handleBlur()}
+              onClick={() => handleAddition()}
             >
               {buttonText}
             </PlaceholderButton>
@@ -133,7 +140,11 @@ export const TextFieldList: React.FC<
         ) : null}
       </ol>
       {displayErrorStrategy === 'on-list' ? (
-        <div css={[listErrors]} onMouseDown={() => handleFocus()} onMouseUp={() => handleBlur()}>
+        <div
+          css={[listErrors]}
+          onMouseDown={() => handleFocus()}
+          onMouseUp={() => handleBlur()}
+        >
           <FormErrors errors={flatErrorMessages} />
         </div>
       ) : null}
