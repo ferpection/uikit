@@ -50,7 +50,7 @@ export const TextFieldList: React.FC<
     isEditable,
     placeholder,
     dataType,
-    initalFieldCount = 1,
+    initialFieldCount = 1,
     buttonText = 'Add a list item',
     displayErrorStrategy = 'on-field',
   } = props
@@ -77,8 +77,8 @@ export const TextFieldList: React.FC<
     setErrorMessages(newErrors)
   }
 
-  if (values.length < initalFieldCount) {
-    for (let index = values.length - 1; index < initalFieldCount; index++) {
+  if (values.length < initialFieldCount) {
+    for (let index = values.length - 1; index < initialFieldCount; index++) {
       handleAddition()
     }
   }
@@ -140,7 +140,7 @@ export const TextFieldList: React.FC<
 export interface TextFieldListProps {
   dataType?: TextFieldProps['dataType']
   isEditable?: boolean
-  initalFieldCount?: number
+  initialFieldCount?: number
   buttonText?: string
   displayErrorStrategy?: 'hidden' | 'on-field' | 'on-list'
   value?: string[]
