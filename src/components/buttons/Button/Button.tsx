@@ -8,7 +8,7 @@ import {
 } from '@fortawesome/fontawesome-svg-core'
 import { jsx } from '@emotion/core'
 
-import { processButtonContainer } from '../process-button-container'
+import { processButtonContainer } from '../processButtonContainer'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import { Color } from '../../../colors'
 
