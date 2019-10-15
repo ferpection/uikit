@@ -8,6 +8,7 @@ import { TextField, TextFieldProps } from '../TextField/TextField'
 import { Button } from '../../buttons/Button/Button'
 import { FormErrors } from '../FormErrors/FormErrors'
 import { FormProps } from '../form-props'
+import { useAggregatedFocus } from './useAggregatedFocus'
 
 import {
   list,
@@ -35,36 +36,17 @@ export const TextFieldList: React.FC<
     [errorKey: string]: any
   }>({})
 
-  const { onValueChange = () => {}, onErrors = () => {} } = props
+  const { onValueChange = () => {}, onErrors = () => {}, onFocus = () => {}, onBlur } = props
   const flatErrorMessages = Object.keys(errorMessages)
     .map(key => errorMessages[key])
     .reduce((aggr, curr) => {
       return Object.assign({}, aggr, curr)
     }, {})
 
+  const [handleFocus, handleBlur] = useAggregatedFocus({ userOnFocus: onFocus, userOnBlur: onBlur })
+
   useEffect(() => onValueChange(values.map(value => value.text)), [values])
   useEffect(() => onErrors(flatErrorMessages), [errorMessages])
-
-  const { onFocus = () => {}, onBlur = () => {} } = props
-  const [isFocused, setFocus] = useState(false)
-  const focusRef = useRef({ timeout: null, initialRender: true })
-  useEffect(() => {
-    if (isFocused && !focusRef.current.initialRender) {
-      onFocus({} as FocusEvent)
-    }
-
-    if (!isFocused && !focusRef.current.initialRender) {
-      onBlur({} as FocusEvent)
-    }
-
-    focusRef.current.initialRender = false
-
-    return () => {
-      if (focusRef.current.timeout != null) {
-        clearTimeout(focusRef.current.timeout)
-      }
-    }
-  }, [isFocused])
 
   const {
     isDisabled,
@@ -96,21 +78,6 @@ export const TextFieldList: React.FC<
     }
 
     setErrorMessages(newErrors)
-  }
-  const handleFocus = () => {
-    clearTimeout(focusRef.current.timeout)
-    if (!isFocused) {
-      setFocus(true)
-    }
-  }
-  const handleBlur = () => {
-    const timout = setTimeout(() => {
-      if (isFocused) {
-        setFocus(false)
-      }
-    }, 0)
-
-    focusRef.current.timeout = timout
   }
 
   if (values.length < initialFieldCount) {
