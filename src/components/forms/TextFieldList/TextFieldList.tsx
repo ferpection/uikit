@@ -47,19 +47,21 @@ export const TextFieldList: React.FC<
 
   const { onFocus = () => {}, onBlur = () => {} } = props
   const [isFocused, setFocus] = useState(false)
-  const timeoutRef = useRef(null)
+  const focusRef = useRef({ timeout: null, initialRender: true })
   useEffect(() => {
-    if (isFocused) {
+    if (isFocused && !focusRef.current.initialRender) {
       onFocus({} as FocusEvent)
     }
 
-    if (!isFocused) {
+    if (!isFocused && !focusRef.current.initialRender) {
       onBlur({} as FocusEvent)
     }
 
+    focusRef.current.initialRender = false
+
     return () => {
-      if (timeoutRef.current != null) {
-        clearTimeout(timeoutRef.current)
+      if (focusRef.current.timeout != null) {
+        clearTimeout(focusRef.current.timeout)
       }
     }
   }, [isFocused])
@@ -96,7 +98,7 @@ export const TextFieldList: React.FC<
     setErrorMessages(newErrors)
   }
   const handleFocus = () => {
-    clearTimeout(timeoutRef.current)
+    clearTimeout(focusRef.current.timeout)
     if (!isFocused) {
       setFocus(true)
     }
@@ -108,7 +110,7 @@ export const TextFieldList: React.FC<
       }
     }, 0)
 
-    timeoutRef.current = timout
+    focusRef.current.timeout = timout
   }
 
   if (values.length < initialFieldCount) {
@@ -119,7 +121,7 @@ export const TextFieldList: React.FC<
 
   return (
     <Fragment>
-      <ol css={[list]} onFocus={() => handleFocus()} onBlur={() => handleBlur()}>
+      <ol css={[list]}>
         {values.map(value => (
           <li key={value.id} css={[listItem]}>
             {isEditable && !isDisabled ? (
@@ -139,6 +141,7 @@ export const TextFieldList: React.FC<
               onValueChange={userValue => handleChange(userValue, value.id)}
               onErrors={errors => handleErrors(errors, value.id)}
               hideErrors={['hidden', 'on-list'].includes(displayErrorStrategy)}
+              onFocus={() => handleFocus()} onBlur={() => handleBlur()}
             />
           </li>
         ))}
@@ -163,7 +166,7 @@ export const TextFieldList: React.FC<
         ) : null}
       </ol>
       {displayErrorStrategy === 'on-list' ? (
-        <div css={[listErrors]}>
+        <div css={[listErrors]} onMouseDown={() => handleFocus()} onMouseUp={() => handleBlur()}>
           <FormErrors errors={flatErrorMessages} />
         </div>
       ) : null}
