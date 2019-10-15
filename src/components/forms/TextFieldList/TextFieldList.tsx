@@ -119,7 +119,7 @@ export const TextFieldList: React.FC<
 
   return (
     <Fragment>
-      <ol css={[list]}>
+      <ol css={[list]} onFocus={() => handleFocus()} onBlur={() => handleBlur()}>
         {values.map(value => (
           <li key={value.id} css={[listItem]}>
             {isEditable && !isDisabled ? (
