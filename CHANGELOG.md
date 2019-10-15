@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Support of `onFocus` and `onBlur` on `SelectField`
 - Support of `onFocus` and `onBlur` on `TextFieldList`
 
+### Changed
+- No outline on `Button`s even on focus state
+
 ## [v0.0.15] - 2019-10-11
 ### Added
 - `TextFieldList` uses its `value` attribute as expected (to set the values)
