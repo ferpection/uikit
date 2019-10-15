@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect, Fragment, SyntheticEvent } from 'react'
 import { jsx } from '@emotion/core'
 
 import { FormErrors } from '../FormErrors/FormErrors'
@@ -35,12 +35,15 @@ export const TextField: React.FC<FormProps & TextFieldProps> = props => {
   const {
     onValueChange = () => {},
     onErrors = () => {},
-    onBlur = () => {},
+    onBlur: handleBlur = () => {},
+    onFocus: handleFocus = () => {},
   } = props
 
-  const handleChanges = (v: string) => {
-    setValue(v)
-    onValueChange(v)
+  const handleChanges = (
+    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
+    setValue(event.target.value)
+    onValueChange(event.target.value, event)
   }
 
   useEffect(() => {
@@ -81,11 +84,12 @@ export const TextField: React.FC<FormProps & TextFieldProps> = props => {
             isDisabled && disabledStyle,
           ]}
           className={className}
-          value={value}
-          onChange={event => handleChanges(event.target.value)}
           placeholder={placeholder}
+          value={value}
           disabled={isDisabled}
-          onBlur={() => onBlur()}
+          onChange={event => handleChanges(event)}
+          onFocus={event => handleFocus(event)}
+          onBlur={event => handleBlur(event)}
         />
       ) : null}
       {rowCount >= 2 ? (
@@ -98,12 +102,13 @@ export const TextField: React.FC<FormProps & TextFieldProps> = props => {
             isDisabled && disabledStyle,
           ]}
           className={className}
-          value={value}
-          onChange={event => handleChanges(event.target.value)}
           placeholder={placeholder}
+          value={value}
           rows={rowCount}
           disabled={isDisabled}
-          onBlur={() => onBlur()}
+          onChange={event => handleChanges(event)}
+          onFocus={event => handleFocus(event)}
+          onBlur={event => handleBlur(event)}
         />
       ) : null}
       <FormErrors errors={errorMessages} />
