@@ -1,11 +1,13 @@
 /** @jsx jsx */
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect, Fragment, FocusEvent, useRef } from 'react'
 import RandomString from 'randomstring'
 import { jsx } from '@emotion/core'
 
 import { PlaceholderButton } from '../../buttons/PlaceholderButton/PlaceholderButton'
 import { TextField, TextFieldProps } from '../TextField/TextField'
 import { Button } from '../../buttons/Button/Button'
+import { FormErrors } from '../FormErrors/FormErrors'
+import { FormProps } from '../form-props'
 
 import {
   list,
@@ -15,8 +17,6 @@ import {
   addButton,
   listErrors,
 } from './styles'
-import { FormErrors } from '../FormErrors/FormErrors'
-import { FormProps } from '../form-props'
 
 export const TextFieldList: React.FC<
   FormProps & TextFieldListProps
@@ -44,6 +44,25 @@ export const TextFieldList: React.FC<
 
   useEffect(() => onValueChange(values.map(value => value.text)), [values])
   useEffect(() => onErrors(flatErrorMessages), [errorMessages])
+
+  const { onFocus = () => {}, onBlur = () => {} } = props
+  const [isFocused, setFocus] = useState(false)
+  const timeoutRef = useRef(null)
+  useEffect(() => {
+    if (isFocused) {
+      onFocus({} as FocusEvent)
+    }
+
+    if (!isFocused) {
+      onBlur({} as FocusEvent)
+    }
+
+    return () => {
+      if (timeoutRef.current != null) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [isFocused])
 
   const {
     isDisabled,
@@ -75,6 +94,21 @@ export const TextFieldList: React.FC<
     }
 
     setErrorMessages(newErrors)
+  }
+  const handleFocus = () => {
+    clearTimeout(timeoutRef.current)
+    if (!isFocused) {
+      setFocus(true)
+    }
+  }
+  const handleBlur = () => {
+    const timout = setTimeout(() => {
+      if (isFocused) {
+        setFocus(false)
+      }
+    }, 0)
+
+    timeoutRef.current = timout
   }
 
   if (values.length < initialFieldCount) {
