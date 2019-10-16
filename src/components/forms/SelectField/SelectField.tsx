@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect, Fragment, ChangeEvent } from 'react'
 import { jsx } from '@emotion/core'
 
 import { FormErrors } from '../FormErrors/FormErrors'
@@ -30,12 +30,14 @@ export const SelectField: React.FC<FormProps & SelectFieldProps> = props => {
   const {
     onValueChange = () => {},
     onErrors = (e: { [errorKey: string]: any }) => setErrorMessages(e),
+    onFocus: handleFocus = () => {},
+    onBlur: handleBlur = () => {},
   } = props
 
   const isEmpty = value == null || value === ''
-  const handleChanges = (v: string) => {
-    setValue(v)
-    onValueChange(v)
+  const handleChanges = (event: ChangeEvent<HTMLSelectElement>) => {
+    setValue(event.target.value)
+    onValueChange(event.target.value, event)
   }
 
   useEffect(() => {
@@ -65,8 +67,10 @@ export const SelectField: React.FC<FormProps & SelectFieldProps> = props => {
           isDisabled && disabledStyle,
         ]}
         disabled={isDisabled}
-        onChange={event => handleChanges(event.target.value)}
         value={value}
+        onChange={event => handleChanges(event)}
+        onBlur={event => handleBlur(event)}
+        onFocus={event => handleFocus(event)}
       >
         <option disabled={!isEmpty}>{placeholder}</option>
         {children}

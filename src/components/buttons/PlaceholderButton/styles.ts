@@ -23,6 +23,9 @@ export const addButtonStyles = css`
     z-index: 2;
     box-shadow: 0 0 0 16px ${C200_COLOR.toRGBA(0.1)};
   }
+  &:focus {
+    outline: none;
+  }
 `
 
 export const disabledStyles = css`

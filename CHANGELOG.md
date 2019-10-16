@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since v1.0.0.
 
 ## [Unreleased]
+### Added
+- Support of `onMouseUp`, `onFocus`, `onBlur` and `onMouseDown` on `Button`s
+- Support of `onFocus` and `onBlur` on `TextField`
+- Support of `onFocus` and `onBlur` on `SelectField`
+- Support of `onFocus` and `onBlur` on `TextFieldList`
+
+### Changed
+- No outline on `Button`s even on focus state
 
 ## [v0.0.15] - 2019-10-11
 ### Added

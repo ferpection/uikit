@@ -30,6 +30,9 @@ export const prepareBaseState = ({
       'background-color .3s ease-in-out',
       'color .3s ease-in-out',
     ],
+    '&:focus': {
+      outline: 'none',
+    },
     '&:hover': {
       boxShadow: '0 1px 4px 1px rgba(0,0,0,0.3)',
       color: String(darkerColor),

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useContext, Fragment } from 'react'
+import React, { useContext, Fragment, SyntheticEvent } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   findIconDefinition,
@@ -8,7 +8,7 @@ import {
 } from '@fortawesome/fontawesome-svg-core'
 import { jsx } from '@emotion/core'
 
-import { processButtonContainer } from '../process-button-container'
+import { ButtonContainer } from '../ButtonContainer'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import { Color } from '../../../colors'
 
@@ -32,7 +32,6 @@ export const Button: React.FC<ButtonProps> = props => {
     iconStore = 'fas',
     ariaLabel,
     actionType = 'action',
-    to,
     ...args
   } = props
 
@@ -61,10 +60,8 @@ export const Button: React.FC<ButtonProps> = props => {
     ariaLabelForIcon = iconName.replace(/-/g, '')
   }
 
-  const Container = processButtonContainer(to)
-
   return (
-    <Container
+    <ButtonContainer
       {...args}
       css={[
         baseState,
@@ -80,7 +77,7 @@ export const Button: React.FC<ButtonProps> = props => {
       {iconExist && childrenExist ? <Fragment>&nbsp;</Fragment> : null}
 
       {children}
-    </Container>
+    </ButtonContainer>
   )
 }
 
@@ -95,5 +92,9 @@ export interface ButtonProps {
   actionType?: 'action' | 'positive' | 'negative'
   to?: string
   ariaLabel?: string
-  onClick?: (event: EventTarget) => void
+  onClick?: (event: SyntheticEvent) => void
+  onMouseUp?: (event?: SyntheticEvent) => void
+  onMouseDown?: (event?: SyntheticEvent) => void
+  onFocus?: (event?: SyntheticEvent) => void
+  onBlur?: (event?: SyntheticEvent) => void
 }

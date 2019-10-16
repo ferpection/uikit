@@ -1,11 +1,14 @@
 /** @jsx jsx */
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect, Fragment, FocusEvent, useRef } from 'react'
 import RandomString from 'randomstring'
 import { jsx } from '@emotion/core'
 
 import { PlaceholderButton } from '../../buttons/PlaceholderButton/PlaceholderButton'
 import { TextField, TextFieldProps } from '../TextField/TextField'
 import { Button } from '../../buttons/Button/Button'
+import { FormErrors } from '../FormErrors/FormErrors'
+import { FormProps } from '../form-props'
+import { useMergedFocusEvents } from './useMergedFocusEvents'
 
 import {
   list,
@@ -15,8 +18,6 @@ import {
   addButton,
   listErrors,
 } from './styles'
-import { FormErrors } from '../FormErrors/FormErrors'
-import { FormProps } from '../form-props'
 
 export const TextFieldList: React.FC<
   FormProps & TextFieldListProps
@@ -24,9 +25,9 @@ export const TextFieldList: React.FC<
   const intialValues =
     props.value != null
       ? props.value.map(el => ({
-        id: RandomString.generate(20),
-        text: el,
-      }))
+          id: RandomString.generate(20),
+          text: el,
+        }))
       : []
   const [values, setValues] = useState<{ id: string; text: string }[]>(
     intialValues
@@ -41,6 +42,8 @@ export const TextFieldList: React.FC<
     .reduce((aggr, curr) => {
       return Object.assign({}, aggr, curr)
     }, {})
+
+  const [handleFocus, handleBlur] = useMergedFocusEvents(props)
 
   useEffect(() => onValueChange(values.map(value => value.text)), [values])
   useEffect(() => onErrors(flatErrorMessages), [errorMessages])
@@ -94,7 +97,11 @@ export const TextFieldList: React.FC<
                 css={[icon, hideAndShowIconOnHover]}
                 isRaw
                 isDisabled={isDisabled}
-                onClick={() => handleDeletion(value.id)}
+                onFocus={() => handleFocus()}
+                onClick={() => {
+                  handleBlur()
+                  handleDeletion(value.id)}
+                }
               />
             ) : null}
             <TextField
@@ -105,6 +112,8 @@ export const TextFieldList: React.FC<
               onValueChange={userValue => handleChange(userValue, value.id)}
               onErrors={errors => handleErrors(errors, value.id)}
               hideErrors={['hidden', 'on-list'].includes(displayErrorStrategy)}
+              onFocus={() => handleFocus()}
+              onBlur={() => handleBlur()}
             />
           </li>
         ))}
@@ -115,13 +124,17 @@ export const TextFieldList: React.FC<
               icon="plus"
               isRaw
               isDisabled={isDisabled}
-              onClick={handleAddition}
+              onFocus={() => handleFocus()}
+              onBlur={() => handleBlur()}
+              onClick={() => handleAddition()}
             />
             <PlaceholderButton
               css={[addButton]}
               icon={null}
               isDisabled={isDisabled}
-              onClick={handleAddition}
+              onFocus={() => handleFocus()}
+              onBlur={() => handleBlur()}
+              onClick={() => handleAddition()}
             >
               {buttonText}
             </PlaceholderButton>
@@ -129,7 +142,11 @@ export const TextFieldList: React.FC<
         ) : null}
       </ol>
       {displayErrorStrategy === 'on-list' ? (
-        <div css={[listErrors]}>
+        <div
+          css={[listErrors]}
+          onFocus={() => handleFocus()}
+          onBlur={() => handleBlur()}
+        >
           <FormErrors errors={flatErrorMessages} />
         </div>
       ) : null}

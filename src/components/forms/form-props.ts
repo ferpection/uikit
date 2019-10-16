@@ -1,9 +1,12 @@
+import { SyntheticEvent } from 'react'
+
 export interface FormProps {
   value?: string
   placeholder?: string
   isDisabled?: boolean
   isRequired?: boolean
-  onValueChange?: (value: string) => void
+  onValueChange?: (value: string, event: SyntheticEvent) => void
   onErrors?: (errors: { [errorKey: string]: any }) => void
-  onBlur?: () => void
+  onBlur?: (event: SyntheticEvent) => void
+  onFocus?: (event: SyntheticEvent) => void
 }

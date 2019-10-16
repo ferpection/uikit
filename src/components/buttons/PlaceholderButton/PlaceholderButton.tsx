@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import React, { Fragment } from 'react'
+import React, { Fragment, SyntheticEvent } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconName } from '@fortawesome/fontawesome-svg-core'
 import { jsx } from '@emotion/core'
 
-import { processButtonContainer } from '../process-button-container'
+import { ButtonContainer } from '../ButtonContainer'
 
 import { addButtonStyles, disabledStyles } from './styles'
 
@@ -13,14 +13,11 @@ export const PlaceholderButton: React.FC<PlaceholderButtonProps> = props => {
     children = 'Add an element',
     isDisabled,
     icon = 'plus',
-    to,
     ...args
   } = props
 
-  const Container = processButtonContainer(to)
-
   return (
-    <Container
+    <ButtonContainer
       {...args}
       css={[addButtonStyles, isDisabled && disabledStyles]}
       aria-label={children}
@@ -33,7 +30,7 @@ export const PlaceholderButton: React.FC<PlaceholderButtonProps> = props => {
         </Fragment>
       ) : null}
       {children}
-    </Container>
+    </ButtonContainer>
   )
 }
 
@@ -43,5 +40,9 @@ interface PlaceholderButtonProps {
   icon?: IconName | null
   ariaLabel?: string
   children?: string
-  onClick?: (event: Event) => void
+  onClick?: (event: SyntheticEvent) => void
+  onMouseUp?: (event?: SyntheticEvent) => void
+  onMouseDown?: (event?: SyntheticEvent) => void
+  onFocus?: (event?: SyntheticEvent) => void
+  onBlur?: (event?: SyntheticEvent) => void
 }
