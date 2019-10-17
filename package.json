@@ -21,16 +21,16 @@
   "private": false,
   "scripts": {
     "build": "rollup -c",
-    "build:dev": "yarn build -w",
+    "build:dev": "pnpm run build -w",
     "build:storybook": "build-storybook",
     "build:clean": "rm -rf ./{colors,components,index}.js ./index.d.ts ./storybook-static ./dist",
-    "start": "yarn build:dev",
+    "start": "pnpm run build:dev",
     "start:storybook": "start-storybook -p 6006",
     "test:lint": "eslint src/**/*.{ts,tsx} stories/**",
     "format": "prettier --write '{src,stories,.storybook}/**/*.{js,ts,tsx}'",
-    "publish:storybook": "yarn build:storybook && gh-pages -d storybook-static",
-    "prepublishOnly": "yarn format && yarn test:lint --fix && yarn build",
-    "postpublish": "yarn build:clean"
+    "publish:storybook": "pnpm run build:storybook && gh-pages -d storybook-static",
+    "prepublishOnly": "pnpm run format && pnpm run test:lint --fix && pnpm run build",
+    "postpublish": "pnpm run build:clean"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",

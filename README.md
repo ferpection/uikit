@@ -16,6 +16,12 @@ yarn add react react-dom react-router-dom @emotion/core
 or
 
 ```sh
+pnpm add react react-dom react-router-dom @emotion/core
+```
+
+or
+
+```sh
 npm install react react-dom react-router-dom @emotion/core --save
 ```
 
@@ -25,6 +31,12 @@ Use npm or yarn to install the UI kit.
 
 ```sh
 yarn add @ferpection/uikit
+```
+
+or
+
+```sh
+pnpm add @ferpection/uikit
 ```
 
 or
@@ -48,11 +60,11 @@ For a detail of what this package provides and what is the usage of a specific c
 In development mode, you may need to watch and compile the project. As we recommend using the storybook commands below, you can also have a light build using rollupjs.
 
 ```sh
-yarn start
+pnpm start
 
 # or
 
-yarn build:dev
+pnpm run build:dev
 ```
 
 ### Storybook
@@ -62,13 +74,13 @@ A storybook is available to help navigate onto the list of components. You can a
 You can also start the storybook locally for development purpose:
 
 ```sh
-yarn start:storybook
+pnpm run start:storybook
 ```
 
 Or build a static version (HTML/CSS/JS) of the storybook:
 
 ```sh
-yarn build:storybook
+pnpm run build:storybook
 ```
 
 ### Build the project (production mode)
@@ -78,7 +90,7 @@ To build the project, a build command exist. This will build the project in prod
 There is no watch mode on this command.
 
 ```sh
-yarn build
+pnpm run build
 ```
 
 ### Run static code analysis
@@ -88,7 +100,7 @@ This project use eslint to check formatting rules and ensure code quality.
 To run the analysis on your locale version:
 
 ```sh
-yarn test:lint
+pnpm run test:lint
 ```
 
 ### Formatting tools
@@ -99,7 +111,7 @@ We use prettier to automatically format the code following the same rules of the
 Use can use an editor plugin to format regularly and automate the process (on save for example).
 
 ```sh
-yarn format
+pnpm run format
 ```
 
 Prettier only format the code. It doesn't (can't) rewrite the code to pass code-quality rules checks.

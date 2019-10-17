@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 - No outline on `Button`s even on focus state
+- **BREACKING CHANGES**. The project now use pnpmjs instead of yarn.
+  - The NPM package still can be installed using npm or yarn
+  - The other scripts (build, publish, start, etc) need pnpm.
 
 ## [v0.0.15] - 2019-10-11
 ### Added
