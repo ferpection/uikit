@@ -98,8 +98,8 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
                 onFocus={() => handleFocus()}
                 onClick={() => {
                   handleBlur()
-                  handleDeletion(value.id)}
-                }
+                  handleDeletion(value.id)
+                }}
               />
             ) : null}
             <TextField

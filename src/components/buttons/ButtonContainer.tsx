@@ -22,7 +22,7 @@ export const ButtonContainer: FC<ButtonContainerProps> = props => {
   }
 
   return (
-    <Link {...args as any} to={to}>
+    <Link {...(args as any)} to={to}>
       {props.children}
     </Link>
   )
