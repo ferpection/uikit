@@ -15,7 +15,7 @@ import {
 
 const EMAIL_REGEXP = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
-export const TextField: React.FC<FormProps & TextFieldProps> = props => {
+export const TextField: React.FC<TextFieldProps> = props => {
   const {
     dataType = 'text',
     rowCount = 1,
@@ -116,10 +116,12 @@ export const TextField: React.FC<FormProps & TextFieldProps> = props => {
   )
 }
 
-export interface TextFieldProps {
+export interface TextFieldProps extends FormProps {
   dataType?: 'text' | 'email'
   rowCount?: number
   isHighlighted?: boolean
   hideErrors?: boolean
   className?: string
+  value?: string
+  onValueChange?: (value: string, event: SyntheticEvent) => void
 }

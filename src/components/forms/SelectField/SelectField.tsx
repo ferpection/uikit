@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState, useEffect, Fragment, ChangeEvent } from 'react'
+import React, { useState, useEffect, Fragment, ChangeEvent, SyntheticEvent } from 'react'
 import { jsx } from '@emotion/core'
 
 import { FormErrors } from '../FormErrors/FormErrors'
@@ -13,7 +13,7 @@ import {
   errorStyle,
 } from './styles'
 
-export const SelectField: React.FC<FormProps & SelectFieldProps> = props => {
+export const SelectField: React.FC<SelectFieldProps> = props => {
   const {
     placeholder,
     isHighlighted,
@@ -80,6 +80,8 @@ export const SelectField: React.FC<FormProps & SelectFieldProps> = props => {
   )
 }
 
-export interface SelectFieldProps {
+export interface SelectFieldProps extends FormProps {
   isHighlighted: boolean
+  value?: string
+  onValueChange?: (value: string, event: SyntheticEvent) => void
 }
