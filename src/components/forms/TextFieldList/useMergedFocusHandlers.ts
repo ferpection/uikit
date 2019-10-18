@@ -9,11 +9,11 @@ interface UniqueFocusHandlers {
  * Simplify the focus handling for composite components.
  * It makes several field act like on field for the focus and blur event.
  *
- * @param options - All the options
- * @param options.onFocus - The public handler triggered when user enters a field
- * @param options.onBlur - The public handler triggered when user leaves a field
+ * @param options - All the options as an object
+ * @param options.onFocus - The unique handler for the focus event
+ * @param options.onBlur - The unique handler for the blur event
  *
- * @returns The private handlers for the focus and blur event as a tuple
+ * @returns The merged handlers for the focus and blur event as a tuple
  */
 export function useMergedFocusHandlers({
   onFocus = () => {},
