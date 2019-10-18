@@ -17,6 +17,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - The NPM package still can be installed using npm or yarn
   - The other scripts (build, publish, start, etc) need pnpm.
 
+### Fixed
+- Form fields no longer have a "union type" as type
+  - `TextFieldList`'s `value` attribute has a new type which is `string[]`!
+  - `TextField`'s `value` attribute has a new type which is `string`!
+  - `SelectField`'s `value` attribute has a new type which is `string`!
+
 ## [v0.0.15] - 2019-10-11
 ### Added
 - `TextFieldList` uses its `value` attribute as expected (to set the values)
