@@ -6,6 +6,10 @@ and this project **don't** adheres to [Semantic Versioning](http://semver.org/sp
 
 ## [Unreleased]
 
+## [v0.0.18] - 2019-10-18
+### Added
+- Expose a new `useMergedFocusHandlers` hook
+
 ## [v0.0.17] - 2019-10-18
 ### Fixed
 - Update the `files` key in package.json to let pnpm correctly upload the package
@@ -171,6 +175,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.18]: https://github.com/ferpection/uikit/tree/v0.0.18
 [v0.0.17]: https://github.com/ferpection/uikit/tree/v0.0.17
 [v0.0.16]: https://github.com/ferpection/uikit/tree/v0.0.16
 [v0.0.15]: https://github.com/ferpection/uikit/tree/v0.0.15
