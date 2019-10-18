@@ -3,12 +3,12 @@ import React, { useState, useEffect, Fragment } from 'react'
 import RandomString from 'randomstring'
 import { jsx } from '@emotion/core'
 
+import { useMergedFocusHandlers } from '../../../hooks/useMergedFocusHandlers'
 import { PlaceholderButton } from '../../buttons/PlaceholderButton/PlaceholderButton'
 import { TextField, TextFieldProps } from '../TextField/TextField'
 import { Button } from '../../buttons/Button/Button'
 import { FormErrors } from '../FormErrors/FormErrors'
 import { FormProps } from '../form-props'
-import { useMergedFocusHandlers } from './useMergedFocusHandlers'
 
 import {
   list,
