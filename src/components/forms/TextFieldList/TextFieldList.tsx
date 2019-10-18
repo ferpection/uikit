@@ -19,9 +19,7 @@ import {
   listErrors,
 } from './styles'
 
-export const TextFieldList: React.FC<
-  FormProps & TextFieldListProps
-> = props => {
+export const TextFieldList: React.FC<TextFieldListProps> = props => {
   const intialValues =
     props.value != null
       ? props.value.map(el => ({
@@ -154,7 +152,7 @@ export const TextFieldList: React.FC<
   )
 }
 
-export interface TextFieldListProps {
+export interface TextFieldListProps extends FormProps {
   dataType?: TextFieldProps['dataType']
   isEditable?: boolean
   initialFieldCount?: number
