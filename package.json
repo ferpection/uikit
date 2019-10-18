@@ -21,7 +21,7 @@
   "private": false,
   "scripts": {
     "build": "rollup -c",
-    "build:dev": "pnpm run build -w",
+    "build:dev": "pnpm run build -- -w",
     "build:storybook": "build-storybook",
     "build:clean": "rm -rf ./{colors,components,index}.js ./index.d.ts ./storybook-static ./dist",
     "start": "pnpm run build:dev",
@@ -29,7 +29,7 @@
     "test:lint": "eslint src/**/*.{ts,tsx} stories/**",
     "format": "prettier --write '{src,stories,.storybook}/**/*.{js,ts,tsx}'",
     "publish:storybook": "pnpm run build:storybook && gh-pages -d storybook-static",
-    "prepublishOnly": "pnpm run format && pnpm run test:lint --fix && pnpm run build",
+    "prepublishOnly": "pnpm run format && pnpm run test:lint -- --fix && pnpm run build",
     "postpublish": "pnpm run build:clean"
   },
   "dependencies": {
