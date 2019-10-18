@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, SyntheticEvent } from 'react'
 
-interface PublicFocusHandlers {
+interface UniqueFocusHandlers {
   onFocus?: (event?: SyntheticEvent) => void
   onBlur?: (event?: SyntheticEvent) => void
 }
@@ -15,10 +15,10 @@ interface PublicFocusHandlers {
  *
  * @returns The private handlers for the focus and blur event as a tuple
  */
-export function useMergedFocusEvents({
+export function useMergedFocusHandlers({
   onFocus = () => {},
   onBlur = () => {},
-}: PublicFocusHandlers): [() => void, () => void] {
+}: UniqueFocusHandlers): [() => void, () => void] {
   const [isFocused, setFocus] = useState(false)
   const focusRef = useRef({ timeout: null, initialRender: true })
 

@@ -8,7 +8,7 @@ import { TextField, TextFieldProps } from '../TextField/TextField'
 import { Button } from '../../buttons/Button/Button'
 import { FormErrors } from '../FormErrors/FormErrors'
 import { FormProps } from '../form-props'
-import { useMergedFocusEvents } from './useMergedFocusEvents'
+import { useMergedFocusHandlers } from './useMergedFocusHandlers'
 
 import {
   list,
@@ -41,7 +41,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
       return Object.assign({}, aggr, curr)
     }, {})
 
-  const [handleFocus, handleBlur] = useMergedFocusEvents(props)
+  const [handleFocus, handleBlur] = useMergedFocusHandlers(props)
 
   useEffect(() => onValueChange(values.map(value => value.text)), [values])
   useEffect(() => onErrors(flatErrorMessages), [errorMessages])
