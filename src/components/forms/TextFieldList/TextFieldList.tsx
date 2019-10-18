@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState, useEffect, Fragment, FocusEvent, useRef } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import RandomString from 'randomstring'
 import { jsx } from '@emotion/core'
 
