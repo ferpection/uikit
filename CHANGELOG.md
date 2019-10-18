@@ -2,20 +2,22 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since v1.0.0.
+and this project **don't** adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) for now.
 
 ## [Unreleased]
+
+## [v0.0.16] - 2019-10-18
 ### Added
 - Support of `onMouseUp`, `onFocus`, `onBlur` and `onMouseDown` on `Button`s
-- Support of `onFocus` and `onBlur` on `TextField`
-- Support of `onFocus` and `onBlur` on `SelectField`
-- Support of `onFocus` and `onBlur` on `TextFieldList`
+- Support of `onFocus` and `onBlur` on `TextField`, `SelectField` and `TextFieldList`
 
 ### Changed
-- No outline on `Button`s even on focus state
-- **BREACKING CHANGES**. The project now use pnpmjs instead of yarn.
-  - The NPM package still can be installed using npm or yarn
+- No outline on `Button`s, even on focus state
+- **BREACKING CHANGES**. The project now use pnpmjs instead of yarn as main package manager.
+  - The NPM package still can be installed using npm or yarn.
   - The other scripts (build, publish, start, etc) need pnpm.
+    *If you have troubles running the `build` command after installing package using yarn or pnpm*
+    *try to remove and install them again using `pnpm install --shamefully-hoist`.*
 
 ### Fixed
 - Form fields no longer have a "union type" as type
@@ -44,7 +46,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 - Using TypeScript as main language
+
+### Removed
 - **BREACKING CHANGES**. Existing alternative package endpoints are removed for now.
+  `@ferpection/uikit` works. `@ferpection/uikit/colors` or `@ferpection/uikit/components` won't work anymore.
 
 ### Fixed
 - Link in `HelpBlock`s' body are gray
@@ -162,6 +167,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.16]: https://github.com/ferpection/uikit/tree/v0.0.16
 [v0.0.15]: https://github.com/ferpection/uikit/tree/v0.0.15
 [v0.0.14]: https://github.com/ferpection/uikit/tree/v0.0.14
 [v0.0.13]: https://github.com/ferpection/uikit/tree/v0.0.13
