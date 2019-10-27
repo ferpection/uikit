@@ -2,11 +2,11 @@
 import React, { FC } from 'react'
 import { jsx } from '@emotion/core'
 
-import { FormProps } from '../form-props'
+import { FormProps } from '../../forms/form-props'
 
 import { radioStyles, labelStyles, inputStyles } from './styles'
 
-export const RadioField: FC<RadioFieldProps> = props => {
+export const RadioButton: FC<RadioButtonProps> = props => {
   return (
     <label css={[labelStyles]}>
       <input css={[inputStyles]} type="radio" value={props.value} />
@@ -16,7 +16,7 @@ export const RadioField: FC<RadioFieldProps> = props => {
   )
 }
 
-export interface RadioFieldProps extends FormProps {
+export interface RadioButtonProps extends FormProps {
   label?: string
   value?: string
 }
