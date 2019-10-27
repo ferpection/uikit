@@ -14,3 +14,8 @@ storiesOf('Components|Button/RadioButton', module)
       <RadioButton label="Test"/>
     </>
   ))
+  .add('disabled state', () => (
+    <>
+      <RadioButton label="Test" isDisabled />
+    </>
+  ))

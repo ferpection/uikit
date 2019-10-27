@@ -4,12 +4,12 @@ import { jsx } from '@emotion/core'
 
 import { FormProps } from '../../forms/form-props'
 
-import { radioStyles, labelStyles, inputStyles } from './styles'
+import { radioStyles, labelStyles, inputStyles, labelStylesDisabled } from './styles'
 
 export const RadioButton: FC<RadioButtonProps> = props => {
   return (
-    <label css={[labelStyles]}>
-      <input css={[inputStyles]} type="radio" value={props.value} />
+    <label css={[labelStyles, props.isDisabled ? labelStylesDisabled : null]}>
+      <input css={[inputStyles]} type="radio" value={props.value} disabled={props.isDisabled} />
       <div css={[radioStyles]} />
       {props.label}
     </label>
@@ -19,4 +19,5 @@ export const RadioButton: FC<RadioButtonProps> = props => {
 export interface RadioButtonProps extends FormProps {
   label?: string
   value?: string
+  isDisabled?: boolean
 }

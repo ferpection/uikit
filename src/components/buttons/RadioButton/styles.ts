@@ -35,6 +35,13 @@ export const radioStyles = css`
     background: url(img/icon-check-white.svg) 3px 3px no-repeat #00becd;
     background-size: 12px;
   }
+  input[type="radio"]:disabled + & {
+    border-color: #ddd;
+    background-color: #f5f5f5;
+    &::before {
+      transform: scale(1);
+    }
+  }
 `
 
 export const labelStyles = css`
@@ -49,6 +56,14 @@ export const labelStyles = css`
   &:hover {
     color: #00aab7;
     cursor: pointer;
+  }
+`
+
+export const labelStylesDisabled = css`
+  color: #b0b0b0;
+  &:hover {
+    cursor: not-allowed;
+    color: #b0b0b0;
   }
 `
 
