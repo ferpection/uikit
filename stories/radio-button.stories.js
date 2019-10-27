@@ -9,7 +9,7 @@ import { RadioButton } from '../src/components'
 storiesOf('Components|Button/RadioButton', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
-  .add('single error', () => (
+  .add('basic example', () => (
     <>
       <RadioButton label="Test"/>
     </>
