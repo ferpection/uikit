@@ -6,7 +6,7 @@ import { FormProps } from '../form-props'
 
 import { listStyles, innerRadioStyles, innerRadioStylesDisabled } from './styles'
 
-export const RadioField: FC<RadioFieldProps> = props => {
+export const RadioGroup: FC<RadioGroupProps> = props => {
   const [value, setValue] = useState(props.value || '')
 
   const { onValueChange = () => {}, isDisabled, onBlur: handleBlur, onFocus: handleFocus } = props
@@ -37,7 +37,7 @@ export const RadioField: FC<RadioFieldProps> = props => {
   )
 }
 
-export interface RadioFieldProps extends FormProps {
+export interface RadioGroupProps extends FormProps {
   value?: string
   onValueChange?: (value: string) => void
   placeholder: undefined
