@@ -34,3 +34,11 @@ export const innerRadioStyles = css`
     border-radius: 0 0 3px 3px;
   }
 `
+export const innerRadioStylesDisabled = css`
+  color: #b0b0b0;
+
+  & label {
+    border-color: #dddddd;
+    background-color: #f8f8f8;
+  }
+`

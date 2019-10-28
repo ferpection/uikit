@@ -1,16 +1,31 @@
 /** @jsx jsx */
-import React, { FC, Children } from 'react'
+import React, { FC, Children, cloneElement, ReactElement, isValidElement } from 'react'
 import { jsx } from '@emotion/core'
 
 import { FormProps } from '../form-props'
 
-import { listStyles, innerRadioStyles } from './styles'
+import { listStyles, innerRadioStyles, innerRadioStylesDisabled } from './styles'
 
 export const RadioField: FC<RadioFieldProps> = props => {
   return (
     <ul css={[listStyles]}>
       {Children.map(props.children, (child, index) => {
-        return <li css={[listStyles, innerRadioStyles]} key={index}>{child}</li>
+        if (!isValidElement(child)) {
+          return null
+        }
+
+        return <li
+          css={[
+            listStyles,
+            innerRadioStyles,
+            props.isDisabled
+              ? innerRadioStylesDisabled
+              : null,
+            ]}
+          key={index}
+        >
+          {cloneElement(child, { isDisabled: props.isDisabled })}
+        </li>
       })}
     </ul>
   )
