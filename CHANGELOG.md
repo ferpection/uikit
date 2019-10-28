@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project **don't** adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) for now.
 
 ## [Unreleased]
+
+## [v0.0.19] - 2019-10-28
 ### Added
 - New `RadioButton` component to handle `input[type="radio"]` as single instance
 - New `CheckboxButton` component to handle `input[type="checkbox"]` as a single instance
@@ -180,6 +182,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.19]: https://github.com/ferpection/uikit/tree/v0.0.19
 [v0.0.18]: https://github.com/ferpection/uikit/tree/v0.0.18
 [v0.0.17]: https://github.com/ferpection/uikit/tree/v0.0.17
 [v0.0.16]: https://github.com/ferpection/uikit/tree/v0.0.16

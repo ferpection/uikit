@@ -32,7 +32,10 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
         }
 
         return (
-          <li css={[listStyles, innerCheckboxStyles, props.isDisabled ? innerCheckboxStylesDisabled : null]} key={index}>
+          <li
+            css={[listStyles, innerCheckboxStyles, props.isDisabled ? innerCheckboxStylesDisabled : null]}
+            key={index}
+          >
             {cloneElement(child, {
               isDisabled,
               onValueChange: handleChange,
