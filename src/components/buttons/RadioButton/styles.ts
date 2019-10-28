@@ -1,7 +1,14 @@
 import { css } from '@emotion/core'
 
 import { SANSSERIF_FONTSET } from '../../../fonts'
-import { N200_COLOR, N300_COLOR, C200_COLOR, N75_COLOR, N100_COLOR, C15_COLOR } from '../../../colors'
+import {
+  N200_COLOR,
+  N300_COLOR,
+  C200_COLOR,
+  N75_COLOR,
+  N100_COLOR,
+  C15_COLOR,
+} from '../../../colors'
 
 export const radioStyles = css`
   appearance: none;
@@ -13,7 +20,7 @@ export const radioStyles = css`
   background-color: white;
   border-radius: 50%;
   border: 1px solid ${`${N200_COLOR}`};
-  transition: border-color .2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
   &::before {
     content: '';
     position: relative;
@@ -23,7 +30,7 @@ export const radioStyles = css`
     height: 100%;
     background-color: ${`${C15_COLOR}`};
     border-radius: 50%;
-    transition: transform .2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
   }
   label:hover > & {
     border-color: #00aab7;
@@ -31,12 +38,13 @@ export const radioStyles = css`
       transform: scale(2);
     }
   }
-  input[type="radio"]:checked + & {
+  input[type='radio']:checked + & {
     border-color: ${`${C200_COLOR}`};
-    background: url(img/icon-check-white.svg) 3px 3px no-repeat ${`${C200_COLOR}`};
+    background: url(img/icon-check-white.svg) 3px 3px no-repeat
+      ${`${C200_COLOR}`};
     background-size: 12px;
   }
-  input[type="radio"]:disabled + & {
+  input[type='radio']:disabled + & {
     border-color: ${`${N100_COLOR}`};
     background-color: ${`${N75_COLOR}`};
     &::before {
@@ -51,7 +59,7 @@ export const labelStyles = css`
   padding-left: 32px;
   margin: 20px;
   font-size: 15px;
-  transition: color .2s ease-in-out;
+  transition: color 0.2s ease-in-out;
   font-family: ${`${SANSSERIF_FONTSET}`};
   line-height: 1.5;
   color: ${`${N300_COLOR}`};

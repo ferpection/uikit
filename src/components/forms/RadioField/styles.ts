@@ -14,9 +14,9 @@ export const innerRadioStyles = css`
     padding-left: 43px;
     margin: 0;
     margin-top: 0px;
-    transition: background-color .2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
   }
-  & label:contain(input[type="radio"]:checked) {
+  & label:contain(input[type='radio']:checked) {
     background-color: #eff9f9;
   }
   li + & label {
