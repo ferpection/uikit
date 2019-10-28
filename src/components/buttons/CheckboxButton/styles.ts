@@ -3,15 +3,14 @@ import { css } from '@emotion/core'
 import { SANSSERIF_FONTSET } from '../../../fonts'
 import { N200_COLOR, N300_COLOR, C200_COLOR, N75_COLOR, N100_COLOR, C15_COLOR } from '../../../colors'
 
-export const radioStyles = css`
+export const checkboxStyles = css`
   appearance: none;
   position: absolute;
   left: 0;
   top: 2px;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   background-color: white;
-  border-radius: 50%;
   border: 1px solid ${`${N200_COLOR}`};
   transition: border-color 0.2s ease-in-out;
   &::before {
@@ -22,7 +21,6 @@ export const radioStyles = css`
     width: 100%;
     height: 100%;
     background-color: ${`${C15_COLOR}`};
-    border-radius: 50%;
     transition: transform 0.2s ease-in-out;
   }
   label:hover > & {
@@ -34,12 +32,12 @@ export const radioStyles = css`
   label:active > &::before {
     transform: scale(3);
   }
-  input[type='radio']:checked + & {
+  input[type='checkbox']:checked + & {
     border-color: ${`${C200_COLOR}`};
     background: url(img/icon-check-white.svg) 3px 3px no-repeat ${`${C200_COLOR}`};
     background-size: 12px;
   }
-  input[type='radio']:disabled + & {
+  input[type='checkbox']:disabled + & {
     border-color: ${`${N100_COLOR}`};
     background-color: ${`${N75_COLOR}`};
     &::before {
