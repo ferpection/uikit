@@ -4,11 +4,13 @@ import { jsx } from '@emotion/core'
 
 import { FormProps } from '../form-props'
 
+import { listStyles, innerRadioStyles } from './styles'
+
 export const RadioField: FC<RadioFieldProps> = props => {
   return (
-    <ul>
+    <ul css={[listStyles]}>
       {Children.map(props.children, (child, index) => {
-        return <li key={index}>{child}</li>
+        return <li css={[listStyles, innerRadioStyles]} key={index}>{child}</li>
       })}
     </ul>
   )

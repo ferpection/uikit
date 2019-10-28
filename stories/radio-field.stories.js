@@ -14,11 +14,16 @@ storiesOf('Components|Forms/RadioField', module)
       <RadioField>
         <RadioButton>Choice One</RadioButton>
         <RadioButton>Choice Two</RadioButton>
+        <RadioButton>Choice Three</RadioButton>
       </RadioField>
     </>
   ))
   .add('disabled state', () => (
     <>
-      <RadioField isDisabled>Test</RadioField>
+      <RadioField isDisabled>
+        <RadioButton>Choice One</RadioButton>
+        <RadioButton>Choice Two</RadioButton>
+        <RadioButton>Choice Three</RadioButton>
+      </RadioField>
     </>
   ))
