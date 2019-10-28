@@ -11,11 +11,11 @@ storiesOf('Components|Button/RadioButton', module)
   .addDecorator(withKnobs)
   .add('basic example', () => (
     <>
-      <RadioButton label="Test"/>
+      <RadioButton>Test</RadioButton>
     </>
   ))
   .add('disabled state', () => (
     <>
-      <RadioButton label="Test" isDisabled />
+      <RadioButton isDisabled>Test</RadioButton>
     </>
   ))
