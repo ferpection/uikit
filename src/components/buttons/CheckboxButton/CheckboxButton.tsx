@@ -11,7 +11,7 @@ export const CheckboxButton: FC<CheckboxButtonProps> = props => (
       type="checkbox"
       value={props.value}
       checked={props.isChecked}
-      onChange={props.onChange}
+      onChange={props.onValueChange}
       disabled={props.isDisabled}
       onFocus={props.onFocus}
       onBlur={props.onBlur}
@@ -26,7 +26,7 @@ export interface CheckboxButtonProps {
   value: string
   isDisabled?: boolean
   isChecked?: boolean
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void
+  onValueChange?: (event: ChangeEvent<HTMLInputElement>) => void
   onBlur?: (event: FocusEvent) => void
   onFocus?: (event: FocusEvent) => void
 }
