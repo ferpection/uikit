@@ -9,12 +9,7 @@ import { ButtonContainer } from '../ButtonContainer'
 import { addButtonStyles, disabledStyles } from './styles'
 
 export const PlaceholderButton: React.FC<PlaceholderButtonProps> = props => {
-  const {
-    children = 'Add an element',
-    isDisabled,
-    icon = 'plus',
-    ...args
-  } = props
+  const { children = 'Add an element', isDisabled, icon = 'plus', ...args } = props
 
   return (
     <ButtonContainer

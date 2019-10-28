@@ -11,11 +11,7 @@ storiesOf('Components|Button/Button', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('with text', () => (
-    <Button
-      onClick={action('clicked')}
-      isDisabled={boolean('disabled', false)}
-      isFilled={boolean('filled', false)}
-    >
+    <Button onClick={action('clicked')} isDisabled={boolean('disabled', false)} isFilled={boolean('filled', false)}>
       {text('label', 'Action')}
     </Button>
   ))

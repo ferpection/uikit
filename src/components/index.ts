@@ -6,9 +6,7 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 iconLibrary.add(fas, fab, far)
 
 export { Button } from './buttons/Button/Button'
-export {
-  PlaceholderButton,
-} from './buttons/PlaceholderButton/PlaceholderButton'
+export { PlaceholderButton } from './buttons/PlaceholderButton/PlaceholderButton'
 export { ThemeProvider } from './contexts/ThemeContext'
 export { ThematicSection } from './layout/ThematicSection/ThematicSection'
 export { Header } from './layout/Header/Header'
@@ -20,3 +18,7 @@ export { TextFieldList } from './forms/TextFieldList/TextFieldList'
 export { SelectField } from './forms/SelectField/SelectField'
 export { FormErrors } from './forms/FormErrors/FormErrors'
 export { HelpBlock } from './content/HelpBlock/HelpBlock'
+export { RadioButton } from './buttons/RadioButton/RadioButton'
+export { RadioGroup } from './forms/RadioGroup/RadioGroup'
+export { CheckboxGroup } from './forms/CheckboxGroup/CheckboxGroup'
+export { CheckboxButton } from './buttons/CheckboxButton/CheckboxButton'

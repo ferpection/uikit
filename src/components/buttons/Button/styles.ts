@@ -25,11 +25,7 @@ export const prepareBaseState = ({
     // for typescript to not complain
     fontFamily: SANSSERIF_FONTSET.map(font => font),
     textDecoration: 'none',
-    transition: [
-      'box-shadow .3s ease-in-out',
-      'background-color .3s ease-in-out',
-      'color .3s ease-in-out',
-    ],
+    transition: ['box-shadow .3s ease-in-out', 'background-color .3s ease-in-out', 'color .3s ease-in-out'],
     '&:focus': {
       outline: 'none',
     },

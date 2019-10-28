@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project **don't** adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) for now.
 
 ## [Unreleased]
+### Added
+- New `RadioButton` component to handle `input[type="radio"]` as single instance
+- New `CheckboxButton` component to handle `input[type="checkbox"]` as a single instance
+- New `RadioGroup` component to use several `RadioButton` together
+- New `CheckboxGroup` component to use several `CheckboxButton` together
 
 ## [v0.0.18] - 2019-10-18
 ### Added

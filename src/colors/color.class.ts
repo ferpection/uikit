@@ -10,11 +10,7 @@ export class Color {
 
     const colorNumber = parseInt(colorArray.join(''), 16)
 
-    return new Color(
-      colorNumber >> 16,
-      (colorNumber >> 8) & 0x00ff,
-      colorNumber & 0x0000ff
-    )
+    return new Color(colorNumber >> 16, (colorNumber >> 8) & 0x00ff, colorNumber & 0x0000ff)
   }
 
   private red: number

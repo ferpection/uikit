@@ -1,12 +1,5 @@
 import { css } from '@emotion/core'
-import {
-  N100_COLOR,
-  N300_COLOR,
-  C200_COLOR,
-  C15_COLOR,
-  O200_COLOR,
-  O25_COLOR,
-} from '../../../colors'
+import { N100_COLOR, N300_COLOR, C200_COLOR, C15_COLOR, O200_COLOR, O25_COLOR } from '../../../colors'
 import { SANSSERIF_FONTSET } from '../../../fonts'
 
 export const baseStyle = css`

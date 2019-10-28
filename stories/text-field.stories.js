@@ -2,13 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
-import {
-  withKnobs,
-  text,
-  number,
-  boolean,
-  select,
-} from '@storybook/addon-knobs'
+import { withKnobs, text, number, boolean, select } from '@storybook/addon-knobs'
 
 import { TextField } from '../src/components/index.ts'
 
@@ -24,31 +18,19 @@ storiesOf('Components|Forms/TextField', module)
   .add('highlighted state', () => (
     <>
       <TextField placeholder="This is a highlighted input" isHighlighted />
-      <TextField
-        rowCount={3}
-        placeholder="This is a highlighted textarea"
-        isHighlighted
-      />
+      <TextField rowCount={3} placeholder="This is a highlighted textarea" isHighlighted />
     </>
   ))
   .add('error state', () => (
     <>
       <TextField placeholder="This is a error input" dataType="email" />
-      <TextField
-        rowCount={3}
-        placeholder="This is a error textarea"
-        dataType="email"
-      />
+      <TextField rowCount={3} placeholder="This is a error textarea" dataType="email" />
     </>
   ))
   .add('disabled state', () => (
     <>
       <TextField placeholder="This is a disabled input" isDisabled />
-      <TextField
-        rowCount={3}
-        placeholder="This is a disabled textarea"
-        isDisabled
-      />
+      <TextField rowCount={3} placeholder="This is a disabled textarea" isDisabled />
     </>
   ))
   .add('full example', () => (

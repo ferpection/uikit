@@ -10,14 +10,7 @@ import { Button } from '../../buttons/Button/Button'
 import { FormErrors } from '../FormErrors/FormErrors'
 import { FormProps } from '../form-props'
 
-import {
-  list,
-  hideAndShowIconOnHover,
-  listItem,
-  icon,
-  addButton,
-  listErrors,
-} from './styles'
+import { list, hideAndShowIconOnHover, listItem, icon, addButton, listErrors } from './styles'
 
 export const TextFieldList: React.FC<TextFieldListProps> = props => {
   const intialValues =
@@ -27,9 +20,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
           text: el,
         }))
       : []
-  const [values, setValues] = useState<{ id: string; text: string }[]>(
-    intialValues
-  )
+  const [values, setValues] = useState<{ id: string; text: string }[]>(intialValues)
   const [errorMessages, setErrorMessages] = useState<{
     [errorKey: string]: any
   }>({})
@@ -56,10 +47,8 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
     displayErrorStrategy = 'on-field',
   } = props
 
-  const handleAddition = () =>
-    setValues([...values, { id: RandomString.generate(20), text: '' }])
-  const handleDeletion = (index: string) =>
-    setValues(values.filter(values => values.id !== index))
+  const handleAddition = () => setValues([...values, { id: RandomString.generate(20), text: '' }])
+  const handleDeletion = (index: string) => setValues(values.filter(values => values.id !== index))
   const handleChange = (userValue: string, index: string) =>
     setValues(
       values.map(value => {
@@ -140,11 +129,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
         ) : null}
       </ol>
       {displayErrorStrategy === 'on-list' ? (
-        <div
-          css={[listErrors]}
-          onFocus={() => handleFocus()}
-          onBlur={() => handleBlur()}
-        >
+        <div css={[listErrors]} onFocus={() => handleFocus()} onBlur={() => handleBlur()}>
           <FormErrors errors={flatErrorMessages} />
         </div>
       ) : null}

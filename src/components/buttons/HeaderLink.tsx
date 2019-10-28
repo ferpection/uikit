@@ -9,11 +9,7 @@ export const HeaderLink: React.FC<HeaderLinkProps> = props => {
   const WHITE_COLOR = new Color(255, 255, 255)
 
   return (
-    <Button
-      {...otherProps}
-      color={headerLigthVersion ? R400_COLOR : WHITE_COLOR}
-      isRaw
-    >
+    <Button {...otherProps} color={headerLigthVersion ? R400_COLOR : WHITE_COLOR} isRaw>
       {children}
     </Button>
   )
