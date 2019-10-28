@@ -9,6 +9,7 @@ and this project **don't** adheres to [Semantic Versioning](http://semver.org/sp
 - New `RadioButton` component to handle `input[type="radio"]` as single instance
 - New `CheckboxButton` component to handle `input[type="checkbox"]` as a single instance
 - New `RadioGroup` component to use several `RadioButton` together
+- New `CheckboxGroup` component to use several `CheckboxButton` together
 
 ## [v0.0.18] - 2019-10-18
 ### Added
