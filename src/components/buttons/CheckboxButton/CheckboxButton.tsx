@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { FC, ChangeEvent, FocusEvent } from 'react'
+import { FC, ChangeEvent, FocusEvent } from 'react'
 import { jsx } from '@emotion/core'
 
 import { checkboxStyles, labelStyles, inputStyles, labelStylesDisabled } from './styles'

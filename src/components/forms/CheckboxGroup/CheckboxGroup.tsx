@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { FC, Children, cloneElement, useState, isValidElement, ChangeEvent, useEffect, FocusEvent } from 'react'
+import { FC, Children, cloneElement, useState, isValidElement, ChangeEvent, useEffect, FocusEvent } from 'react'
 import { jsx } from '@emotion/core'
 
 import { FormProps } from '../form-props'
