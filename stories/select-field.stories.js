@@ -10,18 +10,14 @@ storiesOf('Components|Forms/SelectField', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('normal state', () => <SelectField placeholder="This is an select" />)
-  .add('highlighted state', () => (
-    <SelectField placeholder="This is a highlighted select" isHighlighted />
-  ))
+  .add('highlighted state', () => <SelectField placeholder="This is a highlighted select" isHighlighted />)
   .add('error state', () => (
     <SelectField placeholder="This is a error select" isRequired>
       <option value="test1">First element</option>
       <option value="test2">Second element</option>
     </SelectField>
   ))
-  .add('disabled state', () => (
-    <SelectField placeholder="This is a disabled select" isDisabled />
-  ))
+  .add('disabled state', () => <SelectField placeholder="This is a disabled select" isDisabled />)
   .add('full example', () => (
     <SelectField
       placeholder={text('placeholder', 'Fill the field')}

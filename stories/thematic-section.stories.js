@@ -5,12 +5,7 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, select, text } from '@storybook/addon-knobs'
 
-import {
-  ThematicSection,
-  Button,
-  TextFieldList,
-  HelpBlock,
-} from '../src/components/index.ts'
+import { ThematicSection, Button, TextFieldList, HelpBlock } from '../src/components/index.ts'
 
 storiesOf('Layout|ThematicSection', module)
   .addDecorator(withA11y)
@@ -70,11 +65,9 @@ storiesOf('Layout|ThematicSection', module)
           `}
         >
           <p>
-            Consequat culpa qui enim laboris voluptate proident tempor cillum
-            laboris est ex sint id. Anim tempor exercitation amet consequat et
-            excepteur ex. In anim occaecat adipisicing velit Lorem. Est sunt
-            excepteur ut laborum commodo qui sit veniam tempor nulla cillum
-            adipisicing. Do ipsum culpa excepteur mollit.
+            Consequat culpa qui enim laboris voluptate proident tempor cillum laboris est ex sint id. Anim tempor
+            exercitation amet consequat et excepteur ex. In anim occaecat adipisicing velit Lorem. Est sunt excepteur ut
+            laborum commodo qui sit veniam tempor nulla cillum adipisicing. Do ipsum culpa excepteur mollit.
           </p>
           <TextFieldList placeholder="Choix.." isEditable />
         </div>

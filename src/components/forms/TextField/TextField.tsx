@@ -5,13 +5,7 @@ import { jsx } from '@emotion/core'
 import { FormErrors } from '../FormErrors/FormErrors'
 import { FormProps } from '../form-props'
 
-import {
-  baseStyle,
-  textareaStyle,
-  disabledStyle,
-  highlightedStyle,
-  errorStyle,
-} from './styles'
+import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle } from './styles'
 
 const EMAIL_REGEXP = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
@@ -39,9 +33,7 @@ export const TextField: React.FC<TextFieldProps> = props => {
     onFocus: handleFocus = () => {},
   } = props
 
-  const handleChanges = (
-    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
-  ) => {
+  const handleChanges = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     setValue(event.target.value)
     onValueChange(event.target.value, event)
   }
@@ -77,12 +69,7 @@ export const TextField: React.FC<TextFieldProps> = props => {
       {rowCount < 2 ? (
         <input
           type={dataType}
-          css={[
-            baseStyle,
-            isHighlighted && highlightedStyle,
-            !isValid && errorStyle,
-            isDisabled && disabledStyle,
-          ]}
+          css={[baseStyle, isHighlighted && highlightedStyle, !isValid && errorStyle, isDisabled && disabledStyle]}
           className={className}
           placeholder={placeholder}
           value={value}

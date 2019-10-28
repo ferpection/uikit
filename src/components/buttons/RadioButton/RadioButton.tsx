@@ -2,12 +2,7 @@
 import React, { FC, ChangeEvent } from 'react'
 import { jsx } from '@emotion/core'
 
-import {
-  radioStyles,
-  labelStyles,
-  inputStyles,
-  labelStylesDisabled,
-} from './styles'
+import { radioStyles, labelStyles, inputStyles, labelStylesDisabled } from './styles'
 
 export const RadioButton: FC<RadioButtonProps> = props => {
   return (

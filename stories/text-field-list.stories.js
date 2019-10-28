@@ -3,13 +3,7 @@ import React, { useState } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { action } from '@storybook/addon-actions'
-import {
-  withKnobs,
-  boolean,
-  number,
-  text,
-  select,
-} from '@storybook/addon-knobs'
+import { withKnobs, boolean, number, text, select } from '@storybook/addon-knobs'
 
 import { TextFieldList } from '../src/components/index.ts'
 import { N75_COLOR } from '../src/colors/index.ts'
@@ -19,9 +13,7 @@ storiesOf('Components|Forms/TextFieldList', module)
   .addDecorator(withKnobs)
   .add('normal state', () => {
     const Story = () => {
-      const intialValues = boolean('inital field values', true)
-        ? ['yes', 'no', 'maybe']
-        : []
+      const intialValues = boolean('inital field values', true) ? ['yes', 'no', 'maybe'] : []
       const [values, setValues] = useState(intialValues)
 
       return (
@@ -90,11 +82,7 @@ storiesOf('Components|Forms/TextFieldList', module)
             dataType="email"
             onValueChange={values => setValues(values)}
             onErrors={values => setErrors(values)}
-            displayErrorStrategy={select(
-              'display error strategy',
-              ['on-list', 'on-field', 'hidden'],
-              'on-field'
-            )}
+            displayErrorStrategy={select('display error strategy', ['on-list', 'on-field', 'hidden'], 'on-field')}
           />
           <pre
             css={{

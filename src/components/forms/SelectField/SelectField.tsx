@@ -1,33 +1,14 @@
 /** @jsx jsx */
-import React, {
-  useState,
-  useEffect,
-  Fragment,
-  ChangeEvent,
-  SyntheticEvent,
-} from 'react'
+import React, { useState, useEffect, Fragment, ChangeEvent, SyntheticEvent } from 'react'
 import { jsx } from '@emotion/core'
 
 import { FormErrors } from '../FormErrors/FormErrors'
 import { FormProps } from '../form-props'
 
-import {
-  baseStyle,
-  placehoderStyle,
-  highlightedStyle,
-  disabledStyle,
-  errorStyle,
-} from './styles'
+import { baseStyle, placehoderStyle, highlightedStyle, disabledStyle, errorStyle } from './styles'
 
 export const SelectField: React.FC<SelectFieldProps> = props => {
-  const {
-    placeholder,
-    isHighlighted,
-    isDisabled,
-    isRequired,
-    value: externalValue,
-    children,
-  } = props
+  const { placeholder, isHighlighted, isDisabled, isRequired, value: externalValue, children } = props
 
   const [value, setValue] = useState(externalValue || '')
   const [errorMessages, setErrorMessages] = useState({})

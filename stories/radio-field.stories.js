@@ -20,8 +20,8 @@ storiesOf('Components|Forms/RadioField', module)
   ))
   .add('disabled state', () => (
     <>
-      Disabled state must be added on the <code>{RadioField.name}</code>{' '}
-      directly. Not on the <code>{RadioButton.name}</code>.
+      Disabled state must be added on the <code>{RadioField.name}</code> directly. Not on the{' '}
+      <code>{RadioButton.name}</code>.
       <h2>
         <code>isDisabled</code> on <code>{RadioField.name}</code>
       </h2>

@@ -47,11 +47,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
       `
 
       return (
-        <svg
-          css={svg}
-          viewBox="0 0 75.17 69.21"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg css={svg} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <clipPath id="a">
               <circle className="cls-1" cx="-53.88" cy="-52.3" r="27" />
@@ -64,10 +60,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
                   className="cls-4"
                   points="-28.11 -9.51 5.23 8.05 35.66 -58.46 32.27 -60.89 3.6 -16.42 -28.63 -43.96"
                 />
-                <polygon
-                  className="cls-5"
-                  points="5.23 8.05 -28.18 -18.85 -28.11 -9.51"
-                />
+                <polygon className="cls-5" points="5.23 8.05 -28.18 -18.85 -28.11 -9.51" />
               </g>
               <circle className="cls-6" cx="37.58" cy="34.47" r="32.5" />
               <circle className="cls-7" cx="37.58" cy="34.47" r="26.5" />
@@ -147,11 +140,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
       `
 
       return (
-        <svg
-          css={svg}
-          viewBox="0 0 75.17 69.21"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg css={svg} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <clipPath id="a">
               <circle className="cls-1" cx="37.37" cy="34.77" r="27" />
@@ -165,13 +154,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
                 className="cls-5"
                 d="M29.26,24.61H28.7c-.18,0-.33.22-.33.5v4.76c0,.28.15.5.33.5h.56c.18,0,.33-.22.33-.5V25.11C29.59,24.83,29.44,24.61,29.26,24.61Z"
               />
-              <rect
-                className="cls-6"
-                x="29.59"
-                y="25.14"
-                width="9.42"
-                height="4.69"
-              />
+              <rect className="cls-6" x="29.59" y="25.14" width="9.42" height="4.69" />
               <path
                 className="cls-7"
                 d="m39.42 21.81h11.58v11.36h-11.58a0.41 0.41 0 0 1 -0.41 -0.41v-10.55a0.41 0.41 0 0 1 0.41 -0.4z"
@@ -180,25 +163,12 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
                 className="cls-4"
                 d="m51.45 20h20.32v15h-20.32a0.41 0.41 0 0 1 -0.45 -0.4v-14.22a0.41 0.41 0 0 1 0.45 -0.38z"
               />
-              <rect
-                className="cls-5"
-                x="71.77"
-                y="18.69"
-                width="2.74"
-                height="17.6"
-                rx=".41"
-              />
+              <rect className="cls-5" x="71.77" y="18.69" width="2.74" height="17.6" rx=".41" />
               <path
                 className="cls-5"
                 d="M29.26,24.61H28.7c-.18,0-.33.22-.33.5v4.76c0,.28.15.5.33.5h.56c.18,0,.33-.22.33-.5V25.11C29.59,24.83,29.44,24.61,29.26,24.61Z"
               />
-              <rect
-                className="cls-6"
-                x="29.59"
-                y="25.14"
-                width="9.42"
-                height="4.69"
-              />
+              <rect className="cls-6" x="29.59" y="25.14" width="9.42" height="4.69" />
               <path
                 className="cls-7"
                 d="m39.42 21.81h11.58v11.36h-11.58a0.41 0.41 0 0 1 -0.41 -0.41v-10.55a0.41 0.41 0 0 1 0.41 -0.4z"
@@ -207,25 +177,12 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
                 className="cls-4"
                 d="m51.45 20h20.32v15h-20.32a0.41 0.41 0 0 1 -0.45 -0.4v-14.22a0.41 0.41 0 0 1 0.45 -0.38z"
               />
-              <rect
-                className="cls-5"
-                x="71.77"
-                y="18.69"
-                width="2.74"
-                height="17.6"
-                rx=".41"
-              />
+              <rect className="cls-5" x="71.77" y="18.69" width="2.74" height="17.6" rx=".41" />
               <path
                 className="cls-5"
                 d="M29.26,24.61H28.7c-.18,0-.33.22-.33.5v4.76c0,.28.15.5.33.5h.56c.18,0,.33-.22.33-.5V25.11C29.59,24.83,29.44,24.61,29.26,24.61Z"
               />
-              <rect
-                className="cls-6"
-                x="29.59"
-                y="25.14"
-                width="9.42"
-                height="4.69"
-              />
+              <rect className="cls-6" x="29.59" y="25.14" width="9.42" height="4.69" />
               <path
                 className="cls-7"
                 d="m39.42 21.81h11.58v11.36h-11.58a0.41 0.41 0 0 1 -0.41 -0.41v-10.55a0.41 0.41 0 0 1 0.41 -0.4z"
@@ -234,14 +191,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
                 className="cls-4"
                 d="m51.45 20h20.32v15h-20.32a0.41 0.41 0 0 1 -0.45 -0.4v-14.22a0.41 0.41 0 0 1 0.45 -0.38z"
               />
-              <rect
-                className="cls-5"
-                x="71.77"
-                y="18.69"
-                width="2.74"
-                height="17.6"
-                rx=".41"
-              />
+              <rect className="cls-5" x="71.77" y="18.69" width="2.74" height="17.6" rx=".41" />
               <g className="cls-8">
                 <path
                   className="cls-7"
@@ -249,10 +199,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
                 />
               </g>
               <g className="cls-9">
-                <polyline
-                  className="cls-10"
-                  points="63.97 130.77 62.63 43.1 26.28 39.84 7.57 42.19 -27.17 60.45"
-                />
+                <polyline className="cls-10" points="63.97 130.77 62.63 43.1 26.28 39.84 7.57 42.19 -27.17 60.45" />
                 <polygon
                   className="cls-10"
                   points="63.15 77.56 96.48 95.12 126.92 28.61 123.53 26.18 94.85 70.65 62.63 43.1"
@@ -269,42 +216,21 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
                   className="cls-10"
                   points="-22.16 82.46 32.04 115.25 58.79 35.34 54.89 33.53 26.28 90.44 0.35 64.72"
                 />
-                <polygon
-                  className="cls-13"
-                  points="0.35 64.72 26.28 90.44 54.89 33.53 56.54 34.3 26.68 97.34"
-                />
-                <polygon
-                  className="cls-14"
-                  points="-22.16 82.46 32.04 115.25 56.38 42.54 58.2 42.7 33.73 120.25"
-                />
-                <polygon
-                  className="cls-15"
-                  points="6.98 23.57 7.57 42.19 26.28 39.84 22.05 21.47"
-                />
+                <polygon className="cls-13" points="0.35 64.72 26.28 90.44 54.89 33.53 56.54 34.3 26.68 97.34" />
+                <polygon className="cls-14" points="-22.16 82.46 32.04 115.25 56.38 42.54 58.2 42.7 33.73 120.25" />
+                <polygon className="cls-15" points="6.98 23.57 7.57 42.19 26.28 39.84 22.05 21.47" />
                 <path
                   className="cls-16"
                   d="M9.66,25.66l.18,5.64s-1.7-.87-1.91.48c-.29,1.89,1.9,1.14,1.9,1.14a26.53,26.53,0,0,1-2.26,9.27S.68,23.7,6.89,23.37c.73-10.38,17.38.48,19.61-7.6C28.43,22.44,24.53,25.9,9.66,25.66Z"
                 />
-                <polygon
-                  className="cls-4"
-                  points="7.57 42.19 19.1 59.38 26.28 39.84"
-                />
+                <polygon className="cls-4" points="7.57 42.19 19.1 59.38 26.28 39.84" />
                 <polygon
                   className="cls-17"
                   points="18.13 42.32 15.67 42.63 14.92 44.37 16.52 46.34 15.19 53.55 19.1 59.38 21.47 52.92 18.28 46.06 19.42 43.67"
                 />
-                <polygon
-                  className="cls-18"
-                  points="19.1 59.38 27.47 49.36 25.62 46.46 28.45 43.71 26.28 39.84"
-                />
-                <polygon
-                  className="cls-18"
-                  points="19.1 59.38 8.51 51.74 9.58 48.47 6.17 46.5 7.57 42.19"
-                />
-                <polygon
-                  className="cls-14"
-                  points="96.48 95.12 63.07 68.22 63.15 77.56"
-                />
+                <polygon className="cls-18" points="19.1 59.38 27.47 49.36 25.62 46.46 28.45 43.71 26.28 39.84" />
+                <polygon className="cls-18" points="19.1 59.38 8.51 51.74 9.58 48.47 6.17 46.5 7.57 42.19" />
+                <polygon className="cls-14" points="96.48 95.12 63.07 68.22 63.15 77.56" />
               </g>
             </g>
           </g>
@@ -334,56 +260,28 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
         }
       `
       return (
-        <svg
-          css={svg}
-          viewBox="0 0 75.17 69.21"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg css={svg} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg">
           <g>
             <circle className="cls-1" cx="37.58" cy="34.6" r="32.5" />
             <circle className="cls-2" cx="37.58" cy="34.6" r="26.5" />
-            <path
-              className="cls-3"
-              d="M46.27,19.57a17.17,17.17,0,1,1-21,12.24,17.18,17.18,0,0,1,21-12.24Z"
-            />
+            <path className="cls-3" d="M46.27,19.57a17.17,17.17,0,1,1-21,12.24,17.18,17.18,0,0,1,21-12.24Z" />
             <path
               className="cls-4"
               d="M41.9,19.16v2.66a14.35,14.35,0,0,1,13.88,18,14.35,14.35,0,1,1-13.89-18V19.16m0,0a17,17,0,1,0,4.34.56,17,17,0,0,0-4.34-.56Z"
             />
-            <line
-              className="cls-5"
-              x1="33.98"
-              x2="44.99"
-              y1="32.01"
-              y2="34.9"
-            />
+            <line className="cls-5" x1="33.98" x2="44.99" y1="32.01" y2="34.9" />
             <line className="cls-5" x1="32.28" x2="43.29" y1="35.3" y2="38.2" />
             <path
               className="cls-5"
               d="M45.58,42.94a6.66,6.66,0,0,1-2.42,1.12,5.45,5.45,0,0,1-2.6,0,5.37,5.37,0,0,1-2.27-1.24,6.52,6.52,0,0,1-1.56-2.17,8.36,8.36,0,0,1-.7-2.79,9.56,9.56,0,0,1,.3-3.11,9.11,9.11,0,0,1,1.27-2.85,8.43,8.43,0,0,1,2-2.09A6.66,6.66,0,0,1,42,28.65a5.41,5.41,0,0,1,2.59,0,5.3,5.3,0,0,1,2.28,1.24,6.59,6.59,0,0,1,1.56,2.16"
             />
-            <path
-              className="cls-3"
-              d="M29.44,17a17.17,17.17,0,1,1-13.18,20.4A17.18,17.18,0,0,1,29.44,17Z"
-            />
+            <path className="cls-3" d="M29.44,17a17.17,17.17,0,1,1-13.18,20.4A17.18,17.18,0,0,1,29.44,17Z" />
             <path
               className="cls-4"
               d="M33.06,19.46h0a14.43,14.43,0,0,1,14,11.34,14.35,14.35,0,0,1-11,17,14.12,14.12,0,0,1-3,.32A14.4,14.4,0,0,1,19,36.83a14.36,14.36,0,0,1,11-17,14.78,14.78,0,0,1,3-.32m0-2.66A17,17,0,1,0,49.68,30.24,17.05,17.05,0,0,0,33.06,16.8Z"
             />
-            <line
-              className="cls-5"
-              x1="24.1"
-              x2="35.23"
-              y1="33.67"
-              y2="31.28"
-            />
-            <line
-              className="cls-5"
-              x1="24.07"
-              x2="35.2"
-              y1="37.38"
-              y2="34.99"
-            />
+            <line className="cls-5" x1="24.1" x2="35.23" y1="33.67" y2="31.28" />
+            <line className="cls-5" x1="24.07" x2="35.2" y1="37.38" y2="34.99" />
             <path
               className="cls-5"
               d="M39.38,38.19a6.74,6.74,0,0,1-1.66,2.09,5.39,5.39,0,0,1-4.92,1.06,6.52,6.52,0,0,1-2.36-1.23,8.17,8.17,0,0,1-1.89-2.18A9.36,9.36,0,0,1,27.41,35a9.45,9.45,0,0,1-.15-3.12,8.28,8.28,0,0,1,.82-2.76,6.68,6.68,0,0,1,1.65-2.09A5.36,5.36,0,0,1,34.66,26,6.65,6.65,0,0,1,37,27.22"
@@ -446,11 +344,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
       `
 
       return (
-        <svg
-          css={svg}
-          viewBox="0 0 75.17 69.21"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg css={svg} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <clipPath id="a">
               <circle className="cls-1" cx="-53.88" cy="34.77" r="27" />
@@ -463,14 +357,8 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
                   className="cls-4"
                   points="-28.11 77.56 5.23 95.12 35.66 28.61 32.27 26.18 3.6 70.65 -28.63 43.1"
                 />
-                <polygon
-                  className="cls-5"
-                  points="5.23 95.12 -28.18 68.22 -28.11 77.56"
-                />
-                <polygon
-                  className="cls-5"
-                  points="25.47 36.73 22.56 41.24 29.73 41.57 31.95 36.73"
-                />
+                <polygon className="cls-5" points="5.23 95.12 -28.18 68.22 -28.11 77.56" />
+                <polygon className="cls-5" points="25.47 36.73 22.56 41.24 29.73 41.57 31.95 36.73" />
               </g>
               <circle className="cls-6" cx="37.25" cy="34.27" r="32.5" />
               <circle className="cls-7" cx="37.25" cy="34.27" r="26.5" />
@@ -478,10 +366,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
                 className="cls-7"
                 d="M37.1,16.38A17.89,17.89,0,0,0,24.55,47l25.3-25.29A17.84,17.84,0,0,0,37.1,16.38Z"
               />
-              <path
-                className="cls-8"
-                d="M24.55,47a17.89,17.89,0,0,0,25.3-25.29Z"
-              />
+              <path className="cls-8" d="M24.55,47a17.89,17.89,0,0,0,25.3-25.29Z" />
               <path
                 className="cls-9"
                 d="M37.1,55.76a.65.65,0,0,1-.65-.64V37.26a.65.65,0,1,1,1.29,0V55.12A.64.64,0,0,1,37.1,55.76Z"
@@ -490,18 +375,9 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
                 className="cls-10"
                 d="M37.1,31.93a.65.65,0,0,1-.65-.65V13.42a.65.65,0,0,1,1.29,0V31.28A.65.65,0,0,1,37.1,31.93Z"
               />
-              <path
-                className="cls-10"
-                d="M34.11,34.92H16.25a.65.65,0,0,1,0-1.3H34.11a.65.65,0,0,1,0,1.3Z"
-              />
-              <path
-                className="cls-9"
-                d="M57.94,34.92H40.08a.65.65,0,0,1,0-1.3H57.94a.65.65,0,1,1,0,1.3Z"
-              />
-              <path
-                className="cls-1"
-                d="M31.77,34.27A5.31,5.31,0,0,0,33.33,38l7.53-7.54a5.32,5.32,0,0,0-9.09,3.77Z"
-              />
+              <path className="cls-10" d="M34.11,34.92H16.25a.65.65,0,0,1,0-1.3H34.11a.65.65,0,0,1,0,1.3Z" />
+              <path className="cls-9" d="M57.94,34.92H40.08a.65.65,0,0,1,0-1.3H57.94a.65.65,0,1,1,0,1.3Z" />
+              <path className="cls-1" d="M31.77,34.27A5.31,5.31,0,0,0,33.33,38l7.53-7.54a5.32,5.32,0,0,0-9.09,3.77Z" />
               <path
                 className="cls-1"
                 d="M43.72,34.27A6.62,6.62,0,0,1,32.42,39L29.1,42.27a11.31,11.31,0,1,0,16-16l-3.32,3.32A6.62,6.62,0,0,1,43.72,34.27Z"
@@ -510,10 +386,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
                 className="cls-1"
                 d="M49.7,34.27a12.6,12.6,0,0,1-21.52,8.91l-3.29,3.29A17.26,17.26,0,1,0,49.3,22.07L46,25.36A12.56,12.56,0,0,1,49.7,34.27Z"
               />
-              <path
-                className="cls-1"
-                d="M37.1,39.6a5.33,5.33,0,0,0,3.76-9.1L33.33,38A5.33,5.33,0,0,0,37.1,39.6Z"
-              />
+              <path className="cls-1" d="M37.1,39.6a5.33,5.33,0,0,0,3.76-9.1L33.33,38A5.33,5.33,0,0,0,37.1,39.6Z" />
               <path
                 className="cls-1"
                 d="M37.1,17A17.26,17.26,0,0,0,24.89,46.47l3.29-3.29A12.6,12.6,0,1,1,46,25.36l3.29-3.29A17.2,17.2,0,0,0,37.1,17Z"
@@ -589,11 +462,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
       `
 
       return (
-        <svg
-          css={styles}
-          viewBox="0 0 75.17 69.21"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg css={styles} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg">
           <g>
             <circle className="cls-1" cx="37.58" cy="34.27" r="32.5" />
             <circle className="cls-2" cx="37.58" cy="34.27" r="26.5" />
@@ -611,139 +480,25 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
             />
             <circle className="cls-6" cx="26.33" cy="20.22" r="2.61" />
             <circle className="cls-6" cx="48.84" cy="20.22" r="2.61" />
-            <line
-              className="cls-7"
-              x1="26.33"
-              x2="26.33"
-              y1="20.22"
-              y2="12.57"
-            />
-            <line
-              className="cls-7"
-              x1="48.84"
-              x2="48.84"
-              y1="20.22"
-              y2="12.57"
-            />
-            <rect
-              className="cls-2"
-              x="18.48"
-              y="29.52"
-              width="5.73"
-              height="5.73"
-            />
-            <rect
-              className="cls-2"
-              x="26.52"
-              y="29.52"
-              width="5.73"
-              height="5.73"
-            />
-            <rect
-              className="cls-2"
-              x="34.67"
-              y="29.52"
-              width="5.73"
-              height="5.73"
-            />
-            <rect
-              className="cls-2"
-              x="42.81"
-              y="29.52"
-              width="5.73"
-              height="5.73"
-            />
-            <rect
-              className="cls-2"
-              x="50.96"
-              y="29.52"
-              width="5.73"
-              height="5.73"
-            />
-            <rect
-              className="cls-2"
-              x="18.48"
-              y="37.46"
-              width="5.73"
-              height="5.73"
-            />
-            <rect
-              className="cls-2"
-              x="26.52"
-              y="37.46"
-              width="5.73"
-              height="5.73"
-            />
-            <rect
-              className="cls-2"
-              x="34.67"
-              y="37.46"
-              width="5.73"
-              height="5.73"
-            />
-            <rect
-              className="cls-2"
-              x="42.81"
-              y="37.46"
-              width="5.73"
-              height="5.73"
-            />
-            <rect
-              className="cls-2"
-              x="50.96"
-              y="37.46"
-              width="5.73"
-              height="5.73"
-            />
-            <rect
-              className="cls-2"
-              x="18.48"
-              y="45.4"
-              width="5.73"
-              height="5.73"
-            />
-            <rect
-              className="cls-2"
-              x="26.62"
-              y="45.4"
-              width="5.73"
-              height="5.73"
-            />
-            <rect
-              className="cls-2"
-              x="34.67"
-              y="45.4"
-              width="5.73"
-              height="5.73"
-            />
-            <rect
-              className="cls-2"
-              x="42.81"
-              y="45.4"
-              width="5.73"
-              height="5.73"
-            />
-            <rect
-              className="cls-2"
-              x="50.96"
-              y="45.4"
-              width="5.73"
-              height="5.73"
-            />
-            <line
-              className="cls-8"
-              x1="42.81"
-              x2="48.54"
-              y1="37.46"
-              y2="43.19"
-            />
-            <line
-              className="cls-8"
-              x1="48.54"
-              x2="42.81"
-              y1="37.46"
-              y2="43.19"
-            />
+            <line className="cls-7" x1="26.33" x2="26.33" y1="20.22" y2="12.57" />
+            <line className="cls-7" x1="48.84" x2="48.84" y1="20.22" y2="12.57" />
+            <rect className="cls-2" x="18.48" y="29.52" width="5.73" height="5.73" />
+            <rect className="cls-2" x="26.52" y="29.52" width="5.73" height="5.73" />
+            <rect className="cls-2" x="34.67" y="29.52" width="5.73" height="5.73" />
+            <rect className="cls-2" x="42.81" y="29.52" width="5.73" height="5.73" />
+            <rect className="cls-2" x="50.96" y="29.52" width="5.73" height="5.73" />
+            <rect className="cls-2" x="18.48" y="37.46" width="5.73" height="5.73" />
+            <rect className="cls-2" x="26.52" y="37.46" width="5.73" height="5.73" />
+            <rect className="cls-2" x="34.67" y="37.46" width="5.73" height="5.73" />
+            <rect className="cls-2" x="42.81" y="37.46" width="5.73" height="5.73" />
+            <rect className="cls-2" x="50.96" y="37.46" width="5.73" height="5.73" />
+            <rect className="cls-2" x="18.48" y="45.4" width="5.73" height="5.73" />
+            <rect className="cls-2" x="26.62" y="45.4" width="5.73" height="5.73" />
+            <rect className="cls-2" x="34.67" y="45.4" width="5.73" height="5.73" />
+            <rect className="cls-2" x="42.81" y="45.4" width="5.73" height="5.73" />
+            <rect className="cls-2" x="50.96" y="45.4" width="5.73" height="5.73" />
+            <line className="cls-8" x1="42.81" x2="48.54" y1="37.46" y2="43.19" />
+            <line className="cls-8" x1="48.54" x2="42.81" y1="37.46" y2="43.19" />
           </g>
         </svg>
       )
@@ -792,110 +547,43 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
       `
 
       return (
-        <svg
-          css={styles}
-          viewBox="0 0 75.17 69.21"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg css={styles} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg">
           <g>
             <circle className="cls-1" cx="38.2" cy="35.4" r="32.5" />
             <circle className="cls-2" cx="38.2" cy="35.4" r="26.5" />
-            <path
-              className="cls-3"
-              d="M54.89,5.91a34,34,0,0,0-33.34,0L38.2,34.77Z"
-            />
-            <path
-              className="cls-4"
-              d="M20.93,6.25A33.89,33.89,0,0,0,4.25,35.11H37.58Z"
-            />
-            <path
-              className="cls-5"
-              d="M72.15,35.14A33.92,33.92,0,0,0,55.5,6.27L38.82,35.13Z"
-            />
+            <path className="cls-3" d="M54.89,5.91a34,34,0,0,0-33.34,0L38.2,34.77Z" />
+            <path className="cls-4" d="M20.93,6.25A33.89,33.89,0,0,0,4.25,35.11H37.58Z" />
+            <path className="cls-5" d="M72.15,35.14A33.92,33.92,0,0,0,55.5,6.27L38.82,35.13Z" />
             <path
               className="cls-2"
               d="M45.46,22.62A14.45,14.45,0,0,0,23.77,35.13h28.9A14.45,14.45,0,0,0,45.46,22.62Z"
             />
-            <circle
-              className="cls-2"
-              transform="translate(-11.89 18.94) rotate(-45)"
-              cx="16.92"
-              cy="23.82"
-              r="6.53"
-            />
+            <circle className="cls-2" transform="translate(-11.89 18.94) rotate(-45)" cx="16.92" cy="23.82" r="6.53" />
             <path
               className="cls-4"
               d="M18.76,26.45a.17.17,0,0,0,.16-.28,2.7,2.7,0,0,0-4,0,.17.17,0,0,0,.16.28,11.7,11.7,0,0,1,1.85-.14A11.57,11.57,0,0,1,18.76,26.45Z"
             />
-            <path
-              className="cls-4"
-              d="M20.59,22.85a.6.6,0,0,1-.6.6.6.6,0,0,1,0-1.2A.6.6,0,0,1,20.59,22.85Z"
-            />
-            <path
-              className="cls-4"
-              d="M14.44,22.85a.6.6,0,0,1-.6.6.6.6,0,0,1,0-1.2A.6.6,0,0,1,14.44,22.85Z"
-            />
-            <circle
-              className="cls-2"
-              transform="translate(18.08 46.11) rotate(-76.66)"
-              cx="38.2"
-              cy="11.62"
-              r="6.53"
-            />
-            <path
-              className="cls-3"
-              d="M41.87,10.65a.59.59,0,0,1-.59.6.6.6,0,1,1,0-1.19A.59.59,0,0,1,41.87,10.65Z"
-            />
-            <path
-              className="cls-3"
-              d="M35.72,10.65a.59.59,0,0,1-.59.6.6.6,0,1,1,0-1.19A.59.59,0,0,1,35.72,10.65Z"
-            />
-            <path
-              className="cls-3"
-              d="M40.56,13.7H36A.33.33,0,0,1,36,13h4.6a.33.33,0,0,1,0,.66Z"
-            />
-            <circle
-              className="cls-2"
-              transform="translate(23.41 76.65) rotate(-77.8)"
-              cx="59.2"
-              cy="23.82"
-              r="6.53"
-            />
+            <path className="cls-4" d="M20.59,22.85a.6.6,0,0,1-.6.6.6.6,0,0,1,0-1.2A.6.6,0,0,1,20.59,22.85Z" />
+            <path className="cls-4" d="M14.44,22.85a.6.6,0,0,1-.6.6.6.6,0,0,1,0-1.2A.6.6,0,0,1,14.44,22.85Z" />
+            <circle className="cls-2" transform="translate(18.08 46.11) rotate(-76.66)" cx="38.2" cy="11.62" r="6.53" />
+            <path className="cls-3" d="M41.87,10.65a.59.59,0,0,1-.59.6.6.6,0,1,1,0-1.19A.59.59,0,0,1,41.87,10.65Z" />
+            <path className="cls-3" d="M35.72,10.65a.59.59,0,0,1-.59.6.6.6,0,1,1,0-1.19A.59.59,0,0,1,35.72,10.65Z" />
+            <path className="cls-3" d="M40.56,13.7H36A.33.33,0,0,1,36,13h4.6a.33.33,0,0,1,0,.66Z" />
+            <circle className="cls-2" transform="translate(23.41 76.65) rotate(-77.8)" cx="59.2" cy="23.82" r="6.53" />
             <path
               className="cls-5"
               d="M56.84,25.18c-.16-.05-.31.12-.26.31a2.75,2.75,0,0,0,5.24,0,.23.23,0,0,0-.27-.31,7.28,7.28,0,0,1-2.35.37A7.39,7.39,0,0,1,56.84,25.18Z"
             />
-            <path
-              className="cls-5"
-              d="M62.87,22.85a.6.6,0,0,1-.6.6.6.6,0,0,1,0-1.2A.6.6,0,0,1,62.87,22.85Z"
-            />
-            <path
-              className="cls-5"
-              d="M56.72,22.85a.6.6,0,0,1-.6.6.6.6,0,0,1,0-1.2A.6.6,0,0,1,56.72,22.85Z"
-            />
-            <rect
-              className="cls-2"
-              x="23.77"
-              y="34.77"
-              width="28.89"
-              height="1.05"
-            />
+            <path className="cls-5" d="M62.87,22.85a.6.6,0,0,1-.6.6.6.6,0,0,1,0-1.2A.6.6,0,0,1,62.87,22.85Z" />
+            <path className="cls-5" d="M56.72,22.85a.6.6,0,0,1-.6.6.6.6,0,0,1,0-1.2A.6.6,0,0,1,56.72,22.85Z" />
+            <rect className="cls-2" x="23.77" y="34.77" width="28.89" height="1.05" />
             <line className="cls-6" x1="20.92" x2="38.2" y1="5.62" y2="35.3" />
-            <line
-              className="cls-6"
-              x1="55.35"
-              x2="38.07"
-              y1="5.87"
-              y2="35.54"
-            />
+            <line className="cls-6" x1="55.35" x2="38.07" y1="5.87" y2="35.54" />
             <path
               className="cls-7"
               d="M39.28,37.38a2.35,2.35,0,0,1-2.79-3.79c.76-.56,11.06-6.15,15-8.09a.45.45,0,0,1,.5.73C48.86,29.26,40,36.82,39.28,37.38Z"
             />
-            <path
-              className="cls-2"
-              d="M39.17,35.46a1.11,1.11,0,0,1-2.21,0,1.11,1.11,0,1,1,2.21,0Z"
-            />
+            <path className="cls-2" d="M39.17,35.46a1.11,1.11,0,0,1-2.21,0,1.11,1.11,0,1,1,2.21,0Z" />
             <circle className="cls-8" cx="28.42" cy="44.56" r="1.88" />
             <circle className="cls-8" cx="47.98" cy="44.56" r="1.88" />
             <path
@@ -910,20 +598,8 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
               className="cls-11"
               d="M38.35,51.63a4.92,4.92,0,0,0,3.57-2.06.5.5,0,0,0-.1-.7.52.52,0,0,0-.71.11,3.7,3.7,0,0,1-2.76,1.65A3.8,3.8,0,0,1,35.63,49a.5.5,0,0,0-.78.64A5,5,0,0,0,38.35,51.63Z"
             />
-            <ellipse
-              className="cls-12"
-              cx="42.77"
-              cy="42.89"
-              rx="1.1"
-              ry=".98"
-            />
-            <ellipse
-              className="cls-12"
-              cx="33.8"
-              cy="42.89"
-              rx="1.1"
-              ry=".98"
-            />
+            <ellipse className="cls-12" cx="42.77" cy="42.89" rx="1.1" ry=".98" />
+            <ellipse className="cls-12" cx="33.8" cy="42.89" rx="1.1" ry=".98" />
           </g>
         </svg>
       )
@@ -957,11 +633,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
       `
 
       return (
-        <svg
-          css={styles}
-          viewBox="0 0 75.17 69.21"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg css={styles} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg">
           <g>
             <circle className="cls-1" cx="37.58" cy="34.03" r="32.5" />
             <circle className="cls-2" cx="37.58" cy="34.03" r="26.5" />
@@ -973,10 +645,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
               className="cls-2"
               d="M44.65,34.76A1.81,1.81,0,0,1,42.84,33v-2a1.81,1.81,0,0,1,.53-1.28c2.09-2.07,4-4.75,4-5.61v-.29a2.56,2.56,0,0,0-2.56-2.56h-.28a2.57,2.57,0,0,0-2.57,2.56,1.81,1.81,0,1,1-3.61,0,6.18,6.18,0,0,1,6.18-6.17h.28A6.18,6.18,0,0,1,51,23.74V24c0,2.58-3,6-4.51,7.62V33A1.81,1.81,0,0,1,44.65,34.76Z"
             />
-            <path
-              className="cls-2"
-              d="M46.52,39.88A1.88,1.88,0,1,1,44.65,38,1.87,1.87,0,0,1,46.52,39.88Z"
-            />
+            <path className="cls-2" d="M46.52,39.88A1.88,1.88,0,1,1,44.65,38,1.87,1.87,0,0,1,46.52,39.88Z" />
             <circle className="cls-4" cx="16.64" cy="39.19" r="1.88" />
             <circle className="cls-4" cx="36.2" cy="39.19" r="1.88" />
             <path
@@ -991,20 +660,8 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
               className="cls-7"
               d="M26.57,46.25a5,5,0,0,0,3.58-2,.51.51,0,0,0-.11-.7.5.5,0,0,0-.7.1,3.69,3.69,0,0,1-2.77,1.65,3.83,3.83,0,0,1-2.72-1.59.5.5,0,0,0-.71-.07.5.5,0,0,0-.07.7A5,5,0,0,0,26.57,46.25Z"
             />
-            <ellipse
-              className="cls-8"
-              cx="30.99"
-              cy="37.52"
-              rx="1.1"
-              ry=".98"
-            />
-            <ellipse
-              className="cls-8"
-              cx="22.02"
-              cy="37.52"
-              rx="1.1"
-              ry=".98"
-            />
+            <ellipse className="cls-8" cx="30.99" cy="37.52" rx="1.1" ry=".98" />
+            <ellipse className="cls-8" cx="22.02" cy="37.52" rx="1.1" ry=".98" />
           </g>
         </svg>
       )
@@ -1043,11 +700,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
       `
 
       return (
-        <svg
-          css={styles}
-          viewBox="0 0 75.17 69.21"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg css={styles} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg">
           <g>
             <circle className="cls-1" cx="38.2" cy="34.47" r="32.5" />
             <circle className="cls-2" cx="38.2" cy="34.47" r="26.5" />
@@ -1060,20 +713,8 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
               d="M54,31.63l-.23-1.74a7.81,7.81,0,0,0,3.86-7c0-4.22-2.88-6.9-6.42-6.9V42.32H63.85a.65.65,0,0,0,.65-.66V38.6C64.5,34.88,60.29,32.12,54,31.63Z"
             />
             <circle className="cls-5" cx="50.75" cy="44.42" r="7.55" />
-            <line
-              className="cls-6"
-              x1="47.44"
-              x2="54.04"
-              y1="41.12"
-              y2="47.72"
-            />
-            <line
-              className="cls-6"
-              x1="47.44"
-              x2="54.04"
-              y1="47.72"
-              y2="41.12"
-            />
+            <line className="cls-6" x1="47.44" x2="54.04" y1="41.12" y2="47.72" />
+            <line className="cls-6" x1="47.44" x2="54.04" y1="47.72" y2="41.12" />
             <path
               className="cls-3"
               d="M20,22.87a7.82,7.82,0,0,0,3.88,7l-.13,1.72c-6.55.52-10.91,3.28-10.91,7v3.06a.65.65,0,0,0,.65.66H26.46V16C22.92,16,20,18.65,20,22.87Z"
@@ -1144,11 +785,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
       `
 
       return (
-        <svg
-          css={styles}
-          viewBox="0 0 75.17 69.21"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg css={styles} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <clipPath id="a">
               <circle className="cls-1" cx="37.37" cy="-52.3" r="27" />
@@ -1157,10 +794,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
           <g className="cls-2">
             <g>
               <g className="cls-3">
-                <polyline
-                  className="cls-4"
-                  points="63.97 43.7 62.63 -43.96 26.28 -47.23 7.57 -44.88 -27.17 -26.62"
-                />
+                <polyline className="cls-4" points="63.97 43.7 62.63 -43.96 26.28 -47.23 7.57 -44.88 -27.17 -26.62" />
                 <polygon
                   className="cls-4"
                   points="63.15 -9.51 96.48 8.05 126.92 -58.46 123.53 -60.89 94.85 -16.42 62.63 -43.96"
@@ -1169,18 +803,9 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
                   className="cls-4"
                   points="-22.16 -4.61 32.04 28.18 58.79 -51.73 54.89 -53.54 26.28 3.37 0.35 -22.35"
                 />
-                <polygon
-                  className="cls-5"
-                  points="0.35 -22.35 26.28 3.37 54.89 -53.54 56.54 -52.77 26.68 10.27"
-                />
-                <polygon
-                  className="cls-6"
-                  points="-22.16 -4.61 32.04 28.18 56.38 -44.52 58.2 -44.37 33.73 33.18"
-                />
-                <polygon
-                  className="cls-6"
-                  points="96.48 8.05 63.07 -18.85 63.15 -9.51"
-                />
+                <polygon className="cls-5" points="0.35 -22.35 26.28 3.37 54.89 -53.54 56.54 -52.77 26.68 10.27" />
+                <polygon className="cls-6" points="-22.16 -4.61 32.04 28.18 56.38 -44.52 58.2 -44.37 33.73 33.18" />
+                <polygon className="cls-6" points="96.48 8.05 63.07 -18.85 63.15 -9.51" />
               </g>
               <circle className="cls-7" cx="37.37" cy="34.47" r="32.5" />
               <circle className="cls-8" cx="37.37" cy="34.47" r="26.5" />
@@ -1212,25 +837,10 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
                 className="cls-8"
                 d="m37.71 39.46a5.49 5.49 0 0 0 3.88 -9.36l-7.76 7.75a5.43 5.43 0 0 0 3.88 1.61z"
               />
-              <path
-                className="cls-8"
-                d="M32.22,34a5.47,5.47,0,0,0,1.61,3.87l7.76-7.75A5.49,5.49,0,0,0,32.22,34Z"
-              />
-              <polygon
-                className="cls-10"
-                points="53.15 16.74 52.1 13.59 57.72 7.97 58.77 11.12"
-              />
-              <polygon
-                className="cls-12"
-                points="54.97 18.55 58.12 19.6 63.74 13.98 60.59 12.93"
-              />
-              <line
-                className="cls-13"
-                x1="39.05"
-                x2="61.17"
-                y1="32.63"
-                y2="10.52"
-              />
+              <path className="cls-8" d="M32.22,34a5.47,5.47,0,0,0,1.61,3.87l7.76-7.75A5.49,5.49,0,0,0,32.22,34Z" />
+              <polygon className="cls-10" points="53.15 16.74 52.1 13.59 57.72 7.97 58.77 11.12" />
+              <polygon className="cls-12" points="54.97 18.55 58.12 19.6 63.74 13.98 60.59 12.93" />
+              <line className="cls-13" x1="39.05" x2="61.17" y1="32.63" y2="10.52" />
             </g>
           </g>
         </svg>
@@ -1294,11 +904,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
       `
 
       return (
-        <svg
-          css={styles}
-          viewBox="0 0 75.17 69.21"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg css={styles} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg">
           <g>
             <circle className="cls-1" cx="37.94" cy="34.03" r="32.5" />
             <circle className="cls-2" cx="37.94" cy="34.03" r="26.5" />
@@ -1306,54 +912,18 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
               className="cls-3"
               d="M30.92,33.5V26.29L26.7,22.08a.45.45,0,0,1-.09-.48.43.43,0,0,1,.4-.26h3.91v-.77a2,2,0,0,1,2-2H70a2,2,0,0,1,2,2V33.5a2,2,0,0,1-2,2H33A2,2,0,0,1,30.92,33.5Z"
             />
-            <line
-              className="cls-4"
-              x1="47.05"
-              x2="59.15"
-              y1="24.63"
-              y2="24.63"
-            />
-            <line
-              className="cls-4"
-              x1="47.05"
-              x2="59.15"
-              y1="27.38"
-              y2="27.38"
-            />
-            <line
-              className="cls-4"
-              x1="47.05"
-              x2="54.14"
-              y1="30.13"
-              y2="30.13"
-            />
-            <rect
-              className="cls-2"
-              x="61.36"
-              y="23.25"
-              width="6.95"
-              height="8.26"
-            />
+            <line className="cls-4" x1="47.05" x2="59.15" y1="24.63" y2="24.63" />
+            <line className="cls-4" x1="47.05" x2="59.15" y1="27.38" y2="27.38" />
+            <line className="cls-4" x1="47.05" x2="54.14" y1="30.13" y2="30.13" />
+            <rect className="cls-2" x="61.36" y="23.25" width="6.95" height="8.26" />
             <path
               className="cls-5"
               d="M30.92,52.8V45.6L26.7,41.38a.43.43,0,0,1-.09-.47.44.44,0,0,1,.4-.27h3.91v-.76a2,2,0,0,1,2-2.05H70a2,2,0,0,1,2,2.05V52.8a2,2,0,0,1-2,2.05H33A2,2,0,0,1,30.92,52.8Z"
             />
-            <rect
-              className="cls-2"
-              x="61.36"
-              y="42.56"
-              width="6.95"
-              height="8.26"
-            />
+            <rect className="cls-2" x="61.36" y="42.56" width="6.95" height="8.26" />
             <circle className="cls-6" cx="39.19" cy="46.34" r="5.65" />
-            <path
-              className="cls-7"
-              d="M38,47.06H36.82a.52.52,0,0,1-.52-.53V45a.52.52,0,0,1,.52-.53h1"
-            />
-            <path
-              className="cls-5"
-              d="M37.09,45a.26.26,0,1,0,.26.26.27.27,0,0,0-.26-.26Z"
-            />
+            <path className="cls-7" d="M38,47.06H36.82a.52.52,0,0,1-.52-.53V45a.52.52,0,0,1,.52-.53h1" />
+            <path className="cls-5" d="M37.09,45a.26.26,0,1,0,.26.26.27.27,0,0,0-.26-.26Z" />
             <path
               className="cls-7"
               d="M41.77,46.53a.78.78,0,0,0,.14-.42.66.66,0,0,0-.22-.49.54.54,0,0,0,.08-.28.63.63,0,0,0-.27-.52,1.64,1.64,0,0,0,0-.23c0-.48-.3-.68-.76-.68h-.52a4.23,4.23,0,0,0-1.41.3,3.51,3.51,0,0,1-.83.22h-.13v2.63H38c.33,0,.82.7,1,.94s.2.25.32.37c.4.42.26,1.05.52,1.31.56,0,.66-.31.66-.79s-.4-.83-.4-1.31h1.45a.54.54,0,0,0,.52-.52C42.07,46.91,42,46.54,41.77,46.53Z"
@@ -1361,33 +931,15 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
             <g className="cls-8">
               <circle className="cls-2" cx="39.19" cy="27.03" r="5.66" />
             </g>
-            <path
-              className="cls-9"
-              d="M38,26.31H36.82a.53.53,0,0,0-.53.53v1.59a.52.52,0,0,0,.53.52h1"
-            />
-            <path
-              className="cls-3"
-              d="M37.08,27.9a.27.27,0,0,0,0,.53.27.27,0,1,0,0-.53Z"
-            />
+            <path className="cls-9" d="M38,26.31H36.82a.53.53,0,0,0-.53.53v1.59a.52.52,0,0,0,.53.52h1" />
+            <path className="cls-3" d="M37.08,27.9a.27.27,0,0,0,0,.53.27.27,0,1,0,0-.53Z" />
             <path
               className="cls-9"
               d="M41.77,26.84a.71.71,0,0,1,.14.42.64.64,0,0,1-.21.49.59.59,0,0,1,.07.29.58.58,0,0,1-.27.51.93.93,0,0,1,0,.23c0,.48-.3.69-.76.69h-.52a4.23,4.23,0,0,1-1.41-.3,3.11,3.11,0,0,0-.83-.23h-.13V26.31H38c.33,0,.82-.7,1-.94s.2-.25.32-.37c.4-.42.26-1.05.52-1.31.57,0,.66.3.66.78s-.39.84-.39,1.32h1.44a.55.55,0,0,1,.53.52C42.08,26.47,42,26.84,41.77,26.84Z"
             />
             <line className="cls-4" x1="47.05" x2="59.15" y1="44.1" y2="44.1" />
-            <line
-              className="cls-4"
-              x1="47.05"
-              x2="59.15"
-              y1="46.86"
-              y2="46.86"
-            />
-            <line
-              className="cls-4"
-              x1="47.05"
-              x2="54.14"
-              y1="49.61"
-              y2="49.61"
-            />
+            <line className="cls-4" x1="47.05" x2="59.15" y1="46.86" y2="46.86" />
+            <line className="cls-4" x1="47.05" x2="54.14" y1="49.61" y2="49.61" />
             <circle className="cls-10" cx="4.99" cy="34.19" r="1.88" />
             <circle className="cls-10" cx="24.56" cy="34.19" r="1.88" />
             <path
@@ -1402,20 +954,8 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
               className="cls-13"
               d="M14.92,41.25a5,5,0,0,0,3.58-2,.51.51,0,0,0-.11-.7.5.5,0,0,0-.7.1,3.69,3.69,0,0,1-2.77,1.65,3.83,3.83,0,0,1-2.72-1.59.5.5,0,0,0-.71-.07.5.5,0,0,0-.07.7A5,5,0,0,0,14.92,41.25Z"
             />
-            <ellipse
-              className="cls-14"
-              cx="19.34"
-              cy="32.52"
-              rx="1.1"
-              ry=".98"
-            />
-            <ellipse
-              className="cls-14"
-              cx="10.37"
-              cy="32.52"
-              rx="1.1"
-              ry=".98"
-            />
+            <ellipse className="cls-14" cx="19.34" cy="32.52" rx="1.1" ry=".98" />
+            <ellipse className="cls-14" cx="10.37" cy="32.52" rx="1.1" ry=".98" />
           </g>
         </svg>
       )
@@ -1469,11 +1009,7 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
       `
 
       return (
-        <svg
-          css={styles}
-          viewBox="0 0 75.17 69.21"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg css={styles} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <clipPath id="d">
               <path
@@ -1488,25 +1024,16 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
               />
             </clipPath>
             <clipPath id="b">
-              <polygon
-                className="cls-1"
-                points="25.55 25.61 19.23 36.66 16.83 35.27 22.85 24.36"
-              />
+              <polygon className="cls-1" points="25.55 25.61 19.23 36.66 16.83 35.27 22.85 24.36" />
             </clipPath>
             <clipPath id="a">
-              <polygon
-                className="cls-1"
-                points="49.98 25.31 56.29 36.37 59.06 34.64 53 23.78"
-              />
+              <polygon className="cls-1" points="49.98 25.31 56.29 36.37 59.06 34.64 53 23.78" />
             </clipPath>
           </defs>
           <g>
             <circle className="cls-2" cx="37.31" cy="34.27" r="32.5" />
             <circle className="cls-3" cx="37.31" cy="34.27" r="26.5" />
-            <path
-              className="cls-4"
-              d="M26.86,42.78s10.8,8.08,12.92,6.83a8,8,0,0,0,3-4.06l-15.25-6Z"
-            />
+            <path className="cls-4" d="M26.86,42.78s10.8,8.08,12.92,6.83a8,8,0,0,0,3-4.06l-15.25-6Z" />
             <path
               className="cls-5"
               d="M49.58,26.71c-.89.13-8.07,0-8.3.25s-3.51,5.19-3.51,5.19S26.29,42.65,24.72,44.43c-.95,1.07.59,4.14,2.52,2.47s4.75-4.25,5.25-4.75,1,0,.53.36a70.07,70.07,0,0,0-5.36,4.85c-1.28,1.46,1.35,4.12,2.69,2.87s5.74-5.35,6-5.55.72.12.42.39-4.4,3.8-5.38,5,1.2,3.46,2.92,2c1.16-1,4.74-4.68,5-4.94s.73.15.33.49S36.92,50.24,36,51.31s.73,3.16,2.37,1.74S54.11,39.64,55,36.61c.22-.77,1.52-1.52,1.52-1.52l-4.85-9.48A5.84,5.84,0,0,1,49.58,26.71Z"
@@ -1552,58 +1079,25 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
               d="M23.17,25.93l2.19,1.32A33.41,33.41,0,0,1,36,26c4.44.3,5.26,1,5.26,1A12.32,12.32,0,0,1,44.9,30.5c.38.67.15,2.39.78,3.84,1,2.23,1,3.81-.38,4.42-1.95.85-4.84-1.95-4.52-5.16a5.92,5.92,0,0,1-3-1.45C34.49,35.27,26.4,42.74,26.4,42.74a36.2,36.2,0,0,1-6.72-7l-1.52-1Z"
             />
             <g className="cls-7">
-              <polygon
-                className="cls-8"
-                points="49.48 25.5 56.11 36.37 58.47 34.91 52.15 24.17"
-              />
+              <polygon className="cls-8" points="49.48 25.5 56.11 36.37 58.47 34.91 52.15 24.17" />
             </g>
             <g className="cls-9">
-              <polygon
-                className="cls-8"
-                points="25.93 25.85 19.61 36.91 17.21 35.51 23.23 24.61"
-              />
+              <polygon className="cls-8" points="25.93 25.85 19.61 36.91 17.21 35.51 23.23 24.61" />
             </g>
-            <polygon
-              className="cls-3"
-              points="25.55 25.61 19.23 36.66 16.83 35.27 22.85 24.36"
-            />
-            <polygon
-              className="cls-10"
-              points="16.83 36.07 2.36 29.75 7.89 14.02 23.2 23.74"
-            />
+            <polygon className="cls-3" points="25.55 25.61 19.23 36.66 16.83 35.27 22.85 24.36" />
+            <polygon className="cls-10" points="16.83 36.07 2.36 29.75 7.89 14.02 23.2 23.74" />
             <g className="cls-11">
-              <polygon
-                className="cls-8"
-                points="17.32 36.21 -6.24 25.74 -6.24 8.13 23.69 23.88"
-              />
+              <polygon className="cls-8" points="17.32 36.21 -6.24 25.74 -6.24 8.13 23.69 23.88" />
             </g>
             <circle className="cls-12" cx="14.83" cy="32.15" r="1.27" />
             <circle className="cls-12" cx="11.1" cy="30.41" r="1.27" />
-            <polygon
-              className="cls-3"
-              points="50.08 25.23 56.7 36.1 59.06 34.64 52.74 23.91"
-            />
-            <polygon
-              className="cls-10"
-              points="59.09 35.44 72.81 29.69 68.78 13.18 52.37 23.29"
-            />
-            <path
-              className="cls-13"
-              d="M59.71,31.5a1.27,1.27,0,1,0,1.23-1.31A1.26,1.26,0,0,0,59.71,31.5Z"
-            />
-            <path
-              className="cls-13"
-              d="M63.39,29.65a1.27,1.27,0,0,0,2.54-.07,1.27,1.27,0,1,0-2.54.07Z"
-            />
-            <polygon
-              className="cls-12"
-              points="72.81 29.69 59.09 35.44 56 29.85 71.13 22.81"
-            />
+            <polygon className="cls-3" points="50.08 25.23 56.7 36.1 59.06 34.64 52.74 23.91" />
+            <polygon className="cls-10" points="59.09 35.44 72.81 29.69 68.78 13.18 52.37 23.29" />
+            <path className="cls-13" d="M59.71,31.5a1.27,1.27,0,1,0,1.23-1.31A1.26,1.26,0,0,0,59.71,31.5Z" />
+            <path className="cls-13" d="M63.39,29.65a1.27,1.27,0,0,0,2.54-.07,1.27,1.27,0,1,0-2.54.07Z" />
+            <polygon className="cls-12" points="72.81 29.69 59.09 35.44 56 29.85 71.13 22.81" />
             <g className="cls-14">
-              <polygon
-                className="cls-8"
-                points="58.54 35.74 81.9 25.37 81.9 7.76 51.97 23.5"
-              />
+              <polygon className="cls-8" points="58.54 35.74 81.9 25.37 81.9 7.76 51.97 23.5" />
             </g>
           </g>
         </svg>

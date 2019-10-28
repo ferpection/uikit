@@ -11,10 +11,7 @@ storiesOf('Components|Button/PlaceholderButton', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('normal state', () => (
-    <PlaceholderButton
-      onClick={action('clicked')}
-      isDisabled={boolean('disabled', false)}
-    >
+    <PlaceholderButton onClick={action('clicked')} isDisabled={boolean('disabled', false)}>
       {text('label', 'Add an element')}
     </PlaceholderButton>
   ))

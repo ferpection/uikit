@@ -6,9 +6,7 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 iconLibrary.add(fas, fab, far)
 
 export { Button } from './buttons/Button/Button'
-export {
-  PlaceholderButton,
-} from './buttons/PlaceholderButton/PlaceholderButton'
+export { PlaceholderButton } from './buttons/PlaceholderButton/PlaceholderButton'
 export { ThemeProvider } from './contexts/ThemeContext'
 export { ThematicSection } from './layout/ThematicSection/ThematicSection'
 export { Header } from './layout/Header/Header'

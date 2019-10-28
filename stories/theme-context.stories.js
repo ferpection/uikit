@@ -14,15 +14,9 @@ storiesOf('Contexts|ThemeProvider', module)
   .add('colors', () => {
     const theme = {
       colors: {
-        action: Color.fromHex(
-          text('action color', FULL_COLORSET.ROBINS_EGG_BLUE.toHex())
-        ),
-        positive: Color.fromHex(
-          text('positive color', FULL_COLORSET.SHAMROCK.toHex())
-        ),
-        negative: Color.fromHex(
-          text('negative color', FULL_COLORSET.SUNGLOW.toHex())
-        ),
+        action: Color.fromHex(text('action color', FULL_COLORSET.ROBINS_EGG_BLUE.toHex())),
+        positive: Color.fromHex(text('positive color', FULL_COLORSET.SHAMROCK.toHex())),
+        negative: Color.fromHex(text('negative color', FULL_COLORSET.SUNGLOW.toHex())),
       },
     }
 
@@ -33,21 +27,11 @@ storiesOf('Contexts|ThemeProvider', module)
           Review study
         </Button>
         <pre>Button w/ positive color:</pre>
-        <Button
-          icon="rocket"
-          actionType="positive"
-          onClick={action('[positive] clicked')}
-          isFilled
-        >
+        <Button icon="rocket" actionType="positive" onClick={action('[positive] clicked')} isFilled>
           Launch study
         </Button>
         <pre>Button w/ negative color:</pre>
-        <Button
-          icon="trash"
-          actionType="negative"
-          onClick={action('[negative] clicked')}
-          isFilled
-        >
+        <Button icon="trash" actionType="negative" onClick={action('[negative] clicked')} isFilled>
           Delete study
         </Button>
       </ThemeProvider>
