@@ -3,6 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs } from '@storybook/addon-knobs'
+import { action } from '@storybook/addon-actions'
 
 import { RadioField, RadioButton } from '../src/components'
 
@@ -11,7 +12,7 @@ storiesOf('Components|Forms/RadioField', module)
   .addDecorator(withKnobs)
   .add('basic example', () => (
     <>
-      <RadioField value="three">
+      <RadioField value="three" onValueChange={action('value changed')}>
         <RadioButton value="one">Choice One</RadioButton>
         <RadioButton value="two">Choice Two</RadioButton>
         <RadioButton value="three">Choice Three</RadioButton>

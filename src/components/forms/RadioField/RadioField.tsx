@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { FC, Children, cloneElement, useState, isValidElement, ChangeEvent, useEffect } from 'react'
+import React, { FC, Children, cloneElement, useState, isValidElement, ChangeEvent, useEffect, FocusEvent } from 'react'
 import { jsx } from '@emotion/core'
 
 import { FormProps } from '../form-props'
@@ -9,7 +9,7 @@ import { listStyles, innerRadioStyles, innerRadioStylesDisabled } from './styles
 export const RadioField: FC<RadioFieldProps> = props => {
   const [value, setValue] = useState(props.value || '')
 
-  const { onValueChange = () => {}, isDisabled } = props
+  const { onValueChange = () => {}, isDisabled, onBlur: handleBlur, onFocus: handleFocus } = props
   useEffect(() => {
     onValueChange(value)
   }, [value])
@@ -17,7 +17,7 @@ export const RadioField: FC<RadioFieldProps> = props => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => setValue(event.target.value)
 
   return (
-    <ul css={[listStyles]}>
+    <ul css={[listStyles]} onBlur={handleBlur} onFocus={handleFocus}>
       {Children.map(props.children, (child, index) => {
         if (!isValidElement(child)) {
           return null
@@ -40,4 +40,7 @@ export const RadioField: FC<RadioFieldProps> = props => {
 export interface RadioFieldProps extends FormProps {
   value?: string
   onValueChange?: (value: string) => void
+  placeholder: undefined
+  onBlur?: (event: FocusEvent<HTMLUListElement>) => void
+  onFocus?: (event: FocusEvent<HTMLUListElement>) => void
 }
