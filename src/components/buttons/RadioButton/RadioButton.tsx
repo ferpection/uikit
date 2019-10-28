@@ -23,7 +23,7 @@ export const RadioButton: FC<RadioButtonProps> = props => (
 
 export interface RadioButtonProps {
   children?: string
-  value?: string
+  value: string
   isDisabled?: boolean
   isChecked?: boolean
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void

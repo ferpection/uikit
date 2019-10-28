@@ -23,7 +23,7 @@ export const CheckboxButton: FC<CheckboxButtonProps> = props => (
 
 export interface CheckboxButtonProps {
   children?: string
-  value?: string
+  value: string
   isDisabled?: boolean
   isChecked?: boolean
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
