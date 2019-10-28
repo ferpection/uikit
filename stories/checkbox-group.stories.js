@@ -12,7 +12,7 @@ storiesOf('Components|Forms/CheckboxGroup', module)
   .addDecorator(withKnobs)
   .add('basic example', () => (
     <>
-      <CheckboxGroup value="three" onValueChange={action('value changed')}>
+      <CheckboxGroup value={['three']} onValueChange={action('value changed')}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">Choice Two</CheckboxButton>
         <CheckboxButton value="three">Choice Three</CheckboxButton>

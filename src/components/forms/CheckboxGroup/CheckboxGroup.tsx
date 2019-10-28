@@ -7,14 +7,22 @@ import { FormProps } from '../form-props'
 import { listStyles, innerCheckboxStyles, innerCheckboxStylesDisabled } from './styles'
 
 export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
-  const [value, setValue] = useState(props.value || '')
+  const [values, setValues] = useState(props.value || [])
 
   const { onValueChange = () => {}, isDisabled, onBlur: handleBlur, onFocus: handleFocus } = props
   useEffect(() => {
-    onValueChange(value)
-  }, [value])
+    onValueChange(values)
+  }, [values])
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => setValue(event.target.value)
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const option = event.target.value
+    if (values.includes(option)) {
+      setValues(values.filter(opt => opt !== option))
+      return
+    }
+
+    setValues([...values, event.target.value])
+  }
 
   return (
     <ul css={[listStyles]} onBlur={handleBlur} onFocus={handleFocus}>
@@ -28,7 +36,7 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
             {cloneElement(child, {
               isDisabled,
               onChange: handleChange,
-              isChecked: child.props.value === value,
+              isChecked: values.includes(child.props.value),
             })}
           </li>
         )
@@ -38,8 +46,8 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
 }
 
 export interface CheckboxGroupProps extends FormProps {
-  value?: string
-  onValueChange?: (value: string) => void
+  value?: string[]
+  onValueChange?: (value: string[]) => void
   placeholder: undefined
   onBlur?: (event: FocusEvent<HTMLUListElement>) => void
   onFocus?: (event: FocusEvent<HTMLUListElement>) => void
