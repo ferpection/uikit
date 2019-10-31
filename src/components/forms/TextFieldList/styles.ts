@@ -13,7 +13,7 @@ export const list = css`
 
 export const listItem = css`
   position: relative;
-  margin-bottom: 10px;
+  margin-top: 10px;
 `
 
 export const icon = css`
