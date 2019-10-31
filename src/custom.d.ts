@@ -1,4 +1,4 @@
-custom.d.tsdeclare module "*.svg" {
+declare module "*.svg" {
   const content: any;
   export default content;
 }
