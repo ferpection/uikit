@@ -5,6 +5,7 @@ import { N300_COLOR, C200_COLOR } from '../../../colors'
 
 export const list = css`
   padding-left: 20px;
+  margin: 0;
   font-family: ${`${SANSSERIF_FONTSET}`};
   font-size: 15px;
   color: ${`${N300_COLOR}`};
