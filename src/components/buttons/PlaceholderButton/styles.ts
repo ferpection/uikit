@@ -6,7 +6,9 @@ export const addButtonStyles = css`
   display: block;
   min-height: 44px;
   padding: 10px 12px;
+  background-color: white;
   color: ${`${C200_COLOR}`};
+  text-align: left;
   text-decoration: none;
   border: 1px dashed #ddd;
   border-radius: 3px;

@@ -36,7 +36,7 @@ export const radioStyles = css`
   }
   input[type='radio']:checked + & {
     border-color: ${`${C200_COLOR}`};
-    background: url(img/icon-check-white.svg) 3px 3px no-repeat ${`${C200_COLOR}`};
+    background: url(../../../icon-check-white.svg) 3px 3px no-repeat ${`${C200_COLOR}`};
     background-size: 12px;
   }
   input[type='radio']:disabled + & {
