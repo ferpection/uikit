@@ -38,7 +38,7 @@ export const radioStyles = css`
   input[type='radio']:checked + & {
     border-color: ${`${C200_COLOR}`};
     background: url(${a}) 3px 3px no-repeat ${`${C200_COLOR}`};
-    background-size: 12px;
+    background-size: 13px;
   }
   input[type='radio']:disabled + & {
     border-color: ${`${N100_COLOR}`};
