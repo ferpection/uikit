@@ -6,6 +6,10 @@ and this project **don't** adheres to [Semantic Versioning](http://semver.org/sp
 
 ## [Unreleased]
 
+## [v0.0.20] - 2019-11-04
+- Fix checkbox
+- Fix list on Firefox
+
 ## [v0.0.19] - 2019-10-28
 ### Added
 - New `RadioButton` component to handle `input[type="radio"]` as single instance
