@@ -18,7 +18,7 @@ export const Header: React.FC<HeaderProps> = props => {
         isFilled: false,
         color: R400_COLOR,
         headerLigthVersion: isLightVersion,
-      })
+      }),
     )
     .map((child, i) => <li key={i}>{child}</li>)
 

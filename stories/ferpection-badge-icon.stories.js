@@ -27,7 +27,7 @@ storiesOf('Iconography|FerpectionBadgeIcon', module)
           'test',
           'tasks',
         ],
-        'config'
+        'config',
       )}
     />
   ))
@@ -48,7 +48,7 @@ storiesOf('Iconography|FerpectionBadgeIcon', module)
           'test',
           'tasks',
         ],
-        'config'
+        'config',
       )}
       borderColor={FULL_COLORSET.CINNABAR}
     />

@@ -29,7 +29,7 @@ storiesOf('Layout|ThematicSection', module)
           'test',
           'tasks',
         ],
-        'config'
+        'config',
       )}
     />
   ))
@@ -51,7 +51,7 @@ storiesOf('Layout|ThematicSection', module)
           'test',
           'tasks',
         ],
-        'config'
+        'config',
       )}
     >
       <div

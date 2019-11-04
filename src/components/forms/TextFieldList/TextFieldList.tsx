@@ -16,9 +16,9 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
   const intialValues =
     props.value != null
       ? props.value.map(el => ({
-          id: RandomString.generate(20),
-          text: el,
-        }))
+        id: RandomString.generate(20),
+        text: el,
+      }))
       : []
   const [values, setValues] = useState<{ id: string; text: string }[]>(intialValues)
   const [errorMessages, setErrorMessages] = useState<{
@@ -55,7 +55,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
         if (value.id !== index) return value
 
         return { id: value.id, text: userValue }
-      })
+      }),
     )
   const handleErrors = (errors: { [errorkey: string]: any }, index: string) => {
     const newErrors = { ...errorMessages, [index]: errors }
