@@ -1,4 +1,5 @@
 import typescript from 'rollup-plugin-typescript2'
+import svg from 'rollup-plugin-svg'
 import pkg from './package.json'
 
 const globalConf = {
@@ -11,6 +12,7 @@ const globalConf = {
     typescript({
       typescript: require('typescript'),
     }),
+    svg(),
   ],
 }
 
