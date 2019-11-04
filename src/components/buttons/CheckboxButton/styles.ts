@@ -2,6 +2,7 @@ import { css } from '@emotion/core'
 
 import { SANSSERIF_FONTSET } from '../../../fonts'
 import { N200_COLOR, N300_COLOR, C200_COLOR, N75_COLOR, N100_COLOR, C15_COLOR } from '../../../colors'
+import a from '../../iconography/icon-check-white.svg'
 
 export const checkboxStyles = css`
   appearance: none;
@@ -34,8 +35,8 @@ export const checkboxStyles = css`
   }
   input[type='checkbox']:checked + & {
     border-color: ${`${C200_COLOR}`};
-    background: url(img/icon-check-white.svg) 3px 3px no-repeat ${`${C200_COLOR}`};
-    background-size: 12px;
+    background: url(${a}) 2px 2px no-repeat ${`${C200_COLOR}`};
+    background-size: 13px;
   }
   input[type='checkbox']:disabled + & {
     border-color: ${`${N100_COLOR}`};

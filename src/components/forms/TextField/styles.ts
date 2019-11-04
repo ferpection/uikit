@@ -4,8 +4,8 @@ import { SANSSERIF_FONTSET } from '../../../fonts'
 
 export const baseStyle = css`
   position: relative;
-  display: block;
-  margin: 10px 0;
+  display: inline-block;
+  margin: 0;
   box-sizing: border-box;
   padding: 10px 5px 10px 10px;
   border-radius: 3px;

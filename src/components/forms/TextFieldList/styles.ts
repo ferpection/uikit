@@ -5,6 +5,7 @@ import { N300_COLOR, C200_COLOR } from '../../../colors'
 
 export const list = css`
   padding-left: 20px;
+  margin: 0;
   font-family: ${`${SANSSERIF_FONTSET}`};
   font-size: 15px;
   color: ${`${N300_COLOR}`};
@@ -12,7 +13,7 @@ export const list = css`
 
 export const listItem = css`
   position: relative;
-  margin-bottom: 10px;
+  margin-top: 10px;
 `
 
 export const icon = css`
