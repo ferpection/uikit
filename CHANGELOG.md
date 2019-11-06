@@ -6,6 +6,10 @@ and this project **don't** adheres to [Semantic Versioning](http://semver.org/sp
 
 ## [Unreleased]
 
+## [v0.0.21] - 2019-11-06
+### Fixed
+- SVG icon not built properly
+
 ## [v0.0.20] - 2019-11-04
 ### Fixed
 - Display a v-check on `CheckboxButton`

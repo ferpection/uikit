@@ -12,7 +12,7 @@ const globalConf = {
     typescript({
       typescript: require('typescript'),
     }),
-    svg(),
+    svg({"base64": true}),
   ],
 }
 
