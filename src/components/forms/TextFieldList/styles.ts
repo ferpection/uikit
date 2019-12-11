@@ -14,12 +14,19 @@ export const list = css`
 export const listItem = css`
   position: relative;
   margin-top: 10px;
+  &::marker {
+    vertical-align: middle;
+  }
+`
+
+export const textFieldAdjustments = css`
+  margin: 0;
 `
 
 export const icon = css`
   position: absolute;
   left: -25px;
-  top: 5px;
+  top: 8px;
   background-color: white /* to hide the number */;
   &[disabled] {
     opacity: 1;
@@ -27,11 +34,18 @@ export const icon = css`
   }
 `
 
+export const hideMarker = css`
+  list-style: none;
+`
+
 export const hideAndShowIconOnHover = css`
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
   li:hover & {
     opacity: 1;
+  }
+  li:hover {
+    list-style: none;
   }
 `
 

@@ -10,7 +10,7 @@ import { Button } from '../../buttons/Button/Button'
 import { FormErrors } from '../FormErrors/FormErrors'
 import { FormProps } from '../form-props'
 
-import { list, hideAndShowIconOnHover, listItem, icon, addButton, listErrors } from './styles'
+import { list, hideAndShowIconOnHover, listItem, icon, addButton, listErrors, textFieldAdjustments, hideMarker } from './styles'
 
 export const TextFieldList: React.FC<TextFieldListProps> = props => {
   const intialValues =
@@ -92,6 +92,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
               />
             ) : null}
             <TextField
+              css={[textFieldAdjustments]}
               dataType={dataType}
               placeholder={placeholder}
               value={value.text}
@@ -105,7 +106,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
           </li>
         ))}
         {isEditable ? (
-          <li css={[listItem]}>
+          <li css={[listItem, hideMarker]}>
             <Button
               css={[icon]}
               icon="plus"
