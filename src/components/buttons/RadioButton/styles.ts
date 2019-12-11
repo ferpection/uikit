@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 
 import { SANSSERIF_FONTSET } from '../../../fonts'
 import { N200_COLOR, N300_COLOR, C200_COLOR, N75_COLOR, N100_COLOR, C15_COLOR } from '../../../colors'
-import a from '../../iconography/icon-check-white.svg'
+import checkIcon from '../icon-check-white.svg'
 
 export const radioStyles = css`
   appearance: none;
@@ -37,7 +37,7 @@ export const radioStyles = css`
   }
   input[type='radio']:checked + & {
     border-color: ${`${C200_COLOR}`};
-    background: url(${a}) 3px 3px no-repeat ${`${C200_COLOR}`};
+    background: url(${checkIcon}) 3px 3px no-repeat ${`${C200_COLOR}`};
     background-size: 13px;
   }
   input[type='radio']:disabled + & {
