@@ -53,7 +53,7 @@ export const labelStyles = css`
   position: relative;
   display: block;
   padding-left: 32px;
-  margin: 20px;
+  margin: 10px 20px;
   font-size: 15px;
   transition: color 0.2s ease-in-out;
   font-family: ${`${SANSSERIF_FONTSET}`};
