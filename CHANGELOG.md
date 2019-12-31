@@ -6,6 +6,11 @@ and this project **don't** adheres to [Semantic Versioning](http://semver.org/sp
 
 ## [Unreleased]
 
+## [v0.0.23] - 2019-12-31
+
+### Fixed
+- Decrease the margins on `RadioGroup` and `CheckboxGroup`.
+
 ## [v0.0.22] - 2019-12-31
 ### Added
 - New `Tabs` and `TabLink` components. Works with active state.
@@ -202,6 +207,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.23]: https://github.com/ferpection/uikit/tree/v0.0.23
 [v0.0.22]: https://github.com/ferpection/uikit/tree/v0.0.22
 [v0.0.21]: https://github.com/ferpection/uikit/tree/v0.0.21
 [v0.0.20]: https://github.com/ferpection/uikit/tree/v0.0.20

@@ -24,7 +24,10 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
         }
 
         return (
-          <li css={[listStyles, listItemStyles, innerRadioStyles, props.isDisabled ? innerRadioStylesDisabled : null]} key={index}>
+          <li
+            css={[listStyles, listItemStyles, innerRadioStyles, props.isDisabled ? innerRadioStylesDisabled : null]}
+            key={index}
+          >
             {cloneElement(child, {
               isDisabled,
               onValueChange: handleChange,
