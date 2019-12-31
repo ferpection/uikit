@@ -6,10 +6,15 @@ and this project **don't** adheres to [Semantic Versioning](http://semver.org/sp
 
 ## [Unreleased]
 
+## [v0.0.24] - 2019-12-31
+
+### Fixed
+- Decrease the margins on `RadioGroup`.
+
 ## [v0.0.23] - 2019-12-31
 
 ### Fixed
-- Decrease the margins on `RadioGroup` and `CheckboxGroup`.
+- Decrease the margins on `CheckboxGroup`.
 
 ## [v0.0.22] - 2019-12-31
 ### Added
@@ -207,6 +212,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.24]: https://github.com/ferpection/uikit/tree/v0.0.24
 [v0.0.23]: https://github.com/ferpection/uikit/tree/v0.0.23
 [v0.0.22]: https://github.com/ferpection/uikit/tree/v0.0.22
 [v0.0.21]: https://github.com/ferpection/uikit/tree/v0.0.21
