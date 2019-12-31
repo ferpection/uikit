@@ -8,6 +8,13 @@ and this project **don't** adheres to [Semantic Versioning](http://semver.org/sp
 ### Added
 - New `Tabs` and `TabLink` components. Works with active state.
 
+### Changed
+- `RadioButton` and `CheckboxButton` take up less space in height.
+- Add default margin again on the `TextField` component.
+
+### Fixed
+- Change the way option buttons are display in the `TextFieldList` component.
+
 ## [v0.0.21] - 2019-11-06
 ### Fixed
 - SVG icon not built properly
