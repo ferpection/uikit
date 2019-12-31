@@ -4,7 +4,7 @@ import { jsx } from '@emotion/core'
 
 import { FormProps } from '../form-props'
 
-import { listStyles, innerRadioStyles, innerRadioStylesDisabled } from './styles'
+import { listStyles, listItemStyles, innerRadioStyles, innerRadioStylesDisabled } from './styles'
 
 export const RadioGroup: FC<RadioGroupProps> = props => {
   const [value, setValue] = useState(props.value || '')
@@ -24,7 +24,7 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
         }
 
         return (
-          <li css={[listStyles, innerRadioStyles, props.isDisabled ? innerRadioStylesDisabled : null]} key={index}>
+          <li css={[listStyles, listItemStyles, innerRadioStyles, props.isDisabled ? innerRadioStylesDisabled : null]} key={index}>
             {cloneElement(child, {
               isDisabled,
               onValueChange: handleChange,

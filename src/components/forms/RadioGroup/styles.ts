@@ -2,8 +2,12 @@ import { css } from '@emotion/core'
 
 export const listStyles = css`
   padding: 0;
-  margin: 0;
+  margin: 5px 0;
   list-style: none;
+`
+
+export const listItemStyles = css`
+  margin: 0;
 `
 
 export const innerRadioStyles = css`

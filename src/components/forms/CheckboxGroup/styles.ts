@@ -2,8 +2,12 @@ import { css } from '@emotion/core'
 
 export const listStyles = css`
   padding: 0;
-  margin: 0;
+  margin: 5px 0;
   list-style: none;
+`
+
+export const listItemStyles = css`
+  margin: 0;
 `
 
 export const innerCheckboxStyles = css`
@@ -27,7 +31,6 @@ export const innerCheckboxStyles = css`
     top: 11px;
   }
   &:first-child label {
-    margin-top: 20px;
     border-radius: 3px 3px 0 0;
   }
   &:last-child label {

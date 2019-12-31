@@ -4,7 +4,7 @@ import { jsx } from '@emotion/core'
 
 import { FormProps } from '../form-props'
 
-import { listStyles, innerCheckboxStyles, innerCheckboxStylesDisabled } from './styles'
+import { listStyles, listItemStyles, innerCheckboxStyles, innerCheckboxStylesDisabled } from './styles'
 
 export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
   const [values, setValues] = useState(props.value || [])
@@ -33,7 +33,7 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
 
         return (
           <li
-            css={[listStyles, innerCheckboxStyles, props.isDisabled ? innerCheckboxStylesDisabled : null]}
+            css={[listStyles, listItemStyles, innerCheckboxStyles, props.isDisabled ? innerCheckboxStylesDisabled : null]}
             key={index}
           >
             {cloneElement(child, {
