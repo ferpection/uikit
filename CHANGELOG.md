@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project **don't** adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) for now.
 
 ## [Unreleased]
+
+## [v0.0.22] - 2019-12-31
 ### Added
 - New `Tabs` and `TabLink` components. Works with active state.
 
@@ -200,6 +202,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.22]: https://github.com/ferpection/uikit/tree/v0.0.22
 [v0.0.21]: https://github.com/ferpection/uikit/tree/v0.0.21
 [v0.0.20]: https://github.com/ferpection/uikit/tree/v0.0.20
 [v0.0.19]: https://github.com/ferpection/uikit/tree/v0.0.19
