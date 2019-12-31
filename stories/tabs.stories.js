@@ -25,19 +25,17 @@ storiesOf('Layout|Tabs', module)
   .add('with only TabLinks as children', () => (
     <BrowserRouter>
       <Tabs>
-        <TabLink to="/" exactMatch>Home</TabLink>
+        <TabLink to="/" exactMatch>
+          Home
+        </TabLink>
         <TabLink to="/about">About</TabLink>
       </Tabs>
       <Switch>
         <Route exact path="/">
-          <Preview>
-            Home page loaded
-          </Preview>
+          <Preview>Home page loaded</Preview>
         </Route>
         <Route path="/about">
-          <Preview>
-            About page loaded
-          </Preview>
+          <Preview>About page loaded</Preview>
         </Route>
       </Switch>
     </BrowserRouter>
@@ -46,20 +44,18 @@ storiesOf('Layout|Tabs', module)
     <BrowserRouter>
       <Tabs>
         <div />
-        <TabLink to="/" exactMatch>Home</TabLink>
+        <TabLink to="/" exactMatch>
+          Home
+        </TabLink>
         <TabLink to="/about">About</TabLink>
         <div />
       </Tabs>
       <Switch>
         <Route exact path="/">
-          <Preview>
-            Home page loaded
-          </Preview>
+          <Preview>Home page loaded</Preview>
         </Route>
         <Route path="/about">
-          <Preview>
-            About page loaded
-          </Preview>
+          <Preview>About page loaded</Preview>
         </Route>
       </Switch>
     </BrowserRouter>

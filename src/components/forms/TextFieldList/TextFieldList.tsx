@@ -10,7 +10,16 @@ import { Button } from '../../buttons/Button/Button'
 import { FormErrors } from '../FormErrors/FormErrors'
 import { FormProps } from '../form-props'
 
-import { list, hideAndShowIconOnHover, listItem, icon, addButton, listErrors, textFieldAdjustments, hideMarker } from './styles'
+import {
+  list,
+  hideAndShowIconOnHover,
+  listItem,
+  icon,
+  addButton,
+  listErrors,
+  textFieldAdjustments,
+  hideMarker,
+} from './styles'
 
 export const TextFieldList: React.FC<TextFieldListProps> = props => {
   const intialValues =

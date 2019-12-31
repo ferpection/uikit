@@ -7,8 +7,7 @@ import { TabLink } from '../../buttons/TabLink/TabLink'
 import { defaultTabSyles } from './styles'
 
 export const Tabs: FC<TabsProps> = props => {
-  const children = Children
-    .toArray(props.children)
+  const children = Children.toArray(props.children)
     .filter(child => child != null)
     .filter(child => isValidElement(child))
     .filter(child => !Array.isArray(child))
@@ -24,13 +23,7 @@ export const Tabs: FC<TabsProps> = props => {
     return null
   }
 
-  return (
-    <div css={[defaultTabSyles]}>
-      {children}
-    </div>
-  )
+  return <div css={[defaultTabSyles]}>{children}</div>
 }
 
-export interface TabsProps {
-
-}
+export interface TabsProps {}

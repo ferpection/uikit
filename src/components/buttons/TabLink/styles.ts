@@ -13,7 +13,7 @@ export const defaultButtonStyles = css`
   font-weight: 400;
   font-size: 0.9em;
   border-radius: 3px;
-  transition: background-color .3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
 `
