@@ -1,4 +1,6 @@
+/** @jsx jsx */
 import React, { useState } from 'react'
+import { jsx } from '@emotion/core'
 
 import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'

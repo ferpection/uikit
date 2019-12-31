@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project **don't** adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) for now.
 
 ## [Unreleased]
+### Added
+- New `Tabs` and `TabLink` components. Works with active state.
 
 ## [v0.0.21] - 2019-11-06
 ### Fixed
