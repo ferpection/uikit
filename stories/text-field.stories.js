@@ -11,11 +11,15 @@ storiesOf('Components|Forms/TextField', module)
   .addDecorator(withKnobs)
   .add('normal state', () => (
     <>
-      <label>Input:</label>
+      {boolean('show label', false) ? <label>Input:</label> : null}
       <TextField placeholder="This is an input" />
-      <br />
-      <br />
-      <label>Textarea:</label>
+      {boolean('show label', false) ? (
+        <>
+          <br />
+          <br />
+          <label>Textarea:</label>
+        </>
+      ) : null}
       <TextField rowCount={3} placeholder="This is an textarea" />
     </>
   ))
