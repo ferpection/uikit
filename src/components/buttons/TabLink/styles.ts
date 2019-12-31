@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 
 import { SANSSERIF_FONTSET } from '../../../fonts'
-import { C200_COLOR, C100_COLOR, B500_COLOR } from '../../../colors'
+import { C200_COLOR, C100_COLOR, C500_COLOR } from '../../../colors'
 
 export const defaultButtonStyles = css`
   display: inline-block;
@@ -12,9 +12,13 @@ export const defaultButtonStyles = css`
   text-decoration: none;
   font-weight: 400;
   font-size: 0.9em;
+  border-radius: 3px;
+  transition: background-color .3s ease-in-out;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
 `
 
 export const activeButtonStyles = css`
   background-color: ${`${C100_COLOR.toRGBA(0.2)}`};
-  color: ${`${B500_COLOR.toRGBA()}`};
+  color: ${`${C500_COLOR.toRGBA()}`};
 `
