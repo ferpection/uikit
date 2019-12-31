@@ -39,6 +39,7 @@ devDependencies:
   prop-types: 15.7.2
   react: 16.11.0
   react-dom: 16.11.0_react@16.11.0
+  react-router: 5.1.2_react@16.11.0
   react-router-dom: 5.1.2_react@16.11.0
   rollup: 1.26.3
   rollup-plugin-babel: 4.3.3_@babel+core@7.6.4+rollup@1.26.3
@@ -1528,6 +1529,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-kq6anf9JGjW8Nt5rYfEuGRaEAaH1mkv3Bbu6rYvLOpPh/RusSJXuKPEAoZ7L7gybZkchE8+NV5g9vKF4AGAtsA==
+  /@babel/runtime/7.7.7:
+    dependencies:
+      regenerator-runtime: 0.13.3
+    dev: true
+    resolution:
+      integrity: sha512-uCnC2JEVAu8AKB5do1WRIsvrdJ0flYx/A/9f/6chdacnEZ7LmavjdsDXr5ksYBegxtuTPR5Va9/+13QF/kFkCA==
   /@babel/template/7.6.0:
     dependencies:
       '@babel/code-frame': 7.5.5
@@ -2475,6 +2482,11 @@ packages:
       integrity: sha512-AvLejMmkcjRTJ2KD72v565W4slSrrzUIzkReu1JN34b8JnsEsxx7S9Xx/qXEuMQas0mkdUfETr0j3zOhq2DIqQ==
   /@typescript-eslint/typescript-estree/2.6.0_typescript@3.6.4:
     dependencies:
+      debug: 4.1.1
+      glob: 7.1.6
+      is-glob: 4.0.1
+      lodash.unescape: 4.0.1
+      semver: 6.3.0
       typescript: 3.6.4
     dev: true
     engines:
@@ -5371,6 +5383,17 @@ packages:
     dev: true
     resolution:
       integrity: sha512-J9dlskqUXK1OeTOYBEn5s8aMukWMwWfs+rPTn/jn50Ux4MNXVhubL1wu/j2t+H4NVI+cXEcCaYellqaPVGXNqQ==
+  /glob/7.1.6:
+    dependencies:
+      fs.realpath: 1.0.0
+      inflight: 1.0.6
+      inherits: 2.0.4
+      minimatch: 3.0.4
+      once: 1.4.0
+      path-is-absolute: 1.0.1
+    dev: true
+    resolution:
+      integrity: sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
   /global-modules/2.0.0:
     dependencies:
       global-prefix: 3.0.0
@@ -5569,7 +5592,7 @@ packages:
       integrity: sha1-5tnb5Xy+/mB1HwKvM2GVhwyQwB4=
   /history/4.10.1:
     dependencies:
-      '@babel/runtime': 7.6.3
+      '@babel/runtime': 7.7.7
       loose-envify: 1.4.0
       resolve-pathname: 3.0.0
       tiny-invariant: 1.0.6
@@ -5592,6 +5615,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-0XsbTXxgiaCDYDIWFcwkmerZPSwywfUqYmwT4jzewKTQSWoE6FCMoUVOeBJWK3E/CrWbxRG3m5GzY4lnIwGRBA==
+  /hoist-non-react-statics/3.3.1:
+    dependencies:
+      react-is: 16.12.0
+    dev: true
+    resolution:
+      integrity: sha512-wbg3bpgA/ZqWrZuMOeJi8+SKMhr7X9TesL/rXMjTzh0p0JUBo3II8DHboYbuIXWRlttrUFxwcu/5kygrCw8fJw==
   /hosted-git-info/2.8.5:
     dev: true
     resolution:
@@ -6403,6 +6432,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
+  /lodash.unescape/4.0.1:
+    dev: true
+    resolution:
+      integrity: sha1-vyJJiGzlFM2hEvrpIYzcBlIR/Jw=
   /lodash/4.17.15:
     dev: true
     resolution:
@@ -6659,7 +6692,7 @@ packages:
       integrity: sha1-e9KC4/WELtKVu3SM3Z8f+iyCRoU=
   /mini-create-react-context/0.3.2_prop-types@15.7.2+react@16.11.0:
     dependencies:
-      '@babel/runtime': 7.6.3
+      '@babel/runtime': 7.7.7
       gud: 1.0.0
       prop-types: 15.7.2
       react: 16.11.0
@@ -7294,12 +7327,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
-  /path-to-regexp/1.7.0:
+  /path-to-regexp/1.8.0:
     dependencies:
       isarray: 0.0.1
     dev: true
     resolution:
-      integrity: sha1-Wf3g9DW62suhA6hOnTvGTpa5k30=
+      integrity: sha512-n43JRhlUKUAlibEJhPeir1ncUID16QnEjNpwzNdO3Lm4ywrBpBZ5oLD0I6br9evr1Y9JTqwRtAh7JLoOzAQdVA==
   /path-type/2.0.0:
     dependencies:
       pify: 2.3.0
@@ -7922,6 +7955,10 @@ packages:
   /react-is/16.11.0:
     resolution:
       integrity: sha512-gbBVYR2p8mnriqAwWx9LbuUrShnAuSCNnuPGyc7GJrMVQtPDAh8iLpv7FRuMPFb56KkaVZIYSz1PrjI9q0QPCw==
+  /react-is/16.12.0:
+    dev: true
+    resolution:
+      integrity: sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
   /react-lifecycles-compat/3.0.4:
     dev: true
     resolution:
@@ -7985,15 +8022,15 @@ packages:
       integrity: sha512-7BPHAaIwWpZS074UKaw1FjVdZBSVWEk8IuDXdB+OkLb8vd/WRQIpA4ag9WQk61aEfQs47wHyjWUoUGGZxpQXew==
   /react-router/5.1.2_react@16.11.0:
     dependencies:
-      '@babel/runtime': 7.6.3
+      '@babel/runtime': 7.7.7
       history: 4.10.1
-      hoist-non-react-statics: 3.3.0
+      hoist-non-react-statics: 3.3.1
       loose-envify: 1.4.0
       mini-create-react-context: 0.3.2_prop-types@15.7.2+react@16.11.0
-      path-to-regexp: 1.7.0
+      path-to-regexp: 1.8.0
       prop-types: 15.7.2
       react: 16.11.0
-      react-is: 16.11.0
+      react-is: 16.12.0
       tiny-invariant: 1.0.6
       tiny-warning: 1.0.3
     dev: true
@@ -9837,6 +9874,7 @@ specifiers:
   randomstring: ^1.1.5
   react: ^16.10.2
   react-dom: ^16.10.2
+  react-router: ^5.1.2
   react-router-dom: ^5.1.2
   rollup: ^1.24.0
   rollup-plugin-babel: ^4.3.3
