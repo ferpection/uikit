@@ -8,6 +8,18 @@ import { withA11y } from '@storybook/addon-a11y'
 import { Tabs, TabLink } from '../src/components/index.ts'
 import { N75_COLOR } from '../src/colors/index.ts'
 
+const Preview = props => (
+  <pre
+    css={{
+      backgroundColor: N75_COLOR.toString(),
+      padding: 40,
+      marginTop: 40,
+    }}
+  >
+    {props.children}
+  </pre>
+)
+
 storiesOf('Layout|Tabs', module)
   .addDecorator(withA11y)
   .add('with only TabLinks as children', () => (
@@ -17,20 +29,16 @@ storiesOf('Layout|Tabs', module)
         <TabLink to="/about">About</TabLink>
       </Tabs>
       <Switch>
-        <pre
-          css={{
-            backgroundColor: N75_COLOR.toString(),
-            padding: 40,
-            marginTop: 40,
-          }}
-        >
-          <Route exact path="/">
+        <Route exact path="/">
+          <Preview>
             Home page loaded
-          </Route>
-          <Route path="/about">
+          </Preview>
+        </Route>
+        <Route path="/about">
+          <Preview>
             About page loaded
-          </Route>
-        </pre>
+          </Preview>
+        </Route>
       </Switch>
     </BrowserRouter>
   ))
@@ -42,6 +50,18 @@ storiesOf('Layout|Tabs', module)
         <TabLink to="/about">About</TabLink>
         <div />
       </Tabs>
+      <Switch>
+        <Route exact path="/">
+          <Preview>
+            Home page loaded
+          </Preview>
+        </Route>
+        <Route path="/about">
+          <Preview>
+            About page loaded
+          </Preview>
+        </Route>
+      </Switch>
     </BrowserRouter>
   ))
   .add('with no TabLink but other children', () => (
