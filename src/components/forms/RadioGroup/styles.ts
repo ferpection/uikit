@@ -31,7 +31,6 @@ export const innerRadioStyles = css`
     top: 11px;
   }
   &:first-child label {
-    margin-top: 20px;
     border-radius: 3px 3px 0 0;
   }
   &:last-child label {
