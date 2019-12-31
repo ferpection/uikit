@@ -10,7 +10,7 @@ import { N75_COLOR } from '../src/colors/index.ts'
 
 storiesOf('Layout|Tabs', module)
   .addDecorator(withA11y)
-  .add('with classic buttons', () => (
+  .add('with only TabLinks as children', () => (
     <BrowserRouter>
       <Tabs>
         <TabLink to="/" exactMatch>Home</TabLink>
@@ -32,5 +32,28 @@ storiesOf('Layout|Tabs', module)
           </Route>
         </pre>
       </Switch>
+    </BrowserRouter>
+  ))
+  .add('with TabLinks and other children', () => (
+    <BrowserRouter>
+      <Tabs>
+        <div />
+        <TabLink to="/" exactMatch>Home</TabLink>
+        <TabLink to="/about">About</TabLink>
+        <div />
+      </Tabs>
+    </BrowserRouter>
+  ))
+  .add('with no TabLink but other children', () => (
+    <BrowserRouter>
+      <Tabs>
+        <div />
+        <div />
+      </Tabs>
+    </BrowserRouter>
+  ))
+  .add('with no child', () => (
+    <BrowserRouter>
+      <Tabs />
     </BrowserRouter>
   ))

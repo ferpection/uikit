@@ -8,8 +8,8 @@ import { Button, ButtonProps } from '../Button/Button'
 import { defaultButtonStyles, activeButtonStyles } from './styles'
 
 export const TabLink: FC<TabLinkProps> = props => {
-  const { children, ...otherProps } = props
-  const { to, exactMatch = false } = otherProps
+  const { children, exactMatch = false, ...otherProps } = props
+  const { to } = otherProps
   const match = useRouteMatch({
     path: to,
     exact: exactMatch,

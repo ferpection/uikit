@@ -12,6 +12,7 @@ devDependencies:
   '@emotion/core': 10.0.22_react@16.11.0
   '@storybook/addon-a11y': 5.2.5_b03554b9de7bb95c8f8b48cf6ba260da
   '@storybook/addon-actions': 5.2.5_react-dom@16.11.0
+  '@storybook/addon-console': 1.2.1_@storybook+addon-actions@5.2.5
   '@storybook/addon-knobs': 5.2.5_react-dom@16.11.0+react@16.11.0
   '@storybook/addon-links': 5.2.5_react-dom@16.11.0+react@16.11.0
   '@storybook/addon-viewport': 5.2.5_react-dom@16.11.0+react@16.11.0
@@ -23,7 +24,7 @@ devDependencies:
   '@types/react-dom': 16.9.3
   '@types/react-router-dom': 5.1.2
   '@typescript-eslint/eslint-plugin': 2.6.0_0bbdf130697982061b1b46686815683f
-  '@typescript-eslint/parser': 2.6.0_eslint@6.6.0
+  '@typescript-eslint/parser': 2.6.0_eslint@6.6.0+typescript@3.6.4
   awesome-typescript-loader: 5.2.1_typescript@3.6.4
   babel-loader: 8.0.6_@babel+core@7.6.4
   eslint: 6.6.0
@@ -1812,6 +1813,15 @@ packages:
       react-dom: '*'
     resolution:
       integrity: sha512-81N+M1GX4XB7Mirhhu3kiZJkjspfk2e1ysoJtwULjWeZfo2CLYLUAil4onr08Os2LH4RLJaj2hpS3hLflBio4g==
+  /@storybook/addon-console/1.2.1_@storybook+addon-actions@5.2.5:
+    dependencies:
+      '@storybook/addon-actions': 5.2.5_react-dom@16.11.0
+      global: 4.4.0
+    dev: true
+    peerDependencies:
+      '@storybook/addon-actions': '*'
+    resolution:
+      integrity: sha512-2iDbDTipWonvRpIqLLntfhCGvawFFvoG1xyErpyL7K/HRdQ1zzIvR1Qm83S7TK8Vg+RzZWm4wcDbxx7WOsFCNg==
   /@storybook/addon-knobs/5.2.5_react-dom@16.11.0+react@16.11.0:
     dependencies:
       '@storybook/addons': 5.2.5_react-dom@16.11.0
@@ -2414,13 +2424,14 @@ packages:
       integrity: sha512-0Ki9jAAhKDSuLDXOIMADg54Hu60SuBTEsWaJGGy5cV+SSUQ63J2a+RrYYGrErzz39fXzTibhKrAQJAb8M7PNcA==
   /@typescript-eslint/eslint-plugin/2.6.0_0bbdf130697982061b1b46686815683f:
     dependencies:
-      '@typescript-eslint/experimental-utils': 2.6.0_eslint@6.6.0
-      '@typescript-eslint/parser': 2.6.0_eslint@6.6.0
+      '@typescript-eslint/experimental-utils': 2.6.0_eslint@6.6.0+typescript@3.6.4
+      '@typescript-eslint/parser': 2.6.0_eslint@6.6.0+typescript@3.6.4
       eslint: 6.6.0
       eslint-utils: 1.4.3
       functional-red-black-tree: 1.0.1
       regexpp: 2.0.1
       tsutils: 3.17.1_typescript@3.6.4
+      typescript: 3.6.4
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -2433,10 +2444,10 @@ packages:
         optional: true
     resolution:
       integrity: sha512-iCcXREU4RciLmLniwKLRPCOFVXrkF7z27XuHq5DrykpREv/mz6ztKAyLg2fdkM0hQC7659p5ZF5uStH7uzAJ/w==
-  /@typescript-eslint/experimental-utils/2.6.0_eslint@6.6.0:
+  /@typescript-eslint/experimental-utils/2.6.0_eslint@6.6.0+typescript@3.6.4:
     dependencies:
       '@types/json-schema': 7.0.3
-      '@typescript-eslint/typescript-estree': 2.6.0
+      '@typescript-eslint/typescript-estree': 2.6.0_typescript@3.6.4
       eslint: 6.6.0
       eslint-scope: 5.0.0
     dev: true
@@ -2444,13 +2455,14 @@ packages:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
     peerDependencies:
       eslint: '*'
+      typescript: '*'
     resolution:
       integrity: sha512-34BAFpNOwHXeqT+AvdalLxOvcPYnCxA5JGmBAFL64RGMdP0u65rXjii7l/nwpgk5aLEE1LaqF+SsCU0/Cb64xA==
-  /@typescript-eslint/parser/2.6.0_eslint@6.6.0:
+  /@typescript-eslint/parser/2.6.0_eslint@6.6.0+typescript@3.6.4:
     dependencies:
       '@types/eslint-visitor-keys': 1.0.0
-      '@typescript-eslint/experimental-utils': 2.6.0_eslint@6.6.0
-      '@typescript-eslint/typescript-estree': 2.6.0
+      '@typescript-eslint/experimental-utils': 2.6.0_eslint@6.6.0+typescript@3.6.4
+      '@typescript-eslint/typescript-estree': 2.6.0_typescript@3.6.4
       eslint: 6.6.0
       eslint-visitor-keys: 1.1.0
     dev: true
@@ -2458,18 +2470,17 @@ packages:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
     peerDependencies:
       eslint: ^5.0.0 || ^6.0.0
+      typescript: '*'
     resolution:
       integrity: sha512-AvLejMmkcjRTJ2KD72v565W4slSrrzUIzkReu1JN34b8JnsEsxx7S9Xx/qXEuMQas0mkdUfETr0j3zOhq2DIqQ==
-  /@typescript-eslint/typescript-estree/2.6.0:
+  /@typescript-eslint/typescript-estree/2.6.0_typescript@3.6.4:
     dependencies:
-      debug: 4.1.1
-      glob: 7.1.5
-      is-glob: 4.0.1
-      lodash.unescape: 4.0.1
-      semver: 6.3.0
+      typescript: 3.6.4
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
+    peerDependencies:
+      typescript: '*'
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -6392,10 +6403,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
-  /lodash.unescape/4.0.1:
-    dev: true
-    resolution:
-      integrity: sha1-vyJJiGzlFM2hEvrpIYzcBlIR/Jw=
   /lodash/4.17.15:
     dev: true
     resolution:
@@ -9305,6 +9312,9 @@ packages:
       node: '>=6'
     peerDependencies:
       typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
     resolution:
       integrity: sha512-1J/vefLC+BWSo+qe8OnJQfWTYRS6ingxjwqmHMqaMxXMj7kFtKLgAaYW3JeX3mktjgUL+etlU8/B4VUAUI9QGw==
   /tslib/1.10.0:
@@ -9508,6 +9518,9 @@ packages:
     peerDependencies:
       file-loader: '*'
       webpack: ^4.0.0
+    peerDependenciesMeta:
+      file-loader:
+        optional: true
     resolution:
       integrity: sha512-G8nk3np8ZAnwhHXas1JxJEwJyQdqFXAKJehfgZ/XrC48volFBRtO+FIKtF2u0Ma3bw+4vnDVjHPAQYlF9p2vsw==
   /url-parse/1.4.7:
@@ -9796,6 +9809,7 @@ specifiers:
   '@fortawesome/react-fontawesome': ^0.1.6
   '@storybook/addon-a11y': ^5.2.4
   '@storybook/addon-actions': ^5.2.4
+  '@storybook/addon-console': ^1.2.1
   '@storybook/addon-knobs': ^5.2.4
   '@storybook/addon-links': ^5.2.4
   '@storybook/addon-viewport': ^5.2.4
