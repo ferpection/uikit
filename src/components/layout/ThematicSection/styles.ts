@@ -24,7 +24,8 @@ export const titleStyles = css`
 `
 
 export const titleTextStyles = css`
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 1.3em;
   margin: 5px;
   color: ${`${N500_COLOR}`};
 `
