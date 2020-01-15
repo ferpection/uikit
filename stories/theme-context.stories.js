@@ -21,7 +21,7 @@ storiesOf('Contexts|ThemeProvider', module)
     }
 
     return (
-      <ThemeProvider value={theme}>
+      <ThemeProvider theme={theme}>
         <pre>Button w/ action color:</pre>
         <Button icon="search" onClick={action('[action] clicked')} isFilled>
           Review study
