@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { FC, useEffect } from 'react'
+import { FC, useEffect, Fragment } from 'react'
 import { jsx, Global, css } from '@emotion/core'
 import WebFontLoader from 'webfontloader'
 
 import { SANSSERIF_FONTSET, OPENSANS_FONT } from '../../fonts'
 
-export const FontsLoader: FC<FontsLoaderProps> = ({ fontNames = [OPENSANS_FONT] }) => {
+export const FontsLoader: FC<FontsLoaderProps> = ({ fontNames = [OPENSANS_FONT], onlyLoadFonts = false }) => {
   useEffect(() => {
     WebFontLoader.load({
       google: {
@@ -15,17 +15,22 @@ export const FontsLoader: FC<FontsLoaderProps> = ({ fontNames = [OPENSANS_FONT] 
   }, [fontNames])
 
   return (
-    <Global
-      styles={css`
-        body, html {
-          font-family: ${`${SANSSERIF_FONTSET}`};
-          font-weight: normal;
-        }
-      `}
-    />
+    <Fragment>
+      {onlyLoadFonts || (
+        <Global
+          styles={css`
+            body, html {
+              font-family: ${`${SANSSERIF_FONTSET}`};
+              font-weight: normal;
+            }
+          `}
+        />
+      )}
+    </Fragment>
   )
 }
 
 export interface FontsLoaderProps {
   fontNames?: string[]
+  onlyLoadFonts?: boolean
 }
