@@ -19,7 +19,8 @@ export const FontsLoader: FC<FontsLoaderProps> = ({ fontNames = [OPENSANS_FONT],
       {onlyLoadFonts || (
         <Global
           styles={css`
-            body, html {
+            body,
+            html {
               font-family: ${`${SANSSERIF_FONTSET}`};
               font-weight: normal;
             }
