@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 
 import { PRIMARY_COLORSET, Color } from '../../colors'
+import { FontsLoader } from '../utils/FontsLoader'
 
 type Theme = {
   colors: {
@@ -33,6 +34,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = props => {
 
   return (
     <ThemeContext.Provider value={value}>
+      <FontsLoader />
       {children}
     </ThemeContext.Provider>
   )
