@@ -5,14 +5,14 @@ import WebFontLoader from 'webfontloader'
 
 import { SANSSERIF_FONTSET, OPENSANS_FONT } from '../../fonts'
 
-export const FontsLoader: FC<FontsLoaderProps> = () => {
+export const FontsLoader: FC<FontsLoaderProps> = ({ fontNames = [OPENSANS_FONT] }) => {
   useEffect(() => {
     WebFontLoader.load({
       google: {
-        families: [OPENSANS_FONT],
+        families: fontNames,
       },
     })
-  })
+  }, [fontNames])
 
   return (
     <Global
@@ -26,4 +26,6 @@ export const FontsLoader: FC<FontsLoaderProps> = () => {
   )
 }
 
-export interface FontsLoaderProps {}
+export interface FontsLoaderProps {
+  fontNames?: string[]
+}
