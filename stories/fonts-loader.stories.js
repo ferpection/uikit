@@ -31,8 +31,6 @@ storiesOf('Utils|FontsLoader', module)
         <li><strong>onlyLoadFonts</strong>: allow to prevent the alteration of the body tag's styles. Defaults to false.</li>
       </ul>
       <br />
-      <br />
-      <br />
       <p>
         Example:
       </p>
