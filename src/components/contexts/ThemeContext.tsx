@@ -3,6 +3,10 @@ import React, { FC } from 'react'
 import { PRIMARY_COLORSET, Color } from '../../colors'
 import { FontsLoader } from '../utils/FontsLoader'
 
+type Partial<Type, ExcludedType> = {
+  [Key in keyof Type]?: Type[Key] extends ExcludedType ? Type[Key] : Partial<Type[Key], ExcludedType>
+}
+
 type Theme = {
   colors: {
     action: Color
@@ -10,6 +14,10 @@ type Theme = {
     negative: Color
   }
 }
+
+type ThemeValues = Color | string | number | boolean | Array<any>
+
+type ThemeInput = Partial<Theme, ThemeValues>
 
 const defaultTheme: Theme = {
   colors: {
@@ -28,7 +36,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = props => {
     ...theme,
     colors: {
       ...defaultTheme.colors,
-      ...theme.colors,
+      ...theme?.colors,
     },
   }
 
@@ -41,5 +49,5 @@ export const ThemeProvider: FC<ThemeProviderProps> = props => {
 }
 
 export interface ThemeProviderProps {
-  theme: Theme
+  theme?: ThemeInput
 }
