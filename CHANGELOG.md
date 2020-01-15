@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project **don't** adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) for now.
 
 ## [Unreleased]
+### Added
+- New `FontsLoader`. An easy way to load fonts asynchronously.
+
 ### Changed
 - `ThematiqueSection`'s title adjustement (styles)
 
