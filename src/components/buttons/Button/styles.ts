@@ -19,11 +19,11 @@ export const prepareBaseState = ({
     borderRadius: 100,
     borderStyle: 'solid',
     color: String(color),
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 600,
     // We have to use a mutable version of SANSSERIF_FONTSET
     // for typescript to not complain
-    fontFamily: SANSSERIF_FONTSET.map(font => font),
+    fontFamily: SANSSERIF_FONTSET.toString(),
     textDecoration: 'none',
     transition: ['box-shadow .3s ease-in-out', 'background-color .3s ease-in-out', 'color .3s ease-in-out'],
     '&:focus': {
