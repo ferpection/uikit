@@ -1,10 +1,19 @@
 /** @jsx jsx */
-import React, { Children, isValidElement, cloneElement, ReactElement, FC } from 'react'
-import { jsx } from '@emotion/core'
+import React, { FC } from 'react'
+import { jsx, Global, css } from '@emotion/core'
+
+import { SANSSERIF_FONTSET } from '../../fonts'
 
 export const FontsLoader: FC<FontsLoaderProps> = props => {
   return (
-    <div />
+    <Global
+      styles={css`
+        body, html {
+          font-family: ${`${SANSSERIF_FONTSET}`};
+          font-weight: normal;
+        }
+      `}
+    />
   )
 }
 
