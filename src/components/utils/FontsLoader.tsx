@@ -1,10 +1,19 @@
 /** @jsx jsx */
-import React, { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { jsx, Global, css } from '@emotion/core'
+import WebFontLoader from 'webfontloader'
 
-import { SANSSERIF_FONTSET } from '../../fonts'
+import { SANSSERIF_FONTSET, OPENSANS_FONT } from '../../fonts'
 
-export const FontsLoader: FC<FontsLoaderProps> = props => {
+export const FontsLoader: FC<FontsLoaderProps> = () => {
+  useEffect(() => {
+    WebFontLoader.load({
+      google: {
+        families: [OPENSANS_FONT],
+      },
+    })
+  })
+
   return (
     <Global
       styles={css`
