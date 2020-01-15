@@ -10,6 +10,9 @@ and this project **don't** adheres to [Semantic Versioning](http://semver.org/sp
 
 ### Changed
 - `ThematiqueSection`'s title adjustement (styles)
+- `ThemeProvider` become a wrapper of the `ThemeContext.Provider`.
+  It provides a new way to set theme's value (the `theme` attribute).
+  User doesn't need to explicitly mention every theme options.
 
 ## [v0.0.24] - 2019-12-31
 
