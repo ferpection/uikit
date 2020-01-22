@@ -36,7 +36,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = props => {
     ...theme,
     colors: {
       ...defaultTheme.colors,
-      ...theme?.colors,
+      ...theme.colors,
     },
   }
 
