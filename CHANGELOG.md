@@ -7,12 +7,12 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 ## [Unreleased]
 ### Added
 - New attribute `isOrdered` on `TextFieldList`. Basicaly, `<ol>` becomes `<ul>` when not ordered.
-  **BREACKING CHANGES** The default is "not ordered". You'll have to add the new attribute on
-  your existing components.
+- It is possible to change the row count of the `TextField` in `TextFieldList`.
 
 ### Changed
 - All form components can be updated using the `value` attribute.
-- It is possible to change the row count of the `TextField` in `TextFieldList`.
+- **BREACKING CHANGES** The default behavior of `TextFieldList` is to be "not ordered".
+  You'll have to add the new `isOrdered` attribute on your existing components.
 
 ### Fixed
 - Update types to allow no theme data into `ThemeProvider`.
