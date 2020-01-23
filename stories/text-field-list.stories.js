@@ -24,6 +24,7 @@ storiesOf('Components|Forms/TextFieldList', module)
             placeholder={text('placeholder', 'Add your text here')}
             initialFieldCount={number('initial field count', 2)}
             value={values}
+            isOrdered={boolean('is ordered', true)}
             onValueChange={values => setValues(values)}
           />
           <pre
@@ -51,6 +52,7 @@ storiesOf('Components|Forms/TextFieldList', module)
             placeholder={text('placeholder', 'Add your text here')}
             buttonText={text('button text', 'Add a list item')}
             isEditable
+            isOrdered
             onValueChange={values => setValues(values)}
             onFocus={action('focus in')}
             onBlur={action('focus out')}

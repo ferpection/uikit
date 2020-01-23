@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) for now.
 
 ## [Unreleased]
+### Added
+- New attribute `isOrdered` on `TextFieldList`. Basicaly, `<ol>` becomes `<ul>` when not ordered.
+  **BREACKING CHANGES** The default is "not ordered". You'll have to add the new attribute on
+  your existing components.
+
 ### Changed
 - All form components can be updated using the `value` attribute.
 - It is possible to change the row count of the `TextField` in `TextFieldList`.
