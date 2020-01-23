@@ -30,10 +30,10 @@ export const innerRadioStyles = css`
     left: 12px;
     top: 11px;
   }
-  &:first-child label {
+  &:first-of-type label {
     border-radius: 3px 3px 0 0;
   }
-  &:last-child label {
+  &:last-of-type label {
     border-radius: 0 0 3px 3px;
   }
 `
