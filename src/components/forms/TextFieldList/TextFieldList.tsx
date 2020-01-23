@@ -45,6 +45,9 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
 
   useEffect(() => onValueChange(values.map(value => value.text)), [values])
   useEffect(() => onErrors(flatErrorMessages), [errorMessages])
+  useEffect(() => {
+    setValues(intialValues)
+  }, [intialValues])
 
   const {
     isDisabled,

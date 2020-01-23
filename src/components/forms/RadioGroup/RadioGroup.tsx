@@ -8,8 +8,12 @@ import { listStyles, listItemStyles, innerRadioStyles, innerRadioStylesDisabled 
 
 export const RadioGroup: FC<RadioGroupProps> = props => {
   const [value, setValue] = useState(props.value || '')
-
   const { onValueChange = () => {}, isDisabled, onBlur: handleBlur, onFocus: handleFocus } = props
+
+  useEffect(() => {
+    setValue(props.value)
+  }, [props.value])
+
   useEffect(() => {
     onValueChange(value)
   }, [value])

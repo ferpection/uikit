@@ -14,6 +14,10 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
   const [errorMessages, setErrorMessages] = useState({})
   const [isValid, setValidity] = useState(true)
 
+  useEffect(() => {
+    setValue(externalValue)
+  }, [externalValue])
+
   const {
     onValueChange = () => {},
     onErrors = (e: { [errorKey: string]: any }) => setErrorMessages(e),

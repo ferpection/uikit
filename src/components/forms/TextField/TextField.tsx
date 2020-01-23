@@ -26,6 +26,10 @@ export const TextField: React.FC<TextFieldProps> = props => {
   const [errorMessages, setErrorMessages] = useState({})
   const [isValid, setValidity] = useState(true)
 
+  useEffect(() => {
+    setValue(externalValue || '')
+  }, [externalValue])
+
   const {
     onValueChange = () => {},
     onErrors = () => {},
