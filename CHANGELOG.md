@@ -15,7 +15,8 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 - It is possible to change the row count of the `TextField` in `TextFieldList`.
 
 ### Fixed
-- Update types to allow no theme data into `ThemeProvider`
+- Update types to allow no theme data into `ThemeProvider`.
+- **SECURITY** The list components don't use the `nth-child` CSS attributes in favor of `nth-of-type`.
 
 ## [v0.0.25] - 2019-01-15
 ### Added
