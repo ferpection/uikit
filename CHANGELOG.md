@@ -7,6 +7,7 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 ## [Unreleased]
 ### Changed
 - All form components can be updated using the `value` attribute.
+- It is possible to change the row count of the `TextField` in `TextFieldList`.
 
 ### Fixed
 - Update types to allow no theme data into `ThemeProvider`

@@ -57,6 +57,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
     initialFieldCount = 1,
     buttonText = 'Add a list item',
     displayErrorStrategy = 'on-field',
+    rowCount = 1
   } = props
 
   const handleAddition = () => setValues([...values, { id: RandomString.generate(20), text: '' }])
@@ -107,6 +108,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
               css={[textFieldAdjustments]}
               dataType={dataType}
               placeholder={placeholder}
+              rowCount={rowCount}
               value={value.text}
               isDisabled={isDisabled}
               onValueChange={userValue => handleChange(userValue, value.id)}
@@ -154,6 +156,7 @@ export interface TextFieldListProps extends FormProps {
   dataType?: TextFieldProps['dataType']
   isEditable?: boolean
   initialFieldCount?: number
+  rowCount?: number
   buttonText?: string
   displayErrorStrategy?: 'hidden' | 'on-field' | 'on-list'
   value?: string[]
