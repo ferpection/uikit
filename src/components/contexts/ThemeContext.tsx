@@ -30,7 +30,7 @@ const defaultTheme: Theme = {
 export const ThemeContext = React.createContext(defaultTheme)
 
 export const ThemeProvider: FC<ThemeProviderProps> = props => {
-  const { children, theme } = props
+  const { children, theme = {} } = props
   const value: Theme = {
     ...defaultTheme,
     ...theme,
