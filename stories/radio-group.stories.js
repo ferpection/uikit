@@ -5,7 +5,7 @@ import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-import { RadioGroup, RadioButton } from '../src/components'
+import { RadioGroup, RadioButton, TextField } from '../src/components'
 
 storiesOf('Components|Forms/RadioGroup', module)
   .addDecorator(withA11y)
@@ -15,6 +15,15 @@ storiesOf('Components|Forms/RadioGroup', module)
       <RadioGroup value="three" onValueChange={action('value changed')}>
         <RadioButton value="one">Choice One</RadioButton>
         <RadioButton value="two">Choice Two</RadioButton>
+        <RadioButton value="three">Choice Three</RadioButton>
+      </RadioGroup>
+    </>
+  ))
+  .add('sub component', () => (
+    <>
+      <RadioGroup value="three" onValueChange={action('value changed')}>
+        <RadioButton value="one">Choice One</RadioButton>
+        <RadioButton value="two">Choice Two: <TextField/></RadioButton>
         <RadioButton value="three">Choice Three</RadioButton>
       </RadioGroup>
     </>
