@@ -47,7 +47,7 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
 export interface RadioGroupProps extends FormProps {
   value?: string
   onValueChange?: (value: string) => void
-  placeholder: undefined
+  placeholder?: undefined
   onBlur?: (event: FocusEvent<HTMLUListElement>) => void
   onFocus?: (event: FocusEvent<HTMLUListElement>) => void
 }

@@ -60,7 +60,7 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
 export interface CheckboxGroupProps extends FormProps {
   value?: string[]
   onValueChange?: (value: string[]) => void
-  placeholder: undefined
+  placeholder?: undefined
   onBlur?: (event: FocusEvent<HTMLUListElement>) => void
   onFocus?: (event: FocusEvent<HTMLUListElement>) => void
 }
