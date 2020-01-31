@@ -1,7 +1,8 @@
 /** @jsx jsx */
-import React, { useState, useEffect, Fragment, ChangeEvent, SyntheticEvent } from 'react'
+import React, { useState, useEffect, Fragment, ChangeEvent, SyntheticEvent, useContext } from 'react'
 import { jsx } from '@emotion/core'
 
+import { I18nContext } from '../../contexts/I18nContext'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { FormProps } from '../form-props'
 
@@ -10,9 +11,18 @@ import { baseStyle, placehoderStyle, highlightedStyle, disabledStyle, errorStyle
 export const SelectField: React.FC<SelectFieldProps> = props => {
   const { placeholder, isHighlighted, isDisabled, isRequired, value: externalValue, children } = props
 
+  const { addTranslations } = useContext(I18nContext)
   const [value, setValue] = useState(externalValue || '')
   const [errorMessages, setErrorMessages] = useState({})
   const [isValid, setValidity] = useState(true)
+
+  addTranslations('en', {
+    required: 'Please fill the field.'
+  })
+
+  addTranslations('fr', {
+    required: 'Vous devez remplir le champ.'
+  })
 
   useEffect(() => {
     setValue(externalValue)
