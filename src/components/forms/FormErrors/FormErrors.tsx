@@ -13,12 +13,16 @@ export const FormErrors: React.FC<FormErrorsProps> = props => {
 
   return (
     <Fragment>
-      {Object.keys(errors).map(errorName => (
-        <p key={errorName} css={errorStyle}>
-          <FontAwesomeIcon icon="exclamation-triangle" css={iconStyle} />
-          {t(errorName, errors[errorName])}
-        </p>
-      ))}
+      {Object
+        .keys(errors)
+        .filter(errorName => errors[errorName] !== false)
+        .map(errorName => (
+          <p key={errorName} css={errorStyle}>
+            <FontAwesomeIcon icon="exclamation-triangle" css={iconStyle} />
+            {errors[errorName] === true ? t(errorName) : null}
+            {errors[errorName] !== true ? t(errorName, errors[errorName]) : null}
+          </p>
+        ))}
     </Fragment>
   )
 }
