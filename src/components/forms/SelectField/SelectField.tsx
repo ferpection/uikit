@@ -2,7 +2,7 @@
 import React, { useState, useEffect, Fragment, ChangeEvent, SyntheticEvent } from 'react'
 import { jsx } from '@emotion/core'
 
-import { FormErrors } from '../FormErrors/FormErrors'
+import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { FormProps } from '../form-props'
 
 import { baseStyle, placehoderStyle, highlightedStyle, disabledStyle, errorStyle } from './styles'
@@ -66,7 +66,7 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
         <option disabled={!isEmpty}>{placeholder}</option>
         {children}
       </select>
-      <FormErrors errors={errorMessages} />
+      <FormErrorMessages errors={errorMessages} />
     </Fragment>
   )
 }

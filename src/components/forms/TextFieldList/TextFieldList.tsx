@@ -7,7 +7,7 @@ import { useMergedFocusHandlers } from '../../../hooks/useMergedFocusHandlers'
 import { PlaceholderButton } from '../../buttons/PlaceholderButton/PlaceholderButton'
 import { TextField, TextFieldProps } from '../TextField/TextField'
 import { Button } from '../../buttons/Button/Button'
-import { FormErrors } from '../FormErrors/FormErrors'
+import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { FormProps } from '../form-props'
 
 import {
@@ -160,7 +160,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
       )}
       {displayErrorStrategy === 'on-list' ? (
         <div css={[listErrors]} onFocus={() => handleFocus()} onBlur={() => handleBlur()}>
-          <FormErrors errors={flatErrorMessages} />
+          <FormErrorMessages errors={flatErrorMessages} />
         </div>
       ) : null}
     </Fragment>

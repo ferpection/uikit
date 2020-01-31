@@ -2,7 +2,7 @@
 import React, { useState, useEffect, Fragment, SyntheticEvent } from 'react'
 import { jsx } from '@emotion/core'
 
-import { FormErrors } from '../FormErrors/FormErrors'
+import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { FormProps } from '../form-props'
 
 import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle } from './styles'
@@ -102,7 +102,7 @@ export const TextField: React.FC<TextFieldProps> = props => {
           onBlur={event => handleBlur(event)}
         />
       ) : null}
-      <FormErrors errors={errorMessages} />
+      <FormErrorMessages errors={errorMessages} />
     </Fragment>
   )
 }
