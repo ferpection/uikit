@@ -11,13 +11,15 @@ export const UiKitInitializer: FC<UiKitInitializerProps> = props => {
   return (
     <ThemeProvider theme={props.theme}>
       <FontsLoader />
-      <I18nContext.Provider value={{
-        t: props.i18n.t || ((key: string) => key),
-        addTranslations: (language: string, translations: { [key: string]: string }) => {
-          // eslint-disable-next-line no-unused-expressions
-          props.i18n?.addResourceBundle(language, 'uikit', translations, true, true)
-        },
-      }}>
+      <I18nContext.Provider
+        value={{
+          t: props.i18n.t || ((key: string) => key),
+          addTranslations: (language: string, translations: { [key: string]: string }) => {
+            // eslint-disable-next-line no-unused-expressions
+            props.i18n?.addResourceBundle(language, 'uikit', translations, true, true)
+          },
+        }}
+      >
         {props.children}
       </I18nContext.Provider>
     </ThemeProvider>
@@ -29,6 +31,12 @@ export interface UiKitInitializerProps {
   i18n?: {
     t: (key: string) => string
     loadNamespaces: (ns: string[]) => any
-    addResourceBundle: (lng: string, ns: string, resources: { [key: string]: string }, deep: boolean, overwrite: boolean) => any
+    addResourceBundle: (
+      lng: string,
+      ns: string,
+      resources: { [key: string]: string },
+      deep: boolean,
+      overwrite: boolean
+    ) => any
   }
 }

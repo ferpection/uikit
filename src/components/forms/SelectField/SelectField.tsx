@@ -17,11 +17,11 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
   const [isValid, setValidity] = useState(true)
 
   addTranslations('en', {
-    required: 'Please fill the field.'
+    required: 'Please fill the field.',
   })
 
   addTranslations('fr', {
-    required: 'Vous devez remplir le champ.'
+    required: 'Vous devez remplir le champ.',
   })
 
   useEffect(() => {

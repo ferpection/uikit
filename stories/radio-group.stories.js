@@ -23,7 +23,9 @@ storiesOf('Components|Forms/RadioGroup', module)
     <>
       <RadioGroup value="three" onValueChange={action('value changed')}>
         <RadioButton value="one">Choice One</RadioButton>
-        <RadioButton value="two">Choice Two: <TextField/></RadioButton>
+        <RadioButton value="two">
+          Choice Two: <TextField />
+        </RadioButton>
         <RadioButton value="three">Choice Three</RadioButton>
       </RadioGroup>
     </>

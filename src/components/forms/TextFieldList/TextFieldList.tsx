@@ -90,74 +90,66 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
   const itemsJSX = (
     <Fragment>
       {values.map(value => (
-          <li key={value.id} css={[listItem]}>
-            {isEditable && !isDisabled ? (
-              <Button
-                icon="trash"
-                css={[icon, hideAndShowIconOnHover]}
-                isRaw
-                isDisabled={isDisabled}
-                onFocus={() => handleFocus()}
-                onClick={() => {
-                  handleBlur()
-                  handleDeletion(value.id)
-                }}
-              />
-            ) : null}
-            <TextField
-              css={[textFieldAdjustments]}
-              dataType={dataType}
-              placeholder={placeholder}
-              rowCount={rowCount}
-              value={value.text}
+        <li key={value.id} css={[listItem]}>
+          {isEditable && !isDisabled ? (
+            <Button
+              icon="trash"
+              css={[icon, hideAndShowIconOnHover]}
+              isRaw
               isDisabled={isDisabled}
-              onValueChange={userValue => handleChange(userValue, value.id)}
-              onErrors={errors => handleErrors(errors, value.id)}
-              hideErrors={['hidden', 'on-list'].includes(displayErrorStrategy)}
               onFocus={() => handleFocus()}
-              onBlur={() => handleBlur()}
+              onClick={() => {
+                handleBlur()
+                handleDeletion(value.id)
+              }}
             />
-          </li>
-        ))}
-        {isEditable ? (
-          <li css={[listItem, hideMarker]}>
-            {isOrdered ? (
-              <Button
-                css={[icon]}
-                icon="plus"
-                isRaw
-                isDisabled={isDisabled}
-                onFocus={() => handleFocus()}
-                onBlur={() => handleBlur()}
-                onClick={() => handleAddition()}
-              />
-            ) : null}
-            <PlaceholderButton
-              css={[addButton]}
-              icon={isOrdered ? null : 'plus'}
+          ) : null}
+          <TextField
+            css={[textFieldAdjustments]}
+            dataType={dataType}
+            placeholder={placeholder}
+            rowCount={rowCount}
+            value={value.text}
+            isDisabled={isDisabled}
+            onValueChange={userValue => handleChange(userValue, value.id)}
+            onErrors={errors => handleErrors(errors, value.id)}
+            hideErrors={['hidden', 'on-list'].includes(displayErrorStrategy)}
+            onFocus={() => handleFocus()}
+            onBlur={() => handleBlur()}
+          />
+        </li>
+      ))}
+      {isEditable ? (
+        <li css={[listItem, hideMarker]}>
+          {isOrdered ? (
+            <Button
+              css={[icon]}
+              icon="plus"
+              isRaw
               isDisabled={isDisabled}
               onFocus={() => handleFocus()}
               onBlur={() => handleBlur()}
               onClick={() => handleAddition()}
-            >
-              {buttonText}
-            </PlaceholderButton>
-          </li>
-        ) : null}
+            />
+          ) : null}
+          <PlaceholderButton
+            css={[addButton]}
+            icon={isOrdered ? null : 'plus'}
+            isDisabled={isDisabled}
+            onFocus={() => handleFocus()}
+            onBlur={() => handleBlur()}
+            onClick={() => handleAddition()}
+          >
+            {buttonText}
+          </PlaceholderButton>
+        </li>
+      ) : null}
     </Fragment>
   )
 
   return (
     <Fragment>
-      {isOrdered ? (
-        <ol css={[list]}>
-          {itemsJSX}
-        </ol>
-      ) : (
-        <ul css={[list, hideMarker]}>
-          {itemsJSX}
-        </ul>
-      )}
+      {isOrdered ? <ol css={[list]}>{itemsJSX}</ol> : <ul css={[list, hideMarker]}>{itemsJSX}</ul>}
       {displayErrorStrategy === 'on-list' ? (
         <div css={[listErrors]} onFocus={() => handleFocus()} onBlur={() => handleBlur()}>
           <FormErrorMessages errors={flatErrorMessages} />

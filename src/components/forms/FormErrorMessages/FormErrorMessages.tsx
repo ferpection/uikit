@@ -13,8 +13,7 @@ export const FormErrorMessages: React.FC<FormErrorMessagesProps> = props => {
 
   return (
     <Fragment>
-      {Object
-        .keys(errors)
+      {Object.keys(errors)
         .filter(errorName => errors[errorName] !== false)
         .map(errorName => (
           <p key={errorName} css={errorStyle}>
