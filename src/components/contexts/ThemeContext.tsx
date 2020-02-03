@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 
 import { PRIMARY_COLORSET, Color } from '../../colors'
-import { FontsLoader } from '../utils/FontsLoader'
 
 type Partial<Type, ExcludedType> = {
   [Key in keyof Type]?: Type[Key] extends ExcludedType ? Type[Key] : Partial<Type[Key], ExcludedType>
@@ -42,7 +41,6 @@ export const ThemeProvider: FC<ThemeProviderProps> = props => {
 
   return (
     <ThemeContext.Provider value={value}>
-      <FontsLoader />
       {children}
     </ThemeContext.Provider>
   )

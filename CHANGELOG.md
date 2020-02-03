@@ -13,6 +13,11 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 - All form components can be updated using the `value` attribute.
 - **BREACKING CHANGES** The default behavior of `TextFieldList` is to be "not ordered".
   You'll have to add the new `isOrdered` attribute on your existing components.
+- `FormErrors` become `FormErrorMessages`.
+- `FormErrorMessages` try to translate the error key automatically.
+- `ThemeProvider` doesn't loads the font anymore. We created a more generic component (`UIKitInitializer`) that'll do it.
+- `FormErrorMessages` filter error that are equal to `false`
+- If an error is equal to en object instead of `true`, the object is passed to the translator as variables by `FormErrorMessages`.
 - `RadioButton` and `CheckboxButton` support other type than string for their `chidren` attribute.
 
 ### Fixed

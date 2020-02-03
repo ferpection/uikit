@@ -21,6 +21,8 @@ storiesOf('Components|Button/RadioButton', module)
   ))
   .add('sub component', () => (
     <>
-      <RadioButton isDisabled>Test: <TextField /></RadioButton>
+      <RadioButton isDisabled>
+        Test: <TextField />
+      </RadioButton>
     </>
   ))

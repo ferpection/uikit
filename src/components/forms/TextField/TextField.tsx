@@ -1,11 +1,12 @@
 /** @jsx jsx */
-import React, { useState, useEffect, Fragment, SyntheticEvent } from 'react'
+import React, { useState, useEffect, Fragment, SyntheticEvent, useContext } from 'react'
 import { jsx } from '@emotion/core'
 
-import { FormErrors } from '../FormErrors/FormErrors'
+import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { FormProps } from '../form-props'
 
 import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle } from './styles'
+import { I18nContext } from '../../contexts/I18nContext'
 
 const EMAIL_REGEXP = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
@@ -22,9 +23,20 @@ export const TextField: React.FC<TextFieldProps> = props => {
     className,
   } = props
 
+  const { addTranslations } = useContext(I18nContext)
   const [value, setValue] = useState(externalValue || '')
   const [errorMessages, setErrorMessages] = useState({})
   const [isValid, setValidity] = useState(true)
+
+  addTranslations('en', {
+    emailInvalid: 'Please enter an email address on this field.',
+    required: 'Please fill the field.',
+  })
+
+  addTranslations('en', {
+    emailInvalid: 'Vous devez écrire une adresse email valide.',
+    required: 'Vous devez remplir le champ.',
+  })
 
   useEffect(() => {
     setValue(externalValue || '')
@@ -102,7 +114,7 @@ export const TextField: React.FC<TextFieldProps> = props => {
           onBlur={event => handleBlur(event)}
         />
       ) : null}
-      <FormErrors errors={errorMessages} />
+      <FormErrorMessages errors={errorMessages} />
     </Fragment>
   )
 }
