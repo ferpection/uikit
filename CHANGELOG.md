@@ -18,7 +18,7 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 - `ThemeProvider` doesn't loads the font anymore. We created a more generic component (`UIKitInitializer`) that'll do it.
 - `FormErrorMessages` filter error that are equal to `false`
 - If an error is equal to en object instead of `true`, the object is passed to the translator as variables by `FormErrorMessages`.
-- `RadioButton` and `CheckboxButton` support other type than string for their `chidren` attribute.
+- `RadioButton` and `CheckboxButton` support other type than string for their `children` attribute.
 
 ### Fixed
 - Update types to allow no theme data into `ThemeProvider`.
