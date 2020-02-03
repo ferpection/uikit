@@ -37,7 +37,7 @@ devDependencies:
   eslint-plugin-react: 7.17.0_eslint@6.8.0
   eslint-plugin-standard: 4.0.1_eslint@6.8.0
   gh-pages: 2.2.0
-  prettier: 1.18.2
+  prettier: 1.19.1
   prop-types: 15.7.2
   react: 16.12.0
   react-dom: 16.12.0_react@16.12.0
@@ -1210,7 +1210,7 @@ packages:
       global: 4.4.0
       memoizerific: 1.11.3
       react: 16.12.0
-      react-redux: 7.1.3_react@16.12.0+redux@4.0.5
+      react-redux: 7.1.3_cbb074364ace735d13d38692c50e064b
       react-sizeme: 2.6.11_react-dom@16.12.0+react@16.12.0
       redux: 4.0.5
       ts-dedent: 1.1.0
@@ -1959,6 +1959,7 @@ packages:
       functional-red-black-tree: 1.0.1
       regexpp: 3.0.0
       tsutils: 3.17.1_typescript@3.7.4
+      typescript: 3.7.4
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -1992,6 +1993,7 @@ packages:
       '@typescript-eslint/typescript-estree': 2.16.0_typescript@3.7.4
       eslint: 6.8.0
       eslint-visitor-keys: 1.1.0
+      typescript: 3.7.4
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -2012,6 +2014,7 @@ packages:
       lodash: 4.17.15
       semver: 6.3.0
       tsutils: 3.17.1_typescript@3.7.4
+      typescript: 3.7.4
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -7885,13 +7888,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
-  /prettier/1.18.2:
+  /prettier/1.19.1:
     dev: true
     engines:
       node: '>=4'
     hasBin: true
     resolution:
-      integrity: sha512-OeHeMc0JhFE9idD4ZdtNibzY0+TPHSpSSb9h8FqtP+YnoZZ1sl8Vc9b1sasjfymH3SonAF4QcA2+mzHPhMvIiw==
+      integrity: sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
   /pretty-error/2.1.1:
     dependencies:
       renderkid: 2.0.3
@@ -8361,7 +8364,7 @@ packages:
       react: 0.14.x || ^15.0.0 || ^16.0.0
     resolution:
       integrity: sha512-nmqYTx7QVjCm3WUZLeuOomna138R1luC4EqkW3hxJUrAe+3eNz3oFCLYdnPwILfn0mX1Ew2c3wctrjlUMYYUww==
-  /react-redux/7.1.3_react@16.12.0+redux@4.0.5:
+  /react-redux/7.1.3_cbb074364ace735d13d38692c50e064b:
     dependencies:
       '@babel/runtime': 7.8.3
       hoist-non-react-statics: 3.3.1
@@ -8369,11 +8372,14 @@ packages:
       loose-envify: 1.4.0
       prop-types: 15.7.2
       react: 16.12.0
+      react-dom: 16.12.0_react@16.12.0
       react-is: 16.12.0
       redux: 4.0.5
     dev: true
     peerDependencies:
       react: ^16.8.3
+      react-dom: '*'
+      react-native: '*'
       redux: ^2.0.0 || ^3.0.0 || ^4.0.0-0
     peerDependenciesMeta:
       react-dom:
@@ -10649,7 +10655,7 @@ specifiers:
   eslint-plugin-react: ^7.16.0
   eslint-plugin-standard: ^4.0.1
   gh-pages: ^2.1.1
-  prettier: 1.18.2
+  prettier: ^1.19.1
   prop-types: ^15.7.2
   randomstring: ^1.1.5
   react: ^16.10.2
