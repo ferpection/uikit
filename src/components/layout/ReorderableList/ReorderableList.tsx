@@ -7,7 +7,7 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
   const { renderItem = (arg: T) => arg as unknown as JSX.Element, items: data, onOrderChange = () => {} } = props
   const orderItems = (itemA: T, itemB: T) => (itemA.order || 0) - (itemB.order || 0)
 
-  const [items, setItems] = useState(data.sort(orderItems))
+  const [items, setItems] = useState([...data].sort(orderItems))
   const [draggedId, setDraggedId] = useState<string | null>(null)
 
   const uselessDropZones = [
@@ -15,7 +15,7 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
     (items.find(item => item.uuid === draggedId)?.order || 0) + 5,
   ]
 
-  useEffect(() => setItems(data.sort(orderItems)), [data])
+  useEffect(() => setItems([...data].sort(orderItems)), [data])
 
   const handleDragStart = (dataTransfer: DataTransfer, item: T) => {
     dataTransfer.effectAllowed = 'move'
