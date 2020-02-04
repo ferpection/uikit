@@ -8,6 +8,7 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 ### Added
 - New attribute `isOrdered` on `TextFieldList`. Basicaly, `<ol>` becomes `<ul>` when not ordered.
 - It is possible to change the row count of the `TextField` in `TextFieldList`.
+- New component `ReoderableList` to make list of components reorderable using drag and drop.
 
 ### Changed
 - All form components can be updated using the `value` attribute.
