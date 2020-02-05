@@ -55,6 +55,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
     placeholder,
     dataType,
     initialFieldCount = 1,
+    maxFieldCount,
     buttonText = 'Add a list item',
     displayErrorStrategy = 'on-field',
     rowCount = 1,
@@ -119,7 +120,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
           />
         </li>
       ))}
-      {isEditable ? (
+      {isEditable && (maxFieldCount == null || values.length < maxFieldCount) ? (
         <li css={[listItem, hideMarker]}>
           {isOrdered ? (
             <Button
@@ -164,6 +165,7 @@ export interface TextFieldListProps extends FormProps {
   isEditable?: boolean
   isOrdered?: boolean
   initialFieldCount?: number
+  maxFieldCount?: number
   rowCount?: number
   buttonText?: string
   displayErrorStrategy?: 'hidden' | 'on-field' | 'on-list'
