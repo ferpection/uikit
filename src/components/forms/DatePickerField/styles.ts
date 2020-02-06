@@ -27,6 +27,11 @@ export const calendarContainer = css`
   }
 `
 
+export const smallCalendarContainer = css`
+  ${calendarContainer};
+  top: 36px;
+`
+
 export const buttonBar = css`
   display: flex;
   justify-content: space-between;

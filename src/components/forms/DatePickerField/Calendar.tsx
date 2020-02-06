@@ -4,7 +4,7 @@ import { jsx } from '@emotion/core'
 import { RenderProps } from 'dayzed'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { calendarContainer, buttonBar, header, calendarButtons, headerWeekday, calendarButtonsToday, calendarButtonsSelected, calendarBoard, emptyButtonSpace } from './styles'
+import { calendarContainer, buttonBar, header, calendarButtons, headerWeekday, calendarButtonsToday, calendarButtonsSelected, calendarBoard, emptyButtonSpace, smallCalendarContainer } from './styles'
 import { Button } from '../../buttons/Button/Button'
 
 const monthNamesShort = [
@@ -23,8 +23,8 @@ const monthNamesShort = [
 ]
 const weekdayNamesShort = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
-export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDateProps, getForwardProps }) => (
-  <div css={[calendarContainer]}>
+export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDateProps, getForwardProps, isSmall }) => (
+  <div css={[isSmall ? smallCalendarContainer : calendarContainer]}>
     <div css={[buttonBar]}>
       <Button isFilled icon="arrow-left" {...getBackProps({ calendars })}>Back</Button>
       <Button isFilled {...getForwardProps({ calendars })}>Next <FontAwesomeIcon size="sm" icon={{ prefix: 'fas', iconName: 'arrow-right' }} /></Button>
@@ -78,4 +78,6 @@ export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDatePr
   </div>
 )
 
-export interface CalendarProps extends RenderProps {}
+export interface CalendarProps extends RenderProps {
+  isSmall?: boolean
+}
