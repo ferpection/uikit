@@ -21,7 +21,7 @@ export const calendarContainer = css`
   font-family: ${SANSSERIF_FONTSET.toString()};
   width: ${(buttonWidth + 10) * 7}px;
   background-color: white;
-  transition: box-shadow .3s ease-in-out, background-color .3s ease-in-out, color .3s ease-in-out;
+  transition: all .3s ease-in-out;
   &:hover {
     box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
   }
