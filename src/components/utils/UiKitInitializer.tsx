@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 
-import { FontsLoader } from '../utils/FontsLoader'
 import { ThemeProvider, ThemeProviderProps } from '../contexts/ThemeContext'
 import { I18nContext } from '../contexts/I18nContext'
+import { FontsLoader } from './FontsLoader'
 
 export const UiKitInitializer: FC<UiKitInitializerProps> = props => {
   // eslint-disable-next-line no-unused-expressions
