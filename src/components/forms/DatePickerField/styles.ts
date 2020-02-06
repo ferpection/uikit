@@ -4,7 +4,13 @@ import { SANSSERIF_FONTSET } from '../../../fonts'
 
 const buttonWidth = 40
 
+export const datePickerContainer = css`
+  position: relative;
+`
+
 export const calendarContainer = css`
+  position: absolute;
+  top: 55px; left: 0;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -14,6 +20,11 @@ export const calendarContainer = css`
   padding: 20px;
   font-family: ${SANSSERIF_FONTSET.toString()};
   width: ${(buttonWidth + 10) * 7}px;
+  background-color: white;
+  transition: box-shadow .3s ease-in-out, background-color .3s ease-in-out, color .3s ease-in-out;
+  &:hover {
+    box-shadow: 0 1px 4px 1px rgba(0,0,0,0.3);
+  }
 `
 
 export const buttonBar = css`

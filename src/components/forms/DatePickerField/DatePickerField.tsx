@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { TextField } from '../TextField/TextField'
 import { FormProps } from '../form-props'
 
-import { calendarContainer, buttonBar, header, calendarButtons, headerWeekday, calendarButtonsToday, calendarButtonsSelected, calendarBoard, emptyButtonSpace } from './styles'
+import { calendarContainer, buttonBar, header, calendarButtons, headerWeekday, calendarButtonsToday, calendarButtonsSelected, calendarBoard, emptyButtonSpace, datePickerContainer } from './styles'
 import { Button } from '../../buttons/Button/Button'
 
 const monthNamesShort = [
@@ -31,7 +31,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   const [value, setValue] = useState(initialValue ? new Date(initialValue) : null)
 
   return (
-    <div>
+    <div css={datePickerContainer}>
       <TextField value={value?.toLocaleDateString()} />
       <Dayzed
         onDateSelected={(selectedDate) => setValue(selectedDate.date)}
