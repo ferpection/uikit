@@ -5,7 +5,7 @@ import { RenderProps } from 'dayzed'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { calendarContainer, buttonBar, header, calendarButtons, headerWeekday, calendarButtonsToday, calendarButtonsSelected, calendarBoard, emptyButtonSpace, smallCalendarContainer } from './styles'
-import { Button } from '../../buttons/Button/Button'
+import { Button } from '../../../buttons/Button/Button'
 
 const monthNamesShort = [
   'Jan',

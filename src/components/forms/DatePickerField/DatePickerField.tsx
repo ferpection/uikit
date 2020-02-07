@@ -5,7 +5,7 @@ import Dayzed from 'dayzed'
 
 import { TextField } from '../TextField/TextField'
 import { FormProps } from '../form-props'
-import { Calendar } from './Calendar'
+import { Calendar } from './Calendar/Calendar'
 
 import { datePickerContainer } from './styles'
 
