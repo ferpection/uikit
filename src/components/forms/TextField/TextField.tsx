@@ -34,7 +34,7 @@ export const TextField: React.FC<TextFieldProps> = props => {
     required: 'Please fill the field.',
   })
 
-  addTranslations('en', {
+  addTranslations('fr', {
     emailInvalid: 'Vous devez écrire une adresse email valide.',
     required: 'Vous devez remplir le champ.',
   })
