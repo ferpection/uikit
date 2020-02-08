@@ -9,6 +9,8 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 - New attribute `isOrdered` on `TextFieldList`. Basicaly, `<ol>` becomes `<ul>` when not ordered.
 - It is possible to change the row count of the `TextField` in `TextFieldList`.
 - New attribute `maxFieldCount` on `TextFieldList`. It hides the add button when the value of `maxFieldCount` is reached.
+- New `DatePickerField` component to display a date input.
+- New attribute `isSmall` on `TextField` to display a smaller version of he `TextField`.
 
 ### Changed
 - All form components can be updated using the `value` attribute.
