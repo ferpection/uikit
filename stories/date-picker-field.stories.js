@@ -12,9 +12,14 @@ storiesOf('Components|Forms/DatePickerField', module)
   .add('normal state', () => (
     <>
       <h1>DatePickerField</h1>
-      <p>The component displays a regular {TextField.name} component and when the user click on it a datePicker is displayed on hover.</p>
+      <p>
+        The component displays a regular {TextField.name} component and when the user click on it a datePicker is
+        displayed on hover.
+      </p>
       <p>Example:</p>
-      <DatePickerField isSmall={boolean('is small', false)}/>
-      <p>The {DatePickerField.name} acts like a regular {TextField.name} plus some specificities.</p>
+      <DatePickerField isSmall={boolean('is small', false)} />
+      <p>
+        The {DatePickerField.name} acts like a regular {TextField.name} plus some specificities.
+      </p>
     </>
   ))

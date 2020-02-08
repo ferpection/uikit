@@ -6,7 +6,8 @@ const buttonWidth = 40
 
 export const calendarContainer = css`
   position: absolute;
-  top: 56px; left: 0;
+  top: 56px;
+  left: 0;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +18,7 @@ export const calendarContainer = css`
   font-family: ${SANSSERIF_FONTSET.toString()};
   width: ${(buttonWidth + 10) * 7}px;
   background-color: white;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   &:hover {
     box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
   }
@@ -89,14 +90,16 @@ export const headerWeekday = css`
   display: inline-flex;
   height: initial;
   background-color: transparent;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: transparent;
   }
 `
 
 export const emptyButtonSpace = css`
   ${calendarButtons};
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: transparent;
   }
 `

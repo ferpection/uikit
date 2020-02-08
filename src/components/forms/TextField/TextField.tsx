@@ -86,7 +86,13 @@ export const TextField: React.FC<TextFieldProps> = props => {
       {rowCount < 2 ? (
         <input
           type={dataType}
-          css={[baseStyle, isHighlighted && highlightedStyle, !isValid && errorStyle, isDisabled && disabledStyle, isSmall && smallStyle]}
+          css={[
+            baseStyle,
+            isHighlighted && highlightedStyle,
+            !isValid && errorStyle,
+            isDisabled && disabledStyle,
+            isSmall && smallStyle,
+          ]}
           className={className}
           placeholder={placeholder}
           value={value}

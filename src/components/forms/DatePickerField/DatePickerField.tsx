@@ -19,7 +19,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
       <TextField value={value?.toLocaleDateString()} isSmall={isSmall} onFocus={() => setDisplayModal(true)} />
       {displayModal === true ? (
         <Dayzed
-          onDateSelected={(selectedDate) => {
+          onDateSelected={selectedDate => {
             setValue(selectedDate.date)
             setDisplayModal(false)
           }}

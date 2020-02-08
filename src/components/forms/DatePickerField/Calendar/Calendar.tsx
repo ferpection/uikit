@@ -7,7 +7,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button } from '../../../buttons/Button/Button'
 import { I18nContext } from '../../../contexts/I18nContext'
 
-import { calendarContainer, buttonBar, header, calendarButtons, headerWeekday, calendarButtonsToday, calendarButtonsSelected, calendarBoard, emptyButtonSpace, smallCalendarContainer } from './styles'
+import {
+  calendarContainer,
+  buttonBar,
+  header,
+  calendarButtons,
+  headerWeekday,
+  calendarButtonsToday,
+  calendarButtonsSelected,
+  calendarBoard,
+  emptyButtonSpace,
+  smallCalendarContainer,
+} from './styles'
 import { englishStrings, frenchStrings } from './locales'
 
 const monthNamesShort = [
@@ -24,7 +35,15 @@ const monthNamesShort = [
   'novemberShort',
   'decemberShort',
 ]
-const weekdayNamesShort = ['sundayShort', 'mondayShort', 'tuesdayShort', 'wednesdayShort', 'thursdayShort', 'fridayShort', 'saturdayShort']
+const weekdayNamesShort = [
+  'sundayShort',
+  'mondayShort',
+  'tuesdayShort',
+  'wednesdayShort',
+  'thursdayShort',
+  'fridayShort',
+  'saturdayShort',
+]
 
 export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDateProps, getForwardProps, isSmall }) => {
   const { addTranslations, t } = useContext(I18nContext)
@@ -35,21 +54,20 @@ export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDatePr
   return (
     <div css={[isSmall ? smallCalendarContainer : calendarContainer]}>
       <div css={[buttonBar]}>
-        <Button isFilled icon="arrow-left" {...getBackProps({ calendars })}>{t('buttonPrevious')}</Button>
-        <Button isFilled {...getForwardProps({ calendars })}>{t('buttonNext')} <FontAwesomeIcon size="sm" icon={{ prefix: 'fas', iconName: 'arrow-right' }} /></Button>
+        <Button isFilled icon="arrow-left" {...getBackProps({ calendars })}>
+          {t('buttonPrevious')}
+        </Button>
+        <Button isFilled {...getForwardProps({ calendars })}>
+          {t('buttonNext')} <FontAwesomeIcon size="sm" icon={{ prefix: 'fas', iconName: 'arrow-right' }} />
+        </Button>
       </div>
       {calendars.map(calendar => (
-        <div
-          key={`${calendar.month}${calendar.year}`}
-        >
+        <div key={`${calendar.month}${calendar.year}`}>
           <div css={[header]}>
             {t(monthNamesShort[calendar.month])} {calendar.year}
           </div>
           {weekdayNamesShort.map(weekday => (
-            <div
-              key={`${calendar.month}${calendar.year}${weekday}`}
-              css={[calendarButtons, headerWeekday]}
-            >
+            <div key={`${calendar.month}${calendar.year}${weekday}`} css={[calendarButtons, headerWeekday]}>
               {t(weekday)}
             </div>
           ))}
@@ -58,12 +76,7 @@ export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDatePr
               week.map((dateObj, index) => {
                 const key = `${calendar.month}${calendar.year}${weekIndex}${index}`
                 if (!dateObj) {
-                  return (
-                    <div
-                      css={[emptyButtonSpace]}
-                      key={key}
-                    />
-                  )
+                  return <div css={[emptyButtonSpace]} key={key} />
                 }
                 const { date, selected, selectable, today } = dateObj
                 return (
