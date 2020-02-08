@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { FC, useState } from 'react'
+import { FC, useState, SyntheticEvent, useEffect } from 'react'
 import { jsx } from '@emotion/core'
 import Dayzed from 'dayzed'
 
@@ -10,20 +10,48 @@ import { Calendar } from './Calendar/Calendar'
 import { datePickerContainer } from './styles'
 
 export const DatePickerField: FC<DatePickerFieldProps> = props => {
-  const { value: initialValue, isSmall = false } = props
+  const { value: initialValue, isSmall = false, onValueChange = () => {}, onBlur = () => {}, onFocus = () => {}, ...otherProps } = props
   const [value, setValue] = useState(initialValue ? new Date(initialValue) : null)
   const [displayModal, setDisplayModal] = useState(false)
 
+  useEffect(() => {
+    onValueChange(value?.toLocaleDateString())
+  }, [value])
+
+  const handleTextFieldChange = (v: string) => {
+    const date = new Date(v)
+
+    if (date instanceof Date && Number.isNaN(date.getTime())) {
+      return
+    }
+
+    setValue(date)
+    setDisplayModal(false)
+  }
+
+  const handleTextFieldFocus = (event: SyntheticEvent<HTMLInputElement, FocusEvent>) => {
+    setDisplayModal(true)
+    onFocus(event)
+  }
+
   return (
     <div css={datePickerContainer}>
-      <TextField value={value?.toLocaleDateString()} isSmall={isSmall} onFocus={() => setDisplayModal(true)} />
+      <TextField
+        value={value?.toLocaleDateString()}
+        isSmall={isSmall}
+        onValueChange={handleTextFieldChange}
+        onFocus={handleTextFieldFocus}
+        onBlur={onBlur}
+        {...otherProps}
+      />
       {displayModal === true ? (
         <Dayzed
           onDateSelected={selectedDate => {
             setValue(selectedDate.date)
             setDisplayModal(false)
           }}
-          selected={value}
+          date={value || new Date()}
+          selected={[value]}
           render={props => <Calendar isSmall={isSmall} {...props} />}
         />
       ) : null}
@@ -33,5 +61,6 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
 
 export interface DatePickerFieldProps extends FormProps {
   value?: string
+  onValueChange?: (value: string, event?: SyntheticEvent) => void
   isSmall?: boolean
 }
