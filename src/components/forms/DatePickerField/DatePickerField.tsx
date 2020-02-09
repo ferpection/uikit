@@ -13,6 +13,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   const {
     value: initialValue,
     isSmall = false,
+    placeholder = 'dd/mm/yyyy',
     onValueChange = () => {},
     onBlur = () => {},
     onFocus = () => {},
@@ -46,6 +47,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
       <TextField
         value={value?.toLocaleDateString()}
         isSmall={isSmall}
+        placeholder={placeholder}
         onValueChange={handleTextFieldChange}
         onFocus={handleTextFieldFocus}
         onBlur={onBlur}
