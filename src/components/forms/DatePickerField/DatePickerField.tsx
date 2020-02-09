@@ -12,20 +12,17 @@ import { datePickerContainer } from './styles'
 export const DatePickerField: FC<DatePickerFieldProps> = props => {
   const {
     value: initialValue,
-    dateValue: initialDateValue = new Date(initialValue),
     isSmall = false,
     onValueChange = () => {},
-    onDateValueChange = () => {},
     onBlur = () => {},
     onFocus = () => {},
     ...otherProps
   } = props
-  const [value, setValue] = useState(initialDateValue)
+  const [value, setValue] = useState(initialValue)
   const [displayModal, setDisplayModal] = useState(false)
 
   useEffect(() => {
-    onValueChange(value?.toISOString())
-    onDateValueChange(value)
+    onValueChange(value)
   }, [value])
 
   const handleTextFieldChange = (v: string) => {
@@ -71,9 +68,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
 }
 
 export interface DatePickerFieldProps extends FormProps {
-  value?: string
-  dateValue?: Date
+  value?: Date
   isSmall?: boolean
-  onValueChange?: (value: string) => void
-  onDateValueChange?: (value: Date) => void
+  onValueChange?: (value: Date) => void
 }
