@@ -36,13 +36,13 @@ const monthNamesShort = [
   'decemberShort',
 ]
 const weekdayNamesShort = [
-  'sundayShort',
   'mondayShort',
   'tuesdayShort',
   'wednesdayShort',
   'thursdayShort',
   'fridayShort',
   'saturdayShort',
+  'sundayShort',
 ]
 
 export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDateProps, getForwardProps, isSmall }) => {

@@ -46,13 +46,14 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
       />
       {displayModal === true ? (
         <Dayzed
-          onDateSelected={selectedDate => {
-            setValue(selectedDate.date)
+          onDateSelected={({ date }) => {
+            setValue(date)
             setDisplayModal(false)
           }}
           date={value || new Date()}
           selected={[value]}
-          render={props => <Calendar isSmall={isSmall} {...props} />}
+          firstDayOfWeek={1}
+          render={dayzedData => <Calendar isSmall={isSmall} {...dayzedData} />}
         />
       ) : null}
     </div>
