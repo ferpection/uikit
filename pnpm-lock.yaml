@@ -4,6 +4,7 @@ dependencies:
   '@fortawesome/free-regular-svg-icons': 5.12.0
   '@fortawesome/free-solid-svg-icons': 5.12.0
   '@fortawesome/react-fontawesome': 0.1.8_22e2453842f7e8b7d1d08b7797ac0bde
+  dayzed: 3.1.0_prop-types@15.7.2+react@16.12.0
   randomstring: 1.1.5
   webfontloader: 1.6.28
 devDependencies:
@@ -19,6 +20,7 @@ devDependencies:
   '@storybook/addon-viewport': 5.3.3_react-dom@16.12.0+react@16.12.0
   '@storybook/addons': 5.3.3_react-dom@16.12.0
   '@storybook/react': 5.3.3_a40c3f6718d96f40907e7322316117a3
+  '@types/dayzed': 2.2.1
   '@types/prop-types': 15.7.3
   '@types/randomstring': 1.1.6
   '@types/react': 16.9.17
@@ -948,6 +950,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-fVHx1rzEmwB130VTkLnxR+HmxcTjGzH12LYQcFFoBwakMd3aOMD4OsRN7tGG/UOYE2ektgFrS8uACAoRk1CY0w==
+  /@babel/runtime/7.8.4:
+    dependencies:
+      regenerator-runtime: 0.13.3
+    dev: false
+    resolution:
+      integrity: sha512-neAp3zt80trRVBI1x0azq6c57aNBqYZH8KhMm3TaB7wEI5Q4A2SHfBHE8w9gOhI/lrqxtEbXZgQIrHP+wvSGwQ==
   /@babel/template/7.8.3:
     dependencies:
       '@babel/code-frame': 7.8.3
@@ -1849,6 +1857,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
+  /@types/dayzed/2.2.1:
+    dependencies:
+      '@types/react': 16.9.19
+    dev: true
+    resolution:
+      integrity: sha512-4uYx21HsZ6HV/sLaaK/1x6PiLuAxMVLCUISWAk2EoqUDOqDKvToOgP9uI1fzBk8wS1r/ozJSVZEx2X5e7DGKTw==
   /@types/eslint-visitor-keys/1.0.0:
     dev: true
     resolution:
@@ -1942,6 +1956,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-UP27In4fp4sWF5JgyV6pwVPAQM83Fj76JOcg02X5BZcpSu5Wx+fP9RMqc2v0ssBoQIFvD5JdKY41gjJJKmw6Bg==
+  /@types/react/16.9.19:
+    dependencies:
+      '@types/prop-types': 15.7.3
+      csstype: 2.6.8
+    dev: true
+    resolution:
+      integrity: sha512-LJV97//H+zqKWMms0kvxaKYJDG05U2TtQB3chRLF8MPNs+MQh/H1aGlyDUxjaHvu08EAGerdX2z4LTBc7ns77A==
   /@types/webfontloader/1.6.29:
     dev: true
     resolution:
@@ -3851,6 +3872,22 @@ packages:
     dev: true
     resolution:
       integrity: sha512-YTWYI9se1P55u58gL5GkQHW4P6VJBJ5iBT+B5a7i2Tjadhv52paJG0qHX4A0OR6/t52odI64KP2YvFpkDOi3eQ==
+  /date-fns/2.9.0:
+    dev: false
+    resolution:
+      integrity: sha512-khbFLu/MlzLjEzy9Gh8oY1hNt/Dvxw3J6Rbc28cVoYWQaC1S3YI4xwkF9ZWcjDLscbZlY9hISMr66RFzZagLsA==
+  /dayzed/3.1.0_prop-types@15.7.2+react@16.12.0:
+    dependencies:
+      '@babel/runtime': 7.8.4
+      date-fns: 2.9.0
+      prop-types: 15.7.2
+      react: 16.12.0
+    dev: false
+    peerDependencies:
+      prop-types: ^15
+      react: ^16.8
+    resolution:
+      integrity: sha512-Mwb/T78ppKDIoXsNgSLfIYfIO7ylal+vKp8VVMzK6rQq4VJSE7AdrGFN2EQDmve037J9TKZo06mX+QuuKQ2raA==
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -8635,7 +8672,6 @@ packages:
     resolution:
       integrity: sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
   /regenerator-runtime/0.13.3:
-    dev: true
     resolution:
       integrity: sha512-naKIZz2GQ8JWh///G7L3X6LaQUAMp2lvb1rvwwsURe/VXwD6VMfr+/1NuNw3ag8v2kY1aQ/go5SNn79O9JU7yw==
   /regenerator-transform/0.14.1:
@@ -10637,6 +10673,7 @@ specifiers:
   '@storybook/addon-viewport': ^5.2.4
   '@storybook/addons': ^5.2.4
   '@storybook/react': ^5.2.4
+  '@types/dayzed': ^2.2.1
   '@types/prop-types': ^15.7.3
   '@types/randomstring': ^1.1.6
   '@types/react': ^16.9.9
@@ -10647,6 +10684,7 @@ specifiers:
   '@typescript-eslint/parser': ^2.4.0
   awesome-typescript-loader: ^5.2.1
   babel-loader: ^8.0.6
+  dayzed: ^3.1.0
   eslint: ^6.5.1
   eslint-config-standard: ^14.1.0
   eslint-plugin-import: ^2.18.2

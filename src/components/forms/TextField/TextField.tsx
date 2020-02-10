@@ -5,7 +5,7 @@ import { jsx } from '@emotion/core'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { FormProps } from '../form-props'
 
-import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle } from './styles'
+import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle, smallStyle } from './styles'
 import { I18nContext } from '../../contexts/I18nContext'
 
 const EMAIL_REGEXP = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -21,6 +21,7 @@ export const TextField: React.FC<TextFieldProps> = props => {
     value: externalValue,
     isRequired,
     className,
+    isSmall = false,
   } = props
 
   const { addTranslations } = useContext(I18nContext)
@@ -33,7 +34,7 @@ export const TextField: React.FC<TextFieldProps> = props => {
     required: 'Please fill the field.',
   })
 
-  addTranslations('en', {
+  addTranslations('fr', {
     emailInvalid: 'Vous devez écrire une adresse email valide.',
     required: 'Vous devez remplir le champ.',
   })
@@ -85,7 +86,13 @@ export const TextField: React.FC<TextFieldProps> = props => {
       {rowCount < 2 ? (
         <input
           type={dataType}
-          css={[baseStyle, isHighlighted && highlightedStyle, !isValid && errorStyle, isDisabled && disabledStyle]}
+          css={[
+            baseStyle,
+            isHighlighted && highlightedStyle,
+            !isValid && errorStyle,
+            isDisabled && disabledStyle,
+            isSmall && smallStyle,
+          ]}
           className={className}
           placeholder={placeholder}
           value={value}
@@ -103,6 +110,7 @@ export const TextField: React.FC<TextFieldProps> = props => {
             isHighlighted && highlightedStyle,
             !isValid && errorStyle,
             isDisabled && disabledStyle,
+            isSmall && smallStyle,
           ]}
           className={className}
           placeholder={placeholder}
@@ -126,5 +134,6 @@ export interface TextFieldProps extends FormProps {
   hideErrors?: boolean
   className?: string
   value?: string
+  isSmall?: boolean
   onValueChange?: (value: string, event: SyntheticEvent) => void
 }
