@@ -5,7 +5,7 @@ import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-import { RadioGroup, RadioButton, TextField } from '../src/components'
+import { RadioGroup, RadioButton, TextField, DatePickerField } from '../src/components'
 
 storiesOf('Components|Forms/RadioGroup', module)
   .addDecorator(withA11y)
@@ -21,10 +21,103 @@ storiesOf('Components|Forms/RadioGroup', module)
   ))
   .add('sub component', () => (
     <>
+      <h2>
+        <code>{TextField.name}</code>
+      </h2>
+      <pre>
+        <code>
+          &lt;RadioGroup&gt;
+          <br />
+          &lt;RadioButton&gt;Choice One&lt;/RadioButton&gt;
+          <br />
+          &lt;RadioButton&gt;Choice Two: &lt;TextField /&gt;&lt;/RadioButton&gt;
+          <br />
+          &lt;RadioButton&gt;Choice Three&lt;/RadioButton&gt;
+          <br />
+          &lt;/RadioGroup&gt;
+          <br />
+        </code>
+      </pre>
       <RadioGroup value="three" onValueChange={action('value changed')}>
         <RadioButton value="one">Choice One</RadioButton>
         <RadioButton value="two">
           Choice Two: <TextField />
+        </RadioButton>
+        <RadioButton value="three">Choice Three</RadioButton>
+      </RadioGroup>
+      <h2>
+        <code>{DatePickerField.name}</code>
+      </h2>
+      <pre>
+        <code>
+          &lt;RadioGroup&gt;
+          <br />
+          &lt;RadioButton&gt;Choice One&lt;/RadioButton&gt;
+          <br />
+          &lt;RadioButton&gt;Choice Two: &lt;DatePickerField /&gt;&lt;/RadioButton&gt;
+          <br />
+          &lt;RadioButton&gt;Choice Three&lt;/RadioButton&gt;
+          <br />
+          &lt;/RadioGroup&gt;
+          <br />
+        </code>
+      </pre>
+      <RadioGroup value="three" onValueChange={action('value changed')}>
+        <RadioButton value="one">Choice One</RadioButton>
+        <RadioButton value="two">
+          Choice Two: <DatePickerField />
+        </RadioButton>
+        <RadioButton value="three">Choice Three</RadioButton>
+      </RadioGroup>
+      <h2>
+        <code>Small {DatePickerField.name}</code>
+      </h2>
+      <pre>
+        <code>
+          &lt;RadioGroup&gt;
+          <br />
+          &lt;RadioButton&gt;Choice One&lt;/RadioButton&gt;
+          <br />
+          &lt;RadioButton&gt;Choice Two: &lt;DatePickerField isSmall /&gt;&lt;/RadioButton&gt;
+          <br />
+          &lt;RadioButton&gt;Choice Three&lt;/RadioButton&gt;
+          <br />
+          &lt;/RadioGroup&gt;
+          <br />
+        </code>
+      </pre>
+      <RadioGroup value="three" onValueChange={action('value changed')}>
+        <RadioButton value="one">Choice One</RadioButton>
+        <RadioButton value="two">
+          Choice Two: <DatePickerField isSmall />
+        </RadioButton>
+        <RadioButton value="three">Choice Three</RadioButton>
+      </RadioGroup>
+      <h2>
+        <code>{DatePickerField.name} within a <code>div</code></code>
+      </h2>
+      <pre>
+        <code>
+          &lt;RadioGroup&gt;
+          <br />
+          &lt;RadioButton&gt;Choice One&lt;/RadioButton&gt;
+          <br />
+          &lt;RadioButton&gt;
+          <br />
+            &lt;div&gt;Choice Two: &lt;DatePickerField /&gt;&lt;/div&gt;
+          <br />
+          &lt;/RadioButton&gt;
+          <br />
+          &lt;RadioButton&gt;Choice Three&lt;/RadioButton&gt;
+          <br />
+          &lt;/RadioGroup&gt;
+          <br />
+        </code>
+      </pre>
+      <RadioGroup value="three" onValueChange={action('value changed')}>
+        <RadioButton value="one">Choice One</RadioButton>
+        <RadioButton value="two">
+          <div>Choice Two: <DatePickerField /></div>
         </RadioButton>
         <RadioButton value="three">Choice Three</RadioButton>
       </RadioGroup>
