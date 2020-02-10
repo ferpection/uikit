@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) for now.
 
 ## [Unreleased]
+### Added
+- New component `ReoderableList` to make list of components reorderable using drag and drop.
 
 ## [v0.0.26] - 2019-02-10
 ### Added
