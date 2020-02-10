@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import React, { useState } from 'react'
-import { jsx } from '@emotion/core'
 
 import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
@@ -28,7 +26,7 @@ storiesOf('Components|Forms/TextFieldList', module)
             onValueChange={values => setValues(values)}
           />
           <pre
-            css={{
+            style={{
               backgroundColor: N75_COLOR.toString(),
               padding: 40,
               marginTop: 40,
@@ -52,13 +50,15 @@ storiesOf('Components|Forms/TextFieldList', module)
             placeholder={text('placeholder', 'Add your text here')}
             buttonText={text('button text', 'Add a list item')}
             isEditable
-            isOrdered
+            isOrdered={boolean('is ordered', true)}
             onValueChange={values => setValues(values)}
+            initialFieldCount={number('initial field count', 2)}
+            maxFieldCount={number('max field count', null)}
             onFocus={action('focus in')}
             onBlur={action('focus out')}
           />
           <pre
-            css={{
+            style={{
               backgroundColor: N75_COLOR.toString(),
               padding: 40,
               marginTop: 40,
@@ -89,7 +89,7 @@ storiesOf('Components|Forms/TextFieldList', module)
             displayErrorStrategy={select('display error strategy', ['on-list', 'on-field', 'hidden'], 'on-field')}
           />
           <pre
-            css={{
+            style={{
               backgroundColor: N75_COLOR.toString(),
               padding: 40,
               marginTop: 40,
@@ -121,7 +121,7 @@ storiesOf('Components|Forms/TextFieldList', module)
             onValueChange={values => setValues(values)}
           />
           <pre
-            css={{
+            style={{
               backgroundColor: N75_COLOR.toString(),
               padding: 40,
               marginTop: 40,

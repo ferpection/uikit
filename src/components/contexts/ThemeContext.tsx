@@ -39,11 +39,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = props => {
     },
   }
 
-  return (
-    <ThemeContext.Provider value={value}>
-      {children}
-    </ThemeContext.Provider>
-  )
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
 
 export interface ThemeProviderProps {

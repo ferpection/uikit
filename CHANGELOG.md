@@ -5,10 +5,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) for now.
 
 ## [Unreleased]
+
+## [v0.0.26] - 2019-02-10
 ### Added
 - New attribute `isOrdered` on `TextFieldList`. Basicaly, `<ol>` becomes `<ul>` when not ordered.
 - It is possible to change the row count of the `TextField` in `TextFieldList`.
 - New component `ReoderableList` to make list of components reorderable using drag and drop.
+- New attribute `maxFieldCount` on `TextFieldList`. It hides the add button when the value of `maxFieldCount` is reached.
+- New `DatePickerField` component to display a date input.
+- New attribute `isSmall` on `TextField` to display a smaller version of he `TextField`.
 
 ### Changed
 - All form components can be updated using the `value` attribute.
@@ -245,6 +250,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.26]: https://github.com/ferpection/uikit/tree/v0.0.26
 [v0.0.25]: https://github.com/ferpection/uikit/tree/v0.0.25
 [v0.0.24]: https://github.com/ferpection/uikit/tree/v0.0.24
 [v0.0.23]: https://github.com/ferpection/uikit/tree/v0.0.23

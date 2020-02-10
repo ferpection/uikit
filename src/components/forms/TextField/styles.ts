@@ -80,3 +80,10 @@ export const textareaStyle = css`
   min-width: 100%;
   min-height: 75px;
 `
+
+export const smallStyle = css`
+  padding: 0;
+  max-width: max-content;
+  display: inline-block;
+  text-align: center;
+`
