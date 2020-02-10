@@ -7,7 +7,7 @@ import { TextField } from '../TextField/TextField'
 import { FormProps } from '../form-props'
 import { Calendar } from './Calendar/Calendar'
 
-import { datePickerContainer } from './styles'
+import { datePickerContainer, datePickerContainerSmall } from './styles'
 
 export const DatePickerField: FC<DatePickerFieldProps> = props => {
   const {
@@ -44,7 +44,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   }
 
   return (
-    <div css={datePickerContainer}>
+    <div css={[datePickerContainer, isSmall && datePickerContainerSmall]}>
       <TextField
         value={value?.toLocaleDateString('fr-FR', { day: '2-digit', year: 'numeric', month: '2-digit' })}
         isSmall={isSmall}
