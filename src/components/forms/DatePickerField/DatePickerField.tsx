@@ -27,7 +27,8 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   }, [value])
 
   const handleTextFieldChange = (v: string) => {
-    const date = new Date(v)
+    const [day, month, year] = v.split('/')
+    const date = new Date(Number(year), Number(month) - 1, Number(day))
 
     if (date instanceof Date && Number.isNaN(date.getTime())) {
       return
@@ -45,7 +46,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   return (
     <div css={datePickerContainer}>
       <TextField
-        value={value?.toLocaleDateString()}
+        value={value?.toLocaleDateString('fr-FR', { day: '2-digit', year: 'numeric', month: '2-digit' })}
         isSmall={isSmall}
         placeholder={placeholder}
         onValueChange={handleTextFieldChange}
