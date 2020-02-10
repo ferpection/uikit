@@ -5,12 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) for now.
 
 ## [Unreleased]
+### Added
+- New component `ReoderableList` to make list of components reorderable using drag and drop.
 
 ## [v0.0.26] - 2019-02-10
 ### Added
 - New attribute `isOrdered` on `TextFieldList`. Basicaly, `<ol>` becomes `<ul>` when not ordered.
 - It is possible to change the row count of the `TextField` in `TextFieldList`.
-- New component `ReoderableList` to make list of components reorderable using drag and drop.
 - New attribute `maxFieldCount` on `TextFieldList`. It hides the add button when the value of `maxFieldCount` is reached.
 - New `DatePickerField` component to display a date input.
 - New attribute `isSmall` on `TextField` to display a smaller version of he `TextField`.
