@@ -7,11 +7,12 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 ## [Unreleased]
 ### Added
 - New component `ReoderableList` to make list of components reorderable using drag and drop.
-- New attribute `radioPosition` on `RadioButton`. Allow to stick the radio circle to the top or the bottom. Defaults to center.
-- New attribute `checkboxPosition` on `CheckboxButton`. Allow to stick the check square to the top or the bottom. Defaults to center.
+- New attribute `radioPosition` on `RadioButton` and `checkboxPosition` on `CheckboxButton`.
+  Allow to stick the radio circle and check box to the top or the bottom. Defaults to center.
+  The new attributes aren't available when used inside of a `CheckboxGroup` or a `RadioGroup`. Forced to center.
 
 ### Changed
-- `CheckboxGroup` and `RadioGroup` don't sticky the button on Y axis anymore. Positioning is now done on the relevant children buttons.
+- `CheckboxGroup` and `RadioGroup` don't sticky the button on Y axis anymore but on the center position.
 
 ### Fixed
 - `DatePickerField` modal has now a `z-index` of 1 to be upper than regular fields.
