@@ -19,7 +19,7 @@ devDependencies:
   '@storybook/addon-links': 5.3.3_react-dom@16.12.0+react@16.12.0
   '@storybook/addon-viewport': 5.3.3_react-dom@16.12.0+react@16.12.0
   '@storybook/addons': 5.3.3_react-dom@16.12.0
-  '@storybook/react': 5.3.3_a40c3f6718d96f40907e7322316117a3
+  '@storybook/react': 5.3.3_adc0a67cf0d10b69b21ca7d6993abe23
   '@types/dayzed': 2.2.1
   '@types/prop-types': 15.7.3
   '@types/randomstring': 1.1.6
@@ -51,6 +51,7 @@ devDependencies:
   rollup-plugin-babel: 4.3.3_@babel+core@7.8.3+rollup@1.29.0
   rollup-plugin-svg: 2.0.0
   rollup-plugin-typescript2: 0.24.3_rollup@1.29.0+typescript@3.7.4
+  tslib: 1.10.0
   typescript: 3.7.4
 lockfileVersion: 5.1
 packages:
@@ -1516,7 +1517,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-D1NpSMUCmd4N1n6iiIo3E2S5bGgZUao8EvQRgQUC15yX/cgvUwZ2bN5QLoekK0ybxTzLQMcicMxt+ti3tiTBSg==
-  /@storybook/core/5.3.3_a40c3f6718d96f40907e7322316117a3:
+  /@storybook/core/5.3.3_adc0a67cf0d10b69b21ca7d6993abe23:
     dependencies:
       '@babel/core': 7.8.3
       '@babel/plugin-proposal-class-properties': 7.8.3_@babel+core@7.8.3
@@ -1570,7 +1571,7 @@ packages:
       micromatch: 4.0.2
       node-fetch: 2.6.0
       open: 7.0.0
-      pnp-webpack-plugin: 1.5.0
+      pnp-webpack-plugin: 1.5.0_typescript@3.7.4
       postcss-flexbugs-fixes: 4.1.0
       postcss-loader: 3.0.0
       pretty-hrtime: 1.0.3
@@ -1601,6 +1602,7 @@ packages:
       babel-loader: ^7.0.0 || ^8.0.0
       react: '*'
       react-dom: '*'
+      typescript: '*'
     resolution:
       integrity: sha512-JO9iTeRCYWeqF7Gtl00lru0Zx69dCGhFPAvP/deGI12ZQX3psdyS3Vq9IgLUpqXTs4uf/aGAzsbxq56vaAdrbg==
   /@storybook/csf/0.0.1:
@@ -1619,14 +1621,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-x2bvZQomd/XFp7TIdeLjaY0SEfNxEu3Z/PQwvwCV2RHaxc7teKuKRDMY6OzDrFEdxX3qzCO6Qe9lc/pL0Q0O9Q==
-  /@storybook/react/5.3.3_a40c3f6718d96f40907e7322316117a3:
+  /@storybook/react/5.3.3_adc0a67cf0d10b69b21ca7d6993abe23:
     dependencies:
       '@babel/core': 7.8.3
       '@babel/plugin-transform-react-constant-elements': 7.8.3_@babel+core@7.8.3
       '@babel/preset-flow': 7.8.3_@babel+core@7.8.3
       '@babel/preset-react': 7.8.3_@babel+core@7.8.3
       '@storybook/addons': 5.3.3_0d4ef0a23e385011e05f806739fd4c13
-      '@storybook/core': 5.3.3_a40c3f6718d96f40907e7322316117a3
+      '@storybook/core': 5.3.3_adc0a67cf0d10b69b21ca7d6993abe23
       '@storybook/node-logger': 5.3.3
       '@svgr/webpack': 4.3.3
       '@types/webpack-env': 1.15.0
@@ -1655,6 +1657,7 @@ packages:
       babel-loader: ^7.0.0 || ^8.0.0
       react: '*'
       react-dom: '*'
+      typescript: '*'
     resolution:
       integrity: sha512-Oup5+NhP6R5Uo10U7oWKTZFVhrA8fSdxPjYu2lGPrhd5gJ4Pm3jwQXCpl+VrkJNBo/ZQehVqRc13hw87PIBBkw==
   /@storybook/router/5.3.3_react-dom@16.12.0+react@16.12.0:
@@ -7817,12 +7820,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2qHaIQr2VLRFoxe2nASzsV6ef4yOOH+Fi9FBOVH6cqeSgUnoyySPZkxzLuzd+RYOQTRpROA0ztTMqxROKSb/nA==
-  /pnp-webpack-plugin/1.5.0:
+  /pnp-webpack-plugin/1.5.0_typescript@3.7.4:
     dependencies:
-      ts-pnp: 1.1.5
+      ts-pnp: 1.1.5_typescript@3.7.4
     dev: true
     engines:
       node: '>=6'
+    peerDependencies:
+      typescript: '*'
     resolution:
       integrity: sha512-jd9olUr9D7do+RN8Wspzhpxhgp1n6Vd0NtQ4SFkmIACZoEL1nkyAdW9Ygrinjec0vgDcWjscFQQ1gDW8rsfKTg==
   /polished/3.4.2:
@@ -10058,10 +10063,14 @@ packages:
       node: '>=6.10'
     resolution:
       integrity: sha512-CVCvDwMBWZKjDxpN3mU/Dx1v3k+sJgE8nrhXcC9vRopRfoa7vVzilNvHEAUi5jQnmFHpnxDx5jZdI1TpG8ny2g==
-  /ts-pnp/1.1.5:
+  /ts-pnp/1.1.5_typescript@3.7.4:
+    dependencies:
+      typescript: 3.7.4
     dev: true
     engines:
       node: '>=6'
+    peerDependencies:
+      typescript: '*'
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -10737,5 +10746,6 @@ specifiers:
   rollup-plugin-babel: ^4.3.3
   rollup-plugin-svg: ^2.0.0
   rollup-plugin-typescript2: ^0.24.3
+  tslib: ^1.10.0
   typescript: ^3.6.4
   webfontloader: ^1.6.28
