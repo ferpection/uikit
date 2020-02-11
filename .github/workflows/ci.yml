@@ -3,8 +3,7 @@ name: UiKit CI
 on: [push]
 
 jobs:
-  test:
-
+  build:
     runs-on: ubuntu-latest
 
     strategy:
@@ -17,9 +16,31 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: curl -L https://unpkg.com/@pnpm/self-installer | node
-    - run: pnpm install --shamefully-hoist
-    - run: pnpm run build
-    - run: pnpm test
+    - name: Use PNPM
+      run: curl -L https://unpkg.com/@pnpm/self-installer | node
+    - name: Install dependencies
+      run: pnpm install --shamefully-hoist
+    - name: Build package
+      run: pnpm run build
+
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Use PNPM
+      run: curl -L https://unpkg.com/@pnpm/self-installer | node
+    - name: Install dependencies
+      run: pnpm install --shamefully-hoist
+    - name: Test
+      run: pnpm test
       env:
         CI: true
