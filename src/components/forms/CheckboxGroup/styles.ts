@@ -24,7 +24,7 @@ export const innerCheckboxStyles = css`
   li + & label {
     border-top: none;
   }
-  & input[type="checkbox"] + div {
+  & input[type='checkbox'] + div {
     left: 12px;
   }
   &:first-of-type label {

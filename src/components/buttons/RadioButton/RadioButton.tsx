@@ -2,7 +2,15 @@
 import { FC, ChangeEvent, FocusEvent } from 'react'
 import { jsx } from '@emotion/core'
 
-import { radioStyles, labelStyles, inputStyles, labelStylesDisabled, childrenStyles, radioStylesTopSticked, radioStylesBottomSticked } from './styles'
+import {
+  radioStyles,
+  labelStyles,
+  inputStyles,
+  labelStylesDisabled,
+  childrenStyles,
+  radioStylesTopSticked,
+  radioStylesBottomSticked,
+} from './styles'
 
 export const RadioButton: FC<RadioButtonProps> = props => (
   <label css={[labelStyles, props.isDisabled && labelStylesDisabled]}>
@@ -16,10 +24,14 @@ export const RadioButton: FC<RadioButtonProps> = props => (
       onFocus={props.onFocus}
       onBlur={props.onBlur}
     />
-    <div css={[radioStyles, props.radioPosition === 'top' && radioStylesTopSticked, props.radioPosition === 'bottom' && radioStylesBottomSticked]} />
-    <div css={[childrenStyles]} >
-      {props.children}
-    </div>
+    <div
+      css={[
+        radioStyles,
+        props.radioPosition === 'top' && radioStylesTopSticked,
+        props.radioPosition === 'bottom' && radioStylesBottomSticked,
+      ]}
+    />
+    <div css={[childrenStyles]}>{props.children}</div>
   </label>
 )
 

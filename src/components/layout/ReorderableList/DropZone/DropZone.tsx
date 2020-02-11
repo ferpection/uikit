@@ -13,10 +13,7 @@ export const DropZone: FC<DropZoneProps> = props => {
 
   return (
     <div
-      css={[
-        dropzone,
-        mouseIsOver ? dropzoneOver : null,
-      ]}
+      css={[dropzone, mouseIsOver ? dropzoneOver : null]}
       onDragOver={event => {
         event.preventDefault()
         event.dataTransfer.dropEffect = 'move'

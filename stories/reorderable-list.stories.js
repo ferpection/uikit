@@ -14,8 +14,12 @@ storiesOf('Layout|ReorderableList', module)
       <h1>{ReorderableList.name}</h1>
       <p>The components needs two properties:</p>
       <ul>
-        <li><code>items</code>: A list of items containing a <code>uuid</code> and <code>order</code></li>
-        <li><code>renderItem</code>: A render function that takes an item and returns a <code>ReactNode</code></li>
+        <li>
+          <code>items</code>: A list of items containing a <code>uuid</code> and <code>order</code>
+        </li>
+        <li>
+          <code>renderItem</code>: A render function that takes an item and returns a <code>ReactNode</code>
+        </li>
       </ul>
       <ReorderableList
         items={[
@@ -24,10 +28,8 @@ storiesOf('Layout|ReorderableList', module)
           { uuid: '2', order: 30 },
           { uuid: '3', order: 20 },
         ]}
-        renderItem={(item) => (
-          <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>
-            div #{item.uuid}
-          </div>
+        renderItem={item => (
+          <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>div #{item.uuid}</div>
         )}
       />
     </>

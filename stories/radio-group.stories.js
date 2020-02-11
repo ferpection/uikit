@@ -94,7 +94,9 @@ storiesOf('Components|Forms/RadioGroup', module)
         <RadioButton value="three">Choice Three</RadioButton>
       </RadioGroup>
       <h2>
-        <code>{DatePickerField.name} within a <code>div</code></code>
+        <code>
+          {DatePickerField.name} within a <code>div</code>
+        </code>
       </h2>
       <pre>
         <code>
@@ -104,7 +106,7 @@ storiesOf('Components|Forms/RadioGroup', module)
           <br />
           &lt;RadioButton&gt;
           <br />
-            &lt;div&gt;Choice Two: &lt;DatePickerField /&gt;&lt;/div&gt;
+          &lt;div&gt;Choice Two: &lt;DatePickerField /&gt;&lt;/div&gt;
           <br />
           &lt;/RadioButton&gt;
           <br />
@@ -117,7 +119,9 @@ storiesOf('Components|Forms/RadioGroup', module)
       <RadioGroup value="three" onValueChange={action('value changed')}>
         <RadioButton value="one">Choice One</RadioButton>
         <RadioButton value="two">
-          <div>Choice Two: <DatePickerField /></div>
+          <div>
+            Choice Two: <DatePickerField />
+          </div>
         </RadioButton>
         <RadioButton value="three">Choice Three</RadioButton>
       </RadioGroup>

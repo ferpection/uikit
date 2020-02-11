@@ -94,7 +94,9 @@ storiesOf('Components|Forms/CheckboxGroup', module)
         <CheckboxButton value="three">Choice Three</CheckboxButton>
       </CheckboxGroup>
       <h2>
-        <code>{DatePickerField.name} within a <code>div</code></code>
+        <code>
+          {DatePickerField.name} within a <code>div</code>
+        </code>
       </h2>
       <pre>
         <code>
@@ -104,7 +106,7 @@ storiesOf('Components|Forms/CheckboxGroup', module)
           <br />
           &lt;CheckboxButton&gt;
           <br />
-            &lt;div&gt;Choice Two: &lt;DatePickerField /&gt;&lt;/div&gt;
+          &lt;div&gt;Choice Two: &lt;DatePickerField /&gt;&lt;/div&gt;
           <br />
           &lt;/CheckboxButton&gt;
           <br />
@@ -117,7 +119,9 @@ storiesOf('Components|Forms/CheckboxGroup', module)
       <CheckboxGroup value="three" onValueChange={action('value changed')}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">
-          <div>Choice Two: <DatePickerField /></div>
+          <div>
+            Choice Two: <DatePickerField />
+          </div>
         </CheckboxButton>
         <CheckboxButton value="three">Choice Three</CheckboxButton>
       </CheckboxGroup>

@@ -24,7 +24,7 @@ export const innerRadioStyles = css`
   li + & label {
     border-top: none;
   }
-  & input[type="radio"] + div {
+  & input[type='radio'] + div {
     left: 12px;
   }
   &:first-of-type label {

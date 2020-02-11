@@ -4,7 +4,7 @@ import DraggableItem from './DraggableItem/DraggableItem'
 import DropZone from './DropZone/DropZone'
 
 export function ReorderableList<T extends ReorderableItem>(props: ReorderableListProps<T>) {
-  const { renderItem = (arg: T) => arg as unknown as JSX.Element, items: data, onOrderChange = () => {} } = props
+  const { renderItem = (arg: T) => (arg as unknown) as JSX.Element, items: data, onOrderChange = () => {} } = props
   const orderItems = (itemA: T, itemB: T) => (itemA.order || 0) - (itemB.order || 0)
 
   const [items, setItems] = useState([...data].sort(orderItems))
@@ -55,9 +55,7 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
       .map(setTemporaryOrders)
       .sort(orderItems)
       .map(createWorkingData)
-    const itemsForDataBase = workingDataList
-      .filter(removeUnchangedItems)
-      .map(getItemFormWorkingData)
+    const itemsForDataBase = workingDataList.filter(removeUnchangedItems).map(getItemFormWorkingData)
     const itemsForState = workingDataList.map(getItemFormWorkingData)
 
     setItems(itemsForState)
@@ -73,20 +71,14 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
         const firstDropZonePosition = itemOrder - 5
         const lastDropZonePosition = itemOrder + 5
 
-        const hasDropZoneBefore =
-          draggedId != null && !uselessDropZones.includes(firstDropZonePosition)
+        const hasDropZoneBefore = draggedId != null && !uselessDropZones.includes(firstDropZonePosition)
         const hasDropZoneAfter =
-          draggedId != null &&
-          index === items.length - 1 &&
-          !uselessDropZones.includes(lastDropZonePosition)
+          draggedId != null && index === items.length - 1 && !uselessDropZones.includes(lastDropZonePosition)
 
         return (
           <Fragment key={item.uuid}>
             {hasDropZoneBefore && <DropZone onDrop={dt => handleDrop(dt, firstDropZonePosition)} />}
-            <DraggableItem
-              onDragStart={dt => handleDragStart(dt, item)}
-              onDragEnd={() => handleDragEnd()}
-            >
+            <DraggableItem onDragStart={dt => handleDragStart(dt, item)} onDragEnd={() => handleDragEnd()}>
               {renderItem(item)}
             </DraggableItem>
             {hasDropZoneAfter && <DropZone onDrop={dt => handleDrop(dt, lastDropZonePosition)} />}
