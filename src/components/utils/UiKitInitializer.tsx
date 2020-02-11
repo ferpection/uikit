@@ -5,19 +5,22 @@ import { I18nContext } from '../contexts/I18nContext'
 import { FontsLoader } from './FontsLoader'
 
 export const UiKitInitializer: FC<UiKitInitializerProps> = props => {
-  // eslint-disable-next-line no-unused-expressions
-  props.i18n?.loadNamespaces(['uikit'])
+  const t = props.i18n?.t?.bind(props.i18n)
+  const loadNamespaces = props.i18n?.loadNamespaces?.bind(props.i18n)
+  const addResourceBundle = props.i18n?.addResourceBundle?.bind(props.i18n)
+
+  loadNamespaces(['uikit'])
 
   return (
     <ThemeProvider theme={props.theme}>
       <FontsLoader />
       <I18nContext.Provider
         value={{
-          t: props.i18n.t || ((key: string) => key),
-          addTranslations: (language: string, translations: { [key: string]: string }) => {
-            // eslint-disable-next-line no-unused-expressions
-            props.i18n?.addResourceBundle(language, 'uikit', translations, true, true)
-          },
+          t: t || ((key: string) => {
+            console.log(`Trying to translate ${key}`)
+            return key
+          }),
+          addTranslations: (language: string, translations: { [key: string]: string }) => addResourceBundle(language, 'uikit', translations, true, true),
         }}
       >
         {props.children}
@@ -28,15 +31,17 @@ export const UiKitInitializer: FC<UiKitInitializerProps> = props => {
 
 export interface UiKitInitializerProps {
   theme?: ThemeProviderProps['theme']
-  i18n?: {
-    t: (key: string) => string
-    loadNamespaces: (ns: string[]) => any
-    addResourceBundle: (
-      lng: string,
-      ns: string,
-      resources: { [key: string]: string },
-      deep: boolean,
-      overwrite: boolean
-    ) => any
-  }
+  i18n?: I18nDelegate
+}
+
+export interface I18nDelegate {
+  t: (key: string) => string
+  loadNamespaces: (ns: string[]) => any
+  addResourceBundle: (
+    lng: string,
+    ns: string,
+    resources: { [key: string]: string },
+    deep: boolean,
+    overwrite: boolean
+  ) => any
 }
