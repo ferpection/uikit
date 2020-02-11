@@ -28,7 +28,6 @@ export const innerCheckboxStyles = css`
   }
   & input[type="checkbox"] + div {
     left: 12px;
-    top: 11px;
   }
   &:first-of-type label {
     border-radius: 3px 3px 0 0;

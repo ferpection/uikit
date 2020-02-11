@@ -10,6 +10,9 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 - New attribute `radioPosition` on `RadioButton`. Allow to stick the radio circle to the top or the bottom. Defaults to center.
 - New attribute `checkboxPosition` on `CheckboxButton`. Allow to stick the check square to the top or the bottom. Defaults to center.
 
+### Changed
+- `CheckboxGroup` and `RadioGroup` don't sticky the button on Y axis anymore. Positioning is now done on the relevant children buttons.
+
 ### Fixed
 - `DatePickerField` modal has now a `z-index` of 1 to be upper than regular fields.
 - `CheckboxGroup` and `RadioGroup` don't affect children's `div` anymore.
