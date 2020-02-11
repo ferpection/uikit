@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) for now.
 
 ## [Unreleased]
+### Fixed
+- Correct translated strings are display by `DatePickerField`
 
 ## [v0.0.27] - 2019-02-11
 ### Added

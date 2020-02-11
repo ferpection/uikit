@@ -22,27 +22,27 @@ import {
 import { englishStrings, frenchStrings } from './locales'
 
 const monthNamesShort = [
-  'januaryShort',
-  'februaryShort',
-  'marchShort',
-  'aprilShort',
-  'mayShort',
-  'juneShort',
-  'julyShort',
-  'augustShort',
-  'septemberShort',
-  'octoberShort',
-  'novemberShort',
-  'decemberShort',
+  'uikit:januaryShort',
+  'uikit:februaryShort',
+  'uikit:marchShort',
+  'uikit:aprilShort',
+  'uikit:mayShort',
+  'uikit:juneShort',
+  'uikit:julyShort',
+  'uikit:augustShort',
+  'uikit:septemberShort',
+  'uikit:octoberShort',
+  'uikit:novemberShort',
+  'uikit:decemberShort',
 ]
 const weekdayNamesShort = [
-  'mondayShort',
-  'tuesdayShort',
-  'wednesdayShort',
-  'thursdayShort',
-  'fridayShort',
-  'saturdayShort',
-  'sundayShort',
+  'uikit:mondayShort',
+  'uikit:tuesdayShort',
+  'uikit:wednesdayShort',
+  'uikit:thursdayShort',
+  'uikit:fridayShort',
+  'uikit:saturdayShort',
+  'uikit:sundayShort',
 ]
 
 export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDateProps, getForwardProps, isSmall }) => {
@@ -55,10 +55,10 @@ export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDatePr
     <div css={[isSmall ? smallCalendarContainer : calendarContainer]}>
       <div css={[buttonBar]}>
         <Button isFilled icon="arrow-left" {...getBackProps({ calendars })}>
-          {t('buttonPrevious')}
+          {t('uikit:buttonPrevious')}
         </Button>
         <Button isFilled {...getForwardProps({ calendars })}>
-          {t('buttonNext')} <FontAwesomeIcon size="sm" icon={{ prefix: 'fas', iconName: 'arrow-right' }} />
+          {t('uikit:buttonNext')} <FontAwesomeIcon size="sm" icon={{ prefix: 'fas', iconName: 'arrow-right' }} />
         </Button>
       </div>
       {calendars.map(calendar => (

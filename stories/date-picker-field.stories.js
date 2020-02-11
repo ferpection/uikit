@@ -42,5 +42,6 @@ storiesOf('Components|Forms/DatePickerField', module)
       <p>
         The {DatePickerField.name} acts like a regular {TextField.name} plus some specificities.
       </p>
+      <p><strong>The sample is wrapped with {UiKitInitializer.name} to handle the translation using i18next.</strong> i18next is not provided with this package. You have to install it and configure it yourself.</p>
     </UiKitInitializer>
   ))
