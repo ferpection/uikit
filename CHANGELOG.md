@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) for now.
 
 ## [Unreleased]
+
+## [v0.0.27] - 2019-02-11
 ### Added
 - New component `ReoderableList` to make list of components reorderable using drag and drop.
 - New attribute `radioPosition` on `RadioButton` and `checkboxPosition` on `CheckboxButton`.
@@ -261,6 +263,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.0.27]: https://github.com/ferpection/uikit/tree/v0.0.27
 [v0.0.26]: https://github.com/ferpection/uikit/tree/v0.0.26
 [v0.0.25]: https://github.com/ferpection/uikit/tree/v0.0.25
 [v0.0.24]: https://github.com/ferpection/uikit/tree/v0.0.24

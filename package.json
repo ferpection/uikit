@@ -1,6 +1,6 @@
 {
   "name": "@ferpection/uikit",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "Technical implementation of the Ferpection design system",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -30,7 +30,7 @@
     "format": "prettier --write '{src,stories,.storybook}/**/*.{js,ts,tsx}'",
     "publish:storybook": "pnpm run build:storybook && gh-pages -d storybook-static",
     "prepublishOnly": "pnpm run format && pnpm run test:lint -- --fix && pnpm run build",
-    "postpublish": "pnpm run build:clean"
+    "postpublish": "pnpm run build:clean && echo \"Don't forget to publish the storybook for ${npm_package_name}@v${npm_package_version}\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
