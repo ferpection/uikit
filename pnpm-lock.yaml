@@ -25,6 +25,7 @@ devDependencies:
   '@types/randomstring': 1.1.6
   '@types/react': 16.9.17
   '@types/react-dom': 16.9.4
+  '@types/react-router': 5.1.4
   '@types/react-router-dom': 5.1.3
   '@types/webfontloader': 1.6.29
   '@typescript-eslint/eslint-plugin': 2.16.0_a539a7c03a3cd273ce58bf2cbe602e38
@@ -1879,6 +1880,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-+o2igcuZA3xtOoFH56s+MCZVidwlJNcJID57DSCyawS2i910yG9vkwehCjJNZ6ImhCR5S9DbvIJKyYHcMyOfMw==
+  /@types/history/4.7.5:
+    dev: true
+    resolution:
+      integrity: sha512-wLD/Aq2VggCJXSjxEwrMafIP51Z+13H78nXIX0ABEuIGhmB5sNGbR113MOKo+yfw+RDo1ZU3DM6yfnnRF/+ouw==
   /@types/is-function/1.0.0:
     dev: true
     resolution:
@@ -1936,8 +1941,8 @@ packages:
       integrity: sha512-pCq7AkOvjE65jkGS5fQwQhvUp4+4PVD9g39gXLZViP2UqFiFzsEpB3PKf0O6mdbKsewSK8N14/eegisa/0CwnA==
   /@types/react-router/5.1.4:
     dependencies:
-      '@types/history': 4.7.4
-      '@types/react': 16.9.17
+      '@types/history': 4.7.5
+      '@types/react': 16.9.19
     dev: true
     resolution:
       integrity: sha512-PZtnBuyfL07sqCJvGg3z+0+kt6fobc/xmle08jBiezLS8FrmGeiGkJnuxL/8Zgy9L83ypUhniV5atZn/L8n9MQ==
@@ -10718,6 +10723,7 @@ specifiers:
   '@types/randomstring': ^1.1.6
   '@types/react': ^16.9.9
   '@types/react-dom': ^16.9.2
+  '@types/react-router': ^5.1.4
   '@types/react-router-dom': ^5.1.0
   '@types/webfontloader': ^1.6.29
   '@typescript-eslint/eslint-plugin': ^2.4.0
