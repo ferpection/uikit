@@ -8,7 +8,6 @@ export const checkboxStyles = css`
   appearance: none;
   position: absolute;
   left: 0;
-  top: 2px;
   width: 18px;
   height: 18px;
   background-color: white;
@@ -47,9 +46,18 @@ export const checkboxStyles = css`
   }
 `
 
+export const checkboxStylesTopSticked = css`
+  top: 2px;
+`
+
+export const checkboxStylesBottomSticked = css`
+  bottom: 5px;
+`
+
 export const labelStyles = css`
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
   padding-left: 32px;
   margin: 10px 20px;
   font-size: 15px;
@@ -73,4 +81,9 @@ export const labelStylesDisabled = css`
 
 export const inputStyles = css`
   display: none;
+`
+
+export const childrenStyles = css`
+  position: relative;
+  flex-grow: 1;
 `

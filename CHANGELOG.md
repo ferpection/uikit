@@ -8,6 +8,7 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 ### Added
 - New component `ReoderableList` to make list of components reorderable using drag and drop.
 - New attribute `radioPosition` on `RadioButton`. Allow to stick the radio circle to the top or the bottom. Defaults to center.
+- New attribute `checkboxPosition` on `CheckboxButton`. Allow to stick the check square to the top or the bottom. Defaults to center.
 
 ## [v0.0.26] - 2019-02-10
 ### Added
