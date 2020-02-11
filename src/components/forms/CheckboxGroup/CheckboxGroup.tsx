@@ -49,6 +49,7 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
               isDisabled,
               onValueChange: handleChange,
               isChecked: values.includes(child.props.value),
+              checkboxPosition: 'center',
             })}
           </li>
         )

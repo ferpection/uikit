@@ -8,7 +8,7 @@ import { listStyles, listItemStyles, innerRadioStyles, innerRadioStylesDisabled 
 
 export const RadioGroup: FC<RadioGroupProps> = props => {
   const [value, setValue] = useState(props.value || '')
-  const { onValueChange = () => {}, isDisabled, onBlur: handleBlur, onFocus: handleFocus } = props
+  const { onValueChange = () => {}, isDisabled, onBlur: handleBlur, onFocus: handleFocus, ...otherProps } = props
 
   useEffect(() => {
     setValue(props.value)
@@ -21,7 +21,7 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => setValue(event.target.value)
 
   return (
-    <ul css={[listStyles]} onBlur={handleBlur} onFocus={handleFocus}>
+    <ul css={[listStyles]} onBlur={handleBlur} onFocus={handleFocus} {...otherProps}>
       {Children.map(props.children, (child, index) => {
         if (!isValidElement(child)) {
           return null
@@ -36,6 +36,7 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
               isDisabled,
               onValueChange: handleChange,
               isChecked: child.props.value === value,
+              radioPosition: 'center',
             })}
           </li>
         )

@@ -13,11 +13,9 @@ export const listItemStyles = css`
 export const innerRadioStyles = css`
   & label {
     padding: 10px;
-    padding-left: 10px;
-    border: 1px solid #ddd;
     padding-left: 43px;
     margin: 0;
-    margin-top: 0px;
+    border: 1px solid #ddd;
     transition: background-color 0.2s ease-in-out;
   }
   & label:contain(input[type='radio']:checked) {
@@ -36,6 +34,7 @@ export const innerRadioStyles = css`
     border-radius: 0 0 3px 3px;
   }
 `
+
 export const innerRadioStylesDisabled = css`
   color: #b0b0b0;
 
