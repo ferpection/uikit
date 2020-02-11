@@ -8,7 +8,6 @@ export const radioStyles = css`
   appearance: none;
   position: absolute;
   left: 0;
-  top: 2px;
   width: 20px;
   height: 20px;
   background-color: white;
@@ -49,9 +48,18 @@ export const radioStyles = css`
   }
 `
 
+export const radioStylesTopSticked = css`
+  top: 2px;
+`
+
+export const radioStylesBottomSticked = css`
+  bottom: 4px;
+`
+
 export const labelStyles = css`
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
   padding-left: 32px;
   margin: 10px 20px;
   font-size: 15px;
@@ -75,4 +83,9 @@ export const labelStylesDisabled = css`
 
 export const inputStyles = css`
   display: none;
+`
+
+export const childrenStyles = css`
+  position: relative;
+  flex-grow: 1;
 `
