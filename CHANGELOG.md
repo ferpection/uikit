@@ -10,6 +10,10 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 - New attribute `radioPosition` on `RadioButton`. Allow to stick the radio circle to the top or the bottom. Defaults to center.
 - New attribute `checkboxPosition` on `CheckboxButton`. Allow to stick the check square to the top or the bottom. Defaults to center.
 
+### Fixed
+- `DatePickerField` modal has now a `z-index` of 1 to be upper than regular fields.
+- `CheckboxGroup` and `RadioGroup` don't affect children's `div` anymore.
+
 ## [v0.0.26] - 2019-02-10
 ### Added
 - New attribute `isOrdered` on `TextFieldList`. Basicaly, `<ol>` becomes `<ul>` when not ordered.
