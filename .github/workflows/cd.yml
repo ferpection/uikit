@@ -69,5 +69,5 @@ jobs:
     - name: Publish storybook
       uses: peaceiris/actions-gh-pages@v3
       with:
-        deploy_key: ${{ secrets.GITHUB_MINDSERS_TOKEN }}
+        personal_token: ${{ secrets.GITHUB_MINDSERS_TOKEN }}
         publish_dir: ./storybook-static
