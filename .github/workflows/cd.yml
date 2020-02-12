@@ -7,21 +7,12 @@ on:
     - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 jobs:
-  build:
+  github:
+    name: Create a new Github release
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-    - name: Use PNPM
-      run: curl -L https://unpkg.com/@pnpm/self-installer | node
-    - name: Install dependencies
-      run: pnpm install --shamefully-hoist
-    - name: Build package
-      run: pnpm run build
     - name: Get Changelog Entry
       id: changelog_reader
       uses: mindsers/changelog-reader-action@v1.0.1
@@ -39,3 +30,41 @@ jobs:
         body: ${{ steps.changelog_reader.outputs.log_entry }} # This pulls from the GET CHANGELOG ENTRY step above, referencing it's ID to get its outputs object, which include a `log_entry`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
         draft: false
         prerelease: false
+  npm:
+    name: Deploy Package on NPM
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Use PNPM
+      run: curl -L https://unpkg.com/@pnpm/self-installer | node
+    - name: Install dependencies
+      run: pnpm install --shamefully-hoist
+    - name: Build storybook
+      run: pnpm run build:storybook
+    - name: Publish storybook
+      run: pnpm run publish:storybook
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+  storybook:
+    name: Deploy Storybook on Github Pages
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Use PNPM
+      run: curl -L https://unpkg.com/@pnpm/self-installer | node
+    - name: Install dependencies
+      run: pnpm install --shamefully-hoist
+    - name: Build storybook
+      run: pnpm run build:storybook
+    - name: Publish storybook
+      run: pnpm run publish:storybook
