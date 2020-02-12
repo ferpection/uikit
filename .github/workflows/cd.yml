@@ -73,7 +73,7 @@ jobs:
         git init
         git add .
         git commit -m "Deploy to Github Pages"
-        git push --force --quiet "https://${GITHUB_TOKEN}@$github.com/ferpection/uikit.git" master:gh-pages
+        git push --force --quiet "https://${GITHUB_TOKEN}@github.com/ferpection/uikit.git" master:gh-pages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       working-directory: ./storybook-static
