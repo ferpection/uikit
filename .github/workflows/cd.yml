@@ -64,7 +64,7 @@ jobs:
       run: curl -L https://unpkg.com/@pnpm/self-installer | node
     - name: Install dependencies
       run: pnpm install --shamefully-hoist
-    - name: Build storybook
-      run: pnpm run build:storybook
+    - name: Configure Git
+      run: git config --global user.email "nobody@ferpection.com" && git config --global user.name "Github Actions"
     - name: Publish storybook
       run: pnpm run publish:storybook
