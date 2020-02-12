@@ -26,6 +26,7 @@ storiesOf('Iconography|FerpectionBadgeIcon', module)
           'target',
           'test',
           'tasks',
+          'device',
         ],
         'config',
       )}
@@ -47,6 +48,7 @@ storiesOf('Iconography|FerpectionBadgeIcon', module)
           'target',
           'test',
           'tasks',
+          'device',
         ],
         'config',
       )}

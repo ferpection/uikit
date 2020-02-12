@@ -28,6 +28,7 @@ storiesOf('Layout|ThematicSection', module)
           'target',
           'test',
           'tasks',
+          'device',
         ],
         'config',
       )}
@@ -50,6 +51,7 @@ storiesOf('Layout|ThematicSection', module)
           'target',
           'test',
           'tasks',
+          'device',
         ],
         'config',
       )}
