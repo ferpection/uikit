@@ -66,5 +66,12 @@ jobs:
       run: pnpm install --shamefully-hoist
     - name: Configure Git
       run: git config --global user.email "nobody@ferpection.com" && git config --global user.name "Github Actions"
+    - run: cd storybook-static
+    - run: git init
+    - run: git add . && git commit -m "Deploy to Github Pages"
     - name: Publish storybook
-      run: pnpm run publish:storybook
+      run: git push --force --quiet "https://${GITHUB_TOKEN}@$github.com/ferpection/uikit.git" master:gh-pages > /dev/null 2>&1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Cleaning
+      run: cd ../ && pnpm run build clean
