@@ -70,12 +70,12 @@ jobs:
       run: git config --global user.email "nobody@ferpection.com" && git config --global user.name "Github Actions"
     - name: Publish storybook
       run: |
-        cd storybook-static
         git init
         git add .
         git commit -m "Deploy to Github Pages"
-        git push --force --quiet "https://${GITHUB_TOKEN}@$github.com/ferpection/uikit.git" master:gh-pages > /dev/null 2>&1
+        git push --force --quiet "https://${GITHUB_TOKEN}@$github.com/ferpection/uikit.git" master:gh-pages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      working-directory: ./storybook-static
     - name: Cleaning
       run: pnpm run build clean
