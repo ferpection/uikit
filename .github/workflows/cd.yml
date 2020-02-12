@@ -1,6 +1,10 @@
 name: UiKit CD
 
-on: [push]
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 jobs:
   build:
@@ -24,4 +28,14 @@ jobs:
       with:
         version: ${{ github.ref }}
         path: ./CHANGELOG.md
-    - run: echo ${{ steps.changelog_reader.outputs.log_entry }}
+    - name: Create Github Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        body: ${{ steps.changelog_reader.outputs.log_entry }} # This pulls from the GET CHANGELOG ENTRY step above, referencing it's ID to get its outputs object, which include a `log_entry`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+        draft: false
+        prerelease: false
