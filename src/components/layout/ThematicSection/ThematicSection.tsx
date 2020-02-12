@@ -3,7 +3,7 @@ import React from 'react'
 import { ReactElementLike } from 'prop-types'
 import { jsx } from '@emotion/core'
 
-import { FerpectionBadgeIcon, FerpectionBadgeIconProps } from '../../iconography/FerpectionBadgeIcon'
+import { FerpectionBadgeIcon, FerpectionBadgeIconProps } from '../../iconography/FerpectionBadgeIcon/FerpectionBadgeIcon'
 import { Color } from '../../../colors'
 
 import { containerStyles, headerStyles, titleStyles, sectionStyles, titleTextStyles, logoStyles } from './styles'
