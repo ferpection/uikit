@@ -13,6 +13,7 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 - We wrapp the `DatePickerField` with `UiKitInitializer` only on its storybook to display
   the documentation with translation support.
 - The `RadioButton` can be disabled even on a non-disabled `RadioGroup`.
+- The `CheckboxButton` can be disabled even on a non-disabled `CheckboxGroup`.
 
 ### Fixed
 - Correct translated strings are display by `DatePickerField`

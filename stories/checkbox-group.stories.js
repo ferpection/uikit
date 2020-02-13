@@ -129,8 +129,6 @@ storiesOf('Components|Forms/CheckboxGroup', module)
   ))
   .add('disabled state', () => (
     <>
-      Disabled state must be added on the <code>{CheckboxGroup.name}</code> directly. Not on the{' '}
-      <code>{CheckboxButton.name}</code>.
       <h2>
         <code>isDisabled</code> on <code>{CheckboxGroup.name}</code>
       </h2>

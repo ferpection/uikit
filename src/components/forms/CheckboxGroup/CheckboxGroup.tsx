@@ -46,7 +46,7 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
             key={index}
           >
             {cloneElement(child, {
-              isDisabled,
+              isDisabled: child.props.isDisabled ? true : isDisabled,
               onValueChange: handleChange,
               isChecked: values.includes(child.props.value),
               checkboxPosition: 'center',
