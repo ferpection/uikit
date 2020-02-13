@@ -33,7 +33,7 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
             key={index}
           >
             {cloneElement(child, {
-              isDisabled,
+              isDisabled: child.props.isDisabled ? true : isDisabled,
               onValueChange: handleChange,
               isChecked: child.props.value === value,
               radioPosition: 'center',

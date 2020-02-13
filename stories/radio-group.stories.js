@@ -129,8 +129,6 @@ storiesOf('Components|Forms/RadioGroup', module)
   ))
   .add('disabled state', () => (
     <>
-      Disabled state must be added on the <code>{RadioGroup.name}</code> directly. Not on the{' '}
-      <code>{RadioButton.name}</code>.
       <h2>
         <code>isDisabled</code> on <code>{RadioGroup.name}</code>
       </h2>
