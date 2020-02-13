@@ -148,7 +148,7 @@ storiesOf('Components|Forms/CheckboxGroup', module)
           <br />
         </code>
       </pre>
-      <CheckboxGroup isDisabled>
+      <CheckboxGroup value="one" isDisabled>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">Choice Two</CheckboxButton>
         <CheckboxButton value="three">Choice Three</CheckboxButton>
@@ -170,10 +170,10 @@ storiesOf('Components|Forms/CheckboxGroup', module)
           <br />
         </code>
       </pre>
-      <CheckboxGroup>
-        <CheckboxButton>Choice One</CheckboxButton>
-        <CheckboxButton isDisabled>Choice Two</CheckboxButton>
-        <CheckboxButton>Choice Three</CheckboxButton>
+      <CheckboxGroup value="one">
+        <CheckboxButton value="one">Choice One</CheckboxButton>
+        <CheckboxButton value="two" isDisabled>Choice Two</CheckboxButton>
+        <CheckboxButton value="three">Choice Three</CheckboxButton>
       </CheckboxGroup>
     </>
   ))
