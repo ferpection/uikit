@@ -7,7 +7,7 @@ import { Color } from '../../../colors'
 export const PreTestBadgeIcon: React.FC<PreTestBadgeIconProps> = ({
   borderColor = {
     toHex: () => {},
-  }
+  },
 }) => {
   const styles = css`
     .cls-1 {

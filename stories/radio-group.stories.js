@@ -170,7 +170,9 @@ storiesOf('Components|Forms/RadioGroup', module)
       </pre>
       <RadioGroup value="one">
         <RadioButton value="one">Choice One</RadioButton>
-        <RadioButton value="two" isDisabled>Choice Two</RadioButton>
+        <RadioButton value="two" isDisabled>
+          Choice Two
+        </RadioButton>
         <RadioButton value="three">Choice Three</RadioButton>
       </RadioGroup>
     </>

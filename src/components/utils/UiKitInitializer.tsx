@@ -16,11 +16,14 @@ export const UiKitInitializer: FC<UiKitInitializerProps> = props => {
       <FontsLoader />
       <I18nContext.Provider
         value={{
-          t: t || ((key: string) => {
-            console.log(`Trying to translate ${key}`)
-            return key
-          }),
-          addTranslations: (language: string, translations: { [key: string]: string }) => addResourceBundle(language, 'uikit', translations, true, true),
+          t:
+            t ||
+            ((key: string) => {
+              console.log(`Trying to translate ${key}`)
+              return key
+            }),
+          addTranslations: (language: string, translations: { [key: string]: string }) =>
+            addResourceBundle(language, 'uikit', translations, true, true),
         }}
       >
         {props.children}

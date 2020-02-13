@@ -7,7 +7,7 @@ import { Color } from '../../../colors'
 export const ObjectivesBadgeIcon: React.FC<ObjectivesBadgeIconProps> = ({
   borderColor = {
     toHex: () => {},
-  }
+  },
 }) => {
   const svg = css`
     .cls-1 {
@@ -71,19 +71,13 @@ export const ObjectivesBadgeIcon: React.FC<ObjectivesBadgeIconProps> = ({
       <g className="cls-2">
         <g>
           <g className="cls-3">
-            <polygon
-              className="cls-4"
-              points="-28.11 77.56 5.23 95.12 35.66 28.61 32.27 26.18 3.6 70.65 -28.63 43.1"
-            />
+            <polygon className="cls-4" points="-28.11 77.56 5.23 95.12 35.66 28.61 32.27 26.18 3.6 70.65 -28.63 43.1" />
             <polygon className="cls-5" points="5.23 95.12 -28.18 68.22 -28.11 77.56" />
             <polygon className="cls-5" points="25.47 36.73 22.56 41.24 29.73 41.57 31.95 36.73" />
           </g>
           <circle className="cls-6" cx="37.25" cy="34.27" r="32.5" />
           <circle className="cls-7" cx="37.25" cy="34.27" r="26.5" />
-          <path
-            className="cls-7"
-            d="M37.1,16.38A17.89,17.89,0,0,0,24.55,47l25.3-25.29A17.84,17.84,0,0,0,37.1,16.38Z"
-          />
+          <path className="cls-7" d="M37.1,16.38A17.89,17.89,0,0,0,24.55,47l25.3-25.29A17.84,17.84,0,0,0,37.1,16.38Z" />
           <path className="cls-8" d="M24.55,47a17.89,17.89,0,0,0,25.3-25.29Z" />
           <path
             className="cls-9"

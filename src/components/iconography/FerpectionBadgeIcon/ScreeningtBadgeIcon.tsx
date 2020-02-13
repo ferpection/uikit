@@ -7,7 +7,7 @@ import { Color } from '../../../colors'
 export const ScreeningBadgeIcon: React.FC<ScreeningBadgeIconProps> = ({
   borderColor = {
     toHex: () => {},
-  }
+  },
 }) => {
   const styles = css`
     .cls-1 {

@@ -7,7 +7,7 @@ import { Color } from '../../../colors'
 export const PlanningBadgeIcon: React.FC<PlanningBadgeIconProps> = ({
   borderColor = {
     toHex: () => {},
-  }
+  },
 }) => {
   const styles = css`
     .cls-1 {
@@ -58,10 +58,7 @@ export const PlanningBadgeIcon: React.FC<PlanningBadgeIconProps> = ({
           className="cls-4"
           d="M15.55,26.29V51.16a3.21,3.21,0,0,0,3.21,3.21H56.41a3.21,3.21,0,0,0,3.21-3.21V26.29Z"
         />
-        <path
-          className="cls-5"
-          d="M59.62,17.18A3.21,3.21,0,0,0,56.41,14H18.76a3.21,3.21,0,0,0-3.21,3.21v9.11H59.62Z"
-        />
+        <path className="cls-5" d="M59.62,17.18A3.21,3.21,0,0,0,56.41,14H18.76a3.21,3.21,0,0,0-3.21,3.21v9.11H59.62Z" />
         <circle className="cls-6" cx="26.33" cy="20.22" r="2.61" />
         <circle className="cls-6" cx="48.84" cy="20.22" r="2.61" />
         <line className="cls-7" x1="26.33" x2="26.33" y1="20.22" y2="12.57" />

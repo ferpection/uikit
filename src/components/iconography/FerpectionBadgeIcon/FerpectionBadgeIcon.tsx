@@ -14,10 +14,7 @@ import { GoalsBadgeIcon } from './GoalsBadgeIcon'
 import { ConfigBadgeIcon } from './ConfigBadgeIcon'
 import { DeviceBadgeIcon } from './DeviceBadgeIcon'
 
-export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({
-  borderColor,
-  icon: iconName,
-}) => {
+export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({ borderColor, icon: iconName }) => {
   switch (iconName) {
     case 'config': {
       return <ConfigBadgeIcon borderColor={borderColor} />

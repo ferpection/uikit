@@ -7,7 +7,7 @@ import { Color } from '../../../colors'
 export const PostTestBadgeIcon: React.FC<PostTestBadgeIconProps> = ({
   borderColor = {
     toHex: () => {},
-  }
+  },
 }) => {
   const styles = css`
     .cls-1 {
@@ -59,10 +59,7 @@ export const PostTestBadgeIcon: React.FC<PostTestBadgeIconProps> = ({
         <path className="cls-3" d="M54.89,5.91a34,34,0,0,0-33.34,0L38.2,34.77Z" />
         <path className="cls-4" d="M20.93,6.25A33.89,33.89,0,0,0,4.25,35.11H37.58Z" />
         <path className="cls-5" d="M72.15,35.14A33.92,33.92,0,0,0,55.5,6.27L38.82,35.13Z" />
-        <path
-          className="cls-2"
-          d="M45.46,22.62A14.45,14.45,0,0,0,23.77,35.13h28.9A14.45,14.45,0,0,0,45.46,22.62Z"
-        />
+        <path className="cls-2" d="M45.46,22.62A14.45,14.45,0,0,0,23.77,35.13h28.9A14.45,14.45,0,0,0,45.46,22.62Z" />
         <circle className="cls-2" transform="translate(-11.89 18.94) rotate(-45)" cx="16.92" cy="23.82" r="6.53" />
         <path
           className="cls-4"

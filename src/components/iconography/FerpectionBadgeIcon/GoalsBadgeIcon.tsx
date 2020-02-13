@@ -7,7 +7,7 @@ import { Color } from '../../../colors'
 export const GoalsBadgeIcon: React.FC<GoalsBadgeIconProps> = ({
   borderColor = {
     toHex: () => {},
-  }
+  },
 }) => {
   const svg = css`
     .cls-1 {
@@ -131,10 +131,7 @@ export const GoalsBadgeIcon: React.FC<GoalsBadgeIconProps> = ({
               className="cls-10"
               points="63.15 77.56 96.48 95.12 126.92 28.61 123.53 26.18 94.85 70.65 62.63 43.1"
             />
-            <path
-              className="cls-11"
-              d="m58.87 31.67c-0.92-0.39-2.22 0.62-3 2.26h3.83c0.1-1.1-0.18-1.99-0.83-2.26z"
-            />
+            <path className="cls-11" d="m58.87 31.67c-0.92-0.39-2.22 0.62-3 2.26h3.83c0.1-1.1-0.18-1.99-0.83-2.26z" />
             <path
               className="cls-12"
               d="m58.56 35.24c-0.76 1.82-2.17 3-3.14 2.55s-1.14-2.22-0.37-4 2.17-2.95 3.14-2.55 1.14 2.19 0.37 4z"
