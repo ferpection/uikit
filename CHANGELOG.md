@@ -7,6 +7,7 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 ## [Unreleased]
 ### Added
 - New "device" option for `FerpectionBadgeIcon` used in `ThematicSection`.
+- Expose the `FontAwesomeIcon` from the font awesome react package.
 
 ### Changed
 - We wrapp the `DatePickerField` with `UiKitInitializer` only on its storybook to display

@@ -5,6 +5,7 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 
 iconLibrary.add(fas, fab, far)
 
+export { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export { Button } from './buttons/Button/Button'
 export { PlaceholderButton } from './buttons/PlaceholderButton/PlaceholderButton'
 export { ThemeProvider } from './contexts/ThemeContext'
