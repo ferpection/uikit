@@ -2,9 +2,11 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) for now.
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+
+## [v0.1.0] - 2019-02-13
 ### Added
 - New "device" option for `FerpectionBadgeIcon` used in `ThematicSection`.
 - Expose the `FontAwesomeIcon` from the font awesome react package.
@@ -24,7 +26,7 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 - New component `ReoderableList` to make list of components reorderable using drag and drop.
 - New attribute `radioPosition` on `RadioButton` and `checkboxPosition` on `CheckboxButton`.
   Allow to stick the radio circle and check box to the top or the bottom. Defaults to center.
-  The new attributes aren't available when used inside of a `CheckboxGroup` or a `RadioGroup`. Forced to center.
+  *The new attributes aren't available when used inside of a `CheckboxGroup` or a `RadioGroup`. Forced to center.*
 
 ### Changed
 - `CheckboxGroup` and `RadioGroup` don't sticky the button on Y axis anymore but on the center position.
@@ -43,7 +45,7 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 
 ### Changed
 - All form components can be updated using the `value` attribute.
-- **BREACKING CHANGES** The default behavior of `TextFieldList` is to be "not ordered".
+- **[BREAKING CHANGES]** The default behavior of `TextFieldList` is to be "not ordered".
   You'll have to add the new `isOrdered` attribute on your existing components.
 - `FormErrors` become `FormErrorMessages`.
 - `FormErrorMessages` try to translate the error key automatically.
@@ -54,7 +56,9 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 
 ### Fixed
 - Update types to allow no theme data into `ThemeProvider`.
-- **SECURITY** The list components don't use the `nth-child` CSS attributes in favor of `nth-of-type`.
+
+### Security
+- The list components don't use the `nth-child` CSS attributes in favor of `nth-of-type`.
 
 ## [v0.0.25] - 2019-01-15
 ### Added
@@ -122,7 +126,7 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 
 ### Changed
 - No outline on `Button`s, even on focus state
-- **BREACKING CHANGES**. The project now use pnpmjs instead of yarn as main package manager.
+- **[BREAKING CHANGES]** The project now use pnpmjs instead of yarn as main package manager.
   - The NPM package still can be installed using npm or yarn.
   - The other scripts (build, publish, start, etc) need pnpm.
     *If you have troubles running the `build` command after installing package using yarn or pnpm*
@@ -157,7 +161,7 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 - Using TypeScript as main language
 
 ### Removed
-- **BREACKING CHANGES**. Existing alternative package endpoints are removed for now.
+- **[BREAKING CHANGES]** Existing alternative package endpoints are removed for now.
   `@ferpection/uikit` works. `@ferpection/uikit/colors` or `@ferpection/uikit/components` won't work anymore.
 
 ### Fixed
@@ -190,11 +194,11 @@ and this project **doesn't** adhere to [Semantic Versioning](http://semver.org/s
 - New `TextFieldList` component to display a mutable list of `TextField`
 
 ### Changed
-- **BREAKING CHANGES**. New package endpoints.
+- **[BREAKING CHANGES]**. New package endpoints.
     - `@ferpection/uikit/colors` replaces `@ferpection/uikit/dist/colors`
     - `@ferpection/uikit/components` replaces `@ferpection/uikit/dist/components`
 - Smaller `@ferpection/uikit` package size: better dependency management
-- **BREAKING CHANGES**. Colors are not strings anymore but instance of `Color` type.
+- **[BREAKING CHANGES]**. Colors are not strings anymore but instance of `Color` type.
   This change gives developers the ability to work with different formats and make possible operating on colors
   (like applying alpha components and retrieve a shape from a given color). For more information,
   please read the `Color` class reference.
@@ -276,6 +280,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.1.0]: https://github.com/ferpection/uikit/tree/v0.1.0
 [v0.0.27]: https://github.com/ferpection/uikit/tree/v0.0.27
 [v0.0.26]: https://github.com/ferpection/uikit/tree/v0.0.26
 [v0.0.25]: https://github.com/ferpection/uikit/tree/v0.0.25
