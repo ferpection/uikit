@@ -49,10 +49,13 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
     const mergedValue = props.value.reduce((aggr, curr, index) => {
       const { id = RandomString.generate(20) } = values[index]
 
-      return [...aggr, {
-        id: id,
-        text: curr
-      }]
+      return [
+        ...aggr,
+        {
+          id: id,
+          text: curr,
+        },
+      ]
     }, [])
 
     setValues(mergedValue)
