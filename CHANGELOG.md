@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+
+## [v0.1.1] - 2019-02-14
 ### Fixed
 - `TextFieldList` do not loose focus when the user is writing something.
 
@@ -282,6 +284,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.1.1]: https://github.com/ferpection/uikit/tree/v0.1.1
 [v0.1.0]: https://github.com/ferpection/uikit/tree/v0.1.0
 [v0.0.27]: https://github.com/ferpection/uikit/tree/v0.0.27
 [v0.0.26]: https://github.com/ferpection/uikit/tree/v0.0.26
