@@ -4,12 +4,12 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs } from '@storybook/addon-knobs'
 
-import { ReorderableList } from '../src/components/index.ts'
+import { ReorderableList, DragHandle, TextField } from '../src/components/index.ts'
 
 storiesOf('Layout|ReorderableList', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
-  .add('with text', () => (
+  .add('simple case', () => (
     <>
       <h1>{ReorderableList.name}</h1>
       <p>The components needs two properties:</p>
@@ -30,6 +30,25 @@ storiesOf('Layout|ReorderableList', module)
         ]}
         renderItem={item => (
           <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>div #{item.uuid}</div>
+        )}
+      />
+    </>
+  ))
+  .add('with drag handle', () => (
+    <>
+      <h1>{ReorderableList.name}</h1>
+      <p>The components can let you chose how to handle the drag.</p>
+      <p>A <code>&lt;DragHandle /&gt;</code> component can be placed anywhere you want to change where the user can start the drag.</p>
+      <ReorderableList
+        items={[
+          { uuid: '0', order: 40 },
+          { uuid: '1', order: 10 },
+          { uuid: '2', order: 30 },
+          { uuid: '3', order: 20 },
+        ]}
+        useExternalDragHandle={true}
+        renderItem={item => (
+          <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}><DragHandle />div #{item.uuid} : <TextField isSmall /></div>
         )}
       />
     </>
