@@ -19,8 +19,8 @@ const DraggableItem: FC<DraggableItemProps> = props => {
       <DragContext.Provider
         value={{
           dragEventEnabled: draggable,
-          enableDragEvent: () => setDraggable(true),
-          disableDragEvent: () => setDraggable(false),
+          enableDragEvent: () => !isDragHandle && setDraggable(true),
+          disableDragEvent: () => !isDragHandle && setDraggable(false),
         }}
       >
         {children}
