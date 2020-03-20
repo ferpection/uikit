@@ -1,15 +1,19 @@
-import React, { useContext } from 'react'
+/** @jsx jsx */
+import { FC, useContext } from 'react'
+import { jsx } from '@emotion/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { DragContext } from '../DragContext'
 
-export const DragHandle = () => {
+import { defaultHandle } from './styles'
+
+export const DragHandle: FC = () => {
   const { enableDragEvent, disableDragEvent } = useContext(DragContext)
 
   return (
-    <div draggable={false} onMouseDown={() => enableDragEvent()} onMouseLeave={() => disableDragEvent()} >
+    <span css={[defaultHandle]} draggable={false} onMouseDown={() => enableDragEvent()} onMouseLeave={() => disableDragEvent()} >
       <FontAwesomeIcon icon="grip-vertical" size="sm" />
-    </div>
+    </span>
   )
 }
 
