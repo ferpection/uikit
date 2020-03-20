@@ -48,7 +48,20 @@ storiesOf('Layout|ReorderableList', module)
         ]}
         useExternalDragHandle
         renderItem={item => (
-          <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}><DragHandle />div #{item.uuid} : <TextField isSmall /></div>
+          <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}><DragHandle /><TextField isSmall /> (div #{item.uuid})</div>
+        )}
+      />
+      <p>User can customize the <code>DragHandle</code> using the <code>children</code> prop.</p>
+      <ReorderableList
+        items={[
+          { uuid: '0', order: 40 },
+          { uuid: '1', order: 10 },
+          { uuid: '2', order: 30 },
+          { uuid: '3', order: 20 },
+        ]}
+        useExternalDragHandle
+        renderItem={item => (
+          <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}><DragHandle><span>div #{item.uuid} :</span></DragHandle><TextField isSmall /></div>
         )}
       />
     </>
