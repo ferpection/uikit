@@ -38,7 +38,8 @@ storiesOf('Layout|ReorderableList', module)
     <>
       <h1>{ReorderableList.name}</h1>
       <p>The components can let you chose how to handle the drag.</p>
-      <p>A <code>&lt;DragHandle /&gt;</code> component can be placed anywhere you want to change where the user can start the drag.</p>
+      <p>A <code>DragHandle</code> component can be placed anywhere you want to change where the user can start the drag.</p>
+      <p>To do so, the user has to add the <code>useExternalDragHandle</code> to the <code>ReorderableList</code> component.</p>
       <ReorderableList
         items={[
           { uuid: '0', order: 40 },
@@ -51,7 +52,7 @@ storiesOf('Layout|ReorderableList', module)
           <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}><DragHandle /><TextField isSmall /> (div #{item.uuid})</div>
         )}
       />
-      <p>User can customize the <code>DragHandle</code> using the <code>children</code> prop.</p>
+      <p>Users can customize the <code>DragHandle</code> using the <code>children</code> prop.</p>
       <ReorderableList
         items={[
           { uuid: '0', order: 40 },
