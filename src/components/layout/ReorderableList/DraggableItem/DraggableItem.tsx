@@ -7,7 +7,7 @@ import { DragContext } from '../DragContext'
 
 const DraggableItem: FC<DraggableItemProps> = props => {
   const { children, onDragStart = () => {}, onDragEnd = () => {}, isDragHandle = true } = props
-  const [draggable, setDraggable] = useState(false)
+  const [draggable, setDraggable] = useState(isDragHandle)
 
   return (
     <div
@@ -16,7 +16,13 @@ const DraggableItem: FC<DraggableItemProps> = props => {
       onDragStart={event => onDragStart(event.dataTransfer)}
       onDragEnd={event => onDragEnd(event.dataTransfer)}
     >
-      <DragContext.Provider value={{ onDragStart, onDragEnd, isActive: isDragHandle, setActive: setDraggable }}>
+      <DragContext.Provider
+        value={{
+          dragEventEnabled: draggable,
+          enableDragEvent: () => setDraggable(true),
+          disableDragEvent: () => setDraggable(false),
+        }}
+      >
         {children}
       </DragContext.Provider>
     </div>

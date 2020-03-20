@@ -1,17 +1,15 @@
 import { createContext } from 'react'
 
 interface DragOptions {
-  onDragStart(data: DataTransfer): void
-  onDragEnd(data: DataTransfer): void
-  isActive: boolean
-  setActive(state: boolean): void
+  dragEventEnabled: boolean
+  enableDragEvent(): void
+  disableDragEvent(): void
 }
 
 const defaultDragOptions: DragOptions = {
-  onDragStart() {},
-  onDragEnd() {},
-  setActive() {},
-  isActive: false,
+  enableDragEvent() {},
+  disableDragEvent() {},
+  dragEventEnabled: false,
 }
 
 export const DragContext = createContext(defaultDragOptions)

@@ -4,10 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { DragContext } from '../DragContext'
 
 export const DragHandle = () => {
-  const { setActive } = useContext(DragContext)
+  const { enableDragEvent, disableDragEvent } = useContext(DragContext)
 
   return (
-    <div draggable={false} onMouseDown={() => setActive(true)} onMouseLeave={() => setActive(false)} >
+    <div draggable={false} onMouseDown={() => enableDragEvent()} onMouseLeave={() => disableDragEvent()} >
       <FontAwesomeIcon icon="grip-vertical" size="sm" />
     </div>
   )
