@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+### Added
+- New `DragHandle` component to be used with the `ReorderableList`.
+  The goals is to delegate to the user the choice of what can trigger the dragn'drop behavior.
+- Using a new `useExternalDragHandle` attribute on a `ReorderableList` component,
+  the user can enable the `DragHandle` capabilities.
 
 ## [v0.1.1] - 2019-02-14
 ### Fixed
