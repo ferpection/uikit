@@ -4,7 +4,7 @@ import DraggableItem from './DraggableItem/DraggableItem'
 import DropZone from './DropZone/DropZone'
 
 export function ReorderableList<T extends ReorderableItem>(props: ReorderableListProps<T>) {
-  const { renderItem = (arg: T) => (arg as unknown) as JSX.Element, items: data, onOrderChange = () => {} } = props
+  const { renderItem = (arg: T) => (arg as unknown) as JSX.Element, items: data, onOrderChange = () => {}, useExternalDragHandle = false } = props
   const orderItems = (itemA: T, itemB: T) => (itemA.order || 0) - (itemB.order || 0)
 
   const [items, setItems] = useState([...data].sort(orderItems))
@@ -78,7 +78,7 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
         return (
           <Fragment key={item.uuid}>
             {hasDropZoneBefore && <DropZone onDrop={dt => handleDrop(dt, firstDropZonePosition)} />}
-            <DraggableItem onDragStart={dt => handleDragStart(dt, item)} onDragEnd={() => handleDragEnd()}>
+            <DraggableItem isDragHandle={!useExternalDragHandle} onDragStart={dt => handleDragStart(dt, item)} onDragEnd={() => handleDragEnd()}>
               {renderItem(item)}
             </DraggableItem>
             {hasDropZoneAfter && <DropZone onDrop={dt => handleDrop(dt, lastDropZonePosition)} />}
@@ -100,4 +100,5 @@ export interface ReorderableListProps<T extends ReorderableItem> {
   items: T[]
   renderItem?: (item: T) => JSX.Element | null
   onOrderChange?: (updatedItems: T[]) => void
+  useExternalDragHandle?: boolean
 }
