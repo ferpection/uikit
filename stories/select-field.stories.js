@@ -24,5 +24,6 @@ storiesOf('Components|Forms/SelectField', module)
       dataType={select('data type', ['text', 'email'])}
       isHighlighted={boolean('highlighted', false)}
       isDisabled={boolean('disabled', false)}
+      isSmall={boolean('is small', false)}
     />
   ))

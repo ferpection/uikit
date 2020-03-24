@@ -75,3 +75,10 @@ export const errorStyle = css`
     box-shadow: 0 0 0 16px ${C200_COLOR.toRGBA(0.1)};
   }
 `
+
+export const smallStyle = css`
+  padding: 0;
+  max-width: max-content;
+  display: inline-block;
+  text-align: center;
+`

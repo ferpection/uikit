@@ -6,10 +6,10 @@ import { I18nContext } from '../../contexts/I18nContext'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { FormProps } from '../form-props'
 
-import { baseStyle, placehoderStyle, highlightedStyle, disabledStyle, errorStyle } from './styles'
+import { baseStyle, placehoderStyle, highlightedStyle, disabledStyle, errorStyle, smallStyle } from './styles'
 
 export const SelectField: React.FC<SelectFieldProps> = props => {
-  const { placeholder, isHighlighted, isDisabled, isRequired, value: externalValue, children } = props
+  const { placeholder, isHighlighted, isDisabled, isRequired, isSmall = false, value: externalValue, children } = props
 
   const { addTranslations } = useContext(I18nContext)
   const [value, setValue] = useState(externalValue || '')
@@ -66,6 +66,7 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
           isHighlighted && highlightedStyle,
           !isValid && errorStyle,
           isDisabled && disabledStyle,
+          isSmall && smallStyle,
         ]}
         disabled={isDisabled}
         value={value}
@@ -83,6 +84,7 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
 
 export interface SelectFieldProps extends FormProps {
   isHighlighted: boolean
+  isSmall?: boolean
   value?: string
   onValueChange?: (value: string, event: SyntheticEvent) => void
 }

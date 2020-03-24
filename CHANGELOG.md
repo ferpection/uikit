@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   The goals is to delegate to the user the choice of what can trigger the dragn'drop behavior.
 - Using a new `useExternalDragHandle` attribute on a `ReorderableList` component,
   the user can enable the `DragHandle` capabilities.
+- User can display a smaller version of `SelectField`.
 
 ## [v0.1.1] - 2019-02-14
 ### Fixed
