@@ -57,6 +57,8 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
     onErrors(errors)
   }, [value])
 
+  const { className } = props
+
   return (
     <Fragment>
       <select
@@ -68,6 +70,7 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
           isDisabled && disabledStyle,
           isSmall && smallStyle,
         ]}
+        className={className}
         disabled={isDisabled}
         value={value}
         onChange={event => handleChanges(event)}
@@ -84,6 +87,7 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
 
 export interface SelectFieldProps extends FormProps {
   isHighlighted: boolean
+  className?: string
   isSmall?: boolean
   value?: string
   onValueChange?: (value: string, event: SyntheticEvent) => void

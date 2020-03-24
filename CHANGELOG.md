@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Using a new `useExternalDragHandle` attribute on a `ReorderableList` component,
   the user can enable the `DragHandle` capabilities.
 - User can display a smaller version of `SelectField`.
+- `SelectField` support the `className` attribute.
 
 ### Fixed
 - Add an option to test the small version of `TextField` in storybook.
