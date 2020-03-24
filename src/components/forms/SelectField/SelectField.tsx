@@ -9,7 +9,7 @@ import { FormProps } from '../form-props'
 import { baseStyle, placehoderStyle, highlightedStyle, disabledStyle, errorStyle, smallStyle } from './styles'
 
 export const SelectField: React.FC<SelectFieldProps> = props => {
-  const { placeholder, isHighlighted, isDisabled, isRequired, isSmall = false, value: externalValue, children } = props
+  const { value: externalValue } = props
 
   const { addTranslations } = useContext(I18nContext)
   const [value, setValue] = useState(externalValue || '')
@@ -33,6 +33,7 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
     onErrors = (e: { [errorKey: string]: any }) => setErrorMessages(e),
     onFocus: handleFocus = () => {},
     onBlur: handleBlur = () => {},
+    isRequired,
   } = props
 
   const isEmpty = value == null || value === ''
@@ -57,7 +58,14 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
     onErrors(errors)
   }, [value])
 
-  const { className } = props
+  const {
+    className,
+    isSmall = false,
+    placeholder,
+    isHighlighted,
+    isDisabled,
+    children,
+  } = props
 
   return (
     <Fragment>
