@@ -46,7 +46,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
   useEffect(() => onValueChange(values.map(value => value.text)), [values])
   useEffect(() => onErrors(flatErrorMessages), [errorMessages])
   useEffect(() => {
-    const mergedValue = props.value.reduce((aggr, curr, index) => {
+    const mergedValue = (props.value || []).reduce((aggr, curr, index) => {
       const { id = RandomString.generate(20) } = values[index]
 
       return [
