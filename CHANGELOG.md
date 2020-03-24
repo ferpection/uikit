@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   the user can enable the `DragHandle` capabilities.
 - User can display a smaller version of `SelectField`.
 
+### Fixed
+- Add an option to test the small version of `TextField` in storybook.
+
 ## [v0.1.1] - 2019-02-14
 ### Fixed
 - `TextFieldList` do not loose focus when the user is writing something.
