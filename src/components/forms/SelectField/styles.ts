@@ -77,6 +77,7 @@ export const errorStyle = css`
 `
 
 export const smallStyle = css`
+  height: 22px;
   padding: 0;
   max-width: max-content;
   display: inline-block;
