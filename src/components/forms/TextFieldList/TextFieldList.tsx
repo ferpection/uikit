@@ -22,14 +22,14 @@ import {
 } from './styles'
 
 export const TextFieldList: React.FC<TextFieldListProps> = props => {
-  const intialValues =
-    props.value != null
-      ? props.value.map(el => ({
-        id: RandomString.generate(20),
-        text: el,
-      }))
-      : []
+  const flatInitialValues = props.value || []
+  const intialValues = flatInitialValues.map(el => ({
+    id: RandomString.generate(20),
+    text: el,
+  }))
+
   const [values, setValues] = useState<{ id: string; text: string }[]>(intialValues)
+  const [handleFocus, handleBlur] = useMergedFocusHandlers(props)
   const [errorMessages, setErrorMessages] = useState<{
     [errorKey: string]: any
   }>({})
@@ -41,12 +41,10 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
       return Object.assign({}, aggr, curr)
     }, {})
 
-  const [handleFocus, handleBlur] = useMergedFocusHandlers(props)
-
   useEffect(() => onValueChange(values.map(value => value.text)), [values])
   useEffect(() => onErrors(flatErrorMessages), [errorMessages])
   useEffect(() => {
-    const mergedValue = (props.value || []).reduce((aggr, curr, index) => {
+    const mergedValue = flatInitialValues.reduce((aggr, curr, index) => {
       const { id = RandomString.generate(20) } = values[index]
 
       return [
@@ -59,7 +57,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
     }, [])
 
     setValues(mergedValue)
-  }, [...(props.value || [])])
+  }, [...flatInitialValues])
 
   const {
     isDisabled,
