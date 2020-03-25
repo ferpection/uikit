@@ -44,7 +44,7 @@ storiesOf('Components|Forms/TextField', module)
   .add('full example', () => (
     <TextField
       placeholder={text('placeholder', 'Fill the field')}
-      dataType={select('data type', ['text', 'email'])}
+      dataType={select('data type', ['text', 'email', 'number'])}
       rowCount={number('row count', 1)}
       isHighlighted={boolean('highlighted', false)}
       isDisabled={boolean('disabled', false)}

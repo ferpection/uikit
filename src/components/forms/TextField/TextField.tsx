@@ -128,7 +128,7 @@ export const TextField: React.FC<TextFieldProps> = props => {
 }
 
 export interface TextFieldProps extends FormProps {
-  dataType?: 'text' | 'email'
+  dataType?: 'text' | 'email' | 'number'
   rowCount?: number
   isHighlighted?: boolean
   hideErrors?: boolean
