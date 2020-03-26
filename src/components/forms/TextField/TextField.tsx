@@ -31,11 +31,13 @@ export const TextField: React.FC<TextFieldProps> = props => {
 
   addTranslations('en', {
     emailInvalid: 'Please enter an email address on this field.',
+    notANumber: 'Please enter a valid number on this field.',
     required: 'Please fill the field.',
   })
 
   addTranslations('fr', {
     emailInvalid: 'Vous devez écrire une adresse email valide.',
+    notANumber: 'Vous devez écrire un nombre dans ce champ.',
     required: 'Vous devez remplir le champ.',
   })
 
