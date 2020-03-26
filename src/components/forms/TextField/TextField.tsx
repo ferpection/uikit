@@ -67,6 +67,12 @@ export const TextField: React.FC<TextFieldProps> = props => {
       })
     }
 
+    if (dataType === 'number' && Number.isNaN(Number(value))) {
+      errors = Object.assign({}, errors, {
+        notANumber: { value },
+      })
+    }
+
     if (isRequired && (value == null || value === '')) {
       errors = Object.assign({}, errors, {
         required: {},
@@ -85,7 +91,7 @@ export const TextField: React.FC<TextFieldProps> = props => {
     <Fragment>
       {rowCount < 2 ? (
         <input
-          type={dataType}
+          type={dataType !== 'number' ? dataType : 'text'}
           css={[
             baseStyle,
             isHighlighted && highlightedStyle,
