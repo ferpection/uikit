@@ -31,7 +31,7 @@ storiesOf('Components|Forms/TextField', module)
   ))
   .add('error state', () => (
     <>
-      <TextField placeholder="This is a error input" dataType="email" />
+      <TextField placeholder="This is a error input" dataType="number" isRequired />
       <TextField rowCount={3} placeholder="This is a error textarea" dataType="email" />
     </>
   ))
