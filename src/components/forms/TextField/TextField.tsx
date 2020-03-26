@@ -87,11 +87,13 @@ export const TextField: React.FC<TextFieldProps> = props => {
     }
   }, [value])
 
+  const inputType = dataType === 'number' ? 'text' : dataType
+
   return (
     <Fragment>
       {rowCount < 2 ? (
         <input
-          type={dataType !== 'number' ? dataType : 'text'}
+          type={inputType}
           css={[
             baseStyle,
             isHighlighted && highlightedStyle,
