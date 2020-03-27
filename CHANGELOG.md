@@ -22,6 +22,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - The "add button"'s icon of the `TextFieldList` is now hidden when navigating using the keyboard
   to avoid having twice the same button (addition).
 
+### Changed
+- `onFocus` and `onBlur` is triggered in a more logical way.
+  - `TextFieldList` doesn't trigger twice the `onFocus` event when the user click on the delete button
+    after updating the input value. It is the same "`onFocus` session".
+  - When the user click only on the deletion or addition button the `onFocus` and `onBlur` are triggered once each.
+  - Keyboard navigation use now the same behavior.
+
 ### Fixed
 - `TextFieldList` can used again without value attribute.
 - The "delete button" of `TextFieldList` is displayed during keyboard navigation.
