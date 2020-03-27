@@ -41,10 +41,10 @@ export const hideMarker = css`
 export const hideAndShowIconOnHover = css`
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
-  li:hover & {
+  li:hover &, li:focus-within & {
     opacity: 1;
   }
-  li:hover {
+  li:hover, li:focus-within {
     list-style: none;
   }
 `
