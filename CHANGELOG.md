@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 - `TextFieldList` can used again without value attribute.
+- The "delete button" of `TextFieldList` is displayed during keyboard navigation.
 
 ## [v0.1.1] - 2019-02-14
 ### Fixed
