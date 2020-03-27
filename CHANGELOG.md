@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Using a new `useExternalDragHandle` attribute on a `ReorderableList` component,
   the user can enable the `DragHandle` capabilities.
 
+### Changed
+- The "add button"'s icon of the `TextFieldList` is now hidden when navigating using the keyboard
+  to avoid having twice the same button (addition).
+
 ### Fixed
 - `TextFieldList` can used again without value attribute.
 - The "delete button" of `TextFieldList` is displayed during keyboard navigation.
