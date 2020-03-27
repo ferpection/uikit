@@ -111,10 +111,8 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
               onFocus={() => handleFocus()}
               onBlur={() => handleBlur()}
               onMouseDown={() => handleFocus()}
-              onMouseUp={() => {
-                handleDeletion(value.id)
-                handleBlur()
-              }}
+              onClick={() => handleDeletion(value.id)}
+              onMouseUp={() => handleBlur()}
             />
           ) : null}
           <TextField
@@ -144,10 +142,8 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
               onFocus={() => handleFocus()}
               onBlur={() => handleBlur()}
               onMouseDown={() => handleFocus()}
-              onMouseUp={() => {
-                handleAddition()
-                handleBlur()
-              }}
+              onClick={() => handleAddition()}
+              onMouseUp={() => handleBlur()}
             />
           ) : null}
           <PlaceholderButton
