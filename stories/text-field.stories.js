@@ -48,5 +48,6 @@ storiesOf('Components|Forms/TextField', module)
       rowCount={number('row count', 1)}
       isHighlighted={boolean('highlighted', false)}
       isDisabled={boolean('disabled', false)}
+      isSmall={boolean('is small', false)}
     />
   ))

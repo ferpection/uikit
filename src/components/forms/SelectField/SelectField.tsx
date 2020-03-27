@@ -6,10 +6,10 @@ import { I18nContext } from '../../contexts/I18nContext'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { FormProps } from '../form-props'
 
-import { baseStyle, placehoderStyle, highlightedStyle, disabledStyle, errorStyle } from './styles'
+import { baseStyle, placehoderStyle, highlightedStyle, disabledStyle, errorStyle, smallStyle } from './styles'
 
 export const SelectField: React.FC<SelectFieldProps> = props => {
-  const { placeholder, isHighlighted, isDisabled, isRequired, value: externalValue, children } = props
+  const { value: externalValue } = props
 
   const { addTranslations } = useContext(I18nContext)
   const [value, setValue] = useState(externalValue || '')
@@ -30,9 +30,11 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
 
   const {
     onValueChange = () => {},
-    onErrors = (e: { [errorKey: string]: any }) => setErrorMessages(e),
+    onErrors = () => {},
     onFocus: handleFocus = () => {},
     onBlur: handleBlur = () => {},
+    isRequired,
+    hideErrors,
   } = props
 
   const isEmpty = value == null || value === ''
@@ -55,7 +57,20 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
 
     setValidity(Object.keys(errors).length <= 0)
     onErrors(errors)
+
+    if (!hideErrors) {
+      setErrorMessages(errors)
+    }
   }, [value])
+
+  const {
+    className,
+    isSmall = false,
+    placeholder,
+    isHighlighted,
+    isDisabled,
+    children,
+  } = props
 
   return (
     <Fragment>
@@ -66,7 +81,9 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
           isHighlighted && highlightedStyle,
           !isValid && errorStyle,
           isDisabled && disabledStyle,
+          isSmall && smallStyle,
         ]}
+        className={className}
         disabled={isDisabled}
         value={value}
         onChange={event => handleChanges(event)}
@@ -83,6 +100,9 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
 
 export interface SelectFieldProps extends FormProps {
   isHighlighted: boolean
+  className?: string
+  isSmall?: boolean
+  hideErrors?: boolean
   value?: string
   onValueChange?: (value: string, event: SyntheticEvent) => void
 }

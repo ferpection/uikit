@@ -10,6 +10,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   The goals is to delegate to the user the choice of what can trigger the dragn'drop behavior.
 - Using a new `useExternalDragHandle` attribute on a `ReorderableList` component,
   the user can enable the `DragHandle` capabilities.
+- User can display a smaller version of `SelectField`.
+- `SelectField` support the `className` attribute.
+- `SelectField` support the `hideErrors` attribute. When used no error message is displayed
+  but the field still shows the error state.
+
+### Fixed
+- Add an option to test the small version of `TextField` in storybook.
 
 ### Fixed
 - `TextFieldList` can used again without value attribute.
