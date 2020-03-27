@@ -141,6 +141,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
               onFocus={() => handleFocus()}
               onBlur={() => handleBlur()}
               onClick={() => handleAddition()}
+              tabIndex={-1}
             />
           ) : null}
           <PlaceholderButton
