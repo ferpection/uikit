@@ -83,6 +83,7 @@ export interface ButtonProps {
   actionType?: 'action' | 'positive' | 'negative'
   to?: string
   ariaLabel?: string
+  tabIndex?: number
   onClick?: (event: SyntheticEvent) => void
   onMouseUp?: (event?: SyntheticEvent) => void
   onMouseDown?: (event?: SyntheticEvent) => void

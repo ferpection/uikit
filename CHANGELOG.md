@@ -18,8 +18,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - Add an option to test the small version of `TextField` in storybook.
 
+### Changed
+- The "add button"'s icon of the `TextFieldList` is now hidden when navigating using the keyboard
+  to avoid having twice the same button (addition).
+
 ### Fixed
 - `TextFieldList` can used again without value attribute.
+- The "delete button" of `TextFieldList` is displayed during keyboard navigation.
 
 ## [v0.1.1] - 2019-02-14
 ### Fixed
