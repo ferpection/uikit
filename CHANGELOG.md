@@ -15,14 +15,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `SelectField` support the `hideErrors` attribute. When used no error message is displayed
   but the field still shows the error state.
 
-### Fixed
-- Add an option to test the small version of `TextField` in storybook.
-
 ### Changed
 - The "add button"'s icon of the `TextFieldList` is now hidden when navigating using the keyboard
   to avoid having twice the same button (addition).
-
-### Changed
 - `onFocus` and `onBlur` is triggered in a more logical way.
   - `TextFieldList` doesn't trigger twice the `onFocus` event when the user click on the delete button
     after updating the input value. It is the same "`onFocus` session".
@@ -32,6 +27,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - `TextFieldList` can used again without value attribute.
 - The "delete button" of `TextFieldList` is displayed during keyboard navigation.
+- Add an option to test the small version of `TextField` in storybook.
 
 ## [v0.1.1] - 2019-02-14
 ### Fixed
