@@ -43,7 +43,7 @@ storiesOf('Iconography|FontAwesomeIcon', module)
       <FontAwesomeIcon icon={['fas', 'angle-up']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fas', 'angry']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fas', 'ankh']} style={{ margin: 5 }} />
-      <FontAwesomeIcon icon={['fas', 'apple']} style={{ margin: 5 }} />
+      <FontAwesomeIcon icon={['fas', 'apple-alt']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fas', 'archive']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fas', 'archway']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fas', 'arrow-alt-circle-down']} style={{ margin: 5 }} />
@@ -78,7 +78,7 @@ storiesOf('Iconography|FontAwesomeIcon', module)
       <FontAwesomeIcon icon={['fas', 'balance-scale-left']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fas', 'balance-scale-right']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fas', 'ban']} style={{ margin: 5 }} />
-      <FontAwesomeIcon icon={['fas', 'ban-aid']} style={{ margin: 5 }} />
+      <FontAwesomeIcon icon={['fas', 'band-aid']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fas', 'bars']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fas', 'baseball-ball']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fas', 'basketball-ball']} style={{ margin: 5 }} />
@@ -86,7 +86,7 @@ storiesOf('Iconography|FontAwesomeIcon', module)
       <FontAwesomeIcon icon={['fas', 'battery-full']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fas', 'battery-half']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fas', 'battery-quarter']} style={{ margin: 5 }} />
-      <FontAwesomeIcon icon={['fas', 'battery-three-quarter']} style={{ margin: 5 }} />
+      <FontAwesomeIcon icon={['fas', 'battery-three-quarters']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fas', 'bed']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fas', 'beer']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fas', 'bell']} style={{ margin: 5 }} />
@@ -114,10 +114,10 @@ storiesOf('Iconography|FontAwesomeIcon', module)
       <FontAwesomeIcon icon={['far', 'calendar-minus']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['far', 'calendar-plus']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['far', 'calendar-times']} style={{ margin: 5 }} />
-      <FontAwesomeIcon icon={['far', 'carret-square-down']} style={{ margin: 5 }} />
-      <FontAwesomeIcon icon={['far', 'carret-square-left']} style={{ margin: 5 }} />
-      <FontAwesomeIcon icon={['far', 'carret-square-right']} style={{ margin: 5 }} />
-      <FontAwesomeIcon icon={['far', 'carret-square-up']} style={{ margin: 5 }} />
+      <FontAwesomeIcon icon={['far', 'caret-square-down']} style={{ margin: 5 }} />
+      <FontAwesomeIcon icon={['far', 'caret-square-left']} style={{ margin: 5 }} />
+      <FontAwesomeIcon icon={['far', 'caret-square-right']} style={{ margin: 5 }} />
+      <FontAwesomeIcon icon={['far', 'caret-square-up']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['far', 'chart-bar']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['far', 'check-circle']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['far', 'check-square']} style={{ margin: 5 }} />
@@ -129,7 +129,7 @@ storiesOf('Iconography|FontAwesomeIcon', module)
       <FontAwesomeIcon icon={['far', 'comment']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['far', 'comment-alt']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['far', 'comment-dots']} style={{ margin: 5 }} />
-      <FontAwesomeIcon icon={['far', 'compas']} style={{ margin: 5 }} />
+      <FontAwesomeIcon icon={['far', 'compass']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['far', 'copy']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['far', 'copyright']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['far', 'credit-card']} style={{ margin: 5 }} />
@@ -164,7 +164,7 @@ storiesOf('Iconography|FontAwesomeIcon', module)
       <FontAwesomeIcon icon={['far', 'grin-alt']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['far', 'grin-beam']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['far', 'grin-beam-sweat']} style={{ margin: 5 }} />
-      <FontAwesomeIcon icon={['far', 'grin-heart']} style={{ margin: 5 }} />
+      <FontAwesomeIcon icon={['far', 'grin-hearts']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['far', 'grin-squint']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['far', 'grin-squint-tears']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['far', 'grin-stars']} style={{ margin: 5 }} />
@@ -192,7 +192,7 @@ storiesOf('Iconography|FontAwesomeIcon', module)
       <FontAwesomeIcon icon={['fab', 'amazon-pay']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fab', 'amilia']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fab', 'android']} style={{ margin: 5 }} />
-      <FontAwesomeIcon icon={['fab', 'angelist']} style={{ margin: 5 }} />
+      <FontAwesomeIcon icon={['fab', 'angellist']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fab', 'angrycreative']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fab', 'angular']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fab', 'app-store']} style={{ margin: 5 }} />
@@ -202,7 +202,7 @@ storiesOf('Iconography|FontAwesomeIcon', module)
       <FontAwesomeIcon icon={['fab', 'apple-pay']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fab', 'artstation']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fab', 'asymmetrik']} style={{ margin: 5 }} />
-      <FontAwesomeIcon icon={['fab', 'atlasian']} style={{ margin: 5 }} />
+      <FontAwesomeIcon icon={['fab', 'atlassian']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fab', 'audible']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fab', 'autoprefixer']} style={{ margin: 5 }} />
       <FontAwesomeIcon icon={['fab', 'avianex']} style={{ margin: 5 }} />
