@@ -52,6 +52,7 @@ devDependencies:
   rollup-plugin-babel: 4.4.0_@babel+core@7.9.0+rollup@1.31.0
   rollup-plugin-svg: 2.0.0
   rollup-plugin-typescript2: 0.25.3_rollup@1.31.0+typescript@3.8.3
+  source-map: 0.7.3
   tslib: 1.11.1
   typescript: 3.8.3
 lockfileVersion: 5.1
@@ -8972,6 +8973,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
+  /source-map/0.7.3:
+    dev: true
+    engines:
+      node: '>= 8'
+    resolution:
+      integrity: sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==
   /space-separated-tokens/1.1.5:
     dev: true
     resolution:
@@ -10138,6 +10145,7 @@ specifiers:
   rollup-plugin-babel: ^4.4.0
   rollup-plugin-svg: ^2.0.0
   rollup-plugin-typescript2: ^0.25.3
+  source-map: ^0.7.3
   tslib: ^1.11.1
   typescript: ^3.8.3
   webfontloader: ^1.6.28

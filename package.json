@@ -95,6 +95,7 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-svg": "^2.0.0",
     "rollup-plugin-typescript2": "^0.25.3",
+    "source-map": "^0.7.3",
     "tslib": "^1.11.1",
     "typescript": "^3.8.3"
   }
