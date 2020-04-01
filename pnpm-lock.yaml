@@ -20,7 +20,7 @@ devDependencies:
   '@storybook/addon-viewport': 5.3.18_react-dom@16.13.1+react@16.13.1
   '@storybook/addons': 5.3.18_react-dom@16.13.1
   '@storybook/react': 5.3.18_e1e15fbf48f7f183f07e354cf6f4d02f
-  '@types/dayzed': 2.2.1
+  '@types/dayzed': 3.1.0
   '@types/prop-types': 15.7.3
   '@types/randomstring': 1.1.6
   '@types/react': 16.9.31
@@ -1959,12 +1959,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
-  /@types/dayzed/2.2.1:
+  /@types/dayzed/3.1.0:
     dependencies:
-      '@types/react': 16.9.19
+      '@types/react': 16.9.31
     dev: true
     resolution:
-      integrity: sha512-4uYx21HsZ6HV/sLaaK/1x6PiLuAxMVLCUISWAk2EoqUDOqDKvToOgP9uI1fzBk8wS1r/ozJSVZEx2X5e7DGKTw==
+      integrity: sha512-iGApJNHNW/uxLjYnCiUaDbLdvPOV6k0txWwmABwprwcR6ejJlVCYoD5MBEQ8+2luRB6oGPXW1o+4TgJMGWZO3Q==
   /@types/eslint-visitor-keys/1.0.0:
     dev: true
     resolution:
@@ -10111,7 +10111,7 @@ specifiers:
   '@storybook/addon-viewport': ^5.3.18
   '@storybook/addons': ^5.3.18
   '@storybook/react': ^5.3.18
-  '@types/dayzed': ^2.2.1
+  '@types/dayzed': ^3.1.0
   '@types/prop-types': ^15.7.3
   '@types/randomstring': ^1.1.6
   '@types/react': ^16.9.31
