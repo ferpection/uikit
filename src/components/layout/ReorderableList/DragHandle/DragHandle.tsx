@@ -21,7 +21,7 @@ export const DragHandle: FC = props => {
   }
 
   return (
-    <span css={[defaultHandle]} {...dragHandleProps} >
+    <span css={[defaultHandle]} {...dragHandleProps}>
       <FontAwesomeIcon icon="grip-vertical" size="sm" />
     </span>
   )

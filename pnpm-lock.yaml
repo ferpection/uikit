@@ -41,7 +41,7 @@ devDependencies:
   eslint-plugin-standard: 4.0.1_eslint@6.8.0
   gh-pages: 2.2.0
   i18next: 19.3.4
-  prettier: 1.19.1
+  prettier: 2.0.2
   prop-types: 15.7.2
   react: 16.13.1
   react-dom: 16.13.1_react@16.13.1
@@ -7653,13 +7653,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
-  /prettier/1.19.1:
+  /prettier/2.0.2:
     dev: true
     engines:
-      node: '>=4'
+      node: '>=10.13.0'
     hasBin: true
     resolution:
-      integrity: sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
+      integrity: sha512-5xJQIPT8BraI7ZnaDwSbu5zLrB6vvi8hVV58yHQ+QK64qrY40dULy0HSRlQ2/2IdzeBpjhDkqdcFBnFeDEMVdg==
   /pretty-error/2.1.1:
     dependencies:
       renderkid: 2.0.3
@@ -10133,7 +10133,7 @@ specifiers:
   eslint-plugin-standard: ^4.0.1
   gh-pages: ^2.2.0
   i18next: ^19.3.4
-  prettier: ^1.19.1
+  prettier: ^2.0.2
   prop-types: ^15.7.2
   randomstring: ^1.1.5
   react: ^16.13.1

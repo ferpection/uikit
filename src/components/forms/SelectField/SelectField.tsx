@@ -63,14 +63,7 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
     }
   }, [value])
 
-  const {
-    className,
-    isSmall = false,
-    placeholder,
-    isHighlighted,
-    isDisabled,
-    children,
-  } = props
+  const { className, isSmall = false, placeholder, isHighlighted, isDisabled, children } = props
 
   return (
     <Fragment>

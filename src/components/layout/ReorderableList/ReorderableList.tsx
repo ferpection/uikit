@@ -4,7 +4,12 @@ import DraggableItem from './DraggableItem/DraggableItem'
 import DropZone from './DropZone/DropZone'
 
 export function ReorderableList<T extends ReorderableItem>(props: ReorderableListProps<T>) {
-  const { renderItem = (arg: T) => (arg as unknown) as JSX.Element, items: data, onOrderChange = () => {}, useExternalDragHandle = false } = props
+  const {
+    renderItem = (arg: T) => (arg as unknown) as JSX.Element,
+    items: data,
+    onOrderChange = () => {},
+    useExternalDragHandle = false,
+  } = props
   const orderItems = (itemA: T, itemB: T) => (itemA.order || 0) - (itemB.order || 0)
 
   const [items, setItems] = useState([...data].sort(orderItems))
@@ -51,10 +56,7 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
       }
     }
 
-    const workingDataList = items
-      .map(setTemporaryOrders)
-      .sort(orderItems)
-      .map(createWorkingData)
+    const workingDataList = items.map(setTemporaryOrders).sort(orderItems).map(createWorkingData)
     const itemsForDataBase = workingDataList.filter(removeUnchangedItems).map(getItemFormWorkingData)
     const itemsForState = workingDataList.map(getItemFormWorkingData)
 
@@ -78,7 +80,11 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
         return (
           <Fragment key={item.uuid}>
             {hasDropZoneBefore && <DropZone onDrop={dt => handleDrop(dt, firstDropZonePosition)} />}
-            <DraggableItem isDragHandle={!useExternalDragHandle} onDragStart={dt => handleDragStart(dt, item)} onDragEnd={() => handleDragEnd()}>
+            <DraggableItem
+              isDragHandle={!useExternalDragHandle}
+              onDragStart={dt => handleDragStart(dt, item)}
+              onDragEnd={() => handleDragEnd()}
+            >
               {renderItem(item)}
             </DraggableItem>
             {hasDropZoneAfter && <DropZone onDrop={dt => handleDrop(dt, lastDropZonePosition)} />}

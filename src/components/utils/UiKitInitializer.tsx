@@ -45,6 +45,6 @@ export interface I18nDelegate {
     ns: string,
     resources: { [key: string]: string },
     deep: boolean,
-    overwrite: boolean
+    overwrite: boolean,
   ) => any
 }
