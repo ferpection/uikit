@@ -109,10 +109,10 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
               isRaw
               isDisabled={isDisabled}
               onFocus={() => handleFocus()}
-              onClick={() => {
-                handleBlur()
-                handleDeletion(value.id)
-              }}
+              onMouseDown={() => handleFocus()}
+              onClick={() => handleDeletion(value.id)}
+              onMouseUp={() => handleBlur()}
+              onBlur={() => handleBlur()}
             />
           ) : null}
           <TextField
@@ -136,12 +136,14 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
             <Button
               css={[icon]}
               icon="plus"
+              tabIndex={-1}
               isRaw
               isDisabled={isDisabled}
               onFocus={() => handleFocus()}
-              onBlur={() => handleBlur()}
+              onMouseDown={() => handleFocus()}
               onClick={() => handleAddition()}
-              tabIndex={-1}
+              onMouseUp={() => handleBlur()}
+              onBlur={() => handleBlur()}
             />
           ) : null}
           <PlaceholderButton
@@ -149,8 +151,10 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
             icon={isOrdered ? null : 'plus'}
             isDisabled={isDisabled}
             onFocus={() => handleFocus()}
-            onBlur={() => handleBlur()}
+            onMouseDown={() => handleFocus()}
             onClick={() => handleAddition()}
+            onMouseUp={() => handleBlur()}
+            onBlur={() => handleBlur()}
           >
             {buttonText}
           </PlaceholderButton>
