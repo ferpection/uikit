@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+
+## [v0.2.0] - 2020-04-02
 ### Added
 - New `DragHandle` component to be used with the `ReorderableList`.
   The goals is to delegate to the user the choice of what can trigger the dragn'drop behavior.
@@ -30,11 +32,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add an option to test the small version of `TextField` in storybook.
 
 
-## [v0.1.1] - 2019-02-14
+## [v0.1.1] - 2020-02-14
 ### Fixed
 - `TextFieldList` do not loose focus when the user is writing something.
 
-## [v0.1.0] - 2019-02-13
+## [v0.1.0] - 2020-02-13
 ### Added
 - New "device" option for `FerpectionBadgeIcon` used in `ThematicSection`.
 - Expose the `FontAwesomeIcon` from the font awesome react package.
@@ -49,7 +51,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Correct translated strings are display by `DatePickerField`
 - Change how `UiKitInitializer` manage to use the i18n delegate (`this` problem, null pointer exception problem)
 
-## [v0.0.27] - 2019-02-11
+## [v0.0.27] - 2020-02-11
 ### Added
 - New component `ReoderableList` to make list of components reorderable using drag and drop.
 - New attribute `radioPosition` on `RadioButton` and `checkboxPosition` on `CheckboxButton`.
@@ -63,7 +65,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `DatePickerField` modal has now a `z-index` of 1 to be upper than regular fields.
 - `CheckboxGroup` and `RadioGroup` don't affect children's `div` anymore.
 
-## [v0.0.26] - 2019-02-10
+## [v0.0.26] - 2020-02-10
 ### Added
 - New attribute `isOrdered` on `TextFieldList`. Basicaly, `<ol>` becomes `<ul>` when not ordered.
 - It is possible to change the row count of the `TextField` in `TextFieldList`.
@@ -88,7 +90,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Security
 - The list components don't use the `nth-child` CSS attributes in favor of `nth-of-type`.
 
-## [v0.0.25] - 2019-01-15
+## [v0.0.25] - 2020-01-15
 ### Added
 - New `FontsLoader`. An easy way to load fonts asynchronously.
 
@@ -308,6 +310,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.2.0]: https://github.com/ferpection/uikit/tree/v0.2.0
 [v0.1.1]: https://github.com/ferpection/uikit/tree/v0.1.1
 [v0.1.0]: https://github.com/ferpection/uikit/tree/v0.1.0
 [v0.0.27]: https://github.com/ferpection/uikit/tree/v0.0.27
