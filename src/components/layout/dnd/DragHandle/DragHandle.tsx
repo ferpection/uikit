@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { DragContext } from '../DragContext'
 
-import { defaultHandle } from './styles'
+import { defaultHandle, draggingStyle } from './styles'
 
 export const DragHandle: FC = props => {
-  const { enableDragEvent, disableDragEvent } = useContext(DragContext)
+  const { enableDragEvent, disableDragEvent, dragEventEnabled } = useContext(DragContext)
   const dragHandleProps = {
     draggable: false,
     onMouseDown: () => enableDragEvent(),
@@ -21,7 +21,7 @@ export const DragHandle: FC = props => {
   }
 
   return (
-    <span css={[defaultHandle]} {...dragHandleProps}>
+    <span css={[defaultHandle, dragEventEnabled ? draggingStyle : null]} {...dragHandleProps}>
       <FontAwesomeIcon icon="grip-vertical" size="sm" />
     </span>
   )

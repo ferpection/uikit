@@ -4,3 +4,7 @@ export const defaultHandle = css`
   display: inline-block;
   padding: 2px 4px;
 `
+
+export const draggingStyle = css`
+  pointer-events: none;
+`

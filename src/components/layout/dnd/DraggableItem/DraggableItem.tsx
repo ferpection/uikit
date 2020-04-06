@@ -1,6 +1,10 @@
-import React, { FC, DragEventHandler } from 'react'
+import React, { FC, DragEventHandler, useState } from 'react'
+
+import { DragContext } from '../DragContext'
 
 export const DraggableItem: FC<DraggableItemProps> = (props) => {
+  const [draggable, setDraggable] = useState(true)
+
   const handleDragStart: DragEventHandler = (event) => {
     event.stopPropagation()
     event.dataTransfer.effectAllowed = 'move'
@@ -13,15 +17,33 @@ export const DraggableItem: FC<DraggableItemProps> = (props) => {
     event.stopPropagation()
   }
 
+  const enableDragEvent = (dragHandle = true) => {
+    if (dragHandle === true) {
+      return
+    }
+
+    setDraggable(true)
+  }
+
+  const disableDragEvent = (dragHandle = true) => {
+    if (dragHandle === true) {
+      return
+    }
+
+    setDraggable(false)
+  }
+
   return (
     <div
-      draggable
+      draggable={draggable}
       onDrag={handleDefaultDragEvent}
       onDragStart={handleDragStart}
       onDragExit={handleDefaultDragEvent}
       onDragEnd={handleDefaultDragEvent}
     >
-      {props.children}
+      <DragContext.Provider value={{ dragEventEnabled: draggable, enableDragEvent, disableDragEvent }}>
+        {props.children}
+      </DragContext.Provider>
     </div>
   )
 }

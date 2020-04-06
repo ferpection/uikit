@@ -24,7 +24,7 @@ storiesOf('Layout/Drag and Drop/Dropzone', module)
         <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>div #{10}</div>
       </DraggableItem>
       <Dropzone>
-        {({ elementIsOver }) => (<div style={{ backgroundColor: elementIsOver ? '#CCC' : '#aaa', margin: '10px', padding: '10px' }}>dropzone (over: {`${elementIsOver}`})</div>)}
+        {({ elementIsOver }) => (<div style={{ backgroundColor: elementIsOver ? '#CCC' : '#aaa', margin: '10px', padding: '20px' }}>dropzone (over: {`${elementIsOver}`})</div>)}
       </Dropzone>
       <DraggableItem
         itemId={20}
