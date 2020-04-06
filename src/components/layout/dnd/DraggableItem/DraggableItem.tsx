@@ -1,9 +1,29 @@
-import React, { FC, DragEventHandler, useState } from 'react'
+import React, { FC, DragEventHandler, useState, useCallback, MouseEventHandler } from 'react'
 
 import { DragContext } from '../DragContext'
 
 export const DraggableItem: FC<DraggableItemProps> = (props) => {
-  const [draggable, setDraggable] = useState(true)
+  const { useExternalDragHandle = false } = props
+  const [draggable, setDraggable] = useState(!useExternalDragHandle)
+
+  const enableDragEvent = (useExternalDragHandle = false) => {
+    if (!useExternalDragHandle) {
+      return
+    }
+
+    setDraggable(true)
+  }
+
+  const disableDragEvent = (useExternalDragHandle = false) => {
+    if (!useExternalDragHandle) {
+      return
+    }
+
+    setDraggable(false)
+  }
+
+  const memoizedEnableDragEvent = useCallback(() => enableDragEvent(useExternalDragHandle), [useExternalDragHandle])
+  const memoizedDisableDragEvent = useCallback(() => disableDragEvent(useExternalDragHandle), [useExternalDragHandle])
 
   const handleDragStart: DragEventHandler = (event) => {
     event.stopPropagation()
@@ -17,20 +37,10 @@ export const DraggableItem: FC<DraggableItemProps> = (props) => {
     event.stopPropagation()
   }
 
-  const enableDragEvent = (dragHandle = true) => {
-    if (dragHandle === true) {
-      return
-    }
+  const handleMouseLeave: MouseEventHandler = (event) => {
+    event.stopPropagation()
 
-    setDraggable(true)
-  }
-
-  const disableDragEvent = (dragHandle = true) => {
-    if (dragHandle === true) {
-      return
-    }
-
-    setDraggable(false)
+    memoizedDisableDragEvent()
   }
 
   return (
@@ -40,8 +50,15 @@ export const DraggableItem: FC<DraggableItemProps> = (props) => {
       onDragStart={handleDragStart}
       onDragExit={handleDefaultDragEvent}
       onDragEnd={handleDefaultDragEvent}
+      onMouseLeave={handleMouseLeave}
     >
-      <DragContext.Provider value={{ dragEventEnabled: draggable, enableDragEvent, disableDragEvent }}>
+      <DragContext.Provider
+        value={{
+          dragEventEnabled: draggable,
+          enableDragEvent: memoizedEnableDragEvent,
+          disableDragEvent: memoizedDisableDragEvent,
+        }}
+      >
         {props.children}
       </DragContext.Provider>
     </div>
@@ -50,4 +67,5 @@ export const DraggableItem: FC<DraggableItemProps> = (props) => {
 
 export interface DraggableItemProps {
   itemId: string
+  useExternalDragHandle?: boolean
 }

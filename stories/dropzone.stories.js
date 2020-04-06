@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs } from '@storybook/addon-knobs'
 
-import { Dropzone, DraggableItem } from '../src/components/index.ts'
+import { Dropzone, DraggableItem, DragHandle } from '../src/components/index.ts'
 
 storiesOf('Layout/Drag and Drop/Dropzone', module)
   .addDecorator(withA11y)
@@ -19,17 +19,29 @@ storiesOf('Layout/Drag and Drop/Dropzone', module)
         </li>
       </ul>
       <DraggableItem
+        itemId={20}
+        useExternalDragHandle
+      >
+        <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}><DragHandle>div #{20}</DragHandle>lezjklz</div>
+      </DraggableItem>
+      <DraggableItem
+        itemId={40}
+        useExternalDragHandle
+      >
+        <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}><DragHandle>div #{40}</DragHandle>lezjklz</div>
+      </DraggableItem>
+      <DraggableItem
         itemId={10}
       >
         <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>div #{10}</div>
       </DraggableItem>
+      <DraggableItem
+        itemId={30}
+      >
+        <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>div #{30}</div>
+      </DraggableItem>
       <Dropzone>
         {({ elementIsOver }) => (<div style={{ backgroundColor: elementIsOver ? '#CCC' : '#aaa', margin: '10px', padding: '20px' }}>dropzone (over: {`${elementIsOver}`})</div>)}
       </Dropzone>
-      <DraggableItem
-        itemId={20}
-      >
-        <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>div #{20}</div>
-      </DraggableItem>
     </>
   ))

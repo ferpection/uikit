@@ -8,11 +8,11 @@ import { DragContext } from '../DragContext'
 import { defaultHandle, draggingStyle } from './styles'
 
 export const DragHandle: FC = props => {
-  const { enableDragEvent, disableDragEvent, dragEventEnabled } = useContext(DragContext)
+  const { enableDragEvent, dragEventEnabled } = useContext(DragContext)
   const dragHandleProps = {
     draggable: false,
     onMouseDown: () => enableDragEvent(),
-    onMouseLeave: () => disableDragEvent(),
+    // onMouseLeave: (event: MouseEvent) => {event.stopPropagation(); disableDragEvent()},
     role: 'button',
   }
 
@@ -21,9 +21,9 @@ export const DragHandle: FC = props => {
   }
 
   return (
-    <span css={[defaultHandle, dragEventEnabled ? draggingStyle : null]} {...dragHandleProps}>
+    <div css={[defaultHandle, dragEventEnabled ? draggingStyle : null]} {...dragHandleProps}>
       <FontAwesomeIcon icon="grip-vertical" size="sm" />
-    </span>
+    </div>
   )
 }
 
