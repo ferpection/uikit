@@ -49,6 +49,7 @@ export const DraggableItem: FC<DraggableItemProps> = (props) => {
 
   return (
     <div
+      key={`draggable-item-${props.itemId}`}
       css={[container, !useExternalDragHandle ? grabCursor : null]}
       draggable={draggable}
       onDrag={handleDefaultDragEvent}
