@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react'
 
-import DraggableItem from './DraggableItem/DraggableItem'
+import { DraggableItem } from '../dnd/DraggableItem/DraggableItem'
 import Zone from './Zone/Zone'
 
 export function ReorderableList<T extends ReorderableItem>(props: ReorderableListProps<T>) {
@@ -81,9 +81,10 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
           <Fragment key={item.uuid}>
             {hasDropZoneBefore && <Zone onDrop={dt => handleDrop(dt, firstDropZonePosition)} />}
             <DraggableItem
-              isDragHandle={!useExternalDragHandle}
-              onDragStart={dt => handleDragStart(dt, item)}
-              onDragEnd={() => handleDragEnd()}
+              itemId={item.uuid}
+              useExternalDragHandle={useExternalDragHandle}
+              // onDragStart={dt => handleDragStart(dt, item)}
+              // onDragEnd={() => handleDragEnd()}
             >
               {renderItem(item)}
             </DraggableItem>
