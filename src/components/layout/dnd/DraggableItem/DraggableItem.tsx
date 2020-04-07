@@ -1,6 +1,10 @@
-import React, { FC, DragEventHandler, useState, useCallback, MouseEventHandler } from 'react'
+/** @jsx jsx */
+import { FC, DragEventHandler, useState, useCallback, MouseEventHandler } from 'react'
+import { jsx } from '@emotion/core'
 
 import { DragContext } from '../DragContext'
+
+import { container, grabCursor } from './styles'
 
 export const DraggableItem: FC<DraggableItemProps> = (props) => {
   const { useExternalDragHandle = false } = props
@@ -45,6 +49,7 @@ export const DraggableItem: FC<DraggableItemProps> = (props) => {
 
   return (
     <div
+      css={[container, !useExternalDragHandle ? grabCursor : null]}
       draggable={draggable}
       onDrag={handleDefaultDragEvent}
       onDragStart={handleDragStart}

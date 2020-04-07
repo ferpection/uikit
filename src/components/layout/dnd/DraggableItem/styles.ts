@@ -1,8 +1,12 @@
 import { css } from '@emotion/core'
 
-export const defaultHandle = css`
-  display: inline-block;
-  padding: 10px;
+export const container = css`
+  margin: 0;
+  padding: 0;
+  outline: none;
+`
+
+export const grabCursor = css`
   cursor: move;
   cursor: grab;
   &:active,
@@ -10,8 +14,4 @@ export const defaultHandle = css`
   & textarea:active {
     cursor: grabbing;
   }
-`
-
-export const draggingStyle = css`
-  pointer-events: none;
 `

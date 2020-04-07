@@ -22,7 +22,7 @@ storiesOf('Layout/Drag and Drop/Dropzone', module)
         itemId={20}
         useExternalDragHandle
       >
-        <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}><DragHandle>div #{20}</DragHandle>lezjklz</div>
+        <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}><DragHandle><span>div #{20}</span></DragHandle>lezjklz</div>
       </DraggableItem>
       <DraggableItem
         itemId={40}
