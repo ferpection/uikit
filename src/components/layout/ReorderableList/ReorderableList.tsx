@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react'
 
 import DraggableItem from './DraggableItem/DraggableItem'
-import DropZone from './DropZone/DropZone'
+import Zone from './Zone/Zone'
 
 export function ReorderableList<T extends ReorderableItem>(props: ReorderableListProps<T>) {
   const {
@@ -79,7 +79,7 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
 
         return (
           <Fragment key={item.uuid}>
-            {hasDropZoneBefore && <DropZone onDrop={dt => handleDrop(dt, firstDropZonePosition)} />}
+            {hasDropZoneBefore && <Zone onDrop={dt => handleDrop(dt, firstDropZonePosition)} />}
             <DraggableItem
               isDragHandle={!useExternalDragHandle}
               onDragStart={dt => handleDragStart(dt, item)}
@@ -87,7 +87,7 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
             >
               {renderItem(item)}
             </DraggableItem>
-            {hasDropZoneAfter && <DropZone onDrop={dt => handleDrop(dt, lastDropZonePosition)} />}
+            {hasDropZoneAfter && <Zone onDrop={dt => handleDrop(dt, lastDropZonePosition)} />}
           </Fragment>
         )
       })}
