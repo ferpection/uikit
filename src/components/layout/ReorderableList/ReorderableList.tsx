@@ -29,14 +29,12 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
     setDraggedId(item.uuid)
   }
 
-  const handleDrop = (dataTransfer: DataTransfer, position: number) => {
-    const uuid = dataTransfer.getData('application/uuid')
-
+  const handleDrop = (itemId: string | null, position: number) => {
     const removeUnchangedItems = (item: { oldOrder: number | null; newOrder: number }) =>
       item.oldOrder !== item.newOrder
     const getItemFormWorkingData = (workingData: { item: T }) => workingData.item
     const setTemporaryOrders = (item: T) => {
-      if (item.uuid === uuid) {
+      if (item.uuid === itemId) {
         item.order = position
         return item
       }
@@ -79,7 +77,7 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
 
         return (
           <Fragment key={item.uuid}>
-            {hasDropZoneBefore && <Zone onDrop={dt => handleDrop(dt, firstDropZonePosition)} />}
+            {hasDropZoneBefore && <Zone onDrop={itemId => handleDrop(itemId, firstDropZonePosition)} />}
             <DraggableItem
               itemId={item.uuid}
               useExternalDragHandle={useExternalDragHandle}
@@ -88,7 +86,7 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
             >
               {renderItem(item)}
             </DraggableItem>
-            {hasDropZoneAfter && <Zone onDrop={dt => handleDrop(dt, lastDropZonePosition)} />}
+            {hasDropZoneAfter && <Zone onDrop={itemId => handleDrop(itemId, lastDropZonePosition)} />}
           </Fragment>
         )
       })}

@@ -19,7 +19,7 @@ export const Dropzone: FC<DropzoneProps> = (props) => {
 }
 
 export interface DropzoneProps {
-  onDrop?: (DataTransfer: DataTransfer) => void,
+  onDrop?: (itemId: string | null, dataTransferObject: DataTransfer) => void,
   children: (options: RenderFunctionOptions) => ReactChild,
 }
 

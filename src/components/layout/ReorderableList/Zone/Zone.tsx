@@ -5,9 +5,9 @@ import { FC, useContext } from 'react'
 import { I18nContext } from '../../../contexts/I18nContext'
 
 import { dropzone, dropzoneOver } from './styles'
-import { Dropzone } from '../../dnd/Dropzone/Dropzone'
+import { Dropzone, DropzoneProps } from '../../dnd/Dropzone/Dropzone'
 
-export const Zone: FC<DropZoneProps> = props => {
+export const Zone: FC<ZoneProps> = props => {
   const { onDrop = () => {} } = props
   const { t } = useContext(I18nContext)
 
@@ -24,6 +24,6 @@ export const Zone: FC<DropZoneProps> = props => {
 
 export default Zone
 
-interface DropZoneProps {
-  onDrop?: (dataTransfert: DataTransfer) => void
+interface ZoneProps {
+  onDrop?: DropzoneProps['onDrop']
 }
