@@ -8,15 +8,16 @@ import { DragContext } from '../DragContext'
 import { defaultHandle, draggingStyle } from './styles'
 
 export const DragHandle: FC = props => {
-  const { enableDragEvent, dragEventEnabled } = useContext(DragContext)
+  const { enableDragEvent, dragEventEnabled, disableDragEvent } = useContext(DragContext)
   const dragHandleProps = {
+    role: 'button',
     draggable: false,
     onMouseDown: () => enableDragEvent(),
-    // onMouseLeave: (event: MouseEvent) => {event.stopPropagation(); disableDragEvent()},
-    role: 'button',
+    onMouseLeave: () => {},
   }
 
   if (isValidElement(props.children)) {
+    dragHandleProps.onMouseLeave = () => disableDragEvent()
     return cloneElement(Children.only(props.children), dragHandleProps)
   }
 
