@@ -69,7 +69,6 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
     if (status === 'canceled') {
       setDraggedId(null)
       setItems(safeItems)
-      return
     }
   }
 
