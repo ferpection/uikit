@@ -1,7 +1,9 @@
 import React, { useState, useEffect, Fragment } from 'react'
 
-import DraggableItem from './DraggableItem/DraggableItem'
-import DropZone from './DropZone/DropZone'
+import { DraggableItem } from '../dnd/DraggableItem/DraggableItem'
+import Zone from './Zone/Zone'
+
+let positionA = 0
 
 export function ReorderableList<T extends ReorderableItem>(props: ReorderableListProps<T>) {
   const {
@@ -12,32 +14,19 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
   } = props
   const orderItems = (itemA: T, itemB: T) => (itemA.order || 0) - (itemB.order || 0)
 
+  const [safeItems, setSafeItems] = useState([...data].sort(orderItems))
   const [items, setItems] = useState([...data].sort(orderItems))
   const [draggedId, setDraggedId] = useState<string | null>(null)
 
-  const uselessDropZones = [
-    (items.find(item => item.uuid === draggedId)?.order || 0) - 5,
-    (items.find(item => item.uuid === draggedId)?.order || 0) + 5,
-  ]
-
   useEffect(() => setItems([...data].sort(orderItems)), [data])
 
-  const handleDragStart = (dataTransfer: DataTransfer, item: T) => {
-    dataTransfer.effectAllowed = 'move'
-    dataTransfer.setData('application/uuid', item.uuid)
-
-    setDraggedId(item.uuid)
-  }
-
-  const handleDrop = (dataTransfer: DataTransfer, position: number) => {
-    const uuid = dataTransfer.getData('application/uuid')
-
+  const reorderItems = (droppedItemId: string | null, dropzonePosition: number) => {
     const removeUnchangedItems = (item: { oldOrder: number | null; newOrder: number }) =>
       item.oldOrder !== item.newOrder
     const getItemFormWorkingData = (workingData: { item: T }) => workingData.item
     const setTemporaryOrders = (item: T) => {
-      if (item.uuid === uuid) {
-        item.order = position
+      if (item.uuid === droppedItemId) {
+        item.order = item.order > dropzonePosition ? dropzonePosition - 5 : dropzonePosition + 5
         return item
       }
 
@@ -56,38 +45,69 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
       }
     }
 
-    const workingDataList = items.map(setTemporaryOrders).sort(orderItems).map(createWorkingData)
+    const workingDataList = safeItems.map(setTemporaryOrders).sort(orderItems).map(createWorkingData)
     const itemsForDataBase = workingDataList.filter(removeUnchangedItems).map(getItemFormWorkingData)
     const itemsForState = workingDataList.map(getItemFormWorkingData)
 
-    setItems(itemsForState)
-    onOrderChange(itemsForDataBase)
+    return {
+      itemsForDataBase,
+      itemsForState,
+    }
   }
 
-  const handleDragEnd = () => setDraggedId(null)
+  const handleDragStatusChange = (status: string, item: T) => {
+    if (status === 'dragstart') {
+      setDraggedId(item.uuid)
+      return
+    }
+
+    if (status === 'dragend') {
+      setDraggedId(null)
+      return
+    }
+
+    if (status === 'canceled') {
+      setDraggedId(null)
+      setItems(safeItems)
+    }
+  }
+
+  const handleDragOver = (position: number) => {
+    if (position === positionA) {
+      return
+    }
+
+    positionA = position
+    const { itemsForState } = reorderItems(draggedId, position)
+
+    setItems(itemsForState)
+  }
+
+  const handleDrop = () => {
+    setSafeItems(items)
+    onOrderChange(items)
+  }
 
   return (
     <>
-      {items.map((item, index) => {
+      {items.map(item => {
         const itemOrder = item.order || 0
-        const firstDropZonePosition = itemOrder - 5
-        const lastDropZonePosition = itemOrder + 5
-
-        const hasDropZoneBefore = draggedId != null && !uselessDropZones.includes(firstDropZonePosition)
-        const hasDropZoneAfter =
-          draggedId != null && index === items.length - 1 && !uselessDropZones.includes(lastDropZonePosition)
 
         return (
           <Fragment key={item.uuid}>
-            {hasDropZoneBefore && <DropZone onDrop={dt => handleDrop(dt, firstDropZonePosition)} />}
-            <DraggableItem
-              isDragHandle={!useExternalDragHandle}
-              onDragStart={dt => handleDragStart(dt, item)}
-              onDragEnd={() => handleDragEnd()}
+            <Zone
+              droppable={draggedId != null}
+              onDrop={() => handleDrop()}
+              onDragOver={() => handleDragOver(itemOrder)}
             >
-              {renderItem(item)}
-            </DraggableItem>
-            {hasDropZoneAfter && <DropZone onDrop={dt => handleDrop(dt, lastDropZonePosition)} />}
+              <DraggableItem
+                itemId={item.uuid}
+                useExternalDragHandle={useExternalDragHandle}
+                onDragStatusChange={status => handleDragStatusChange(status, item)}
+              >
+                {renderItem(item)}
+              </DraggableItem>
+            </Zone>
           </Fragment>
         )
       })}
