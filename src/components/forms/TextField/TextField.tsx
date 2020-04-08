@@ -105,6 +105,8 @@ export const TextField: React.FC<TextFieldProps> = props => {
           ]}
           className={className}
           placeholder={placeholder}
+          inputMode={dataType === 'number' ? 'numeric' : null}
+          pattern={dataType === 'number' ? '[0-9]*' : null}
           value={value}
           disabled={isDisabled}
           onChange={event => handleChanges(event)}
