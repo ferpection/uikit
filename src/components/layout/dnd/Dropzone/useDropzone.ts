@@ -1,9 +1,12 @@
 import { useState, DragEventHandler } from 'react'
 
-export function useDropzone({ onDrop: onDropCallback, onDragOver: onDragOverCallback }: UseDropzoneOptions): [DropzoneProps, boolean] {
+export function useDropzone({
+  onDrop: onDropCallback,
+  onDragOver: onDragOverCallback,
+}: UseDropzoneOptions): [DropzoneProps, boolean] {
   const [draggableIsOver, setOverState] = useState(false)
 
-  const handleDragOver: DragEventHandler = (event) => {
+  const handleDragOver: DragEventHandler = event => {
     event.preventDefault()
     event.stopPropagation()
 
@@ -18,7 +21,7 @@ export function useDropzone({ onDrop: onDropCallback, onDragOver: onDragOverCall
     onDragOverCallback(event.dataTransfer)
   }
 
-  const handleDragEnter: DragEventHandler = (event) => {
+  const handleDragEnter: DragEventHandler = event => {
     event.preventDefault()
     event.stopPropagation()
 
@@ -27,7 +30,7 @@ export function useDropzone({ onDrop: onDropCallback, onDragOver: onDragOverCall
     }
   }
 
-  const handleDragLeave: DragEventHandler = (event) => {
+  const handleDragLeave: DragEventHandler = event => {
     event.preventDefault()
     event.stopPropagation()
 
@@ -38,7 +41,7 @@ export function useDropzone({ onDrop: onDropCallback, onDragOver: onDragOverCall
     }
   }
 
-  const handleDrop: DragEventHandler = (event) => {
+  const handleDrop: DragEventHandler = event => {
     event.preventDefault()
     event.stopPropagation()
 

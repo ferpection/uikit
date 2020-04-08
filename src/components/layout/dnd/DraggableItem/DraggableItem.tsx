@@ -6,7 +6,7 @@ import { DragContext } from '../DragContext'
 
 import { container, grabCursor } from './styles'
 
-export const DraggableItem: FC<DraggableItemProps> = (props) => {
+export const DraggableItem: FC<DraggableItemProps> = props => {
   const { useExternalDragHandle = false, onDragStatusChange = () => {} } = props
   const [draggable, setDraggable] = useState(!useExternalDragHandle)
 
@@ -29,7 +29,7 @@ export const DraggableItem: FC<DraggableItemProps> = (props) => {
   const memoizedEnableDragEvent = useCallback(() => enableDragEvent(useExternalDragHandle), [useExternalDragHandle])
   const memoizedDisableDragEvent = useCallback(() => disableDragEvent(useExternalDragHandle), [useExternalDragHandle])
 
-  const handleDragStart: DragEventHandler = (event) => {
+  const handleDragStart: DragEventHandler = event => {
     event.stopPropagation()
 
     event.dataTransfer.clearData()
@@ -40,7 +40,7 @@ export const DraggableItem: FC<DraggableItemProps> = (props) => {
     onDragStatusChange(event.type)
   }
 
-  const handleDefaultDragEvent: DragEventHandler = (event) => {
+  const handleDefaultDragEvent: DragEventHandler = event => {
     event.preventDefault()
     event.stopPropagation()
 
@@ -52,7 +52,7 @@ export const DraggableItem: FC<DraggableItemProps> = (props) => {
     onDragStatusChange(event.type)
   }
 
-  const handleMouseLeave: MouseEventHandler = (event) => {
+  const handleMouseLeave: MouseEventHandler = event => {
     event.stopPropagation()
 
     memoizedDisableDragEvent()

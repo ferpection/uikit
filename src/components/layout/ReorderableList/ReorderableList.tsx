@@ -22,37 +22,37 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
 
   const reorderItems = (droppedItemId: string | null, dropzonePosition: number) => {
     const removeUnchangedItems = (item: { oldOrder: number | null; newOrder: number }) =>
-        item.oldOrder !== item.newOrder
-      const getItemFormWorkingData = (workingData: { item: T }) => workingData.item
-      const setTemporaryOrders = (item: T) => {
-        if (item.uuid === droppedItemId) {
-          item.order = item.order > dropzonePosition ? dropzonePosition - 5 : dropzonePosition + 5
-          return item
-        }
-
+      item.oldOrder !== item.newOrder
+    const getItemFormWorkingData = (workingData: { item: T }) => workingData.item
+    const setTemporaryOrders = (item: T) => {
+      if (item.uuid === droppedItemId) {
+        item.order = item.order > dropzonePosition ? dropzonePosition - 5 : dropzonePosition + 5
         return item
       }
-      const createWorkingData = (item: T, index: number) => {
-        const order = (index + 1) * 10
 
-        return {
-          oldOrder: item.order,
-          newOrder: order,
-          item: {
-            ...item,
-            order,
-          },
-        }
-      }
-
-      const workingDataList = safeItems.map(setTemporaryOrders).sort(orderItems).map(createWorkingData)
-      const itemsForDataBase = workingDataList.filter(removeUnchangedItems).map(getItemFormWorkingData)
-      const itemsForState = workingDataList.map(getItemFormWorkingData)
+      return item
+    }
+    const createWorkingData = (item: T, index: number) => {
+      const order = (index + 1) * 10
 
       return {
-        itemsForDataBase,
-        itemsForState
+        oldOrder: item.order,
+        newOrder: order,
+        item: {
+          ...item,
+          order,
+        },
       }
+    }
+
+    const workingDataList = safeItems.map(setTemporaryOrders).sort(orderItems).map(createWorkingData)
+    const itemsForDataBase = workingDataList.filter(removeUnchangedItems).map(getItemFormWorkingData)
+    const itemsForState = workingDataList.map(getItemFormWorkingData)
+
+    return {
+      itemsForDataBase,
+      itemsForState,
+    }
   }
 
   const handleDragStatusChange = (status: string, item: T) => {
@@ -73,16 +73,16 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
     }
   }
 
-    const handleDragOver = (position: number) => {
-      if (position === positionA) {
-        return
-      }
-
-      positionA = position
-      const { itemsForState } = reorderItems(draggedId, position)
-
-      setItems(itemsForState)
+  const handleDragOver = (position: number) => {
+    if (position === positionA) {
+      return
     }
+
+    positionA = position
+    const { itemsForState } = reorderItems(draggedId, position)
+
+    setItems(itemsForState)
+  }
 
   const handleDrop = () => {
     setSafeItems(items)

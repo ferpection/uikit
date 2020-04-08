@@ -12,7 +12,7 @@ export const Zone: FC<ZoneProps> = props => {
   return (
     <Dropzone {...dropzoneProps}>
       {({ elementIsOver }) => (
-        <div css={[defaultStyle, droppable ? dropzone : null, elementIsOver ? dropzoneOver : null]} >
+        <div css={[defaultStyle, droppable ? dropzone : null, elementIsOver ? dropzoneOver : null]}>
           {props.children}
         </div>
       )}

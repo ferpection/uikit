@@ -21,29 +21,19 @@ storiesOf('Layout/Drag and Drop/DraggableItem', module)
           <code>children</code>: The body of a draggable item
         </li>
       </ul>
-      <DraggableItem
-        itemId={10}
-      >
+      <DraggableItem itemId={10}>
         <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>div #{10}</div>
       </DraggableItem>
-      <DraggableItem
-        itemId={40}
-      >
+      <DraggableItem itemId={40}>
         <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>div #{40}</div>
       </DraggableItem>
-      <DraggableItem
-        itemId={20}
-      >
+      <DraggableItem itemId={20}>
         <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>div #{20}</div>
       </DraggableItem>
-      <DraggableItem
-        itemId={30}
-      >
+      <DraggableItem itemId={30}>
         <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>div #{30}</div>
       </DraggableItem>
-      <DraggableItem
-        itemId={200}
-      >
+      <DraggableItem itemId={200}>
         <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>div #{200}</div>
       </DraggableItem>
     </>

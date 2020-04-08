@@ -7,4 +7,4 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-viewport',
   ],
-};
+}
