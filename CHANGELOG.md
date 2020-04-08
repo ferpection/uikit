@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+### Changed
+- `ReorderableList` do NOT show distinct dropzone in the list anymore. Each element become a dropzone.
+  The new behavior allows us to solve an edge cases described in the "Fixed" section below.
+
+### Fixed
+- Minimize the change of position when the user starts to drag an element of `ReorderableList`
+  which could prevent the drag and drop to work correctly in the Chrome browser.
 
 ## [v0.2.0] - 2020-04-02
 ### Added
