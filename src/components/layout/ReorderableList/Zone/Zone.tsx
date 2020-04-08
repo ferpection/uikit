@@ -1,21 +1,19 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import { FC, useContext } from 'react'
+import { FC } from 'react'
 
-import { I18nContext } from '../../../contexts/I18nContext'
+import { Dropzone, DropzoneProps } from '../../dnd/Dropzone/Dropzone'
 
 import { dropzone, dropzoneOver } from './styles'
-import { Dropzone, DropzoneProps } from '../../dnd/Dropzone/Dropzone'
 
 export const Zone: FC<ZoneProps> = props => {
   const { onDrop = () => {} } = props
-  const { t } = useContext(I18nContext)
 
   return (
     <Dropzone onDrop={onDrop}>
       {({ elementIsOver }) => (
         <div css={[dropzone, elementIsOver ? dropzoneOver : null]} >
-          {elementIsOver ? t('dropzone-hover-text') : t('dropzone-text')}
+          {props.children}
         </div>
       )}
     </Dropzone>

@@ -7,7 +7,7 @@ import { DragContext } from '../DragContext'
 import { container, grabCursor } from './styles'
 
 export const DraggableItem: FC<DraggableItemProps> = (props) => {
-  const { useExternalDragHandle = false } = props
+  const { useExternalDragHandle = false, onDragStatusChange = () => {} } = props
   const [draggable, setDraggable] = useState(!useExternalDragHandle)
 
   const enableDragEvent = (useExternalDragHandle = false) => {
@@ -34,11 +34,14 @@ export const DraggableItem: FC<DraggableItemProps> = (props) => {
     event.dataTransfer.effectAllowed = 'move'
     event.dataTransfer.setData('application/uuid', props.itemId)
 
-    // setDraggedId(item.uuid)
+    onDragStatusChange(event.type)
   }
 
   const handleDefaultDragEvent: DragEventHandler = (event) => {
     event.stopPropagation()
+
+    onDragStatusChange(event.type)
+    event.preventDefault()
   }
 
   const handleMouseLeave: MouseEventHandler = (event) => {
@@ -74,4 +77,5 @@ export const DraggableItem: FC<DraggableItemProps> = (props) => {
 export interface DraggableItemProps {
   itemId: string
   useExternalDragHandle?: boolean
+  onDragStatusChange?: (status: string) => void
 }

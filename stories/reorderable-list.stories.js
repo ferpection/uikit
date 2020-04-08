@@ -29,7 +29,7 @@ storiesOf('Layout|ReorderableList', module)
           { uuid: '3', order: 20 },
         ]}
         renderItem={item => (
-          <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>div #{item.uuid}</div>
+          <div style={{ backgroundColor: '#aaa', padding: '10px' }}>div #{item.uuid}</div>
         )}
       />
     </>
@@ -54,7 +54,7 @@ storiesOf('Layout|ReorderableList', module)
         ]}
         useExternalDragHandle
         renderItem={item => (
-          <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>
+          <div style={{ backgroundColor: '#aaa', padding: '10px' }}>
             <DragHandle />
             <TextField isSmall /> (div #{item.uuid})
           </div>
@@ -72,7 +72,7 @@ storiesOf('Layout|ReorderableList', module)
         ]}
         useExternalDragHandle
         renderItem={item => (
-          <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>
+          <div style={{ backgroundColor: '#aaa',padding: '10px' }}>
             <DragHandle>
               <span>div #{item.uuid} :</span>
             </DragHandle>
