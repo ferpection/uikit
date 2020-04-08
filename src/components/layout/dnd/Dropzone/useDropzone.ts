@@ -49,7 +49,6 @@ export function useDropzone({ onDrop: onDropCallback, onDragOver: onDragOverCall
     let uuid = null
     if (event.dataTransfer.types.includes('application/uuid')) {
       uuid = event.dataTransfer.getData('application/uuid')
-      event.dataTransfer.clearData('application/uuid')
     }
 
     onDropCallback(uuid, event.dataTransfer)

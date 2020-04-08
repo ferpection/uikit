@@ -31,6 +31,9 @@ export const DraggableItem: FC<DraggableItemProps> = (props) => {
 
   const handleDragStart: DragEventHandler = (event) => {
     event.stopPropagation()
+
+    event.dataTransfer.clearData()
+
     event.dataTransfer.effectAllowed = 'move'
     event.dataTransfer.setData('application/uuid', props.itemId)
 
