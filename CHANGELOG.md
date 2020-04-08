@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - New `DraggableItem` and `Dropzone` component to easily implement drag and drop without `ReorderableList`.
+- `TextField` supports `number` as data type. An error is displayed when the value is not a valid number.
 
 ### Changed
 - `ReorderableList` do NOT show distinct dropzone in the list anymore. Each element become a dropzone.
@@ -26,7 +27,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `SelectField` support the `className` attribute.
 - `SelectField` support the `hideErrors` attribute. When used no error message is displayed
   but the field still shows the error state.
-- `TextField` supports `number` as data type. An error is displayed when the value is not a valid number.
 
 ### Changed
 - The "add button"'s icon of the `TextFieldList` is now hidden when navigating using the keyboard
