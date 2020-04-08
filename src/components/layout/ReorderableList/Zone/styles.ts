@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import { C200_COLOR } from '../../../../colors'
 
 export const defaultStyle = css`
-  margin: 20px;
+  margin: 20px 0;
   border: 2px dashed transparent;
 `
 
