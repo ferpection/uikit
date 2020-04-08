@@ -4,15 +4,15 @@ import { FC } from 'react'
 
 import { Dropzone, DropzoneProps } from '../../dnd/Dropzone/Dropzone'
 
-import { dropzone, dropzoneOver } from './styles'
+import { dropzone, dropzoneOver, defaultStyle } from './styles'
 
 export const Zone: FC<ZoneProps> = props => {
-  const { onDrop = () => {} } = props
+  const { droppable, ...dropzoneProps } = props
 
   return (
-    <Dropzone onDrop={onDrop}>
+    <Dropzone {...dropzoneProps}>
       {({ elementIsOver }) => (
-        <div css={[dropzone, elementIsOver ? dropzoneOver : null]} >
+        <div css={[defaultStyle, droppable ? dropzone : null, elementIsOver ? dropzoneOver : null]} >
           {props.children}
         </div>
       )}
@@ -23,5 +23,7 @@ export const Zone: FC<ZoneProps> = props => {
 export default Zone
 
 interface ZoneProps {
+  droppable: boolean
   onDrop?: DropzoneProps['onDrop']
+  onDragOver?: DropzoneProps['onDragOver']
 }

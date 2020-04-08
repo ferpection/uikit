@@ -6,8 +6,8 @@ import { useDropzone } from './useDropzone'
 import { container } from './styles'
 
 export const Dropzone: FC<DropzoneProps> = (props) => {
-  const { onDrop = () => {}, children } = props
-  const [events, isOver] = useDropzone(onDrop)
+  const { children, onDragOver = () => {}, onDrop = () => {} } = props
+  const [events, isOver] = useDropzone({ onDragOver, onDrop })
 
   return (
     <div css={[container]} {...events}>
@@ -20,6 +20,7 @@ export const Dropzone: FC<DropzoneProps> = (props) => {
 
 export interface DropzoneProps {
   onDrop?: (itemId: string | null, dataTransferObject: DataTransfer) => void,
+  onDragOver?: (dataTransferObject: DataTransfer) => void,
   children: (options: RenderFunctionOptions) => ReactChild,
 }
 

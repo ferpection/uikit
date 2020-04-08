@@ -38,10 +38,15 @@ export const DraggableItem: FC<DraggableItemProps> = (props) => {
   }
 
   const handleDefaultDragEvent: DragEventHandler = (event) => {
+    event.preventDefault()
     event.stopPropagation()
 
+    if (event.type === 'dragend' && event.dataTransfer.dropEffect === 'none') {
+      onDragStatusChange('canceled')
+      return
+    }
+
     onDragStatusChange(event.type)
-    event.preventDefault()
   }
 
   const handleMouseLeave: MouseEventHandler = (event) => {
