@@ -31,11 +31,13 @@ export const TextField: React.FC<TextFieldProps> = props => {
 
   addTranslations('en', {
     emailInvalid: 'Please enter an email address on this field.',
+    notANumber: 'Please enter a valid number on this field.',
     required: 'Please fill the field.',
   })
 
   addTranslations('fr', {
     emailInvalid: 'Vous devez écrire une adresse email valide.',
+    notANumber: 'Vous devez écrire un nombre dans ce champ.',
     required: 'Vous devez remplir le champ.',
   })
 
@@ -67,6 +69,12 @@ export const TextField: React.FC<TextFieldProps> = props => {
       })
     }
 
+    if (dataType === 'number' && Number.isNaN(Number(value))) {
+      errors = Object.assign({}, errors, {
+        notANumber: { value },
+      })
+    }
+
     if (isRequired && (value == null || value === '')) {
       errors = Object.assign({}, errors, {
         required: {},
@@ -81,11 +89,13 @@ export const TextField: React.FC<TextFieldProps> = props => {
     }
   }, [value])
 
+  const inputType = dataType === 'number' ? 'text' : dataType
+
   return (
     <Fragment>
       {rowCount < 2 ? (
         <input
-          type={dataType}
+          type={inputType}
           css={[
             baseStyle,
             isHighlighted && highlightedStyle,
@@ -95,6 +105,8 @@ export const TextField: React.FC<TextFieldProps> = props => {
           ]}
           className={className}
           placeholder={placeholder}
+          inputMode={dataType === 'number' ? 'numeric' : null}
+          pattern={dataType === 'number' ? '[0-9]*' : null}
           value={value}
           disabled={isDisabled}
           onChange={event => handleChanges(event)}
@@ -128,7 +140,7 @@ export const TextField: React.FC<TextFieldProps> = props => {
 }
 
 export interface TextFieldProps extends FormProps {
-  dataType?: 'text' | 'email'
+  dataType?: 'text' | 'email' | 'number'
   rowCount?: number
   isHighlighted?: boolean
   hideErrors?: boolean

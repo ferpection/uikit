@@ -31,7 +31,7 @@ storiesOf('Components|Forms/TextField', module)
   ))
   .add('error state', () => (
     <>
-      <TextField placeholder="This is a error input" dataType="email" />
+      <TextField placeholder="This is a error input" dataType="number" isRequired />
       <TextField rowCount={3} placeholder="This is a error textarea" dataType="email" />
     </>
   ))
@@ -44,7 +44,7 @@ storiesOf('Components|Forms/TextField', module)
   .add('full example', () => (
     <TextField
       placeholder={text('placeholder', 'Fill the field')}
-      dataType={select('data type', ['text', 'email'])}
+      dataType={select('data type', ['text', 'email', 'number'])}
       rowCount={number('row count', 1)}
       isHighlighted={boolean('highlighted', false)}
       isDisabled={boolean('disabled', false)}
