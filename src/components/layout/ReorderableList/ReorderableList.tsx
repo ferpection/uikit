@@ -18,7 +18,10 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
   const [items, setItems] = useState([...data].sort(orderItems))
   const [draggedId, setDraggedId] = useState<string | null>(null)
 
-  useEffect(() => setItems([...data].sort(orderItems)), [data])
+  useEffect(() => {
+    setItems([...data].sort(orderItems))
+    setSafeItems([...data].sort(orderItems))
+  }, [data])
 
   const reorderItems = (droppedItemId: string | null, dropzonePosition: number) => {
     const removeUnchangedItems = (item: { oldOrder: number | null; newOrder: number }) =>

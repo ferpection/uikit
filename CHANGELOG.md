@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 
+## [v0.3.1] - 2020-04-08
+### Fixed
+- Fix a weird behavior where the list items would disappear during drag if the item list was firstly initiated as an empty array.
+
 ## [v0.3.0] - 2020-04-08
 ### Added
 - New `DraggableItem` and `Dropzone` component to easily implement drag and drop without `ReorderableList`.
@@ -324,6 +328,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.3.1]: https://github.com/ferpection/uikit/tree/v0.3.1
 [v0.3.0]: https://github.com/ferpection/uikit/tree/v0.3.0
 [v0.2.0]: https://github.com/ferpection/uikit/tree/v0.2.0
 [v0.1.1]: https://github.com/ferpection/uikit/tree/v0.1.1
