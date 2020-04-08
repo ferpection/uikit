@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+### Added
+- New `DraggableItem` and `Dropzone` component to easily implement drag and drop without `ReorderableList`.
+
 ### Changed
 - `ReorderableList` do NOT show distinct dropzone in the list anymore. Each element become a dropzone.
   The new behavior allows us to solve an edge cases described in the "Fixed" section below.
