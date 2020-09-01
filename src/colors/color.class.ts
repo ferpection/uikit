@@ -42,7 +42,7 @@ export class Color {
   }
 
   toRGBA(alfa = this.alfa) {
-    return `rgb(${this.red}, ${this.green}, ${this.blue}, ${alfa})`
+    return `rgba(${this.red}, ${this.green}, ${this.blue}, ${alfa})`
   }
 
   shade(rate = 0) {
