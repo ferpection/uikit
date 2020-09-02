@@ -7,7 +7,7 @@ import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
 import { Button } from '../src/components/index.ts'
 
-storiesOf('Components|Button/Button', module)
+storiesOf('Components/Button/Button', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('with text', () => (

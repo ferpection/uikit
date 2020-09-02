@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions'
 
 import { RadioGroup, RadioButton, TextField, DatePickerField } from '../src/components'
 
-storiesOf('Components|Forms/RadioGroup', module)
+storiesOf('Components/Forms/RadioGroup', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('basic example', () => (

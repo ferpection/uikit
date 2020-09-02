@@ -5,7 +5,7 @@ import { withA11y } from '@storybook/addon-a11y'
 
 import { HelpBlock } from '../src/components/index.ts'
 
-storiesOf('Components|HelpBlock', module)
+storiesOf('Components/HelpBlock', module)
   .addDecorator(withA11y)
   .add('normal state', () => (
     <HelpBlock question="Pourquoi commencer par les objectifs ?">

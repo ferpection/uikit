@@ -6,7 +6,7 @@ import { withKnobs, text, number, boolean, select } from '@storybook/addon-knobs
 
 import { TextField } from '../src/components/index.ts'
 
-storiesOf('Components|Forms/TextField', module)
+storiesOf('Components/Forms/TextField', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('normal state', () => (

@@ -20,7 +20,7 @@ const Preview = props => (
   </pre>
 )
 
-storiesOf('Layout|Tabs', module)
+storiesOf('Layout/Tabs', module)
   .addDecorator(withA11y)
   .add('with only TabLinks as children', () => (
     <BrowserRouter>

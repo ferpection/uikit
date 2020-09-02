@@ -6,7 +6,7 @@ import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 
 import { SelectField } from '../src/components/index.ts'
 
-storiesOf('Components|Forms/SelectField', module)
+storiesOf('Components/Forms/SelectField', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('normal state', () => <SelectField placeholder="This is an select" />)

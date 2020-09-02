@@ -6,7 +6,7 @@ import { withKnobs, select } from '@storybook/addon-knobs'
 
 import { RadioButton, TextField } from '../src/components'
 
-storiesOf('Components|Button/RadioButton', module)
+storiesOf('Components/Button/RadioButton', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('basic example', () => (

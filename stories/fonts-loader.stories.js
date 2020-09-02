@@ -7,7 +7,7 @@ import { withKnobs, boolean, array } from '@storybook/addon-knobs'
 import { FontsLoader, ThematicSection, HelpBlock } from '../src/components'
 import { SANSSERIF_FONTSET, OPENSANS_FONT } from '../src/fonts'
 
-storiesOf('Utils|FontsLoader', module)
+storiesOf('Utils/FontsLoader', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('documentation', () => (

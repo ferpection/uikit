@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions'
 
 import { CheckboxGroup, CheckboxButton, DatePickerField, TextField } from '../src/components'
 
-storiesOf('Components|Forms/CheckboxGroup', module)
+storiesOf('Components/Forms/CheckboxGroup', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('basic example', () => (

@@ -7,7 +7,7 @@ import { withKnobs, select } from '@storybook/addon-knobs'
 import { FerpectionBadgeIcon } from '../src/components/index.ts'
 import { FULL_COLORSET } from '../src/colors/index.ts'
 
-storiesOf('Iconography|FerpectionBadgeIcon', module)
+storiesOf('Iconography/FerpectionBadgeIcon', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('w/ default border color', () => (

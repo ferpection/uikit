@@ -5,7 +5,7 @@ import { withA11y } from '@storybook/addon-a11y'
 
 import { FontAwesomeIcon } from '../src/components/index.ts'
 
-storiesOf('Iconography|FontAwesomeIcon', module)
+storiesOf('Iconography/FontAwesomeIcon', module)
   .addDecorator(withA11y)
   .add('exposed component', () => (
     <>

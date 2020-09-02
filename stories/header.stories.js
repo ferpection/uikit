@@ -6,7 +6,7 @@ import { boolean, withKnobs } from '@storybook/addon-knobs'
 
 import { Header, Button, HeaderLink } from '../src/components/index.ts'
 
-storiesOf('Layout|Header', module)
+storiesOf('Layout/Header', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('with classic buttons', () => (

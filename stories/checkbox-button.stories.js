@@ -6,7 +6,7 @@ import { withKnobs, select, boolean } from '@storybook/addon-knobs'
 
 import { CheckboxButton, TextField, DatePickerField } from '../src/components'
 
-storiesOf('Components|Button/CheckboxButton', module)
+storiesOf('Components/Button/CheckboxButton', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('basic example', () => (

@@ -25,7 +25,7 @@ i18n.use(initReactI18next).init({
   },
 })
 
-storiesOf('Components|Forms/DatePickerField', module)
+storiesOf('Components/Forms/DatePickerField', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('normal state', () => (

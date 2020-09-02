@@ -6,7 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { ReorderableList, DragHandle, TextField } from '../src/components/index.ts'
 
-storiesOf('Layout|ReorderableList', module)
+storiesOf('Layout/ReorderableList', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('simple case', () => (
