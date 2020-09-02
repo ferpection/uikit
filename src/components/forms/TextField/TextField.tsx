@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState, useEffect, Fragment, SyntheticEvent, useContext } from 'react'
+import React, { useState, useEffect, Fragment, SyntheticEvent, useContext, forwardRef, MutableRefObject } from 'react'
 import { jsx } from '@emotion/core'
 
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
@@ -10,7 +10,7 @@ import { I18nContext } from '../../contexts/I18nContext'
 
 const EMAIL_REGEXP = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
-export const TextField: React.FC<TextFieldProps> = props => {
+export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, TextFieldProps>((props, ref) => {
   const {
     dataType = 'text',
     rowCount = 1,
@@ -95,6 +95,7 @@ export const TextField: React.FC<TextFieldProps> = props => {
     <Fragment>
       {rowCount < 2 ? (
         <input
+          ref={ref as MutableRefObject<HTMLInputElement>}
           type={inputType}
           css={[
             baseStyle,
@@ -124,6 +125,7 @@ export const TextField: React.FC<TextFieldProps> = props => {
             isDisabled && disabledStyle,
             isSmall && smallStyle,
           ]}
+          ref={ref as MutableRefObject<HTMLTextAreaElement>}
           className={className}
           placeholder={placeholder}
           value={value}
@@ -137,7 +139,7 @@ export const TextField: React.FC<TextFieldProps> = props => {
       <FormErrorMessages errors={errorMessages} />
     </Fragment>
   )
-}
+})
 
 export interface TextFieldProps extends FormProps {
   dataType?: 'text' | 'email' | 'number'
