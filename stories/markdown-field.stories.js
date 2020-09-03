@@ -9,3 +9,15 @@ export default {
 export const NormalState = () => {
   return <MarkdownField />
 }
+
+export const HighlightedState = () => {
+  return <MarkdownField isHighlighted />
+}
+
+export const ErrorState = () => {
+  return <MarkdownField isRequired />
+}
+
+export const DisabledState = () => {
+  return <MarkdownField isDisabled />
+}
