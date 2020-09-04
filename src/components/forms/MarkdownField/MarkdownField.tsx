@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useState, useRef, MutableRefObject, Fragment } from 'react'
+import { useState, useRef, MutableRefObject } from 'react'
 import { jsx } from '@emotion/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
