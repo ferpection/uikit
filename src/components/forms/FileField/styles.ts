@@ -26,11 +26,6 @@ export const baseStyle = css`
   &:hover {
     z-index: 1;
     box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
-
-    [role="button"] {
-      background-color: ${C200_COLOR.toHex()};
-      color: white;
-    }
   }
 
   input[type="file"]:focus + & {
@@ -79,9 +74,20 @@ export const button = css`
   border-radius: 3px;
   margin: 3px;
   padding: 6px 16px;
+
+  &:hover {
+    background-color: ${C200_COLOR.toHex()};
+    color: white;
+    cursor: pointer;
+  }
 `
 
 export const buttonDisabledStyle = css`
   border-color: ${`${N100_COLOR}`};
   color: ${`${N100_COLOR}`};
+  &:hover {
+    cursor: not-allowed;
+    background-color: transparent;
+    color: ${`${N100_COLOR}`};
+  }
 `
