@@ -3,20 +3,22 @@ import { jsx } from '@emotion/core'
 
 import { FormProps } from '../form-props'
 
-import { baseStyle, placeholder as placeholderStyle, button, hiddenInput } from './styles'
+import { baseStyle, placeholder as placeholderStyle, button, hiddenInput, highlightedStyle, disabledStyle, placeholderDisabledStyle, buttonDisabledStyle } from './styles'
 
 export function FileField(props: FileFieldProps) {
-  const { isDisabled, placeholder = 'Choose a file...' } = props
+  const { isDisabled, placeholder = 'Choose a file...', isHighlighted } = props
 
   return (
     <label>
       <input css={[hiddenInput]} type="file" disabled={isDisabled} />
-      <div css={[baseStyle]}>
-        <div css={[placeholderStyle]}>{placeholder}</div>
-        <div css={[button]}>Browse</div>
+      <div css={[baseStyle, isHighlighted && highlightedStyle, isDisabled && disabledStyle]}>
+        <div css={[placeholderStyle, isDisabled && placeholderDisabledStyle]}>{placeholder}</div>
+        <div css={[button, isDisabled && buttonDisabledStyle]} role="button">Browse</div>
       </div>
     </label>
   )
 }
 
-export interface FileFieldProps extends FormProps {}
+export interface FileFieldProps extends FormProps {
+  isHighlighted?: boolean
+}

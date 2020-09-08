@@ -26,6 +26,11 @@ export const baseStyle = css`
   &:hover {
     z-index: 1;
     box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
+
+    [role="button"] {
+      background-color: ${C200_COLOR.toHex()};
+      color: white;
+    }
   }
 
   input[type="file"]:focus + & {
@@ -41,11 +46,31 @@ export const baseStyle = css`
   }
 `
 
+export const highlightedStyle = css`
+  background-color: ${`${C15_COLOR}`};
+`
+
 export const placeholder = css`
   font-style: italic;
   color: #aaa;
   margin: 3px;
   padding: 7px 2px 7px 7px;
+`
+
+export const disabledStyle = css`
+  border-color: ${`${N100_COLOR}`};
+  background-color: #f8f8f8;
+  box-shadow: none;
+  cursor: not-allowed;
+  &:hover,
+  input[type="file"]:focus + &,
+  input[type="file"]:active + & {
+    box-shadow: none;
+  }
+`
+
+export const placeholderDisabledStyle = css`
+  color: ${`${N100_COLOR}`};
 `
 
 export const button = css`
@@ -54,4 +79,9 @@ export const button = css`
   border-radius: 3px;
   margin: 3px;
   padding: 6px 16px;
+`
+
+export const buttonDisabledStyle = css`
+  border-color: ${`${N100_COLOR}`};
+  color: ${`${N100_COLOR}`};
 `
