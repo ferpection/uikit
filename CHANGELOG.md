@@ -5,11 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
-
+### Added
+- New `FileField` to upload files in a form.
+- New simple `MarkdownField` to help user put text in bold or italic.
 
 ## [v0.3.2] - 2020-04-08
 ### Fixed
-- Avoid breaking client's design with useless margins in `ReorderableList`
+- Avoid breaking client's design with useless margins in `ReorderableList`.
 
 ## [v0.3.1] - 2020-04-08
 ### Fixed
