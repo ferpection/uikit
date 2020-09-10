@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import { N100_COLOR, N300_COLOR, C15_COLOR, C200_COLOR } from '../../../colors'
+import { N100_COLOR, N300_COLOR, C200_COLOR } from '../../../colors'
 
 export const textStyle = css`
   margin: 0;
