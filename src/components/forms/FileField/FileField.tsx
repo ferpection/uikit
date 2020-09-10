@@ -1,9 +1,10 @@
 /** @jsx jsx */
-import { useState, useEffect, SyntheticEvent, Fragment, useRef } from 'react'
+import { useState, useEffect, SyntheticEvent, Fragment, useRef, useContext } from 'react'
 import { jsx } from '@emotion/core'
 
 import { FormProps } from '../form-props'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
+import { I18nContext } from '../../contexts/I18nContext'
 
 import {
   baseStyle,
@@ -24,6 +25,19 @@ export function FileField(props: FileFieldProps) {
   const [isValid, setValidity] = useState(true)
   const [errorMessages, setErrorMessages] = useState({})
   const fileInput = useRef<HTMLInputElement>()
+  const { addTranslations, t } = useContext(I18nContext)
+
+  addTranslations('en', {
+    fileAmount: '{ $count } files',
+    browse: 'Browse',
+    required: 'Please fill the field.',
+  })
+
+  addTranslations('fr', {
+    fileAmount: '{ $count } fichiers',
+    browse: 'Choisir',
+    required: 'Vous devez remplir le champ.',
+  })
 
   const {
     onValueChange = () => {},
@@ -74,9 +88,9 @@ export function FileField(props: FileFieldProps) {
             <div css={[placeholderStyle, isDisabled && placeholderDisabledStyle]}>{placeholder}</div>
           )}
           {files.length === 1 && <div css={[valueStyle]}>{files[0].name.split('\\').pop()}</div>}
-          {files.length > 1 && <div css={[valueStyle]}>{files.length} files</div>}
+          {files.length > 1 && <div css={[valueStyle]}>{t('fileAmount', { count: files.length})}</div>}
           <div css={[button, isDisabled && buttonDisabledStyle]} role="button">
-            Browse
+            {t('browse')}
           </div>
         </div>
       </label>
