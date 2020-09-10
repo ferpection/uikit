@@ -19,7 +19,7 @@ import {
 } from './styles'
 
 export function FileField(props: FileFieldProps) {
-  const { isDisabled, placeholder = 'Choose a file...', isHighlighted, accept = '', isRequired, hideErrors } = props
+  const { isDisabled, placeholder = 'Choose a file...', isHighlighted, accept, isRequired, hideErrors, capture, isMultiple } = props
   const [value, setValue] = useState('')
   const [isValid, setValidity] = useState(true)
   const [errorMessages, setErrorMessages] = useState({})
@@ -59,6 +59,8 @@ export function FileField(props: FileFieldProps) {
           css={[hiddenInput]}
           type="file"
           accept={accept}
+          capture={capture}
+          multiple={isMultiple}
           disabled={isDisabled}
           value={value}
           onChange={event => handleChanges(event)}
@@ -81,9 +83,11 @@ export function FileField(props: FileFieldProps) {
 }
 
 export interface FileFieldProps extends FormProps {
-  isHighlighted?: boolean
   value?: string
-  onValueChange?: (value: string, event: SyntheticEvent) => void
+  isHighlighted?: boolean
+  isMultiple?: boolean
   accept?: string
   hideErrors?: boolean
+  capture?: 'user' | 'environment'
+  onValueChange?: (value: string, event: SyntheticEvent) => void
 }
