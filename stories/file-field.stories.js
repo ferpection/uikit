@@ -7,7 +7,11 @@ export default {
 }
 
 export const NormalState = () => {
-  return <FileField />
+  return <FileField onValueChange={files => console.log(files)}/>
+}
+
+export const MultipleFilesState = () => {
+  return <FileField isMultiple onValueChange={files => console.log(files)}/>
 }
 
 export const HighlightedState = () => {
