@@ -2,6 +2,10 @@ import React from 'react'
 
 import { Color } from '../../colors'
 
+export interface FerpectionLogoProps {
+  color: Color
+}
+
 export const FerpectionLogo: React.FC<FerpectionLogoProps> = ({ color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +24,3 @@ export const FerpectionLogo: React.FC<FerpectionLogoProps> = ({ color }) => (
     <path d="M180.035 64.335l-60.752-6.92L90.808.216l-28.476 57.2-60.75 6.92 43.152 46.4-9.07 56.972 55.145-24.082 55.146 24.16-9.073-57.067 43.154-46.382zm-65.747 14.378l-28.296 43.3c-.983 1.505-2.68 2.45-4.538 2.532l-.258.005c-1.763 0-3.432-.785-4.502-2.133L62.21 104.185c-1.882-2.37-1.392-5.746 1.094-7.54 2.49-1.795 6.032-1.325 7.914 1.043l9.525 11.984 23.954-36.648c1.65-2.52 5.132-3.293 7.782-1.725s3.457 4.89 1.808 7.415" />
   </svg>
 )
-
-export interface FerpectionLogoProps {
-  color: Color
-}

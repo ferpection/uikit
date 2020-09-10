@@ -14,6 +14,23 @@ import { GoalsBadgeIcon } from './GoalsBadgeIcon'
 import { ConfigBadgeIcon } from './ConfigBadgeIcon'
 import { DeviceBadgeIcon } from './DeviceBadgeIcon'
 
+export interface FerpectionBadgeIconProps {
+  borderColor?: Color
+  icon:
+    | 'tasks'
+    | 'test'
+    | 'target'
+    | 'screening'
+    | 'post-test'
+    | 'pre-test'
+    | 'planning'
+    | 'objectives'
+    | 'incentive'
+    | 'goals'
+    | 'config'
+    | 'device'
+}
+
 export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({ borderColor, icon: iconName }) => {
   switch (iconName) {
     case 'config': {
@@ -55,21 +72,4 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({ border
     default:
       return null
   }
-}
-
-export interface FerpectionBadgeIconProps {
-  borderColor?: Color
-  icon:
-    | 'tasks'
-    | 'test'
-    | 'target'
-    | 'screening'
-    | 'post-test'
-    | 'pre-test'
-    | 'planning'
-    | 'objectives'
-    | 'incentive'
-    | 'goals'
-    | 'config'
-    | 'device'
 }

@@ -6,6 +6,12 @@ import { DragContext } from '../DragContext'
 
 import { container, grabCursor } from './styles'
 
+export interface DraggableItemProps {
+  itemId: string
+  useExternalDragHandle?: boolean
+  onDragStatusChange?: (status: string) => void
+}
+
 export const DraggableItem: FC<DraggableItemProps> = props => {
   const { useExternalDragHandle = false, onDragStatusChange = () => {} } = props
   const [draggable, setDraggable] = useState(!useExternalDragHandle)
@@ -80,10 +86,4 @@ export const DraggableItem: FC<DraggableItemProps> = props => {
       </DragContext.Provider>
     </div>
   )
-}
-
-export interface DraggableItemProps {
-  itemId: string
-  useExternalDragHandle?: boolean
-  onDragStatusChange?: (status: string) => void
 }

@@ -8,6 +8,15 @@ import { FormProps } from '../form-props'
 
 import { baseStyle, placehoderStyle, highlightedStyle, disabledStyle, errorStyle, smallStyle } from './styles'
 
+export interface SelectFieldProps extends FormProps {
+  isHighlighted: boolean
+  className?: string
+  isSmall?: boolean
+  hideErrors?: boolean
+  value?: string
+  onValueChange?: (value: string, event: SyntheticEvent) => void
+}
+
 export const SelectField: React.FC<SelectFieldProps> = props => {
   const { value: externalValue } = props
 
@@ -89,13 +98,4 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
       <FormErrorMessages errors={errorMessages} />
     </Fragment>
   )
-}
-
-export interface SelectFieldProps extends FormProps {
-  isHighlighted: boolean
-  className?: string
-  isSmall?: boolean
-  hideErrors?: boolean
-  value?: string
-  onValueChange?: (value: string, event: SyntheticEvent) => void
 }

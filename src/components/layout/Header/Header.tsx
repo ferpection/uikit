@@ -7,6 +7,11 @@ import { FerpectionLogo } from '../../iconography/FerpectionLogo'
 
 import { defaultHeaderStyles, buttonListStyle, lightHeaderStyle, logoStyles } from './styles'
 
+export interface HeaderProps {
+  homeUrl?: string
+  isLightVersion?: boolean
+}
+
 export const Header: React.FC<HeaderProps> = props => {
   const { homeUrl = 'https://ferpection.com/', children, isLightVersion } = props
   const BLACK_COLOR = new Color(255, 255, 255)
@@ -34,9 +39,4 @@ export const Header: React.FC<HeaderProps> = props => {
       </nav>
     </header>
   )
-}
-
-export interface HeaderProps {
-  homeUrl?: string
-  isLightVersion?: boolean
 }

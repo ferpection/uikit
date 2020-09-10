@@ -12,6 +12,16 @@ import {
   radioStylesBottomSticked,
 } from './styles'
 
+export interface RadioButtonProps {
+  value: string
+  isDisabled?: boolean
+  isChecked?: boolean
+  radioPosition?: 'top' | 'bottom' | 'center'
+  onValueChange?: (event: ChangeEvent<HTMLInputElement>) => void
+  onBlur?: (event: FocusEvent) => void
+  onFocus?: (event: FocusEvent) => void
+}
+
 export const RadioButton: FC<RadioButtonProps> = props => (
   <label css={[labelStyles, props.isDisabled && labelStylesDisabled]}>
     <input
@@ -34,13 +44,3 @@ export const RadioButton: FC<RadioButtonProps> = props => (
     <div css={[childrenStyles]}>{props.children}</div>
   </label>
 )
-
-export interface RadioButtonProps {
-  value: string
-  isDisabled?: boolean
-  isChecked?: boolean
-  radioPosition?: 'top' | 'bottom' | 'center'
-  onValueChange?: (event: ChangeEvent<HTMLInputElement>) => void
-  onBlur?: (event: FocusEvent) => void
-  onFocus?: (event: FocusEvent) => void
-}

@@ -11,6 +11,13 @@ import { Color } from '../../../colors'
 
 import { containerStyles, headerStyles, titleStyles, sectionStyles, titleTextStyles, logoStyles } from './styles'
 
+export interface ThematicSectionProps {
+  title: string
+  actions?: ReactElementLike
+  badgeIcon?: FerpectionBadgeIconProps['icon']
+  badgeColor?: Color
+}
+
 export const ThematicSection: React.FC<ThematicSectionProps> = props => (
   <div css={[containerStyles]}>
     <header css={[headerStyles]}>
@@ -25,10 +32,3 @@ export const ThematicSection: React.FC<ThematicSectionProps> = props => (
     <section css={[sectionStyles]}>{props.children}</section>
   </div>
 )
-
-export interface ThematicSectionProps {
-  title: string
-  actions?: ReactElementLike
-  badgeIcon?: FerpectionBadgeIconProps['icon']
-  badgeColor?: Color
-}

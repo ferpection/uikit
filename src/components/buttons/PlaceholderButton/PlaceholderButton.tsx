@@ -8,6 +8,19 @@ import { ButtonContainer } from '../ButtonContainer'
 
 import { addButtonStyles, disabledStyles } from './styles'
 
+interface PlaceholderButtonProps {
+  isDisabled?: boolean
+  to?: string
+  icon?: IconName | null
+  ariaLabel?: string
+  children?: string
+  onClick?: (event: SyntheticEvent) => void
+  onMouseUp?: (event?: SyntheticEvent) => void
+  onMouseDown?: (event?: SyntheticEvent) => void
+  onFocus?: (event?: SyntheticEvent) => void
+  onBlur?: (event?: SyntheticEvent) => void
+}
+
 export const PlaceholderButton: React.FC<PlaceholderButtonProps> = props => {
   const { children = 'Add an element', isDisabled, icon = 'plus', ...args } = props
 
@@ -27,17 +40,4 @@ export const PlaceholderButton: React.FC<PlaceholderButtonProps> = props => {
       {children}
     </ButtonContainer>
   )
-}
-
-interface PlaceholderButtonProps {
-  isDisabled?: boolean
-  to?: string
-  icon?: IconName | null
-  ariaLabel?: string
-  children?: string
-  onClick?: (event: SyntheticEvent) => void
-  onMouseUp?: (event?: SyntheticEvent) => void
-  onMouseDown?: (event?: SyntheticEvent) => void
-  onFocus?: (event?: SyntheticEvent) => void
-  onBlur?: (event?: SyntheticEvent) => void
 }

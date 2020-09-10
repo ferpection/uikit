@@ -28,6 +28,10 @@ const defaultTheme: Theme = {
 
 export const ThemeContext = React.createContext(defaultTheme)
 
+export interface ThemeProviderProps {
+  theme?: ThemeInput
+}
+
 export const ThemeProvider: FC<ThemeProviderProps> = props => {
   const { children, theme = {} } = props
   const value: Theme = {
@@ -40,8 +44,4 @@ export const ThemeProvider: FC<ThemeProviderProps> = props => {
   }
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
-}
-
-export interface ThemeProviderProps {
-  theme?: ThemeInput
 }

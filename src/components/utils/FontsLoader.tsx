@@ -5,6 +5,11 @@ import WebFontLoader from 'webfontloader'
 
 import { SANSSERIF_FONTSET, OPENSANS_FONT } from '../../fonts'
 
+export interface FontsLoaderProps {
+  fontNames?: string[]
+  onlyLoadFonts?: boolean
+}
+
 export const FontsLoader: FC<FontsLoaderProps> = ({ fontNames = [OPENSANS_FONT], onlyLoadFonts = false }) => {
   useEffect(() => {
     WebFontLoader.load({
@@ -29,9 +34,4 @@ export const FontsLoader: FC<FontsLoaderProps> = ({ fontNames = [OPENSANS_FONT],
       )}
     </Fragment>
   )
-}
-
-export interface FontsLoaderProps {
-  fontNames?: string[]
-  onlyLoadFonts?: boolean
 }

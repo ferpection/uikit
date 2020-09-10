@@ -4,6 +4,10 @@ import { css, jsx } from '@emotion/core'
 
 import { Color } from '../../../colors'
 
+interface PostTestBadgeIconProps {
+  borderColor: Color
+}
+
 export const PostTestBadgeIcon: React.FC<PostTestBadgeIconProps> = ({
   borderColor = {
     toHex: () => {},
@@ -105,8 +109,4 @@ export const PostTestBadgeIcon: React.FC<PostTestBadgeIconProps> = ({
       </g>
     </svg>
   )
-}
-
-interface PostTestBadgeIconProps {
-  borderColor: Color
 }

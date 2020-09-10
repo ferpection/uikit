@@ -45,6 +45,10 @@ const weekdayNamesShort = [
   'uikit:sundayShort',
 ]
 
+export interface CalendarProps extends RenderProps {
+  isSmall?: boolean
+}
+
 export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDateProps, getForwardProps, isSmall }) => {
   const { addTranslations, t } = useContext(I18nContext)
 
@@ -99,8 +103,4 @@ export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDatePr
       ))}
     </div>
   )
-}
-
-export interface CalendarProps extends RenderProps {
-  isSmall?: boolean
 }

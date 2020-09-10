@@ -4,6 +4,10 @@ import { css, jsx } from '@emotion/core'
 
 import { Color } from '../../../colors'
 
+interface PlanningBadgeIconProps {
+  borderColor: Color
+}
+
 export const PlanningBadgeIcon: React.FC<PlanningBadgeIconProps> = ({
   borderColor = {
     toHex: () => {},
@@ -83,8 +87,4 @@ export const PlanningBadgeIcon: React.FC<PlanningBadgeIconProps> = ({
       </g>
     </svg>
   )
-}
-
-interface PlanningBadgeIconProps {
-  borderColor: Color
 }

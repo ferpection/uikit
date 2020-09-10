@@ -21,6 +21,19 @@ import {
   hideMarker,
 } from './styles'
 
+export interface TextFieldListProps extends FormProps {
+  dataType?: TextFieldProps['dataType']
+  isEditable?: boolean
+  isOrdered?: boolean
+  initialFieldCount?: number
+  maxFieldCount?: number
+  rowCount?: number
+  buttonText?: string
+  displayErrorStrategy?: 'hidden' | 'on-field' | 'on-list'
+  value?: string[]
+  onValueChange?: (values: string[]) => void
+}
+
 export const TextFieldList: React.FC<TextFieldListProps> = props => {
   const flatInitialValues = props.value || []
   const intialValues = flatInitialValues.map(el => ({
@@ -173,17 +186,4 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
       ) : null}
     </Fragment>
   )
-}
-
-export interface TextFieldListProps extends FormProps {
-  dataType?: TextFieldProps['dataType']
-  isEditable?: boolean
-  isOrdered?: boolean
-  initialFieldCount?: number
-  maxFieldCount?: number
-  rowCount?: number
-  buttonText?: string
-  displayErrorStrategy?: 'hidden' | 'on-field' | 'on-list'
-  value?: string[]
-  onValueChange?: (values: string[]) => void
 }

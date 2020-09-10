@@ -12,6 +12,10 @@ import {
   logoOuterStyles,
 } from './styles'
 
+export interface HelpBlockProps {
+  question: string
+}
+
 export const HelpBlock: React.FC<HelpBlockProps> = props => {
   return (
     <aside css={[containerStyles]}>
@@ -26,8 +30,4 @@ export const HelpBlock: React.FC<HelpBlockProps> = props => {
       <section css={questionTextStyles}>{props.children}</section>
     </aside>
   )
-}
-
-export interface HelpBlockProps {
-  question: string
 }

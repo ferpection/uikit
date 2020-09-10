@@ -12,6 +12,16 @@ import {
   checkboxStylesBottomSticked,
 } from './styles'
 
+export interface CheckboxButtonProps {
+  value: string
+  isDisabled?: boolean
+  isChecked?: boolean
+  checkboxPosition?: 'top' | 'bottom' | 'center'
+  onValueChange?: (event: ChangeEvent<HTMLInputElement>) => void
+  onBlur?: (event: FocusEvent) => void
+  onFocus?: (event: FocusEvent) => void
+}
+
 export const CheckboxButton: FC<CheckboxButtonProps> = props => (
   <label css={[labelStyles, props.isDisabled && labelStylesDisabled]}>
     <input
@@ -34,13 +44,3 @@ export const CheckboxButton: FC<CheckboxButtonProps> = props => (
     <div css={childrenStyles}>{props.children}</div>
   </label>
 )
-
-export interface CheckboxButtonProps {
-  value: string
-  isDisabled?: boolean
-  isChecked?: boolean
-  checkboxPosition?: 'top' | 'bottom' | 'center'
-  onValueChange?: (event: ChangeEvent<HTMLInputElement>) => void
-  onBlur?: (event: FocusEvent) => void
-  onFocus?: (event: FocusEvent) => void
-}
