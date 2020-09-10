@@ -30,7 +30,16 @@ export interface FileFieldProps extends FormProps {
 }
 
 export function FileField(props: FileFieldProps) {
-  const { isDisabled, placeholder = 'Choose a file...', isHighlighted, accept, isRequired, hideErrors, capture, isMultiple } = props
+  const {
+    isDisabled,
+    placeholder = 'Choose a file...',
+    isHighlighted,
+    accept,
+    isRequired,
+    hideErrors,
+    capture,
+    isMultiple,
+  } = props
   const [files, setFiles] = useState<File[]>([])
   const [isValid, setValidity] = useState(true)
   const [errorMessages, setErrorMessages] = useState({})
@@ -94,7 +103,7 @@ export function FileField(props: FileFieldProps) {
           onBlur={event => handleBlur(event)}
         />
         <div css={[baseStyle, isHighlighted && highlightedStyle, !isValid && errorStyle, isDisabled && disabledStyle]}>
-          {(files.length < 1) && (
+          {files.length < 1 && (
             <div css={[placeholderStyle, isDisabled && placeholderDisabledStyle]}>{placeholder}</div>
           )}
           {files.length === 1 && <div css={[valueStyle]}>{files[0].name.split('\\').pop()}</div>}
