@@ -20,28 +20,27 @@ import {
 
 export function FileField(props: FileFieldProps) {
   const { isDisabled, placeholder = 'Choose a file...', isHighlighted, accept, isRequired, hideErrors, capture, isMultiple } = props
-  const [value, setValue] = useState('')
+  const [files, setFiles] = useState<File[]>([])
   const [isValid, setValidity] = useState(true)
   const [errorMessages, setErrorMessages] = useState({})
   const fileInput = useRef<HTMLInputElement>()
 
   const {
     onValueChange = () => {},
-    onFilesChange = () => {},
     onErrors = () => {},
     onBlur: handleBlur = () => {},
     onFocus: handleFocus = () => {},
   } = props
 
   const handleChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value)
-    onValueChange(event.target.value, event)
-    onFilesChange(Array.from(fileInput?.current?.files), event)
+    const newFiles = Array.from(fileInput?.current?.files)
+    setFiles(newFiles)
+    onValueChange(newFiles, event)
   }
 
   useEffect(() => {
     let errors = {}
-    if (isRequired && (value == null || value === '')) {
+    if (isRequired && (files == null || files.length < 1)) {
       errors = Object.assign({}, errors, {
         required: {},
       })
@@ -53,7 +52,7 @@ export function FileField(props: FileFieldProps) {
     if (!hideErrors) {
       setErrorMessages(errors)
     }
-  }, [value])
+  }, [files])
 
   return (
     <Fragment>
@@ -66,16 +65,16 @@ export function FileField(props: FileFieldProps) {
           capture={capture}
           multiple={isMultiple}
           disabled={isDisabled}
-          value={value}
           onChange={event => handleChanges(event)}
           onFocus={event => handleFocus(event)}
           onBlur={event => handleBlur(event)}
         />
         <div css={[baseStyle, isHighlighted && highlightedStyle, !isValid && errorStyle, isDisabled && disabledStyle]}>
-          {(value == null || value === '') && (
+          {(files.length < 1) && (
             <div css={[placeholderStyle, isDisabled && placeholderDisabledStyle]}>{placeholder}</div>
           )}
-          {value != null && value !== '' && <div css={[valueStyle]}>{value.split('\\').pop()}</div>}
+          {files.length === 1 && <div css={[valueStyle]}>{files[0].name.split('\\').pop()}</div>}
+          {files.length > 1 && <div css={[valueStyle]}>{files.length} files</div>}
           <div css={[button, isDisabled && buttonDisabledStyle]} role="button">
             Browse
           </div>
@@ -87,12 +86,11 @@ export function FileField(props: FileFieldProps) {
 }
 
 export interface FileFieldProps extends FormProps {
-  value?: string
+  value?: File[]
   isHighlighted?: boolean
   isMultiple?: boolean
   accept?: string
   hideErrors?: boolean
   capture?: 'user' | 'environment'
-  onValueChange?: (value: string, event: SyntheticEvent) => void
-  onFilesChange?: (value: File[], event: SyntheticEvent) => void
+  onValueChange?: (value: File[], event: SyntheticEvent) => void
 }
