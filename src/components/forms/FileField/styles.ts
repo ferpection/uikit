@@ -27,7 +27,7 @@ export const baseStyle = css`
     box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
   }
 
-  input[type='file']:focus + & {
+  input[type='file']:focus + &, input[type='file']:focus-within + & {
     z-index: 1;
     border: 1px solid ${`${C200_COLOR}`};
     outline: 0;
@@ -64,7 +64,7 @@ export const disabledStyle = css`
   cursor: not-allowed;
   &:hover,
   input[type='file']:focus + &,
-  input[type='file']:active + & {
+  input[type='file']:active + &, input[type='file']:focus-within + & {
     box-shadow: none;
   }
 `
@@ -77,7 +77,7 @@ export const errorStyle = css`
   &:hover {
     box-shadow: 0 0 0 8px ${`${O200_COLOR.toRGBA(0.1)}`};
   }
-  input[type='file']:focus + & {
+  input[type='file']:focus + &, input[type='file']:focus-within + & {
     background-color: ${`${C15_COLOR}`};
     border-color: ${`${C200_COLOR}`};
     box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
