@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useState, useEffect, SyntheticEvent, Fragment } from 'react'
+import { useState, useEffect, SyntheticEvent, Fragment, useRef } from 'react'
 import { jsx } from '@emotion/core'
 
 import { FormProps } from '../form-props'
@@ -23,9 +23,11 @@ export function FileField(props: FileFieldProps) {
   const [value, setValue] = useState('')
   const [isValid, setValidity] = useState(true)
   const [errorMessages, setErrorMessages] = useState({})
+  const fileInput = useRef<HTMLInputElement>()
 
   const {
     onValueChange = () => {},
+    onFilesChange = () => {},
     onErrors = () => {},
     onBlur: handleBlur = () => {},
     onFocus: handleFocus = () => {},
@@ -34,6 +36,7 @@ export function FileField(props: FileFieldProps) {
   const handleChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)
     onValueChange(event.target.value, event)
+    onFilesChange(Array.from(fileInput?.current?.files), event)
   }
 
   useEffect(() => {
@@ -57,6 +60,7 @@ export function FileField(props: FileFieldProps) {
       <label>
         <input
           css={[hiddenInput]}
+          ref={fileInput}
           type="file"
           accept={accept}
           capture={capture}
@@ -90,4 +94,5 @@ export interface FileFieldProps extends FormProps {
   hideErrors?: boolean
   capture?: 'user' | 'environment'
   onValueChange?: (value: string, event: SyntheticEvent) => void
+  onFilesChange?: (value: File[], event: SyntheticEvent) => void
 }
