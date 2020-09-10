@@ -8,6 +8,17 @@ import { FormProps } from '../form-props'
 import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle, smallStyle } from './styles'
 import { I18nContext } from '../../contexts/I18nContext'
 
+export interface TextFieldProps extends FormProps {
+  dataType?: 'text' | 'email' | 'number'
+  rowCount?: number
+  isHighlighted?: boolean
+  hideErrors?: boolean
+  className?: string
+  value?: string
+  isSmall?: boolean
+  onValueChange?: (value: string, event: SyntheticEvent) => void
+}
+
 const EMAIL_REGEXP = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
 export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, TextFieldProps>((props, ref) => {
@@ -140,14 +151,3 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     </Fragment>
   )
 })
-
-export interface TextFieldProps extends FormProps {
-  dataType?: 'text' | 'email' | 'number'
-  rowCount?: number
-  isHighlighted?: boolean
-  hideErrors?: boolean
-  className?: string
-  value?: string
-  isSmall?: boolean
-  onValueChange?: (value: string, event: SyntheticEvent) => void
-}

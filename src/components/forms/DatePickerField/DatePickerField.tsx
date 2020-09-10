@@ -9,6 +9,12 @@ import { Calendar } from './Calendar/Calendar'
 
 import { datePickerContainer, datePickerContainerSmall } from './styles'
 
+export interface DatePickerFieldProps extends FormProps {
+  value?: Date
+  isSmall?: boolean
+  onValueChange?: (value: Date) => void
+}
+
 export const DatePickerField: FC<DatePickerFieldProps> = props => {
   const {
     value: initialValue,
@@ -68,10 +74,4 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
       ) : null}
     </div>
   )
-}
-
-export interface DatePickerFieldProps extends FormProps {
-  value?: Date
-  isSmall?: boolean
-  onValueChange?: (value: Date) => void
 }

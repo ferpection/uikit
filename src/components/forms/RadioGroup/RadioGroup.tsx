@@ -6,6 +6,14 @@ import { FormProps } from '../form-props'
 
 import { listStyles, listItemStyles, innerRadioStyles, innerRadioStylesDisabled } from './styles'
 
+export interface RadioGroupProps extends FormProps {
+  value?: string
+  onValueChange?: (value: string) => void
+  placeholder?: undefined
+  onBlur?: (event: FocusEvent<HTMLUListElement>) => void
+  onFocus?: (event: FocusEvent<HTMLUListElement>) => void
+}
+
 export const RadioGroup: FC<RadioGroupProps> = props => {
   const [value, setValue] = useState(props.value || '')
   const { onValueChange = () => {}, isDisabled, onBlur: handleBlur, onFocus: handleFocus, ...otherProps } = props
@@ -43,12 +51,4 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
       })}
     </ul>
   )
-}
-
-export interface RadioGroupProps extends FormProps {
-  value?: string
-  onValueChange?: (value: string) => void
-  placeholder?: undefined
-  onBlur?: (event: FocusEvent<HTMLUListElement>) => void
-  onFocus?: (event: FocusEvent<HTMLUListElement>) => void
 }

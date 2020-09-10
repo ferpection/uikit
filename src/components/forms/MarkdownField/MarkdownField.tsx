@@ -7,6 +7,8 @@ import { TextField, TextFieldProps } from '../TextField/TextField'
 
 import { textStyle, iconBar, container, buttonStyle, disabledStyle } from './styles'
 
+export interface MarkdownFieldProps extends TextFieldProps {}
+
 export function MarkdownField(props: MarkdownFieldProps) {
   const { rowCount = 3, isDisabled } = props
   const [value, setValue] = useState('')
@@ -47,8 +49,6 @@ export function MarkdownField(props: MarkdownFieldProps) {
     </div>
   )
 }
-
-export interface MarkdownFieldProps extends TextFieldProps {}
 
 function surroundSelectedText(
   textarea: MutableRefObject<HTMLTextAreaElement>,

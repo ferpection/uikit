@@ -1,9 +1,23 @@
+/* global JSX */
+
 import React, { useState, useEffect, Fragment } from 'react'
 
 import { DraggableItem } from '../dnd/DraggableItem/DraggableItem'
 import Zone from './Zone/Zone'
 
 let positionA = 0
+
+interface ReorderableItem {
+  uuid: string
+  order: number | null
+}
+
+export interface ReorderableListProps<T extends ReorderableItem> {
+  items: T[]
+  renderItem?: (item: T) => JSX.Element | null
+  onOrderChange?: (updatedItems: T[]) => void
+  useExternalDragHandle?: boolean
+}
 
 export function ReorderableList<T extends ReorderableItem>(props: ReorderableListProps<T>) {
   const {
@@ -119,15 +133,3 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
 }
 
 export default ReorderableList
-
-interface ReorderableItem {
-  uuid: string
-  order: number | null
-}
-
-export interface ReorderableListProps<T extends ReorderableItem> {
-  items: T[]
-  renderItem?: (item: T) => JSX.Element | null
-  onOrderChange?: (updatedItems: T[]) => void
-  useExternalDragHandle?: boolean
-}

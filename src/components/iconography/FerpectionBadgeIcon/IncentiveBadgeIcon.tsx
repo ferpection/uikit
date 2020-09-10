@@ -4,6 +4,10 @@ import { css, jsx } from '@emotion/core'
 
 import { Color } from '../../../colors'
 
+interface IncentiveBadgeIconProps {
+  borderColor: Color
+}
+
 export const IncentiveBadgeIcon: React.FC<IncentiveBadgeIconProps> = ({
   borderColor = {
     toHex: () => {},
@@ -60,8 +64,4 @@ export const IncentiveBadgeIcon: React.FC<IncentiveBadgeIconProps> = ({
       </g>
     </svg>
   )
-}
-
-interface IncentiveBadgeIconProps {
-  borderColor: Color
 }

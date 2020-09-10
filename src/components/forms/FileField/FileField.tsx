@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useState, useEffect, SyntheticEvent, Fragment, useRef, useContext } from 'react'
+import React, { useState, useEffect, SyntheticEvent, Fragment, useRef, useContext } from 'react'
 import { jsx } from '@emotion/core'
 
 import { FormProps } from '../form-props'
@@ -18,6 +18,16 @@ import {
   errorStyle,
   valueStyle,
 } from './styles'
+
+export interface FileFieldProps extends FormProps {
+  value?: File[]
+  isHighlighted?: boolean
+  isMultiple?: boolean
+  accept?: string
+  hideErrors?: boolean
+  capture?: 'user' | 'environment'
+  onValueChange?: (value: File[], event: SyntheticEvent) => void
+}
 
 export function FileField(props: FileFieldProps) {
   const { isDisabled, placeholder = 'Choose a file...', isHighlighted, accept, isRequired, hideErrors, capture, isMultiple } = props
@@ -88,7 +98,7 @@ export function FileField(props: FileFieldProps) {
             <div css={[placeholderStyle, isDisabled && placeholderDisabledStyle]}>{placeholder}</div>
           )}
           {files.length === 1 && <div css={[valueStyle]}>{files[0].name.split('\\').pop()}</div>}
-          {files.length > 1 && <div css={[valueStyle]}>{t('fileAmount', { count: files.length})}</div>}
+          {files.length > 1 && <div css={[valueStyle]}>{t('fileAmount', { count: files.length })}</div>}
           <div css={[button, isDisabled && buttonDisabledStyle]} role="button">
             {t('browse')}
           </div>
@@ -97,14 +107,4 @@ export function FileField(props: FileFieldProps) {
       <FormErrorMessages errors={errorMessages} />
     </Fragment>
   )
-}
-
-export interface FileFieldProps extends FormProps {
-  value?: File[]
-  isHighlighted?: boolean
-  isMultiple?: boolean
-  accept?: string
-  hideErrors?: boolean
-  capture?: 'user' | 'environment'
-  onValueChange?: (value: File[], event: SyntheticEvent) => void
 }

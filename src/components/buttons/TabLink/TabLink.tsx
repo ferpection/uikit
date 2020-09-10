@@ -7,6 +7,10 @@ import { Button, ButtonProps } from '../Button/Button'
 
 import { defaultButtonStyles, activeButtonStyles } from './styles'
 
+export interface TabLinkProps extends ButtonProps {
+  exactMatch?: boolean
+}
+
 export const TabLink: FC<TabLinkProps> = props => {
   const { children, exactMatch = false, ...otherProps } = props
   const { to } = otherProps
@@ -20,8 +24,4 @@ export const TabLink: FC<TabLinkProps> = props => {
       {children}
     </Button>
   )
-}
-
-export interface TabLinkProps extends ButtonProps {
-  exactMatch?: boolean
 }

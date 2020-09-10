@@ -10,6 +10,25 @@ import { Color } from '../../../colors'
 
 import { prepareBaseState, prepareFilledState, iconOnlyState, rawLinkState } from './styles'
 
+export interface ButtonProps {
+  isFilled?: boolean
+  isDisabled?: boolean
+  isRaw?: boolean
+  color?: Color
+  hoverColor?: Color
+  icon?: IconName
+  iconStore?: IconPrefix
+  actionType?: 'action' | 'positive' | 'negative'
+  to?: string
+  ariaLabel?: string
+  tabIndex?: number
+  onClick?: (event: SyntheticEvent) => void
+  onMouseUp?: (event?: SyntheticEvent) => void
+  onMouseDown?: (event?: SyntheticEvent) => void
+  onFocus?: (event?: SyntheticEvent) => void
+  onBlur?: (event?: SyntheticEvent) => void
+}
+
 export const Button: React.FC<ButtonProps> = props => {
   const theme = useContext(ThemeContext)
   const {
@@ -70,23 +89,4 @@ export const Button: React.FC<ButtonProps> = props => {
       {children}
     </ButtonContainer>
   )
-}
-
-export interface ButtonProps {
-  isFilled?: boolean
-  isDisabled?: boolean
-  isRaw?: boolean
-  color?: Color
-  hoverColor?: Color
-  icon?: IconName
-  iconStore?: IconPrefix
-  actionType?: 'action' | 'positive' | 'negative'
-  to?: string
-  ariaLabel?: string
-  tabIndex?: number
-  onClick?: (event: SyntheticEvent) => void
-  onMouseUp?: (event?: SyntheticEvent) => void
-  onMouseDown?: (event?: SyntheticEvent) => void
-  onFocus?: (event?: SyntheticEvent) => void
-  onBlur?: (event?: SyntheticEvent) => void
 }

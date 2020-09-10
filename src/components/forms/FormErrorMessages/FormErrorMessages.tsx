@@ -7,6 +7,12 @@ import { I18nContext } from '../../contexts/I18nContext'
 
 import { errorStyle, iconStyle } from './styles'
 
+export interface FormErrorMessagesProps {
+  errors: {
+    [errorKey: string]: any
+  }
+}
+
 export const FormErrorMessages: React.FC<FormErrorMessagesProps> = props => {
   const { t } = useContext(I18nContext)
   const { errors } = props
@@ -24,10 +30,4 @@ export const FormErrorMessages: React.FC<FormErrorMessagesProps> = props => {
         ))}
     </Fragment>
   )
-}
-
-export interface FormErrorMessagesProps {
-  errors: {
-    [errorKey: string]: any
-  }
 }

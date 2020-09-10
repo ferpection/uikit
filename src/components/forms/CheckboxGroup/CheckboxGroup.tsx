@@ -6,6 +6,14 @@ import { FormProps } from '../form-props'
 
 import { listStyles, listItemStyles, innerCheckboxStyles, innerCheckboxStylesDisabled } from './styles'
 
+export interface CheckboxGroupProps extends FormProps {
+  value?: string[]
+  onValueChange?: (value: string[]) => void
+  placeholder?: undefined
+  onBlur?: (event: FocusEvent<HTMLUListElement>) => void
+  onFocus?: (event: FocusEvent<HTMLUListElement>) => void
+}
+
 export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
   const [values, setValues] = useState(props.value || [])
   const { onValueChange = () => {}, isDisabled, onBlur: handleBlur, onFocus: handleFocus } = props
@@ -56,12 +64,4 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
       })}
     </ul>
   )
-}
-
-export interface CheckboxGroupProps extends FormProps {
-  value?: string[]
-  onValueChange?: (value: string[]) => void
-  placeholder?: undefined
-  onBlur?: (event: FocusEvent<HTMLUListElement>) => void
-  onFocus?: (event: FocusEvent<HTMLUListElement>) => void
 }

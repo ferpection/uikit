@@ -4,6 +4,23 @@ import { ThemeProvider, ThemeProviderProps } from '../contexts/ThemeContext'
 import { I18nContext } from '../contexts/I18nContext'
 import { FontsLoader } from './FontsLoader'
 
+export interface I18nDelegate {
+  t: (key: string) => string
+  loadNamespaces: (ns: string[]) => any
+  addResourceBundle: (
+    lng: string,
+    ns: string,
+    resources: { [key: string]: string },
+    deep: boolean,
+    overwrite: boolean,
+  ) => any
+}
+
+export interface UiKitInitializerProps {
+  theme?: ThemeProviderProps['theme']
+  i18n?: I18nDelegate
+}
+
 export const UiKitInitializer: FC<UiKitInitializerProps> = props => {
   const t = props.i18n?.t?.bind(props.i18n)
   const loadNamespaces = props.i18n?.loadNamespaces?.bind(props.i18n)
@@ -30,21 +47,4 @@ export const UiKitInitializer: FC<UiKitInitializerProps> = props => {
       </I18nContext.Provider>
     </ThemeProvider>
   )
-}
-
-export interface UiKitInitializerProps {
-  theme?: ThemeProviderProps['theme']
-  i18n?: I18nDelegate
-}
-
-export interface I18nDelegate {
-  t: (key: string) => string
-  loadNamespaces: (ns: string[]) => any
-  addResourceBundle: (
-    lng: string,
-    ns: string,
-    resources: { [key: string]: string },
-    deep: boolean,
-    overwrite: boolean,
-  ) => any
 }

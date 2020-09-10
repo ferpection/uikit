@@ -4,6 +4,10 @@ import { css, jsx } from '@emotion/core'
 
 import { Color } from '../../../colors'
 
+interface DeviceBadgeIconProps {
+  borderColor: Color
+}
+
 export const DeviceBadgeIcon: React.FC<DeviceBadgeIconProps> = ({
   borderColor = {
     toHex: () => {},
@@ -107,8 +111,4 @@ export const DeviceBadgeIcon: React.FC<DeviceBadgeIconProps> = ({
       </g>
     </svg>
   )
-}
-
-interface DeviceBadgeIconProps {
-  borderColor: Color
 }
