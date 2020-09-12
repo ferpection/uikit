@@ -7,7 +7,7 @@ export default {
 }
 
 export const NormalState = () => {
-  return <MarkdownField />
+  return <MarkdownField onValueChange={value => console.log(value)} />
 }
 
 export const HighlightedState = () => {

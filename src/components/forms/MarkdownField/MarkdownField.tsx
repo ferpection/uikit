@@ -10,7 +10,7 @@ import { textStyle, iconBar, container, buttonStyle, disabledStyle } from './sty
 export interface MarkdownFieldProps extends TextFieldProps {}
 
 export function MarkdownField(props: MarkdownFieldProps) {
-  const { rowCount = 3, isDisabled } = props
+  const { rowCount = 3, isDisabled, onValueChange = () => {} } = props
   const [value, setValue] = useState('')
   const textarea = useRef<HTMLTextAreaElement>()
 
@@ -20,9 +20,10 @@ export function MarkdownField(props: MarkdownFieldProps) {
         <button
           css={[buttonStyle, isDisabled && disabledStyle]}
           disabled={isDisabled}
-          onClick={() => {
+          onClick={event => {
             const updatedText = surroundSelectedText(textarea, ['**', '**'])
             setValue(updatedText)
+            onValueChange(updatedText, event)
           }}
         >
           <FontAwesomeIcon icon="bold" />
@@ -30,9 +31,10 @@ export function MarkdownField(props: MarkdownFieldProps) {
         <button
           css={[buttonStyle, isDisabled && disabledStyle]}
           disabled={isDisabled}
-          onClick={() => {
+          onClick={event => {
             const updatedText = surroundSelectedText(textarea, ['_', '_'])
             setValue(updatedText)
+            onValueChange(updatedText, event)
           }}
         >
           <FontAwesomeIcon icon="italic" />
@@ -44,7 +46,10 @@ export function MarkdownField(props: MarkdownFieldProps) {
         {...props}
         rowCount={rowCount}
         value={value}
-        onValueChange={value => setValue(value)}
+        onValueChange={(value, event) => {
+          setValue(value)
+          onValueChange(value, event)
+        }}
       />
     </div>
   )
