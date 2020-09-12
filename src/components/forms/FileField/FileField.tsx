@@ -79,7 +79,7 @@ export function FileField(props: FileFieldProps) {
     let errors = {}
     if (isRequired && (files == null || files.length < 1)) {
       errors = Object.assign({}, errors, {
-        required: {},
+        'uikit:required': {},
       })
     }
 

@@ -60,7 +60,7 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
     let errors = {}
     if (isRequired && isEmpty) {
       errors = Object.assign({}, errors, {
-        required: {},
+        'uikit:required': {},
       })
     }
 

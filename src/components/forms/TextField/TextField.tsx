@@ -76,19 +76,19 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     let errors = {}
     if (dataType === 'email' && !EMAIL_REGEXP.test(value)) {
       errors = Object.assign({}, errors, {
-        emailInvalid: { value },
+        'uikit:emailInvalid': { value },
       })
     }
 
     if (dataType === 'number' && Number.isNaN(Number(value))) {
       errors = Object.assign({}, errors, {
-        notANumber: { value },
+        'uikit:notANumber': { value },
       })
     }
 
     if (isRequired && (value == null || value === '')) {
       errors = Object.assign({}, errors, {
-        required: {},
+        'uikit:required': {},
       })
     }
 
