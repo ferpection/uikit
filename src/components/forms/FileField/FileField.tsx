@@ -39,8 +39,9 @@ export function FileField(props: FileFieldProps) {
     hideErrors,
     capture,
     isMultiple,
+    value: initialValue
   } = props
-  const [files, setFiles] = useState<File[]>([])
+  const [files, setFiles] = useState<File[]>(initialValue ?? [])
   const [isValid, setValidity] = useState(true)
   const [errorMessages, setErrorMessages] = useState({})
   const fileInput = useRef<HTMLInputElement>()

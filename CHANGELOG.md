@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Fixed
-- Allow `MarkdownField` to emit value change event (`onValueChange` component's attribute)
+- Allow `MarkdownField` to emit value change event (`onValueChange` component's attribute).
+- `FileField` shows the files given as value. The `value` attribute was ignored before.
 
 ## [v0.4.0] - 2020-09-10
 ### Added
