@@ -55,7 +55,7 @@ export function FileField(props: FileFieldProps) {
     hideErrors,
     capture,
     isMultiple,
-    value: initialValue
+    value: initialValue,
   } = props
   const [files, setFiles] = useState<File[]>(initialValue ?? [])
   const [isValid, setValidity] = useState(true)
