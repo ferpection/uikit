@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useState, useRef, MutableRefObject } from 'react'
+import { useState, useRef, MutableRefObject, useEffect } from 'react'
 import { jsx } from '@emotion/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -10,9 +10,13 @@ import { textStyle, iconBar, container, buttonStyle, disabledStyle } from './sty
 export interface MarkdownFieldProps extends TextFieldProps {}
 
 export function MarkdownField(props: MarkdownFieldProps) {
-  const { rowCount = 3, isDisabled, onValueChange = () => {} } = props
-  const [value, setValue] = useState('')
+  const { rowCount = 3, isDisabled, onValueChange = () => {}, value: externalValue } = props
+  const [value, setValue] = useState(externalValue || '')
   const textarea = useRef<HTMLTextAreaElement>()
+
+  useEffect(() => {
+    setValue(externalValue || '')
+  }, [externalValue])
 
   return (
     <div css={[container]}>
