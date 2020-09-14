@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Fixed
 - `MarkdownField` display the initial `value`.
+- CD workflow now works on master only. Solve GitHub Action issue about git HEAD ref.
 
 ## [v0.4.1] - 2020-09-14
 ### Fixed
@@ -14,7 +15,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `FileField` shows the files given as value. The `value` attribute was ignored before.
 - `FileField` is correctly translated. Resolve a bug that only displays translation key.
 - Error messages from UiKit are now correctly translated.
-- CD workflow now works on master only. Solve GitHub Action issue about git HEAD ref.
 
 ## [v0.4.0] - 2020-09-10
 ### Added

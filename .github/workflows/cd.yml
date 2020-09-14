@@ -12,9 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-        ref: master
+    - uses: actions/checkout@v20
     - name: Get Changelog Entry
       id: changelog_reader
       uses: mindsers/changelog-reader-action@v1.0.1
@@ -38,6 +36,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: master
     - name: Cache node modules
       uses: actions/cache@v1
       env:
