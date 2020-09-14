@@ -6,7 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [v0.4.1] - 2020-09-14
+## [v0.4.3] - 2020-09-14
+### Changed
+- **[INTERNAL]** Changes in CI/CD worflows
+
+### Fixed
+- Fix the CHANGELOG.md sections (typos, etc)
+
+## [v0.4.2] - 2020-09-14
 ### Fixed
 - `MarkdownField` display the initial `value`.
 - CD workflow now works on master only. Solve GitHub Action issue about git HEAD ref.
@@ -348,6 +355,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.4.3]: https://github.com/ferpection/uikit/tree/v0.4.3
 [v0.4.2]: https://github.com/ferpection/uikit/tree/v0.4.2
 [v0.4.1]: https://github.com/ferpection/uikit/tree/v0.4.1
 [v0.4.0]: https://github.com/ferpection/uikit/tree/v0.4.0
