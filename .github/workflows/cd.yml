@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: master
     - name: Get Changelog Entry
       id: changelog_reader
       uses: mindsers/changelog-reader-action@v1.0.1
@@ -51,6 +53,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
+        registry-url: https://registry.npmjs.org/
     - name: Use PNPM
       run: curl -L https://unpkg.com/@pnpm/self-installer | node
     - name: Install dependencies
