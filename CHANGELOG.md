@@ -6,9 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Changed
-- `FileField` support fileName containing both "\" and "/".
+- When the value changes in `FileField`'s `value` attribute, the field is reset
+  with the new value.
 
 ### Fixed
+- `FileField` support fileName containing both "\" and "/".
 - Large file name won't break the `FileField` component anymore.
 
 ## [v0.4.3] - 2020-09-14

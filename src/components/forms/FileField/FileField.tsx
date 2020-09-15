@@ -62,6 +62,11 @@ export function FileField(props: FileFieldProps) {
   const [errorMessages, setErrorMessages] = useState({})
   const fileInput = useRef<HTMLInputElement>()
 
+  useEffect(() => {
+    fileInput.current.value = null
+    setFiles(initialValue ?? [])
+  }, [initialValue])
+
   const {
     onValueChange = () => {},
     onErrors = () => {},
