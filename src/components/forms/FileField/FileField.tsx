@@ -110,7 +110,7 @@ export function FileField(props: FileFieldProps) {
           {files.length < 1 && (
             <div css={[placeholderStyle, isDisabled && placeholderDisabledStyle]}>{placeholder}</div>
           )}
-          {files.length === 1 && <div css={[valueStyle]}>{files[0].name.split('\\').pop()}</div>}
+          {files.length === 1 && <div css={[valueStyle]}>{files[0].name.split(/(\\|\/)/).pop()}</div>}
           {files.length > 1 && <div css={[valueStyle]}>{t('uikit:fileAmount', { count: files.length })}</div>}
           <div css={[button, isDisabled && buttonDisabledStyle]} role="button">
             {t('uikit:browse')}
