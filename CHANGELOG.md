@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+### Added
+- `FileField`'s `value` attribute is now ignored if it's not an array of `File`.
+
 ### Changed
 - When the value changes in `FileField`'s `value` attribute, the field is reset
   with the new value.

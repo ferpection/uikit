@@ -57,14 +57,14 @@ export function FileField(props: FileFieldProps) {
     isMultiple,
     value: initialValue,
   } = props
-  const [files, setFiles] = useState<File[]>(initialValue ?? [])
+  const [files, setFiles] = useState<File[]>(Array.isArray(initialValue) ? initialValue : [])
   const [isValid, setValidity] = useState(true)
   const [errorMessages, setErrorMessages] = useState({})
   const fileInput = useRef<HTMLInputElement>()
 
   useEffect(() => {
     fileInput.current.value = null
-    setFiles(initialValue ?? [])
+    setFiles(Array.isArray(initialValue) ? initialValue : [])
   }, [initialValue])
 
   const {
