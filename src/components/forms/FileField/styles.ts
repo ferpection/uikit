@@ -56,6 +56,10 @@ export const valueStyle = css`
   color: ${`${N300_COLOR}`};
   margin: 3px;
   padding: 7px 2px 7px 7px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 `
 
 export const disabledStyle = css`

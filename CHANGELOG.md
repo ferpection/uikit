@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `FileField` support fileName containing both "\" and "/".
 
+### Fixed
+- Large file name won't break the `FileField` component anymore.
+
 ## [v0.4.3] - 2020-09-14
 ### Fixed
 - **[INTERNAL]** Changes in CI/CD worflows.
