@@ -4,13 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { jsx } from '@emotion/core'
 
 import { I18nContext } from '../../contexts/I18nContext'
+import { FormErrors } from '../form-errors'
 
 import { errorStyle, iconStyle } from './styles'
 
 export interface FormErrorMessagesProps {
-  errors: {
-    [errorKey: string]: any
-  }
+  errors: FormErrors
 }
 
 export const FormErrorMessages: React.FC<FormErrorMessagesProps> = props => {
@@ -21,13 +20,17 @@ export const FormErrorMessages: React.FC<FormErrorMessagesProps> = props => {
     <Fragment>
       {Object.keys(errors)
         .filter(errorName => errors[errorName] !== false)
-        .map(errorName => (
-          <p key={errorName} css={errorStyle}>
-            <FontAwesomeIcon icon="exclamation-triangle" css={iconStyle} />
-            {errors[errorName] === true ? t(errorName) : null}
-            {errors[errorName] !== true ? t(errorName, errors[errorName]) : null}
-          </p>
-        ))}
+        .map(errorName => {
+          const error = errors[errorName]
+
+          return (
+            <p key={errorName} css={errorStyle}>
+              <FontAwesomeIcon icon="exclamation-triangle" css={iconStyle} />
+              {error === true ? t(errorName) : null}
+              {typeof error !== "boolean" ? t(errorName, error) : null}
+            </p>
+          )
+        })}
     </Fragment>
   )
 }
