@@ -7,6 +7,7 @@ import { FormProps } from '../form-props'
 
 import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle, smallStyle } from './styles'
 import { I18nContext } from '../../contexts/I18nContext'
+import { FormErrors } from '../form-errors'
 
 export interface TextFieldProps extends FormProps {
   dataType?: 'text' | 'email' | 'number'
@@ -30,6 +31,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     isHighlighted,
     hideErrors,
     value: externalValue,
+    errors: externalErrors,
     isRequired,
     className,
     isSmall = false,
@@ -37,7 +39,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
 
   const { addTranslations } = useContext(I18nContext)
   const [value, setValue] = useState(externalValue || '')
-  const [errorMessages, setErrorMessages] = useState({})
+  const [errorMessages, setErrorMessages] = useState(externalErrors || {})
   const [isValid, setValidity] = useState(true)
 
   addTranslations('en', {
@@ -57,23 +59,19 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
   }, [externalValue])
 
   const {
-    onValueChange = () => {},
-    onErrors = () => {},
+    onValueChange: handleValueChange = () => {},
+    onErrors: handleErrorsChange = () => {},
     onBlur: handleBlur = () => {},
     onFocus: handleFocus = () => {},
   } = props
 
   const handleChanges = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     setValue(event.target.value)
-    onValueChange(event.target.value, event)
+    handleValueChange(event.target.value, event)
   }
 
   useEffect(() => {
-    if (externalValue != null && externalValue !== value) {
-      setValue(externalValue)
-    }
-
-    let errors = {}
+    let errors = externalErrors ?? {}
     if (dataType === 'email' && !EMAIL_REGEXP.test(value)) {
       errors = Object.assign({}, errors, {
         'uikit:emailInvalid': { value },
@@ -92,13 +90,10 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
       })
     }
 
-    setValidity(Object.keys(errors).length <= 0)
-    onErrors(errors)
-
-    if (!hideErrors) {
-      setErrorMessages(errors)
-    }
-  }, [value])
+    setValidity(Object.keys(errors).filter(name => errors[name] !== false).length <= 0)
+    setErrorMessages(hideErrors ? {} : errors)
+    handleErrorsChange(errors)
+  }, [value, externalErrors, hideErrors])
 
   const inputType = dataType === 'number' ? 'text' : dataType
 
