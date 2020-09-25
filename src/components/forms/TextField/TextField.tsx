@@ -39,7 +39,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
 
   const { addTranslations } = useContext(I18nContext)
   const [value, setValue] = useState(externalValue || '')
-  const [errorMessages, setErrorMessages] = useState(externalErrors || {})
+  const [errorMessages, setErrorMessages] = useState({})
   const [isValid, setValidity] = useState(true)
 
   addTranslations('en', {
@@ -71,7 +71,8 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
   }
 
   useEffect(() => {
-    let errors = externalErrors ?? {}
+    let errors =  {}
+
     if (dataType === 'email' && !EMAIL_REGEXP.test(value)) {
       errors = Object.assign({}, errors, {
         'uikit:emailInvalid': { value },
@@ -90,10 +91,18 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
       })
     }
 
-    setValidity(Object.keys(errors).filter(name => errors[name] !== false).length <= 0)
-    setErrorMessages(hideErrors ? {} : errors)
-    handleErrorsChange(errors)
-  }, [value, externalErrors, hideErrors])
+    const cleanErrors = {
+      ...externalErrors,
+      'uikit:emailInvalid': false,
+      'uikit:notANumber': false,
+      'uikit:required': false,
+      ...errors,
+    }
+
+    setValidity(Object.keys(cleanErrors).length <= 0)
+    setErrorMessages(hideErrors ? {} : cleanErrors)
+    handleErrorsChange(cleanErrors)
+  }, [value])
 
   const inputType = dataType === 'number' ? 'text' : dataType
 
