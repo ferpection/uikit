@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, text, number, boolean, select } from '@storybook/addon-knobs'
 
@@ -37,9 +37,24 @@ export const HighlightedState = () => {
 }
 
 export const ErrorState = () => {
-  const [errors, setErrors] = useState({
-    customError: { customData: 18298 }
-  })
+  const [value, setValue] = useState('')
+  const [errors, setErrors] = useState({})
+
+  useEffect(() => {
+    if (value.length > 3) {
+      setErrors({
+        ...errors,
+        'customError:maxLenght': {
+          length: value.length,
+          max: 3,
+        }
+      })
+
+      return
+    }
+
+    setErrors({ ...errors, 'customError:maxLenght': false })
+  }, [value])
 
   return (
     <>
@@ -51,7 +66,9 @@ export const ErrorState = () => {
       </pre>
       <TextField
         placeholder="This is a error input"
-        dataType="number"
+        dataType="text"
+        value={value}
+        onValueChange={value => setValue(value)}
         errors={errors}
         hideErrors={boolean('hide errors', false)}
         onErrors={err => setErrors(err)}

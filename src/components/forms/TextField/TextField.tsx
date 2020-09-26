@@ -34,7 +34,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     hideErrors,
     value: externalValue,
     errors: externalErrors,
-    isRequired,
+    isRequired = false,
     className,
     isSmall = false,
   } = props
@@ -70,11 +70,11 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     handleValueChange(event.target.value, event)
   }
 
-  const { isValid, errors, showableErrors, addError } = useFormErrors({ externalErrors, hideErrors, value, dataType, isRequired })
+  const { isValid, errors, showableErrors, addValidator } = useFormErrors({ externalErrors, hideErrors, value, dataType, isRequired })
 
-  addError('uikit:emailInvalid', ({ value: v, dataType: d }) => d === 'email' && !EMAIL_REGEXP.test(v))
-  addError('uikit:notANumber', ({ value: v, dataType: d }) => d === 'number' && Number.isNaN(Number(v)))
-  addError('uikit:required', ({ value: v, isRequired: r }) => r && (v == null || v === ''))
+  addValidator('uikit:emailInvalid', ({ value: v, dataType: d }) => d === 'email' && !EMAIL_REGEXP.test(v))
+  addValidator('uikit:notANumber', ({ value: v, dataType: d }) => d === 'number' && Number.isNaN(Number(v)))
+  addValidator('uikit:required', ({ value: v, isRequired: r }) => r && (v == null || v === ''))
 
   useEffect(() => handleErrorsChange(errors), [errors])
 
