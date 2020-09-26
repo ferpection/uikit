@@ -61,6 +61,7 @@ export const ErrorState = () => {
       <TextField placeholder="This is a error input" dataType="number" hideErrors={boolean('hide errors', false)} isRequired />
       <TextField rowCount={3} placeholder="This is a error textarea" dataType="email" hideErrors={boolean('hide errors', false)} />
       <h3>With custom error</h3>
+      Errors processed outside of the component:
       <pre>
         {JSON.stringify(errors, null, 4)}
       </pre>
@@ -71,7 +72,7 @@ export const ErrorState = () => {
         onValueChange={value => setValue(value)}
         errors={errors}
         hideErrors={boolean('hide errors', false)}
-        onErrors={err => setErrors(err)}
+        // onErrors={err => setErrors(err)}
         isRequired
       />
     </>
