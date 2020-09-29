@@ -1,5 +1,5 @@
 import React from 'react'
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs, text } from '@storybook/addon-knobs'
 
 import { MarkdownField } from '../src/components/index.ts'
 

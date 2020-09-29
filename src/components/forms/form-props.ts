@@ -1,6 +1,6 @@
 import { SyntheticEvent } from 'react'
 
-import { FormErrors } from './form-errors';
+import { FormErrors } from './form-errors'
 
 export interface FormProps {
   value?: string | string[] | number | Date | File[]

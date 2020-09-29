@@ -70,7 +70,13 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     handleValueChange(event.target.value, event)
   }
 
-  const { isValid, errors, showableErrors, addValidator } = useFormErrors({ externalErrors, hideErrors, value, dataType, isRequired })
+  const { isValid, errors, showableErrors, addValidator } = useFormErrors({
+    externalErrors,
+    hideErrors,
+    value,
+    dataType,
+    isRequired,
+  })
 
   addValidator('uikit:emailInvalid', ({ value: v, dataType: d }) => d === 'email' && !EMAIL_REGEXP.test(v))
   addValidator('uikit:notANumber', ({ value: v, dataType: d }) => d === 'number' && Number.isNaN(Number(v)))

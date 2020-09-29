@@ -27,7 +27,7 @@ export const FormErrorMessages: React.FC<FormErrorMessagesProps> = props => {
             <p key={errorName} css={errorStyle}>
               <FontAwesomeIcon icon="exclamation-triangle" css={iconStyle} />
               {error === true ? t(errorName) : null}
-              {typeof error !== "boolean" ? t(errorName, error) : null}
+              {typeof error !== 'boolean' ? t(errorName, error) : null}
             </p>
           )
         })}

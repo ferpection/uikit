@@ -2,9 +2,9 @@ import { useCallback, useEffect, useReducer, useState } from 'react'
 import { FormErrors } from '../components/forms/form-errors'
 
 interface UseFormErrorsOptions {
-  externalErrors?: FormErrors,
-  hideErrors?: boolean,
-  [key: string]: any,
+  externalErrors?: FormErrors
+  hideErrors?: boolean
+  [key: string]: any
 }
 
 interface Validator {
@@ -13,38 +13,46 @@ interface Validator {
 
 const resetRulesReducer = (errors: FormErrors, newErrorName: string) => ({
   ...errors,
-  [newErrorName]: false
+  [newErrorName]: false,
 })
 
-
-const validatorsReducer = (errors: { [key: string]: Validator }, error: { name: string, validator: Validator}) => ({
+const validatorsReducer = (errors: { [key: string]: Validator }, error: { name: string; validator: Validator }) => ({
   ...errors,
-  [error.name]: error.validator
+  [error.name]: error.validator,
 })
 
-function deepEqual(x: any, y: any) : boolean{
-  const ok = Object.keys, tx = typeof x, ty = typeof y;
-  return x && y && tx === 'object' && tx === ty ? (
-    ok(x).length === ok(y).length &&
-      ok(x).every(key => deepEqual(x[key], y[key]))
-  ) : (x === y);
+function deepEqual(x: any, y: any): boolean {
+  const ok = Object.keys,
+    tx = typeof x,
+    ty = typeof y
+  return x && y && tx === 'object' && tx === ty
+    ? ok(x).length === ok(y).length && ok(x).every(key => deepEqual(x[key], y[key]))
+    : x === y
 }
 
-export default function useFormErrors({ externalErrors: initialExternalErrors = {}, hideErrors = false, value, ...entries }: UseFormErrorsOptions) {
+export default function useFormErrors({
+  externalErrors: initialExternalErrors = {},
+  hideErrors = false,
+  value,
+  ...entries
+}: UseFormErrorsOptions) {
   const [externalErrors, setExternalErrors] = useState(initialExternalErrors)
   const [isValid, setValidity] = useState(true)
   const [validators, addValidator] = useReducer(validatorsReducer, {})
   const [resetRules, addResetRule] = useReducer(resetRulesReducer, {})
   const [errors, setErrors] = useState({})
 
-  const userFacingAddValidator = useCallback((errorName: string, validator: Validator = () => false) => {
-    if (Object.keys(validators).includes(errorName)) {
-      return
-    }
+  const userFacingAddValidator = useCallback(
+    (errorName: string, validator: Validator = () => false) => {
+      if (Object.keys(validators).includes(errorName)) {
+        return
+      }
 
-    addResetRule(errorName)
-    addValidator({ name: errorName, validator })
-  }, [validators])
+      addResetRule(errorName)
+      addValidator({ name: errorName, validator })
+    },
+    [validators],
+  )
 
   useEffect(() => {
     setExternalErrors(prev => {
@@ -60,7 +68,7 @@ export default function useFormErrors({ externalErrors: initialExternalErrors = 
     const internalErrors = Object.keys(validators).reduce((err, key) => {
       return {
         ...err,
-        [key]: validators[key]({ ...entries, value})
+        [key]: validators[key]({ ...entries, value }),
       }
     }, {})
 

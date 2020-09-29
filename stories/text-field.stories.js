@@ -47,7 +47,7 @@ export const ErrorState = () => {
         'customError:maxLenght': {
           length: value.length,
           max: 3,
-        }
+        },
       })
 
       return
@@ -58,13 +58,21 @@ export const ErrorState = () => {
 
   return (
     <>
-      <TextField placeholder="This is a error input" dataType="number" hideErrors={boolean('hide errors', false)} isRequired />
-      <TextField rowCount={3} placeholder="This is a error textarea" dataType="email" hideErrors={boolean('hide errors', false)} />
+      <TextField
+        placeholder="This is a error input"
+        dataType="number"
+        hideErrors={boolean('hide errors', false)}
+        isRequired
+      />
+      <TextField
+        rowCount={3}
+        placeholder="This is a error textarea"
+        dataType="email"
+        hideErrors={boolean('hide errors', false)}
+      />
       <h3>With custom error</h3>
       Errors processed outside of the component:
-      <pre>
-        {JSON.stringify(errors, null, 4)}
-      </pre>
+      <pre>{JSON.stringify(errors, null, 4)}</pre>
       <TextField
         placeholder="This is a error input"
         dataType="text"
