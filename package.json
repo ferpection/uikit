@@ -27,7 +27,8 @@
         "start": "pnpm run build:dev",
         "start:storybook": "start-storybook -p 6006",
         "test:lint": "eslint src/**/*.{ts,tsx} stories/**",
-        "test": "pnpm run test:lint",
+        "test:unit": "jest",
+        "test": "pnpm run test:lint && pnpm run test:unit",
         "format": "prettier --write '{src,stories,.storybook}/**/*.{js,ts,tsx}'",
         "publish:storybook": "pnpm run build:storybook && gh-pages -d storybook-static",
         "prepublishOnly": "pnpm run format && pnpm run test:lint -- --fix && pnpm run build",
@@ -84,6 +85,7 @@
         "eslint-plugin-standard": "^4.0.1",
         "gh-pages": "^3.1.0",
         "i18next": "^19.7.0",
+        "jest": "^26.4.2",
         "prettier": "^2.1.1",
         "prop-types": "^15.7.2",
         "react": "^16.13.1",
@@ -95,6 +97,7 @@
         "rollup-plugin-svg": "^2.0.0",
         "rollup-plugin-typescript2": "^0.27.2",
         "source-map": "^0.7.3",
+        "ts-jest": "^26.4.1",
         "tslib": "^2.0.1",
         "typescript": "^4.0.2"
     }
