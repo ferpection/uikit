@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useReducer, useState } from 'react'
+
 import { FormErrors } from '../components/forms/form-errors'
+import { deepEqual } from '../utils/object'
 
 interface UseFormErrorsOptions {
   externalErrors?: FormErrors
@@ -20,15 +22,6 @@ const validatorsReducer = (errors: { [key: string]: Validator }, error: { name: 
   ...errors,
   [error.name]: error.validator,
 })
-
-function deepEqual(x: any, y: any): boolean {
-  const ok = Object.keys
-  const tx = typeof x
-  const ty = typeof y
-  return x && y && tx === 'object' && tx === ty
-    ? ok(x).length === ok(y).length && ok(x).every(key => deepEqual(x[key], y[key]))
-    : x === y
-}
 
 export default function useFormErrors({
   externalErrors: initialExternalErrors = {},
