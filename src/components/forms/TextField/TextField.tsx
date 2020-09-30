@@ -29,14 +29,14 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     dataType = 'text',
     rowCount = 1,
     placeholder,
-    isDisabled,
-    isHighlighted,
-    hideErrors,
-    value: externalValue,
-    errors: externalErrors,
+    isDisabled = false,
+    isHighlighted = false,
     isRequired = false,
-    className,
     isSmall = false,
+    hideErrors = false,
+    value: externalValue,
+    validators = [],
+    className,
   } = props
 
   const { addTranslations } = useContext(I18nContext)
@@ -54,9 +54,13 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     required: 'Vous devez remplir le champ.',
   })
 
-  useEffect(() => {
-    setValue(externalValue || '')
-  }, [externalValue])
+  useEffect(() => setValue(externalValue || ''), [externalValue])
+  const { isValid, errors, showableErrors } = useFormValidation(value, [
+    (v: string) => ({ 'uikit:emailInvalid' : dataType === 'email' && !EMAIL_REGEXP.test(v) }),
+    (v: string) => ({ 'uikit:notANumber' : dataType === 'number' && Number.isNaN(Number(v)) }),
+    (v: string) => ({ 'uikit:required' : isRequired && (v == null || v === '') }),
+    ...validators,
+  ], hideErrors)
 
   const {
     onValueChange: handleValueChange = () => {},
@@ -69,18 +73,6 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     setValue(event.target.value)
     handleValueChange(event.target.value, event)
   }
-
-  const { isValid, errors, showableErrors, addValidator } = useFormValidation({
-    externalErrors,
-    hideErrors,
-    value,
-    dataType,
-    isRequired,
-  })
-
-  addValidator('uikit:emailInvalid', ({ value: v, dataType: d }) => d === 'email' && !EMAIL_REGEXP.test(v))
-  addValidator('uikit:notANumber', ({ value: v, dataType: d }) => d === 'number' && Number.isNaN(Number(v)))
-  addValidator('uikit:required', ({ value: v, isRequired: r }) => r && (v == null || v === ''))
 
   useEffect(() => handleErrorsChange(errors), [errors])
 

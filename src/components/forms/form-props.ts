@@ -1,14 +1,17 @@
 import { SyntheticEvent } from 'react'
 
 import { FormErrors } from './form-errors'
+import { FormValidator } from './form-validator'
+
+export type FormValue = string | string[] | number | Date | File[]
 
 export interface FormProps {
-  value?: string | string[] | number | Date | File[]
-  errors?: FormErrors
+  value?: FormValue
+  validators?: FormValidator[]
   placeholder?: string
   isDisabled?: boolean
   isRequired?: boolean
-  onValueChange?: (value: string | number | string[] | Date | File[], event?: SyntheticEvent) => void
+  onValueChange?: (value: FormValue, event?: SyntheticEvent) => void
   onErrors?: (errors: FormErrors) => void
   onBlur?: (event?: SyntheticEvent) => void
   onFocus?: (event?: SyntheticEvent) => void

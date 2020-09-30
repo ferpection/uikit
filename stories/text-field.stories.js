@@ -36,25 +36,10 @@ export const HighlightedState = () => {
   )
 }
 
+const MAX_LENGTH = 3
 export const ErrorState = () => {
   const [value, setValue] = useState('')
   const [errors, setErrors] = useState({})
-
-  useEffect(() => {
-    if (value.length > 3) {
-      setErrors({
-        ...errors,
-        'customError:maxLenght': {
-          length: value.length,
-          max: 3,
-        },
-      })
-
-      return
-    }
-
-    setErrors({ ...errors, 'customError:maxLenght': false })
-  }, [value])
 
   return (
     <>
@@ -72,15 +57,17 @@ export const ErrorState = () => {
       />
       <h3>With custom error</h3>
       Errors processed outside of the component:
-      <pre>{JSON.stringify(errors, null, 4)}</pre>
+      <pre>{JSON.stringify(errors, null, 2)}</pre>
       <TextField
         placeholder="This is a error input"
         dataType="text"
         value={value}
         onValueChange={value => setValue(value)}
-        errors={errors}
         hideErrors={boolean('hide errors', false)}
-        // onErrors={err => setErrors(err)}
+        onErrors={err => setErrors(err)}
+        validators={[
+          (v) => ({ 'customError:maxLenght': v.length > MAX_LENGTH && { length: v.length, max: MAX_LENGTH }})
+        ]}
         isRequired
       />
     </>
