@@ -56,9 +56,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
   const { onValueChange = () => {}, onErrors = () => {}, validators = [] } = props
   const errorMessages = Object.keys(inputErrors)
     .map(key => inputErrors[key])
-    .reduce((aggr, curr) => {
-      return Object.assign({}, aggr, curr)
-    }, {})
+    .reduce((aggr, curr) => ({ ...aggr, ...curr }), {})
 
   useEffect(() => onValueChange(flatValues), [values])
   useEffect(() => onErrors(errorMessages), [inputErrors])

@@ -78,15 +78,22 @@ export const ErrorState = () => {
       <TextFieldList
         placeholder={text('placeholder', 'Add your text here')}
         buttonText={text('button text', 'Add a list item')}
-        isEditable
         dataType="email"
-        errors={errors}
+        isEditable
+      />
+      <h3>With custom validation</h3>
+      <p>It is possible to add custom validator to the list. Validators have access to list' value</p>
+      <TextFieldList
+        placeholder={text('placeholder', 'Add your text here')}
+        buttonText={text('button text', 'Add a list item')}
+        dataType="email"
         onValueChange={values => setValues(values)}
         onErrors={values => setErrors(values)}
         displayErrorStrategy={select('display error strategy', ['on-list', 'on-field', 'hidden'], 'on-field')}
         validators={[
           (v) => ({ 'customError:maxLenght': v.length > MAX_VALUES && { length: v.length, max: MAX_VALUES }})
         ]}
+        isEditable
       />
       <pre
         style={{

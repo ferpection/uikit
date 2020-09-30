@@ -55,8 +55,8 @@ export const ErrorState = () => {
         dataType="email"
         hideErrors={boolean('hide errors', false)}
       />
-      <h3>With custom error</h3>
-      Errors processed outside of the component:
+      <h3>With custom validation</h3>
+      It is possible to add custom validators to the exsiting ones. They are ran at the same time.
       <pre>{JSON.stringify(errors, null, 2)}</pre>
       <TextField
         placeholder="This is a error input"
