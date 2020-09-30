@@ -37,6 +37,10 @@ export interface TextFieldListProps extends FormProps {
   onValueChange?: (values: string[]) => void
 }
 
+interface GroupedFormErrors {
+  [id: string]: FormErrors
+}
+
 export const TextFieldList: React.FC<TextFieldListProps> = props => {
   const flatInitialValues = props.value || []
   const intialValues = flatInitialValues.map(el => ({
@@ -46,18 +50,17 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
 
   const [values, setValues] = useState<{ id: string; text: string }[]>(intialValues)
   const [handleFocus, handleBlur] = useMergedFocusHandlers(props)
-  const [inputErrors, setInputErrors] = useState<{
-    [id: string]: FormErrors
-  }>({})
+  const [inputErrors, setInputErrors] = useState<GroupedFormErrors>({})
+  const flatValues = values.map(value => value.text)
 
-  const { onValueChange = () => {}, onErrors = () => {} } = props
+  const { onValueChange = () => {}, onErrors = () => {}, validators = [] } = props
   const errorMessages = Object.keys(inputErrors)
     .map(key => inputErrors[key])
     .reduce((aggr, curr) => {
       return Object.assign({}, aggr, curr)
     }, {})
 
-  useEffect(() => onValueChange(values.map(value => value.text)), [values])
+  useEffect(() => onValueChange(flatValues), [values])
   useEffect(() => onErrors(errorMessages), [inputErrors])
   useEffect(() => {
     const mergedValue = flatInitialValues.reduce((aggr, curr, index) => {
@@ -138,7 +141,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
             rowCount={rowCount}
             isDisabled={isDisabled}
             value={value.text}
-            errors={inputErrors[value.id]}
+            validators={validators.map(validator => () => validator(flatValues))}
             onValueChange={userValue => handleChange(userValue, value.id)}
             onErrors={errors => handleErrors(errors, value.id)}
             hideErrors={['hidden', 'on-list'].includes(displayErrorStrategy)}
