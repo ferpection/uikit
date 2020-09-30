@@ -2,9 +2,12 @@
 import React, { useState, useEffect, SyntheticEvent, Fragment, useRef, useContext } from 'react'
 import { jsx } from '@emotion/core'
 
+import useFormValidation from '../../../hooks/useFormValidation'
+
+import { I18nContext } from '../../contexts/I18nContext'
+
 import { FormProps } from '../form-props'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
-import { I18nContext } from '../../contexts/I18nContext'
 
 import {
   baseStyle,
@@ -56,10 +59,9 @@ export function FileField(props: FileFieldProps) {
     capture,
     isMultiple,
     value: initialValue,
+    errors: externalErrors,
   } = props
   const [files, setFiles] = useState<File[]>(Array.isArray(initialValue) ? initialValue : [])
-  const [isValid, setValidity] = useState(true)
-  const [errorMessages, setErrorMessages] = useState({})
   const fileInput = useRef<HTMLInputElement>()
 
   useEffect(() => {
@@ -80,21 +82,16 @@ export function FileField(props: FileFieldProps) {
     onValueChange(newFiles, event)
   }
 
-  useEffect(() => {
-    let errors = {}
-    if (isRequired && (files == null || files.length < 1)) {
-      errors = Object.assign({}, errors, {
-        'uikit:required': {},
-      })
-    }
+  const { isValid, errors, showableErrors, addValidator } = useFormValidation({
+    externalErrors,
+    hideErrors,
+    value: files,
+    isRequired,
+  })
 
-    setValidity(Object.keys(errors).length <= 0)
-    onErrors(errors)
+  addValidator('uikit:required', ({ value: f, isRequired: r }) => r && (f == null || f.length < 1))
 
-    if (!hideErrors) {
-      setErrorMessages(errors)
-    }
-  }, [files])
+  useEffect(() => onErrors(errors), [errors])
 
   return (
     <Fragment>
@@ -122,7 +119,7 @@ export function FileField(props: FileFieldProps) {
           </div>
         </div>
       </label>
-      <FormErrorMessages errors={errorMessages} />
+      <FormErrorMessages errors={showableErrors} />
     </Fragment>
   )
 }

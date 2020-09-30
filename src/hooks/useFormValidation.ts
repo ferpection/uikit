@@ -23,7 +23,7 @@ const validatorsReducer = (errors: { [key: string]: Validator }, error: { name: 
   [error.name]: error.validator,
 })
 
-export default function useFormErrors({
+export default function useFormValidation({
   externalErrors: initialExternalErrors = {},
   hideErrors = false,
   value,
@@ -33,7 +33,7 @@ export default function useFormErrors({
   const [isValid, setValidity] = useState(true)
   const [validators, addValidator] = useReducer(validatorsReducer, {})
   const [resetRules, addResetRule] = useReducer(resetRulesReducer, {})
-  const [errors, setErrors] = useState({})
+  const [errors, setErrors] = useState<FormErrors>({})
 
   const userFacingAddValidator = useCallback(
     (errorName: string, validator: Validator = () => false) => {

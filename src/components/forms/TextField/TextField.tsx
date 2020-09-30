@@ -2,7 +2,7 @@
 import React, { useState, useEffect, Fragment, SyntheticEvent, useContext, forwardRef, MutableRefObject } from 'react'
 import { jsx } from '@emotion/core'
 
-import useFormErrors from '../../../hooks/useFormErrors'
+import useFormValidation from '../../../hooks/useFormValidation'
 
 import { I18nContext } from '../../contexts/I18nContext'
 
@@ -70,7 +70,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     handleValueChange(event.target.value, event)
   }
 
-  const { isValid, errors, showableErrors, addValidator } = useFormErrors({
+  const { isValid, errors, showableErrors, addValidator } = useFormValidation({
     externalErrors,
     hideErrors,
     value,

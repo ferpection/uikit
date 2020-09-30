@@ -2,6 +2,8 @@
 import React, { useState, useEffect, Fragment, ChangeEvent, SyntheticEvent, useContext } from 'react'
 import { jsx } from '@emotion/core'
 
+import useFormValidation from '../../../hooks/useFormValidation'
+
 import { I18nContext } from '../../contexts/I18nContext'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { FormProps } from '../form-props'
@@ -18,12 +20,10 @@ export interface SelectFieldProps extends FormProps {
 }
 
 export const SelectField: React.FC<SelectFieldProps> = props => {
-  const { value: externalValue } = props
+  const { value: externalValue, errors: externalErrors } = props
 
   const { addTranslations } = useContext(I18nContext)
   const [value, setValue] = useState(externalValue || '')
-  const [errorMessages, setErrorMessages] = useState({})
-  const [isValid, setValidity] = useState(true)
 
   addTranslations('en', {
     required: 'Please fill the field.',
@@ -46,33 +46,25 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
     hideErrors,
   } = props
 
-  const isEmpty = value == null || value === ''
+
   const handleChanges = (event: ChangeEvent<HTMLSelectElement>) => {
     setValue(event.target.value)
     onValueChange(event.target.value, event)
   }
 
-  useEffect(() => {
-    if (externalValue != null && externalValue !== value) {
-      setValue(externalValue)
-    }
+  const { isValid, errors, showableErrors, addValidator } = useFormValidation({
+    externalErrors,
+    hideErrors,
+    value,
+    isRequired,
+  })
 
-    let errors = {}
-    if (isRequired && isEmpty) {
-      errors = Object.assign({}, errors, {
-        'uikit:required': {},
-      })
-    }
+  addValidator('uikit:required', ({ value: v, isRequired: r }) => r && (v == null || v === ''))
 
-    setValidity(Object.keys(errors).length <= 0)
-    onErrors(errors)
-
-    if (!hideErrors) {
-      setErrorMessages(errors)
-    }
-  }, [value])
+  useEffect(() => onErrors(errors), [errors])
 
   const { className, isSmall = false, placeholder, isHighlighted, isDisabled, children } = props
+  const isEmpty = Boolean(errors['uikit:required'])
 
   return (
     <Fragment>
@@ -95,7 +87,7 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
         <option disabled={!isEmpty}>{placeholder}</option>
         {children}
       </select>
-      <FormErrorMessages errors={errorMessages} />
+      <FormErrorMessages errors={showableErrors} />
     </Fragment>
   )
 }
