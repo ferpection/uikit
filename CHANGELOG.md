@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - New `validators` attribute for all the form components to display custom errors.
 
+### Fixed
+- `TextFieldList`: Remove error messages related to value that doesn't exist anymore.
+
 ## [v0.5.0] - 2020-09-15
 ### Added
 - `FileField`'s `value` attribute is now ignored if it's not an array of `File`.

@@ -90,7 +90,16 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
   } = props
 
   const handleAddition = () => setValues([...values, { id: RandomString.generate(20), text: '' }])
-  const handleDeletion = (index: string) => setValues(values.filter(values => values.id !== index))
+  const handleDeletion = (index: string) => {
+    setValues(values.filter(values => values.id !== index))
+    setInputErrors(Object.keys(inputErrors).reduce((ie: GroupedFormErrors, curr) => {
+      if (curr === index) {
+        return ie
+      }
+
+      return { ...ie, [curr]: ie[curr] }
+    }, {}))
+  }
   const handleChange = (userValue: string, index: string) =>
     setValues(
       values.map(value => {
