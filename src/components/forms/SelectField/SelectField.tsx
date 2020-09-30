@@ -20,10 +20,11 @@ export interface SelectFieldProps extends FormProps {
 }
 
 export const SelectField: React.FC<SelectFieldProps> = props => {
-  const { value: externalValue, errors: externalErrors } = props
+  const { value: externalValue } = props
 
   const { addTranslations } = useContext(I18nContext)
   const [value, setValue] = useState(externalValue || '')
+  useEffect(() => setValue(externalValue), [externalValue])
 
   addTranslations('en', {
     required: 'Please fill the field.',
@@ -33,17 +34,14 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
     required: 'Vous devez remplir le champ.',
   })
 
-  useEffect(() => {
-    setValue(externalValue)
-  }, [externalValue])
-
   const {
     onValueChange = () => {},
     onErrors = () => {},
     onFocus: handleFocus = () => {},
     onBlur: handleBlur = () => {},
-    isRequired,
-    hideErrors,
+    isRequired = false,
+    hideErrors = false,
+    validators = [],
   } = props
 
 
@@ -52,14 +50,10 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
     onValueChange(event.target.value, event)
   }
 
-  const { isValid, errors, showableErrors, addValidator } = useFormValidation({
-    externalErrors,
-    hideErrors,
-    value,
-    isRequired,
-  })
-
-  addValidator('uikit:required', ({ value: v, isRequired: r }) => r && (v == null || v === ''))
+  const { isValid, errors, showableErrors } = useFormValidation(value, [
+    ...validators,
+    (v) => ({ 'uikit:required' : isRequired && (v == null || v === '') }),
+  ], hideErrors)
 
   useEffect(() => onErrors(errors), [errors])
 

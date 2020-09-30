@@ -50,16 +50,16 @@ export function FileField(props: FileFieldProps) {
   })
 
   const {
-    isDisabled,
-    placeholder = t('uikit:placeholder'),
-    isHighlighted,
     accept,
-    isRequired,
-    hideErrors,
     capture,
-    isMultiple,
+    placeholder = t('uikit:placeholder'),
+    isDisabled = false,
+    isHighlighted = false,
+    isRequired = false,
+    isMultiple = false,
+    hideErrors = false,
     value: initialValue,
-    errors: externalErrors,
+    validators = [],
   } = props
   const [files, setFiles] = useState<File[]>(Array.isArray(initialValue) ? initialValue : [])
   const fileInput = useRef<HTMLInputElement>()
@@ -82,14 +82,10 @@ export function FileField(props: FileFieldProps) {
     onValueChange(newFiles, event)
   }
 
-  const { isValid, errors, showableErrors, addValidator } = useFormValidation({
-    externalErrors,
-    hideErrors,
-    value: files,
-    isRequired,
-  })
-
-  addValidator('uikit:required', ({ value: f, isRequired: r }) => r && (f == null || f.length < 1))
+  const { isValid, errors, showableErrors } = useFormValidation(files, [
+    ...validators,
+    (f: File[]) => ({ 'uikit:required' : isRequired && (f == null || f.length < 1) }),
+  ], hideErrors)
 
   useEffect(() => onErrors(errors), [errors])
 
