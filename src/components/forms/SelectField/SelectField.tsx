@@ -44,16 +44,16 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
     validators = [],
   } = props
 
-
   const handleChanges = (event: ChangeEvent<HTMLSelectElement>) => {
     setValue(event.target.value)
     onValueChange(event.target.value, event)
   }
 
-  const { isValid, errors, showableErrors } = useFormValidation(value, [
-    ...validators,
-    (v) => ({ 'uikit:required' : isRequired && (v == null || v === '') }),
-  ], hideErrors)
+  const { isValid, errors, showableErrors } = useFormValidation(
+    value,
+    [...validators, v => ({ 'uikit:required': isRequired && (v == null || v === '') })],
+    hideErrors,
+  )
 
   useEffect(() => onErrors(errors), [errors])
 

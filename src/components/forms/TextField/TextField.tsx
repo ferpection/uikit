@@ -55,12 +55,16 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
   })
 
   useEffect(() => setValue(externalValue || ''), [externalValue])
-  const { isValid, errors, showableErrors } = useFormValidation(value, [
-    (v: string) => ({ 'uikit:emailInvalid' : dataType === 'email' && !EMAIL_REGEXP.test(v) }),
-    (v: string) => ({ 'uikit:notANumber' : dataType === 'number' && Number.isNaN(Number(v)) }),
-    (v: string) => ({ 'uikit:required' : isRequired && (v == null || v === '') }),
-    ...validators,
-  ], hideErrors)
+  const { isValid, errors, showableErrors } = useFormValidation(
+    value,
+    [
+      (v: string) => ({ 'uikit:emailInvalid': dataType === 'email' && !EMAIL_REGEXP.test(v) }),
+      (v: string) => ({ 'uikit:notANumber': dataType === 'number' && Number.isNaN(Number(v)) }),
+      (v: string) => ({ 'uikit:required': isRequired && (v == null || v === '') }),
+      ...validators,
+    ],
+    hideErrors,
+  )
 
   const {
     onValueChange: handleValueChange = () => {},

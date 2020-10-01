@@ -82,10 +82,11 @@ export function FileField(props: FileFieldProps) {
     onValueChange(newFiles, event)
   }
 
-  const { isValid, errors, showableErrors } = useFormValidation(files, [
-    ...validators,
-    (f: File[]) => ({ 'uikit:required' : isRequired && (f == null || f.length < 1) }),
-  ], hideErrors)
+  const { isValid, errors, showableErrors } = useFormValidation(
+    files,
+    [...validators, (f: File[]) => ({ 'uikit:required': isRequired && (f == null || f.length < 1) })],
+    hideErrors,
+  )
 
   useEffect(() => onErrors(errors), [errors])
 

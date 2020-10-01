@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, text, number, boolean, select } from '@storybook/addon-knobs'
 
@@ -66,7 +66,7 @@ export const ErrorState = () => {
         hideErrors={boolean('hide errors', false)}
         onErrors={err => setErrors(err)}
         validators={[
-          (v) => ({ 'customError:maxLenght': v.length > MAX_LENGTH && { length: v.length, max: MAX_LENGTH }})
+          v => ({ 'customError:maxLenght': v.length > MAX_LENGTH && { length: v.length, max: MAX_LENGTH } }),
         ]}
         isRequired
       />

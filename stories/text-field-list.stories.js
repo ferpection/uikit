@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import { withA11y } from '@storybook/addon-a11y'
 import { action } from '@storybook/addon-actions'
@@ -91,7 +91,7 @@ export const ErrorState = () => {
         onErrors={values => setErrors(values)}
         displayErrorStrategy={select('display error strategy', ['on-list', 'on-field', 'hidden'], 'on-field')}
         validators={[
-          (v) => ({ 'customError:maxLenght': v.length > MAX_VALUES && { length: v.length, max: MAX_VALUES }})
+          v => ({ 'customError:maxLenght': v.length > MAX_VALUES && { length: v.length, max: MAX_VALUES } }),
         ]}
         isEditable
       />

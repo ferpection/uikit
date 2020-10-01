@@ -51,7 +51,6 @@ export const NormalState = () => {
   )
 }
 
-
 export const ErrorState = () => {
   return (
     <UiKitInitializer i18n={i18n}>
