@@ -56,10 +56,16 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
 
   useEffect(() => onValueChange(values.map(value => value.text)), [values])
   useEffect(() => onErrors(flatErrorMessages), [errorMessages])
-  useEffect(() => setValues(flatInitialValues.map((text, index) => ({
-      id: values[index]?.id ?? RandomString.generate(20) ,
-      text,
-    }))), [flatInitialValues.join(',')])
+  useEffect(
+    () =>
+      setValues(
+        flatInitialValues.map((text, index) => ({
+          id: values[index]?.id ?? RandomString.generate(20),
+          text,
+        })),
+      ),
+    [flatInitialValues.join(',')],
+  )
 
   const {
     isDisabled,
