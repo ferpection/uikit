@@ -58,7 +58,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
   useEffect(() => onErrors(flatErrorMessages), [errorMessages])
   useEffect(() => {
     const mergedValue = flatInitialValues.reduce((aggr, curr, index) => {
-      const { id = RandomString.generate(20) } = values[index]
+      const { id = RandomString.generate(20) } = values[index] ?? {}
 
       return [
         ...aggr,
@@ -70,7 +70,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
     }, [])
 
     setValues(mergedValue)
-  }, [...flatInitialValues])
+  }, [flatInitialValues.join(',')])
 
   const {
     isDisabled,

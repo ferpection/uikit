@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+### Fixed
+- Remove a React error that apears in the console when the `value` attibute
+  of the `TextFieldList` take a bigger set of strings.
+- Remove a bug a bug that prevent the changes in the `value` attribute of the `TextFieldList`
+  to be applied into the component.
 
 ## [v0.5.0] - 2020-09-15
 ### Added
