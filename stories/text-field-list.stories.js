@@ -53,7 +53,7 @@ storiesOf('Components/Forms/TextFieldList', module)
             isOrdered={boolean('is ordered', true)}
             onValueChange={values => setValues(values)}
             initialFieldCount={number('initial field count', 2)}
-            maxFieldCount={number('max field count', null)}
+            maxFieldCount={number('max field count', '')}
             onFocus={action('focus in')}
             onBlur={action('focus out')}
           />
