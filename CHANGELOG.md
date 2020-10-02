@@ -5,11 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+### Added
+- New `validators` attribute for all the form components to display custom errors.
+
 ### Fixed
 - Remove a React error that apears in the console when the `value` attibute
   of the `TextFieldList` take a bigger set of strings.
 - Remove a bug a bug that prevent the changes in the `value` attribute of the `TextFieldList`
   to be applied into the component.
+- Removea bug on `TextFieldList` that display an error messages related to 
+  a value that doesn't exist anymore.
 
 ## [v0.5.0] - 2020-09-15
 ### Added

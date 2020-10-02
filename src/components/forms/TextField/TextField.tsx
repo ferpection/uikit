@@ -2,11 +2,14 @@
 import React, { useState, useEffect, Fragment, SyntheticEvent, useContext, forwardRef, MutableRefObject } from 'react'
 import { jsx } from '@emotion/core'
 
+import useFormValidation from '../../../hooks/useFormValidation'
+
+import { I18nContext } from '../../contexts/I18nContext'
+
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { FormProps } from '../form-props'
 
 import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle, smallStyle } from './styles'
-import { I18nContext } from '../../contexts/I18nContext'
 
 export interface TextFieldProps extends FormProps {
   dataType?: 'text' | 'email' | 'number'
@@ -26,19 +29,18 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     dataType = 'text',
     rowCount = 1,
     placeholder,
-    isDisabled,
-    isHighlighted,
-    hideErrors,
-    value: externalValue,
-    isRequired,
-    className,
+    isDisabled = false,
+    isHighlighted = false,
+    isRequired = false,
     isSmall = false,
+    hideErrors = false,
+    value: externalValue,
+    validators = [],
+    className,
   } = props
 
   const { addTranslations } = useContext(I18nContext)
   const [value, setValue] = useState(externalValue || '')
-  const [errorMessages, setErrorMessages] = useState({})
-  const [isValid, setValidity] = useState(true)
 
   addTranslations('en', {
     emailInvalid: 'Please enter an email address on this field.',
@@ -52,53 +54,31 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     required: 'Vous devez remplir le champ.',
   })
 
-  useEffect(() => {
-    setValue(externalValue || '')
-  }, [externalValue])
+  useEffect(() => setValue(externalValue || ''), [externalValue])
+  const { isValid, errors, showableErrors } = useFormValidation(
+    value,
+    [
+      (v: string) => ({ 'uikit:emailInvalid': dataType === 'email' && !EMAIL_REGEXP.test(v) }),
+      (v: string) => ({ 'uikit:notANumber': dataType === 'number' && Number.isNaN(Number(v)) }),
+      (v: string) => ({ 'uikit:required': isRequired && (v == null || v === '') }),
+      ...validators,
+    ],
+    hideErrors,
+  )
 
   const {
-    onValueChange = () => {},
-    onErrors = () => {},
+    onValueChange: handleValueChange = () => {},
+    onErrors: handleErrorsChange = () => {},
     onBlur: handleBlur = () => {},
     onFocus: handleFocus = () => {},
   } = props
 
   const handleChanges = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     setValue(event.target.value)
-    onValueChange(event.target.value, event)
+    handleValueChange(event.target.value, event)
   }
 
-  useEffect(() => {
-    if (externalValue != null && externalValue !== value) {
-      setValue(externalValue)
-    }
-
-    let errors = {}
-    if (dataType === 'email' && !EMAIL_REGEXP.test(value)) {
-      errors = Object.assign({}, errors, {
-        'uikit:emailInvalid': { value },
-      })
-    }
-
-    if (dataType === 'number' && Number.isNaN(Number(value))) {
-      errors = Object.assign({}, errors, {
-        'uikit:notANumber': { value },
-      })
-    }
-
-    if (isRequired && (value == null || value === '')) {
-      errors = Object.assign({}, errors, {
-        'uikit:required': {},
-      })
-    }
-
-    setValidity(Object.keys(errors).length <= 0)
-    onErrors(errors)
-
-    if (!hideErrors) {
-      setErrorMessages(errors)
-    }
-  }, [value])
+  useEffect(() => handleErrorsChange(errors), [errors])
 
   const inputType = dataType === 'number' ? 'text' : dataType
 
@@ -147,7 +127,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
           onBlur={event => handleBlur(event)}
         />
       ) : null}
-      <FormErrorMessages errors={errorMessages} />
+      <FormErrorMessages errors={showableErrors} />
     </Fragment>
   )
 })

@@ -4,11 +4,14 @@ import RandomString from 'randomstring'
 import { jsx } from '@emotion/core'
 
 import { useMergedFocusHandlers } from '../../../hooks/useMergedFocusHandlers'
+
 import { PlaceholderButton } from '../../buttons/PlaceholderButton/PlaceholderButton'
-import { TextField, TextFieldProps } from '../TextField/TextField'
 import { Button } from '../../buttons/Button/Button'
+
+import { TextField, TextFieldProps } from '../TextField/TextField'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { FormProps } from '../form-props'
+import { FormErrors } from '../form-errors'
 
 import {
   list,
@@ -34,6 +37,10 @@ export interface TextFieldListProps extends FormProps {
   onValueChange?: (values: string[]) => void
 }
 
+interface GroupedFormErrors {
+  [id: string]: FormErrors
+}
+
 export const TextFieldList: React.FC<TextFieldListProps> = props => {
   const flatInitialValues = props.value || []
   const intialValues = flatInitialValues.map(el => ({
@@ -43,19 +50,16 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
 
   const [values, setValues] = useState<{ id: string; text: string }[]>(intialValues)
   const [handleFocus, handleBlur] = useMergedFocusHandlers(props)
-  const [errorMessages, setErrorMessages] = useState<{
-    [errorKey: string]: any
-  }>({})
+  const [inputErrors, setInputErrors] = useState<GroupedFormErrors>({})
+  const flatValues = values.map(value => value.text)
 
-  const { onValueChange = () => {}, onErrors = () => {} } = props
-  const flatErrorMessages = Object.keys(errorMessages)
-    .map(key => errorMessages[key])
-    .reduce((aggr, curr) => {
-      return Object.assign({}, aggr, curr)
-    }, {})
+  const { onValueChange = () => {}, onErrors = () => {}, validators = [] } = props
+  const errorMessages = Object.keys(inputErrors)
+    .map(key => inputErrors[key])
+    .reduce((aggr, curr) => ({ ...aggr, ...curr }), {})
 
-  useEffect(() => onValueChange(values.map(value => value.text)), [values])
-  useEffect(() => onErrors(flatErrorMessages), [errorMessages])
+  useEffect(() => onValueChange(flatValues), [values])
+  useEffect(() => onErrors(errorMessages), [inputErrors])
   useEffect(
     () =>
       setValues(
@@ -81,7 +85,18 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
   } = props
 
   const handleAddition = () => setValues([...values, { id: RandomString.generate(20), text: '' }])
-  const handleDeletion = (index: string) => setValues(values.filter(values => values.id !== index))
+  const handleDeletion = (index: string) => {
+    setValues(values.filter(values => values.id !== index))
+    setInputErrors(
+      Object.keys(inputErrors).reduce((ie: GroupedFormErrors, curr) => {
+        if (curr === index) {
+          return ie
+        }
+
+        return { ...ie, [curr]: ie[curr] }
+      }, {}),
+    )
+  }
   const handleChange = (userValue: string, index: string) =>
     setValues(
       values.map(value => {
@@ -90,14 +105,14 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
         return { id: value.id, text: userValue }
       }),
     )
-  const handleErrors = (errors: { [errorkey: string]: any }, index: string) => {
-    const newErrors = { ...errorMessages, [index]: errors }
+  const handleErrors = (errors: FormErrors, index: string) => {
+    const newErrors = { ...inputErrors, [index]: errors }
 
     if (Object.keys(errors).length < 1) {
       delete newErrors[index]
     }
 
-    setErrorMessages(newErrors)
+    setInputErrors(newErrors)
   }
 
   if (values.length < initialFieldCount) {
@@ -128,8 +143,9 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
             dataType={dataType}
             placeholder={placeholder}
             rowCount={rowCount}
-            value={value.text}
             isDisabled={isDisabled}
+            value={value.text}
+            validators={validators.map(validator => () => validator(flatValues))}
             onValueChange={userValue => handleChange(userValue, value.id)}
             onErrors={errors => handleErrors(errors, value.id)}
             hideErrors={['hidden', 'on-list'].includes(displayErrorStrategy)}
@@ -176,7 +192,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
       {isOrdered ? <ol css={[list]}>{itemsJSX}</ol> : <ul css={[list, hideMarker]}>{itemsJSX}</ul>}
       {displayErrorStrategy === 'on-list' ? (
         <div css={[listErrors]} onFocus={() => handleFocus()} onBlur={() => handleBlur()}>
-          <FormErrorMessages errors={flatErrorMessages} />
+          <FormErrorMessages errors={errorMessages} />
         </div>
       ) : null}
     </Fragment>

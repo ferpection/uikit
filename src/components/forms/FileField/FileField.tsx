@@ -2,9 +2,12 @@
 import React, { useState, useEffect, SyntheticEvent, Fragment, useRef, useContext } from 'react'
 import { jsx } from '@emotion/core'
 
+import useFormValidation from '../../../hooks/useFormValidation'
+
+import { I18nContext } from '../../contexts/I18nContext'
+
 import { FormProps } from '../form-props'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
-import { I18nContext } from '../../contexts/I18nContext'
 
 import {
   baseStyle,
@@ -47,19 +50,18 @@ export function FileField(props: FileFieldProps) {
   })
 
   const {
-    isDisabled,
-    placeholder = t('uikit:placeholder'),
-    isHighlighted,
     accept,
-    isRequired,
-    hideErrors,
     capture,
-    isMultiple,
+    placeholder = t('uikit:placeholder'),
+    isDisabled = false,
+    isHighlighted = false,
+    isRequired = false,
+    isMultiple = false,
+    hideErrors = false,
     value: initialValue,
+    validators = [],
   } = props
   const [files, setFiles] = useState<File[]>(Array.isArray(initialValue) ? initialValue : [])
-  const [isValid, setValidity] = useState(true)
-  const [errorMessages, setErrorMessages] = useState({})
   const fileInput = useRef<HTMLInputElement>()
 
   useEffect(() => {
@@ -80,21 +82,13 @@ export function FileField(props: FileFieldProps) {
     onValueChange(newFiles, event)
   }
 
-  useEffect(() => {
-    let errors = {}
-    if (isRequired && (files == null || files.length < 1)) {
-      errors = Object.assign({}, errors, {
-        'uikit:required': {},
-      })
-    }
+  const { isValid, errors, showableErrors } = useFormValidation(
+    files,
+    [...validators, (f: File[]) => ({ 'uikit:required': isRequired && (f == null || f.length < 1) })],
+    hideErrors,
+  )
 
-    setValidity(Object.keys(errors).length <= 0)
-    onErrors(errors)
-
-    if (!hideErrors) {
-      setErrorMessages(errors)
-    }
-  }, [files])
+  useEffect(() => onErrors(errors), [errors])
 
   return (
     <Fragment>
@@ -122,7 +116,7 @@ export function FileField(props: FileFieldProps) {
           </div>
         </div>
       </label>
-      <FormErrorMessages errors={errorMessages} />
+      <FormErrorMessages errors={showableErrors} />
     </Fragment>
   )
 }

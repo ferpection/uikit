@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
 
@@ -25,10 +24,14 @@ i18n.use(initReactI18next).init({
   },
 })
 
-storiesOf('Components/Forms/DatePickerField', module)
-  .addDecorator(withA11y)
-  .addDecorator(withKnobs)
-  .add('normal state', () => (
+export default {
+  title: 'Components/Forms/DatePickerField',
+  component: DatePickerField,
+  decorators: [withA11y, withKnobs],
+}
+
+export const NormalState = () => {
+  return (
     <UiKitInitializer i18n={i18n}>
       <h1>DatePickerField</h1>
       <p>
@@ -45,4 +48,14 @@ storiesOf('Components/Forms/DatePickerField', module)
         i18next is not provided with this package. You have to install it and configure it yourself.
       </p>
     </UiKitInitializer>
-  ))
+  )
+}
+
+export const ErrorState = () => {
+  return (
+    <UiKitInitializer i18n={i18n}>
+      <h1>{DatePickerField.name} on error state</h1>
+      <DatePickerField isRequired />
+    </UiKitInitializer>
+  )
+}
