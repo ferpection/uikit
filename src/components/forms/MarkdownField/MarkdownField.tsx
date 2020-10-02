@@ -7,6 +7,21 @@ import { TextField, TextFieldProps } from '../TextField/TextField'
 
 import { textStyle, iconBar, container, buttonStyle, disabledStyle } from './styles'
 
+function surroundSelectedText(
+  textarea: MutableRefObject<HTMLTextAreaElement>,
+  [startTag, endTag]: [string, string] = ['', ''],
+) {
+  const startIndex = textarea.current.selectionStart
+  const endIndex = textarea.current.selectionEnd
+  const text = textarea.current.value
+  const selectedText = text.substring(startIndex, endIndex)
+
+  const startText = startIndex === 0 ? '' : text.substring(0, startIndex)
+  const endText = endIndex === text.length ? '' : text.substring(endIndex, text.length)
+
+  return `${startText}${startTag}${selectedText}${endTag}${endText}`
+}
+
 export interface MarkdownFieldProps extends TextFieldProps {}
 
 export function MarkdownField(props: MarkdownFieldProps) {
@@ -57,19 +72,4 @@ export function MarkdownField(props: MarkdownFieldProps) {
       />
     </div>
   )
-}
-
-function surroundSelectedText(
-  textarea: MutableRefObject<HTMLTextAreaElement>,
-  [startTag, endTag]: [string, string] = ['', ''],
-) {
-  const startIndex = textarea.current.selectionStart
-  const endIndex = textarea.current.selectionEnd
-  const text = textarea.current.value
-  const selectedText = text.substring(startIndex, endIndex)
-
-  const startText = startIndex === 0 ? '' : text.substring(0, startIndex)
-  const endText = endIndex === text.length ? '' : text.substring(endIndex, text.length)
-
-  return `${startText}${startTag}${selectedText}${endTag}${endText}`
 }
