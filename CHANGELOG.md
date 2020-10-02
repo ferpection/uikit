@@ -13,8 +13,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   of the `TextFieldList` take a bigger set of strings.
 - Remove a bug a bug that prevent the changes in the `value` attribute of the `TextFieldList`
   to be applied into the component.
-- Removea bug on `TextFieldList` that display an error messages related to 
+- Removea bug on `TextFieldList` that display an error messages related to
   a value that doesn't exist anymore.
+- `isHighlighted` attribute isn't require anymore on `SelectField` component.
 
 ## [v0.5.0] - 2020-09-15
 ### Added

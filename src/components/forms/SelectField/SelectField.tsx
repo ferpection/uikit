@@ -11,7 +11,7 @@ import { FormProps } from '../form-props'
 import { baseStyle, placehoderStyle, highlightedStyle, disabledStyle, errorStyle, smallStyle } from './styles'
 
 export interface SelectFieldProps extends FormProps {
-  isHighlighted: boolean
+  isHighlighted?: boolean
   className?: string
   isSmall?: boolean
   hideErrors?: boolean
@@ -57,7 +57,7 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
 
   useEffect(() => onErrors(errors), [errors])
 
-  const { className, isSmall = false, placeholder, isHighlighted, isDisabled, children } = props
+  const { className, isSmall = false, placeholder, isHighlighted = false, isDisabled, children } = props
   const isEmpty = Boolean(errors['uikit:required'])
 
   return (
