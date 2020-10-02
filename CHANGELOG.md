@@ -9,7 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - New `validators` attribute for all the form components to display custom errors.
 
 ### Fixed
-- `TextFieldList`: Remove error messages related to value that doesn't exist anymore.
+- Remove a React error that apears in the console when the `value` attibute
+  of the `TextFieldList` take a bigger set of strings.
+- Remove a bug a bug that prevent the changes in the `value` attribute of the `TextFieldList`
+  to be applied into the component.
+- Removea bug on `TextFieldList` that display an error messages related to 
+  a value that doesn't exist anymore.
 
 ## [v0.5.0] - 2020-09-15
 ### Added
