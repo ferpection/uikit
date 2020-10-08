@@ -100,7 +100,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
           {calendarType === CalendarType.Month && (
             <MonthPicker
               isSmall={isSmall}
-              selected={value?.getFullYear()}
+              selected={value?.getMonth()}
               onMonthSelected={month => {
                 const date = value ?? new Date()
                 date.setMonth(month)
