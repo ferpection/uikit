@@ -8,6 +8,7 @@ import { FormProps } from '../form-props'
 
 import { Calendar } from './Calendar/Calendar'
 import { YearPicker } from './YearPicker/YearPicker'
+import { MonthPicker } from './MonthPicker/MonthPicker'
 
 import { datePickerContainer, datePickerContainerSmall } from './styles'
 
@@ -89,7 +90,19 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
               )}
             />
           )}
-          {calendarType === CalendarType.Month && <div />}
+          {calendarType === CalendarType.Month && (
+            <MonthPicker
+              isSmall={isSmall}
+              selected={value?.getFullYear()}
+              onMonthSelected={month => {
+                const date = value ?? new Date()
+                date.setMonth(month)
+
+                setValue(date)
+                setCalendarType(CalendarType.Date)
+              }}
+            />
+          )}
           {calendarType === CalendarType.Year && (
             <YearPicker
               isSmall={isSmall}
@@ -99,7 +112,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
                 date.setFullYear(year)
 
                 setValue(date)
-                setCalendarType(CalendarType.Date)
+                setCalendarType(CalendarType.Month)
               }}
             />
           )}
