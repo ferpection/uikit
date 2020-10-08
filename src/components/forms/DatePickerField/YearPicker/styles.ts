@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
-import { R500_COLOR, C200_COLOR, N75_COLOR, N500_COLOR, R400_COLOR, C300_COLOR } from '../../../../colors'
+import { C200_COLOR, C300_COLOR, N500_COLOR, N75_COLOR, R400_COLOR, R500_COLOR } from '../../../../colors'
 
-const buttonWidth = 40
+const buttonWidth = 105
 
 export const buttonBar = css`
   display: flex;
@@ -28,8 +28,8 @@ export const calendarButtons = css`
   box-sizing: border-box;
   margin: 5px;
   color: ${`${N500_COLOR}`};
-  border-radius: 50%;
-  height: ${buttonWidth}px;
+  border-radius: 3px;
+  height: ${buttonWidth / 2}px;
   width: ${buttonWidth}px;
   background-color: transparent;
   border-color: transparent;
@@ -55,25 +55,5 @@ export const calendarButtonsToday = css`
   &:hover {
     background-color: ${`${R500_COLOR}`};
     color: white;
-  }
-`
-
-export const headerWeekday = css`
-  ${header};
-  ${calendarButtons};
-  display: inline-flex;
-  height: initial;
-  background-color: transparent;
-  &:hover,
-  &:focus {
-    background-color: transparent;
-  }
-`
-
-export const emptyButtonSpace = css`
-  ${calendarButtons};
-  &:hover,
-  &:focus {
-    background-color: transparent;
   }
 `

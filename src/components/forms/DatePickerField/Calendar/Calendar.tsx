@@ -7,8 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button } from '../../../buttons/Button/Button'
 import { I18nContext } from '../../../contexts/I18nContext'
 
+import { CalendarContainer } from '../CalendarContainer/CalendarContainer'
+
 import {
-  calendarContainer,
   buttonBar,
   header,
   calendarButtons,
@@ -17,7 +18,6 @@ import {
   calendarButtonsSelected,
   calendarBoard,
   emptyButtonSpace,
-  smallCalendarContainer,
 } from './styles'
 import { englishStrings, frenchStrings } from './locales'
 
@@ -47,16 +47,17 @@ const weekdayNamesShort = [
 
 export interface CalendarProps extends RenderProps {
   isSmall?: boolean
+  onYearSelectionAsked?: () => void
 }
 
-export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDateProps, getForwardProps, isSmall }) => {
+export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDateProps, getForwardProps, isSmall, onYearSelectionAsked = () => {} }) => {
   const { addTranslations, t } = useContext(I18nContext)
 
   addTranslations('en', englishStrings)
   addTranslations('fr', frenchStrings)
 
   return (
-    <div css={[isSmall ? smallCalendarContainer : calendarContainer]}>
+    <CalendarContainer isSmall={isSmall}>
       <div css={[buttonBar]}>
         <Button isFilled icon="arrow-left" {...getBackProps({ calendars })}>
           {t('uikit:buttonPrevious')}
@@ -68,7 +69,7 @@ export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDatePr
       {calendars.map(calendar => (
         <div key={`${calendar.month}${calendar.year}`}>
           <div css={[header]}>
-            {t(monthNamesShort[calendar.month])} {calendar.year}
+            <Button isRaw onClick={onYearSelectionAsked}>{t(monthNamesShort[calendar.month])} {calendar.year}</Button>
           </div>
           {weekdayNamesShort.map(weekday => (
             <div key={`${calendar.month}${calendar.year}${weekday}`} css={[calendarButtons, headerWeekday]}>
@@ -101,6 +102,6 @@ export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDatePr
           </div>
         </div>
       ))}
-    </div>
+    </CalendarContainer>
   )
 }

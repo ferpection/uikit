@@ -1,13 +1,21 @@
 /** @jsx jsx */
-import { FC, useState, SyntheticEvent, useEffect } from 'react'
+import { FC, useState, SyntheticEvent, useEffect, Fragment } from 'react'
 import { jsx } from '@emotion/core'
 import Dayzed from 'dayzed'
 
 import { TextField } from '../TextField/TextField'
 import { FormProps } from '../form-props'
+
 import { Calendar } from './Calendar/Calendar'
+import { YearPicker } from './YearPicker/YearPicker'
 
 import { datePickerContainer, datePickerContainerSmall } from './styles'
+
+enum CalendarType {
+  Date,
+  Month,
+  Year,
+}
 
 export interface DatePickerFieldProps extends FormProps {
   value?: Date
@@ -27,6 +35,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   } = props
   const [value, setValue] = useState(initialValue)
   const [displayModal, setDisplayModal] = useState(false)
+  const [calendarType, setCalendarType] = useState(CalendarType.Date)
 
   useEffect(() => {
     onValueChange(value)
@@ -60,18 +69,30 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
         onBlur={onBlur}
         {...otherProps}
       />
-      {displayModal === true ? (
-        <Dayzed
-          onDateSelected={({ date }) => {
-            setValue(date)
-            setDisplayModal(false)
-          }}
-          date={value || new Date()}
-          selected={[value]}
-          firstDayOfWeek={1}
-          render={dayzedData => <Calendar isSmall={isSmall} {...dayzedData} />}
-        />
-      ) : null}
+      {displayModal === true && (
+        <Fragment>
+          {calendarType === CalendarType.Date && (
+            <Dayzed
+              onDateSelected={({ date }) => {
+                setValue(date)
+                setDisplayModal(false)
+              }}
+              date={value || new Date()}
+              selected={[value]}
+              firstDayOfWeek={1}
+              render={dayzedData => (
+                <Calendar
+                  isSmall={isSmall}
+                  onYearSelectionAsked={() => setCalendarType(CalendarType.Year)}
+                  {...dayzedData}
+                />
+              )}
+            />
+          )}
+          {calendarType === CalendarType.Month && <div />}
+          {calendarType === CalendarType.Year && (<YearPicker isSmall={isSmall} />)}
+        </Fragment>
+      )}
     </div>
   )
 }
