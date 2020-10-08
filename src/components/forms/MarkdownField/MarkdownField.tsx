@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { TextField, TextFieldProps } from '../TextField/TextField'
 
 import { textStyle, iconBar, container, buttonStyle, disabledStyle } from './styles'
+import { defaultFormProps } from '../form-props'
 
 function surroundSelectedText(
   textarea: MutableRefObject<HTMLTextAreaElement>,
@@ -72,4 +73,8 @@ export function MarkdownField(props: MarkdownFieldProps) {
       />
     </div>
   )
+}
+
+MarkdownField.defaultProps = {
+  ...defaultFormProps as MarkdownFieldProps,
 }

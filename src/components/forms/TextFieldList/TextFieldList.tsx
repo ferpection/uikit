@@ -10,7 +10,7 @@ import { Button } from '../../buttons/Button/Button'
 
 import { TextField, TextFieldProps } from '../TextField/TextField'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
-import { FormProps } from '../form-props'
+import { defaultFormProps, FormProps } from '../form-props'
 import { FormErrors } from '../form-errors'
 
 import {
@@ -197,4 +197,8 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
       ) : null}
     </Fragment>
   )
+}
+
+TextFieldList.defaultProps = {
+  ...defaultFormProps as TextFieldListProps,
 }

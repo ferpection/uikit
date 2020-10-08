@@ -6,7 +6,7 @@ import useFormValidation from '../../../hooks/useFormValidation'
 
 import { I18nContext } from '../../contexts/I18nContext'
 
-import { FormProps } from '../form-props'
+import { defaultFormProps, FormProps } from '../form-props'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 
 import {
@@ -119,4 +119,8 @@ export function FileField(props: FileFieldProps) {
       <FormErrorMessages errors={showableErrors} />
     </Fragment>
   )
+}
+
+FileField.defaultProps = {
+  ...defaultFormProps as FileFieldProps,
 }

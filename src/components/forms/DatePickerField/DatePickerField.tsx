@@ -5,7 +5,7 @@ import { jsx } from '@emotion/core'
 import { I18nContext } from '../../contexts/I18nContext'
 
 import { TextField } from '../TextField/TextField'
-import { FormProps } from '../form-props'
+import { defaultFormProps, FormProps } from '../form-props'
 
 import { Calendar } from './Calendar/Calendar'
 import { YearPicker } from './YearPicker/YearPicker'
@@ -121,4 +121,10 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
       )}
     </div>
   )
+}
+
+DatePickerField.defaultProps = {
+  ...defaultFormProps as DatePickerFieldProps,
+  placeholder: 'dd/mm/yyyy',
+  isSmall: false,
 }
