@@ -30,3 +30,22 @@ export const smallCalendarContainer = css`
   ${calendarContainer};
   top: 36px;
 `
+
+export const buttonBar = css`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`
+
+export const header = css`
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5px;
+`
+
+export const calendarBoard = css`
+  display: flex;
+  flex-wrap: wrap;
+`

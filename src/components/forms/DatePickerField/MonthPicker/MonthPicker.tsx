@@ -1,14 +1,11 @@
 /** @jsx jsx */
-import { FC, useContext, useState } from 'react'
+import { FC, useContext } from 'react'
 import { jsx } from '@emotion/core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { Button } from '../../../buttons/Button/Button'
 import { I18nContext } from '../../../contexts/I18nContext'
 
 import { CalendarContainer } from '../CalendarContainer/CalendarContainer'
-
-import { buttonBar, calendarButtons, calendarBoard, header, calendarButtonsToday, calendarButtonsSelected } from './styles'
+import { PickerButton } from '../PickerButton/PickerButton'
 
 const CURRENT_MONTH = new Date().getMonth()
 const MONTHS = [
@@ -23,7 +20,7 @@ const MONTHS = [
   'uikit:septemberFull',
   'uikit:octoberFull',
   'uikit:novemberFull',
-  'uikit:decemberFull'
+  'uikit:decemberFull',
 ]
 
 interface MonthPickerProps {
@@ -36,33 +33,16 @@ export const MonthPicker: FC<MonthPickerProps> = ({ isSmall, selected, onMonthSe
   const { t } = useContext(I18nContext)
 
   return (
-    <CalendarContainer isSmall={isSmall}>
-      <div css={[buttonBar]}>
-        <Button isFilled icon="arrow-left" isDisabled>
-          {t('uikit:buttonPrevious')}
-        </Button>
-        <Button isFilled isDisabled>
-          {t('uikit:buttonNext')} <FontAwesomeIcon size="sm" icon={{ prefix: 'fas', iconName: 'arrow-right' }} />
-        </Button>
-      </div>
-      <div css={[header]}>
-        {t('uikit:month')}
-      </div>
-      <div css={calendarBoard}>
-        {MONTHS.map((month, index) => (
-          <button
-            key={month}
-            css={[
-              calendarButtons,
-              index === CURRENT_MONTH ? calendarButtonsToday : null,
-              index === selected ? calendarButtonsSelected : null,
-            ]}
-            onClick={() => onMonthSelected(index)}
-          >
-            {t(month)}
-          </button>
-        ))}
-      </div>
+    <CalendarContainer title={t('uikit:month')} isSmall={isSmall}>
+      {MONTHS.map((month, index) => (
+        <PickerButton
+          key={month}
+          label={t(month)}
+          isSelected={index === selected}
+          isCurrent={index === CURRENT_MONTH}
+          onClick={() => onMonthSelected(index)}
+        />
+      ))}
     </CalendarContainer>
   )
 }

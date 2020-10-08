@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { FC, useState, SyntheticEvent, useEffect, Fragment, useContext } from 'react'
 import { jsx } from '@emotion/core'
-import Dayzed from 'dayzed'
 
 import { I18nContext } from '../../contexts/I18nContext'
 
@@ -80,7 +79,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
       {displayModal === true && (
         <Fragment>
           {calendarType === CalendarType.Date && (
-            <Dayzed
+            <Calendar
               onDateSelected={({ date }) => {
                 setValue(date)
                 setDisplayModal(false)
@@ -88,13 +87,8 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
               date={value || new Date()}
               selected={[value]}
               firstDayOfWeek={1}
-              render={dayzedData => (
-                <Calendar
-                  isSmall={isSmall}
-                  onYearSelectionAsked={() => setCalendarType(CalendarType.Year)}
-                  {...dayzedData}
-                />
-              )}
+              isSmall={isSmall}
+              onYearSelectionAsked={() => setCalendarType(CalendarType.Year)}
             />
           )}
           {calendarType === CalendarType.Month && (

@@ -1,14 +1,11 @@
 /** @jsx jsx */
 import { FC, useContext, useState } from 'react'
 import { jsx } from '@emotion/core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { Button } from '../../../buttons/Button/Button'
 import { I18nContext } from '../../../contexts/I18nContext'
 
 import { CalendarContainer } from '../CalendarContainer/CalendarContainer'
-
-import { buttonBar, calendarButtons, calendarBoard, header, calendarButtonsToday, calendarButtonsSelected } from './styles'
+import { PickerButton } from '../PickerButton/PickerButton'
 
 const BUTTONS_QUANTITY = 15
 const CURRENT_YEAR = new Date().getFullYear()
@@ -26,33 +23,21 @@ export const YearPicker: FC<YearPickerProps> = ({ isSmall, selected, onYearSelec
   const years = new Array(BUTTONS_QUANTITY).fill(firstYear).map((year, index) => year + index)
 
   return (
-    <CalendarContainer isSmall={isSmall}>
-      <div css={[buttonBar]}>
-        <Button isFilled icon="arrow-left" onClick={() => setFirstYear(firstYear - BUTTONS_QUANTITY)}>
-          {t('uikit:buttonPrevious')}
-        </Button>
-        <Button isFilled onClick={() => setFirstYear(firstYear + BUTTONS_QUANTITY)}>
-          {t('uikit:buttonNext')} <FontAwesomeIcon size="sm" icon={{ prefix: 'fas', iconName: 'arrow-right' }} />
-        </Button>
-      </div>
-      <div css={[header]}>
-        {t('uikit:year')}
-      </div>
-      <div css={calendarBoard}>
-        {years.map(year => (
-          <button
-            key={year}
-            css={[
-              calendarButtons,
-              year === CURRENT_YEAR ? calendarButtonsToday : null,
-              year === selected ? calendarButtonsSelected : null,
-            ]}
-            onClick={() => onYearSelected(year)}
-          >
-            {year}
-          </button>
-        ))}
-      </div>
+    <CalendarContainer
+      title={t('uikit:year')}
+      isSmall={isSmall}
+      previousButtonArgs={{ onClick: () => setFirstYear(firstYear - BUTTONS_QUANTITY) }}
+      nextButtonArgs={{ onClick: () => setFirstYear(firstYear + BUTTONS_QUANTITY) }}
+    >
+      {years.map(year => (
+        <PickerButton
+          key={year}
+          label={year}
+          isCurrent={year === CURRENT_YEAR}
+          isSelected={year === selected}
+          onClick={() => onYearSelected(year)}
+        />
+      ))}
     </CalendarContainer>
   )
 }

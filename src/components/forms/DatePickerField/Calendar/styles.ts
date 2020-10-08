@@ -1,28 +1,37 @@
 import { css } from '@emotion/core'
-import { R500_COLOR, C200_COLOR, N75_COLOR, N500_COLOR, R400_COLOR, C300_COLOR } from '../../../../colors'
+import { N500_COLOR } from '../../../../colors'
 
 const buttonWidth = 40
-
-export const buttonBar = css`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`
-
-export const header = css`
-  font-weight: 600;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 5px;
-`
 
 export const calendarBoard = css`
   display: flex;
   flex-wrap: wrap;
 `
 
-export const calendarButtons = css`
+export const headerWeekday = css`
+  font-weight: 600;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5px;
+  appearance: none;
+  box-sizing: border-box;
+  color: ${`${N500_COLOR}`};
+  border-radius: 50%;
+  width: ${buttonWidth}px;
+  border-color: transparent;
+  outline: none;
+  display: inline-flex;
+  height: initial;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    color: ${`${N500_COLOR}`};
+  }
+`
+
+export const emptyButtonSpace = css`
   display: inline-block;
   appearance: none;
   box-sizing: border-box;
@@ -34,46 +43,10 @@ export const calendarButtons = css`
   background-color: transparent;
   border-color: transparent;
   outline: none;
-  &:hover {
-    background-color: ${`${N75_COLOR}`};
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
     color: ${`${N500_COLOR}`};
-  }
-`
-
-export const calendarButtonsSelected = css`
-  background-color: ${`${C200_COLOR}`};
-  color: white;
-  &:hover {
-    background-color: ${`${C300_COLOR}`};
-    color: white;
-  }
-`
-
-export const calendarButtonsToday = css`
-  background-color: ${`${R400_COLOR}`};
-  color: white;
-  &:hover {
-    background-color: ${`${R500_COLOR}`};
-    color: white;
-  }
-`
-
-export const headerWeekday = css`
-  ${header};
-  ${calendarButtons};
-  display: inline-flex;
-  height: initial;
-  background-color: transparent;
-  &:hover,
-  &:focus {
-    background-color: transparent;
-  }
-`
-
-export const emptyButtonSpace = css`
-  ${calendarButtons};
-  &:hover,
-  &:focus {
-    background-color: transparent;
   }
 `

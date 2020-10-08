@@ -3,25 +3,6 @@ import { C200_COLOR, C300_COLOR, N500_COLOR, N75_COLOR, R400_COLOR, R500_COLOR }
 
 const buttonWidth = 105
 
-export const buttonBar = css`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`
-
-export const header = css`
-  font-weight: 600;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 5px;
-`
-
-export const calendarBoard = css`
-  display: flex;
-  flex-wrap: wrap;
-`
-
 export const calendarButtons = css`
   display: inline-block;
   appearance: none;
