@@ -90,7 +90,19 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
             />
           )}
           {calendarType === CalendarType.Month && <div />}
-          {calendarType === CalendarType.Year && (<YearPicker isSmall={isSmall} selected={value?.getFullYear()}/>)}
+          {calendarType === CalendarType.Year && (
+            <YearPicker
+              isSmall={isSmall}
+              selected={value?.getFullYear()}
+              onYearSelected={year => {
+                const date = value ?? new Date()
+                date.setFullYear(year)
+
+                setValue(date)
+                setCalendarType(CalendarType.Date)
+              }}
+            />
+          )}
         </Fragment>
       )}
     </div>

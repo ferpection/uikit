@@ -16,9 +16,10 @@ const CURRENT_YEAR = new Date().getFullYear()
 interface YearPickerProps {
   isSmall?: boolean
   selected?: number
+  onYearSelected?: (year: number) => void
 }
 
-export const YearPicker: FC<YearPickerProps> = ({ isSmall, selected }) => {
+export const YearPicker: FC<YearPickerProps> = ({ isSmall, selected, onYearSelected = () => {} }) => {
   const { addTranslations, t } = useContext(I18nContext)
   const [firstYear, setFirstYear] = useState((selected ?? CURRENT_YEAR) - Math.trunc(BUTTONS_QUANTITY / 2))
 
@@ -46,6 +47,7 @@ export const YearPicker: FC<YearPickerProps> = ({ isSmall, selected }) => {
               year === CURRENT_YEAR ? calendarButtonsToday : null,
               year === selected ? calendarButtonsSelected : null,
             ]}
+            onClick={() => onYearSelected(year)}
           >
             {year}
           </button>
