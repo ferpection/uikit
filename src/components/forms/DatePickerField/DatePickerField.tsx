@@ -1,7 +1,9 @@
 /** @jsx jsx */
-import { FC, useState, SyntheticEvent, useEffect, Fragment } from 'react'
+import { FC, useState, SyntheticEvent, useEffect, Fragment, useContext } from 'react'
 import { jsx } from '@emotion/core'
 import Dayzed from 'dayzed'
+
+import { I18nContext } from '../../contexts/I18nContext'
 
 import { TextField } from '../TextField/TextField'
 import { FormProps } from '../form-props'
@@ -11,6 +13,7 @@ import { YearPicker } from './YearPicker/YearPicker'
 import { MonthPicker } from './MonthPicker/MonthPicker'
 
 import { datePickerContainer, datePickerContainerSmall } from './styles'
+import { englishStrings, frenchStrings } from './locales'
 
 enum CalendarType {
   Date,
@@ -37,6 +40,10 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   const [value, setValue] = useState(initialValue)
   const [displayModal, setDisplayModal] = useState(false)
   const [calendarType, setCalendarType] = useState(CalendarType.Date)
+  const { addTranslations } = useContext(I18nContext)
+
+  addTranslations('en', englishStrings)
+  addTranslations('fr', frenchStrings)
 
   useEffect(() => {
     onValueChange(value)

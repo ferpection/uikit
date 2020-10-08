@@ -19,7 +19,7 @@ import {
   calendarBoard,
   emptyButtonSpace,
 } from './styles'
-import { englishStrings, frenchStrings } from './locales'
+
 
 const monthNamesShort = [
   'uikit:januaryShort',
@@ -51,10 +51,7 @@ export interface CalendarProps extends RenderProps {
 }
 
 export const Calendar: FC<CalendarProps> = ({ calendars, getBackProps, getDateProps, getForwardProps, isSmall, onYearSelectionAsked = () => {} }) => {
-  const { addTranslations, t } = useContext(I18nContext)
-
-  addTranslations('en', englishStrings)
-  addTranslations('fr', frenchStrings)
+  const { t } = useContext(I18nContext)
 
   return (
     <CalendarContainer isSmall={isSmall}>

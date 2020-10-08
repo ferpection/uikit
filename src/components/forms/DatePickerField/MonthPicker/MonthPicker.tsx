@@ -12,18 +12,18 @@ import { buttonBar, calendarButtons, calendarBoard, header, calendarButtonsToday
 
 const CURRENT_MONTH = new Date().getMonth()
 const MONTHS = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
+  'uikit:januaryFull',
+  'uikit:februaryFull',
+  'uikit:marchFull',
+  'uikit:aprilFull',
+  'uikit:mayFull',
+  'uikit:juneFull',
+  'uikit:julyFull',
+  'uikit:augustFull',
+  'uikit:septemberFull',
+  'uikit:octoberFull',
+  'uikit:novemberFull',
+  'uikit:decemberFull'
 ]
 
 interface MonthPickerProps {
@@ -33,7 +33,7 @@ interface MonthPickerProps {
 }
 
 export const MonthPicker: FC<MonthPickerProps> = ({ isSmall, selected, onMonthSelected = () => {} }) => {
-  const { addTranslations, t } = useContext(I18nContext)
+  const { t } = useContext(I18nContext)
 
   return (
     <CalendarContainer isSmall={isSmall}>
@@ -46,7 +46,7 @@ export const MonthPicker: FC<MonthPickerProps> = ({ isSmall, selected, onMonthSe
         </Button>
       </div>
       <div css={[header]}>
-        Year
+        {t('uikit:month')}
       </div>
       <div css={calendarBoard}>
         {MONTHS.map((month, index) => (
@@ -59,7 +59,7 @@ export const MonthPicker: FC<MonthPickerProps> = ({ isSmall, selected, onMonthSe
             ]}
             onClick={() => onMonthSelected(index)}
           >
-            {month}
+            {t(month)}
           </button>
         ))}
       </div>

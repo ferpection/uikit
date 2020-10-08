@@ -39,6 +39,8 @@ export const englishStrings = {
   decemberFull: 'December',
   buttonNext: 'Next',
   buttonPrevious: 'Back',
+  year: 'Year',
+  month: 'Month',
 }
 
 export const frenchStrings = {
@@ -82,4 +84,6 @@ export const frenchStrings = {
   decemberFull: 'Décembre',
   buttonNext: 'Suivant',
   buttonPrevious: 'Précédant',
+  year: 'Année',
+  month: 'Mois',
 }

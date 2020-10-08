@@ -10,7 +10,7 @@ import { CalendarContainer } from '../CalendarContainer/CalendarContainer'
 
 import { buttonBar, calendarButtons, calendarBoard, header, calendarButtonsToday, calendarButtonsSelected } from './styles'
 
-const BUTTONS_QUANTITY = 9
+const BUTTONS_QUANTITY = 15
 const CURRENT_YEAR = new Date().getFullYear()
 
 interface YearPickerProps {
@@ -20,7 +20,7 @@ interface YearPickerProps {
 }
 
 export const YearPicker: FC<YearPickerProps> = ({ isSmall, selected, onYearSelected = () => {} }) => {
-  const { addTranslations, t } = useContext(I18nContext)
+  const { t } = useContext(I18nContext)
   const [firstYear, setFirstYear] = useState((selected ?? CURRENT_YEAR) - Math.trunc(BUTTONS_QUANTITY / 2))
 
   const years = new Array(BUTTONS_QUANTITY).fill(firstYear).map((year, index) => year + index)
@@ -36,7 +36,7 @@ export const YearPicker: FC<YearPickerProps> = ({ isSmall, selected, onYearSelec
         </Button>
       </div>
       <div css={[header]}>
-        Year
+        {t('uikit:year')}
       </div>
       <div css={calendarBoard}>
         {years.map(year => (
