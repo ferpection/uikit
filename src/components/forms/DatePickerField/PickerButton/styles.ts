@@ -14,6 +14,7 @@ export const calendarButtons = css`
   width: ${buttonWidth}px;
   background-color: transparent;
   border-color: transparent;
+  cursor: pointer;
   outline: none;
   &:hover {
     background-color: ${`${N75_COLOR}`};
