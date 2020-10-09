@@ -44,9 +44,8 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   addTranslations('en', englishStrings)
   addTranslations('fr', frenchStrings)
 
-  useEffect(() => {
-    onValueChange(value)
-  }, [value])
+  useEffect(() => setValue(initialValue), [initialValue])
+  useEffect(() => onValueChange(value), [value])
 
   const handleTextFieldChange = (v: string) => {
     const [day, month, year] = v.split('/')
