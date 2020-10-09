@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - The `DatePicker` component allows for direct month and year selection.
   The developer can choose what are the date components directly selectable using
   the new `dateComponentSelectors` attribute.
+- The order of the date components in the `dateComponentSelectors` attribute of `DatePickerField`
+  changes the behavior of the selection modal. Date component selectors are shown in the same
+  order as the order of `dateComponentSelectors`.
 
 ### Fixed
 - Remove a React error that apears in the console when the `value` attibute
