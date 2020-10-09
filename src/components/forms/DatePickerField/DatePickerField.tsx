@@ -2,6 +2,7 @@
 import { FC, useState, SyntheticEvent, useEffect, useContext } from 'react'
 import { jsx } from '@emotion/core'
 
+import { removeConsecutiveDuplicate } from '../../../utils/array'
 import { I18nContext } from '../../contexts/I18nContext'
 
 import { TextField } from '../TextField/TextField'
@@ -32,7 +33,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
     value: initialValue,
     isSmall = false,
     placeholder = 'dd/mm/yyyy',
-    dateComponentSelectors,
+    dateComponentSelectors: externalDateComponentSelectors,
     onValueChange = () => {},
     onBlur = () => {},
     onFocus = () => {},
@@ -47,6 +48,8 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
 
   useEffect(() => setValue(initialValue), [initialValue])
   useEffect(() => onValueChange(value), [value])
+
+  const dateComponentSelectors = removeConsecutiveDuplicate(externalDateComponentSelectors)
 
   // data about current modal
   const displayDateSelector = dateComponentSelectors[modalState] === DateComponent.Date

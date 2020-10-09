@@ -57,7 +57,7 @@ export const BirthDateExample = () => {
 
   return (
     <UiKitInitializer i18n={i18n}>
-      <DatePickerField isSmall={isSmall} dateComponentSelectors={['date', 'year', 'month', 'date']} />
+      <DatePickerField isSmall={isSmall} dateComponentSelectors={['date', 'year', 'year', 'month', 'date']} />
     </UiKitInitializer>
   )
 }
