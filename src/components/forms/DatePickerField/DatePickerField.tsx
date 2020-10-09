@@ -23,6 +23,7 @@ enum CalendarType {
 export interface DatePickerFieldProps extends FormProps {
   value?: Date
   isSmall?: boolean
+  dateComponentSelector?: CalendarType[]
   onValueChange?: (value: Date) => void
 }
 
@@ -31,6 +32,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
     value: initialValue,
     isSmall = false,
     placeholder = 'dd/mm/yyyy',
+    dateComponentSelector,
     onValueChange = () => {},
     onBlur = () => {},
     onFocus = () => {},
@@ -87,7 +89,8 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
               selected={[value]}
               firstDayOfWeek={1}
               isSmall={isSmall}
-              onYearSelectionAsked={() => setCalendarType(CalendarType.Year)}
+              enableOtherDateComponentSelection={dateComponentSelector.includes(CalendarType.Month) || dateComponentSelector.includes(CalendarType.Year)}
+              onOtherDateComponentSelectionAsked={() => setCalendarType(CalendarType.Year)}
             />
           )}
           {calendarType === CalendarType.Month && (
@@ -126,4 +129,5 @@ DatePickerField.defaultProps = {
   ...(defaultFormProps as DatePickerFieldProps),
   placeholder: 'dd/mm/yyyy',
   isSmall: false,
+  dateComponentSelector: [CalendarType.Date],
 }
