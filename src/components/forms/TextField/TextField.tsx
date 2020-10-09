@@ -7,7 +7,7 @@ import useFormValidation from '../../../hooks/useFormValidation'
 import { I18nContext } from '../../contexts/I18nContext'
 
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
-import { FormProps } from '../form-props'
+import { defaultFormProps, FormProps } from '../form-props'
 
 import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle, smallStyle } from './styles'
 
@@ -131,3 +131,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     </Fragment>
   )
 })
+
+TextField.defaultProps = {
+  ...(defaultFormProps as TextFieldProps),
+}

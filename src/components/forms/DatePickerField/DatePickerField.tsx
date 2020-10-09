@@ -1,13 +1,24 @@
 /** @jsx jsx */
-import { FC, useState, SyntheticEvent, useEffect } from 'react'
+import { FC, useState, SyntheticEvent, useEffect, Fragment, useContext } from 'react'
 import { jsx } from '@emotion/core'
-import Dayzed from 'dayzed'
+
+import { I18nContext } from '../../contexts/I18nContext'
 
 import { TextField } from '../TextField/TextField'
-import { FormProps } from '../form-props'
+import { defaultFormProps, FormProps } from '../form-props'
+
 import { Calendar } from './Calendar/Calendar'
+import { YearPicker } from './YearPicker/YearPicker'
+import { MonthPicker } from './MonthPicker/MonthPicker'
 
 import { datePickerContainer, datePickerContainerSmall } from './styles'
+import { englishStrings, frenchStrings } from './locales'
+
+enum CalendarType {
+  Date,
+  Month,
+  Year,
+}
 
 export interface DatePickerFieldProps extends FormProps {
   value?: Date
@@ -27,10 +38,14 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   } = props
   const [value, setValue] = useState(initialValue)
   const [displayModal, setDisplayModal] = useState(false)
+  const [calendarType, setCalendarType] = useState(CalendarType.Date)
+  const { addTranslations } = useContext(I18nContext)
 
-  useEffect(() => {
-    onValueChange(value)
-  }, [value])
+  addTranslations('en', englishStrings)
+  addTranslations('fr', frenchStrings)
+
+  useEffect(() => setValue(initialValue), [initialValue])
+  useEffect(() => onValueChange(value), [value])
 
   const handleTextFieldChange = (v: string) => {
     const [day, month, year] = v.split('/')
@@ -60,18 +75,55 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
         onBlur={onBlur}
         {...otherProps}
       />
-      {displayModal === true ? (
-        <Dayzed
-          onDateSelected={({ date }) => {
-            setValue(date)
-            setDisplayModal(false)
-          }}
-          date={value || new Date()}
-          selected={[value]}
-          firstDayOfWeek={1}
-          render={dayzedData => <Calendar isSmall={isSmall} {...dayzedData} />}
-        />
-      ) : null}
+      {displayModal === true && (
+        <Fragment>
+          {calendarType === CalendarType.Date && (
+            <Calendar
+              onDateSelected={({ date }) => {
+                setValue(date)
+                setDisplayModal(false)
+              }}
+              date={value || new Date()}
+              selected={[value]}
+              firstDayOfWeek={1}
+              isSmall={isSmall}
+              onYearSelectionAsked={() => setCalendarType(CalendarType.Year)}
+            />
+          )}
+          {calendarType === CalendarType.Month && (
+            <MonthPicker
+              isSmall={isSmall}
+              selected={value?.getMonth()}
+              onMonthSelected={month => {
+                const date = value ?? new Date()
+                date.setMonth(month)
+
+                setValue(date)
+                setCalendarType(CalendarType.Date)
+              }}
+            />
+          )}
+          {calendarType === CalendarType.Year && (
+            <YearPicker
+              isSmall={isSmall}
+              selected={value?.getFullYear()}
+              onYearSelected={year => {
+                const date = value ?? new Date()
+                date.setFullYear(year)
+
+                setValue(date)
+                setCalendarType(CalendarType.Month)
+              }}
+            />
+          )}
+        </Fragment>
+      )}
     </div>
   )
+}
+
+DatePickerField.defaultProps = {
+  ...(defaultFormProps as DatePickerFieldProps),
+  placeholder: 'dd/mm/yyyy',
+  isSmall: false,
 }

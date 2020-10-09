@@ -2,7 +2,7 @@
 import { FC, Children, cloneElement, useState, isValidElement, ChangeEvent, useEffect, FocusEvent } from 'react'
 import { jsx } from '@emotion/core'
 
-import { FormProps } from '../form-props'
+import { defaultFormProps, FormProps } from '../form-props'
 
 import { listStyles, listItemStyles, innerCheckboxStyles, innerCheckboxStylesDisabled } from './styles'
 
@@ -64,4 +64,8 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
       })}
     </ul>
   )
+}
+
+CheckboxGroup.defaultProps = {
+  ...(defaultFormProps as CheckboxGroupProps),
 }

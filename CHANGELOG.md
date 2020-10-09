@@ -7,14 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - New `validators` attribute for all the form components to display custom errors.
+- The `DatePicker` component allows for direct month and year selection.
 
 ### Fixed
 - Remove a React error that apears in the console when the `value` attibute
   of the `TextFieldList` take a bigger set of strings.
 - Remove a bug a bug that prevent the changes in the `value` attribute of the `TextFieldList`
   to be applied into the component.
-- Removea bug on `TextFieldList` that display an error messages related to 
+- Removea bug on `TextFieldList` that display an error messages related to
   a value that doesn't exist anymore.
+- `isHighlighted` attribute isn't require anymore on `SelectField` component.
+- When the value changes in `DatePicker`'s `value` attribute, the field is reset
+  with the new value.
 
 ## [v0.5.0] - 2020-09-15
 ### Added

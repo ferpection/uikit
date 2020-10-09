@@ -16,3 +16,13 @@ export interface FormProps {
   onBlur?: (event?: SyntheticEvent) => void
   onFocus?: (event?: SyntheticEvent) => void
 }
+
+export const defaultFormProps: FormProps = {
+  validators: [],
+  isDisabled: false,
+  isRequired: false,
+  onValueChange: () => {},
+  onErrors: () => {},
+  onBlur: () => {},
+  onFocus: () => {},
+}
