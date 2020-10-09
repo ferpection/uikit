@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - New `validators` attribute for all the form components to display custom errors.
 - The `DatePicker` component allows for direct month and year selection.
+  The developer can choose what are the date components directly selectable using
+  the new `dateComponentSelectors` attribute.
 
 ### Fixed
 - Remove a React error that apears in the console when the `value` attibute

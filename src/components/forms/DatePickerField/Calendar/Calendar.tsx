@@ -54,7 +54,7 @@ export const Calendar: FC<CalendarProps> = props => {
   if (enableOtherDateComponentSelection) {
     title = (
       <Button isRaw onClick={onOtherDateComponentSelectionAsked}>
-        {t(monthNamesShort[calendar.month])} ${calendar.year}
+        {t(monthNamesShort[calendar.month])} {calendar.year}
       </Button>
     )
   }
