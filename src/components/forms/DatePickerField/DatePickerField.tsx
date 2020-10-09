@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { FC, useState, SyntheticEvent, useEffect, Fragment, useContext } from 'react'
+import { FC, useState, SyntheticEvent, useEffect, useContext } from 'react'
 import { jsx } from '@emotion/core'
 
 import { I18nContext } from '../../contexts/I18nContext'
@@ -27,7 +27,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
     value: initialValue,
     isSmall = false,
     placeholder = 'dd/mm/yyyy',
-    dateComponentSelectors: dateComponentSelector,
+    dateComponentSelectors,
     onValueChange = () => {},
     onBlur = () => {},
     onFocus = () => {},
@@ -37,15 +37,15 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   const [value, setValue] = useState(initialValue)
   const [displayModal, setDisplayModal] = useState(false)
   const [calendarType, setCalendarType] = useState(() => {
-    if (dateComponentSelector.includes(CalendarType.Date)) {
+    if (dateComponentSelectors.includes(CalendarType.Date)) {
       return CalendarType.Date
     }
 
-    if (dateComponentSelector.includes(CalendarType.Year)) {
+    if (dateComponentSelectors.includes(CalendarType.Year)) {
       return CalendarType.Year
     }
 
-    if (dateComponentSelector.includes(CalendarType.Month)) {
+    if (dateComponentSelectors.includes(CalendarType.Month)) {
       return CalendarType.Month
     }
   })
@@ -56,9 +56,12 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   useEffect(() => setValue(initialValue), [initialValue])
   useEffect(() => onValueChange(value), [value])
 
-  const displayDateSelector = displayModal === true && calendarType === CalendarType.Date && dateComponentSelector.includes(CalendarType.Date)
-  const displayMonthSelector = displayModal === true && calendarType === CalendarType.Month && dateComponentSelector.includes(CalendarType.Month)
-  const displayYearSelector = displayModal === true && calendarType === CalendarType.Year && dateComponentSelector.includes(CalendarType.Year)
+  const displayDateSelector =
+    displayModal === true && calendarType === CalendarType.Date && dateComponentSelectors.includes(CalendarType.Date)
+  const displayMonthSelector =
+    displayModal === true && calendarType === CalendarType.Month && dateComponentSelectors.includes(CalendarType.Month)
+  const displayYearSelector =
+    displayModal === true && calendarType === CalendarType.Year && dateComponentSelectors.includes(CalendarType.Year)
 
   const handleTextFieldChange = (v: string) => {
     const [day, month, year] = v.split('/')
@@ -98,16 +101,17 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
           selected={[value]}
           firstDayOfWeek={1}
           isSmall={isSmall}
-          enableOtherDateComponentSelection={dateComponentSelector.includes(CalendarType.Month) || dateComponentSelector.includes(CalendarType.Year)}
+          enableOtherDateComponentSelection={
+            dateComponentSelectors.includes(CalendarType.Month) || dateComponentSelectors.includes(CalendarType.Year)
+          }
           onOtherDateComponentSelectionAsked={() => {
-            if (dateComponentSelector.includes(CalendarType.Year)) {
+            if (dateComponentSelectors.includes(CalendarType.Year)) {
               setCalendarType(CalendarType.Year)
               return
             }
 
-            if (dateComponentSelector.includes(CalendarType.Month)) {
+            if (dateComponentSelectors.includes(CalendarType.Month)) {
               setCalendarType(CalendarType.Month)
-              return
             }
           }}
         />
@@ -122,7 +126,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
 
             setValue(date)
 
-            if (dateComponentSelector.includes(CalendarType.Date)) {
+            if (dateComponentSelectors.includes(CalendarType.Date)) {
               setCalendarType(CalendarType.Date)
               return
             }
@@ -141,12 +145,12 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
 
             setValue(date)
 
-            if (dateComponentSelector.includes(CalendarType.Month)) {
+            if (dateComponentSelectors.includes(CalendarType.Month)) {
               setCalendarType(CalendarType.Month)
               return
             }
 
-            if (dateComponentSelector.includes(CalendarType.Date)) {
+            if (dateComponentSelectors.includes(CalendarType.Date)) {
               setCalendarType(CalendarType.Date)
               return
             }

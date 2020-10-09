@@ -61,7 +61,7 @@ export const ErrorState = () => {
 export const YearOnlyState = () => {
   return (
     <UiKitInitializer i18n={i18n}>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelector={['year']}/>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year']} />
     </UiKitInitializer>
   )
 }
@@ -69,7 +69,7 @@ export const YearOnlyState = () => {
 export const MonthOnlyState = () => {
   return (
     <UiKitInitializer i18n={i18n}>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelector={['month']}/>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month']} />
     </UiKitInitializer>
   )
 }
@@ -77,7 +77,7 @@ export const MonthOnlyState = () => {
 export const AllDateComponentActivated = () => {
   return (
     <UiKitInitializer i18n={i18n}>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelector={['year', 'date', 'month']}/>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year', 'date', 'month']} />
     </UiKitInitializer>
   )
 }
