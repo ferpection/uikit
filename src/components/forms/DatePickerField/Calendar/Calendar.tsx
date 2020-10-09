@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { FC, useContext } from 'react'
+import { FC, ReactNode, useContext } from 'react'
 import { jsx } from '@emotion/core'
 import { Props as DayzedProps, useDayzed } from 'dayzed'
 
@@ -38,24 +38,30 @@ const weekdayNamesShort = [
 
 export interface CalendarProps extends DayzedProps {
   isSmall?: boolean
-  onYearSelectionAsked?: () => void
+  enableOtherDateComponentSelection?: boolean
+  onOtherDateComponentSelectionAsked?: () => void
 }
 
 export const Calendar: FC<CalendarProps> = props => {
-  const { isSmall, onYearSelectionAsked = () => {} } = props
+  const { isSmall, enableOtherDateComponentSelection, onOtherDateComponentSelectionAsked = () => {} } = props
 
   const { t } = useContext(I18nContext)
   const { calendars, getBackProps, getDateProps, getForwardProps } = useDayzed(props)
 
   const [calendar] = calendars
 
+  let title: ReactNode = `${t(monthNamesShort[calendar.month])} ${calendar.year}`
+  if (enableOtherDateComponentSelection) {
+    title = (
+      <Button isRaw onClick={onOtherDateComponentSelectionAsked}>
+        {t(monthNamesShort[calendar.month])} {calendar.year}
+      </Button>
+    )
+  }
+
   return (
     <CalendarContainer
-      title={
-        <Button isRaw onClick={onYearSelectionAsked}>
-          {t(monthNamesShort[calendar.month])} {calendar.year}
-        </Button>
-      }
+      title={title}
       isSmall={isSmall}
       previousButtonArgs={getBackProps({ calendars })}
       nextButtonArgs={getForwardProps({ calendars })}

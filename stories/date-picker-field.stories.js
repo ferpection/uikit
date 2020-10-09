@@ -33,7 +33,6 @@ export default {
 export const NormalState = () => {
   return (
     <UiKitInitializer i18n={i18n}>
-      <h1>DatePickerField</h1>
       <p>
         The component displays a regular {TextField.name} component and when the user click on it a datePicker is
         displayed on hover.
@@ -54,8 +53,31 @@ export const NormalState = () => {
 export const ErrorState = () => {
   return (
     <UiKitInitializer i18n={i18n}>
-      <h1>{DatePickerField.name} on error state</h1>
       <DatePickerField isRequired />
+    </UiKitInitializer>
+  )
+}
+
+export const YearOnlyState = () => {
+  return (
+    <UiKitInitializer i18n={i18n}>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year']} />
+    </UiKitInitializer>
+  )
+}
+
+export const MonthOnlyState = () => {
+  return (
+    <UiKitInitializer i18n={i18n}>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month']} />
+    </UiKitInitializer>
+  )
+}
+
+export const AllDateComponentActivated = () => {
+  return (
+    <UiKitInitializer i18n={i18n}>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year', 'date', 'month']} />
     </UiKitInitializer>
   )
 }
