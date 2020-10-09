@@ -123,7 +123,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
 }
 
 DatePickerField.defaultProps = {
-  ...defaultFormProps as DatePickerFieldProps,
+  ...(defaultFormProps as DatePickerFieldProps),
   placeholder: 'dd/mm/yyyy',
   isSmall: false,
 }

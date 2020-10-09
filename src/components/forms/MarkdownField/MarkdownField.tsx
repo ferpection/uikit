@@ -76,5 +76,5 @@ export function MarkdownField(props: MarkdownFieldProps) {
 }
 
 MarkdownField.defaultProps = {
-  ...defaultFormProps as MarkdownFieldProps,
+  ...(defaultFormProps as MarkdownFieldProps),
 }

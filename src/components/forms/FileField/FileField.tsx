@@ -122,5 +122,5 @@ export function FileField(props: FileFieldProps) {
 }
 
 FileField.defaultProps = {
-  ...defaultFormProps as FileFieldProps,
+  ...(defaultFormProps as FileFieldProps),
 }

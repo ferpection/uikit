@@ -54,5 +54,5 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
 }
 
 RadioGroup.defaultProps = {
-  ...defaultFormProps as RadioGroupProps,
+  ...(defaultFormProps as RadioGroupProps),
 }

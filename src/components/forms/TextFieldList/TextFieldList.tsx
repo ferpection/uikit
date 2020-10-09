@@ -200,5 +200,5 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
 }
 
 TextFieldList.defaultProps = {
-  ...defaultFormProps as TextFieldListProps,
+  ...(defaultFormProps as TextFieldListProps),
 }

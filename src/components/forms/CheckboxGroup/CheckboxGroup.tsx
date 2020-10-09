@@ -67,5 +67,5 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
 }
 
 CheckboxGroup.defaultProps = {
-  ...defaultFormProps as CheckboxGroupProps,
+  ...(defaultFormProps as CheckboxGroupProps),
 }

@@ -87,5 +87,5 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
 }
 
 SelectField.defaultProps = {
-  ...defaultFormProps as SelectFieldProps,
+  ...(defaultFormProps as SelectFieldProps),
 }

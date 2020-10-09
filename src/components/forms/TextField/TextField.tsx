@@ -133,5 +133,5 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
 })
 
 TextField.defaultProps = {
-  ...defaultFormProps as TextFieldProps,
+  ...(defaultFormProps as TextFieldProps),
 }
