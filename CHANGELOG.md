@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+
+## [v0.6.0] - 2020-09-15
 ### Added
 - New `validators` attribute for all the form components to display custom errors.
 - The `DatePicker` component allows for direct month and year selection.
@@ -384,6 +386,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.6.0]: https://github.com/ferpection/uikit/tree/v0.6.0
 [v0.5.0]: https://github.com/ferpection/uikit/tree/v0.5.0
 [v0.4.3]: https://github.com/ferpection/uikit/tree/v0.4.3
 [v0.4.2]: https://github.com/ferpection/uikit/tree/v0.4.2
