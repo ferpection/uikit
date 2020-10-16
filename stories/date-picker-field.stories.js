@@ -3,7 +3,7 @@ import React from 'react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
 
-import { DatePickerField, TextField, UiKitInitializer } from '../src/components/index.ts'
+import { DatePickerField, UiKitInitializer } from '../src/components/index.ts'
 
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
@@ -31,17 +31,11 @@ export default {
 }
 
 export const NormalState = () => {
+  const isSmall = boolean('is small', false)
+
   return (
     <UiKitInitializer i18n={i18n}>
-      <p>
-        The component displays a regular {TextField.name} component and when the user click on it a datePicker is
-        displayed on hover.
-      </p>
-      <p>Example:</p>
-      <DatePickerField isSmall={boolean('is small', false)} />
-      <p>
-        The {DatePickerField.name} acts like a regular {TextField.name} plus some specificities.
-      </p>
+      <DatePickerField isSmall={isSmall} />
       <p>
         <strong>The sample is wrapped with {UiKitInitializer.name} to handle the translation using i18next.</strong>{' '}
         i18next is not provided with this package. You have to install it and configure it yourself.
@@ -58,25 +52,62 @@ export const ErrorState = () => {
   )
 }
 
-export const YearOnlyState = () => {
+export const BirthDateExample = () => {
+  const isSmall = boolean('is small', false)
+
   return (
     <UiKitInitializer i18n={i18n}>
+      <DatePickerField isSmall={isSmall} dateComponentSelectors={['date', 'year', 'year', 'month', 'date']} />
+    </UiKitInitializer>
+  )
+}
+
+export const OneDateComponentBehavior = () => {
+  return (
+    <UiKitInitializer i18n={i18n}>
+      <pre>{"dateComponentSelectors={['date']}"}</pre>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['date']} />
+      <pre>{"dateComponentSelectors={['month']}"}</pre>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month']} />
+      <pre>{"dateComponentSelectors={['year']}"}</pre>
       <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year']} />
     </UiKitInitializer>
   )
 }
 
-export const MonthOnlyState = () => {
+export const TwoDateComponentsBehavior = () => {
   return (
     <UiKitInitializer i18n={i18n}>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month']} />
+      <pre>{"dateComponentSelectors={['date', 'year']}"}</pre>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['date', 'year']} />
+      <pre>{"dateComponentSelectors={['date', 'month']}"}</pre>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['date', 'month']} />
+      <pre>{"dateComponentSelectors={['month', 'year']}"}</pre>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month', 'year']} />
+      <pre>{"dateComponentSelectors={['month', 'date']}"}</pre>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month', 'date']} />
+      <pre>{"dateComponentSelectors={['year', 'month']}"}</pre>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year', 'month']} />
+      <pre>{"dateComponentSelectors={['year', 'date']}"}</pre>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year', 'date']} />
     </UiKitInitializer>
   )
 }
 
-export const AllDateComponentActivated = () => {
+export const ThreeDateComponentsBehavior = () => {
   return (
     <UiKitInitializer i18n={i18n}>
+      <pre>{"dateComponentSelectors={['date', 'year', 'month']}"}</pre>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['date', 'year', 'month']} />
+      <pre>{"dateComponentSelectors={['date', 'month', 'year']}"}</pre>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['date', 'month', 'year']} />
+      <pre>{"dateComponentSelectors={['month', 'year', 'date']}"}</pre>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month', 'year', 'date']} />
+      <pre>{"dateComponentSelectors={['year', 'month', 'date']}"}</pre>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year', 'month', 'date']} />
+      <pre>{"dateComponentSelectors={['month', 'date', 'year']}"}</pre>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month', 'date', 'year']} />
+      <pre>{"dateComponentSelectors={['year', 'date', 'month']}"}</pre>
       <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year', 'date', 'month']} />
     </UiKitInitializer>
   )

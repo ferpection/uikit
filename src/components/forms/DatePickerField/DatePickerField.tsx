@@ -2,6 +2,7 @@
 import { FC, useState, SyntheticEvent, useEffect, useContext } from 'react'
 import { jsx } from '@emotion/core'
 
+import { removeConsecutiveDuplicate } from '../../../utils/array'
 import { I18nContext } from '../../contexts/I18nContext'
 
 import { TextField } from '../TextField/TextField'
@@ -32,7 +33,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
     value: initialValue,
     isSmall = false,
     placeholder = 'dd/mm/yyyy',
-    dateComponentSelectors,
+    dateComponentSelectors: externalDateComponentSelectors,
     onValueChange = () => {},
     onBlur = () => {},
     onFocus = () => {},
@@ -40,20 +41,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   } = props
   const { addTranslations } = useContext(I18nContext)
   const [value, setValue] = useState(initialValue)
-  const [displayModal, setDisplayModal] = useState(false)
-  const [selectedCalendarType, setSelectedCalendarType] = useState(() => {
-    if (dateComponentSelectors.includes(DateComponent.Date)) {
-      return DateComponent.Date
-    }
-
-    if (dateComponentSelectors.includes(DateComponent.Year)) {
-      return DateComponent.Year
-    }
-
-    if (dateComponentSelectors.includes(DateComponent.Month)) {
-      return DateComponent.Month
-    }
-  })
+  const [modalState, setModalState] = useState<number | null>(null)
 
   addTranslations('en', englishStrings)
   addTranslations('fr', frenchStrings)
@@ -61,13 +49,30 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   useEffect(() => setValue(initialValue), [initialValue])
   useEffect(() => onValueChange(value), [value])
 
-  const displayDateSelector =
-    displayModal === true && selectedCalendarType === DateComponent.Date && dateComponentSelectors.includes(DateComponent.Date)
-  const displayMonthSelector =
-    displayModal === true && selectedCalendarType === DateComponent.Month && dateComponentSelectors.includes(DateComponent.Month)
-  const displayYearSelector =
-    displayModal === true && selectedCalendarType === DateComponent.Year && dateComponentSelectors.includes(DateComponent.Year)
+  const dateComponentSelectors = removeConsecutiveDuplicate(externalDateComponentSelectors)
 
+  // data about current modal
+  const displayDateSelector = dateComponentSelectors[modalState] === DateComponent.Date
+  const displayMonthSelector = dateComponentSelectors[modalState] === DateComponent.Month
+  const displayYearSelector = dateComponentSelectors[modalState] === DateComponent.Year
+  const isMasterDateSelector =
+    modalState === 0 && // first element
+    displayDateSelector &&
+    (dateComponentSelectors.includes(DateComponent.Month) || dateComponentSelectors.includes(DateComponent.Year))
+
+  // actions to change modal
+  const closeModal = () => setModalState(null)
+  const moveToSelector = (selectorID: number) => {
+    if (selectorID > dateComponentSelectors.length) {
+      closeModal()
+      return
+    }
+
+    setModalState(selectorID)
+  }
+  const moveToNextSelector = () => moveToSelector(modalState + 1)
+
+  // event handlers
   const handleTextFieldChange = (v: string) => {
     const [day, month, year] = v.split('/')
     const date = new Date(Number(year), Number(month) - 1, Number(day))
@@ -77,11 +82,11 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
     }
 
     setValue(date)
-    setDisplayModal(false)
+    closeModal()
   }
 
   const handleTextFieldFocus = (event: SyntheticEvent<HTMLInputElement, FocusEvent>) => {
-    setDisplayModal(true)
+    moveToSelector(0)
     onFocus(event)
   }
 
@@ -100,25 +105,20 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
         <Calendar
           onDateSelected={({ date }) => {
             setValue(date)
-            setDisplayModal(false)
+
+            if (isMasterDateSelector) {
+              closeModal()
+              return
+            }
+
+            moveToNextSelector()
           }}
           date={value || new Date()}
           selected={[value]}
           firstDayOfWeek={1}
           isSmall={isSmall}
-          enableOtherDateComponentSelection={
-            dateComponentSelectors.includes(DateComponent.Month) || dateComponentSelectors.includes(DateComponent.Year)
-          }
-          onOtherDateComponentSelectionAsked={() => {
-            if (dateComponentSelectors.includes(DateComponent.Year)) {
-              setSelectedCalendarType(DateComponent.Year)
-              return
-            }
-
-            if (dateComponentSelectors.includes(DateComponent.Month)) {
-              setSelectedCalendarType(DateComponent.Month)
-            }
-          }}
+          enableOtherDateComponentSelection={isMasterDateSelector}
+          onOtherDateComponentSelectionAsked={() => moveToSelector(1)}
         />
       )}
       {displayMonthSelector && (
@@ -130,13 +130,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
             date.setMonth(month)
 
             setValue(date)
-
-            if (dateComponentSelectors.includes(DateComponent.Date)) {
-              setSelectedCalendarType(DateComponent.Date)
-              return
-            }
-
-            setDisplayModal(false)
+            moveToNextSelector()
           }}
         />
       )}
@@ -149,18 +143,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
             date.setFullYear(year)
 
             setValue(date)
-
-            if (dateComponentSelectors.includes(DateComponent.Month)) {
-              setSelectedCalendarType(DateComponent.Month)
-              return
-            }
-
-            if (dateComponentSelectors.includes(DateComponent.Date)) {
-              setSelectedCalendarType(DateComponent.Date)
-              return
-            }
-
-            setDisplayModal(false)
+            moveToNextSelector()
           }}
         />
       )}
