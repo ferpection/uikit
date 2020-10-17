@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [v0.6.0] - 2020-09-15
+## [v0.6.0] - 2020-10-16
 ### Added
 - New `validators` attribute for all the form components to display custom errors.
 - The `DatePicker` component allows for direct month and year selection.
