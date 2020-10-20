@@ -139,7 +139,7 @@ export const SubComponent = () => {
 export const ErrorState = () => {
   return (
     <>
-      <RadioGroup onValueChange={action('value changed')} isRequired>
+      <RadioGroup onValueChange={action('value changed')} onErrors={action('errors thrown')} isRequired>
         <RadioButton value="one">Choice One</RadioButton>
         <RadioButton value="two">Choice Two</RadioButton>
         <RadioButton value="three">Choice Three</RadioButton>
