@@ -5,7 +5,7 @@ import { SANSSERIF_FONTSET } from '../../../fonts'
 export const baseStyle = css`
   position: relative;
   display: block;
-  margin: 10px 0;
+  margin: 5px 0;
   padding: 10px 5px 10px 10px;
   border-radius: 3px;
   border: 1px solid ${`${N100_COLOR}`};
@@ -77,7 +77,7 @@ export const errorStyle = css`
 `
 
 export const smallStyle = css`
-  height: 22px;
+  height: 24px;
   padding: 0;
   max-width: max-content;
   display: inline-block;

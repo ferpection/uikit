@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Remove an internal error displayed in the console when a `Button` was used directly in
   the `Header` component.
 - For `RadioGroup` and `CheckboxGroup` with only one option, add rounded corner at every corner.
+- Make the `SelectField` look like the `TextField` in the "small state": less margin and a bit taller.
 
 ## [v0.6.0] - 2020-10-16s
 ### Added
