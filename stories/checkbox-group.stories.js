@@ -1,16 +1,19 @@
 import React from 'react'
 
-import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
 import { CheckboxGroup, CheckboxButton, DatePickerField, TextField } from '../src/components'
 
-storiesOf('Components/Forms/CheckboxGroup', module)
-  .addDecorator(withA11y)
-  .addDecorator(withKnobs)
-  .add('basic example', () => (
+export default {
+  title: 'Components/Forms/CheckboxGroup',
+  component: CheckboxGroup,
+  decorators: [withKnobs, withA11y],
+}
+
+export const BasicExemple = () => {
+  return (
     <>
       <CheckboxGroup value={['three']} onValueChange={action('value changed')}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
@@ -18,11 +21,14 @@ storiesOf('Components/Forms/CheckboxGroup', module)
         <CheckboxButton value="three">Choice Three</CheckboxButton>
       </CheckboxGroup>
     </>
-  ))
-  .add('sub component', () => (
+  )
+}
+
+export const SubComponent = () => {
+  return (
     <>
       <h2>
-        <code>{TextField.name}</code>
+        <code>TextField</code>
       </h2>
       <pre>
         <code>
@@ -126,8 +132,23 @@ storiesOf('Components/Forms/CheckboxGroup', module)
         <CheckboxButton value="three">Choice Three</CheckboxButton>
       </CheckboxGroup>
     </>
-  ))
-  .add('disabled state', () => (
+  )
+}
+
+export const ErrorState = () => {
+  return (
+    <>
+      <CheckboxGroup onValueChange={action('value changed')} onErrors={action('errors thrown')} isRequired>
+        <CheckboxButton value="one">Choice One</CheckboxButton>
+        <CheckboxButton value="two">Choice Two</CheckboxButton>
+        <CheckboxButton value="three">Choice Three</CheckboxButton>
+      </CheckboxGroup>
+    </>
+  )
+}
+
+export const DisabledState = () => {
+  return (
     <>
       <h2>
         <code>isDisabled</code> on <code>{CheckboxGroup.name}</code>
@@ -176,4 +197,5 @@ storiesOf('Components/Forms/CheckboxGroup', module)
         <CheckboxButton value="three">Choice Three</CheckboxButton>
       </CheckboxGroup>
     </>
-  ))
+  )
+}

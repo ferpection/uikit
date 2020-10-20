@@ -2,9 +2,17 @@
 import { FC, Children, cloneElement, useState, isValidElement, ChangeEvent, useEffect, FocusEvent } from 'react'
 import { jsx } from '@emotion/core'
 
+import useFormValidation from '../../../hooks/useFormValidation'
+
 import { defaultFormProps, FormProps } from '../form-props'
 
-import { listStyles, listItemStyles, innerCheckboxStyles, innerCheckboxStylesDisabled } from './styles'
+import {
+  listStyles,
+  listItemStyles,
+  innerCheckboxStyles,
+  innerCheckboxStylesDisabled,
+  innerRadioStylesErrors,
+} from './styles'
 
 export interface CheckboxGroupProps extends FormProps {
   value?: string[]
@@ -16,15 +24,24 @@ export interface CheckboxGroupProps extends FormProps {
 
 export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
   const [values, setValues] = useState(props.value || [])
-  const { onValueChange = () => {}, isDisabled, onBlur: handleBlur, onFocus: handleFocus } = props
+  const {
+    onValueChange,
+    isDisabled,
+    isRequired,
+    validators,
+    onErrors: handleErrors,
+    onBlur: handleBlur,
+    onFocus: handleFocus,
+  } = props
 
-  useEffect(() => {
-    setValues(props.value || [])
-  }, [props.value])
+  const { isValid, errors } = useFormValidation(values, [
+    (v: string) => ({ 'uikit:required': isRequired && (v == null || v.length < 1) }),
+    ...validators,
+  ])
 
-  useEffect(() => {
-    onValueChange(values)
-  }, [values])
+  useEffect(() => setValues(props.value || []), [props.value])
+  useEffect(() => onValueChange(values), [values])
+  useEffect(() => handleErrors(errors), [errors])
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const option = event.target.value
@@ -49,7 +66,8 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
               listStyles,
               listItemStyles,
               innerCheckboxStyles,
-              props.isDisabled ? innerCheckboxStylesDisabled : null,
+              isDisabled && innerCheckboxStylesDisabled,
+              !isValid && innerRadioStylesErrors,
             ]}
             key={index}
           >

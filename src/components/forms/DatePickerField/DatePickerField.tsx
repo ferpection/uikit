@@ -3,7 +3,9 @@ import { FC, useState, SyntheticEvent, useEffect, useContext } from 'react'
 import { jsx } from '@emotion/core'
 
 import { removeConsecutiveDuplicate } from '../../../utils/array'
+
 import { I18nContext } from '../../contexts/I18nContext'
+import { Button } from '../../buttons/Button/Button'
 
 import { TextField } from '../TextField/TextField'
 import { defaultFormProps, FormProps } from '../form-props'
@@ -12,7 +14,7 @@ import { Calendar } from './Calendar/Calendar'
 import { YearPicker } from './YearPicker/YearPicker'
 import { MonthPicker } from './MonthPicker/MonthPicker'
 
-import { datePickerContainer, datePickerContainerSmall } from './styles'
+import { datePickerContainer, datePickerContainerSmall, calendarButton, calendarButtonSmall } from './styles'
 import { englishStrings, frenchStrings } from './locales'
 
 export enum DateComponent {
@@ -20,6 +22,8 @@ export enum DateComponent {
   Month = 'month',
   Year = 'year',
 }
+
+const DATE_REGEX = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)\d{2})$|^(?:29(\/|-|\.)(?:0?2)\3(?:(?:(?:1[6-9]|[2-9]\d)(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)\d{2})$/
 
 export interface DatePickerFieldProps extends FormProps {
   value?: Date
@@ -74,15 +78,16 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
 
   // event handlers
   const handleTextFieldChange = (v: string) => {
-    const [day, month, year] = v.split('/')
-    const date = new Date(Number(year), Number(month) - 1, Number(day))
+    closeModal()
 
-    if (date instanceof Date && Number.isNaN(date.getTime())) {
+    if (!DATE_REGEX.test(v)) {
       return
     }
 
+    const [day, month, year] = v.split('/')
+    const date = new Date(Number(year), Number(month) - 1, Number(day))
+
     setValue(date)
-    closeModal()
   }
 
   const handleTextFieldFocus = (event: SyntheticEvent<HTMLInputElement, FocusEvent>) => {
@@ -92,6 +97,12 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
 
   return (
     <div css={[datePickerContainer, isSmall && datePickerContainerSmall]}>
+      <Button
+        css={[calendarButton, isSmall && calendarButtonSmall]}
+        icon="calendar"
+        isRaw
+        onClick={() => (modalState == null ? moveToSelector(0) : closeModal())}
+      />
       <TextField
         value={value?.toLocaleDateString('fr-FR', { day: '2-digit', year: 'numeric', month: '2-digit' })}
         isSmall={isSmall}

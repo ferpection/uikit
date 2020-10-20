@@ -1,16 +1,19 @@
 import React from 'react'
 
-import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
 import { RadioGroup, RadioButton, TextField, DatePickerField } from '../src/components'
 
-storiesOf('Components/Forms/RadioGroup', module)
-  .addDecorator(withA11y)
-  .addDecorator(withKnobs)
-  .add('basic example', () => (
+export default {
+  title: 'Components/Forms/RadioGroup',
+  component: RadioGroup,
+  decorators: [withKnobs, withA11y],
+}
+
+export const BasicExemple = () => {
+  return (
     <>
       <RadioGroup value="three" onValueChange={action('value changed')}>
         <RadioButton value="one">Choice One</RadioButton>
@@ -18,8 +21,11 @@ storiesOf('Components/Forms/RadioGroup', module)
         <RadioButton value="three">Choice Three</RadioButton>
       </RadioGroup>
     </>
-  ))
-  .add('sub component', () => (
+  )
+}
+
+export const SubComponent = () => {
+  return (
     <>
       <h2>
         <code>{TextField.name}</code>
@@ -126,8 +132,23 @@ storiesOf('Components/Forms/RadioGroup', module)
         <RadioButton value="three">Choice Three</RadioButton>
       </RadioGroup>
     </>
-  ))
-  .add('disabled state', () => (
+  )
+}
+
+export const ErrorState = () => {
+  return (
+    <>
+      <RadioGroup onValueChange={action('value changed')} onErrors={action('errors thrown')} isRequired>
+        <RadioButton value="one">Choice One</RadioButton>
+        <RadioButton value="two">Choice Two</RadioButton>
+        <RadioButton value="three">Choice Three</RadioButton>
+      </RadioGroup>
+    </>
+  )
+}
+
+export const DisabledState = () => {
+  return (
     <>
       <h2>
         <code>isDisabled</code> on <code>{RadioGroup.name}</code>
@@ -176,4 +197,5 @@ storiesOf('Components/Forms/RadioGroup', module)
         <RadioButton value="three">Choice Three</RadioButton>
       </RadioGroup>
     </>
-  ))
+  )
+}
