@@ -20,6 +20,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   the calendar using a button at the right. Users can type a text, when it becomes a
   valid date it is used in the calendar.
 
+### Fixed
+- Remove an internal error displayed in the console when a `Button` was used directly in
+  the `Header` component.
+
 ## [v0.6.0] - 2020-10-16s
 ### Added
 - New `validators` attribute for all the form components to display custom errors.
