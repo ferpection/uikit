@@ -15,6 +15,9 @@ export default {
 export const BasicExemple = () => {
   return (
     <>
+      <RadioGroup>
+        <RadioButton value="one">Unique choice</RadioButton>
+      </RadioGroup>
       <RadioGroup value="three" onValueChange={action('value changed')}>
         <RadioButton value="one">Choice One</RadioButton>
         <RadioButton value="two">Choice Two</RadioButton>

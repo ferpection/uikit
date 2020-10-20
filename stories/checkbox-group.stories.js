@@ -15,6 +15,9 @@ export default {
 export const BasicExemple = () => {
   return (
     <>
+      <CheckboxGroup>
+        <CheckboxButton value="one">Unique option</CheckboxButton>
+      </CheckboxGroup>
       <CheckboxGroup value={['three']} onValueChange={action('value changed')}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">Choice Two</CheckboxButton>

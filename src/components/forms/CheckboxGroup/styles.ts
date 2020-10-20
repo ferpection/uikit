@@ -29,10 +29,12 @@ export const innerCheckboxStyles = css`
     left: 12px;
   }
   &:first-of-type label {
-    border-radius: 3px 3px 0 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
   }
   &:last-of-type label {
-    border-radius: 0 0 3px 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
   }
 `
 
