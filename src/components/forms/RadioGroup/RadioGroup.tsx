@@ -6,7 +6,7 @@ import useFormValidation from '../../../hooks/useFormValidation'
 
 import { defaultFormProps, FormProps } from '../form-props'
 
-import { listStyles, listItemStyles, innerRadioStyles, innerRadioStylesDisabled } from './styles'
+import { listStyles, listItemStyles, innerRadioStyles, innerRadioStylesDisabled, innerRadioStylesErrors } from './styles'
 
 export interface RadioGroupProps extends FormProps {
   value?: string
@@ -43,7 +43,7 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
 
         return (
           <li
-            css={[listStyles, listItemStyles, innerRadioStyles, props.isDisabled ? innerRadioStylesDisabled : null]}
+            css={[listStyles, listItemStyles, innerRadioStyles, isDisabled && innerRadioStylesDisabled, !isValid && innerRadioStylesErrors]}
             key={index}
           >
             {cloneElement(child, {
