@@ -7,13 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `RadioGroup` now supports errors & validation:
-  A `RadioGroup` have an visual error state and can be marked
-  as required. It is also possible to add custom validators
-  to influence how the component trigger the error state.
+  A `RadioGroup` have an visual error state and can be marked as required.
+  It is also possible to add custom validators to influence how the component
+  triggers the error state.
 - `CheckboxGroup` now supports errors & validation:
-  A `CheckboxGroup` have an visual error state and can be marked
-  as required. It is also possible to add custom validators
-  to influence how the component trigger the error state.
+  A `CheckboxGroup` have an visual error state and can be marked as required.
+  It is also possible to add custom validators to influence how the component triggers
+  the error state.
+
+### Changed
+- Improve typing experience in the `DatePickerField` component. Users can show and hide
+  the calendar using a button at the right. Users can type a text, when it becomes a
+  valid date it is used in the calendar.
 
 ## [v0.6.0] - 2020-10-16s
 ### Added
