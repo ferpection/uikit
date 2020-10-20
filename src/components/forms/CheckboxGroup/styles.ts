@@ -1,4 +1,5 @@
 import { css } from '@emotion/core'
+import { O200_COLOR, O25_COLOR } from '../../../colors'
 
 export const listStyles = css`
   padding: 0;
@@ -32,6 +33,21 @@ export const innerCheckboxStyles = css`
   }
   &:last-of-type label {
     border-radius: 0 0 3px 3px;
+  }
+`
+
+export const innerRadioStylesErrors= css`
+  & label {
+    border-left-color: ${`${O200_COLOR}`};
+    border-right-color: ${`${O200_COLOR}`};
+    background-color: ${`${O25_COLOR}`};
+    box-shadow: 0 0 0 1px ${`${O200_COLOR}`};
+  }
+  &:first-of-type label {
+    border-top-color: ${`${O200_COLOR}`};
+  }
+  &:last-of-type label {
+    border-bottom-color: ${`${O200_COLOR}`};
   }
 `
 

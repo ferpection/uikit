@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   A `RadioGroup` have an visual error state and can be marked
   as required. It is also possible to add custom validators
   to influence how the component trigger the error state.
+- `CheckboxGroup` now supports errors & validation:
+  A `CheckboxGroup` have an visual error state and can be marked
+  as required. It is also possible to add custom validators
+  to influence how the component trigger the error state.
 
 ## [v0.6.0] - 2020-10-16s
 ### Added
