@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+
+## [v0.7.0] - 2020-10-20
 ### Added
 - `RadioGroup` now supports errors & validation:
   A `RadioGroup` have an visual error state and can be marked as required.
@@ -26,7 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - For `RadioGroup` and `CheckboxGroup` with only one option, add rounded corner at every corner.
 - Make the `SelectField` look like the `TextField` in the "small state": less margin and a bit taller.
 
-## [v0.6.0] - 2020-10-16s
+## [v0.6.0] - 2020-10-16
 ### Added
 - New `validators` attribute for all the form components to display custom errors.
 - The `DatePicker` component allows for direct month and year selection.
