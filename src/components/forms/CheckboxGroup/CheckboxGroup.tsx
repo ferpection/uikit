@@ -6,7 +6,13 @@ import useFormValidation from '../../../hooks/useFormValidation'
 
 import { defaultFormProps, FormProps } from '../form-props'
 
-import { listStyles, listItemStyles, innerCheckboxStyles, innerCheckboxStylesDisabled, innerRadioStylesErrors } from './styles'
+import {
+  listStyles,
+  listItemStyles,
+  innerCheckboxStyles,
+  innerCheckboxStylesDisabled,
+  innerRadioStylesErrors,
+} from './styles'
 
 export interface CheckboxGroupProps extends FormProps {
   value?: string[]
@@ -18,15 +24,20 @@ export interface CheckboxGroupProps extends FormProps {
 
 export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
   const [values, setValues] = useState(props.value || [])
-  const { onValueChange, isDisabled, isRequired, validators, onErrors: handleErrors, onBlur: handleBlur, onFocus: handleFocus } = props
+  const {
+    onValueChange,
+    isDisabled,
+    isRequired,
+    validators,
+    onErrors: handleErrors,
+    onBlur: handleBlur,
+    onFocus: handleFocus,
+  } = props
 
-  const { isValid, errors } = useFormValidation(
-    values,
-    [
-      (v: string) => ({ 'uikit:required': isRequired && (v == null || v.length < 1) }),
-      ...validators,
-    ],
-  )
+  const { isValid, errors } = useFormValidation(values, [
+    (v: string) => ({ 'uikit:required': isRequired && (v == null || v.length < 1) }),
+    ...validators,
+  ])
 
   useEffect(() => setValues(props.value || []), [props.value])
   useEffect(() => onValueChange(values), [values])

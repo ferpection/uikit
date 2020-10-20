@@ -97,7 +97,12 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
 
   return (
     <div css={[datePickerContainer, isSmall && datePickerContainerSmall]}>
-      <Button css={[calendarButton, isSmall && calendarButtonSmall]} icon="calendar" isRaw onClick={() => modalState == null ? moveToSelector(0) : closeModal() } />
+      <Button
+        css={[calendarButton, isSmall && calendarButtonSmall]}
+        icon="calendar"
+        isRaw
+        onClick={() => (modalState == null ? moveToSelector(0) : closeModal())}
+      />
       <TextField
         value={value?.toLocaleDateString('fr-FR', { day: '2-digit', year: 'numeric', month: '2-digit' })}
         isSmall={isSmall}

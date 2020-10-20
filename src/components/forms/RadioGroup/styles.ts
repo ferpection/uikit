@@ -36,7 +36,7 @@ export const innerRadioStyles = css`
   }
 `
 
-export const innerRadioStylesErrors= css`
+export const innerRadioStylesErrors = css`
   & label {
     border-left-color: ${`${O200_COLOR}`};
     border-right-color: ${`${O200_COLOR}`};

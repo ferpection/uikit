@@ -6,7 +6,13 @@ import useFormValidation from '../../../hooks/useFormValidation'
 
 import { defaultFormProps, FormProps } from '../form-props'
 
-import { listStyles, listItemStyles, innerRadioStyles, innerRadioStylesDisabled, innerRadioStylesErrors } from './styles'
+import {
+  listStyles,
+  listItemStyles,
+  innerRadioStyles,
+  innerRadioStylesDisabled,
+  innerRadioStylesErrors,
+} from './styles'
 
 export interface RadioGroupProps extends FormProps {
   value?: string
@@ -18,15 +24,21 @@ export interface RadioGroupProps extends FormProps {
 
 export const RadioGroup: FC<RadioGroupProps> = props => {
   const [value, setValue] = useState(props.value || '')
-  const { onValueChange, isDisabled, isRequired, validators, onErrors: handleErrors, onBlur: handleBlur, onFocus: handleFocus, ...otherProps } = props
+  const {
+    onValueChange,
+    isDisabled,
+    isRequired,
+    validators,
+    onErrors: handleErrors,
+    onBlur: handleBlur,
+    onFocus: handleFocus,
+    ...otherProps
+  } = props
 
-  const { isValid, errors } = useFormValidation(
-    value,
-    [
-      (v: string) => ({ 'uikit:required': isRequired && (v == null || v === '') }),
-      ...validators,
-    ],
-  )
+  const { isValid, errors } = useFormValidation(value, [
+    (v: string) => ({ 'uikit:required': isRequired && (v == null || v === '') }),
+    ...validators,
+  ])
 
   useEffect(() => setValue(props.value), [props.value])
   useEffect(() => onValueChange(value), [value])
@@ -43,7 +55,13 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
 
         return (
           <li
-            css={[listStyles, listItemStyles, innerRadioStyles, isDisabled && innerRadioStylesDisabled, !isValid && innerRadioStylesErrors]}
+            css={[
+              listStyles,
+              listItemStyles,
+              innerRadioStyles,
+              isDisabled && innerRadioStylesDisabled,
+              !isValid && innerRadioStylesErrors,
+            ]}
             key={index}
           >
             {cloneElement(child, {

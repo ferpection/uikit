@@ -138,7 +138,7 @@ export const SubComponent = () => {
 export const ErrorState = () => {
   return (
     <>
-      <CheckboxGroup onValueChange={action('value changed')}  onErrors={action('errors thrown')} isRequired>
+      <CheckboxGroup onValueChange={action('value changed')} onErrors={action('errors thrown')} isRequired>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">Choice Two</CheckboxButton>
         <CheckboxButton value="three">Choice Three</CheckboxButton>
