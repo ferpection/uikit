@@ -52,6 +52,15 @@ export const ErrorState = () => {
   )
 }
 
+export const DisabledState = () => {
+  return (
+    <UiKitInitializer i18n={i18n}>
+      <DatePickerField isDisabled />
+      <DatePickerField isSmall isDisabled />
+    </UiKitInitializer>
+  )
+}
+
 export const BirthDateExample = () => {
   const isSmall = boolean('is small', false)
 

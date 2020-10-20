@@ -101,6 +101,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
         css={[calendarButton, isSmall && calendarButtonSmall]}
         icon="calendar"
         isRaw
+        isDisabled={props.isDisabled}
         onClick={() => (modalState == null ? moveToSelector(0) : closeModal())}
       />
       <TextField
