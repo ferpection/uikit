@@ -2,7 +2,9 @@ import React, { FC } from 'react'
 
 import { ThemeProvider, ThemeProviderProps } from '../contexts/ThemeContext'
 import { I18nContext } from '../contexts/I18nContext'
+
 import { FontsLoader } from './FontsLoader'
+import { GlobalCSSReset } from './GlobalCSSReset'
 
 export interface I18nDelegate {
   t: (key: string) => string
@@ -23,8 +25,8 @@ export interface UiKitInitializerProps {
 
 export const UiKitInitializer: FC<UiKitInitializerProps> = props => {
   const t = props.i18n?.t?.bind(props.i18n)
-  const loadNamespaces = props.i18n?.loadNamespaces?.bind(props.i18n)
-  const addResourceBundle = props.i18n?.addResourceBundle?.bind(props.i18n)
+  const loadNamespaces = props.i18n?.loadNamespaces?.bind(props.i18n) || (() => {})
+  const addResourceBundle = props.i18n?.addResourceBundle?.bind(props.i18n) || (() => {})
 
   loadNamespaces(['uikit'])
 
@@ -32,20 +34,24 @@ export const UiKitInitializer: FC<UiKitInitializerProps> = props => {
     <ThemeProvider theme={props.theme}>
       <GlobalCSSReset />
       <FontsLoader />
-      <I18nContext.Provider
-        value={{
-          t:
-            t ||
-            ((key: string) => {
-              console.log(`Trying to translate ${key}`)
-              return key
-            }),
-          addTranslations: (language: string, translations: { [key: string]: string }) =>
-            addResourceBundle(language, 'uikit', translations, true, true),
-        }}
-      >
-        {props.children}
-      </I18nContext.Provider>
+      {props.i18n != null && (
+        <I18nContext.Provider
+          value={{
+            t:
+              t ||
+              ((key: string) => {
+                console.log(`Trying to translate ${key}`)
+                return key
+              }),
+            addTranslations: (language: string, translations: { [key: string]: string }) =>
+              addResourceBundle(language, 'uikit', translations, true, true),
+          }}
+        >
+          {props.children}
+        </I18nContext.Provider>
+      )}
+
+      {props.i18n == null && props.children}
     </ThemeProvider>
   )
 }

@@ -4,7 +4,7 @@ import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-import { CheckboxGroup, CheckboxButton, DatePickerField, TextField } from '../src/components'
+import { CheckboxGroup, CheckboxButton, DatePickerField, TextField, UiKitInitializer } from '../src/components'
 
 export default {
   title: 'Components/Forms/CheckboxGroup',
@@ -14,7 +14,7 @@ export default {
 
 export const BasicExemple = () => {
   return (
-    <>
+    <UiKitInitializer>
       <CheckboxGroup>
         <CheckboxButton value="one">Unique option</CheckboxButton>
       </CheckboxGroup>
@@ -23,13 +23,13 @@ export const BasicExemple = () => {
         <CheckboxButton value="two">Choice Two</CheckboxButton>
         <CheckboxButton value="three">Choice Three</CheckboxButton>
       </CheckboxGroup>
-    </>
+    </UiKitInitializer>
   )
 }
 
 export const SubComponent = () => {
   return (
-    <>
+    <UiKitInitializer>
       <h2>
         <code>TextField</code>
       </h2>
@@ -134,25 +134,25 @@ export const SubComponent = () => {
         </CheckboxButton>
         <CheckboxButton value="three">Choice Three</CheckboxButton>
       </CheckboxGroup>
-    </>
+    </UiKitInitializer>
   )
 }
 
 export const ErrorState = () => {
   return (
-    <>
+    <UiKitInitializer>
       <CheckboxGroup onValueChange={action('value changed')} onErrors={action('errors thrown')} isRequired>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">Choice Two</CheckboxButton>
         <CheckboxButton value="three">Choice Three</CheckboxButton>
       </CheckboxGroup>
-    </>
+    </UiKitInitializer>
   )
 }
 
 export const DisabledState = () => {
   return (
-    <>
+    <UiKitInitializer>
       <h2>
         <code>isDisabled</code> on <code>{CheckboxGroup.name}</code>
       </h2>
@@ -199,6 +199,6 @@ export const DisabledState = () => {
         </CheckboxButton>
         <CheckboxButton value="three">Choice Three</CheckboxButton>
       </CheckboxGroup>
-    </>
+    </UiKitInitializer>
   )
 }

@@ -4,7 +4,7 @@ import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-import { RadioGroup, RadioButton, TextField, DatePickerField } from '../src/components'
+import { RadioGroup, RadioButton, TextField, DatePickerField, UiKitInitializer } from '../src/components'
 
 export default {
   title: 'Components/Forms/RadioGroup',
@@ -14,7 +14,7 @@ export default {
 
 export const BasicExemple = () => {
   return (
-    <>
+    <UiKitInitializer>
       <RadioGroup>
         <RadioButton value="one">Unique choice</RadioButton>
       </RadioGroup>
@@ -23,13 +23,13 @@ export const BasicExemple = () => {
         <RadioButton value="two">Choice Two</RadioButton>
         <RadioButton value="three">Choice Three</RadioButton>
       </RadioGroup>
-    </>
+    </UiKitInitializer>
   )
 }
 
 export const SubComponent = () => {
   return (
-    <>
+    <UiKitInitializer>
       <h2>
         <code>{TextField.name}</code>
       </h2>
@@ -134,25 +134,25 @@ export const SubComponent = () => {
         </RadioButton>
         <RadioButton value="three">Choice Three</RadioButton>
       </RadioGroup>
-    </>
+    </UiKitInitializer>
   )
 }
 
 export const ErrorState = () => {
   return (
-    <>
+    <UiKitInitializer>
       <RadioGroup onValueChange={action('value changed')} onErrors={action('errors thrown')} isRequired>
         <RadioButton value="one">Choice One</RadioButton>
         <RadioButton value="two">Choice Two</RadioButton>
         <RadioButton value="three">Choice Three</RadioButton>
       </RadioGroup>
-    </>
+    </UiKitInitializer>
   )
 }
 
 export const DisabledState = () => {
   return (
-    <>
+    <UiKitInitializer>
       <h2>
         <code>isDisabled</code> on <code>{RadioGroup.name}</code>
       </h2>
@@ -199,6 +199,6 @@ export const DisabledState = () => {
         </RadioButton>
         <RadioButton value="three">Choice Three</RadioButton>
       </RadioGroup>
-    </>
+    </UiKitInitializer>
   )
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, text, number, boolean, select } from '@storybook/addon-knobs'
 
-import { TextField } from '../src/components/index.ts'
+import { TextField, UiKitInitializer } from '../src/components/index.ts'
 
 export default {
   title: 'Components/Forms/TextField',
@@ -12,7 +12,7 @@ export default {
 
 export const NormalState = () => {
   return (
-    <>
+    <UiKitInitializer>
       {boolean('show label', false) ? <label>Input:</label> : null}
       <TextField placeholder="This is an input" />
       {boolean('show label', false) ? (
@@ -23,16 +23,16 @@ export const NormalState = () => {
         </>
       ) : null}
       <TextField rowCount={3} placeholder="This is an textarea" />
-    </>
+    </UiKitInitializer>
   )
 }
 
 export const HighlightedState = () => {
   return (
-    <>
+    <UiKitInitializer>
       <TextField placeholder="This is a highlighted input" isHighlighted />
       <TextField rowCount={3} placeholder="This is a highlighted textarea" isHighlighted />
-    </>
+    </UiKitInitializer>
   )
 }
 
@@ -42,7 +42,7 @@ export const ErrorState = () => {
   const [errors, setErrors] = useState({})
 
   return (
-    <>
+    <UiKitInitializer>
       <TextField
         placeholder="This is a error input"
         dataType="number"
@@ -70,29 +70,31 @@ export const ErrorState = () => {
         ]}
         isRequired
       />
-    </>
+    </UiKitInitializer>
   )
 }
 
 export const DisabledState = () => {
   return (
-    <>
+    <UiKitInitializer>
       <TextField placeholder="This is a disabled input" isDisabled />
       <TextField rowCount={3} placeholder="This is a disabled textarea" isDisabled />
-    </>
+    </UiKitInitializer>
   )
 }
 
 export const FullExample = () => {
   return (
-    <TextField
-      placeholder={text('placeholder', 'Fill the field')}
-      dataType={select('data type', ['text', 'email', 'number'])}
-      rowCount={number('row count', 1)}
-      isHighlighted={boolean('highlighted', false)}
-      isDisabled={boolean('disabled', false)}
-      isSmall={boolean('is small', false)}
-      hideErrors={boolean('hide errors', false)}
-    />
+    <UiKitInitializer>
+      <TextField
+        placeholder={text('placeholder', 'Fill the field')}
+        dataType={select('data type', ['text', 'email', 'number'])}
+        rowCount={number('row count', 1)}
+        isHighlighted={boolean('highlighted', false)}
+        isDisabled={boolean('disabled', false)}
+        isSmall={boolean('is small', false)}
+        hideErrors={boolean('hide errors', false)}
+      />
+    </UiKitInitializer>
   )
 }

@@ -4,13 +4,13 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs } from '@storybook/addon-knobs'
 
-import { ReorderableList, DragHandle, TextField } from '../src/components/index.ts'
+import { ReorderableList, DragHandle, TextField, UiKitInitializer } from '../src/components/index.ts'
 
 storiesOf('Layout/ReorderableList', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('simple case', () => (
-    <>
+    <UiKitInitializer>
       <h1>{ReorderableList.name}</h1>
       <p>The components needs two properties:</p>
       <ul>
@@ -30,10 +30,10 @@ storiesOf('Layout/ReorderableList', module)
         ]}
         renderItem={item => <div style={{ backgroundColor: '#aaa', padding: '10px' }}>div #{item.uuid}</div>}
       />
-    </>
+    </UiKitInitializer>
   ))
   .add('with drag handle', () => (
-    <>
+    <UiKitInitializer>
       <h1>{ReorderableList.name}</h1>
       <p>The components can let you chose how to handle the drag.</p>
       <p>
@@ -78,5 +78,5 @@ storiesOf('Layout/ReorderableList', module)
           </div>
         )}
       />
-    </>
+    </UiKitInitializer>
   ))

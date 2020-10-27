@@ -3,12 +3,12 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 
-import { FontAwesomeIcon } from '../src/components/index.ts'
+import { FontAwesomeIcon, UiKitInitializer } from '../src/components/index.ts'
 
 storiesOf('Iconography/FontAwesomeIcon', module)
   .addDecorator(withA11y)
   .add('exposed component', () => (
-    <>
+    <UiKitInitializer>
       <h1>FontAwesomeIcon</h1>
       <p>
         <code>{FontAwesomeIcon.name}</code> is not part of UiKit. As UiKit uses it in production mode and to avoid
@@ -250,5 +250,5 @@ storiesOf('Iconography/FontAwesomeIcon', module)
         For more icons, please refer to the{' '}
         <a href="https://fontawesome.com/icons?d=gallery&s=brands">Brand icon gallery</a>
       </p>
-    </>
+    </UiKitInitializer>
   ))

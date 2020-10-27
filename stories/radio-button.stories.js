@@ -4,23 +4,23 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, select } from '@storybook/addon-knobs'
 
-import { RadioButton, TextField } from '../src/components'
+import { RadioButton, TextField, UiKitInitializer } from '../src/components'
 
 storiesOf('Components/Button/RadioButton', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('basic example', () => (
-    <>
+    <UiKitInitializer>
       <RadioButton>Test</RadioButton>
-    </>
+    </UiKitInitializer>
   ))
   .add('disabled state', () => (
-    <>
+    <UiKitInitializer>
       <RadioButton isDisabled>Test</RadioButton>
-    </>
+    </UiKitInitializer>
   ))
   .add('sub component', () => (
-    <>
+    <UiKitInitializer>
       <h3>With text</h3>
       <RadioButton radioPosition={select('radio position', ['top', 'center', 'bottom'], 'center')}>
         Id culpa reprehenderit enim nisi et reprehenderit voluptate. Laborum deserunt tempor culpa id anim dolor duis
@@ -38,5 +38,5 @@ storiesOf('Components/Button/RadioButton', module)
       <RadioButton radioPosition={select('radio position', ['top', 'center', 'bottom'], 'center')}>
         Test: <TextField />
       </RadioButton>
-    </>
+    </UiKitInitializer>
   ))

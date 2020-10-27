@@ -1,5 +1,6 @@
 import React from 'react'
-import { FileField } from '../src/components/index.ts'
+
+import { FileField, UiKitInitializer } from '../src/components/index.ts'
 
 export default {
   title: 'Components/Forms/FileField',
@@ -7,21 +8,21 @@ export default {
 }
 
 export const NormalState = () => {
-  return <FileField onValueChange={files => console.log(files)} />
+  return <UiKitInitializer><FileField onValueChange={files => console.log(files)} /></UiKitInitializer>
 }
 
 export const MultipleFilesState = () => {
-  return <FileField isMultiple onValueChange={files => console.log(files)} />
+  return <UiKitInitializer><FileField isMultiple onValueChange={files => console.log(files)} /></UiKitInitializer>
 }
 
 export const HighlightedState = () => {
-  return <FileField isHighlighted />
+  return <UiKitInitializer><FileField isHighlighted /></UiKitInitializer>
 }
 
 export const ErrorState = () => {
-  return <FileField isRequired />
+  return <UiKitInitializer><FileField isRequired /></UiKitInitializer>
 }
 
 export const DisabledState = () => {
-  return <FileField isDisabled />
+  return <UiKitInitializer><FileField isDisabled /></UiKitInitializer>
 }

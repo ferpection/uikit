@@ -10,7 +10,7 @@ storiesOf('Layout/Drag and Drop/Dropzone', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('simple case', () => (
-    <>
+    <UiKitInitializer>
       <h1>{Dropzone.name}</h1>
       <p>The components needs two properties:</p>
       <ul>
@@ -44,5 +44,5 @@ storiesOf('Layout/Drag and Drop/Dropzone', module)
           </div>
         )}
       </Dropzone>
-    </>
+    </UiKitInitializer>
   ))

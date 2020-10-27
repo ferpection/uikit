@@ -1,7 +1,7 @@
 import React from 'react'
 import { withKnobs, text } from '@storybook/addon-knobs'
 
-import { MarkdownField } from '../src/components/index.ts'
+import { MarkdownField, UiKitInitializer } from '../src/components/index.ts'
 
 export default {
   title: 'Components/Forms/MarkdownField',
@@ -10,17 +10,17 @@ export default {
 }
 
 export const NormalState = () => {
-  return <MarkdownField value={text('value')} onValueChange={value => console.log(value)} />
+  return <UiKitInitializer><MarkdownField value={text('value')} onValueChange={value => console.log(value)} /></UiKitInitializer>
 }
 
 export const HighlightedState = () => {
-  return <MarkdownField isHighlighted />
+  return <UiKitInitializer><MarkdownField isHighlighted /></UiKitInitializer>
 }
 
 export const ErrorState = () => {
-  return <MarkdownField isRequired />
+  return <UiKitInitializer><MarkdownField isRequired /></UiKitInitializer>
 }
 
 export const DisabledState = () => {
-  return <MarkdownField isDisabled />
+  return <UiKitInitializer><MarkdownField isDisabled /></UiKitInitializer>
 }

@@ -4,14 +4,14 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, boolean, array } from '@storybook/addon-knobs'
 
-import { FontsLoader, ThematicSection, HelpBlock } from '../src/components'
+import { FontsLoader, ThematicSection, HelpBlock, UiKitInitializer } from '../src/components'
 import { SANSSERIF_FONTSET, OPENSANS_FONT } from '../src/fonts'
 
 storiesOf('Utils/FontsLoader', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('documentation', () => (
-    <>
+    <UiKitInitializer>
       <FontsLoader onlyLoadFonts={boolean('onlyLoadFonts', false)} fontNames={array('fontNames', [OPENSANS_FONT])} />
       <h1>FontsLoader</h1>
       <p>
@@ -45,5 +45,5 @@ storiesOf('Utils/FontsLoader', module)
           </ul>
         </HelpBlock>
       </ThematicSection>
-    </>
+    </UiKitInitializer>
   ))

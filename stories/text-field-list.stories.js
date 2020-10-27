@@ -4,7 +4,7 @@ import { withA11y } from '@storybook/addon-a11y'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, boolean, number, text, select } from '@storybook/addon-knobs'
 
-import { TextFieldList } from '../src/components/index.ts'
+import { TextFieldList, UiKitInitializer } from '../src/components/index.ts'
 import { N75_COLOR } from '../src/colors/index.ts'
 
 export default {
@@ -18,7 +18,7 @@ export const NormalState = () => {
   const [values, setValues] = useState(intialValues)
 
   return (
-    <>
+    <UiKitInitializer>
       <TextFieldList
         placeholder={text('placeholder', 'Add your text here')}
         initialFieldCount={number('initial field count', 2)}
@@ -35,7 +35,7 @@ export const NormalState = () => {
       >
         Value: {JSON.stringify(values, null, 2)}
       </pre>
-    </>
+    </UiKitInitializer>
   )
 }
 
@@ -43,7 +43,7 @@ export const EditableState = () => {
   const [values, setValues] = useState([])
 
   return (
-    <>
+    <UiKitInitializer>
       <TextFieldList
         placeholder={text('placeholder', 'Add your text here')}
         buttonText={text('button text', 'Add a list item')}
@@ -64,7 +64,7 @@ export const EditableState = () => {
       >
         Value: {JSON.stringify(values, null, 2)}
       </pre>
-    </>
+    </UiKitInitializer>
   )
 }
 
@@ -74,7 +74,7 @@ export const ErrorState = () => {
   const [errors, setErrors] = useState({})
 
   return (
-    <>
+    <UiKitInitializer>
       <TextFieldList
         placeholder={text('placeholder', 'Add your text here')}
         buttonText={text('button text', 'Add a list item')}
@@ -107,7 +107,7 @@ export const ErrorState = () => {
         <br />
         Errors: {JSON.stringify(errors, null, 2)}
       </pre>
-    </>
+    </UiKitInitializer>
   )
 }
 
@@ -115,7 +115,7 @@ export const DisabledState = () => {
   const [values, setValues] = useState([])
 
   return (
-    <>
+    <UiKitInitializer>
       <TextFieldList
         buttonText={text('button text', 'Add a list item')}
         placeholder={text('placeholder', 'Add your text here')}
@@ -133,6 +133,6 @@ export const DisabledState = () => {
       >
         Value: {JSON.stringify(values, null, 2)}
       </pre>
-    </>
+    </UiKitInitializer>
   )
 }

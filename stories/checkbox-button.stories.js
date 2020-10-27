@@ -4,23 +4,23 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, select, boolean } from '@storybook/addon-knobs'
 
-import { CheckboxButton, TextField, DatePickerField } from '../src/components'
+import { CheckboxButton, TextField, DatePickerField, UiKitInitializer } from '../src/components'
 
 storiesOf('Components/Button/CheckboxButton', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('basic example', () => (
-    <>
+    <UiKitInitializer>
       <CheckboxButton>Test</CheckboxButton>
-    </>
+    </UiKitInitializer>
   ))
   .add('disabled state', () => (
-    <>
+    <UiKitInitializer>
       <CheckboxButton isDisabled>Test</CheckboxButton>
-    </>
+    </UiKitInitializer>
   ))
   .add('sub component', () => (
-    <>
+    <UiKitInitializer>
       <h3>With text</h3>
       <CheckboxButton checkboxPosition={select('checkbox position', ['top', 'center', 'bottom'], 'center')}>
         Id culpa reprehenderit enim nisi et reprehenderit voluptate. Laborum deserunt tempor culpa id anim dolor duis
@@ -42,5 +42,5 @@ storiesOf('Components/Button/CheckboxButton', module)
       <CheckboxButton checkboxPosition={select('checkbox position', ['top', 'center', 'bottom'], 'center')}>
         Test: <DatePickerField isSmall={boolean('inner field is small', false)} />
       </CheckboxButton>
-    </>
+    </UiKitInitializer>
   ))
