@@ -11,7 +11,7 @@ export const GlobalCSSReset: FC<GlobalCSSResetProps> = () => (
   <Global
     styles={css`
       * {
-        box-sizing: border-box;
+
       }
     `}
   />
