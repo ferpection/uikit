@@ -30,6 +30,7 @@ export const UiKitInitializer: FC<UiKitInitializerProps> = props => {
 
   return (
     <ThemeProvider theme={props.theme}>
+      <GlobalCSSReset />
       <FontsLoader />
       <I18nContext.Provider
         value={{
