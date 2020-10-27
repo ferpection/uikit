@@ -10,6 +10,7 @@ export const calendarContainer = css`
   top: 56px;
   left: 0;
   display: inline-flex;
+  box-sizing: content-box;
   flex-direction: column;
   justify-content: center;
   align-items: center;
