@@ -33,7 +33,7 @@ export const MonthPicker: FC<MonthPickerProps> = ({ isSmall, selected, onMonthSe
   const { t } = useContext(I18nContext)
 
   return (
-    <CalendarContainer title={t('uikit:month')} isSmall={isSmall}>
+    <CalendarContainer title={t('uikit:months')} isSmall={isSmall}>
       {MONTHS.map((month, index) => (
         <PickerButton
           key={month}

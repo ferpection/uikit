@@ -24,7 +24,7 @@ export const YearPicker: FC<YearPickerProps> = ({ isSmall, selected, onYearSelec
 
   return (
     <CalendarContainer
-      title={t('uikit:year')}
+      title={t('uikit:years')}
       isSmall={isSmall}
       previousButtonArgs={{ onClick: () => setFirstYear(firstYear - BUTTONS_QUANTITY) }}
       nextButtonArgs={{ onClick: () => setFirstYear(firstYear + BUTTONS_QUANTITY) }}

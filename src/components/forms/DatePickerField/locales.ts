@@ -39,9 +39,9 @@ export const englishStrings = {
   decemberFull: 'December',
   buttonNext: 'Next',
   buttonPrevious: 'Previous',
-  date: 'Date',
-  year: 'Year',
-  month: 'Month',
+  dates: 'Dates',
+  years: 'Years',
+  months: 'Months',
 }
 
 export const frenchStrings = {
@@ -85,9 +85,9 @@ export const frenchStrings = {
   decemberFull: 'Décembre',
   buttonNext: 'Suivant',
   buttonPrevious: 'Précédent',
-  date: 'Jour',
-  year: 'Année',
-  month: 'Mois',
+  dates: 'Jours',
+  years: 'Années',
+  months: 'Mois',
 }
 
 export const chineseStrings = {
@@ -131,7 +131,7 @@ export const chineseStrings = {
   decemberFull: '十二月',
   buttonNext: '下一个',
   buttonPrevious: '先例',
-  date: '日',
-  year: '年',
-  month: '月',
+  dates: '日',
+  years: '年',
+  months: '月',
 }
