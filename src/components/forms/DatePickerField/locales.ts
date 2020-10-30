@@ -129,6 +129,6 @@ export const chineseStrings = {
   decemberFull: '十二月',
   buttonNext: '下一个',
   buttonPrevious: '先例',
-  year: '安妮',
+  year: '年',
   month: '月',
 }
