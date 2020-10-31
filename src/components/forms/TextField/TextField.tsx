@@ -29,16 +29,16 @@ const EMAIL_REGEXP = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-
 
 export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, TextFieldProps>((props, ref) => {
   const {
-    dataType = 'text',
-    rowCount = 1,
+    dataType,
+    rowCount,
     placeholder,
-    isDisabled = false,
-    isHighlighted = false,
-    isRequired = false,
-    isSmall = false,
-    hideErrors = false,
+    isDisabled,
+    isHighlighted,
+    isRequired,
+    isSmall,
+    hideErrors,
     value: externalValue,
-    validators = [],
+    validators,
     className,
   } = props
 
@@ -140,4 +140,9 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
 
 TextField.defaultProps = {
   ...(defaultFormProps as TextFieldProps),
+  dataType: 'text',
+  rowCount: 1,
+  hideErrors: false,
+  isSmall: false,
+  isHighlighted: false,
 }
