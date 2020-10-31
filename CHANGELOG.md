@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 - Use numbers for short version of the days' names in chinese.
+- Enforce numbers as value for `TextField` when `dataType` is equal to `number`.
+  `value` attribute still is a `string`.
 
 ## [v0.8.0] - 2020-10-29
 ### Added
