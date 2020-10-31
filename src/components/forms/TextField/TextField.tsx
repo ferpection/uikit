@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState, useEffect, Fragment, SyntheticEvent, useContext, forwardRef, MutableRefObject } from 'react'
+import React, { useEffect, Fragment, SyntheticEvent, useContext, forwardRef, MutableRefObject } from 'react'
 import { jsx } from '@emotion/core'
 
 import useFormValidation from '../../../hooks/useFormValidation'
@@ -9,10 +9,13 @@ import { I18nContext } from '../../contexts/I18nContext'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { defaultFormProps, FormProps } from '../form-props'
 
+import { useTextFieldState } from './hooks/useTextFieldState'
+import { DataType } from './types'
+
 import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle, smallStyle } from './styles'
 
 export interface TextFieldProps extends FormProps {
-  dataType?: 'text' | 'email' | 'number'
+  dataType?: DataType
   rowCount?: number
   isHighlighted?: boolean
   hideErrors?: boolean
@@ -40,7 +43,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
   } = props
 
   const { addTranslations } = useContext(I18nContext)
-  const [value, setValue] = useState(externalValue || '')
+  const [value, setValue] = useTextFieldState(externalValue || '', dataType)
 
   addTranslations('en', {
     emailInvalid: 'Please enter an email address on this field.',
@@ -121,6 +124,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
           placeholder={placeholder}
           value={value}
           rows={rowCount}
+          inputMode={dataType === 'number' ? 'numeric' : null}
           disabled={isDisabled}
           onChange={event => handleChanges(event)}
           onFocus={event => handleFocus(event)}
