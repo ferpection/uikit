@@ -42,6 +42,13 @@ export function FileField(props: FileFieldProps) {
     placeholder: 'Choose a file...',
   })
 
+  addTranslations('zh_HANS', {
+    fileAmount: '{ $count }档',
+    required: '请填写该字段。',
+    browse: '浏览',
+    placeholder: '选择一个文件...',
+  })
+
   addTranslations('fr', {
     fileAmount: '{ $count } fichiers',
     browse: 'Choisir',
