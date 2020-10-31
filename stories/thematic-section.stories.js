@@ -71,8 +71,8 @@ storiesOf('Layout/ThematicSection', module)
           >
             <p>
               Consequat culpa qui enim laboris voluptate proident tempor cillum laboris est ex sint id. Anim tempor
-              exercitation amet consequat et excepteur ex. In anim occaecat adipisicing velit Lorem. Est sunt excepteur ut
-              laborum commodo qui sit veniam tempor nulla cillum adipisicing. Do ipsum culpa excepteur mollit.
+              exercitation amet consequat et excepteur ex. In anim occaecat adipisicing velit Lorem. Est sunt excepteur
+              ut laborum commodo qui sit veniam tempor nulla cillum adipisicing. Do ipsum culpa excepteur mollit.
             </p>
             <TextFieldList placeholder="Choix.." isEditable />
           </div>

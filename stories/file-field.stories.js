@@ -8,21 +8,41 @@ export default {
 }
 
 export const NormalState = () => {
-  return <UiKitInitializer><FileField onValueChange={files => console.log(files)} /></UiKitInitializer>
+  return (
+    <UiKitInitializer>
+      <FileField onValueChange={files => console.log(files)} />
+    </UiKitInitializer>
+  )
 }
 
 export const MultipleFilesState = () => {
-  return <UiKitInitializer><FileField isMultiple onValueChange={files => console.log(files)} /></UiKitInitializer>
+  return (
+    <UiKitInitializer>
+      <FileField isMultiple onValueChange={files => console.log(files)} />
+    </UiKitInitializer>
+  )
 }
 
 export const HighlightedState = () => {
-  return <UiKitInitializer><FileField isHighlighted /></UiKitInitializer>
+  return (
+    <UiKitInitializer>
+      <FileField isHighlighted />
+    </UiKitInitializer>
+  )
 }
 
 export const ErrorState = () => {
-  return <UiKitInitializer><FileField isRequired /></UiKitInitializer>
+  return (
+    <UiKitInitializer>
+      <FileField isRequired />
+    </UiKitInitializer>
+  )
 }
 
 export const DisabledState = () => {
-  return <UiKitInitializer><FileField isDisabled /></UiKitInitializer>
+  return (
+    <UiKitInitializer>
+      <FileField isDisabled />
+    </UiKitInitializer>
+  )
 }

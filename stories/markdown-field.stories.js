@@ -10,17 +10,33 @@ export default {
 }
 
 export const NormalState = () => {
-  return <UiKitInitializer><MarkdownField value={text('value')} onValueChange={value => console.log(value)} /></UiKitInitializer>
+  return (
+    <UiKitInitializer>
+      <MarkdownField value={text('value')} onValueChange={value => console.log(value)} />
+    </UiKitInitializer>
+  )
 }
 
 export const HighlightedState = () => {
-  return <UiKitInitializer><MarkdownField isHighlighted /></UiKitInitializer>
+  return (
+    <UiKitInitializer>
+      <MarkdownField isHighlighted />
+    </UiKitInitializer>
+  )
 }
 
 export const ErrorState = () => {
-  return <UiKitInitializer><MarkdownField isRequired /></UiKitInitializer>
+  return (
+    <UiKitInitializer>
+      <MarkdownField isRequired />
+    </UiKitInitializer>
+  )
 }
 
 export const DisabledState = () => {
-  return <UiKitInitializer><MarkdownField isDisabled /></UiKitInitializer>
+  return (
+    <UiKitInitializer>
+      <MarkdownField isDisabled />
+    </UiKitInitializer>
+  )
 }

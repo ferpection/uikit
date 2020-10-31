@@ -11,7 +11,6 @@ export const GlobalCSSReset: FC<GlobalCSSResetProps> = () => (
   <Global
     styles={css`
       * {
-
       }
     `}
   />

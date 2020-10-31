@@ -9,8 +9,16 @@ import { SelectField, UiKitInitializer } from '../src/components/index.ts'
 storiesOf('Components/Forms/SelectField', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
-  .add('normal state', () => <UiKitInitializer><SelectField placeholder="This is an select" /></UiKitInitializer>)
-  .add('highlighted state', () => <UiKitInitializer><SelectField placeholder="This is a highlighted select" isHighlighted /></UiKitInitializer>)
+  .add('normal state', () => (
+    <UiKitInitializer>
+      <SelectField placeholder="This is an select" />
+    </UiKitInitializer>
+  ))
+  .add('highlighted state', () => (
+    <UiKitInitializer>
+      <SelectField placeholder="This is a highlighted select" isHighlighted />
+    </UiKitInitializer>
+  ))
   .add('error state', () => (
     <UiKitInitializer>
       <SelectField placeholder="This is a error select" isRequired>
@@ -19,7 +27,11 @@ storiesOf('Components/Forms/SelectField', module)
       </SelectField>
     </UiKitInitializer>
   ))
-  .add('disabled state', () => <UiKitInitializer><SelectField placeholder="This is a disabled select" isDisabled /></UiKitInitializer>)
+  .add('disabled state', () => (
+    <UiKitInitializer>
+      <SelectField placeholder="This is a disabled select" isDisabled />
+    </UiKitInitializer>
+  ))
   .add('full example', () => (
     <UiKitInitializer>
       <SelectField

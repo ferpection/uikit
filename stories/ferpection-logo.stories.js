@@ -12,4 +12,4 @@ storiesOf('Iconography/FerpectionLogo', module)
     <UiKitInitializer>
       <FerpectionLogo color={PRIMARY_COLORSET.ROBINS_EGG_BLUE} />
     </UiKitInitializer>
-))
+  ))
