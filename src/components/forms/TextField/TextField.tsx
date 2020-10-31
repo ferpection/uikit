@@ -50,6 +50,11 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     required: 'Please fill the field.',
   })
 
+  addTranslations('zh_HANS', {
+    emailInvalid: '请在此字段中输入电子邮件地址。',
+    required: '请填写该字段。',
+  })
+
   addTranslations('fr', {
     emailInvalid: 'Vous devez écrire une adresse email valide.',
     required: 'Vous devez remplir le champ.',
