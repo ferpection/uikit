@@ -47,13 +47,11 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
 
   addTranslations('en', {
     emailInvalid: 'Please enter an email address on this field.',
-    notANumber: 'Please enter a valid number on this field.',
     required: 'Please fill the field.',
   })
 
   addTranslations('fr', {
     emailInvalid: 'Vous devez écrire une adresse email valide.',
-    notANumber: 'Vous devez écrire un nombre dans ce champ.',
     required: 'Vous devez remplir le champ.',
   })
 
@@ -62,7 +60,6 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     value,
     [
       (v: string) => ({ 'uikit:emailInvalid': dataType === 'email' && !EMAIL_REGEXP.test(v) }),
-      (v: string) => ({ 'uikit:notANumber': dataType === 'number' && Number.isNaN(Number(v)) }),
       (v: string) => ({ 'uikit:required': isRequired && (v == null || v === '') }),
       ...validators,
     ],

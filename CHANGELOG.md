@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Enforce numbers as value for `TextField` when `dataType` is equal to `number`.
   `value` attribute still is a `string`.
 
+### Removed
+- `TextField` doesn't test if `value` is a `number` when `dataType` is equal to `number`.
+  This is due to `useSamenessNumberState` which ensure that the value contains a `number`.
+
 ## [v0.8.0] - 2020-10-29
 ### Added
 - UiKit supports `zh_HANS` locale.
