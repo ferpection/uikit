@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+### Added
+- A hook called `useSamenessNumberState` allows to a "`string` state" contain only
+  a number. This is usefull for some `input` tags which `value` is only a `string` but
+  should represent a number (e.g. a price, a quantity)
+
 ### Changed
 - Use numbers for short version of the days' names in chinese.
 
