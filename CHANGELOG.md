@@ -23,7 +23,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - Make the calendar icon/button appear on top of the `DatePickerField`'s input even when the error
   message is longer than the field.
-- Fix a typo on the previous button of the `DatePickerField` in chinese version
+- Fix a typo on the previous button of the `DatePickerField` in chinese version.
+- Disable `MarkdownField`'s button when there are no text selected.
 
 ## [v0.8.0] - 2020-10-29
 ### Added

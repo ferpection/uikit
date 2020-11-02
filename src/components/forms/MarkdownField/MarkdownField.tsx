@@ -17,6 +17,10 @@ function surroundSelectedText(
   const text = textarea.current.value
   const selectedText = text.substring(startIndex, endIndex)
 
+  if (startIndex === endIndex) {
+    return text
+  }
+
   const startText = startIndex === 0 ? '' : text.substring(0, startIndex)
   const endText = endIndex === text.length ? '' : text.substring(endIndex, text.length)
 
