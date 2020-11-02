@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs, boolean } from '@storybook/addon-knobs'
+import { withKnobs, boolean, select } from '@storybook/addon-knobs'
 
 import { DatePickerField, UiKitInitializer } from '../src/components/index.ts'
 
@@ -13,6 +13,7 @@ i18n.use(initReactI18next).init({
   resources: {
     en: {},
     fr: {},
+    zh_HANS: {},
   },
 
   ns: ['common'],
@@ -32,6 +33,11 @@ export default {
 
 export const NormalState = () => {
   const isSmall = boolean('is small', false)
+  const lang = select("language", ["fr", 'en', 'zh_HANS', 'fr'])
+
+  useEffect(() => {
+    i18n.changeLanguage(lang)
+  }, [lang])
 
   return (
     <UiKitInitializer i18n={i18n}>
@@ -45,14 +51,27 @@ export const NormalState = () => {
 }
 
 export const ErrorState = () => {
+  const lang = select("language", ["fr", 'en', 'zh_HANS', 'fr'])
+
+  useEffect(() => {
+    i18n.changeLanguage(lang)
+  }, [lang])
+
   return (
     <UiKitInitializer i18n={i18n}>
       <DatePickerField isRequired />
+      <DatePickerField isRequired isSmall />
     </UiKitInitializer>
   )
 }
 
 export const DisabledState = () => {
+  const lang = select("language", ["fr", 'en', 'zh_HANS', 'fr'])
+
+  useEffect(() => {
+    i18n.changeLanguage(lang)
+  }, [lang])
+
   return (
     <UiKitInitializer i18n={i18n}>
       <DatePickerField isDisabled />
@@ -63,6 +82,11 @@ export const DisabledState = () => {
 
 export const BirthDateExample = () => {
   const isSmall = boolean('is small', false)
+  const lang = select("language", ["fr", 'en', 'zh_HANS', 'fr'])
+
+  useEffect(() => {
+    i18n.changeLanguage(lang)
+  }, [lang])
 
   return (
     <UiKitInitializer i18n={i18n}>
@@ -72,6 +96,12 @@ export const BirthDateExample = () => {
 }
 
 export const OneDateComponentBehavior = () => {
+  const lang = select("language", ["fr", 'en', 'zh_HANS', 'fr'])
+
+  useEffect(() => {
+    i18n.changeLanguage(lang)
+  }, [lang])
+
   return (
     <UiKitInitializer i18n={i18n}>
       <pre>{"dateComponentSelectors={['date']}"}</pre>
@@ -85,6 +115,12 @@ export const OneDateComponentBehavior = () => {
 }
 
 export const TwoDateComponentsBehavior = () => {
+  const lang = select("language", ["fr", 'en', 'zh_HANS', 'fr'])
+
+  useEffect(() => {
+    i18n.changeLanguage(lang)
+  }, [lang])
+
   return (
     <UiKitInitializer i18n={i18n}>
       <pre>{"dateComponentSelectors={['date', 'year']}"}</pre>
@@ -104,6 +140,12 @@ export const TwoDateComponentsBehavior = () => {
 }
 
 export const ThreeDateComponentsBehavior = () => {
+  const lang = select("language", ["fr", 'en', 'zh_HANS', 'fr'])
+
+  useEffect(() => {
+    i18n.changeLanguage(lang)
+  }, [lang])
+
   return (
     <UiKitInitializer i18n={i18n}>
       <pre>{"dateComponentSelectors={['date', 'year', 'month']}"}</pre>
