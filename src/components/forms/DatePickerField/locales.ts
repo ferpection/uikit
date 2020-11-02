@@ -130,7 +130,7 @@ export const chineseStrings = {
   decemberShort: '十二月',
   decemberFull: '十二月',
   buttonNext: '下一个',
-  buttonPrevious: '先例',
+  buttonPrevious: '上一个',
   dates: '日',
   years: '年',
   months: '月',
