@@ -105,7 +105,6 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   const handleErrors = (errors: FormErrors) => {
     onErrors(errors)
     setErrors(errors)
-    console.log(errors)
   }
 
   return (
