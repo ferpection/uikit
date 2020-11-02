@@ -12,10 +12,11 @@ import { defaultHeaderStyles, buttonListStyle, lightHeaderStyle, logoStyles } fr
 export interface HeaderProps {
   homeUrl?: string
   isLightVersion?: boolean
+  className?: string
 }
 
 export const Header: React.FC<HeaderProps> = props => {
-  const { homeUrl = 'https://ferpection.com/', children, isLightVersion } = props
+  const { className, homeUrl = 'https://ferpection.com/', children, isLightVersion } = props
   const BLACK_COLOR = new Color(255, 255, 255)
 
   const buttonList = Children.toArray(children)
@@ -35,7 +36,7 @@ export const Header: React.FC<HeaderProps> = props => {
     .map((child, i) => <li key={i}>{child}</li>)
 
   return (
-    <header css={[defaultHeaderStyles, isLightVersion ? lightHeaderStyle : null]}>
+    <header className={className} css={[defaultHeaderStyles, isLightVersion ? lightHeaderStyle : null]}>
       <div css={logoStyles}>
         <a href={homeUrl} title="Go to homepage">
           <FerpectionLogo color={isLightVersion ? R400_COLOR : BLACK_COLOR} />

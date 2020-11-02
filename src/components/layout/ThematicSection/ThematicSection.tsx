@@ -16,10 +16,11 @@ export interface ThematicSectionProps {
   actions?: ReactElementLike
   badgeIcon?: FerpectionBadgeIconProps['icon']
   badgeColor?: Color
+  className?: string
 }
 
 export const ThematicSection: React.FC<ThematicSectionProps> = props => (
-  <div css={[containerStyles]}>
+  <div className={props.className} css={[containerStyles]}>
     <header css={[headerStyles]}>
       <div css={[titleStyles]}>
         <div css={[logoStyles]}>

@@ -33,6 +33,7 @@ export interface DatePickerFieldProps extends FormProps {
   dateComponentSelectors?: DateComponent[]
   onValueChange?: (value: Date) => void
   hideErrors?: boolean
+  className?: string,
 }
 
 export const DatePickerField: FC<DatePickerFieldProps> = props => {
@@ -46,6 +47,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
     onFocus,
     onErrors,
     hideErrors,
+    className,
     ...otherProps
   } = props
   const { addTranslations } = useContext(I18nContext)
@@ -109,7 +111,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
 
   return (
     <Fragment>
-      <div css={[datePickerContainer, isSmall && datePickerContainerSmall]}>
+      <div className={className} css={[datePickerContainer, isSmall && datePickerContainerSmall]}>
         <Button
           css={[calendarButton, isSmall && calendarButtonSmall]}
           icon="calendar"

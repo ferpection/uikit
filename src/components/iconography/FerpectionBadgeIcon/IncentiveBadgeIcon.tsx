@@ -2,13 +2,12 @@
 import React from 'react'
 import { css, jsx } from '@emotion/core'
 
-import { Color } from '../../../colors'
+import { BadgeProps } from './badge-props'
 
-interface IncentiveBadgeIconProps {
-  borderColor: Color
-}
+interface IncentiveBadgeIconProps extends BadgeProps {}
 
 export const IncentiveBadgeIcon: React.FC<IncentiveBadgeIconProps> = ({
+  className,
   borderColor = {
     toHex: () => {},
   },
@@ -35,7 +34,7 @@ export const IncentiveBadgeIcon: React.FC<IncentiveBadgeIconProps> = ({
     }
   `
   return (
-    <svg css={svg} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} css={svg} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg">
       <g>
         <circle className="cls-1" cx="37.58" cy="34.6" r="32.5" />
         <circle className="cls-2" cx="37.58" cy="34.6" r="26.5" />

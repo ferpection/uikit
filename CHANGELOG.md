@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - A hook called `useSamenessNumberState` allows to a "`string` state" contain only
   a number. This is usefull for some `input` tags which `value` is only a `string` but
   should represent a number (e.g. a price, a quantity)
+- It is possible to modify the styles of almost every components using emotionjs
 
 ### Changed
 - Use numbers for short version of the days' names in chinese.

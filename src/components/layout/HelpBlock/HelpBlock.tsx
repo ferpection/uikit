@@ -14,11 +14,12 @@ import {
 
 export interface HelpBlockProps {
   question: string
+  className?: string
 }
 
 export const HelpBlock: React.FC<HelpBlockProps> = props => {
   return (
-    <aside css={[containerStyles]}>
+    <aside className={props.className} css={[containerStyles]}>
       <header css={headerStyles}>
         <div css={logoOuterStyles}>
           <div css={logoStyles}>

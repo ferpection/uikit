@@ -15,6 +15,7 @@ import {
 } from './styles'
 
 export interface RadioGroupProps extends FormProps {
+  className?: string
   value?: string
   onValueChange?: (value: string) => void
   placeholder?: undefined

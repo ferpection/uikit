@@ -15,6 +15,7 @@ import { ConfigBadgeIcon } from './ConfigBadgeIcon'
 import { DeviceBadgeIcon } from './DeviceBadgeIcon'
 
 export interface FerpectionBadgeIconProps {
+  className?: string
   borderColor?: Color
   icon:
     | 'tasks'
@@ -31,43 +32,43 @@ export interface FerpectionBadgeIconProps {
     | 'device'
 }
 
-export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({ borderColor, icon: iconName }) => {
+export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({ icon: iconName, ...otherProps }) => {
   switch (iconName) {
     case 'config': {
-      return <ConfigBadgeIcon borderColor={borderColor} />
+      return <ConfigBadgeIcon {...otherProps} />
     }
     case 'goals': {
-      return <GoalsBadgeIcon borderColor={borderColor} />
+      return <GoalsBadgeIcon {...otherProps} />
     }
     case 'incentive': {
-      return <IncentiveBadgeIcon borderColor={borderColor} />
+      return <IncentiveBadgeIcon {...otherProps} />
     }
     case 'objectives': {
-      return <ObjectivesBadgeIcon borderColor={borderColor} />
+      return <ObjectivesBadgeIcon {...otherProps} />
     }
     case 'planning': {
-      return <PlanningBadgeIcon borderColor={borderColor} />
+      return <PlanningBadgeIcon {...otherProps} />
     }
     case 'post-test': {
-      return <PostTestBadgeIcon borderColor={borderColor} />
+      return <PostTestBadgeIcon {...otherProps} />
     }
     case 'pre-test': {
-      return <PreTestBadgeIcon borderColor={borderColor} />
+      return <PreTestBadgeIcon {...otherProps} />
     }
     case 'screening': {
-      return <ScreeningBadgeIcon borderColor={borderColor} />
+      return <ScreeningBadgeIcon {...otherProps} />
     }
     case 'target': {
-      return <TargetBadgeIcon borderColor={borderColor} />
+      return <TargetBadgeIcon {...otherProps} />
     }
     case 'test': {
-      return <TestBadgeIcon borderColor={borderColor} />
+      return <TestBadgeIcon {...otherProps} />
     }
     case 'tasks': {
-      return <TaskBadgeIcon borderColor={borderColor} />
+      return <TaskBadgeIcon {...otherProps} />
     }
     case 'device': {
-      return <DeviceBadgeIcon borderColor={borderColor} />
+      return <DeviceBadgeIcon {...otherProps} />
     }
     default:
       return null

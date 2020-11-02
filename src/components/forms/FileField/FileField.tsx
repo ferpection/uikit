@@ -29,6 +29,7 @@ export interface FileFieldProps extends FormProps {
   accept?: string
   hideErrors?: boolean
   capture?: 'user' | 'environment'
+  className?: string
   onValueChange?: (value: File[], event: SyntheticEvent) => void
 }
 
@@ -57,6 +58,7 @@ export function FileField(props: FileFieldProps) {
   })
 
   const {
+    className,
     accept,
     capture,
     placeholder = t('uikit:placeholder'),
@@ -112,7 +114,7 @@ export function FileField(props: FileFieldProps) {
           onFocus={event => handleFocus(event)}
           onBlur={event => handleBlur(event)}
         />
-        <div css={[baseStyle, isHighlighted && highlightedStyle, !isValid && errorStyle, isDisabled && disabledStyle]}>
+        <div className={className} css={[baseStyle, isHighlighted && highlightedStyle, !isValid && errorStyle, isDisabled && disabledStyle]}>
           {files.length < 1 && (
             <div css={[placeholderStyle, isDisabled && placeholderDisabledStyle]}>{placeholder}</div>
           )}

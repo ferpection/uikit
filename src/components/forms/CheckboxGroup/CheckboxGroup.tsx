@@ -15,6 +15,7 @@ import {
 } from './styles'
 
 export interface CheckboxGroupProps extends FormProps {
+  className?: string
   value?: string[]
   onValueChange?: (value: string[]) => void
   placeholder?: undefined
@@ -26,6 +27,7 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
   const [values, setValues] = useState(props.value || [])
   const {
     onValueChange,
+    className,
     isDisabled,
     isRequired,
     validators,
@@ -54,7 +56,7 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
   }
 
   return (
-    <ul css={[listStyles]} onBlur={handleBlur} onFocus={handleFocus}>
+    <ul className={className} css={[listStyles]} onBlur={handleBlur} onFocus={handleFocus}>
       {Children.map(props.children, (child, index) => {
         if (!isValidElement(child)) {
           return null

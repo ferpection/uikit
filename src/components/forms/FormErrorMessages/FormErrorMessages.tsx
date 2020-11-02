@@ -10,11 +10,12 @@ import { errorStyle, iconStyle } from './styles'
 
 export interface FormErrorMessagesProps {
   errors: FormErrors
+  className?: string
 }
 
 export const FormErrorMessages: React.FC<FormErrorMessagesProps> = props => {
   const { t } = useContext(I18nContext)
-  const { errors } = props
+  const { errors, className } = props
 
   return (
     <Fragment>
@@ -24,7 +25,7 @@ export const FormErrorMessages: React.FC<FormErrorMessagesProps> = props => {
           const error = errors[errorName]
 
           return (
-            <p key={errorName} css={errorStyle}>
+            <p key={errorName} className={className} css={errorStyle}>
               <FontAwesomeIcon icon="exclamation-triangle" css={iconStyle} />
               {error === true ? t(errorName) : null}
               {typeof error !== 'boolean' ? t(errorName, error) : null}

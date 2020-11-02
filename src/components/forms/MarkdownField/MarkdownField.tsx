@@ -23,10 +23,12 @@ function surroundSelectedText(
   return `${startText}${startTag}${selectedText}${endTag}${endText}`
 }
 
-export interface MarkdownFieldProps extends TextFieldProps {}
+export interface MarkdownFieldProps extends TextFieldProps {
+  className?: string
+}
 
 export function MarkdownField(props: MarkdownFieldProps) {
-  const { rowCount = 3, isDisabled, onValueChange = () => {}, value: externalValue } = props
+  const { className, rowCount = 3, isDisabled, onValueChange = () => {}, value: externalValue } = props
   const [value, setValue] = useState(externalValue || '')
   const textarea = useRef<HTMLTextAreaElement>()
 
@@ -35,7 +37,7 @@ export function MarkdownField(props: MarkdownFieldProps) {
   }, [externalValue])
 
   return (
-    <div css={[container]}>
+    <div className={className} css={[container]}>
       <div css={[iconBar, isDisabled && disabledStyle]}>
         <button
           css={[buttonStyle, isDisabled && disabledStyle]}

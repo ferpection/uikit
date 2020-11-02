@@ -2,16 +2,15 @@
 import React from 'react'
 import { css, jsx } from '@emotion/core'
 
-import { Color } from '../../../colors'
+import { BadgeProps } from './badge-props'
 
-interface PostTestBadgeIconProps {
-  borderColor: Color
-}
+interface PostTestBadgeIconProps extends BadgeProps {}
 
 export const PostTestBadgeIcon: React.FC<PostTestBadgeIconProps> = ({
   borderColor = {
     toHex: () => {},
   },
+  ...otherProps
 }) => {
   const styles = css`
     .cls-1 {
@@ -56,7 +55,7 @@ export const PostTestBadgeIcon: React.FC<PostTestBadgeIconProps> = ({
   `
 
   return (
-    <svg css={styles} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg">
+    <svg css={styles} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
       <g>
         <circle className="cls-1" cx="38.2" cy="35.4" r="32.5" />
         <circle className="cls-2" cx="38.2" cy="35.4" r="26.5" />
