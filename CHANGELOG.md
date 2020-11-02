@@ -19,6 +19,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `TextField` doesn't test if `value` is a `number` when `dataType` is equal to `number`.
   This is due to `useSamenessNumberState` which ensure that the value contains a `number`.
 
+### Fixed
+- Make the calendar icon/button appear on top of the `DatePickerField`'s input even when the error
+  message is longer than the field.
+
 ## [v0.8.0] - 2020-10-29
 ### Added
 - UiKit supports `zh_HANS` locale.
