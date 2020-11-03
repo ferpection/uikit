@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useState, useRef, MutableRefObject, useEffect, SyntheticEvent } from 'react'
+import { useState, useEffect, SyntheticEvent } from 'react'
 import { jsx } from '@emotion/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -18,10 +18,11 @@ interface SelectionData {
 
 export interface MarkdownFieldProps extends TextFieldProps {
   className?: string
+  onSelect?: (event?: SyntheticEvent) => void
 }
 
 export function MarkdownField(props: MarkdownFieldProps) {
-  const { className, rowCount = 3, isDisabled, onValueChange = () => {}, value: externalValue } = props
+  const { className, rowCount = 3, isDisabled, onValueChange = () => {}, value: externalValue, onSelect } = props
   const [value, setValue] = useState(externalValue || '')
   const [selection, setSelection] = useState<SelectionData>({
     startIndex: 0,
@@ -57,6 +58,7 @@ export function MarkdownField(props: MarkdownFieldProps) {
 
     if (selection.startIndex === selection.endIndex) {
       setSelection(selection)
+      onSelect(event)
       return
     }
 
@@ -66,6 +68,7 @@ export function MarkdownField(props: MarkdownFieldProps) {
     )
 
     setSelection(selection)
+    onSelect(event)
   }
 
   const isTextSelected = selection.selectedText != null && selection.selectedText.length > 0
@@ -105,4 +108,5 @@ export function MarkdownField(props: MarkdownFieldProps) {
 
 MarkdownField.defaultProps = {
   ...(defaultFormProps as MarkdownFieldProps),
+  onSelect: () => {},
 }

@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   a number. This is usefull for some `input` tags which `value` is only a `string` but
   should represent a number (e.g. a price, a quantity)
 - It is possible to modify the styles of almost every components using emotionjs
-- `TextField` component emits `onSelect` event to allow work on text selection.
+- `TextField` and `MarkdownField` components emit `onSelect` event to allow work on text selection.
 
 ### Changed
 - Use numbers for short version of the days' names in chinese.
