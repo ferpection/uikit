@@ -8,9 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - A hook called `useSamenessNumberState` allows to a "`string` state" contain only
   a number. This is usefull for some `input` tags which `value` is only a `string` but
-  should represent a number (e.g. a price, a quantity)
-- It is possible to modify the styles of almost every components using emotionjs
+  should represent a number (e.g. a price, a quantity).
+- It is possible to modify the styles of almost every components using emotionjs.
 - `TextField` and `MarkdownField` components emit `onSelect` event to allow work on text selection.
+- A new button on `MarkdownField`'s panel will show an help about markdown syntax to users.
 
 ### Changed
 - Use numbers for short version of the days' names in chinese.
