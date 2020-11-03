@@ -33,7 +33,7 @@ export default {
 
 export const NormalState = () => {
   const isSmall = boolean('is small', false)
-  const lang = select("language", ["fr", 'en', 'zh_HANS', 'fr'])
+  const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr'])
 
   useEffect(() => {
     i18n.changeLanguage(lang)
@@ -51,7 +51,7 @@ export const NormalState = () => {
 }
 
 export const ErrorState = () => {
-  const lang = select("language", ["fr", 'en', 'zh_HANS', 'fr'])
+  const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr'])
 
   useEffect(() => {
     i18n.changeLanguage(lang)
@@ -66,7 +66,7 @@ export const ErrorState = () => {
 }
 
 export const DisabledState = () => {
-  const lang = select("language", ["fr", 'en', 'zh_HANS', 'fr'])
+  const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr'])
 
   useEffect(() => {
     i18n.changeLanguage(lang)
@@ -82,7 +82,7 @@ export const DisabledState = () => {
 
 export const BirthDateExample = () => {
   const isSmall = boolean('is small', false)
-  const lang = select("language", ["fr", 'en', 'zh_HANS', 'fr'])
+  const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr'])
 
   useEffect(() => {
     i18n.changeLanguage(lang)
@@ -96,7 +96,7 @@ export const BirthDateExample = () => {
 }
 
 export const OneDateComponentBehavior = () => {
-  const lang = select("language", ["fr", 'en', 'zh_HANS', 'fr'])
+  const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr'])
 
   useEffect(() => {
     i18n.changeLanguage(lang)
@@ -115,7 +115,7 @@ export const OneDateComponentBehavior = () => {
 }
 
 export const TwoDateComponentsBehavior = () => {
-  const lang = select("language", ["fr", 'en', 'zh_HANS', 'fr'])
+  const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr'])
 
   useEffect(() => {
     i18n.changeLanguage(lang)
@@ -140,7 +140,7 @@ export const TwoDateComponentsBehavior = () => {
 }
 
 export const ThreeDateComponentsBehavior = () => {
-  const lang = select("language", ["fr", 'en', 'zh_HANS', 'fr'])
+  const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr'])
 
   useEffect(() => {
     i18n.changeLanguage(lang)

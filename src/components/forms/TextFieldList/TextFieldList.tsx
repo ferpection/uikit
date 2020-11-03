@@ -35,7 +35,7 @@ export interface TextFieldListProps extends FormProps {
   displayErrorStrategy?: 'hidden' | 'on-field' | 'on-list'
   value?: string[]
   onValueChange?: (values: string[]) => void
-  className?: string,
+  className?: string
 }
 
 interface GroupedFormErrors {
@@ -191,7 +191,15 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
 
   return (
     <Fragment>
-      {isOrdered ? <ol className={className} css={[list]}>{itemsJSX}</ol> : <ul className={className} css={[list, hideMarker]}>{itemsJSX}</ul>}
+      {isOrdered ? (
+        <ol className={className} css={[list]}>
+          {itemsJSX}
+        </ol>
+      ) : (
+        <ul className={className} css={[list, hideMarker]}>
+          {itemsJSX}
+        </ul>
+      )}
       {displayErrorStrategy === 'on-list' ? (
         <div css={[listErrors]} onFocus={() => handleFocus()} onBlur={() => handleBlur()}>
           <FormErrorMessages errors={errorMessages} />

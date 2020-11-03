@@ -62,10 +62,7 @@ export function MarkdownField(props: MarkdownFieldProps) {
       return
     }
 
-    selection.selectedText = textarea.value.substring(
-      textarea.selectionStart,
-      textarea.selectionEnd
-    )
+    selection.selectedText = textarea.value.substring(textarea.selectionStart, textarea.selectionEnd)
 
     setSelection(selection)
     onSelect(event)

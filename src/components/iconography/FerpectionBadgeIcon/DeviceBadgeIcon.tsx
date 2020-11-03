@@ -4,7 +4,7 @@ import { css, jsx } from '@emotion/core'
 
 import { BadgeProps } from './badge-props'
 
-interface DeviceBadgeIconProps  extends BadgeProps {}
+interface DeviceBadgeIconProps extends BadgeProps {}
 
 export const DeviceBadgeIcon: React.FC<DeviceBadgeIconProps> = ({
   className,

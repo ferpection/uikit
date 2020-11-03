@@ -27,5 +27,9 @@ export const Tabs: FC<TabsProps> = props => {
     return null
   }
 
-  return <div className={props.className} css={[defaultTabSyles]}>{children}</div>
+  return (
+    <div className={props.className} css={[defaultTabSyles]}>
+      {children}
+    </div>
+  )
 }

@@ -33,7 +33,7 @@ export interface DatePickerFieldProps extends FormProps {
   dateComponentSelectors?: DateComponent[]
   onValueChange?: (value: Date) => void
   hideErrors?: boolean
-  className?: string,
+  className?: string
 }
 
 export const DatePickerField: FC<DatePickerFieldProps> = props => {
@@ -177,9 +177,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
           />
         )}
       </div>
-      {hideErrors === false && (
-        <FormErrorMessages errors={errors} />
-      )}
+      {hideErrors === false && <FormErrorMessages errors={errors} />}
     </Fragment>
   )
 }

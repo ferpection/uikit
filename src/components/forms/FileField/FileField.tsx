@@ -114,7 +114,10 @@ export function FileField(props: FileFieldProps) {
           onFocus={event => handleFocus(event)}
           onBlur={event => handleBlur(event)}
         />
-        <div className={className} css={[baseStyle, isHighlighted && highlightedStyle, !isValid && errorStyle, isDisabled && disabledStyle]}>
+        <div
+          className={className}
+          css={[baseStyle, isHighlighted && highlightedStyle, !isValid && errorStyle, isDisabled && disabledStyle]}
+        >
           {files.length < 1 && (
             <div css={[placeholderStyle, isDisabled && placeholderDisabledStyle]}>{placeholder}</div>
           )}

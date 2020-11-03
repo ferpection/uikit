@@ -10,7 +10,7 @@ export const ScreeningBadgeIcon: React.FC<ScreeningBadgeIconProps> = ({
   borderColor = {
     toHex: () => {},
   },
- ...otherProps
+  ...otherProps
 }) => {
   const styles = css`
     .cls-1 {
@@ -45,7 +45,7 @@ export const ScreeningBadgeIcon: React.FC<ScreeningBadgeIconProps> = ({
   `
 
   return (
-    <svg css={styles} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg" {...otherProps} >
+    <svg css={styles} viewBox="0 0 75.17 69.21" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
       <g>
         <circle className="cls-1" cx="38.2" cy="34.47" r="32.5" />
         <circle className="cls-2" cx="38.2" cy="34.47" r="26.5" />
