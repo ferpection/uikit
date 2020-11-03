@@ -23,6 +23,7 @@ export interface TextFieldProps extends FormProps {
   value?: string
   isSmall?: boolean
   onValueChange?: (value: string, event: SyntheticEvent) => void
+  onSelect?: (event?: SyntheticEvent) => void
 }
 
 const EMAIL_REGEXP = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -72,10 +73,11 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
   )
 
   const {
-    onValueChange: handleValueChange = () => {},
-    onErrors: handleErrorsChange = () => {},
-    onBlur: handleBlur = () => {},
-    onFocus: handleFocus = () => {},
+    onValueChange: handleValueChange,
+    onErrors: handleErrorsChange,
+    onBlur: handleBlur,
+    onFocus: handleFocus,
+    onSelect: handleSelect,
   } = props
 
   const handleChanges = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
@@ -109,6 +111,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
           onChange={event => handleChanges(event)}
           onFocus={event => handleFocus(event)}
           onBlur={event => handleBlur(event)}
+          onSelect={event => handleSelect(event)}
         />
       ) : null}
       {rowCount >= 2 ? (
@@ -131,6 +134,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
           onChange={event => handleChanges(event)}
           onFocus={event => handleFocus(event)}
           onBlur={event => handleBlur(event)}
+          onSelect={event => handleSelect(event)}
         />
       ) : null}
       <FormErrorMessages errors={showableErrors} />
@@ -145,4 +149,5 @@ TextField.defaultProps = {
   hideErrors: false,
   isSmall: false,
   isHighlighted: false,
+  onSelect: () => {},
 }
