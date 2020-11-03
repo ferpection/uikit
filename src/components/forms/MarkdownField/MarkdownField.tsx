@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useState, useRef, MutableRefObject, useEffect } from 'react'
+import { useState, useRef, MutableRefObject, useEffect, SyntheticEvent } from 'react'
 import { jsx } from '@emotion/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -8,23 +8,12 @@ import { TextField, TextFieldProps } from '../TextField/TextField'
 import { textStyle, iconBar, container, buttonStyle, disabledStyle } from './styles'
 import { defaultFormProps } from '../form-props'
 
-function surroundSelectedText(
-  textarea: MutableRefObject<HTMLTextAreaElement>,
-  [startTag, endTag]: [string, string] = ['', ''],
-) {
-  const startIndex = textarea.current.selectionStart
-  const endIndex = textarea.current.selectionEnd
-  const text = textarea.current.value
-  const selectedText = text.substring(startIndex, endIndex)
-
-  if (startIndex === endIndex) {
-    return text
-  }
-
-  const startText = startIndex === 0 ? '' : text.substring(0, startIndex)
-  const endText = endIndex === text.length ? '' : text.substring(endIndex, text.length)
-
-  return `${startText}${startTag}${selectedText}${endTag}${endText}`
+interface SelectionData {
+  startIndex: number
+  endIndex: number
+  textBefore?: string
+  selectedText?: string
+  textAfter?: string
 }
 
 export interface MarkdownFieldProps extends TextFieldProps {
@@ -34,41 +23,73 @@ export interface MarkdownFieldProps extends TextFieldProps {
 export function MarkdownField(props: MarkdownFieldProps) {
   const { className, rowCount = 3, isDisabled, onValueChange = () => {}, value: externalValue } = props
   const [value, setValue] = useState(externalValue || '')
-  const textarea = useRef<HTMLTextAreaElement>()
+  const [selection, setSelection] = useState<SelectionData>({
+    startIndex: 0,
+    endIndex: 0,
+  })
 
   useEffect(() => {
     setValue(externalValue || '')
   }, [externalValue])
 
+  const handleSurroundSelectedText = ([startTag, endTag]: [string, string] = ['', ''], event: SyntheticEvent) => {
+    const { textBefore = '', selectedText = '', textAfter = '' } = selection
+    const updatedText = `${textBefore}${startTag}${selectedText}${endTag}${textAfter}`
+
+    setValue(updatedText)
+    onValueChange(updatedText, event)
+  }
+
+  const handleSelection = (event: SyntheticEvent<Element, Event>): void => {
+    const textarea = event.target as HTMLTextAreaElement
+    const selection: SelectionData = {
+      startIndex: textarea.selectionStart,
+      endIndex: textarea.selectionEnd,
+    }
+
+    if (selection.startIndex !== 0) {
+      selection.textBefore = textarea.value.substring(0, selection.startIndex)
+    }
+
+    if (selection.endIndex !== textarea.value.length) {
+      selection.textAfter = textarea.value.substring(selection.endIndex, textarea.value.length)
+    }
+
+    if (selection.startIndex === selection.endIndex) {
+      setSelection(selection)
+      return
+    }
+
+    selection.selectedText = textarea.value.substring(
+      textarea.selectionStart,
+      textarea.selectionEnd
+    )
+
+    setSelection(selection)
+  }
+
+  const isTextSelected = selection.selectedText != null && selection.selectedText.length > 0
+
   return (
     <div className={className} css={[container]}>
       <div css={[iconBar, isDisabled && disabledStyle]}>
         <button
-          css={[buttonStyle, isDisabled && disabledStyle]}
-          disabled={isDisabled}
-          onClick={event => {
-            const updatedText = surroundSelectedText(textarea, ['**', '**'])
-            setValue(updatedText)
-            onValueChange(updatedText, event)
-          }}
+          css={[buttonStyle, (isDisabled || !isTextSelected) && disabledStyle]}
+          disabled={isDisabled || !isTextSelected}
+          onClick={event => handleSurroundSelectedText(['**', '**'], event)}
         >
           <FontAwesomeIcon icon="bold" />
         </button>
         <button
-          css={[buttonStyle, isDisabled && disabledStyle]}
-          disabled={isDisabled}
-          onClick={event => {
-            const updatedText = surroundSelectedText(textarea, ['_', '_'])
-            setValue(updatedText)
-            onValueChange(updatedText, event)
-          }}
+          css={[buttonStyle, (isDisabled || !isTextSelected) && disabledStyle]}
+          disabled={isDisabled || !isTextSelected}
+          onClick={event => handleSurroundSelectedText(['_', '_'], event)}
         >
           <FontAwesomeIcon icon="italic" />
         </button>
       </div>
       <TextField
         css={[textStyle]}
-        ref={textarea}
         {...props}
         rowCount={rowCount}
         value={value}
@@ -76,6 +97,7 @@ export function MarkdownField(props: MarkdownFieldProps) {
           setValue(value)
           onValueChange(value, event)
         }}
+        onSelect={handleSelection}
       />
     </div>
   )
