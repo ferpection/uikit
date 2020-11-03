@@ -3,10 +3,12 @@ import { useState, useEffect, SyntheticEvent } from 'react'
 import { jsx } from '@emotion/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { TextField, TextFieldProps } from '../TextField/TextField'
+import { Button } from '../../buttons/Button/Button'
 
-import { textStyle, iconBar, container, buttonStyle, disabledStyle } from './styles'
+import { TextField, TextFieldProps } from '../TextField/TextField'
 import { defaultFormProps } from '../form-props'
+
+import { textStyle, iconBar, container, buttonStyle, disabledStyle, helpButtonStyle } from './styles'
 
 interface SelectionData {
   startIndex: number
@@ -87,6 +89,13 @@ export function MarkdownField(props: MarkdownFieldProps) {
         >
           <FontAwesomeIcon icon="italic" />
         </button>
+        <Button
+          css={helpButtonStyle}
+          icon="question-circle"
+          to="https://www.markdownguide.org/cheat-sheet/"
+          isDisabled={isDisabled}
+          isRaw
+        />
       </div>
       <TextField
         css={[textStyle]}

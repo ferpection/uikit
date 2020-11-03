@@ -22,12 +22,18 @@ export const iconBar = css`
   color: ${`${N300_COLOR}`};
   line-height: 1.5;
   z-index: 2;
+  vertical-align: bottom;
 `
 
 export const container = css`
   position: relative;
   margin: 5px 0;
   padding: 0;
+`
+
+export const helpButtonStyle = css`
+  float: right;
+  margin: 0 5px;
 `
 
 export const buttonStyle = css`
@@ -39,6 +45,7 @@ export const buttonStyle = css`
   background-color: white;
   color: ${`${N300_COLOR}`};
   border-radius: 3px 0 0 0;
+  font-size: 16px;
 
   &:hover,
   &:active {
