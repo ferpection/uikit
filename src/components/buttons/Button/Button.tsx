@@ -11,6 +11,7 @@ import { Color } from '../../../colors'
 import { prepareBaseState, prepareFilledState, iconOnlyState, rawLinkState } from './styles'
 
 export interface ButtonProps {
+  className?: string
   isFilled?: boolean
   isDisabled?: boolean
   isRaw?: boolean
