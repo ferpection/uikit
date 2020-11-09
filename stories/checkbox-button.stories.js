@@ -1,28 +1,36 @@
 import React from 'react'
 
-import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs, select, boolean } from '@storybook/addon-knobs'
 
 import { CheckboxButton, TextField, DatePickerField, UiKitInitializer } from '../src/components'
 
-storiesOf('Components/Button/CheckboxButton', module)
-  .addDecorator(withA11y)
-  .addDecorator(withKnobs)
-  .add('basic example', () => (
+export default {
+  title: 'Components/Button/CheckboxButton',
+  component: CheckboxButton,
+  decorators: [withA11y],
+}
+
+export const BasicExample = (args) => {
+  return (
     <UiKitInitializer>
-      <CheckboxButton>Test</CheckboxButton>
+      <CheckboxButton {...args}>Test</CheckboxButton>
     </UiKitInitializer>
-  ))
-  .add('disabled state', () => (
+  )
+}
+
+export const DisabledState = (args) => {
+  return (
     <UiKitInitializer>
-      <CheckboxButton isDisabled>Test</CheckboxButton>
+      <CheckboxButton {...args} isDisabled>Test</CheckboxButton>
     </UiKitInitializer>
-  ))
-  .add('sub component', () => (
+  )
+}
+
+export const SubComponents = ({innerFieldIsSmall, ...args}) => {
+  return (
     <UiKitInitializer>
       <h3>With text</h3>
-      <CheckboxButton checkboxPosition={select('checkbox position', ['top', 'center', 'bottom'], 'center')}>
+      <CheckboxButton {...args}>
         Id culpa reprehenderit enim nisi et reprehenderit voluptate. Laborum deserunt tempor culpa id anim dolor duis
         sint consectetur mollit dolore magna voluptate. Deserunt consectetur velit ullamco irure reprehenderit mollit
         mollit irure ea non. Commodo enim esse esse fugiat proident reprehenderit exercitation proident qui ex duis
@@ -31,16 +39,25 @@ storiesOf('Components/Button/CheckboxButton', module)
         mollit. Qui eiusmod anim duis occaecat ex duis et do irure irure eu veniam eiusmod.
       </CheckboxButton>
       <h3>With {TextField.name}</h3>
-      <CheckboxButton checkboxPosition={select('checkbox position', ['top', 'center', 'bottom'], 'center')}>
-        <TextField isSmall={boolean('inner field is small', false)} />
+      <CheckboxButton {...args}>
+        <TextField isSmall={innerFieldIsSmall} />
       </CheckboxButton>
       <h3>With text and {TextField.name}</h3>
-      <CheckboxButton checkboxPosition={select('checkbox position', ['top', 'center', 'bottom'], 'center')}>
-        Test: <TextField isSmall={boolean('inner field is small', false)} />
+      <CheckboxButton {...args}>
+        Test: <TextField isSmall={innerFieldIsSmall} />
       </CheckboxButton>
       <h3>With text and {DatePickerField.name}</h3>
-      <CheckboxButton checkboxPosition={select('checkbox position', ['top', 'center', 'bottom'], 'center')}>
-        Test: <DatePickerField isSmall={boolean('inner field is small', false)} />
+      <CheckboxButton {...args}>
+        Test: <DatePickerField isSmall={innerFieldIsSmall} />
       </CheckboxButton>
     </UiKitInitializer>
-  ))
+  )
+}
+
+SubComponents.args = {
+  innerFieldIsSmall: false
+}
+
+SubComponents.argTypes = {
+  innerFieldIsSmall: { control: { type: 'boolean' } }
+}
