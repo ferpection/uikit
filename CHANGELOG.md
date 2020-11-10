@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+### Added
+- It is possible to customize how the `CheckboxButton` looks using a new `actionType` attribute.
+  Works like the same attribute on `Button` component w/ three state: "action", "positive" and "negative".
 
 ### [v0.9.0] - 2020-11-03
 ### Added

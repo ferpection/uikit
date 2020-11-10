@@ -1,10 +1,10 @@
 import { css } from '@emotion/core'
 
 import { SANSSERIF_FONTSET } from '../../../fonts'
-import { N200_COLOR, N300_COLOR, C200_COLOR, N75_COLOR, N100_COLOR, C15_COLOR } from '../../../colors'
+import { N200_COLOR, N300_COLOR, C200_COLOR, N75_COLOR, N100_COLOR, C15_COLOR ,Color } from '../../../colors'
 import checkIcon from '../icon-check-white.svg'
 
-export const checkboxStyles = css`
+export const checkboxStyles = ({ color = C200_COLOR, lighterColor = C15_COLOR }: { color: Color, lighterColor: Color }) => css`
   appearance: none;
   position: absolute;
   left: 0;
@@ -20,11 +20,11 @@ export const checkboxStyles = css`
     display: block;
     width: 100%;
     height: 100%;
-    background-color: ${`${C15_COLOR}`};
+    background-color: ${`${lighterColor}`};
     transition: transform 0.2s ease-in-out;
   }
   label:hover > & {
-    border-color: #00aab7;
+    border-color: ${`${color}`};
     &::before {
       transform: scale(2);
     }
@@ -33,8 +33,8 @@ export const checkboxStyles = css`
     transform: scale(3);
   }
   input[type='checkbox']:checked + & {
-    border-color: ${`${C200_COLOR}`};
-    background: url(${checkIcon}) 2px 2px no-repeat ${`${C200_COLOR}`};
+    border-color: ${`${color}`};
+    background: url(${checkIcon}) 2px 2px no-repeat ${`${color}`};
     background-size: 13px;
   }
   input[type='checkbox']:disabled + & {
@@ -54,7 +54,7 @@ export const checkboxStylesBottomSticked = css`
   bottom: 5px;
 `
 
-export const labelStyles = css`
+export const labelStyles = ({ color = C200_COLOR }) => css`
   position: relative;
   display: flex;
   align-items: center;
@@ -66,7 +66,7 @@ export const labelStyles = css`
   line-height: 1.5;
   color: ${`${N300_COLOR}`};
   &:hover {
-    color: #00aab7;
+    color: ${`${color}`};
     cursor: pointer;
   }
 `
