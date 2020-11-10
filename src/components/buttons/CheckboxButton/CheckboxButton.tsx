@@ -44,3 +44,12 @@ export const CheckboxButton: FC<CheckboxButtonProps> = props => (
     <div css={childrenStyles}>{props.children}</div>
   </label>
 )
+
+CheckboxButton.defaultProps = {
+  isChecked: false,
+  isDisabled: false,
+  checkboxPosition: 'center',
+  onValueChange: () => {},
+  onBlur: () => {},
+  onFocus: () => {},
+}
