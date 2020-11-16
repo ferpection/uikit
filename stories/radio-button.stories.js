@@ -1,28 +1,36 @@
 import React from 'react'
 
-import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs, select } from '@storybook/addon-knobs'
 
-import { RadioButton, TextField, UiKitInitializer } from '../src/components'
+import { RadioButton, TextField, DatePickerField, UiKitInitializer } from '../src/components'
 
-storiesOf('Components/Button/RadioButton', module)
-  .addDecorator(withA11y)
-  .addDecorator(withKnobs)
-  .add('basic example', () => (
+export default {
+  title: 'Components/Button/RadioButton',
+  component: RadioButton,
+  decorators: [withA11y],
+}
+
+export const BasicExample = (args) => {
+  return (
     <UiKitInitializer>
-      <RadioButton>Test</RadioButton>
+      <RadioButton {...args}>Test</RadioButton>
     </UiKitInitializer>
-  ))
-  .add('disabled state', () => (
+  )
+}
+
+export const DisabledState = (args) => {
+  return (
     <UiKitInitializer>
-      <RadioButton isDisabled>Test</RadioButton>
+      <RadioButton {...args} isDisabled>Test</RadioButton>
     </UiKitInitializer>
-  ))
-  .add('sub component', () => (
+  )
+}
+
+export const SubComponents = ({innerFieldIsSmall, ...args}) => {
+  return (
     <UiKitInitializer>
       <h3>With text</h3>
-      <RadioButton radioPosition={select('radio position', ['top', 'center', 'bottom'], 'center')}>
+      <RadioButton {...args}>
         Id culpa reprehenderit enim nisi et reprehenderit voluptate. Laborum deserunt tempor culpa id anim dolor duis
         sint consectetur mollit dolore magna voluptate. Deserunt consectetur velit ullamco irure reprehenderit mollit
         mollit irure ea non. Commodo enim esse esse fugiat proident reprehenderit exercitation proident qui ex duis
@@ -31,12 +39,25 @@ storiesOf('Components/Button/RadioButton', module)
         mollit. Qui eiusmod anim duis occaecat ex duis et do irure irure eu veniam eiusmod.
       </RadioButton>
       <h3>With {TextField.name}</h3>
-      <RadioButton radioPosition={select('radio position', ['top', 'center', 'bottom'], 'center')}>
-        <TextField />
+      <RadioButton {...args}>
+        <TextField isSmall={innerFieldIsSmall} />
       </RadioButton>
       <h3>With text and {TextField.name}</h3>
-      <RadioButton radioPosition={select('radio position', ['top', 'center', 'bottom'], 'center')}>
-        Test: <TextField />
+      <RadioButton {...args}>
+        Test: <TextField isSmall={innerFieldIsSmall} />
+      </RadioButton>
+      <h3>With text and {DatePickerField.name}</h3>
+      <RadioButton {...args}>
+        Test: <DatePickerField isSmall={innerFieldIsSmall} />
       </RadioButton>
     </UiKitInitializer>
-  ))
+  )
+}
+
+SubComponents.args = {
+  innerFieldIsSmall: false
+}
+
+SubComponents.argTypes = {
+  innerFieldIsSmall: { control: { type: 'boolean' } }
+}
