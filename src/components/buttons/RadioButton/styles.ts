@@ -76,6 +76,7 @@ export const labelStyles = ({ color = C200_COLOR }) => css`
   transition: color 0.2s ease-in-out;
   font-family: ${`${SANSSERIF_FONTSET}`};
   line-height: 1.5;
+  z-index: 0;
   color: ${`${N300_COLOR}`};
   &:hover {
     color: ${`${color}`};

@@ -72,6 +72,7 @@ export const labelStyles = ({ color = C200_COLOR }) => css`
   margin: 10px 20px;
   font-size: 15px;
   transition: color 0.2s ease-in-out;
+  z-index: 0;
   font-family: ${`${SANSSERIF_FONTSET}`};
   line-height: 1.5;
   color: ${`${N300_COLOR}`};
