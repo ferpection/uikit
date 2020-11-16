@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { FC, ChangeEvent, FocusEvent } from 'react'
 import { jsx } from '@emotion/core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { useTheme } from '../../contexts/ThemeContext'
 
@@ -13,7 +14,6 @@ import {
   checkboxStylesTopSticked,
   checkboxStylesBottomSticked,
 } from './styles'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export interface CheckboxButtonProps {
   value: string

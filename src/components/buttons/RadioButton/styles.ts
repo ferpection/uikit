@@ -1,10 +1,9 @@
 import { css } from '@emotion/core'
 
 import { SANSSERIF_FONTSET } from '../../../fonts'
-import { N200_COLOR, N300_COLOR, C200_COLOR, N75_COLOR, N100_COLOR, C15_COLOR } from '../../../colors'
-import checkIcon from '../icon-check-white.svg'
+import { N200_COLOR, N300_COLOR, C200_COLOR, N75_COLOR, N100_COLOR, C15_COLOR, Color } from '../../../colors'
 
-export const radioStyles = css`
+export const radioStyles = ({ color = C200_COLOR, lighterColor = C15_COLOR }: { color: Color, lighterColor: Color }) => css`
   appearance: none;
   position: absolute;
   left: 0;
@@ -21,12 +20,20 @@ export const radioStyles = css`
     display: block;
     width: 100%;
     height: 100%;
-    background-color: ${`${C15_COLOR}`};
+    background-color: ${`${lighterColor}`};
     border-radius: 50%;
     transition: transform 0.2s ease-in-out;
   }
+  svg {
+    opacity: 0;
+    color: white;
+    position: absolute;
+    top: 2.5px;
+    left: 1px;
+    transition: opacity 0.2s ease-in-out;
+  }
   label:hover > & {
-    border-color: #00aab7;
+    border-color: ${`${color}`};
     &::before {
       transform: scale(2);
     }
@@ -35,9 +42,12 @@ export const radioStyles = css`
     transform: scale(3);
   }
   input[type='radio']:checked + & {
-    border-color: ${`${C200_COLOR}`};
-    background: url(${checkIcon}) 3px 3px no-repeat ${`${C200_COLOR}`};
+    border-color: ${`${color}`};
+    background: 3px 3px no-repeat ${`${color}`};
     background-size: 13px;
+    svg {
+      opacity: 1;
+    }
   }
   input[type='radio']:disabled + & {
     border-color: ${`${N100_COLOR}`};
@@ -56,7 +66,7 @@ export const radioStylesBottomSticked = css`
   bottom: 4px;
 `
 
-export const labelStyles = css`
+export const labelStyles = ({ color = C200_COLOR }) => css`
   position: relative;
   display: flex;
   align-items: center;
@@ -68,7 +78,7 @@ export const labelStyles = css`
   line-height: 1.5;
   color: ${`${N300_COLOR}`};
   &:hover {
-    color: #00aab7;
+    color: ${`${color}`};
     cursor: pointer;
   }
 `
