@@ -6,7 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { Dropzone, DraggableItem, DragHandle } from '../src/components/index.ts'
 
-storiesOf('Layout/Drag and Drop/Dropzone', module)
+storiesOf('Components/Layout/Drag and Drop/Dropzone', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('simple case', () => (

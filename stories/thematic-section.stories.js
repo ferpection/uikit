@@ -7,7 +7,7 @@ import { withKnobs, select, text } from '@storybook/addon-knobs'
 
 import { ThematicSection, Button, TextFieldList, HelpBlock, UiKitInitializer } from '../src/components/index.ts'
 
-storiesOf('Layout/ThematicSection', module)
+storiesOf('Components/Layout/ThematicSection', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('with actions buttons', () => (

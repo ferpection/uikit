@@ -20,7 +20,7 @@ const Preview = props => (
   </pre>
 )
 
-storiesOf('Layout/Tabs', module)
+storiesOf('Components/Layout/Tabs', module)
   .addDecorator(withA11y)
   .add('with only TabLinks as children', () => (
     <UiKitInitializer>

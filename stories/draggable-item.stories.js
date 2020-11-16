@@ -6,7 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { DraggableItem, UiKitInitializer } from '../src/components/index.ts'
 
-storiesOf('Layout/Drag and Drop/DraggableItem', module)
+storiesOf('Components/Layout/Drag and Drop/DraggableItem', module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add('simple case', () => (
