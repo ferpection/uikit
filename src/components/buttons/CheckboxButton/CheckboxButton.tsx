@@ -13,6 +13,7 @@ import {
   checkboxStylesTopSticked,
   checkboxStylesBottomSticked,
 } from './styles'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export interface CheckboxButtonProps {
   value: string
@@ -51,7 +52,9 @@ export const CheckboxButton: FC<CheckboxButtonProps> = props => {
           props.checkboxPosition === 'top' && checkboxStylesTopSticked,
           props.checkboxPosition === 'bottom' && checkboxStylesBottomSticked,
         ]}
-      />
+      >
+        <FontAwesomeIcon icon={props.actionType === "negative" ? "times" : "check"} fixedWidth/>
+      </div>
       <div css={childrenStyles}>{props.children}</div>
     </label>
   )

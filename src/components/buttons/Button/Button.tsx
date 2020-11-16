@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import React, { useContext, Fragment, SyntheticEvent } from 'react'
+import React, { Fragment, SyntheticEvent } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { findIconDefinition, IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core'
 import { jsx } from '@emotion/core'
 
 import { ButtonContainer } from '../ButtonContainer'
-import { ThemeContext } from '../../contexts/ThemeContext'
+import { useTheme } from '../../contexts/ThemeContext'
 import { Color } from '../../../colors'
 
 import { prepareBaseState, prepareFilledState, iconOnlyState, rawLinkState } from './styles'
@@ -31,7 +31,7 @@ export interface ButtonProps {
 }
 
 export const Button: React.FC<ButtonProps> = props => {
-  const theme = useContext(ThemeContext)
+  const theme = useTheme()
   const {
     children,
     isFilled,
