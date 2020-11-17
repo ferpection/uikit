@@ -47,7 +47,6 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
     onFocus,
     onErrors,
     hideErrors,
-    className,
     ...otherProps
   } = props
   const { addTranslations } = useContext(I18nContext)
@@ -111,7 +110,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
 
   return (
     <Fragment>
-      <div className={className} css={[datePickerContainer, isSmall && datePickerContainerSmall]}>
+      <div css={[datePickerContainer, isSmall && datePickerContainerSmall]} >
         <Button
           css={[calendarButton, isSmall && calendarButtonSmall]}
           icon="calendar"

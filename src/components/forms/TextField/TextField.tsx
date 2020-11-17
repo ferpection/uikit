@@ -40,7 +40,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     hideErrors,
     value: externalValue,
     validators,
-    className,
+    ...otherProps
   } = props
 
   const { addTranslations } = useContext(I18nContext)
@@ -102,7 +102,6 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
             isDisabled && disabledStyle,
             isSmall && smallStyle,
           ]}
-          className={className}
           placeholder={placeholder}
           inputMode={dataType === 'number' ? 'numeric' : null}
           pattern={dataType === 'number' ? '[0-9]*' : null}
@@ -112,6 +111,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
           onFocus={event => handleFocus(event)}
           onBlur={event => handleBlur(event)}
           onSelect={event => handleSelect(event)}
+          {...otherProps}
         />
       ) : null}
       {rowCount >= 2 ? (
@@ -125,7 +125,6 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
             isSmall && smallStyle,
           ]}
           ref={ref as MutableRefObject<HTMLTextAreaElement>}
-          className={className}
           placeholder={placeholder}
           value={value}
           rows={rowCount}
@@ -135,6 +134,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
           onFocus={event => handleFocus(event)}
           onBlur={event => handleBlur(event)}
           onSelect={event => handleSelect(event)}
+          {...otherProps}
         />
       ) : null}
       <FormErrorMessages errors={showableErrors} />
