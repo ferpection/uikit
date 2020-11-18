@@ -40,6 +40,11 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     hideErrors,
     value: externalValue,
     validators,
+    onValueChange: handleValueChange,
+    onErrors: handleErrorsChange,
+    onBlur: handleBlur,
+    onFocus: handleFocus,
+    onSelect: handleSelect,
     ...otherProps
   } = props
 
@@ -71,14 +76,6 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     ],
     hideErrors,
   )
-
-  const {
-    onValueChange: handleValueChange,
-    onErrors: handleErrorsChange,
-    onBlur: handleBlur,
-    onFocus: handleFocus,
-    onSelect: handleSelect,
-  } = props
 
   const handleChanges = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     setValue(event.target.value)
