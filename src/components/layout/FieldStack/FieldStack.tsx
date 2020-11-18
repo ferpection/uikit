@@ -26,7 +26,9 @@ export const FieldStack: FC<FieldStackProps> = (props) => {
           border-top-right-radius: ${index === 0 ? '3px': 0};
           border-bottom-left-radius: ${index === arr.length - 1 ? '3px': 0};
           border-bottom-right-radius: ${index === arr.length - 1 ? '3px': 0};
-          border-top-color: ${index === 0 ? '1px': 0};
+          ${index !== 0 && `
+            border-top-color: transparent;
+          `}
           margin: 0;
           width: 100%;
           label: FieldStackElement;
