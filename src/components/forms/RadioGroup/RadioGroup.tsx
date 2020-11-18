@@ -10,8 +10,9 @@ import {
   listStyles,
   listItemStyles,
   innerRadioStyles,
-  innerRadioStylesDisabled,
-  innerRadioStylesErrors,
+  listItemDisabledStyles,
+  listItemErrorStyles,
+  listErrorStyles,
 } from './styles'
 
 export interface RadioGroupProps extends FormProps {
@@ -48,7 +49,7 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => setValue(event.target.value)
 
   return (
-    <ul css={[listStyles]} onBlur={handleBlur} onFocus={handleFocus} {...otherProps}>
+    <ul css={[listStyles, !isValid && listErrorStyles]} onBlur={handleBlur} onFocus={handleFocus} {...otherProps}>
       {Children.map(props.children, (child, index) => {
         if (!isValidElement(child)) {
           return null
@@ -57,11 +58,10 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
         return (
           <li
             css={[
-              listStyles,
               listItemStyles,
               innerRadioStyles,
-              isDisabled && innerRadioStylesDisabled,
-              !isValid && innerRadioStylesErrors,
+              isDisabled && listItemDisabledStyles,
+              !isValid && listItemErrorStyles,
             ]}
             key={index}
           >
