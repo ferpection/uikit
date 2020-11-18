@@ -10,6 +10,7 @@ export default {
   component: RadioGroup,
   decorators: [withA11y],
   args: {
+    value: 'three',
     onErrors: () => {},
     onBlur: () => {},
     onFocus: () => {},

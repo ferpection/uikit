@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
 import { CheckboxGroup, CheckboxButton, DatePickerField, TextField, UiKitInitializer } from '../src/components'
@@ -9,16 +8,35 @@ import { CheckboxGroup, CheckboxButton, DatePickerField, TextField, UiKitInitial
 export default {
   title: 'Components/Forms/CheckboxGroup',
   component: CheckboxGroup,
-  decorators: [withKnobs, withA11y],
+  decorators: [withA11y],
+  args: {
+    value: ['three'],
+    onErrors: () => {},
+    onBlur: () => {},
+    onFocus: () => {},
+    onValueChange: () => action('value changed'),
+  },
+  argTypes: {
+    validators: {
+      control: {
+        disable: true,
+      },
+    },
+    placeholder: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 }
 
-export const BasicExemple = () => {
+export const BasicExemple = (args) => {
   return (
     <UiKitInitializer>
-      <CheckboxGroup>
+      <CheckboxGroup {...args}>
         <CheckboxButton value="one">Unique option</CheckboxButton>
       </CheckboxGroup>
-      <CheckboxGroup value={['three']} onValueChange={action('value changed')}>
+      <CheckboxGroup {...args}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">Choice Two</CheckboxButton>
         <CheckboxButton value="three">Choice Three</CheckboxButton>
@@ -33,20 +51,6 @@ export const SubComponent = () => {
       <h2>
         <code>TextField</code>
       </h2>
-      <pre>
-        <code>
-          &lt;CheckboxGroup&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice One&lt;/CheckboxButton&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice Two: &lt;TextField /&gt;&lt;/CheckboxButton&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice Three&lt;/CheckboxButton&gt;
-          <br />
-          &lt;/CheckboxGroup&gt;
-          <br />
-        </code>
-      </pre>
       <CheckboxGroup value="three" onValueChange={action('value changed')}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">
@@ -57,20 +61,6 @@ export const SubComponent = () => {
       <h2>
         <code>{DatePickerField.name}</code>
       </h2>
-      <pre>
-        <code>
-          &lt;CheckboxGroup&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice One&lt;/CheckboxButton&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice Two: &lt;DatePickerField /&gt;&lt;/CheckboxButton&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice Three&lt;/CheckboxButton&gt;
-          <br />
-          &lt;/CheckboxGroup&gt;
-          <br />
-        </code>
-      </pre>
       <CheckboxGroup value="three" onValueChange={action('value changed')}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">
@@ -81,20 +71,6 @@ export const SubComponent = () => {
       <h2>
         <code>Small {DatePickerField.name}</code>
       </h2>
-      <pre>
-        <code>
-          &lt;CheckboxGroup&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice One&lt;/CheckboxButton&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice Two: &lt;DatePickerField isSmall /&gt;&lt;/CheckboxButton&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice Three&lt;/CheckboxButton&gt;
-          <br />
-          &lt;/CheckboxGroup&gt;
-          <br />
-        </code>
-      </pre>
       <CheckboxGroup value="three" onValueChange={action('value changed')}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">
@@ -107,24 +83,6 @@ export const SubComponent = () => {
           {DatePickerField.name} within a <code>div</code>
         </code>
       </h2>
-      <pre>
-        <code>
-          &lt;CheckboxGroup&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice One&lt;/CheckboxButton&gt;
-          <br />
-          &lt;CheckboxButton&gt;
-          <br />
-          &lt;div&gt;Choice Two: &lt;DatePickerField /&gt;&lt;/div&gt;
-          <br />
-          &lt;/CheckboxButton&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice Three&lt;/CheckboxButton&gt;
-          <br />
-          &lt;/CheckboxGroup&gt;
-          <br />
-        </code>
-      </pre>
       <CheckboxGroup value="three" onValueChange={action('value changed')}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">
@@ -156,20 +114,6 @@ export const DisabledState = () => {
       <h2>
         <code>isDisabled</code> on <code>{CheckboxGroup.name}</code>
       </h2>
-      <pre>
-        <code>
-          &lt;CheckboxGroup isDisabled&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice One&lt;/CheckboxButton&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice Two&lt;/CheckboxButton&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice Three&lt;/CheckboxButton&gt;
-          <br />
-          &lt;/CheckboxGroup&gt;
-          <br />
-        </code>
-      </pre>
       <CheckboxGroup value="one" isDisabled>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">Choice Two</CheckboxButton>
@@ -178,20 +122,6 @@ export const DisabledState = () => {
       <h2>
         <code>isDisabled</code> on <code>{CheckboxButton.name}</code>
       </h2>
-      <pre>
-        <code>
-          &lt;CheckboxGroup&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice One&lt;/CheckboxButton&gt;
-          <br />
-          &lt;CheckboxButton isDisabled&gt;Choice Two&lt;/CheckboxButton&gt;
-          <br />
-          &lt;CheckboxButton&gt;Choice Three&lt;/CheckboxButton&gt;
-          <br />
-          &lt;/CheckboxGroup&gt;
-          <br />
-        </code>
-      </pre>
       <CheckboxGroup value="one">
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two" isDisabled>
