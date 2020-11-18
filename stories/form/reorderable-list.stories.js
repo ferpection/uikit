@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs } from '@storybook/addon-knobs'
 
-import { ReorderableList, DragHandle, TextField, UiKitInitializer } from '../src/components/index.ts'
+import { ReorderableList, DragHandle, TextField, UiKitInitializer } from '../../src/components/index.ts'
 
 storiesOf('Components/Layout/ReorderableList', module)
   .addDecorator(withA11y)

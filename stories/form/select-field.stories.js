@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 
-import { SelectField, UiKitInitializer } from '../src/components/index.ts'
+import { SelectField, UiKitInitializer } from '../../src/components/index.ts'
 
 storiesOf('Components/Forms/SelectField', module)
   .addDecorator(withA11y)

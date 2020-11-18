@@ -4,8 +4,8 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, boolean, array } from '@storybook/addon-knobs'
 
-import { FontsLoader, ThematicSection, HelpBlock, UiKitInitializer } from '../src/components'
-import { SANSSERIF_FONTSET, OPENSANS_FONT } from '../src/fonts'
+import { FontsLoader, ThematicSection, HelpBlock, UiKitInitializer } from '../../src/components'
+import { SANSSERIF_FONTSET, OPENSANS_FONT } from '../../src/fonts'
 
 storiesOf('Utils/FontsLoader', module)
   .addDecorator(withA11y)

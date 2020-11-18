@@ -1,7 +1,7 @@
 import React from 'react'
 import { withKnobs, text } from '@storybook/addon-knobs'
 
-import { MarkdownField, UiKitInitializer } from '../src/components/index.ts'
+import { MarkdownField, UiKitInitializer } from '../../src/components/index.ts'
 
 export default {
   title: 'Components/Forms/MarkdownField',

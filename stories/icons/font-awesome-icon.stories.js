@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 
-import { FontAwesomeIcon, UiKitInitializer } from '../src/components/index.ts'
+import { FontAwesomeIcon, UiKitInitializer } from '../../src/components/index.ts'
 
 storiesOf('Iconography/FontAwesomeIcon', module)
   .addDecorator(withA11y)

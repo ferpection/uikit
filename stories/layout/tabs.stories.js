@@ -5,8 +5,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 
-import { Tabs, TabLink, UiKitInitializer } from '../src/components/index.ts'
-import { N75_COLOR } from '../src/colors/index.ts'
+import { Tabs, TabLink, UiKitInitializer } from '../../src/components/index.ts'
+import { N75_COLOR } from '../../src/colors/index.ts'
 
 const Preview = props => (
   <pre

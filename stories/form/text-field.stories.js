@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, text, number, boolean, select } from '@storybook/addon-knobs'
 
-import { TextField, UiKitInitializer } from '../src/components/index.ts'
+import { TextField, UiKitInitializer } from '../../src/components/index.ts'
 
 export default {
   title: 'Components/Forms/TextField',

@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs } from '@storybook/addon-knobs'
 
-import { Dropzone, DraggableItem, DragHandle } from '../src/components/index.ts'
+import { Dropzone, DraggableItem, DragHandle } from '../../src/components/index.ts'
 
 storiesOf('Components/Layout/Drag and Drop/Dropzone', module)
   .addDecorator(withA11y)

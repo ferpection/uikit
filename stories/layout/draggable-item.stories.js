@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs } from '@storybook/addon-knobs'
 
-import { DraggableItem, UiKitInitializer } from '../src/components/index.ts'
+import { DraggableItem, UiKitInitializer } from '../../src/components/index.ts'
 
 storiesOf('Components/Layout/Drag and Drop/DraggableItem', module)
   .addDecorator(withA11y)

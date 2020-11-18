@@ -2,18 +2,18 @@ import React from 'react'
 
 import { withA11y } from '@storybook/addon-a11y'
 
-import { RadioButton, TextField, DatePickerField, UiKitInitializer } from '../src/components'
+import { CheckboxButton, TextField, DatePickerField, UiKitInitializer } from '../../src/components'
 
 export default {
-  title: 'Components/Button/RadioButton',
-  component: RadioButton,
+  title: 'Components/Button/CheckboxButton',
+  component: CheckboxButton,
   decorators: [withA11y],
 }
 
 export const BasicExample = (args) => {
   return (
     <UiKitInitializer>
-      <RadioButton {...args}>Test</RadioButton>
+      <CheckboxButton {...args}>Test</CheckboxButton>
     </UiKitInitializer>
   )
 }
@@ -21,7 +21,7 @@ export const BasicExample = (args) => {
 export const DisabledState = (args) => {
   return (
     <UiKitInitializer>
-      <RadioButton {...args} isDisabled>Test</RadioButton>
+      <CheckboxButton {...args} isDisabled>Test</CheckboxButton>
     </UiKitInitializer>
   )
 }
@@ -30,26 +30,26 @@ export const SubComponents = ({innerFieldIsSmall, ...args}) => {
   return (
     <UiKitInitializer>
       <h3>With text</h3>
-      <RadioButton {...args}>
+      <CheckboxButton {...args}>
         Id culpa reprehenderit enim nisi et reprehenderit voluptate. Laborum deserunt tempor culpa id anim dolor duis
         sint consectetur mollit dolore magna voluptate. Deserunt consectetur velit ullamco irure reprehenderit mollit
         mollit irure ea non. Commodo enim esse esse fugiat proident reprehenderit exercitation proident qui ex duis
         duis. Veniam ex non voluptate eu laboris sit aute incididunt incididunt velit sunt aute. Nisi ea proident
         consequat laborum aliquip ullamco magna. Velit pariatur sit do minim dolore occaecat tempor mollit deserunt
         mollit. Qui eiusmod anim duis occaecat ex duis et do irure irure eu veniam eiusmod.
-      </RadioButton>
+      </CheckboxButton>
       <h3>With {TextField.name}</h3>
-      <RadioButton {...args}>
+      <CheckboxButton {...args}>
         <TextField isSmall={innerFieldIsSmall} />
-      </RadioButton>
+      </CheckboxButton>
       <h3>With text and {TextField.name}</h3>
-      <RadioButton {...args}>
+      <CheckboxButton {...args}>
         Test: <TextField isSmall={innerFieldIsSmall} />
-      </RadioButton>
+      </CheckboxButton>
       <h3>With text and {DatePickerField.name}</h3>
-      <RadioButton {...args}>
+      <CheckboxButton {...args}>
         Test: <DatePickerField isSmall={innerFieldIsSmall} />
-      </RadioButton>
+      </CheckboxButton>
     </UiKitInitializer>
   )
 }

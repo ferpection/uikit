@@ -20,7 +20,7 @@ import {
   R300_COLOR,
   R200_COLOR,
   R100_COLOR,
-} from '../src/colors'
+} from '../../src/colors'
 
 const cyans = {
   C500_COLOR: C500_COLOR,

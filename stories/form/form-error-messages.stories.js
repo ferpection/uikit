@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, object } from '@storybook/addon-knobs'
 
-import { FormErrorMessages, UiKitInitializer } from '../src/components/index.ts'
+import { FormErrorMessages, UiKitInitializer } from '../../src/components/index.ts'
 
 storiesOf('Components/Forms/FormErrorMessages', module)
   .addDecorator(withA11y)

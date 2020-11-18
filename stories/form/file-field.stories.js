@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { FileField, UiKitInitializer } from '../src/components/index.ts'
+import { FileField, UiKitInitializer } from '../../src/components/index.ts'
 
 export default {
   title: 'Components/Forms/FileField',

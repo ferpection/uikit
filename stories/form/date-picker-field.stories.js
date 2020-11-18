@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, boolean, select } from '@storybook/addon-knobs'
 
-import { DatePickerField, UiKitInitializer } from '../src/components/index.ts'
+import { DatePickerField, UiKitInitializer } from '../../src/components/index.ts'
 
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'

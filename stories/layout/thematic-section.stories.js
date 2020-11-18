@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, select, text } from '@storybook/addon-knobs'
 
-import { ThematicSection, Button, TextFieldList, HelpBlock, UiKitInitializer } from '../src/components/index.ts'
+import { ThematicSection, Button, TextFieldList, HelpBlock, UiKitInitializer } from '../../src/components/index.ts'
 
 storiesOf('Components/Layout/ThematicSection', module)
   .addDecorator(withA11y)

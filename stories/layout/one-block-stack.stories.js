@@ -2,18 +2,18 @@ import React from 'react'
 
 import { withA11y } from '@storybook/addon-a11y'
 
-import { FieldStack, PlaceholderButton, TextField, DatePickerField, UiKitInitializer, CheckboxGroup, CheckboxButton, SelectField, MarkdownField, FileField } from '../src/components'
+import { OneBlockStack, PlaceholderButton, TextField, DatePickerField, UiKitInitializer, CheckboxGroup, CheckboxButton, SelectField, MarkdownField, FileField } from '../../src/components'
 
 export default {
-  title: 'Components/Layout/FieldStack',
-  component: FieldStack,
+  title: 'Components/Layout/OneBlockStack',
+  component: OneBlockStack,
   decorators: [withA11y],
 }
 
 export const BasicExample = (args) => {
   return (
     <UiKitInitializer>
-      <FieldStack {...args}>
+      <OneBlockStack {...args}>
         <TextField />
         <DatePickerField />
         <TextField rowCount={3} />
@@ -30,7 +30,7 @@ export const BasicExample = (args) => {
         <MarkdownField />
         <FileField />
         <PlaceholderButton>Add things here</PlaceholderButton>
-      </FieldStack>
+      </OneBlockStack>
     </UiKitInitializer>
   )
 }
