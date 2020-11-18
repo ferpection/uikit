@@ -4,6 +4,7 @@ import { jsx } from '@emotion/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { useTheme } from '../../contexts/ThemeContext'
+import { ActionType } from '../../action-type'
 
 import {
   checkboxStyles,
@@ -20,7 +21,7 @@ export interface CheckboxButtonProps {
   isDisabled?: boolean
   isChecked?: boolean
   checkboxPosition?: 'top' | 'bottom' | 'center'
-  actionType: 'action' | 'positive' | 'negative'
+  actionType: ActionType
   onValueChange?: (event: ChangeEvent<HTMLInputElement>) => void
   onBlur?: (event: FocusEvent) => void
   onFocus?: (event: FocusEvent) => void

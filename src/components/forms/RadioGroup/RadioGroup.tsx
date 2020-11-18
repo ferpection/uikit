@@ -6,6 +6,8 @@ import useFormValidation from '../../../hooks/useFormValidation'
 
 import { defaultFormProps, FormProps } from '../form-props'
 
+import { ActionType } from '../../action-type'
+
 import {
   listStyles,
   listItemStyles,
@@ -19,7 +21,7 @@ export interface RadioGroupProps extends FormProps {
   className?: string
   value?: string
   placeholder?: undefined
-  actionType?: 'action' | 'positive' | 'negative'
+  actionType?: ActionType
   onValueChange?: (value: string) => void
   onBlur?: (event: FocusEvent<HTMLUListElement>) => void
   onFocus?: (event: FocusEvent<HTMLUListElement>) => void
