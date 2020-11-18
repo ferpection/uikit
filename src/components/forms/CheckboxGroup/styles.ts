@@ -19,6 +19,24 @@ export const listItemStyles = css`
   padding: 0;
   margin: 0;
   list-style: none;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid #ddd;
+  }
+`
+
+export const listItemErrorStyles = css`
+  background-color: ${`${O25_COLOR}`};
+
+  &:not(:last-of-type) {
+    border-bottom-color: ${`${O200_COLOR}`};
+  }
+`
+
+export const listItemDisabledStyles = css`
+  color: #b0b0b0;
+  border-color: #dddddd;
+  background-color: #f8f8f8;
 `
 
 export const innerCheckboxStyles = css`
@@ -28,31 +46,7 @@ export const innerCheckboxStyles = css`
     margin: 0;
     transition: background-color 0.2s ease-in-out;
   }
-  &:not(:last-of-type) label {
-    border-bottom: 1px solid #ddd;
-  }
-  & label:contain(input[type='checkbox']:checked) {
-    background-color: #eff9f9;
-  }
   & input[type='checkbox'] + div {
     left: 12px;
-  }
-`
-
-export const innerCheckboxStylesErrors = css`
-  & label {
-    background-color: ${`${O25_COLOR}`};
-  }
-  &:not(:last-of-type) label {
-    border-bottom-color: ${`${O200_COLOR}`};
-  }
-`
-
-export const innerCheckboxStylesDisabled = css`
-  color: #b0b0b0;
-
-  & label {
-    border-color: #dddddd;
-    background-color: #f8f8f8;
   }
 `

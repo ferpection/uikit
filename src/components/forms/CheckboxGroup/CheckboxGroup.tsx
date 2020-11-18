@@ -10,8 +10,8 @@ import {
   listStyles,
   listItemStyles,
   innerCheckboxStyles,
-  innerCheckboxStylesDisabled,
-  innerCheckboxStylesErrors,
+  listItemDisabledStyles,
+  listItemErrorStyles,
   listErrorStyles,
 } from './styles'
 
@@ -68,8 +68,8 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
             css={[
               listItemStyles,
               innerCheckboxStyles,
-              isDisabled && innerCheckboxStylesDisabled,
-              !isValid && innerCheckboxStylesErrors,
+              isDisabled && listItemDisabledStyles,
+              !isValid && listItemErrorStyles,
             ]}
             key={index}
           >
