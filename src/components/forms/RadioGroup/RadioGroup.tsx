@@ -18,8 +18,9 @@ import {
 export interface RadioGroupProps extends FormProps {
   className?: string
   value?: string
-  onValueChange?: (value: string) => void
   placeholder?: undefined
+  actionType?: 'action' | 'positive' | 'negative'
+  onValueChange?: (value: string) => void
   onBlur?: (event: FocusEvent<HTMLUListElement>) => void
   onFocus?: (event: FocusEvent<HTMLUListElement>) => void
 }
@@ -31,6 +32,7 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
     isDisabled,
     isRequired,
     validators,
+    actionType,
     onErrors: handleErrors,
     onBlur: handleBlur,
     onFocus: handleFocus,
@@ -67,6 +69,9 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
           >
             {cloneElement(child, {
               isDisabled: child.props.isDisabled ? true : isDisabled,
+              actionType: actionType != null
+                ? actionType
+                : child.props.actionType,
               onValueChange: handleChange,
               isChecked: child.props.value === value,
               radioPosition: 'center',
