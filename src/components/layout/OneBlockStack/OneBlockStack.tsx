@@ -2,10 +2,9 @@
 import { Children, FC, isValidElement } from 'react'
 import { css, jsx } from '@emotion/core'
 
-interface FieldStackProps {}
+interface OneBlockStackProps {}
 
-// OneBlockStack
-export const FieldStack: FC<FieldStackProps> = (props) => {
+export const OneBlockStack: FC<OneBlockStackProps> = (props) => {
   const children = Children
     .toArray(props.children)
     .map((child, index, arr) => {
@@ -43,4 +42,4 @@ export const FieldStack: FC<FieldStackProps> = (props) => {
   )
 }
 
-FieldStack.defaultProps = {}
+OneBlockStack.defaultProps = {}
