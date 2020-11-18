@@ -18,8 +18,9 @@ import {
 export interface CheckboxGroupProps extends FormProps {
   className?: string
   value?: string[]
-  onValueChange?: (value: string[]) => void
   placeholder?: undefined
+  actionType?: 'action' | 'positive' | 'negative'
+  onValueChange?: (value: string[]) => void
   onBlur?: (event: FocusEvent<HTMLUListElement>) => void
   onFocus?: (event: FocusEvent<HTMLUListElement>) => void
 }
@@ -27,11 +28,12 @@ export interface CheckboxGroupProps extends FormProps {
 export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
   const [values, setValues] = useState(props.value || [])
   const {
-    onValueChange,
     className,
     isDisabled,
     isRequired,
     validators,
+    actionType,
+    onValueChange,
     onErrors: handleErrors,
     onBlur: handleBlur,
     onFocus: handleFocus,
@@ -76,6 +78,9 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
             {cloneElement(child, {
               isDisabled: child.props.isDisabled ? true : isDisabled,
               onValueChange: handleChange,
+              actionType: actionType != null
+                ? actionType
+                : child.props.actionType,
               isChecked: values.includes(child.props.value),
               checkboxPosition: 'center',
             })}
