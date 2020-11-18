@@ -5,10 +5,20 @@ export const listStyles = css`
   padding: 0;
   margin: 5px 0;
   list-style: none;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-sizing: border-box;
+`
+
+export const listErrorStyles = css`
+  border-color: ${`${O200_COLOR}`};
+  box-shadow: 0 0 0 1px ${`${O200_COLOR}`};
 `
 
 export const listItemStyles = css`
+  padding: 0;
   margin: 0;
+  list-style: none;
 `
 
 export const innerCheckboxStyles = css`
@@ -16,39 +26,24 @@ export const innerCheckboxStyles = css`
     padding: 10px;
     padding-left: 43px;
     margin: 0;
-    border: 1px solid #ddd;
     transition: background-color 0.2s ease-in-out;
+  }
+  &:not(:last-of-type) label {
+    border-bottom: 1px solid #ddd;
   }
   & label:contain(input[type='checkbox']:checked) {
     background-color: #eff9f9;
   }
-  li + & label {
-    border-top: none;
-  }
   & input[type='checkbox'] + div {
     left: 12px;
   }
-  &:first-of-type label {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-  }
-  &:last-of-type label {
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-  }
 `
 
-export const innerRadioStylesErrors = css`
+export const innerCheckboxStylesErrors = css`
   & label {
-    border-left-color: ${`${O200_COLOR}`};
-    border-right-color: ${`${O200_COLOR}`};
     background-color: ${`${O25_COLOR}`};
-    box-shadow: 0 0 0 1px ${`${O200_COLOR}`};
   }
-  &:first-of-type label {
-    border-top-color: ${`${O200_COLOR}`};
-  }
-  &:last-of-type label {
+  &:not(:last-of-type) label {
     border-bottom-color: ${`${O200_COLOR}`};
   }
 `

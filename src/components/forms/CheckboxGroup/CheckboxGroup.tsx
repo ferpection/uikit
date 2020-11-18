@@ -11,7 +11,8 @@ import {
   listItemStyles,
   innerCheckboxStyles,
   innerCheckboxStylesDisabled,
-  innerRadioStylesErrors,
+  innerCheckboxStylesErrors,
+  listErrorStyles,
 } from './styles'
 
 export interface CheckboxGroupProps extends FormProps {
@@ -56,7 +57,7 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
   }
 
   return (
-    <ul className={className} css={[listStyles]} onBlur={handleBlur} onFocus={handleFocus}>
+    <ul className={className} css={[listStyles, !isValid && listErrorStyles]} onBlur={handleBlur} onFocus={handleFocus}>
       {Children.map(props.children, (child, index) => {
         if (!isValidElement(child)) {
           return null
@@ -65,11 +66,10 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
         return (
           <li
             css={[
-              listStyles,
               listItemStyles,
               innerCheckboxStyles,
               isDisabled && innerCheckboxStylesDisabled,
-              !isValid && innerRadioStylesErrors,
+              !isValid && innerCheckboxStylesErrors,
             ]}
             key={index}
           >
