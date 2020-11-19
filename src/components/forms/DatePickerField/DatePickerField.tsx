@@ -110,7 +110,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
 
   return (
     <Fragment>
-      <div css={[datePickerContainer, isSmall && datePickerContainerSmall]} >
+      <div css={[datePickerContainer, isSmall && datePickerContainerSmall]}>
         <Button
           css={[calendarButton, isSmall && calendarButtonSmall]}
           icon="calendar"

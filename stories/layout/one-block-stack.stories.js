@@ -2,7 +2,18 @@ import React from 'react'
 
 import { withA11y } from '@storybook/addon-a11y'
 
-import { OneBlockStack, PlaceholderButton, TextField, DatePickerField, UiKitInitializer, CheckboxGroup, CheckboxButton, SelectField, MarkdownField, FileField } from '../../src/components'
+import {
+  OneBlockStack,
+  PlaceholderButton,
+  TextField,
+  DatePickerField,
+  UiKitInitializer,
+  CheckboxGroup,
+  CheckboxButton,
+  SelectField,
+  MarkdownField,
+  FileField,
+} from '../../src/components'
 
 export default {
   title: 'Components/Layout/OneBlockStack',
@@ -10,7 +21,7 @@ export default {
   decorators: [withA11y],
 }
 
-export const BasicExample = (args) => {
+export const BasicExample = args => {
   return (
     <UiKitInitializer>
       <OneBlockStack {...args}>

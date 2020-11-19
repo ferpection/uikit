@@ -27,10 +27,10 @@ export default {
         disable: true,
       },
     },
-  }
+  },
 }
 
-export const BasicExemple = (args) => {
+export const BasicExemple = args => {
   return (
     <UiKitInitializer>
       <RadioGroup {...args}>

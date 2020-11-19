@@ -30,7 +30,7 @@ export default {
   },
 }
 
-export const BasicExemple = (args) => {
+export const BasicExemple = args => {
   return (
     <UiKitInitializer>
       <CheckboxGroup {...args}>

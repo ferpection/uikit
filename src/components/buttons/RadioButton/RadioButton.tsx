@@ -54,7 +54,7 @@ export const RadioButton: FC<RadioButtonProps> = props => {
           props.radioPosition === 'bottom' && radioStylesBottomSticked,
         ]}
       >
-        <FontAwesomeIcon icon={props.actionType === "negative" ? "times" : "check"} fixedWidth/>
+        <FontAwesomeIcon icon={props.actionType === 'negative' ? 'times' : 'check'} fixedWidth />
       </div>
       <div css={[childrenStyles]}>{props.children}</div>
     </label>

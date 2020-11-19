@@ -71,9 +71,7 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
           >
             {cloneElement(child, {
               isDisabled: child.props.isDisabled ? true : isDisabled,
-              actionType: actionType != null
-                ? actionType
-                : child.props.actionType,
+              actionType: actionType != null ? actionType : child.props.actionType,
               onValueChange: handleChange,
               isChecked: child.props.value === value,
               radioPosition: 'center',

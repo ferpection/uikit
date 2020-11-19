@@ -10,7 +10,7 @@ export default {
   decorators: [withA11y],
 }
 
-export const BasicExample = (args) => {
+export const BasicExample = args => {
   return (
     <UiKitInitializer>
       <CheckboxButton {...args}>Test</CheckboxButton>
@@ -18,15 +18,17 @@ export const BasicExample = (args) => {
   )
 }
 
-export const DisabledState = (args) => {
+export const DisabledState = args => {
   return (
     <UiKitInitializer>
-      <CheckboxButton {...args} isDisabled>Test</CheckboxButton>
+      <CheckboxButton {...args} isDisabled>
+        Test
+      </CheckboxButton>
     </UiKitInitializer>
   )
 }
 
-export const SubComponents = ({innerFieldIsSmall, ...args}) => {
+export const SubComponents = ({ innerFieldIsSmall, ...args }) => {
   return (
     <UiKitInitializer>
       <h3>With text</h3>
@@ -55,9 +57,9 @@ export const SubComponents = ({innerFieldIsSmall, ...args}) => {
 }
 
 SubComponents.args = {
-  innerFieldIsSmall: false
+  innerFieldIsSmall: false,
 }
 
 SubComponents.argTypes = {
-  innerFieldIsSmall: { control: { type: 'boolean' } }
+  innerFieldIsSmall: { control: { type: 'boolean' } },
 }

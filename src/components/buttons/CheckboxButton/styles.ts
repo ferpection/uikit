@@ -1,9 +1,15 @@
 import { css } from '@emotion/core'
 
 import { SANSSERIF_FONTSET } from '../../../fonts'
-import { N200_COLOR, N300_COLOR, C200_COLOR, N75_COLOR, N100_COLOR, C15_COLOR ,Color } from '../../../colors'
+import { N200_COLOR, N300_COLOR, C200_COLOR, N75_COLOR, N100_COLOR, C15_COLOR, Color } from '../../../colors'
 
-export const checkboxStyles = ({ color = C200_COLOR, lighterColor = C15_COLOR }: { color: Color, lighterColor: Color }) => css`
+export const checkboxStyles = ({
+  color = C200_COLOR,
+  lighterColor = C15_COLOR,
+}: {
+  color: Color
+  lighterColor: Color
+}) => css`
   appearance: none;
   position: absolute;
   left: 0;

@@ -54,7 +54,7 @@ export const CheckboxButton: FC<CheckboxButtonProps> = props => {
           props.checkboxPosition === 'bottom' && checkboxStylesBottomSticked,
         ]}
       >
-        <FontAwesomeIcon icon={props.actionType === "negative" ? "times" : "check"} fixedWidth/>
+        <FontAwesomeIcon icon={props.actionType === 'negative' ? 'times' : 'check'} fixedWidth />
       </div>
       <div css={childrenStyles}>{props.children}</div>
     </label>
