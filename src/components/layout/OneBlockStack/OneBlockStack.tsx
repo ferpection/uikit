@@ -2,7 +2,7 @@
 import { Children, FC, isValidElement } from 'react'
 import { jsx } from '@emotion/core'
 
-import { containerStyles, innerElementStyles } from './styles'
+import { containerStyles, innerDivElementStyles, innerElementStyles } from './styles'
 
 interface OneBlockStackProps {}
 
@@ -13,6 +13,10 @@ export const OneBlockStack: FC<OneBlockStackProps> = props => {
     }
 
     if (typeof child.type === 'string') {
+      if (['p', 'section', 'div'].includes(child.type)) {
+        return <child.type css={[innerDivElementStyles, innerElementStyles(index, arr.length)]} {...child.props} />
+      }
+
       return null
     }
 

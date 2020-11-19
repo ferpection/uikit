@@ -13,6 +13,7 @@ import {
   SelectField,
   MarkdownField,
   FileField,
+  Button,
 } from '../../src/components'
 
 export default {
@@ -21,7 +22,7 @@ export default {
   decorators: [withA11y],
 }
 
-export const BasicExample = args => {
+export const MainExample = args => {
   return (
     <UiKitInitializer>
       <OneBlockStack {...args}>
@@ -41,6 +42,26 @@ export const BasicExample = args => {
         <MarkdownField />
         <FileField />
         <PlaceholderButton>Add things here</PlaceholderButton>
+      </OneBlockStack>
+    </UiKitInitializer>
+  )
+}
+
+export const NonUiKitComponents = args => {
+  return (
+    <UiKitInitializer>
+      <OneBlockStack {...args}>
+        <div>
+          <p>This a div w/ an input.</p>
+          <TextField isSmall />
+        </div>
+        <p>
+          <CheckboxButton>This is a paragraph w/ a checkbox</CheckboxButton>
+        </p>
+        <section>
+          <p>This is a section w/ buttons</p>
+          <Button>OK</Button>
+        </section>
       </OneBlockStack>
     </UiKitInitializer>
   )
