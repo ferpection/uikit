@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { Children, FC, isValidElement } from 'react'
-import { css, jsx } from '@emotion/core'
+import { jsx } from '@emotion/core'
+
+import { containerStyles, innerElementStyles } from './styles'
 
 interface OneBlockStackProps {}
 
@@ -20,23 +22,12 @@ export const OneBlockStack: FC<OneBlockStackProps> = (props) => {
         key: child.key,
         ...child.props,
         isSmall: false,
-        css: css`
-          border-top-left-radius: ${index === 0 ? '3px': 0};
-          border-top-right-radius: ${index === 0 ? '3px': 0};
-          border-bottom-left-radius: ${index === arr.length - 1 ? '3px': 0};
-          border-bottom-right-radius: ${index === arr.length - 1 ? '3px': 0};
-          ${index !== 0 && `
-            border-top-color: transparent;
-          `}
-          margin: 0;
-          width: 100%;
-          label: FieldStackElement;
-        `
+        css: innerElementStyles(index, arr.length)
       })
     })
 
   return (
-    <div css={css`font-size: 0;`}>
+    <div css={[containerStyles]}>
       {children}
     </div>
   )
