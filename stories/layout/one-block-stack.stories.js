@@ -26,7 +26,7 @@ export const MainExample = args => {
   return (
     <UiKitInitializer>
       <OneBlockStack {...args}>
-        <TextField />
+        <TextField isSmall />
         <DatePickerField />
         <TextField rowCount={3} />
         <CheckboxGroup>
