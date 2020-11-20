@@ -14,14 +14,14 @@ export const OneBlockStack: FC<OneBlockStackProps> = props => {
 
     if (typeof child.type === 'string') {
       if (['p', 'section', 'div'].includes(child.type)) {
-        return <child.type css={[innerDivElementStyles, innerElementStyles(index, arr.length)]} {...child.props} />
+        return <child.type key={index} css={[innerDivElementStyles, innerElementStyles(index, arr.length)]} {...child.props} />
       }
 
       return null
     }
 
     return jsx(child.type, {
-      key: child.key,
+      key: child.key || index,
       ...child.props,
       isSmall: false,
       css: innerElementStyles(index, arr.length),
