@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - It is possible to customize how the `CheckboxButton` and the `RadioButton` looks using a
   new `actionType` attribute. Works like the same attribute on `Button` component w/ three
   states: "action", "positive" and "negative".
+- New `OneBlockStack` component to group UiKit's form fields as one big component.
 ### Fixed
 - Resolve an issue that hide the hover effect of the `CheckboxButton` and
   the `RadioButton` in some cases
