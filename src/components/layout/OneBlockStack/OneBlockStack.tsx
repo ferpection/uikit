@@ -37,5 +37,5 @@ export const OneBlockStack: FC<OneBlockStackProps> = props => {
 }
 
 OneBlockStack.defaultProps = {
-  isHighlighted: true,
+  isHighlighted: false,
 }
