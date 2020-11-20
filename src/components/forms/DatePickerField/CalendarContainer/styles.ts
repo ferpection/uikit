@@ -24,7 +24,7 @@ export const calendarContainer = css`
   &:hover {
     box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
   }
-  z-index: 1;
+  z-index: 3;
 `
 
 export const smallCalendarContainer = css`

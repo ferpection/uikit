@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - Resolve an issue that hide the hover effect of the `CheckboxButton` and
   the `RadioButton` in some cases
+- Make the calendar popin appear on top of other UI elements.
 
 ### [v0.9.0] - 2020-11-03
 ### Added
