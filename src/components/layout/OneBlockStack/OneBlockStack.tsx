@@ -4,7 +4,9 @@ import { jsx } from '@emotion/core'
 
 import { containerStyles, innerDivElementStyles, innerElementStyles } from './styles'
 
-interface OneBlockStackProps {}
+interface OneBlockStackProps {
+  isHighlighted?: boolean
+}
 
 export const OneBlockStack: FC<OneBlockStackProps> = props => {
   const children = Children.toArray(props.children).map((child, index, arr) => {
@@ -20,10 +22,13 @@ export const OneBlockStack: FC<OneBlockStackProps> = props => {
       return null
     }
 
+    const childProps = { ...child.props }
+    if (child.props.isSmall != null) childProps.isSmall = false
+    if (child.props.isHighlighted != null) childProps.isHighlighted = props.isHighlighted
+
     return jsx(child.type, {
       key: child.key || index,
-      ...child.props,
-      isSmall: false,
+      ...childProps,
       css: innerElementStyles(index, arr.length),
     })
   })
@@ -31,4 +36,6 @@ export const OneBlockStack: FC<OneBlockStackProps> = props => {
   return <div css={[containerStyles]}>{children}</div>
 }
 
-OneBlockStack.defaultProps = {}
+OneBlockStack.defaultProps = {
+  isHighlighted: true,
+}

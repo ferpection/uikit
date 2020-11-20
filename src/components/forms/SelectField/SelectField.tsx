@@ -92,4 +92,5 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
 
 SelectField.defaultProps = {
   ...(defaultFormProps as SelectFieldProps),
+  isHighlighted: false,
 }

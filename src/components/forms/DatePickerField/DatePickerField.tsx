@@ -34,6 +34,7 @@ export interface DatePickerFieldProps extends FormProps {
   onValueChange?: (value: Date) => void
   hideErrors?: boolean
   className?: string
+  isHighlighted?: boolean
 }
 
 export const DatePickerField: FC<DatePickerFieldProps> = props => {
@@ -187,4 +188,5 @@ DatePickerField.defaultProps = {
   hideErrors: false,
   isSmall: false,
   dateComponentSelectors: [DateComponent.Date],
+  isHighlighted: false,
 }

@@ -115,4 +115,5 @@ export function MarkdownField(props: MarkdownFieldProps) {
 MarkdownField.defaultProps = {
   ...(defaultFormProps as MarkdownFieldProps),
   onSelect: () => {},
+  isHighlighted: false,
 }
