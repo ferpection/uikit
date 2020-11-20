@@ -16,7 +16,7 @@ export const OneBlockStack: FC<OneBlockStackProps> = props => {
 
     if (typeof child.type === 'string') {
       if (['p', 'section', 'div'].includes(child.type)) {
-        return <child.type key={index} css={[innerDivElementStyles, innerElementStyles(index, arr.length)]} {...child.props} />
+        return <child.type key={index} css={[innerDivElementStyles(props.isHighlighted), innerElementStyles(index, arr.length)]} {...child.props} />
       }
 
       return null
