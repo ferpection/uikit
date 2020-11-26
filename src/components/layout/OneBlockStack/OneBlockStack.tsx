@@ -3,12 +3,17 @@ import { Children, FC, isValidElement } from 'react'
 import { jsx } from '@emotion/core'
 
 import { containerStyles, innerDivElementStyles, innerElementStyles } from './styles'
+import { useMergedFocusHandlers } from '../../../hooks'
 
 interface OneBlockStackProps {
   isHighlighted?: boolean
+  onFocus?: () => void
+  onBlur?: () => void
 }
 
 export const OneBlockStack: FC<OneBlockStackProps> = props => {
+  const [handleFocus, handleBlur] = useMergedFocusHandlers({ onBlur: props.onBlur, onFocus: props.onFocus })
+
   const children = Children.toArray(props.children).map((child, index, arr) => {
     if (!isValidElement(child)) {
       return null
@@ -31,6 +36,8 @@ export const OneBlockStack: FC<OneBlockStackProps> = props => {
     const childProps = { ...child.props }
     if (child.props.isSmall != null) childProps.isSmall = false
     if (child.props.isHighlighted != null) childProps.isHighlighted = props.isHighlighted
+    if (child.props.onFocus != null) childProps.onFocus = handleFocus
+    if (child.props.onBlur != null) childProps.onBlur = handleBlur
 
     return jsx(child.type, {
       key: child.key || index,
@@ -44,4 +51,6 @@ export const OneBlockStack: FC<OneBlockStackProps> = props => {
 
 OneBlockStack.defaultProps = {
   isHighlighted: false,
+  onFocus: () => {},
+  onBlur: () => {},
 }
