@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { withA11y } from '@storybook/addon-a11y'
-
 import {
   OneBlockStack,
   PlaceholderButton,
@@ -19,7 +17,10 @@ import {
 export default {
   title: 'Components/Layout/OneBlockStack',
   component: OneBlockStack,
-  decorators: [withA11y],
+  argTypes: {
+    onFocus: { action: 'focused' },
+    onBlur: { action: 'blured' },
+  }
 }
 
 export const MainExample = args => {
