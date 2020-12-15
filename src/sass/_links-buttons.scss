@@ -1,0 +1,143 @@
+/*------------ Links -----------*/
+
+a {
+    color: $actionColor;
+    text-decoration: none;
+    -webkit-transition: .2s color;
+    transition: .2s color;
+}
+
+a:hover {
+    color: $actionHoverColor;
+    text-decoration: none;
+}
+
+a:active,
+a:focus {
+    color: $actionFocusColor;
+    text-decoration: none;
+}
+
+/*------------ Primary buttons -----------*/
+
+body div.btn-contener { /* Div to center the button */
+    display: block !important;
+    text-align: center;
+    margin: 3rem auto;
+}
+
+
+a.btn-primary,
+a.btn-border,
+a.btn-positive {
+    display: inline-block;
+}
+
+.btn-primary, .btn-positive {
+    position: relative;
+    z-index: 10;
+    min-height: 5rem;
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 8rem;
+    background-color: $actionColor;
+    color: #fff;
+    text-align: center;
+    clear: both;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: none;
+
+    &:hover {
+      background-color: $actionHoverColor;
+      text-decoration: none;
+      color: #fff;
+      box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.3);
+    }
+
+    &:active, &:focus {
+      color: #fff;
+    }
+
+    &[disabled] {
+      background-color: #ccc;
+      cursor: not-allowed;
+      pointer-events: none;
+
+      &:hover {
+        box-shadow: none;
+        background-color: #ccc;
+      }
+    }
+}
+
+.btn-positive {
+  background-color: $positiveColor;
+
+  &:hover {
+    background-color: $positiveHoverColor;
+  }
+}
+
+/*------------ Border buttons -----------*/
+
+.btn-border {
+    display: block;
+    min-height: 5rem;
+    padding: 1.2rem 2.5rem;
+    margin: 3rem auto;
+    border-radius: 8rem;
+    border: $actionColor solid 1px;
+    background-color: #fff;
+    color: $actionColor;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-border:hover {
+    background-color: $actionBackgroundColor;
+    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.3);
+    color: #333;
+}
+
+.btn-border[disabled] {
+    border-color: #ccc;
+    cursor: not-allowed;
+}
+
+.btn-select {
+    width: 100%;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.btn-border-red,
+.btn-border-red:hover {
+    color: $brandColor;
+    border: $brandColor solid 1px;
+}
+
+.btn-border-red:hover {
+    background-color: lighten( saturate($brandColor, 100%), 35%);
+}
+
+/*-------------------------- Transforms buttons in links ------------------*/
+
+.link-green {
+    float: right;
+    color: $actionColor;
+    background: none;
+    border: none;
+    margin: 1rem;
+    -webkit-transition: .2s color;
+    transition: .2s color;
+}
+
+.link-green:hover {
+    color: $actionHoverColor;
+}

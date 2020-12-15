@@ -99,3 +99,29 @@ export const FULL_COLORSET = Object.freeze({
   SNUFF: P200_COLOR,
   WHITE_ICE: G200_COLOR,
 })
+
+/** TODO: use it to generate the sass file */
+const FERPECTION_THEME_COLORSET = Object.freeze({
+  BRAND: PRIMARY_COLORSET.CINNABAR, /* brand */
+
+  POSITIVE: PRIMARY_COLORSET.SHAMROCK, /* positive info */
+  POSITIVE_HOVER: "#20bf7e",
+  POSITIVE_FOCUS: "#d8f8eb",
+  POSITIVE_BACKGROUND: "#e9fbf4",
+
+  NEGATIVE: PRIMARY_COLORSET.SUNGLOW, /* negative info */
+  NEGATIVE_HOVER: "#fcb413",
+  NEGATIVE_BACKGROUND: "#fffbf0",
+
+  ACTION: PRIMARY_COLORSET.ROBINS_EGG_BLUE, /* buttons and links */
+  ACTION_HOVER: "#00aab7", /* hover of buttons and links */
+  ACTION_FOCUS: "#40d9e5",
+  ACTION_BACKGROUND: FULL_COLORSET.BLACK_SQUEEZE,
+
+  FOREGROUND: "#7b7b7b", /* default copy */
+  BACKGROUND: FULL_COLORSET.ALTO, /* default background */
+
+  GREY: FULL_COLORSET.SILVER_CHALICE,
+  GREY_LIGHT: FULL_COLORSET.ALTO,
+  GREY_EXTRALIGHT: FULL_COLORSET.SEASHELL,
+})

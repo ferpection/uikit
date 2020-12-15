@@ -1,0 +1,63 @@
+.navbar-nav {
+  padding-top: 10px;
+  font-size: 16px;
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a.active {
+  border-bottom: 2px solid white;
+}
+
+.navbar-default .navbar-nav > li > a.active:hover {
+  border-bottom: 3px solid white;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.navbar-nav li button {
+    background: transparent;
+    border: 0;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav > li > a.active {
+    border-bottom: 0;
+  }
+    .navbar-nav li button {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+  border: 0;
+}
+
+.navbar-header .navbar-toggle {
+  margin-top:20px;
+  border: 0;
+}
+
+.navbar-header .navbar-toggle .sr-only {
+    display: none;
+}
+
+.navbar-default .navbar-collapse {
+  border: 0;
+  border-color: transparent;
+}
+
