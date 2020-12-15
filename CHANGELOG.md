@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   new `actionType` attribute. Works like the same attribute on `Button` component w/ three
   states: "action", "positive" and "negative".
 - New `OneBlockStack` component to group UiKit's form fields as one big component.
+- Uses the package to share common sass files
+
 ### Fixed
 - Resolve an issue that hide the hover effect of the `CheckboxButton` and
   the `RadioButton` in some cases
