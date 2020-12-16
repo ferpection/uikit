@@ -5,12 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+
+### [v0.10.0] - 2020-12-16
 ### Added
 - It is possible to customize how the `CheckboxButton` and the `RadioButton` looks using a
   new `actionType` attribute. Works like the same attribute on `Button` component w/ three
   states: "action", "positive" and "negative".
 - New `OneBlockStack` component to group UiKit's form fields as one big component.
-- Uses the package to share common sass files
+- UiKit package stores common sass files. Endpoint to access them is `@ferpection/uikit/sass/[...].scss`.
 
 ### Fixed
 - Resolve an issue that hide the hover effect of the `CheckboxButton` and
@@ -455,6 +457,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v0.10.0]: https://github.com/ferpection/uikit/tree/v0.10.0
 [v0.9.0]: https://github.com/ferpection/uikit/tree/v0.9.0
 [v0.8.0]: https://github.com/ferpection/uikit/tree/v0.8.0
 [v0.7.2]: https://github.com/ferpection/uikit/tree/v0.7.2

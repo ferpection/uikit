@@ -7,7 +7,7 @@ This repo is a technical implementation of the [Ferpection Design System](https:
 This package use [React](https://reactjs.org), [React Router](https://reacttraining.com/react-router/web/) and [EmotionJS](https://emotion.sh/).
 To avoid conflicts, those packages aren't automatically installed and doesn't come with this package.
 
-You must have those packages installed in your project in order to use `@ferpection/uikit`.
+You must have those packages installed in your project in order to use the React components of `@ferpection/uikit`.
 
 ```sh
 yarn add react react-dom react-router-dom @emotion/core
@@ -47,10 +47,16 @@ npm install @ferpection/uikit --save
 
 ## Usage
 
-The package expose some UI components you can use in your own project using a classic `import` statement.
+The package expose some UI components (react) you can use in your own project using a classic `import` statement.
 
 ```js
 import { Button } from '@ferpection/uikit'
+```
+
+It is also possible to access stylesheets as SCSS files using a classic SASS `import` statement.
+
+```scss
+@import '~@ferpection/uikit/sass/index.scss'
 ```
 
 For a detail of what this package provides and what is the usage of a specific component, please see the storybook section of this README.
