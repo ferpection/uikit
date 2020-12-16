@@ -1,5 +1,7 @@
 import typescript from 'rollup-plugin-typescript2'
 import svg from 'rollup-plugin-svg'
+import copy from 'rollup-plugin-copy'
+
 import pkg from './package.json'
 
 const globalConf = {
@@ -13,6 +15,9 @@ const globalConf = {
       typescript: require('typescript'),
     }),
     svg({ base64: true }),
+    copy({
+      targets: [{ src: 'src/sass/**/*', dest: 'dist/sass'}]
+    })
   ],
 }
 
