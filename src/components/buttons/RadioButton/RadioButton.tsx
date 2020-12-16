@@ -21,7 +21,7 @@ export interface RadioButtonProps {
   isDisabled?: boolean
   isChecked?: boolean
   radioPosition?: 'top' | 'bottom' | 'center'
-  actionType: ActionType
+  actionType?: ActionType
   onValueChange?: (event: ChangeEvent<HTMLInputElement>) => void
   onBlur?: (event: FocusEvent) => void
   onFocus?: (event: FocusEvent) => void
