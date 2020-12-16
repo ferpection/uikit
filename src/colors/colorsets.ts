@@ -100,26 +100,27 @@ export const FULL_COLORSET = Object.freeze({
   WHITE_ICE: G200_COLOR,
 })
 
-/** TODO: use it to generate the sass file */
+// TODO: use it to generate the sass file
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const FERPECTION_THEME_COLORSET = Object.freeze({
-  BRAND: PRIMARY_COLORSET.CINNABAR, /* brand */
+  BRAND: PRIMARY_COLORSET.CINNABAR, // brand
 
-  POSITIVE: PRIMARY_COLORSET.SHAMROCK, /* positive info */
-  POSITIVE_HOVER: "#20bf7e",
-  POSITIVE_FOCUS: "#d8f8eb",
-  POSITIVE_BACKGROUND: "#e9fbf4",
+  POSITIVE: PRIMARY_COLORSET.SHAMROCK, // positive info
+  POSITIVE_HOVER: '#20bf7e',
+  POSITIVE_FOCUS: '#d8f8eb',
+  POSITIVE_BACKGROUND: '#e9fbf4',
 
-  NEGATIVE: PRIMARY_COLORSET.SUNGLOW, /* negative info */
-  NEGATIVE_HOVER: "#fcb413",
-  NEGATIVE_BACKGROUND: "#fffbf0",
+  NEGATIVE: PRIMARY_COLORSET.SUNGLOW, // negative info
+  NEGATIVE_HOVER: '#fcb413',
+  NEGATIVE_BACKGROUND: '#fffbf0',
 
-  ACTION: PRIMARY_COLORSET.ROBINS_EGG_BLUE, /* buttons and links */
-  ACTION_HOVER: "#00aab7", /* hover of buttons and links */
-  ACTION_FOCUS: "#40d9e5",
+  ACTION: PRIMARY_COLORSET.ROBINS_EGG_BLUE, // buttons and links
+  ACTION_HOVER: '#00aab7', // hover of buttons and links
+  ACTION_FOCUS: '#40d9e5',
   ACTION_BACKGROUND: FULL_COLORSET.BLACK_SQUEEZE,
 
-  FOREGROUND: "#7b7b7b", /* default copy */
-  BACKGROUND: FULL_COLORSET.ALTO, /* default background */
+  FOREGROUND: '#7b7b7b', // default copy
+  BACKGROUND: FULL_COLORSET.ALTO, // default background
 
   GREY: FULL_COLORSET.SILVER_CHALICE,
   GREY_LIGHT: FULL_COLORSET.ALTO,

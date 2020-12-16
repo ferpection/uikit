@@ -20,7 +20,7 @@ export default {
   argTypes: {
     onFocus: { action: 'focused' },
     onBlur: { action: 'blured' },
-  }
+  },
 }
 
 export const MainExample = args => {
