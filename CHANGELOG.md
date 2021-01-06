@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Add validation for the date format in `DatePickerField`
 
+### Changed
+- Hypens and points in date aren't supported anymore
+
 ### Fixed
 - `RadioButton` and `CheckboxButton` doesn't require `actionType` anymore.
 
