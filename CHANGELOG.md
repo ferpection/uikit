@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 - `RadioButton` and `CheckboxButton` doesn't require `actionType` anymore.
+- Display the `DatePickerField`'s placeholder in the correct locale.
 
 ### [v0.10.0] - 2020-12-16
 ### Added

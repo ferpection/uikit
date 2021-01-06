@@ -41,7 +41,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   const {
     value: initialValue,
     isSmall,
-    placeholder = 'dd/mm/yyyy',
+    placeholder,
     dateComponentSelectors: externalDateComponentSelectors,
     onValueChange,
     onBlur,
@@ -51,7 +51,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
     validators,
     ...otherProps
   } = props
-  const { addTranslations } = useContext(I18nContext)
+  const { addTranslations, t } = useContext(I18nContext)
   const [value, setValue] = useState(initialValue)
   const [modalState, setModalState] = useState<number | null>(null)
   const [errors, setErrors] = useState<FormErrors>({})
@@ -128,7 +128,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
         <TextField
           value={value?.toLocaleDateString('fr-FR', { day: '2-digit', year: 'numeric', month: '2-digit' })}
           isSmall={isSmall}
-          placeholder={placeholder}
+          placeholder={placeholder || t('uikit:datePlaceholder')}
           onValueChange={handleTextFieldChange}
           onFocus={handleTextFieldFocus}
           onBlur={onBlur}
@@ -194,7 +194,6 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
 
 DatePickerField.defaultProps = {
   ...(defaultFormProps as DatePickerFieldProps),
-  placeholder: 'dd/mm/yyyy',
   hideErrors: false,
   isSmall: false,
   dateComponentSelectors: [DateComponent.Date],
