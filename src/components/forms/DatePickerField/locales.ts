@@ -42,6 +42,7 @@ export const englishStrings = {
   dates: 'Dates',
   years: 'Years',
   months: 'Months',
+  invalidDate: 'Please enter a valid date (dd/mm/yyyy)',
 }
 
 export const frenchStrings = {
@@ -88,6 +89,7 @@ export const frenchStrings = {
   dates: 'Jours',
   years: 'Années',
   months: 'Mois',
+  invalidDate: 'Vous devez écrire une date valide (jj/mm/aaaa)',
 }
 
 export const chineseStrings = {
@@ -134,4 +136,5 @@ export const chineseStrings = {
   dates: '日',
   years: '年',
   months: '月',
+  invalidDate: '请输入一个有效的日期 (dd/mm/yyyy)'
 }

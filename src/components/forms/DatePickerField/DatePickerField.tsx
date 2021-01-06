@@ -48,6 +48,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
     onFocus,
     onErrors,
     hideErrors,
+    validators,
     ...otherProps
   } = props
   const { addTranslations } = useContext(I18nContext)
@@ -126,6 +127,10 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
           onValueChange={handleTextFieldChange}
           onFocus={handleTextFieldFocus}
           onBlur={onBlur}
+          validators={[
+            (v: string) => ({ 'uikit:invalidDate':  v.length > 0 && !DATE_REGEX.test(v) }),
+            ...validators,
+          ]}
           onErrors={handleErrors}
           hideErrors
           {...otherProps}
