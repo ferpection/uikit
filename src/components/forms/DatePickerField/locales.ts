@@ -139,5 +139,5 @@ export const chineseStrings = {
   years: '年',
   months: '月',
   datePlaceholder: 'dd/mm/yyyy',
-  invalidDate: '请输入一个有效的日期 (dd/mm/yyyy)'
+  invalidDate: '请输入一个有效的日期 (dd/mm/yyyy)',
 }

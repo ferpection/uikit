@@ -97,7 +97,8 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
     const [day, month, year] = v.split('/')
     const date = new Date(Number(year), Number(month) - 1, Number(day))
 
-    if (isNaN(date.getTime())) { // if date parsing failed
+    if (isNaN(date.getTime())) {
+      // if date parsing failed
       setValue(null)
       return
     }
@@ -132,10 +133,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
           onValueChange={handleTextFieldChange}
           onFocus={handleTextFieldFocus}
           onBlur={onBlur}
-          validators={[
-            (v: string) => ({ 'uikit:invalidDate':  v.length > 0 && !DATE_REGEX.test(v) }),
-            ...validators,
-          ]}
+          validators={[(v: string) => ({ 'uikit:invalidDate': v.length > 0 && !DATE_REGEX.test(v) }), ...validators]}
           onErrors={handleErrors}
           hideErrors
           {...otherProps}

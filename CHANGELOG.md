@@ -6,7 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### [v0.11.0] - 2021-01-08
+## [v0.11.1] - 2021-01-08
+### Fixed
+- Fix CD for GitHub release
+- Apply linting rules
+
+## [v0.11.0] - 2021-01-08
 ### Added
 - Add validation for the date format in `DatePickerField`
 
@@ -17,7 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `RadioButton` and `CheckboxButton` doesn't require `actionType` anymore.
 - Display the `DatePickerField`'s placeholder in the correct locale.
 
-### [v0.10.0] - 2020-12-16
+## [v0.10.0] - 2020-12-16
 ### Added
 - It is possible to customize how the `CheckboxButton` and the `RadioButton` looks using a
   new `actionType` attribute. Works like the same attribute on `Button` component w/ three
@@ -30,7 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   the `RadioButton` in some cases
 - Make the calendar popin appear on top of other UI elements.
 
-### [v0.9.0] - 2020-11-03
+## [v0.9.0] - 2020-11-03
 ### Added
 - A hook called `useSamenessNumberState` allows to a "`string` state" contain only
   a number. This is usefull for some `input` tags which `value` is only a `string` but
