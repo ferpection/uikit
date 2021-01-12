@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+### Fixed
+- Used the right level of index for `RadioButton`'s child element
 
 ## [v0.11.1] - 2021-01-08
 ### Fixed
