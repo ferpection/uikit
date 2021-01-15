@@ -28,6 +28,7 @@ storiesOf('Iconography/FerpectionBadgeIcon', module)
             'test',
             'tasks',
             'device',
+            'graph',
           ],
           'config',
         )}
@@ -52,6 +53,7 @@ storiesOf('Iconography/FerpectionBadgeIcon', module)
             'test',
             'tasks',
             'device',
+            'graph',
           ],
           'config',
         )}

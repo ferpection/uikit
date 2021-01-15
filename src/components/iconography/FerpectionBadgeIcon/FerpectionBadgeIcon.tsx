@@ -13,6 +13,7 @@ import { IncentiveBadgeIcon } from './IncentiveBadgeIcon'
 import { GoalsBadgeIcon } from './GoalsBadgeIcon'
 import { ConfigBadgeIcon } from './ConfigBadgeIcon'
 import { DeviceBadgeIcon } from './DeviceBadgeIcon'
+import { GraphBadgeIcon } from './GraphBadgeIcon'
 
 export interface FerpectionBadgeIconProps {
   className?: string
@@ -30,6 +31,7 @@ export interface FerpectionBadgeIconProps {
     | 'goals'
     | 'config'
     | 'device'
+    | 'graph'
 }
 
 export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({ icon: iconName, ...otherProps }) => {
@@ -70,6 +72,8 @@ export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({ icon: 
     case 'device': {
       return <DeviceBadgeIcon {...otherProps} />
     }
+    case 'graph':
+      return <GraphBadgeIcon {...otherProps} />
     default:
       return null
   }
