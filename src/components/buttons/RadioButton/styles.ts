@@ -105,5 +105,5 @@ export const inputStyles = css`
 export const childrenStyles = css`
   position: relative;
   flex-grow: 1;
-  z-index: 1:
+  z-index: 1;
 `
