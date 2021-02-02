@@ -39,13 +39,18 @@ export const OneBlockStack: FC<OneBlockStackProps> = props => {
     if (child.props.onFocus != null) childProps.onFocus = handleFocus
     if (child.props.onBlur != null) childProps.onBlur = handleBlur
 
+    const customCSS = [innerElementStyles(index, arr.length)]
+    // Specific EmotionJS component that need the same CSS rules than raw HTML tags
+    if (['p', 'section', 'div'].includes((child.type as unknown as any).__emotion_base)) {
+      customCSS.push(
+        innerDivElementStyles(props.isHighlighted),
+      )
+    }
+
     return jsx(child.type, {
       key: child.key || index,
       ...childProps,
-      css: [
-        ['p', 'section', 'div'].includes((child.type as unknown as any).__emotion_base) && innerDivElementStyles(props.isHighlighted),
-        innerElementStyles(index, arr.length),
-      ],
+      css: customCSS,
     })
   })
 
