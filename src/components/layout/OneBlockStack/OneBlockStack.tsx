@@ -42,7 +42,10 @@ export const OneBlockStack: FC<OneBlockStackProps> = props => {
     return jsx(child.type, {
       key: child.key || index,
       ...childProps,
-      css: innerElementStyles(index, arr.length),
+      css: [
+        ['p', 'section', 'div'].includes((child.type as unknown as any).__emotion_base) && innerDivElementStyles(props.isHighlighted),
+        innerElementStyles(index, arr.length),
+      ],
     })
   })
 

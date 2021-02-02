@@ -7,13 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Fixed
 - Fixed a typo in `RadioButton`'s styles. Actually, used the right level of index for `RadioButton`'s child element.
+- Fixed a rendering bug with emotionjs styled component used as child of `OneBlockStack`
 
 ## [v0.12.0] - 2021-01-08
 ### Added
 - New icon for FerpectionBadgeIcon
 ### Fixed
 - Used the right level of index for `RadioButton`'s child element
-- Make the OneBlockStack component support other styles from child div tags.
+- Make the `OneBlockStack` component support other styles from child div tags.
 
 ## [v0.11.1] - 2021-01-08
 ### Fixed
