@@ -24,8 +24,8 @@ export const OneBlockStack: FC<OneBlockStackProps> = props => {
         return (
           <child.type
             key={index}
-            css={[innerDivElementStyles(props.isHighlighted), innerElementStyles(index, arr.length)]}
             {...child.props}
+            css={[innerDivElementStyles(props.isHighlighted), innerElementStyles(index, arr.length)]}
           />
         )
       }

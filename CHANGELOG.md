@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - New icon for FerpectionBadgeIcon
 ### Fixed
 - Used the right level of index for `RadioButton`'s child element
+- Make the OneBlockStack component support other styles from child div tags.
 
 ## [v0.11.1] - 2021-01-08
 ### Fixed
