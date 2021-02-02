@@ -13,37 +13,37 @@ export const GraphBadgeIcon: React.FC<GraphBadgeIconProps> = ({
   ...otherProps
 }) => {
   const styles = css`
-  .cls-1 {
-    fill: ${borderColor.toHex() || '#d5bbea'};
-  }
+    .cls-1 {
+      fill: ${borderColor.toHex() || '#d5bbea'};
+    }
 
-  .cls-2 {
-    fill: #fff;
-  }
+    .cls-2 {
+      fill: #fff;
+    }
 
-  .cls-3 {
-    fill: #00becd;
-  }
+    .cls-3 {
+      fill: #00becd;
+    }
 
-  .cls-4 {
-    fill: #24d58d;
-  }
+    .cls-4 {
+      fill: #24d58d;
+    }
 
-  .cls-5 {
-    fill: #d61d73;
-  }
+    .cls-5 {
+      fill: #d61d73;
+    }
 
-  .cls-6 {
-    fill: #fec138;
-  }
+    .cls-6 {
+      fill: #fec138;
+    }
 
-  .cls-7 {
-    fill: #fc883a;
-  }
+    .cls-7 {
+      fill: #fc883a;
+    }
 
-  .cls-8 {
-    fill: #ed4a4a;
-  }
+    .cls-8 {
+      fill: #ed4a4a;
+    }
   `
 
   return (
