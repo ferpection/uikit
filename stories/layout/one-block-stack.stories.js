@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from '@emotion/styled'
 
 import {
   OneBlockStack,
@@ -13,6 +14,13 @@ import {
   FileField,
   Button,
 } from '../../src/components'
+
+const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+`
 
 export default {
   title: 'Components/Layout/OneBlockStack',
@@ -59,6 +67,14 @@ export const NonUiKitComponents = args => {
         <p>
           <CheckboxButton>This is a paragraph w/ a checkbox</CheckboxButton>
         </p>
+        <StyledDiv>
+          <div>
+            <CheckboxButton>Option 1</CheckboxButton>
+            <CheckboxButton isChecked>Option 2</CheckboxButton>
+            <CheckboxButton>Option 3</CheckboxButton>
+          </div>
+          <div><CheckboxButton isChecked/></div>
+        </StyledDiv>
         <section>
           <p>This is a section w/ buttons</p>
           <Button>OK</Button>
