@@ -5,11 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+
+## [v0.12.1] - 2021-02-02
 ### Fixed
 - Fixed a typo in `RadioButton`'s styles. Actually, used the right level of index for `RadioButton`'s child element.
 - Fixed a rendering bug with emotionjs styled component used as child of `OneBlockStack`
 
-## [v0.12.0] - 2021-01-08
+## [v0.12.0] - 2021-02-02
 ### Added
 - New icon for FerpectionBadgeIcon
 ### Fixed
