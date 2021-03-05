@@ -35,12 +35,12 @@
         "postpublish": "pnpm run build:clean && echo \"Don't forget to publish the storybook for ${npm_package_name}@v${npm_package_version}\""
     },
     "dependencies": {
-        "@fortawesome/fontawesome-common-types": "^0.2.32",
+        "@fortawesome/fontawesome-common-types": "^0.2.34",
         "@fortawesome/fontawesome-svg-core": "^1.2.34",
         "@fortawesome/free-brands-svg-icons": "^5.15.2",
         "@fortawesome/free-regular-svg-icons": "^5.15.2",
         "@fortawesome/free-solid-svg-icons": "^5.15.2",
-        "@fortawesome/react-fontawesome": "^0.1.11",
+        "@fortawesome/react-fontawesome": "^0.1.14",
         "dayzed": "^3.2.1",
         "randomstring": "^1.1.5",
         "webfontloader": "^1.6.28"

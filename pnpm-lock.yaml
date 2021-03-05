@@ -1,10 +1,10 @@
 dependencies:
-  '@fortawesome/fontawesome-common-types': 0.2.32
+  '@fortawesome/fontawesome-common-types': 0.2.34
   '@fortawesome/fontawesome-svg-core': 1.2.34
   '@fortawesome/free-brands-svg-icons': 5.15.2
   '@fortawesome/free-regular-svg-icons': 5.15.2
   '@fortawesome/free-solid-svg-icons': 5.15.2
-  '@fortawesome/react-fontawesome': 0.1.12_ebef494489949c9e4f95b01f7925dda3
+  '@fortawesome/react-fontawesome': 0.1.14_ebef494489949c9e4f95b01f7925dda3
   dayzed: 3.2.1_prop-types@15.7.2+react@16.14.0
   randomstring: 1.1.5
   webfontloader: 1.6.28
@@ -2549,13 +2549,6 @@ packages:
       node: ^10.12.0 || >=12.0.0
     resolution:
       integrity: sha512-2ZPCc+uNbjV5ERJr+aKSPRwZgKd2z11x0EgLvb1PURmUrn9QNRXFqje0Ldq454PfAVyaJYyrDvvIKSFP4NnBog==
-  /@fortawesome/fontawesome-common-types/0.2.32:
-    dev: false
-    engines:
-      node: '>=6'
-    requiresBuild: true
-    resolution:
-      integrity: sha512-ux2EDjKMpcdHBVLi/eWZynnPxs0BtFVXJkgHIxXRl+9ZFaHPvYamAfCzeeQFqHRjuJtX90wVnMRaMQAAlctz3w==
   /@fortawesome/fontawesome-common-types/0.2.34:
     dev: false
     engines:
@@ -2599,17 +2592,17 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-ZfCU+QjaFsdNZmOGmfqEWhzI3JOe37x5dF4kz9GeXvKn/sTxhqMtZ7mh3lBf76SvcYY5/GKFuyG7p1r4iWMQqw==
-  /@fortawesome/react-fontawesome/0.1.12_ebef494489949c9e4f95b01f7925dda3:
+  /@fortawesome/react-fontawesome/0.1.14_ebef494489949c9e4f95b01f7925dda3:
     dependencies:
       '@fortawesome/fontawesome-svg-core': 1.2.34
       prop-types: 15.7.2
       react: 16.14.0
     dev: false
     peerDependencies:
-      '@fortawesome/fontawesome-svg-core': ^1.2.20
+      '@fortawesome/fontawesome-svg-core': ^1.2.32
       react: '>=16.x'
     resolution:
-      integrity: sha512-kV6HtqotM3K4YIXlTVvomuIi6QgGCvYm++ImyEx2wwgmSppZ6kbbA29ASwjAUBD63j2OFU0yoxeXpZkjrrX0qQ==
+      integrity: sha512-4wqNb0gRLVaBm/h+lGe8UfPPivcbuJ6ecI4hIgW0LjI7kzpYB9FkN0L9apbVzg+lsBdcTf0AlBtODjcSX5mmKA==
   /@icons/material/0.2.4_react@16.14.0:
     dependencies:
       react: 16.14.0
@@ -14681,12 +14674,12 @@ specifiers:
   '@emotion/styled': ^11.1.5
   '@emotion/stylis': ^0.8.5
   '@emotion/utils': ^1.0.0
-  '@fortawesome/fontawesome-common-types': ^0.2.32
+  '@fortawesome/fontawesome-common-types': ^0.2.34
   '@fortawesome/fontawesome-svg-core': ^1.2.34
   '@fortawesome/free-brands-svg-icons': ^5.15.2
   '@fortawesome/free-regular-svg-icons': ^5.15.2
   '@fortawesome/free-solid-svg-icons': ^5.15.2
-  '@fortawesome/react-fontawesome': ^0.1.11
+  '@fortawesome/react-fontawesome': ^0.1.14
   '@jest/environment': ^26.5.2
   '@jest/fake-timers': ^26.5.2
   '@jest/globals': ^26.5.3
