@@ -56,7 +56,7 @@ devDependencies:
   eslint-plugin-promise: 4.3.1
   eslint-plugin-react: 7.22.0_eslint@7.21.0
   expect: 26.6.2
-  form-data: 3.0.1
+  form-data: 4.0.0
   gh-pages: 3.1.0
   i18next: 19.9.1
   jest: 26.6.3
@@ -64,7 +64,7 @@ devDependencies:
   jest-matcher-utils: 26.6.2
   jest-message-util: 26.6.2
   jest-mock: 26.6.2
-  prettier: 2.1.2
+  prettier: 2.2.1
   pretty-format: 26.6.2
   prop-types: 15.7.2
   react: 17.0.1
@@ -78,7 +78,7 @@ devDependencies:
   rollup-plugin-svg: 2.0.0
   rollup-plugin-typescript2: 0.30.0_rollup@2.40.0+typescript@4.2.3
   source-map: 0.7.3
-  ts-jest: 26.4.4_jest@26.6.3+typescript@4.2.3
+  ts-jest: 26.5.3_jest@26.6.3+typescript@4.2.3
   tslib: 2.1.0
   typescript: 4.2.3
 lockfileVersion: 5.2
@@ -4032,13 +4032,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-nwKNbvnwJ2/mndE9ItP/zc2TCzw6uuodnF4EHYWD+gCQDVBuRQL5UzbZD0/ezy1iKsFU2ZQiDqg4M9dN4+wZgA==
-  /@types/jest/26.0.15:
-    dependencies:
-      jest-diff: 26.6.2
-      pretty-format: 26.6.2
-    dev: true
-    resolution:
-      integrity: sha512-s2VMReFXRg9XXxV+CW9e5Nz8fH2K1aEhwgjUqPPbQd7g95T0laAcvLv032EhFHIa5GHsZ8W7iJEQVaJq6k3Gog==
   /@types/json-schema/7.0.6:
     dev: true
     resolution:
@@ -7947,6 +7940,16 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==
+  /form-data/4.0.0:
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.29
+    dev: true
+    engines:
+      node: '>= 6'
+    resolution:
+      integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==
   /format/0.2.2:
     dev: true
     engines:
@@ -9865,9 +9868,9 @@ packages:
   /jest-util/26.6.2:
     dependencies:
       '@jest/types': 26.6.2
-      '@types/node': 14.14.7
+      '@types/node': 14.14.31
       chalk: 4.1.0
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
       is-ci: 2.0.0
       micromatch: 4.0.2
     dev: true
@@ -10278,10 +10281,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ==
-  /lodash.memoize/4.1.2:
-    dev: true
-    resolution:
-      integrity: sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
   /lodash.sortby/4.7.0:
     dev: true
     resolution:
@@ -10577,6 +10576,12 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-/NOTfLrsPBVeH7YtFPgsVWveuL+4SjjYxaQ1xtM1KMFj7HdxlBlxeyNLzhyJVx7r4rZGJAZ/6lkKCitSc/Nmpg==
+  /mime-db/1.46.0:
+    dev: true
+    engines:
+      node: '>= 0.6'
+    resolution:
+      integrity: sha512-svXaP8UQRZ5K7or+ZmfNhg2xX3yKDMUzqadsSqi4NCH/KomcH75MAMYAGVlvXn4+b/xOPhS3I2uHKRUzvjY7BQ==
   /mime-types/2.1.27:
     dependencies:
       mime-db: 1.44.0
@@ -10585,6 +10590,14 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-JIhqnCasI9yD+SsmkquHBxTSEuZdQX5BuQnS2Vc7puQQQ+8yiP5AY5uWhpdv4YL4VM5c6iliiYWPgJ/nJQLp7w==
+  /mime-types/2.1.29:
+    dependencies:
+      mime-db: 1.46.0
+    dev: true
+    engines:
+      node: '>= 0.6'
+    resolution:
+      integrity: sha512-Y/jMt/S5sR9OaqteJtslsFZKWOIIqMACsJSiHghlCAyhf7jfVYjKBmLiX8OgpWeW+fjJ2b+Az69aPFPkUOY6xQ==
   /mime/1.6.0:
     dev: true
     engines:
@@ -11704,13 +11717,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
-  /prettier/2.1.2:
+  /prettier/2.2.1:
     dev: true
     engines:
       node: '>=10.13.0'
     hasBin: true
     resolution:
-      integrity: sha512-16c7K+x4qVlJg9rEbXl7HEGmQyZlG4R9AgP+oHKRMsMsuk8s+ATStlf1NpDqyBI1HpVyfjLOeMhH2LvuNvV5Vg==
+      integrity: sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
   /pretty-error/2.1.2:
     dependencies:
       lodash: 4.17.20
@@ -14056,21 +14069,20 @@ packages:
     dev: true
     resolution:
       integrity: sha512-3IVX4nI6B5cc31/GFFE+i8ey/N2eA0CZDbo6n0yrz0zDX8ZJ8djmU1p+XRz7G3is0F3bB3pu2pAroFdAWQKU3w==
-  /ts-jest/26.4.4_jest@26.6.3+typescript@4.2.3:
+  /ts-jest/26.5.3_jest@26.6.3+typescript@4.2.3:
     dependencies:
-      '@types/jest': 26.0.15
       bs-logger: 0.2.6
       buffer-from: 1.1.1
       fast-json-stable-stringify: 2.1.0
       jest: 26.6.3
       jest-util: 26.6.2
-      json5: 2.1.3
-      lodash.memoize: 4.1.2
+      json5: 2.2.0
+      lodash: 4.17.21
       make-error: 1.3.6
       mkdirp: 1.0.4
-      semver: 7.3.2
+      semver: 7.3.4
       typescript: 4.2.3
-      yargs-parser: 20.2.4
+      yargs-parser: 20.2.6
     dev: true
     engines:
       node: '>= 10'
@@ -14079,7 +14091,7 @@ packages:
       jest: '>=26 <27'
       typescript: '>=3.8 <5.0'
     resolution:
-      integrity: sha512-3lFWKbLxJm34QxyVNNCgXX1u4o/RV0myvA2y2Bxm46iGIjKlaY0own9gIckbjZJPn+WaJEnfPPJ20HHGpoq4yg==
+      integrity: sha512-nBiiFGNvtujdLryU7MiMQh1iPmnZ/QvOskBbD2kURiI1MwqvxlxNnaAB/z9TbslMqCsSbu5BXvSSQPc5tvHGeA==
   /ts-pnp/1.2.0_typescript@4.2.3:
     dependencies:
       typescript: 4.2.3
@@ -14916,12 +14928,12 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-o50j0JeToy/4K6OZcaQmW6lyXXKhq7csREXcDwk2omFPJEwUNOVtJKvmDr9EI1fAJZUyZcRF7kxGBWmRXudrCQ==
-  /yargs-parser/20.2.4:
+  /yargs-parser/20.2.6:
     dev: true
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-WOkpgNhPTlE73h4VFAFsOnomJVaovO8VqLDzy5saChRBFQFBoMYirowyW+Q9HB4HFF4Z7VZTiG3iSzJJA29yRA==
+      integrity: sha512-AP1+fQIWSM/sMiET8fyayjx/J+JmTPt2Mr0FkrgqB4todtfa53sOsrSAcIrJRD5XS20bKUwaDIuMkWKCEiQLKA==
   /yargs/15.4.1:
     dependencies:
       cliui: 6.0.0
@@ -14999,7 +15011,7 @@ specifiers:
   eslint-plugin-promise: ^4.3.1
   eslint-plugin-react: ^7.22.0
   expect: ^26.4.2
-  form-data: ^3.0.1
+  form-data: ^4.0.0
   gh-pages: ^3.1.0
   i18next: ^19.9.1
   jest: ^26.4.2
@@ -15007,7 +15019,7 @@ specifiers:
   jest-matcher-utils: ^26.4.2
   jest-message-util: ^26.3.0
   jest-mock: ^26.3.0
-  prettier: ^2.1.2
+  prettier: ^2.2.1
   pretty-format: ^26.4.2
   prop-types: ^15.7.2
   randomstring: ^1.1.5
@@ -15022,7 +15034,7 @@ specifiers:
   rollup-plugin-svg: ^2.0.0
   rollup-plugin-typescript2: ^0.30.0
   source-map: ^0.7.3
-  ts-jest: ^26.4.1
+  ts-jest: ^26.5.3
   tslib: ^2.1.0
   typescript: ^4.2.3
   webfontloader: ^1.6.28
