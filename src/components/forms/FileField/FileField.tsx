@@ -57,6 +57,13 @@ export function FileField(props: FileFieldProps) {
     placeholder: 'Choisissez un fichier...',
   })
 
+  addTranslations('ko', {
+    fileAmount: '{ $count } 개 파일 ',
+    browse: '검색',
+    required: '필드를 채우십시오.',
+    placeholder: '파일 선택 ...',
+  })
+
   const {
     className,
     accept,

@@ -56,6 +56,11 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     required: 'Please fill the field.',
   })
 
+  addTranslations('ko', {
+    required: '필드를 채우십시오.',
+    emailInvalid: '이 필드에 이메일 주소를 입력하십시오.',
+  })
+
   addTranslations('zh_HANS', {
     emailInvalid: '请在此字段中输入电子邮件地址。',
     required: '请填写该字段。',

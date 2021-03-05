@@ -17,7 +17,7 @@ import { YearPicker } from './YearPicker/YearPicker'
 import { MonthPicker } from './MonthPicker/MonthPicker'
 
 import { datePickerContainer, datePickerContainerSmall, calendarButton, calendarButtonSmall } from './styles'
-import { englishStrings, frenchStrings, chineseStrings } from './locales'
+import { englishStrings, frenchStrings, chineseStrings, koreanStrings } from './locales'
 
 export enum DateComponent {
   Date = 'date',
@@ -59,6 +59,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   addTranslations('en', englishStrings)
   addTranslations('fr', frenchStrings)
   addTranslations('zh_HANS', chineseStrings)
+  addTranslations('ko', koreanStrings)
 
   useEffect(() => setValue(initialValue), [initialValue])
   useEffect(() => onValueChange(value), [value])

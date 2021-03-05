@@ -33,7 +33,7 @@ export default {
 
 export const NormalState = () => {
   const isSmall = boolean('is small', false)
-  const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr'])
+  const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr', 'ko'])
 
   useEffect(() => {
     i18n.changeLanguage(lang)
