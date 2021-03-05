@@ -53,10 +53,10 @@
         "react-router-dom": ">=5.0.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.12.1",
-        "@babel/parser": "^7.12.2",
+        "@babel/core": "^7.13.8",
+        "@babel/parser": "^7.13.9",
         "@babel/preset-react": "^7.12.13",
-        "@babel/types": "^7.12.1",
+        "@babel/types": "^7.13.0",
         "@emotion/babel-preset-css-prop": "^10.2.1",
         "@emotion/cache": "^10.0.29",
         "@emotion/core": "^10.0.35",
