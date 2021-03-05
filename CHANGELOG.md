@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Changed
+- [BREACKING] UiKit now uses React v17
 - [BREACKING] UiKit now uses EmotionJS v11
 - [BREACKING] UiKit now uses Typescript v4.2
 
