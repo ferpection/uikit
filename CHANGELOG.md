@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+- [BREACKING] UiKit now uses EmotionJS v11
+- [BREACKING] UiKit now uses Typescript v4.2
+
 ## [v0.12.1] - 2021-02-02
 ### Fixed
 - Fixed a typo in `RadioButton`'s styles. Actually, used the right level of index for `RadioButton`'s child element.

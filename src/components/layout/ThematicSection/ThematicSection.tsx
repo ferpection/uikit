@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
 import { ReactElementLike } from 'prop-types'
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 
 import {
   FerpectionBadgeIcon,

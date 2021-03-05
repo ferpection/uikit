@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 import { R400_COLOR, N75_COLOR } from '../../../colors'
 

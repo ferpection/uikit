@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 
 import {
   containerStyles,

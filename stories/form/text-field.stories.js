@@ -15,13 +15,15 @@ export const NormalState = () => {
     <UiKitInitializer>
       {boolean('show label', false) ? <label>Input:</label> : null}
       <TextField placeholder="This is an input" />
-      {boolean('show label', false) ? (
+      {boolean('show label', false)
+        ? (
         <>
           <br />
           <br />
           <label>Textarea:</label>
         </>
-      ) : null}
+          )
+        : null}
       <TextField rowCount={3} placeholder="This is an textarea" />
     </UiKitInitializer>
   )

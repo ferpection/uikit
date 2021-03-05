@@ -2,7 +2,7 @@
 import React, { Fragment, SyntheticEvent } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconName } from '@fortawesome/fontawesome-svg-core'
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 
 import { ButtonContainer } from '../ButtonContainer'
 
@@ -31,12 +31,14 @@ export const PlaceholderButton: React.FC<PlaceholderButtonProps> = props => {
       aria-label={children}
       disabled={isDisabled}
     >
-      {icon != null ? (
+      {icon != null
+        ? (
         <Fragment>
           <FontAwesomeIcon icon={icon} />
           &nbsp;
         </Fragment>
-      ) : null}
+          )
+        : null}
       {children}
     </ButtonContainer>
   )

@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { N100_COLOR, N300_COLOR, C200_COLOR } from '../../../colors'
 
 export const textStyle = css`

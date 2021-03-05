@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React, { Children, isValidElement, cloneElement, ReactElement } from 'react'
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 
 import { Color, R400_COLOR } from '../../../colors/index'
 

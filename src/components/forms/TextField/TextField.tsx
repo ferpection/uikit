@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React, { useEffect, Fragment, SyntheticEvent, useContext, forwardRef, MutableRefObject } from 'react'
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
 
@@ -88,7 +88,8 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
 
   return (
     <Fragment>
-      {rowCount < 2 ? (
+      {rowCount < 2
+        ? (
         <input
           ref={ref as MutableRefObject<HTMLInputElement>}
           type={inputType}
@@ -110,8 +111,10 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
           onSelect={event => handleSelect(event)}
           {...otherProps}
         />
-      ) : null}
-      {rowCount >= 2 ? (
+          )
+        : null}
+      {rowCount >= 2
+        ? (
         <textarea
           css={[
             baseStyle,
@@ -133,7 +136,8 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
           onSelect={event => handleSelect(event)}
           {...otherProps}
         />
-      ) : null}
+          )
+        : null}
       <FormErrorMessages errors={showableErrors} />
     </Fragment>
   )

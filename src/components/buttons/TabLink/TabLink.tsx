@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { FC } from 'react'
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 import { useRouteMatch } from 'react-router'
 
 import { Button, ButtonProps } from '../Button/Button'

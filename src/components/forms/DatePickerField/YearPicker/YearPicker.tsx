@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { FC, useContext, useState } from 'react'
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 
 import { I18nContext } from '../../../contexts/I18nContext'
 

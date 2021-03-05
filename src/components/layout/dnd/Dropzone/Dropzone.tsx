@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { FC, ReactChild } from 'react'
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 
 import { useDropzone } from './useDropzone'
 import { container } from './styles'

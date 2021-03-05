@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { Children, FC, isValidElement } from 'react'
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 
 import { containerStyles, innerDivElementStyles, innerElementStyles } from './styles'
 import { useMergedFocusHandlers } from '../../../hooks'

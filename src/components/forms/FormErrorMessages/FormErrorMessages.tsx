@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React, { Fragment, useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 
 import { I18nContext } from '../../contexts/I18nContext'
 import { FormErrors } from '../form-errors'

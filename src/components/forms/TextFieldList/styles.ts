@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 import { SANSSERIF_FONTSET } from '../../../fonts'
 import { N300_COLOR, C200_COLOR } from '../../../colors'

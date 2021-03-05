@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { FC, useEffect, Fragment } from 'react'
-import { jsx, Global, css } from '@emotion/core'
+import { jsx, Global, css } from '@emotion/react'
 import WebFontLoader from 'webfontloader'
 
 import { SANSSERIF_FONTSET, OPENSANS_FONT } from '../../fonts'

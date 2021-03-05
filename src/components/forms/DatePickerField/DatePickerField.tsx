@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { FC, useState, SyntheticEvent, useEffect, useContext, Fragment } from 'react'
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 
 import { removeConsecutiveDuplicate } from '../../../utils/array'
 

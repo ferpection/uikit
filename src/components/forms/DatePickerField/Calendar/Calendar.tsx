@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { FC, ReactNode, useContext } from 'react'
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 import { Props as DayzedProps, useDayzed } from 'dayzed'
 
 import { Button } from '../../../buttons/Button/Button'

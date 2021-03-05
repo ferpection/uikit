@@ -10,19 +10,19 @@ To avoid conflicts, those packages aren't automatically installed and doesn't co
 You must have those packages installed in your project in order to use the React components of `@ferpection/uikit`.
 
 ```sh
-yarn add react react-dom react-router-dom @emotion/core
+yarn add react react-dom react-router-dom @emotion/react
 ```
 
 or
 
 ```sh
-pnpm add react react-dom react-router-dom @emotion/core
+pnpm add react react-dom react-router-dom @emotion/react
 ```
 
 or
 
 ```sh
-npm install react react-dom react-router-dom @emotion/core --save
+npm install react react-dom react-router-dom @emotion/react --save
 ```
 
 ## Install

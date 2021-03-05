@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { N500_COLOR } from '../../../../colors'
 
 const buttonWidth = 40
