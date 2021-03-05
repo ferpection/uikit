@@ -73,7 +73,9 @@ export const NonUiKitComponents = args => {
             <CheckboxButton isChecked>Option 2</CheckboxButton>
             <CheckboxButton>Option 3</CheckboxButton>
           </div>
-          <div><CheckboxButton isChecked/></div>
+          <div>
+            <CheckboxButton isChecked />
+          </div>
         </StyledDiv>
         <section>
           <p>This is a section w/ buttons</p>

@@ -16,8 +16,8 @@ const globalConf = {
     }),
     svg({ base64: true }),
     copy({
-      targets: [{ src: 'src/sass/**/*', dest: 'dist/sass'}]
-    })
+      targets: [{ src: 'src/sass/**/*', dest: 'dist/sass' }],
+    }),
   ],
 }
 
