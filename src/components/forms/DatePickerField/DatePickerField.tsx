@@ -35,6 +35,12 @@ export interface DatePickerFieldProps extends FormProps {
   hideErrors?: boolean
   className?: string
   isHighlighted?: boolean
+
+  dateLanguage?: string
+  previousButtonLabel?: string
+  nextButtonLabel?: string
+  yearComponentTitle?: string
+  monthComponentTitle?: string
 }
 
 export const DatePickerField: FC<DatePickerFieldProps> = props => {
@@ -49,9 +55,10 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
     onErrors,
     hideErrors,
     validators,
+    dateLanguage = 'en',
     ...otherProps
   } = props
-  const { addTranslations, t } = useContext(I18nContext)
+  const { addTranslations } = useContext(I18nContext)
   const [value, setValue] = useState(initialValue)
   const [modalState, setModalState] = useState<number | null>(null)
   const [errors, setErrors] = useState<FormErrors>({})
@@ -130,7 +137,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
         <TextField
           value={value?.toLocaleDateString('fr-FR', { day: '2-digit', year: 'numeric', month: '2-digit' })}
           isSmall={isSmall}
-          placeholder={placeholder || t('uikit:datePlaceholder')}
+          placeholder={placeholder || 'dd/mm/yyyy'}
           onValueChange={handleTextFieldChange}
           onFocus={handleTextFieldFocus}
           onBlur={onBlur}
@@ -141,6 +148,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
         />
         {displayDateSelector && (
           <Calendar
+            language={dateLanguage}
             onDateSelected={({ date }) => {
               setValue(date)
 
@@ -161,6 +169,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
         )}
         {displayMonthSelector && (
           <MonthPicker
+            language={dateLanguage}
             isSmall={isSmall}
             selected={value?.getMonth()}
             onMonthSelected={month => {

@@ -1,29 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, boolean, select } from '@storybook/addon-knobs'
 
-import { DatePickerField, UiKitInitializer } from '../../src/components/index.ts'
-
-import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
-
-i18n.use(initReactI18next).init({
-  fallbackLng: 'fr',
-  resources: {
-    en: {},
-    fr: {},
-    zh_HANS: {},
-  },
-
-  ns: ['common'],
-  defaultNS: 'common',
-
-  debug: true,
-  interpolation: {
-    escapeValue: false, // not needed for react as it escapes by default
-  },
-})
+import { DatePickerField } from '../../src/components/index.ts'
 
 export default {
   title: 'Components/Forms/DatePickerField',
@@ -35,48 +15,30 @@ export const NormalState = () => {
   const isSmall = boolean('is small', false)
   const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr', 'ko'])
 
-  useEffect(() => {
-    i18n.changeLanguage(lang)
-  }, [lang])
-
   return (
-    <UiKitInitializer i18n={i18n}>
-      <DatePickerField isSmall={isSmall} />
-      <p>
-        <strong>The sample is wrapped with {UiKitInitializer.name} to handle the translation using i18next.</strong>{' '}
-        i18next is not provided with this package. You have to install it and configure it yourself.
-      </p>
-    </UiKitInitializer>
+    <DatePickerField isSmall={isSmall} dateLanguage={lang} />
   )
 }
 
 export const ErrorState = () => {
   const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr'])
 
-  useEffect(() => {
-    i18n.changeLanguage(lang)
-  }, [lang])
-
   return (
-    <UiKitInitializer i18n={i18n}>
-      <DatePickerField isRequired />
-      <DatePickerField isRequired isSmall />
-    </UiKitInitializer>
+    <>
+      <DatePickerField isRequired dateLanguage={lang} />
+      <DatePickerField isRequired isSmall dateLanguage={lang} />
+    </>
   )
 }
 
 export const DisabledState = () => {
   const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr'])
 
-  useEffect(() => {
-    i18n.changeLanguage(lang)
-  }, [lang])
-
   return (
-    <UiKitInitializer i18n={i18n}>
-      <DatePickerField isDisabled />
-      <DatePickerField isSmall isDisabled />
-    </UiKitInitializer>
+    <>
+      <DatePickerField isDisabled dateLanguage={lang} />
+      <DatePickerField isSmall isDisabled dateLanguage={lang} />
+    </>
   )
 }
 
@@ -84,82 +46,64 @@ export const BirthDateExample = () => {
   const isSmall = boolean('is small', false)
   const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr'])
 
-  useEffect(() => {
-    i18n.changeLanguage(lang)
-  }, [lang])
-
   return (
-    <UiKitInitializer i18n={i18n}>
-      <DatePickerField isSmall={isSmall} dateComponentSelectors={['date', 'year', 'year', 'month', 'date']} />
-    </UiKitInitializer>
+    <DatePickerField isSmall={isSmall} dateComponentSelectors={['date', 'year', 'year', 'month', 'date']} dateLanguage={lang} />
   )
 }
 
 export const OneDateComponentBehavior = () => {
   const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr'])
 
-  useEffect(() => {
-    i18n.changeLanguage(lang)
-  }, [lang])
-
   return (
-    <UiKitInitializer i18n={i18n}>
+    <>
       <pre>{"dateComponentSelectors={['date']}"}</pre>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['date']} />
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['date']} dateLanguage={lang} />
       <pre>{"dateComponentSelectors={['month']}"}</pre>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month']} />
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month']} dateLanguage={lang} />
       <pre>{"dateComponentSelectors={['year']}"}</pre>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year']} />
-    </UiKitInitializer>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year']} dateLanguage={lang} />
+    </>
   )
 }
 
 export const TwoDateComponentsBehavior = () => {
   const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr'])
 
-  useEffect(() => {
-    i18n.changeLanguage(lang)
-  }, [lang])
-
   return (
-    <UiKitInitializer i18n={i18n}>
+    <>
       <pre>{"dateComponentSelectors={['date', 'year']}"}</pre>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['date', 'year']} />
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['date', 'year']} dateLanguage={lang} />
       <pre>{"dateComponentSelectors={['date', 'month']}"}</pre>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['date', 'month']} />
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['date', 'month']} dateLanguage={lang} />
       <pre>{"dateComponentSelectors={['month', 'year']}"}</pre>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month', 'year']} />
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month', 'year']} dateLanguage={lang} />
       <pre>{"dateComponentSelectors={['month', 'date']}"}</pre>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month', 'date']} />
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month', 'date']} dateLanguage={lang} />
       <pre>{"dateComponentSelectors={['year', 'month']}"}</pre>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year', 'month']} />
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year', 'month']} dateLanguage={lang} />
       <pre>{"dateComponentSelectors={['year', 'date']}"}</pre>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year', 'date']} />
-    </UiKitInitializer>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year', 'date']} dateLanguage={lang} />
+    </>
   )
 }
 
 export const ThreeDateComponentsBehavior = () => {
   const lang = select('language', ['fr', 'en', 'zh_HANS', 'fr'])
 
-  useEffect(() => {
-    i18n.changeLanguage(lang)
-  }, [lang])
-
   return (
-    <UiKitInitializer i18n={i18n}>
+    <>
       <pre>{"dateComponentSelectors={['date', 'year', 'month']}"}</pre>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['date', 'year', 'month']} />
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['date', 'year', 'month']} dateLanguage={lang} />
       <pre>{"dateComponentSelectors={['date', 'month', 'year']}"}</pre>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['date', 'month', 'year']} />
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['date', 'month', 'year']} dateLanguage={lang} />
       <pre>{"dateComponentSelectors={['month', 'year', 'date']}"}</pre>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month', 'year', 'date']} />
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month', 'year', 'date']} dateLanguage={lang} />
       <pre>{"dateComponentSelectors={['year', 'month', 'date']}"}</pre>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year', 'month', 'date']} />
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year', 'month', 'date']} dateLanguage={lang} />
       <pre>{"dateComponentSelectors={['month', 'date', 'year']}"}</pre>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month', 'date', 'year']} />
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['month', 'date', 'year']} dateLanguage={lang} />
       <pre>{"dateComponentSelectors={['year', 'date', 'month']}"}</pre>
-      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year', 'date', 'month']} />
-    </UiKitInitializer>
+      <DatePickerField isSmall={boolean('is small', false)} dateComponentSelectors={['year', 'date', 'month']} dateLanguage={lang} />
+    </>
   )
 }
