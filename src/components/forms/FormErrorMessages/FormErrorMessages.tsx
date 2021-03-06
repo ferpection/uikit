@@ -1,37 +1,51 @@
 /** @jsx jsx */
-import React, { Fragment, useContext } from 'react'
+import { Fragment, FC } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { jsx } from '@emotion/react'
 
-import { I18nContext } from '../../contexts/I18nContext'
 import { FormErrors } from '../form-errors'
 
 import { errorStyle, iconStyle } from './styles'
 
 export interface FormErrorMessagesProps {
-  errors: FormErrors
+  errors?: FormErrors
+  translatedErrors?: string[]
   className?: string
+  translatorFn?: (translationKey: string, variables?: { [variableName: string]: any }) => string
 }
 
-export const FormErrorMessages: React.FC<FormErrorMessagesProps> = props => {
-  const { t } = useContext(I18nContext)
-  const { errors, className } = props
+export const FormErrorMessages: FC<FormErrorMessagesProps> = props => {
+  const { errors = {}, translatedErrors = [], className, translatorFn = value => value } = props
+
+  function renderError(text: string) {
+    return (
+      <p key={text} className={className} css={errorStyle}>
+        <FontAwesomeIcon icon="exclamation-triangle" css={iconStyle} />
+        {text}
+      </p>
+    )
+  }
 
   return (
     <Fragment>
+      {translatedErrors.map(errorText => renderError(errorText))}
       {Object.keys(errors)
         .filter(errorName => errors[errorName] !== false)
         .map(errorName => {
           const error = errors[errorName]
 
-          return (
-            <p key={errorName} className={className} css={errorStyle}>
-              <FontAwesomeIcon icon="exclamation-triangle" css={iconStyle} />
-              {error === true ? t(errorName) : null}
-              {typeof error !== 'boolean' ? t(errorName, error) : null}
-            </p>
-          )
-        })}
+          if (error === true) {
+            return translatorFn(errorName)
+          }
+
+          if (typeof error !== 'boolean') {
+            return translatorFn(errorName, error)
+          }
+
+          return null
+        })
+        .filter(errorText => errorText != null)
+        .map(errorText => renderError(errorText))}
     </Fragment>
   )
 }
