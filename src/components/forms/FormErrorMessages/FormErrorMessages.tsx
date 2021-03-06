@@ -28,7 +28,9 @@ export const FormErrorMessages: FC<FormErrorMessagesProps> = props => {
 
   return (
     <Fragment>
-      {translatedErrors.map(errorText => renderError(errorText))}
+      {translatedErrors
+        .filter(errorText => errorText != null)
+        .map(errorText => renderError(errorText))}
       {Object.keys(errors)
         .filter(errorName => errors[errorName] !== false)
         .map(errorName => {
