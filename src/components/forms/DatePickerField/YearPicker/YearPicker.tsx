@@ -15,17 +15,17 @@ interface YearPickerProps {
 
   previousButtonLabel?: string
   nextButtonLabel?: string
-  yearComponentTitle?: string
+  title?: string
 }
 
-export const YearPicker: FC<YearPickerProps> = ({ isSmall, selected, onYearSelected = () => {}, previousButtonLabel, nextButtonLabel, yearComponentTitle = 'Years' }) => {
+export const YearPicker: FC<YearPickerProps> = ({ isSmall, selected, onYearSelected = () => {}, previousButtonLabel, nextButtonLabel, title = 'Years' }) => {
   const [firstYear, setFirstYear] = useState((selected ?? CURRENT_YEAR) - Math.trunc(BUTTONS_QUANTITY / 2))
 
   const years = new Array(BUTTONS_QUANTITY).fill(firstYear).map((year, index) => year + index)
 
   return (
     <CalendarContainer
-      title={yearComponentTitle}
+      title={title}
       isSmall={isSmall}
       previousButtonArgs={{ onClick: () => setFirstYear(firstYear - BUTTONS_QUANTITY) }}
       nextButtonArgs={{ onClick: () => setFirstYear(firstYear + BUTTONS_QUANTITY) }}

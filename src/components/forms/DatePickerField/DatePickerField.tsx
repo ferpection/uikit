@@ -1,10 +1,9 @@
 /** @jsx jsx */
-import { FC, useState, SyntheticEvent, useEffect, useContext, Fragment } from 'react'
+import { FC, useState, SyntheticEvent, useEffect, Fragment } from 'react'
 import { jsx } from '@emotion/react'
 
 import { removeConsecutiveDuplicate } from '../../../utils/array'
 
-import { I18nContext } from '../../contexts/I18nContext'
 import { Button } from '../../buttons/Button/Button'
 
 import { TextField } from '../TextField/TextField'
@@ -17,7 +16,6 @@ import { YearPicker } from './YearPicker/YearPicker'
 import { MonthPicker } from './MonthPicker/MonthPicker'
 
 import { datePickerContainer, datePickerContainerSmall, calendarButton, calendarButtonSmall } from './styles'
-import { englishStrings, frenchStrings, chineseStrings, koreanStrings } from './locales'
 
 export enum DateComponent {
   Date = 'date',
@@ -56,17 +54,15 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
     hideErrors,
     validators,
     dateLanguage = 'en',
+    previousButtonLabel,
+    nextButtonLabel,
+    yearComponentTitle,
+    monthComponentTitle,
     ...otherProps
   } = props
-  const { addTranslations } = useContext(I18nContext)
   const [value, setValue] = useState(initialValue)
   const [modalState, setModalState] = useState<number | null>(null)
   const [errors, setErrors] = useState<FormErrors>({})
-
-  addTranslations('en', englishStrings)
-  addTranslations('fr', frenchStrings)
-  addTranslations('zh_HANS', chineseStrings)
-  addTranslations('ko', koreanStrings)
 
   useEffect(() => setValue(initialValue), [initialValue])
   useEffect(() => onValueChange(value), [value])
@@ -148,6 +144,8 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
         />
         {displayDateSelector && (
           <Calendar
+            previousButtonLabel={previousButtonLabel}
+            nextButtonLabel={nextButtonLabel}
             language={dateLanguage}
             onDateSelected={({ date }) => {
               setValue(date)
@@ -169,6 +167,9 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
         )}
         {displayMonthSelector && (
           <MonthPicker
+            previousButtonLabel={previousButtonLabel}
+            nextButtonLabel={nextButtonLabel}
+            title={monthComponentTitle}
             language={dateLanguage}
             isSmall={isSmall}
             selected={value?.getMonth()}
@@ -183,6 +184,9 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
         )}
         {displayYearSelector && (
           <YearPicker
+            previousButtonLabel={previousButtonLabel}
+            nextButtonLabel={nextButtonLabel}
+            title={yearComponentTitle}
             isSmall={isSmall}
             selected={value?.getFullYear()}
             onYearSelected={year => {

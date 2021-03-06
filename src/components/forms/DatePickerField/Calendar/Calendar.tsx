@@ -24,10 +24,12 @@ export interface CalendarProps extends DayzedProps {
   enableOtherDateComponentSelection?: boolean
   onOtherDateComponentSelectionAsked?: () => void
   language: string
+  previousButtonLabel?: string
+  nextButtonLabel?: string
 }
 
 export const Calendar: FC<CalendarProps> = props => {
-  const { isSmall, enableOtherDateComponentSelection, onOtherDateComponentSelectionAsked = () => {}, language } = props
+  const { isSmall, enableOtherDateComponentSelection, onOtherDateComponentSelectionAsked = () => {}, language, previousButtonLabel, nextButtonLabel } = props
   const { calendars, getBackProps, getDateProps, getForwardProps } = useDayzed(props)
 
   const [calendar] = calendars
@@ -49,6 +51,8 @@ export const Calendar: FC<CalendarProps> = props => {
       isSmall={isSmall}
       previousButtonArgs={getBackProps({ calendars })}
       nextButtonArgs={getForwardProps({ calendars })}
+      previousButtonLabel={previousButtonLabel}
+      nextButtonLabel={nextButtonLabel}
     >
       <div key={`${calendar.month}${calendar.year}`}>
         {weekdayNamesShort.map(weekday => (

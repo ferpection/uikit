@@ -19,14 +19,14 @@ interface MonthPickerProps {
   language: string
   previousButtonLabel?: string
   nextButtonLabel?: string
-  monthComponentTitle?: string
+  title?: string
 }
 
-export const MonthPicker: FC<MonthPickerProps> = ({ isSmall, selected, onMonthSelected = () => {}, previousButtonLabel, nextButtonLabel, monthComponentTitle = 'Months', language }) => {
+export const MonthPicker: FC<MonthPickerProps> = ({ isSmall, selected, onMonthSelected = () => {}, previousButtonLabel, nextButtonLabel, title = 'Months', language }) => {
   const months = new Array(12).fill(0).map((_, i) => composeMonthName(i, language))
 
   return (
-    <CalendarContainer title={monthComponentTitle} isSmall={isSmall} previousButtonLabel={previousButtonLabel} nextButtonLabel={nextButtonLabel}>
+    <CalendarContainer title={title} isSmall={isSmall} previousButtonLabel={previousButtonLabel} nextButtonLabel={nextButtonLabel}>
       {months.map((month, index) => (
         <PickerButton
           key={month}
