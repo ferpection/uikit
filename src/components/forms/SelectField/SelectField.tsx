@@ -30,6 +30,10 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
     required: 'Please fill the field.',
   })
 
+  addTranslations('ko', {
+    required: '필드를 채우십시오.',
+  })
+
   addTranslations('zh_HANS', {
     required: '请填写该字段。',
   })
