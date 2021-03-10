@@ -103,13 +103,19 @@ export function FileField(props: FileFieldProps) {
             <div css={[placeholderStyle, isDisabled && placeholderDisabledStyle]}>{placeholder}</div>
           )}
           {files.length === 1 && <div css={[valueStyle]}>{files[0].name.split(/(\\|\/)/).pop()}</div>}
-          {files.length > 1 && <div css={[valueStyle]}>{typeof severalFilesSelectedLabel === 'string' ? severalFilesSelectedLabel : severalFilesSelectedLabel(files.length)}</div>}
+          {files.length > 1 && (
+            <div css={[valueStyle]}>
+              {typeof severalFilesSelectedLabel === 'string'
+                ? severalFilesSelectedLabel
+                : severalFilesSelectedLabel(files.length)}
+            </div>
+          )}
           <div css={[button, isDisabled && buttonDisabledStyle]} role="button">
             {browseButtonLabel}
           </div>
         </div>
       </label>
-      {canDisplayEmptyError && (<FormErrorMessages translatedErrors={['Please fill the field.']} />)}
+      {canDisplayEmptyError && <FormErrorMessages translatedErrors={['Please fill the field.']} />}
     </Fragment>
   )
 }

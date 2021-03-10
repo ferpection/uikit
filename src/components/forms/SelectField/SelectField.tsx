@@ -71,9 +71,7 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
         <option disabled={!isEmpty}>{placeholder}</option>
         {children}
       </select>
-      {canDisplayEmptyError && (
-        <FormErrorMessages translatedErrors={['Please fill the field.']} />
-      )}
+      {canDisplayEmptyError && <FormErrorMessages translatedErrors={['Please fill the field.']} />}
     </Fragment>
   )
 }

@@ -22,11 +22,24 @@ interface MonthPickerProps {
   title?: string
 }
 
-export const MonthPicker: FC<MonthPickerProps> = ({ isSmall, selected, onMonthSelected = () => {}, previousButtonLabel, nextButtonLabel, title = 'Months', language }) => {
+export const MonthPicker: FC<MonthPickerProps> = ({
+  isSmall,
+  selected,
+  onMonthSelected = () => {},
+  previousButtonLabel,
+  nextButtonLabel,
+  title = 'Months',
+  language,
+}) => {
   const months = new Array(12).fill(0).map((_, i) => composeMonthName(i, language))
 
   return (
-    <CalendarContainer title={title} isSmall={isSmall} previousButtonLabel={previousButtonLabel} nextButtonLabel={nextButtonLabel}>
+    <CalendarContainer
+      title={title}
+      isSmall={isSmall}
+      previousButtonLabel={previousButtonLabel}
+      nextButtonLabel={nextButtonLabel}
+    >
       {months.map((month, index) => (
         <PickerButton
           key={month}

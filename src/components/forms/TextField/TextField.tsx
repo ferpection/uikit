@@ -123,8 +123,10 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
         />
           )
         : null}
-      {canDisplayEmptyError && (<FormErrorMessages translatedErrors={['Please fill the field.']} />)}
-      {canDisplayInvalidEmailError && (<FormErrorMessages translatedErrors={['Please enter an email address on this field.']} />)}
+      {canDisplayEmptyError && <FormErrorMessages translatedErrors={['Please fill the field.']} />}
+      {canDisplayInvalidEmailError && (
+        <FormErrorMessages translatedErrors={['Please enter an email address on this field.']} />
+      )}
     </Fragment>
   )
 })

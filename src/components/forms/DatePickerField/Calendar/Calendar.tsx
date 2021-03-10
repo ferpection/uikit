@@ -12,7 +12,9 @@ import { DatePickerButton } from './DatePickerButton/DatePickerButton'
 import { headerWeekday, calendarBoard, emptyButtonSpace } from './styles'
 
 function composeMonthName(monthIndex: number, year: number, language = 'en') {
-  return Intl.DateTimeFormat(language.replace(/_/g, '-'), { month: 'short', year: 'numeric' }).format(new Date(year, monthIndex))
+  return Intl.DateTimeFormat(language.replace(/_/g, '-'), { month: 'short', year: 'numeric' }).format(
+    new Date(year, monthIndex),
+  )
 }
 
 function composeWeekDayName(dayIndex: number, language = 'en') {
@@ -29,7 +31,14 @@ export interface CalendarProps extends DayzedProps {
 }
 
 export const Calendar: FC<CalendarProps> = props => {
-  const { isSmall, enableOtherDateComponentSelection, onOtherDateComponentSelectionAsked = () => {}, language, previousButtonLabel, nextButtonLabel } = props
+  const {
+    isSmall,
+    enableOtherDateComponentSelection,
+    onOtherDateComponentSelectionAsked = () => {},
+    language,
+    previousButtonLabel,
+    nextButtonLabel,
+  } = props
   const { calendars, getBackProps, getDateProps, getForwardProps } = useDayzed(props)
 
   const [calendar] = calendars

@@ -18,7 +18,14 @@ interface YearPickerProps {
   title?: string
 }
 
-export const YearPicker: FC<YearPickerProps> = ({ isSmall, selected, onYearSelected = () => {}, previousButtonLabel, nextButtonLabel, title = 'Years' }) => {
+export const YearPicker: FC<YearPickerProps> = ({
+  isSmall,
+  selected,
+  onYearSelected = () => {},
+  previousButtonLabel,
+  nextButtonLabel,
+  title = 'Years',
+}) => {
   const [firstYear, setFirstYear] = useState((selected ?? CURRENT_YEAR) - Math.trunc(BUTTONS_QUANTITY / 2))
 
   const years = new Array(BUTTONS_QUANTITY).fill(firstYear).map((year, index) => year + index)

@@ -199,9 +199,11 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
           />
         )}
       </div>
-      {hideErrors === false && <FormErrorMessages translatedErrors={[
-        errors['uikit:invalidDate'] && 'Please enter a valid date (dd/mm/yyyy)',
-      ]} />}
+      {hideErrors === false && (
+        <FormErrorMessages
+          translatedErrors={[errors['uikit:invalidDate'] && 'Please enter a valid date (dd/mm/yyyy)']}
+        />
+      )}
     </Fragment>
   )
 }
