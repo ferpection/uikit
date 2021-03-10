@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) since [v0.1.0].
 
 ## [Unreleased]
+
+## [v1.0.0] - 2021-03-10
 ### Added
 - UiKit components provide new attributes to let developes override their strings.
   It can be used to customize the components or to translate it.
@@ -499,6 +501,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v1.0.0]: https://github.com/ferpection/uikit/tree/v1.0.0
 [v0.12.1]: https://github.com/ferpection/uikit/tree/v0.12.1
 [v0.12.0]: https://github.com/ferpection/uikit/tree/v0.12.0
 [v0.11.1]: https://github.com/ferpection/uikit/tree/v0.11.1
