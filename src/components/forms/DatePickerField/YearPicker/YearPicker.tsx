@@ -1,8 +1,6 @@
 /** @jsx jsx */
-import { FC, useContext, useState } from 'react'
+import { FC, useState } from 'react'
 import { jsx } from '@emotion/react'
-
-import { I18nContext } from '../../../contexts/I18nContext'
 
 import { CalendarContainer } from '../CalendarContainer/CalendarContainer'
 import { PickerButton } from '../PickerButton/PickerButton'
@@ -14,20 +12,25 @@ interface YearPickerProps {
   isSmall?: boolean
   selected?: number
   onYearSelected?: (year: number) => void
+
+  previousButtonLabel?: string
+  nextButtonLabel?: string
+  title?: string
 }
 
-export const YearPicker: FC<YearPickerProps> = ({ isSmall, selected, onYearSelected = () => {} }) => {
-  const { t } = useContext(I18nContext)
+export const YearPicker: FC<YearPickerProps> = ({ isSmall, selected, onYearSelected = () => {}, previousButtonLabel, nextButtonLabel, title = 'Years' }) => {
   const [firstYear, setFirstYear] = useState((selected ?? CURRENT_YEAR) - Math.trunc(BUTTONS_QUANTITY / 2))
 
   const years = new Array(BUTTONS_QUANTITY).fill(firstYear).map((year, index) => year + index)
 
   return (
     <CalendarContainer
-      title={t('uikit:years')}
+      title={title}
       isSmall={isSmall}
       previousButtonArgs={{ onClick: () => setFirstYear(firstYear - BUTTONS_QUANTITY) }}
       nextButtonArgs={{ onClick: () => setFirstYear(firstYear + BUTTONS_QUANTITY) }}
+      previousButtonLabel={previousButtonLabel}
+      nextButtonLabel={nextButtonLabel}
     >
       {years.map(year => (
         <PickerButton

@@ -1,10 +1,9 @@
 /** @jsx jsx */
-import { FC, useState, SyntheticEvent, useEffect, useContext, Fragment } from 'react'
+import { FC, useState, SyntheticEvent, useEffect, Fragment } from 'react'
 import { jsx } from '@emotion/react'
 
 import { removeConsecutiveDuplicate } from '../../../utils/array'
 
-import { I18nContext } from '../../contexts/I18nContext'
 import { Button } from '../../buttons/Button/Button'
 
 import { TextField } from '../TextField/TextField'
@@ -17,7 +16,6 @@ import { YearPicker } from './YearPicker/YearPicker'
 import { MonthPicker } from './MonthPicker/MonthPicker'
 
 import { datePickerContainer, datePickerContainerSmall, calendarButton, calendarButtonSmall } from './styles'
-import { englishStrings, frenchStrings, chineseStrings, koreanStrings } from './locales'
 
 export enum DateComponent {
   Date = 'date',
@@ -35,6 +33,12 @@ export interface DatePickerFieldProps extends FormProps {
   hideErrors?: boolean
   className?: string
   isHighlighted?: boolean
+
+  dateLanguage?: string
+  previousButtonLabel?: string
+  nextButtonLabel?: string
+  yearComponentTitle?: string
+  monthComponentTitle?: string
 }
 
 export const DatePickerField: FC<DatePickerFieldProps> = props => {
@@ -49,17 +53,16 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
     onErrors,
     hideErrors,
     validators,
+    dateLanguage = 'en',
+    previousButtonLabel,
+    nextButtonLabel,
+    yearComponentTitle,
+    monthComponentTitle,
     ...otherProps
   } = props
-  const { addTranslations, t } = useContext(I18nContext)
   const [value, setValue] = useState(initialValue)
   const [modalState, setModalState] = useState<number | null>(null)
   const [errors, setErrors] = useState<FormErrors>({})
-
-  addTranslations('en', englishStrings)
-  addTranslations('fr', frenchStrings)
-  addTranslations('zh_HANS', chineseStrings)
-  addTranslations('ko', koreanStrings)
 
   useEffect(() => setValue(initialValue), [initialValue])
   useEffect(() => onValueChange(value), [value])
@@ -130,7 +133,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
         <TextField
           value={value?.toLocaleDateString('fr-FR', { day: '2-digit', year: 'numeric', month: '2-digit' })}
           isSmall={isSmall}
-          placeholder={placeholder || t('uikit:datePlaceholder')}
+          placeholder={placeholder || 'dd/mm/yyyy'}
           onValueChange={handleTextFieldChange}
           onFocus={handleTextFieldFocus}
           onBlur={onBlur}
@@ -141,6 +144,9 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
         />
         {displayDateSelector && (
           <Calendar
+            previousButtonLabel={previousButtonLabel}
+            nextButtonLabel={nextButtonLabel}
+            language={dateLanguage}
             onDateSelected={({ date }) => {
               setValue(date)
 
@@ -161,6 +167,10 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
         )}
         {displayMonthSelector && (
           <MonthPicker
+            previousButtonLabel={previousButtonLabel}
+            nextButtonLabel={nextButtonLabel}
+            title={monthComponentTitle}
+            language={dateLanguage}
             isSmall={isSmall}
             selected={value?.getMonth()}
             onMonthSelected={month => {
@@ -174,6 +184,9 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
         )}
         {displayYearSelector && (
           <YearPicker
+            previousButtonLabel={previousButtonLabel}
+            nextButtonLabel={nextButtonLabel}
+            title={yearComponentTitle}
             isSmall={isSmall}
             selected={value?.getFullYear()}
             onYearSelected={year => {
@@ -186,7 +199,9 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
           />
         )}
       </div>
-      {hideErrors === false && <FormErrorMessages errors={errors} />}
+      {hideErrors === false && <FormErrorMessages translatedErrors={[
+        errors['uikit:invalidDate'] && 'Please enter a valid date (dd/mm/yyyy)',
+      ]} />}
     </Fragment>
   )
 }

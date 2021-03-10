@@ -1,10 +1,9 @@
 /** @jsx jsx */
-import React, { useState, useEffect, Fragment, ChangeEvent, SyntheticEvent, useContext } from 'react'
+import React, { useState, useEffect, Fragment, ChangeEvent, SyntheticEvent } from 'react'
 import { jsx } from '@emotion/react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
 
-import { I18nContext } from '../../contexts/I18nContext'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { defaultFormProps, FormProps } from '../form-props'
 
@@ -21,26 +20,8 @@ export interface SelectFieldProps extends FormProps {
 
 export const SelectField: React.FC<SelectFieldProps> = props => {
   const { value: externalValue } = props
-
-  const { addTranslations } = useContext(I18nContext)
   const [value, setValue] = useState(externalValue || '')
   useEffect(() => setValue(externalValue), [externalValue])
-
-  addTranslations('en', {
-    required: 'Please fill the field.',
-  })
-
-  addTranslations('ko', {
-    required: '필드를 채우십시오.',
-  })
-
-  addTranslations('zh_HANS', {
-    required: '请填写该字段。',
-  })
-
-  addTranslations('fr', {
-    required: 'Vous devez remplir le champ.',
-  })
 
   const {
     onValueChange = () => {},
@@ -67,6 +48,7 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
 
   const { className, isSmall = false, placeholder, isHighlighted = false, isDisabled, children } = props
   const isEmpty = Boolean(errors['uikit:required'])
+  const canDisplayEmptyError = Boolean(showableErrors['uikit:required'])
 
   return (
     <Fragment>
@@ -89,7 +71,9 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
         <option disabled={!isEmpty}>{placeholder}</option>
         {children}
       </select>
-      <FormErrorMessages errors={showableErrors} />
+      {canDisplayEmptyError && (
+        <FormErrorMessages translatedErrors={['Please fill the field.']} />
+      )}
     </Fragment>
   )
 }

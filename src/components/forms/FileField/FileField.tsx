@@ -1,10 +1,8 @@
 /** @jsx jsx */
-import React, { useState, useEffect, SyntheticEvent, Fragment, useRef, useContext } from 'react'
+import React, { useState, useEffect, SyntheticEvent, Fragment, useRef } from 'react'
 import { jsx } from '@emotion/react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
-
-import { I18nContext } from '../../contexts/I18nContext'
 
 import { defaultFormProps, FormProps } from '../form-props'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
@@ -24,6 +22,8 @@ import {
 
 export interface FileFieldProps extends FormProps {
   value?: File[]
+  browseButtonLabel?: string
+  severalFilesSelectedLabel?: string | ((count: number) => string)
   isHighlighted?: boolean
   isMultiple?: boolean
   accept?: string
@@ -34,41 +34,13 @@ export interface FileFieldProps extends FormProps {
 }
 
 export function FileField(props: FileFieldProps) {
-  const { addTranslations, t } = useContext(I18nContext)
-
-  addTranslations('en', {
-    fileAmount: '{ $count } files',
-    browse: 'Browse',
-    required: 'Please fill the field.',
-    placeholder: 'Choose a file...',
-  })
-
-  addTranslations('zh_HANS', {
-    fileAmount: '{ $count }档',
-    required: '请填写该字段。',
-    browse: '浏览',
-    placeholder: '选择一个文件...',
-  })
-
-  addTranslations('fr', {
-    fileAmount: '{ $count } fichiers',
-    browse: 'Choisir',
-    required: 'Vous devez remplir le champ.',
-    placeholder: 'Choisissez un fichier...',
-  })
-
-  addTranslations('ko', {
-    fileAmount: '{ $count } 개 파일 ',
-    browse: '검색',
-    required: '필드를 채우십시오.',
-    placeholder: '파일 선택 ...',
-  })
-
   const {
     className,
     accept,
     capture,
-    placeholder = t('uikit:placeholder'),
+    placeholder = 'Choose a file...',
+    browseButtonLabel = 'Browse',
+    severalFilesSelectedLabel = count => `${count} files`,
     isDisabled = false,
     isHighlighted = false,
     isRequired = false,
@@ -106,6 +78,8 @@ export function FileField(props: FileFieldProps) {
 
   useEffect(() => onErrors(errors), [errors])
 
+  const canDisplayEmptyError = Boolean(showableErrors['uikit:required'])
+
   return (
     <Fragment>
       <label>
@@ -129,13 +103,13 @@ export function FileField(props: FileFieldProps) {
             <div css={[placeholderStyle, isDisabled && placeholderDisabledStyle]}>{placeholder}</div>
           )}
           {files.length === 1 && <div css={[valueStyle]}>{files[0].name.split(/(\\|\/)/).pop()}</div>}
-          {files.length > 1 && <div css={[valueStyle]}>{t('uikit:fileAmount', { count: files.length })}</div>}
+          {files.length > 1 && <div css={[valueStyle]}>{typeof severalFilesSelectedLabel === 'string' ? severalFilesSelectedLabel : severalFilesSelectedLabel(files.length)}</div>}
           <div css={[button, isDisabled && buttonDisabledStyle]} role="button">
-            {t('uikit:browse')}
+            {browseButtonLabel}
           </div>
         </div>
       </label>
-      <FormErrorMessages errors={showableErrors} />
+      {canDisplayEmptyError && (<FormErrorMessages translatedErrors={['Please fill the field.']} />)}
     </Fragment>
   )
 }

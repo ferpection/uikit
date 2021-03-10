@@ -1,43 +1,36 @@
 /** @jsx jsx */
-import { FC, useContext } from 'react'
+import { FC } from 'react'
 import { jsx } from '@emotion/react'
-
-import { I18nContext } from '../../../contexts/I18nContext'
 
 import { CalendarContainer } from '../CalendarContainer/CalendarContainer'
 import { PickerButton } from '../PickerButton/PickerButton'
 
 const CURRENT_MONTH = new Date().getMonth()
-const MONTHS = [
-  'uikit:januaryFull',
-  'uikit:februaryFull',
-  'uikit:marchFull',
-  'uikit:aprilFull',
-  'uikit:mayFull',
-  'uikit:juneFull',
-  'uikit:julyFull',
-  'uikit:augustFull',
-  'uikit:septemberFull',
-  'uikit:octoberFull',
-  'uikit:novemberFull',
-  'uikit:decemberFull',
-]
+
+function composeMonthName(monthIndex: number, language = 'en') {
+  return Intl.DateTimeFormat(language.replace(/_/g, '-'), { month: 'long' }).format(new Date(2021, monthIndex))
+}
 
 interface MonthPickerProps {
   isSmall?: boolean
   selected?: number
   onMonthSelected?: (year: number) => void
+
+  language: string
+  previousButtonLabel?: string
+  nextButtonLabel?: string
+  title?: string
 }
 
-export const MonthPicker: FC<MonthPickerProps> = ({ isSmall, selected, onMonthSelected = () => {} }) => {
-  const { t } = useContext(I18nContext)
+export const MonthPicker: FC<MonthPickerProps> = ({ isSmall, selected, onMonthSelected = () => {}, previousButtonLabel, nextButtonLabel, title = 'Months', language }) => {
+  const months = new Array(12).fill(0).map((_, i) => composeMonthName(i, language))
 
   return (
-    <CalendarContainer title={t('uikit:months')} isSmall={isSmall}>
-      {MONTHS.map((month, index) => (
+    <CalendarContainer title={title} isSmall={isSmall} previousButtonLabel={previousButtonLabel} nextButtonLabel={nextButtonLabel}>
+      {months.map((month, index) => (
         <PickerButton
           key={month}
-          label={t(month)}
+          label={month}
           isSelected={index === selected}
           isCurrent={index === CURRENT_MONTH}
           onClick={() => onMonthSelected(index)}

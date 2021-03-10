@@ -1,10 +1,9 @@
 /** @jsx jsx */
-import { FC, ReactNode, useContext } from 'react'
+import { FC, ReactNode } from 'react'
 import { jsx } from '@emotion/react'
 import { Props as DayzedProps, useDayzed } from 'dayzed'
 
 import { Button } from '../../../buttons/Button/Button'
-import { I18nContext } from '../../../contexts/I18nContext'
 
 import { CalendarContainer } from '../CalendarContainer/CalendarContainer'
 
@@ -12,52 +11,39 @@ import { DatePickerButton } from './DatePickerButton/DatePickerButton'
 
 import { headerWeekday, calendarBoard, emptyButtonSpace } from './styles'
 
-const monthNamesShort = [
-  'uikit:januaryShort',
-  'uikit:februaryShort',
-  'uikit:marchShort',
-  'uikit:aprilShort',
-  'uikit:mayShort',
-  'uikit:juneShort',
-  'uikit:julyShort',
-  'uikit:augustShort',
-  'uikit:septemberShort',
-  'uikit:octoberShort',
-  'uikit:novemberShort',
-  'uikit:decemberShort',
-]
-const weekdayNamesShort = [
-  'uikit:mondayShort',
-  'uikit:tuesdayShort',
-  'uikit:wednesdayShort',
-  'uikit:thursdayShort',
-  'uikit:fridayShort',
-  'uikit:saturdayShort',
-  'uikit:sundayShort',
-]
+function composeMonthName(monthIndex: number, year: number, language = 'en') {
+  return Intl.DateTimeFormat(language.replace(/_/g, '-'), { month: 'short', year: 'numeric' }).format(new Date(year, monthIndex))
+}
+
+function composeWeekDayName(dayIndex: number, language = 'en') {
+  return Intl.DateTimeFormat(language.replace(/_/g, '-'), { weekday: 'short' }).format(new Date(2021, 2, dayIndex + 1))
+}
 
 export interface CalendarProps extends DayzedProps {
   isSmall?: boolean
   enableOtherDateComponentSelection?: boolean
   onOtherDateComponentSelectionAsked?: () => void
+  language: string
+  previousButtonLabel?: string
+  nextButtonLabel?: string
 }
 
 export const Calendar: FC<CalendarProps> = props => {
-  const { isSmall, enableOtherDateComponentSelection, onOtherDateComponentSelectionAsked = () => {} } = props
-
-  const { t } = useContext(I18nContext)
+  const { isSmall, enableOtherDateComponentSelection, onOtherDateComponentSelectionAsked = () => {}, language, previousButtonLabel, nextButtonLabel } = props
   const { calendars, getBackProps, getDateProps, getForwardProps } = useDayzed(props)
 
   const [calendar] = calendars
 
-  let title: ReactNode = `${t(monthNamesShort[calendar.month])} ${calendar.year}`
+  let title: ReactNode = composeMonthName(calendar.month, calendar.year, language)
   if (enableOtherDateComponentSelection) {
     title = (
       <Button isRaw onClick={onOtherDateComponentSelectionAsked}>
-        {t(monthNamesShort[calendar.month])} {calendar.year}
+        {composeMonthName(calendar.month, calendar.year, language)}
       </Button>
     )
   }
+
+  const weekdayNamesShort = new Array(7).fill(0).map((_, i) => composeWeekDayName(i, language))
 
   return (
     <CalendarContainer
@@ -65,11 +51,13 @@ export const Calendar: FC<CalendarProps> = props => {
       isSmall={isSmall}
       previousButtonArgs={getBackProps({ calendars })}
       nextButtonArgs={getForwardProps({ calendars })}
+      previousButtonLabel={previousButtonLabel}
+      nextButtonLabel={nextButtonLabel}
     >
       <div key={`${calendar.month}${calendar.year}`}>
         {weekdayNamesShort.map(weekday => (
           <div key={`${calendar.month}${calendar.year}${weekday}`} css={[headerWeekday]}>
-            {t(weekday)}
+            {weekday}
           </div>
         ))}
         <div css={calendarBoard}>

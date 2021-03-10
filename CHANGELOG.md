@@ -6,12 +6,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- Support for Korean language
+- UiKit components provide new attributes to let developes override their strings.
+  It can be used to customize the components or to translate it.
+  For examples, look at the [`DatePickerField` documentation page](https://ferpection.github.io/uikit/?path=/docs/components-forms-datepickerfield--normal-state).
 
 ### Changed
 - [BREACKING] UiKit now uses React v17
 - [BREACKING] UiKit now uses EmotionJS v11
 - [BREACKING] UiKit now uses Typescript v4.2
+
+### Removed
+- [BREACKING] **No more translation in UiKit sourcecode.** All the strings will be
+  render as English. `UiKitInitializer` doesn't accept your i18n library intance anymore.
+  We added new way of handling translation, see the **Added** section.
 
 ## [v0.12.1] - 2021-02-02
 ### Fixed

@@ -1,10 +1,8 @@
 /** @jsx jsx */
-import React, { useEffect, Fragment, SyntheticEvent, useContext, forwardRef, MutableRefObject } from 'react'
+import React, { useEffect, Fragment, SyntheticEvent, forwardRef, MutableRefObject } from 'react'
 import { jsx } from '@emotion/react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
-
-import { I18nContext } from '../../contexts/I18nContext'
 
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { defaultFormProps, FormProps } from '../form-props'
@@ -48,28 +46,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     ...otherProps
   } = props
 
-  const { addTranslations } = useContext(I18nContext)
   const [value, setValue] = useTextFieldState(externalValue || '', dataType)
-
-  addTranslations('en', {
-    emailInvalid: 'Please enter an email address on this field.',
-    required: 'Please fill the field.',
-  })
-
-  addTranslations('ko', {
-    required: '필드를 채우십시오.',
-    emailInvalid: '이 필드에 이메일 주소를 입력하십시오.',
-  })
-
-  addTranslations('zh_HANS', {
-    emailInvalid: '请在此字段中输入电子邮件地址。',
-    required: '请填写该字段。',
-  })
-
-  addTranslations('fr', {
-    emailInvalid: 'Vous devez écrire une adresse email valide.',
-    required: 'Vous devez remplir le champ.',
-  })
 
   useEffect(() => setValue(externalValue || ''), [externalValue])
   const { isValid, errors, showableErrors } = useFormValidation(
@@ -90,6 +67,9 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
   useEffect(() => handleErrorsChange(errors), [errors])
 
   const inputType = dataType === 'number' ? 'text' : dataType
+
+  const canDisplayEmptyError = Boolean(showableErrors['uikit:required'])
+  const canDisplayInvalidEmailError = Boolean(showableErrors['uikit:emailInvalid'])
 
   return (
     <Fragment>
@@ -143,7 +123,8 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
         />
           )
         : null}
-      <FormErrorMessages errors={showableErrors} />
+      {canDisplayEmptyError && (<FormErrorMessages translatedErrors={['Please fill the field.']} />)}
+      {canDisplayInvalidEmailError && (<FormErrorMessages translatedErrors={['Please enter an email address on this field.']} />)}
     </Fragment>
   )
 })
