@@ -10,7 +10,8 @@
       "jsx": "react",
       "esModuleInterop": true,
       "moduleResolution": "node",
-      "lib": ["es2015", "es2017", "dom"]
+      "lib": ["es2015", "es2017", "dom"],
+      "importHelpers": true
     },
     "include": [
       "src/**/*"
