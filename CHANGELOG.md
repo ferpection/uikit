@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v1.0.1] - 2021-03-11
+### Fix
+- Fix a misconfiguration that prevented TS Lib helpers to be used at runtime
+
 ## [v1.0.0] - 2021-03-10
 ### Added
 - UiKit components provide new attributes to let developes override their strings.
@@ -501,6 +505,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v1.0.1]: https://github.com/ferpection/uikit/tree/v1.0.1
 [v1.0.0]: https://github.com/ferpection/uikit/tree/v1.0.0
 [v0.12.1]: https://github.com/ferpection/uikit/tree/v0.12.1
 [v0.12.0]: https://github.com/ferpection/uikit/tree/v0.12.0
