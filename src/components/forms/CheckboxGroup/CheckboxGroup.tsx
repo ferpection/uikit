@@ -46,9 +46,9 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
     ...validators,
   ])
 
-  useEffect(() => setValues(props.value || []), [props.value])
-  useEffect(() => onValueChange(values), [values])
-  useEffect(() => handleErrors(errors), [errors])
+  useEffect(() => setValues(props.value || []), [props.value.join('-')])
+  useEffect(() => onValueChange(values), [values.join('-')])
+  useEffect(() => handleErrors(errors), [Object.keys(errors).join('-')])
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const option = event.target.value

@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v1.0.2] - 2021-05-11
+### Fix
+- Avoid useless call to `onValueChange` of `CheckboxGroup`. This might have caused React to re-render
+  in an infinite loop in some usecases.
+
 ## [v1.0.1] - 2021-03-11
 ### Fix
 - Fix a misconfiguration that prevented TS Lib helpers to be used at runtime
