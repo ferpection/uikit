@@ -59,8 +59,8 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
     .map(key => inputErrors[key])
     .reduce((aggr, curr) => ({ ...aggr, ...curr }), {})
 
-  useEffect(() => onValueChange(flatValues), [values])
-  useEffect(() => onErrors(errorMessages), [inputErrors])
+  useEffect(() => onValueChange(flatValues), [values.join('-')])
+  useEffect(() => onErrors(errorMessages), [Object.keys(inputErrors).join('-')])
   useEffect(
     () =>
       setValues(
@@ -69,7 +69,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
           text,
         })),
       ),
-    [flatInitialValues.join(',')],
+    [flatInitialValues.join('-')],
   )
 
   const {
@@ -127,8 +127,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
     <Fragment>
       {values.map(value => (
         <li key={value.id} css={[listItem]}>
-          {isEditable && !isDisabled
-            ? (
+          {isEditable && !isDisabled ? (
             <Button
               icon="trash"
               css={[icon, hideAndShowIconOnHover]}
@@ -140,8 +139,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
               onMouseUp={() => handleBlur()}
               onBlur={() => handleBlur()}
             />
-              )
-            : null}
+          ) : null}
           <TextField
             css={[textFieldAdjustments]}
             dataType={dataType}
@@ -158,11 +156,9 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
           />
         </li>
       ))}
-      {isEditable && (maxFieldCount == null || values.length < maxFieldCount)
-        ? (
+      {isEditable && (maxFieldCount == null || values.length < maxFieldCount) ? (
         <li css={[listItem, hideMarker]}>
-          {isOrdered
-            ? (
+          {isOrdered ? (
             <Button
               css={[icon]}
               icon="plus"
@@ -175,8 +171,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
               onMouseUp={() => handleBlur()}
               onBlur={() => handleBlur()}
             />
-              )
-            : null}
+          ) : null}
           <PlaceholderButton
             css={[addButton]}
             icon={isOrdered ? null : 'plus'}
@@ -190,31 +185,26 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
             {buttonText}
           </PlaceholderButton>
         </li>
-          )
-        : null}
+      ) : null}
     </Fragment>
   )
 
   return (
     <Fragment>
-      {isOrdered
-        ? (
+      {isOrdered ? (
         <ol className={className} css={[list]}>
           {itemsJSX}
         </ol>
-          )
-        : (
+      ) : (
         <ul className={className} css={[list, hideMarker]}>
           {itemsJSX}
         </ul>
-          )}
-      {displayErrorStrategy === 'on-list'
-        ? (
+      )}
+      {displayErrorStrategy === 'on-list' ? (
         <div css={[listErrors]} onFocus={() => handleFocus()} onBlur={() => handleBlur()}>
           <FormErrorMessages errors={errorMessages} />
         </div>
-          )
-        : null}
+      ) : null}
     </Fragment>
   )
 }

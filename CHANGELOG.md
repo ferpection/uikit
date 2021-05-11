@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fix
 - Avoid useless call to `onValueChange` of `CheckboxGroup`. This might have caused React to re-render
   in an infinite loop in some usecases.
+- Avoid useless call to `onValueChange` of `TextFieldList`. This might have caused React to re-render
+  in an infinite loop in some usecases.
 
 ## [v1.0.1] - 2021-03-11
 ### Fix
