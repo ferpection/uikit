@@ -1,12 +1,13 @@
 import { css } from '@emotion/react'
-import { N100_COLOR, N300_COLOR, C200_COLOR, C15_COLOR, O200_COLOR, O25_COLOR } from '../../../colors'
+import { N100_COLOR, N300_COLOR } from '../../../colors'
 import { SANSSERIF_FONTSET } from '../../../fonts'
+import { Theme } from '../../contexts/ThemeContext'
 
 export const hiddenInput = css`
   display: none;
 `
 
-export const baseStyle = css`
+export const baseStyle = (theme: Theme) => css`
   position: relative;
   display: inline-flex;
   justify-content: space-between;
@@ -24,25 +25,25 @@ export const baseStyle = css`
   transition: all 0.2s ease-in-out;
   &:hover {
     z-index: 1;
-    box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
+    box-shadow: 0 0 0 8px ${theme.colors.action.toRGBA(0.1)};
   }
 
   input[type='file']:focus + &,
   input[type='file']:focus-within + & {
     z-index: 1;
-    border: 1px solid ${`${C200_COLOR}`};
+    border: 1px solid ${`${theme.colors.action}`};
     outline: 0;
-    box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
-    background-color: ${`${C15_COLOR}`};
+    box-shadow: 0 0 0 8px ${theme.colors.action.toRGBA(0.1)};
+    background-color: ${`${theme.colors.actionLight}`};
   }
   input[type='file']:active + & {
     z-index: 1;
-    box-shadow: 0 0 0 16px ${C200_COLOR.toRGBA(0.1)};
+    box-shadow: 0 0 0 16px ${theme.colors.action.toRGBA(0.1)};
   }
 `
 
-export const highlightedStyle = css`
-  background-color: ${`${C15_COLOR}`};
+export const highlightedStyle = (theme: Theme) => css`
+  background-color: ${`${theme.colors.actionLight}`};
 `
 
 export const placeholder = css`
@@ -75,22 +76,22 @@ export const disabledStyle = css`
   }
 `
 
-export const errorStyle = css`
-  border-color: ${`${O200_COLOR}`};
-  background-color: ${`${O25_COLOR}`};
+export const errorStyle = (theme: Theme) => css`
+  border-color: ${`${theme.colors.negative}`};
+  background-color: ${`${theme.colors.negativeLight}`};
   margin-bottom: 0;
-  box-shadow: 0 0 0 1px ${`${O200_COLOR}`};
+  box-shadow: 0 0 0 1px ${`${theme.colors.negative}`};
   &:hover {
-    box-shadow: 0 0 0 8px ${`${O200_COLOR.toRGBA(0.1)}`};
+    box-shadow: 0 0 0 8px ${`${theme.colors.negative.toRGBA(0.1)}`};
   }
   input[type='file']:focus + &,
   input[type='file']:focus-within + & {
-    background-color: ${`${C15_COLOR}`};
-    border-color: ${`${C200_COLOR}`};
-    box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
+    background-color: ${`${theme.colors.actionLight}`};
+    border-color: ${`${theme.colors.action}`};
+    box-shadow: 0 0 0 8px ${theme.colors.action.toRGBA(0.1)};
   }
   input[type='file']:active + & {
-    box-shadow: 0 0 0 16px ${C200_COLOR.toRGBA(0.1)};
+    box-shadow: 0 0 0 16px ${theme.colors.action.toRGBA(0.1)};
   }
 `
 
@@ -98,15 +99,15 @@ export const placeholderDisabledStyle = css`
   color: ${`${N100_COLOR}`};
 `
 
-export const button = css`
-  border: 1px solid ${`${C200_COLOR}`};
-  color: ${`${C200_COLOR}`};
+export const button = (theme: Theme) => css`
+  border: 1px solid ${`${theme.colors.action}`};
+  color: ${`${theme.colors.action}`};
   border-radius: 3px;
   margin: 3px;
   padding: 6px 16px;
 
   &:hover {
-    background-color: ${C200_COLOR.toHex()};
+    background-color: ${theme.colors.action.toHex()};
     color: white;
     cursor: pointer;
   }

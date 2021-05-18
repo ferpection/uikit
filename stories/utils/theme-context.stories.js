@@ -17,6 +17,7 @@ import {
   RadioButton,
   MarkdownField,
   DatePickerField,
+  FileField,
 } from '../../src/components/index.ts'
 import { FULL_COLORSET, Color } from '../../src/colors/index.ts'
 
@@ -53,6 +54,8 @@ storiesOf('Contexts/ThemeProvider', module)
         <TextField isRequired />
         <pre>TextFieldList:</pre>
         <TextFieldList isRequired isEditable />
+        <pre>FileField:</pre>
+        <FileField isMultiple />
         <pre>CheckboxGroup & CheckboxButton:</pre>
         <CheckboxGroup value={['']}>
           <CheckboxButton value="one">Choice One</CheckboxButton>
