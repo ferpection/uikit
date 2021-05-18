@@ -16,6 +16,7 @@ import {
   RadioGroup,
   RadioButton,
   MarkdownField,
+  DatePickerField,
 } from '../../src/components/index.ts'
 import { FULL_COLORSET, Color } from '../../src/colors/index.ts'
 
@@ -62,6 +63,8 @@ storiesOf('Contexts/ThemeProvider', module)
         <SelectField placeholder="This is a highlighted select" isHighlighted />
         <pre>MarkdownField:</pre>
         <MarkdownField isHighlighted />
+        <pre>DatePickerField:</pre>
+        <DatePickerField dateComponentSelectors={['date', 'year', 'year', 'month', 'date']} />
         <pre>RadioGroup & RadioButton:</pre>
         <RadioGroup value="">
           <RadioButton value="one">Unique choice</RadioButton>

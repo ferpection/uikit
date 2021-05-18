@@ -4,6 +4,7 @@ import { jsx } from '@emotion/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { Button } from '../../../buttons/Button/Button'
+import { useTheme } from '../../../contexts/ThemeContext'
 
 import { smallCalendarContainer, calendarContainer, buttonBar, header, calendarBoard } from './styles'
 
@@ -25,8 +26,10 @@ export const CalendarContainer: FC<CalendarContainerProps> = ({
   nextButtonLabel = 'Next',
   title,
 }) => {
+  const theme = useTheme()
+
   return (
-    <div css={[isSmall ? smallCalendarContainer : calendarContainer]}>
+    <div css={[isSmall ? smallCalendarContainer(theme) : calendarContainer(theme)]}>
       <div css={[buttonBar]}>
         <Button isFilled icon="arrow-left" isDisabled={previousButtonArgs == null} {...previousButtonArgs}>
           {previousButtonLabel}

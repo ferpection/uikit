@@ -1,5 +1,6 @@
 import { css } from '@emotion/react'
-import { C200_COLOR, C300_COLOR, N500_COLOR, N75_COLOR, R400_COLOR, R500_COLOR } from '../../../../colors'
+import { N500_COLOR, N75_COLOR, R400_COLOR, R500_COLOR } from '../../../../colors'
+import { Theme } from '../../../contexts/ThemeContext'
 
 const buttonWidth = 105
 
@@ -22,11 +23,11 @@ export const calendarButtons = css`
   }
 `
 
-export const calendarButtonsSelected = css`
-  background-color: ${`${C200_COLOR}`};
+export const calendarButtonsSelected = (theme: Theme) => css`
+  background-color: ${`${theme.colors.action}`};
   color: white;
   &:hover {
-    background-color: ${`${C300_COLOR}`};
+    background-color: ${`${theme.colors.action.shade(-30)}`};
     color: white;
   }
 `
