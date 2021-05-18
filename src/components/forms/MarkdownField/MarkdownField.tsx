@@ -9,6 +9,7 @@ import { TextField, TextFieldProps } from '../TextField/TextField'
 import { defaultFormProps } from '../form-props'
 
 import { textStyle, iconBar, container, buttonStyle, disabledStyle, helpButtonStyle } from './styles'
+import { useTheme } from '../../contexts/ThemeContext'
 
 interface SelectionData {
   startIndex: number
@@ -25,6 +26,7 @@ export interface MarkdownFieldProps extends TextFieldProps {
 
 export function MarkdownField(props: MarkdownFieldProps) {
   const { className, rowCount = 3, isDisabled, onValueChange = () => {}, value: externalValue, onSelect } = props
+  const theme = useTheme()
   const [value, setValue] = useState(externalValue || '')
   const [selection, setSelection] = useState<SelectionData>({
     startIndex: 0,
@@ -76,14 +78,14 @@ export function MarkdownField(props: MarkdownFieldProps) {
     <div className={className} css={[container]}>
       <div css={[iconBar, isDisabled && disabledStyle]}>
         <button
-          css={[buttonStyle, (isDisabled || !isTextSelected) && disabledStyle]}
+          css={[buttonStyle(theme), (isDisabled || !isTextSelected) && disabledStyle]}
           disabled={isDisabled || !isTextSelected}
           onClick={event => handleSurroundSelectedText(['**', '**'], event)}
         >
           <FontAwesomeIcon icon="bold" />
         </button>
         <button
-          css={[buttonStyle, (isDisabled || !isTextSelected) && disabledStyle]}
+          css={[buttonStyle(theme), (isDisabled || !isTextSelected) && disabledStyle]}
           disabled={isDisabled || !isTextSelected}
           onClick={event => handleSurroundSelectedText(['_', '_'], event)}
         >
