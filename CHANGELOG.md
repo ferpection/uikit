@@ -6,7 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [v1.0.2] - 2021-05-11
+## [v1.0.3] - 2021-05-18
+### Fix
+- Fix a weird behavior introduced in the previous version where `TextFieldList` never trigger the `onValueChange` 
+  except when adding a new value to the list.
+
+## [v1.0.2] - 2021-05-11 [YANKED]
 ### Fix
 - Avoid useless call to `onValueChange` of `CheckboxGroup`. This might have caused React to re-render
   in an infinite loop in some usecases.
@@ -512,6 +517,7 @@ be rendered as an `a`, a `button` or a `Link` from `react-router-dom`
 - Setup storybook as documentation
 
 [Unreleased]: https://github.com/ferpection/uikit/tree/master
+[v1.0.3]: https://github.com/ferpection/uikit/tree/v1.0.3
 [v1.0.2]: https://github.com/ferpection/uikit/tree/v1.0.2
 [v1.0.1]: https://github.com/ferpection/uikit/tree/v1.0.1
 [v1.0.0]: https://github.com/ferpection/uikit/tree/v1.0.0

@@ -59,7 +59,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
     .map(key => inputErrors[key])
     .reduce((aggr, curr) => ({ ...aggr, ...curr }), {})
 
-  useEffect(() => onValueChange(flatValues), [values.join('-')])
+  useEffect(() => onValueChange(flatValues), [flatValues.join('-')])
   useEffect(() => onErrors(errorMessages), [Object.keys(inputErrors).join('-')])
   useEffect(
     () =>
