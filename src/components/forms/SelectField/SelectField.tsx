@@ -3,6 +3,7 @@ import React, { useState, useEffect, Fragment, ChangeEvent, SyntheticEvent } fro
 import { jsx } from '@emotion/react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
+import { useTheme } from '../../contexts/ThemeContext'
 
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { defaultFormProps, FormProps } from '../form-props'
@@ -19,6 +20,7 @@ export interface SelectFieldProps extends FormProps {
 }
 
 export const SelectField: React.FC<SelectFieldProps> = props => {
+  const theme = useTheme()
   const { value: externalValue } = props
   const [value, setValue] = useState(externalValue || '')
   useEffect(() => setValue(externalValue), [externalValue])
@@ -54,10 +56,10 @@ export const SelectField: React.FC<SelectFieldProps> = props => {
     <Fragment>
       <select
         css={[
-          baseStyle,
+          baseStyle(theme),
           isEmpty && placehoderStyle,
-          isHighlighted && highlightedStyle,
-          !isValid && errorStyle,
+          isHighlighted && highlightedStyle(theme),
+          !isValid && errorStyle(theme),
           isDisabled && disabledStyle,
           isSmall && smallStyle,
         ]}
