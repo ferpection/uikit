@@ -4,6 +4,7 @@ import { jsx } from '@emotion/react'
 
 import { containerStyles, innerDivElementStyles, innerElementStyles } from './styles'
 import { useMergedFocusHandlers } from '../../../hooks'
+import { useTheme } from '../../contexts/ThemeContext'
 
 interface OneBlockStackProps {
   isHighlighted?: boolean
@@ -13,6 +14,7 @@ interface OneBlockStackProps {
 
 export const OneBlockStack: FC<OneBlockStackProps> = props => {
   const [handleFocus, handleBlur] = useMergedFocusHandlers({ onBlur: props.onBlur, onFocus: props.onFocus })
+  const theme = useTheme()
 
   const children = Children.toArray(props.children).map((child, index, arr) => {
     if (!isValidElement(child)) {
@@ -25,7 +27,7 @@ export const OneBlockStack: FC<OneBlockStackProps> = props => {
           <child.type
             key={index}
             {...child.props}
-            css={[innerDivElementStyles(props.isHighlighted), innerElementStyles(index, arr.length)]}
+            css={[innerDivElementStyles(theme, props.isHighlighted), innerElementStyles(index, arr.length)]}
           />
         )
       }
@@ -42,7 +44,7 @@ export const OneBlockStack: FC<OneBlockStackProps> = props => {
     const customCSS = [innerElementStyles(index, arr.length)]
     // Specific EmotionJS component that need the same CSS rules than raw HTML tags
     if (['p', 'section', 'div'].includes(((child.type as unknown) as any).__emotion_base)) {
-      customCSS.push(innerDivElementStyles(props.isHighlighted))
+      customCSS.push(innerDivElementStyles(theme, props.isHighlighted))
     }
 
     return jsx(child.type, {

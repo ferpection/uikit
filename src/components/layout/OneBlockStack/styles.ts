@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
 
-import { C15_COLOR, N100_COLOR } from '../../../colors'
+import { N100_COLOR } from '../../../colors'
+import { Theme } from '../../contexts/ThemeContext'
 
 export const containerStyles = css`
   font-size: 0;
@@ -20,10 +21,10 @@ export const innerElementStyles = (index: number, length: number) => css`
   label: FieldStackElement;
 `
 
-export const innerDivElementStyles = (isHighlighted: boolean = false) => css`
+export const innerDivElementStyles = (theme: Theme, isHighlighted: boolean = false) => css`
   border: 1px solid ${`${N100_COLOR}`};
   font-size: 15px;
   padding: 10px;
   box-sizing: border-box;
-  ${isHighlighted && `background-color: ${`${C15_COLOR}`};`}
+  ${isHighlighted && `background-color: ${`${theme.colors.actionLight}`};`}
 `
