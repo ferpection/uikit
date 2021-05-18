@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import { O200_COLOR, O25_COLOR } from '../../../colors'
+import { Theme } from '../../contexts/ThemeContext'
 
 export const listStyles = css`
   padding: 0;
@@ -10,9 +10,9 @@ export const listStyles = css`
   box-sizing: border-box;
 `
 
-export const listErrorStyles = css`
-  border-color: ${`${O200_COLOR}`};
-  box-shadow: 0 0 0 1px ${`${O200_COLOR}`};
+export const listErrorStyles = (theme: Theme) => css`
+  border-color: ${`${theme.colors.negative}`};
+  box-shadow: 0 0 0 1px ${`${theme.colors.negative}`};
 `
 
 export const listItemStyles = css`
@@ -25,11 +25,11 @@ export const listItemStyles = css`
   }
 `
 
-export const listItemErrorStyles = css`
-  background-color: ${`${O25_COLOR}`};
+export const listItemErrorStyles = (theme: Theme) => css`
+  background-color: ${`${theme.colors.negativeLight}`};
 
   &:not(:last-of-type) {
-    border-bottom-color: ${`${O200_COLOR}`};
+    border-bottom-color: ${`${theme.colors.negative}`};
   }
 `
 

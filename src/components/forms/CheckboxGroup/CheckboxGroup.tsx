@@ -5,6 +5,7 @@ import { jsx } from '@emotion/react'
 import useFormValidation from '../../../hooks/useFormValidation'
 
 import { ActionType } from '../../action-type'
+import { useTheme } from '../../contexts/ThemeContext'
 
 import { defaultFormProps, FormProps } from '../form-props'
 
@@ -28,6 +29,7 @@ export interface CheckboxGroupProps extends FormProps {
 }
 
 export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
+  const theme = useTheme()
   const [values, setValues] = useState(props.value || [])
   const {
     className,
@@ -61,7 +63,12 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
   }
 
   return (
-    <ul className={className} css={[listStyles, !isValid && listErrorStyles]} onBlur={handleBlur} onFocus={handleFocus}>
+    <ul
+      className={className}
+      css={[listStyles, !isValid && listErrorStyles(theme)]}
+      onBlur={handleBlur}
+      onFocus={handleFocus}
+    >
       {Children.map(props.children, (child, index) => {
         if (!isValidElement(child)) {
           return null
@@ -73,7 +80,7 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
               listItemStyles,
               innerCheckboxStyles,
               isDisabled && listItemDisabledStyles,
-              !isValid && listItemErrorStyles,
+              !isValid && listItemErrorStyles(theme),
             ]}
             key={index}
           >
