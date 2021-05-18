@@ -11,6 +11,7 @@ import { useTextFieldState } from './hooks/useTextFieldState'
 import { DataType } from './types'
 
 import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle, smallStyle } from './styles'
+import { useTheme } from '../../contexts/ThemeContext'
 
 export interface TextFieldProps extends FormProps {
   dataType?: DataType
@@ -59,6 +60,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
     hideErrors,
   )
 
+  const theme = useTheme()
   const handleChanges = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     setValue(event.target.value)
     handleValueChange(event.target.value, event)
@@ -79,9 +81,9 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
           ref={ref as MutableRefObject<HTMLInputElement>}
           type={inputType}
           css={[
-            baseStyle,
-            isHighlighted && highlightedStyle,
-            !isValid && errorStyle,
+            baseStyle(theme),
+            isHighlighted && highlightedStyle(theme),
+            !isValid && errorStyle(theme),
             isDisabled && disabledStyle,
             isSmall && smallStyle,
           ]}
@@ -102,10 +104,10 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
         ? (
         <textarea
           css={[
-            baseStyle,
+            baseStyle(theme),
             textareaStyle,
-            isHighlighted && highlightedStyle,
-            !isValid && errorStyle,
+            isHighlighted && highlightedStyle(theme),
+            !isValid && errorStyle(theme),
             isDisabled && disabledStyle,
             isSmall && smallStyle,
           ]}

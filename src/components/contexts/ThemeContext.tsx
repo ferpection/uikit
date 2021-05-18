@@ -6,7 +6,7 @@ type Partial<Type, ExcludedType> = {
   [Key in keyof Type]?: Type[Key] extends ExcludedType ? Type[Key] : Partial<Type[Key], ExcludedType>
 }
 
-type Theme = {
+export type Theme = {
   colors: {
     action: Color
     positive: Color
