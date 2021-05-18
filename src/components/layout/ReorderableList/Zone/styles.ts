@@ -1,13 +1,14 @@
 import { css } from '@emotion/react'
-import { C200_COLOR } from '../../../../colors'
+
+import { Theme } from '../../../contexts/ThemeContext'
 
 export const defaultStyle = css`
   margin: 20px 0;
   border: 2px dashed transparent;
 `
 
-export const dropzone = css`
-  border-color: ${`${C200_COLOR}`};
+export const dropzone = (theme: Theme) => css`
+  border-color: ${`${theme.colors.action}`};
   border-radius: 3px;
   transition: all ease-in-out 0.4;
   border-width: 2px;
