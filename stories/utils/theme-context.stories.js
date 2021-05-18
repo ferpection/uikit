@@ -5,7 +5,18 @@ import { action } from '@storybook/addon-actions'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, text } from '@storybook/addon-knobs'
 
-import { Button, ThemeProvider, TextFieldList, TextField } from '../../src/components/index.ts'
+import {
+  Button,
+  ThemeProvider,
+  TextFieldList,
+  TextField,
+  CheckboxGroup,
+  CheckboxButton,
+  SelectField,
+  RadioGroup,
+  RadioButton,
+  MarkdownField,
+} from '../../src/components/index.ts'
 import { FULL_COLORSET, Color } from '../../src/colors/index.ts'
 
 storiesOf('Contexts/ThemeProvider', module)
@@ -41,6 +52,20 @@ storiesOf('Contexts/ThemeProvider', module)
         <TextField isRequired />
         <pre>TextFieldList:</pre>
         <TextFieldList isRequired isEditable />
+        <pre>CheckboxGroup & CheckboxButton:</pre>
+        <CheckboxGroup value={['']}>
+          <CheckboxButton value="one">Choice One</CheckboxButton>
+          <CheckboxButton value="two">Choice Two</CheckboxButton>
+          <CheckboxButton value="three">Choice Three</CheckboxButton>
+        </CheckboxGroup>
+        <pre>SelectField:</pre>
+        <SelectField placeholder="This is a highlighted select" isHighlighted />
+        <pre>MarkdownField:</pre>
+        <MarkdownField isHighlighted />
+        <pre>RadioGroup & RadioButton:</pre>
+        <RadioGroup value="">
+          <RadioButton value="one">Unique choice</RadioButton>
+        </RadioGroup>
       </ThemeProvider>
     )
   })

@@ -1,13 +1,14 @@
 import { css } from '@emotion/react'
 
-import { C200_COLOR, N100_COLOR } from '../../../colors'
+import { N100_COLOR } from '../../../colors'
+import { Theme } from '../../contexts/ThemeContext'
 
-export const addButtonStyles = css`
+export const addButtonStyles = (theme: Theme) => css`
   display: block;
   min-height: 44px;
   padding: 10px 12px;
   background-color: white;
-  color: ${`${C200_COLOR}`};
+  color: ${`${theme.colors.action}`};
   text-align: left;
   text-decoration: none;
   border: 1px dashed #ddd;
@@ -17,13 +18,13 @@ export const addButtonStyles = css`
   cursor: pointer;
   &:hover {
     z-index: 2;
-    box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
+    box-shadow: 0 0 0 8px ${theme.colors.action.toRGBA(0.1)};
     border-style: solid;
-    color: ${C200_COLOR.shade(-20).toRGBA()};
+    color: ${theme.colors.action.shade(-20).toRGBA()};
   }
   &:active {
     z-index: 2;
-    box-shadow: 0 0 0 16px ${C200_COLOR.toRGBA(0.1)};
+    box-shadow: 0 0 0 16px ${theme.colors.action.toRGBA(0.1)};
   }
   &:focus {
     outline: none;
