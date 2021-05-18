@@ -3,6 +3,7 @@ import { FC, Children, isValidElement, ReactElement } from 'react'
 import { jsx } from '@emotion/react'
 
 import { TabLink } from '../../buttons/TabLink/TabLink'
+import { useTheme } from '../../contexts/ThemeContext'
 
 import { defaultTabSyles } from './styles'
 
@@ -11,6 +12,7 @@ export interface TabsProps {
 }
 
 export const Tabs: FC<TabsProps> = props => {
+  const theme = useTheme()
   const children = Children.toArray(props.children)
     .filter(child => child != null)
     .filter(child => isValidElement(child))
@@ -28,7 +30,7 @@ export const Tabs: FC<TabsProps> = props => {
   }
 
   return (
-    <div className={props.className} css={[defaultTabSyles]}>
+    <div className={props.className} css={[defaultTabSyles(theme)]}>
       {children}
     </div>
   )

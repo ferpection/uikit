@@ -1,10 +1,13 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx } from '@emotion/react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, text } from '@storybook/addon-knobs'
 
+import { FULL_COLORSET, Color, N75_COLOR } from '../../src/colors/index.ts'
 import {
   Button,
   ThemeProvider,
@@ -18,8 +21,21 @@ import {
   MarkdownField,
   DatePickerField,
   FileField,
+  Tabs,
+  TabLink,
 } from '../../src/components/index.ts'
-import { FULL_COLORSET, Color } from '../../src/colors/index.ts'
+
+const Preview = props => (
+  <pre
+    css={{
+      backgroundColor: N75_COLOR.toString(),
+      padding: 40,
+      marginTop: 40,
+    }}
+  >
+    {props.children}
+  </pre>
+)
 
 storiesOf('Contexts/ThemeProvider', module)
   .addDecorator(withA11y)
@@ -64,6 +80,23 @@ storiesOf('Contexts/ThemeProvider', module)
         </CheckboxGroup>
         <pre>SelectField:</pre>
         <SelectField placeholder="This is a highlighted select" isHighlighted />
+        <pre>Tabs:</pre>
+        <BrowserRouter>
+          <Tabs>
+            <TabLink to="/" exactMatch>
+              Home
+            </TabLink>
+            <TabLink to="/about">About</TabLink>
+          </Tabs>
+          <Switch>
+            <Route exact path="/">
+              <Preview>Home page loaded</Preview>
+            </Route>
+            <Route path="/about">
+              <Preview>About page loaded</Preview>
+            </Route>
+          </Switch>
+        </BrowserRouter>
         <pre>MarkdownField:</pre>
         <MarkdownField isHighlighted />
         <pre>DatePickerField:</pre>
