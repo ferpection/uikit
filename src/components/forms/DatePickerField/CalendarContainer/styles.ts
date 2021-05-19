@@ -1,11 +1,12 @@
 import { css } from '@emotion/react'
 
-import { N100_COLOR, C200_COLOR } from '../../../../colors'
+import { N100_COLOR } from '../../../../colors'
 import { SANSSERIF_FONTSET } from '../../../../fonts'
+import { Theme } from '../../../contexts/ThemeContext'
 
 const buttonWidth = 40
 
-export const calendarContainer = css`
+export const calendarContainer = (theme: Theme) => css`
   position: absolute;
   top: 56px;
   left: 0;
@@ -22,13 +23,13 @@ export const calendarContainer = css`
   background-color: white;
   transition: all 0.3s ease-in-out;
   &:hover {
-    box-shadow: 0 0 0 8px ${C200_COLOR.toRGBA(0.1)};
+    box-shadow: 0 0 0 8px ${theme.colors.action.toRGBA(0.1)};
   }
   z-index: 3;
 `
 
-export const smallCalendarContainer = css`
-  ${calendarContainer};
+export const smallCalendarContainer = (theme: Theme) => css`
+  ${calendarContainer(theme)};
   top: 36px;
 `
 

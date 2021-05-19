@@ -1,5 +1,6 @@
 import { css } from '@emotion/react'
-import { N100_COLOR, N300_COLOR, C200_COLOR } from '../../../colors'
+import { N100_COLOR, N300_COLOR } from '../../../colors'
+import { Theme } from '../../contexts/ThemeContext'
 
 export const textStyle = css`
   margin: 0;
@@ -36,7 +37,7 @@ export const helpButtonStyle = css`
   margin: 0 5px;
 `
 
-export const buttonStyle = css`
+export const buttonStyle = (theme: Theme) => css`
   margin: 0;
   padding: 10px;
   border-width: 0;
@@ -49,7 +50,7 @@ export const buttonStyle = css`
 
   &:hover,
   &:active {
-    color: ${`${C200_COLOR}`};
+    color: ${`${theme.colors.action}`};
     cursor: pointer;
   }
 `

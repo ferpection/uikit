@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
+import { useTheme } from '../../../contexts/ThemeContext'
 
 import { calendarButtons, calendarButtonsToday, calendarButtonsSelected } from './styles'
 
@@ -12,10 +13,15 @@ export interface PickerButtonProps {
 
 export function PickerButton(props: PickerButtonProps) {
   const { label, onClick = () => {}, isCurrent, isSelected, ...restProps } = props
+  const theme = useTheme()
 
   return (
     <button
-      css={[calendarButtons, isCurrent ? calendarButtonsToday : null, isSelected ? calendarButtonsSelected : null]}
+      css={[
+        calendarButtons,
+        isCurrent ? calendarButtonsToday : null,
+        isSelected ? calendarButtonsSelected(theme) : null,
+      ]}
       onClick={onClick}
       {...restProps}
     >

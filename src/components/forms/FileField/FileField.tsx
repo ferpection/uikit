@@ -3,6 +3,7 @@ import React, { useState, useEffect, SyntheticEvent, Fragment, useRef } from 're
 import { jsx } from '@emotion/react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
+import { useTheme } from '../../contexts/ThemeContext'
 
 import { defaultFormProps, FormProps } from '../form-props'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
@@ -51,6 +52,7 @@ export function FileField(props: FileFieldProps) {
   } = props
   const [files, setFiles] = useState<File[]>(Array.isArray(initialValue) ? initialValue : [])
   const fileInput = useRef<HTMLInputElement>()
+  const theme = useTheme()
 
   useEffect(() => {
     fileInput.current.value = null
@@ -97,7 +99,12 @@ export function FileField(props: FileFieldProps) {
         />
         <div
           className={className}
-          css={[baseStyle, isHighlighted && highlightedStyle, !isValid && errorStyle, isDisabled && disabledStyle]}
+          css={[
+            baseStyle(theme),
+            isHighlighted && highlightedStyle(theme),
+            !isValid && errorStyle(theme),
+            isDisabled && disabledStyle,
+          ]}
         >
           {files.length < 1 && (
             <div css={[placeholderStyle, isDisabled && placeholderDisabledStyle]}>{placeholder}</div>
@@ -110,7 +117,7 @@ export function FileField(props: FileFieldProps) {
                 : severalFilesSelectedLabel(files.length)}
             </div>
           )}
-          <div css={[button, isDisabled && buttonDisabledStyle]} role="button">
+          <div css={[button(theme), isDisabled && buttonDisabledStyle]} role="button">
             {browseButtonLabel}
           </div>
         </div>

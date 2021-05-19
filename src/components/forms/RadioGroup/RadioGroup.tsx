@@ -4,9 +4,10 @@ import { jsx } from '@emotion/react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
 
-import { defaultFormProps, FormProps } from '../form-props'
-
 import { ActionType } from '../../action-type'
+import { useTheme } from '../../contexts/ThemeContext'
+
+import { defaultFormProps, FormProps } from '../form-props'
 
 import {
   listStyles,
@@ -28,6 +29,7 @@ export interface RadioGroupProps extends FormProps {
 }
 
 export const RadioGroup: FC<RadioGroupProps> = props => {
+  const theme = useTheme()
   const [value, setValue] = useState(props.value || '')
   const {
     onValueChange,
@@ -53,7 +55,12 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => setValue(event.target.value)
 
   return (
-    <ul css={[listStyles, !isValid && listErrorStyles]} onBlur={handleBlur} onFocus={handleFocus} {...otherProps}>
+    <ul
+      css={[listStyles, !isValid && listErrorStyles(theme)]}
+      onBlur={handleBlur}
+      onFocus={handleFocus}
+      {...otherProps}
+    >
       {Children.map(props.children, (child, index) => {
         if (!isValidElement(child)) {
           return null
@@ -65,7 +72,7 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
               listItemStyles,
               innerRadioStyles,
               isDisabled && listItemDisabledStyles,
-              !isValid && listItemErrorStyles,
+              !isValid && listItemErrorStyles(theme),
             ]}
             key={index}
           >

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
 import { FC } from 'react'
+import { useTheme } from '../../../contexts/ThemeContext'
 
 import { Dropzone, DropzoneProps } from '../../dnd/Dropzone/Dropzone'
 
@@ -14,11 +15,12 @@ interface ZoneProps {
 
 export const Zone: FC<ZoneProps> = props => {
   const { droppable, ...dropzoneProps } = props
+  const theme = useTheme()
 
   return (
     <Dropzone {...dropzoneProps}>
       {({ elementIsOver }) => (
-        <div css={[defaultStyle, droppable ? dropzone : null, elementIsOver ? dropzoneOver : null]}>
+        <div css={[defaultStyle, droppable ? dropzone(theme) : null, elementIsOver ? dropzoneOver : null]}>
           {props.children}
         </div>
       )}

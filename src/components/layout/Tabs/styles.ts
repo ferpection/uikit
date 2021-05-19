@@ -1,10 +1,10 @@
 import { css } from '@emotion/react'
 
-import { C75_COLOR } from '../../../colors'
+import { Theme } from '../../contexts/ThemeContext'
 
-export const defaultTabSyles = css`
+export const defaultTabSyles = (theme: Theme) => css`
   padding: 5px;
-  background-color: ${`${C75_COLOR.toRGBA(0.2)}`};
+  background-color: ${`${theme.colors.action.shade(-20).toRGBA(0.1)}`};
   border-radius: 3px;
   display: flex;
   justify-content: center;

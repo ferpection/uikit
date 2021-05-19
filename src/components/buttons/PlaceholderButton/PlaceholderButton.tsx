@@ -5,6 +5,7 @@ import { IconName } from '@fortawesome/fontawesome-svg-core'
 import { jsx } from '@emotion/react'
 
 import { ButtonContainer } from '../ButtonContainer'
+import { useTheme } from '../../contexts/ThemeContext'
 
 import { addButtonStyles, disabledStyles } from './styles'
 
@@ -22,12 +23,13 @@ interface PlaceholderButtonProps {
 }
 
 export const PlaceholderButton: React.FC<PlaceholderButtonProps> = props => {
+  const theme = useTheme()
   const { children = 'Add an element', isDisabled, icon = 'plus', ...args } = props
 
   return (
     <ButtonContainer
       {...args}
-      css={[addButtonStyles, isDisabled && disabledStyles]}
+      css={[addButtonStyles(theme), isDisabled && disabledStyles]}
       aria-label={children}
       disabled={isDisabled}
     >

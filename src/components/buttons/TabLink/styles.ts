@@ -1,13 +1,13 @@
 import { css } from '@emotion/react'
 
 import { SANSSERIF_FONTSET } from '../../../fonts'
-import { C200_COLOR, C100_COLOR, C500_COLOR } from '../../../colors'
+import { Theme } from '../../contexts/ThemeContext'
 
-export const defaultButtonStyles = css`
+export const defaultButtonStyles = (theme: Theme) => css`
   display: inline-block;
   margin: 3px 10px;
   padding: 10px 20px;
-  color: ${`${C200_COLOR.toRGBA(0.7)}`};
+  color: ${`${theme.colors.action.toRGBA(0.7)}`};
   font-family: ${`${SANSSERIF_FONTSET}`};
   text-decoration: none;
   font-weight: 400;
@@ -18,7 +18,7 @@ export const defaultButtonStyles = css`
   -moz-osx-font-smoothing: grayscale;
 `
 
-export const activeButtonStyles = css`
-  background-color: ${`${C100_COLOR.toRGBA(0.2)}`};
-  color: ${`${C500_COLOR.toRGBA()}`};
+export const activeButtonStyles = (theme: Theme) => css`
+  background-color: ${`${theme.colors.action.shade(-70).toRGBA(0.05)}`};
+  color: ${`${theme.colors.action.shade(-100)}`};
 `

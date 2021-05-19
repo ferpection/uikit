@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { jsx } from '@emotion/react'
 
 import { FormErrors } from '../form-errors'
+import { useTheme } from '../../contexts/ThemeContext'
 
 import { errorStyle, iconStyle } from './styles'
 
@@ -16,11 +17,12 @@ export interface FormErrorMessagesProps {
 
 export const FormErrorMessages: FC<FormErrorMessagesProps> = props => {
   const { errors = {}, translatedErrors = [], className, translatorFn = value => value } = props
+  const theme = useTheme()
 
   function renderError(text: string) {
     return (
       <p key={text} className={className} css={errorStyle}>
-        <FontAwesomeIcon icon="exclamation-triangle" css={iconStyle} />
+        <FontAwesomeIcon icon="exclamation-triangle" css={iconStyle(theme)} />
         {text}
       </p>
     )
