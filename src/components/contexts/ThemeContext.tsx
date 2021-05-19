@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react'
+import React, { FC } from 'react'
 
 import { PRIMARY_COLORSET, FULL_COLORSET, Color } from '../../colors'
 
@@ -51,5 +51,3 @@ export const ThemeProvider: FC<ThemeProviderProps> = props => {
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
-
-export const useTheme = () => useContext(ThemeContext)
