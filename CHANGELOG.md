@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Bring theming support to all components.
 - A new `useTheme` hook allow to use Uikit theme in your components.
 
+### Fixed
+
+- Make the `value` attribute of `CheckboxGroup` optional again
+
 ## [v1.0.3] - 2021-05-18
 
 ### Fix
