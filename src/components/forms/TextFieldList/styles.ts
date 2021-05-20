@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 
 import { SANSSERIF_FONTSET } from '../../../fonts'
-import { N300_COLOR, C200_COLOR } from '../../../colors'
+import { N300_COLOR } from '../../../colors'
 
 export const list = css`
   padding-left: 20px;
@@ -30,7 +30,6 @@ export const icon = css`
   background-color: white /* to hide the number */;
   &[disabled] {
     opacity: 1;
-    color: ${C200_COLOR.toRGBA(0.5)};
   }
 `
 
