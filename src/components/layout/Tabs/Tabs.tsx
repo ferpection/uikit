@@ -3,7 +3,7 @@ import { FC, Children, isValidElement, ReactElement } from 'react'
 import { jsx } from '@emotion/react'
 
 import { TabLink } from '../../buttons/TabLink/TabLink'
-import { useTheme } from '../../contexts/ThemeContext'
+import { useTheme } from '../../../hooks/useTheme'
 
 import { defaultTabSyles } from './styles'
 

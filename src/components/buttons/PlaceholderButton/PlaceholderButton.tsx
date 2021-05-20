@@ -5,7 +5,7 @@ import { IconName } from '@fortawesome/fontawesome-svg-core'
 import { jsx } from '@emotion/react'
 
 import { ButtonContainer } from '../ButtonContainer'
-import { useTheme } from '../../contexts/ThemeContext'
+import { useTheme } from '../../../hooks/useTheme'
 
 import { addButtonStyles, disabledStyles } from './styles'
 

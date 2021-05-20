@@ -11,7 +11,7 @@ import { useTextFieldState } from './hooks/useTextFieldState'
 import { DataType } from './types'
 
 import { baseStyle, textareaStyle, disabledStyle, highlightedStyle, errorStyle, smallStyle } from './styles'
-import { useTheme } from '../../contexts/ThemeContext'
+import { useTheme } from '../../../hooks/useTheme'
 
 export interface TextFieldProps extends FormProps {
   dataType?: DataType
@@ -75,8 +75,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
 
   return (
     <Fragment>
-      {rowCount < 2
-        ? (
+      {rowCount < 2 ? (
         <input
           ref={ref as MutableRefObject<HTMLInputElement>}
           type={inputType}
@@ -98,10 +97,8 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
           onSelect={event => handleSelect(event)}
           {...otherProps}
         />
-          )
-        : null}
-      {rowCount >= 2
-        ? (
+      ) : null}
+      {rowCount >= 2 ? (
         <textarea
           css={[
             baseStyle(theme),
@@ -123,8 +120,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
           onSelect={event => handleSelect(event)}
           {...otherProps}
         />
-          )
-        : null}
+      ) : null}
       {canDisplayEmptyError && <FormErrorMessages translatedErrors={['Please fill the field.']} />}
       {canDisplayInvalidEmailError && (
         <FormErrorMessages translatedErrors={['Please enter an email address on this field.']} />

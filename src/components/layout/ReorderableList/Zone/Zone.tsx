@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
 import { FC } from 'react'
-import { useTheme } from '../../../contexts/ThemeContext'
+import { useTheme } from '../../../../hooks/useTheme'
 
 import { Dropzone, DropzoneProps } from '../../dnd/Dropzone/Dropzone'
 

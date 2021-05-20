@@ -5,7 +5,7 @@ import { jsx } from '@emotion/react'
 import useFormValidation from '../../../hooks/useFormValidation'
 
 import { ActionType } from '../../action-type'
-import { useTheme } from '../../contexts/ThemeContext'
+import { useTheme } from '../../../hooks/useTheme'
 
 import { defaultFormProps, FormProps } from '../form-props'
 

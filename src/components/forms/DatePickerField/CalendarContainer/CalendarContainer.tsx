@@ -4,7 +4,7 @@ import { jsx } from '@emotion/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { Button } from '../../../buttons/Button/Button'
-import { useTheme } from '../../../contexts/ThemeContext'
+import { useTheme } from '../../../../hooks/useTheme'
 
 import { smallCalendarContainer, calendarContainer, buttonBar, header, calendarBoard } from './styles'
 

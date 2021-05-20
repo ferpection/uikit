@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { jsx } from '@emotion/react'
 
 import { FormErrors } from '../form-errors'
-import { useTheme } from '../../contexts/ThemeContext'
+import { useTheme } from '../../../hooks/useTheme'
 
 import { errorStyle, iconStyle } from './styles'
 

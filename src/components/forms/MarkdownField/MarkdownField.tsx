@@ -9,7 +9,7 @@ import { TextField, TextFieldProps } from '../TextField/TextField'
 import { defaultFormProps } from '../form-props'
 
 import { textStyle, iconBar, container, buttonStyle, disabledStyle, helpButtonStyle } from './styles'
-import { useTheme } from '../../contexts/ThemeContext'
+import { useTheme } from '../../../hooks/useTheme'
 
 interface SelectionData {
   startIndex: number

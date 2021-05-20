@@ -3,7 +3,7 @@ import { FC, ChangeEvent, FocusEvent } from 'react'
 import { jsx } from '@emotion/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { useTheme } from '../../contexts/ThemeContext'
+import { useTheme } from '../../../hooks/useTheme'
 import { ActionType } from '../../action-type'
 
 import {

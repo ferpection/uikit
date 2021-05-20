@@ -4,7 +4,7 @@ import { jsx } from '@emotion/react'
 
 import { containerStyles, innerDivElementStyles, innerElementStyles } from './styles'
 import { useMergedFocusHandlers } from '../../../hooks'
-import { useTheme } from '../../contexts/ThemeContext'
+import { useTheme } from '../../../hooks/useTheme'
 
 interface OneBlockStackProps {
   isHighlighted?: boolean

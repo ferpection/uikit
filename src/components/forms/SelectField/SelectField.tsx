@@ -3,7 +3,7 @@ import React, { useState, useEffect, Fragment, ChangeEvent, SyntheticEvent } fro
 import { jsx } from '@emotion/react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
-import { useTheme } from '../../contexts/ThemeContext'
+import { useTheme } from '../../../hooks/useTheme'
 
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { defaultFormProps, FormProps } from '../form-props'
