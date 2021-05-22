@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import { N500_COLOR, N75_COLOR, R400_COLOR, R500_COLOR } from '../../../../colors'
-import { Theme } from '../../../contexts/ThemeContext'
+import { Theme } from '../../../../contexts/ThemeContext'
 
 const buttonWidth = 105
 

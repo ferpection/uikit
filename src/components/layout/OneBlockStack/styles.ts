@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 
 import { N100_COLOR } from '../../../colors'
-import { Theme } from '../../contexts/ThemeContext'
+import { Theme } from '../../../contexts/ThemeContext'
 
 export const containerStyles = css`
   font-size: 0;

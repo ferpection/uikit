@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-import { Theme } from '../../../contexts/ThemeContext'
+import { Theme } from '../../../../contexts/ThemeContext'
 
 export const defaultStyle = css`
   margin: 20px 0;

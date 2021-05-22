@@ -10,7 +10,7 @@ iconLibrary.add(fas, fab, far)
 export { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export { Button } from './buttons/Button/Button'
 export { PlaceholderButton } from './buttons/PlaceholderButton/PlaceholderButton'
-export { ThemeProvider } from './contexts/ThemeContext'
+export { ThemeProvider } from './contexts/ThemeProvider'
 export { ThematicSection } from './layout/ThematicSection/ThematicSection'
 export { Header } from './layout/Header/Header'
 export { HeaderLink } from './buttons/HeaderLink'

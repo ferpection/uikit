@@ -10,7 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - Bring theming support to all components.
-- A new `useTheme` hook allow to use Uikit theme in your components.
+- Expose the internal `useTheme` hook to allow developers to use Uikit theme in their components.
+- A new `useThemeMutation` hook allow the mutation of the Uikit theme in a child component.
 
 ### Fixed
 

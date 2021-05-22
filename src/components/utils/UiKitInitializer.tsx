@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { ThemeProvider, ThemeProviderProps } from '../contexts/ThemeContext'
+import { ThemeProvider, ThemeProviderProps } from '../contexts/ThemeProvider'
 
 import { FontsLoader } from './FontsLoader'
 import { GlobalCSSReset } from './GlobalCSSReset'

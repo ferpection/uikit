@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 
 import { SANSSERIF_FONTSET } from '../../../fonts'
-import { Theme } from '../../contexts/ThemeContext'
+import { Theme } from '../../../contexts/ThemeContext'
 
 export const defaultButtonStyles = (theme: Theme) => css`
   display: inline-block;

@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 import { N100_COLOR, N300_COLOR } from '../../../colors'
 import { SANSSERIF_FONTSET } from '../../../fonts'
-import { Theme } from '../../contexts/ThemeContext'
+import { Theme } from '../../../contexts/ThemeContext'
 
 export const hiddenInput = css`
   display: none;
