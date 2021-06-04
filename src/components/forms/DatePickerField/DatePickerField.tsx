@@ -64,8 +64,8 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
   const [modalState, setModalState] = useState<number | null>(null)
   const [errors, setErrors] = useState<FormErrors>({})
 
-  useEffect(() => setValue(initialValue), [initialValue])
-  useEffect(() => onValueChange(value), [value])
+  useEffect(() => setValue(initialValue), [initialValue?.getTime()])
+  useEffect(() => onValueChange(value), [value?.getTime()])
 
   const dateComponentSelectors = removeConsecutiveDuplicate(externalDateComponentSelectors)
 
