@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - `DatePickerField` is less prone to trigger the `onChangeValue` event if not needed
+- New border style for `ReorderableList`'s dropzone
 
 ## [v1.1.0] - 2021-05-24
 
