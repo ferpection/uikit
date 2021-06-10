@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v1.2.0] - 2021-06-10
+
 ### Added
 
 - Allow `ReoderableList`'s children to know when the drag has started.
@@ -686,6 +688,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Setup storybook as documentation
 
 [unreleased]: https://github.com/ferpection/uikit/tree/master
+[v1.2.0]: https://github.com/ferpection/uikit/tree/v1.2.0
 [v1.1.0]: https://github.com/ferpection/uikit/tree/v1.1.0
 [v1.0.3]: https://github.com/ferpection/uikit/tree/v1.0.3
 [v1.0.2]: https://github.com/ferpection/uikit/tree/v1.0.2
