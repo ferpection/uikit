@@ -14,7 +14,7 @@ interface ReorderableItem {
 
 export interface ReorderableListProps<T extends ReorderableItem> {
   items: T[]
-  renderItem?: (item: T) => JSX.Element | null
+  renderItem?: (item: T, dragStarted: boolean) => JSX.Element | null
   onOrderChange?: (updatedItems: T[]) => void
   useExternalDragHandle?: boolean
 }
@@ -122,7 +122,7 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
                 useExternalDragHandle={useExternalDragHandle}
                 onDragStatusChange={status => handleDragStatusChange(status, item)}
               >
-                {renderItem(item)}
+                {renderItem(item, draggedId != null)}
               </DraggableItem>
             </Zone>
           </Fragment>

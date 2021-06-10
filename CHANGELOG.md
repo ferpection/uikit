@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Allow `ReoderableList`'s children to know when the drag has started.
+
 ### Changed
 
 - `DatePickerField` is less prone to trigger the `onChangeValue` event if not needed

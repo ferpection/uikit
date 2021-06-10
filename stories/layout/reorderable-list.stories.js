@@ -69,8 +69,8 @@ storiesOf('Components/Layout/ReorderableList', module)
           { uuid: '3', order: 20 },
         ]}
         useExternalDragHandle
-        renderItem={item => (
-          <div style={{ backgroundColor: '#aaa', padding: '10px' }}>
+        renderItem={(item, dragStarted) => (
+          <div style={{ backgroundColor: dragStarted ? '#F97F51' : '#aaa', padding: '10px' }}>
             <DragHandle>
               <span>div #{item.uuid} :</span>
             </DragHandle>

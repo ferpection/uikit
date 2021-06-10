@@ -21,10 +21,13 @@ export const innerElementStyles = (index: number, length: number) => css`
   label: FieldStackElement;
 `
 
-export const innerDivElementStyles = (theme: Theme, isHighlighted: boolean = false) => css`
+export const innerDivElementStyles = (theme: Theme, isHighlighted: boolean = false, isOnError: boolean = false) => css`
   border: 1px solid ${`${N100_COLOR}`};
+  ${isOnError && `border-color: ${theme.colors.negative};`}
+  ${isOnError && `box-shadow: 0 0 0 1px ${theme.colors.negative};`}
   font-size: 15px;
   padding: 10px;
   box-sizing: border-box;
-  ${isHighlighted && `background-color: ${`${theme.colors.actionLight}`};`}
+  ${isHighlighted && `background-color: ${theme.colors.actionLight};`}
+  ${isOnError && `background-color: ${theme.colors.negativeLight};`}
 `
