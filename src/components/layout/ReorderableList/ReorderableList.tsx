@@ -43,8 +43,10 @@ export function ReorderableList<T extends ReorderableItem>(props: ReorderableLis
     const getItemFormWorkingData = (workingData: { item: T }) => workingData.item
     const setTemporaryOrders = (item: T) => {
       if (item.uuid === droppedItemId) {
-        item.order = item.order > dropzonePosition ? dropzonePosition - 5 : dropzonePosition + 5
-        return item
+        return {
+          ...item,
+          order: item.order > dropzonePosition ? dropzonePosition - 5 : dropzonePosition + 5,
+        }
       }
 
       return item
