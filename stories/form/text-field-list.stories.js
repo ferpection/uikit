@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import { withA11y } from '@storybook/addon-a11y'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, boolean, number, text, select } from '@storybook/addon-knobs'
 
 import { TextFieldList, UiKitInitializer } from '../../src/components/index.ts'
 import { N75_COLOR } from '../../src/colors/index.ts'
@@ -10,22 +9,51 @@ import { N75_COLOR } from '../../src/colors/index.ts'
 export default {
   title: 'Components/Forms/TextFieldList',
   component: TextFieldList,
-  decorators: [withA11y, withKnobs],
+  decorators: [withA11y],
+  parameters: { controls: { sort: 'requiredFirst' } },
+  argTypes: {
+    initialFieldCount: 2,
+    isOrdered: false,
+    isDisabled: false,
+    placeholder: 'Add your text here',
+    buttonText: 'Add a list item',
+    isEditable: false,
+    maxFieldCount: 100,
+    displayErrorStrategy: {
+      choices: ['on-list', 'on-field', 'hidden'],
+      defaultValue: 'on-field',
+      type: 'select',
+    },
+    dataType: {
+      choices: ['email', 'number', 'text'],
+      defaultValue: 'text',
+      type: 'select',
+    },
+    value: {
+      defaultValue: [],
+      type: 'object',
+    },
+    onValueChange: {
+      control: false,
+    },
+    onFocus: {
+      control: false,
+    },
+    onBlur: {
+      control: false,
+    },
+    onErrors: {
+      control: false,
+    },
+  },
 }
 
-export const NormalState = () => {
-  const intialValues = boolean('inital field values', true) ? ['yes', 'no', 'maybe'] : []
-  const [values, setValues] = useState(intialValues)
+export const NormalState = ({ value, onErrors, onValueChange, onBlur, onFocus, ...props }) => {
+  const [values, setValues] = useState(value)
 
   return (
     <UiKitInitializer>
-      <TextFieldList
-        placeholder={text('placeholder', 'Add your text here')}
-        initialFieldCount={number('initial field count', 2)}
-        value={values}
-        isOrdered={boolean('is ordered', true)}
-        onValueChange={values => setValues(values)}
-      />
+      <TextFieldList value={values} onValueChange={values => setValues(values)} {...props} />
       <pre
         style={{
           backgroundColor: N75_COLOR.toString(),
@@ -39,21 +67,20 @@ export const NormalState = () => {
   )
 }
 
-export const EditableState = () => {
+NormalState.args = {
+  value: ['yes', 'no', 'maybe'],
+}
+
+export const EditableState = ({ onErrors, onValueChange, onBlur, onFocus, ...props }) => {
   const [values, setValues] = useState([])
 
   return (
     <UiKitInitializer>
       <TextFieldList
-        placeholder={text('placeholder', 'Add your text here')}
-        buttonText={text('button text', 'Add a list item')}
-        isEditable
-        isOrdered={boolean('is ordered', true)}
         onValueChange={values => setValues(values)}
-        initialFieldCount={number('initial field count', 2)}
-        maxFieldCount={number('max field count', 100)}
         onFocus={action('focus in')}
         onBlur={action('focus out')}
+        {...props}
       />
       <pre
         style={{
@@ -68,32 +95,27 @@ export const EditableState = () => {
   )
 }
 
+EditableState.args = {
+  isEditable: true,
+}
+
 const MAX_VALUES = 3
-export const ErrorState = () => {
+export const ErrorState = ({ onErrors, onValueChange, onBlur, onFocus, ...props }) => {
   const [values, setValues] = useState([])
   const [errors, setErrors] = useState({})
 
   return (
     <UiKitInitializer>
-      <TextFieldList
-        placeholder={text('placeholder', 'Add your text here')}
-        buttonText={text('button text', 'Add a list item')}
-        dataType="email"
-        isEditable
-      />
+      <TextFieldList {...props} />
       <h3>With custom validation</h3>
       <p>It is possible to add custom validator to the list. Validators have access to list' value</p>
       <TextFieldList
-        placeholder={text('placeholder', 'Add your text here')}
-        buttonText={text('button text', 'Add a list item')}
-        dataType="email"
         onValueChange={values => setValues(values)}
         onErrors={values => setErrors(values)}
-        displayErrorStrategy={select('display error strategy', ['on-list', 'on-field', 'hidden'], 'on-field')}
         validators={[
           v => ({ 'customError:maxLenght': v.length > MAX_VALUES && { length: v.length, max: MAX_VALUES } }),
         ]}
-        isEditable
+        {...props}
       />
       <pre
         style={{
@@ -111,19 +133,16 @@ export const ErrorState = () => {
   )
 }
 
-export const DisabledState = () => {
+ErrorState.args = {
+  dataType: 'email',
+}
+
+export const DisabledState = ({ onErrors, onValueChange, onBlur, onFocus, ...props }) => {
   const [values, setValues] = useState([])
 
   return (
     <UiKitInitializer>
-      <TextFieldList
-        buttonText={text('button text', 'Add a list item')}
-        placeholder={text('placeholder', 'Add your text here')}
-        initalFieldCount={number('initial field count', 3)}
-        isEditable={boolean('editable', false)}
-        isDisabled
-        onValueChange={values => setValues(values)}
-      />
+      <TextFieldList onValueChange={values => setValues(values)} {...props} />
       <pre
         style={{
           backgroundColor: N75_COLOR.toString(),
@@ -135,4 +154,10 @@ export const DisabledState = () => {
       </pre>
     </UiKitInitializer>
   )
+}
+
+DisabledState.args = {
+  initalFieldCount: 3,
+  isEditable: false,
+  isDisabled: true,
 }
