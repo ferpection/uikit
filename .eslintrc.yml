@@ -27,15 +27,16 @@ overrides:
       - '*.tsx'
     parser: '@typescript-eslint/parser'
     rules:
-      no-useless-constructor: off
-      no-unused-vars: off
-      no-use-before-define: off
-      brace-style: off
-      '@typescript-eslint/no-useless-constructor': error
-      '@typescript-eslint/no-unused-vars': error
-      '@typescript-eslint/no-use-before-define': error
-      '@typescript-eslint/brace-style': error
+      no-useless-constructor: 'off'
+      no-unused-vars: 'off'
+      no-use-before-define: 'off'
+      brace-style: 'off'
+      '@typescript-eslint/no-useless-constructor': 'error'
+      '@typescript-eslint/no-unused-vars': 'error'
+      '@typescript-eslint/no-use-before-define': 'error'
+      '@typescript-eslint/brace-style': 'error'
+      multiline-ternary: 'off'
     settings:
       react:
-        pragma: "React"
-        version: "detect"
+        pragma: 'React'
+        version: 'detect'
