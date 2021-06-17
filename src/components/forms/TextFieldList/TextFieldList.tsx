@@ -36,6 +36,7 @@ export interface TextFieldListProps extends FormProps {
   value?: string[]
   onValueChange?: (values: string[]) => void
   className?: string
+  markerPattern?: string[]
 }
 
 interface GroupedFormErrors {
@@ -84,6 +85,7 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
     rowCount = 1,
     isOrdered,
     className,
+    markerPattern = [],
   } = props
 
   const handleAddition = () => setValues([...values, { id: RandomString.generate(20), text: '' }])
@@ -123,10 +125,22 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
     }
   }
 
+  let markers: string[] = []
+
+  if (isOrdered) {
+    markers = [...Object.keys(values)].map(el => `${el}.`)
+  }
+
+  if (markerPattern.length > 0) {
+    markers = Array.from({ length: Math.ceil(values.length / markerPattern.length) }, () => 0)
+      .flatMap(() => markerPattern)
+      .slice(0, values.length)
+  }
+
   const itemsJSX = (
     <Fragment>
-      {values.map(value => (
-        <li key={value.id} css={[listItem]}>
+      {values.map((value, index) => (
+        <li key={value.id} data-list-marker={markers[index]} css={[listItem]}>
           {isEditable && !isDisabled ? (
             <Button
               icon="trash"

@@ -19,6 +19,7 @@ export default {
     buttonText: 'Add a list item',
     isEditable: false,
     maxFieldCount: 100,
+    rowCount: 1,
     displayErrorStrategy: {
       choices: ['on-list', 'on-field', 'hidden'],
       defaultValue: 'on-field',
@@ -33,8 +34,17 @@ export default {
       defaultValue: [],
       type: 'object',
     },
+    markerPattern: {
+      defaultValue: [],
+      type: 'object',
+    },
     onValueChange: {
       control: false,
+    },
+    className: {
+      table: {
+        disable: true,
+      },
     },
     onFocus: {
       control: false,

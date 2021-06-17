@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- In `TextFieldList`, user can now specify custom pattern as list markers using an array of string.
+
 ### Fixed
 
 - Fix a bug in `ReorderabledList` that might sometimes make the ordering being wrong.

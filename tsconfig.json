@@ -1,20 +1,18 @@
 {
-    "compilerOptions": {
-      "declaration": true,
-      "declarationDir": "./dist",
-      "module": "es6",
-      "noImplicitAny": true,
-      "outDir": "./dist",
-      "rootDir": "./src",
-      "target": "es5",
-      "jsx": "react",
-      "esModuleInterop": true,
-      "moduleResolution": "node",
-      "lib": ["es2015", "es2017", "dom"],
-      "importHelpers": true
-    },
-    "include": [
-      "src/**/*"
-    ],
-    "exclude": ["node_modules"]
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./dist",
+    "module": "es6",
+    "noImplicitAny": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "target": "es5",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "lib": ["es2015", "es2017", "es2019", "dom"],
+    "importHelpers": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

@@ -16,6 +16,7 @@ export const listItem = css`
   margin-top: 10px;
   &::marker {
     vertical-align: middle;
+    content: attr(data-list-marker) ' ';
   }
 `
 
