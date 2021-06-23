@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - In `TextFieldList`, user can now specify custom pattern as list markers using an array of string.
+- New switch component called `SwitchButton`. It works like the `CheckboxButton` component with the ability to change icon like the `Button` component.
 
 ### Fixed
 
