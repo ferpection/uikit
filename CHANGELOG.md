@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v1.3.0] - 2021-06-23
+
 ### Added
 
 - In `TextFieldList`, user can now specify custom pattern as list markers using an array of string.
@@ -698,6 +700,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Setup storybook as documentation
 
 [unreleased]: https://github.com/ferpection/uikit/tree/master
+[v1.3.0]: https://github.com/ferpection/uikit/tree/v1.3.0
 [v1.2.0]: https://github.com/ferpection/uikit/tree/v1.2.0
 [v1.1.0]: https://github.com/ferpection/uikit/tree/v1.1.0
 [v1.0.3]: https://github.com/ferpection/uikit/tree/v1.0.3
