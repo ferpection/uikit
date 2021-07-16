@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v1.4.0] - 2021-07-16
+
 ### Added
 
 - **Expose IDs from `TextFieldList`.** New `onFlatValueChange` attribute to get the legacy flat value
@@ -712,6 +714,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Setup storybook as documentation
 
 [unreleased]: https://github.com/ferpection/uikit/tree/master
+[v1.4.0]: https://github.com/ferpection/uikit/tree/v1.4.0
 [v1.3.0]: https://github.com/ferpection/uikit/tree/v1.3.0
 [v1.2.0]: https://github.com/ferpection/uikit/tree/v1.2.0
 [v1.1.0]: https://github.com/ferpection/uikit/tree/v1.1.0

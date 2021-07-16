@@ -1,6 +1,6 @@
 {
   "name": "@ferpection/uikit",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Technical implementation of the Ferpection design system",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
