@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- **Expose IDs from `TextFieldList`.** New `onFlatValueChange` attribute to get the legacy flat value
+
+### Changed
+
+- **Expose IDs from `TextFieldList`.** `onValueChange` now return the full verison of value containing IDs and texts.
+
 ### Fixed
 
 - Default markers for `TextFieldList` starts at 1 not 0

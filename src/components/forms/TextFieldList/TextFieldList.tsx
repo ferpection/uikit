@@ -34,8 +34,8 @@ export interface TextFieldListProps extends FormProps {
   buttonText?: string
   displayErrorStrategy?: 'hidden' | 'on-field' | 'on-list'
   value?: string[] | IdentifiableString[]
-  onValueChange?: (values: string[]) => void
-  onIdentifiableValueChange?: (values: IdentifiableString[]) => void
+  onValueChange?: (values: IdentifiableString[]) => void
+  onFlatValueChange?: (values: string[]) => void
   className?: string
   markerPattern?: string[]
 }
@@ -67,13 +67,13 @@ export const TextFieldList: React.FC<TextFieldListProps> = props => {
   const [inputErrors, setInputErrors] = useState<GroupedFormErrors>({})
   const flatValues = values.map(value => value.text)
 
-  const { onValueChange = () => {}, onIdentifiableValueChange = () => {}, onErrors = () => {}, validators = [] } = props
+  const { onValueChange = () => {}, onFlatValueChange = () => {}, onErrors = () => {}, validators = [] } = props
   const errorMessages = Object.keys(inputErrors)
     .map(key => inputErrors[key])
     .reduce((aggr, curr) => ({ ...aggr, ...curr }), {})
 
-  useEffect(() => onValueChange(flatValues), [flatValues.join('-')])
-  useEffect(() => onIdentifiableValueChange(values), [flatValues.join('-')])
+  useEffect(() => onFlatValueChange(flatValues), [flatValues.join('-')])
+  useEffect(() => onValueChange(values), [flatValues.join('-')])
   useEffect(() => onErrors(errorMessages), [Object.keys(inputErrors).join('-')])
   useEffect(
     () =>

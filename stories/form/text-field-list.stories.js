@@ -74,8 +74,8 @@ export const NormalState = ({
     <UiKitInitializer>
       <TextFieldList
         value={values}
-        onValueChange={values => setValues(values)}
-        onIdentifiableValueChange={values => setValuesAndIDs(values)}
+        onFlatValueChange={values => setValues(values)}
+        onValueChange={values => setValuesAndIDs(values)}
         {...props}
       />
       <pre
@@ -87,8 +87,8 @@ export const NormalState = ({
           justifyContent: 'space-evenly',
         }}
       >
-        <div>Value: {JSON.stringify(values, null, 2)}</div>
-        <div>Value with IDs: {JSON.stringify(valuesAndIDs, null, 2)}</div>
+        <div>Value: {JSON.stringify(valuesAndIDs, null, 2)}</div>
+        <div>Flat Value: {JSON.stringify(values, null, 2)}</div>
       </pre>
     </UiKitInitializer>
   )
