@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Default markers for `TextFieldList` starts at 1 not 0
+
 ## [v1.3.0] - 2021-06-23
 
 ### Added
