@@ -3,7 +3,12 @@ import { SyntheticEvent } from 'react'
 import { FormErrors } from './form-errors'
 import { FormValidator } from './form-validator'
 
-export type FormValue = string | string[] | number | Date | File[]
+export interface IdentifiableString {
+  id: string
+  text: string
+}
+
+export type FormValue = string | string[] | IdentifiableString[] | number | Date | File[]
 
 export interface FormProps {
   value?: FormValue

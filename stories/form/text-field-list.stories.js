@@ -58,20 +58,37 @@ export default {
   },
 }
 
-export const NormalState = ({ value, onErrors, onValueChange, onBlur, onFocus, ...props }) => {
+export const NormalState = ({
+  value,
+  onErrors,
+  onValueChange,
+  onIdentifiableValueChange,
+  onBlur,
+  onFocus,
+  ...props
+}) => {
   const [values, setValues] = useState(value)
+  const [valuesAndIDs, setValuesAndIDs] = useState(value)
 
   return (
     <UiKitInitializer>
-      <TextFieldList value={values} onValueChange={values => setValues(values)} {...props} />
+      <TextFieldList
+        value={values}
+        onValueChange={values => setValues(values)}
+        onIdentifiableValueChange={values => setValuesAndIDs(values)}
+        {...props}
+      />
       <pre
         style={{
           backgroundColor: N75_COLOR.toString(),
           padding: 40,
           marginTop: 40,
+          display: 'flex',
+          justifyContent: 'space-evenly',
         }}
       >
-        Value: {JSON.stringify(values, null, 2)}
+        <div>Value: {JSON.stringify(values, null, 2)}</div>
+        <div>Value with IDs: {JSON.stringify(valuesAndIDs, null, 2)}</div>
       </pre>
     </UiKitInitializer>
   )

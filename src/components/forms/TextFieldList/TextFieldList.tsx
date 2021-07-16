@@ -10,7 +10,7 @@ import { Button } from '../../buttons/Button/Button'
 
 import { TextField, TextFieldProps } from '../TextField/TextField'
 import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
-import { defaultFormProps, FormProps } from '../form-props'
+import { defaultFormProps, FormProps, IdentifiableString } from '../form-props'
 import { FormErrors } from '../form-errors'
 
 import {
@@ -33,8 +33,9 @@ export interface TextFieldListProps extends FormProps {
   rowCount?: number
   buttonText?: string
   displayErrorStrategy?: 'hidden' | 'on-field' | 'on-list'
-  value?: string[]
+  value?: string[] | IdentifiableString[]
   onValueChange?: (values: string[]) => void
+  onIdentifiableValueChange?: (values: IdentifiableString[]) => void
   className?: string
   markerPattern?: string[]
 }
@@ -43,32 +44,43 @@ interface GroupedFormErrors {
   [id: string]: FormErrors
 }
 
+function identifyString(
+  text: string | IdentifiableString,
+  { previousId }: { previousId?: string } = {},
+): IdentifiableString {
+  if (typeof text === 'string') {
+    return {
+      id: previousId ?? RandomString.generate(20),
+      text,
+    }
+  }
+
+  return text
+}
+
 export const TextFieldList: React.FC<TextFieldListProps> = props => {
   const flatInitialValues = props.value || []
-  const intialValues = flatInitialValues.map(el => ({
-    id: RandomString.generate(20),
-    text: el,
-  }))
+  const intialValues = flatInitialValues.map((value: string | IdentifiableString) => identifyString(value))
 
-  const [values, setValues] = useState<{ id: string; text: string }[]>(intialValues)
+  const [values, setValues] = useState<IdentifiableString[]>(intialValues)
   const [handleFocus, handleBlur] = useMergedFocusHandlers(props)
   const [inputErrors, setInputErrors] = useState<GroupedFormErrors>({})
   const flatValues = values.map(value => value.text)
 
-  const { onValueChange = () => {}, onErrors = () => {}, validators = [] } = props
+  const { onValueChange = () => {}, onIdentifiableValueChange = () => {}, onErrors = () => {}, validators = [] } = props
   const errorMessages = Object.keys(inputErrors)
     .map(key => inputErrors[key])
     .reduce((aggr, curr) => ({ ...aggr, ...curr }), {})
 
   useEffect(() => onValueChange(flatValues), [flatValues.join('-')])
+  useEffect(() => onIdentifiableValueChange(values), [flatValues.join('-')])
   useEffect(() => onErrors(errorMessages), [Object.keys(inputErrors).join('-')])
   useEffect(
     () =>
       setValues(
-        flatInitialValues.map((text, index) => ({
-          id: values[index]?.id ?? RandomString.generate(20),
-          text,
-        })),
+        flatInitialValues.map((text: string | IdentifiableString, index: number) =>
+          identifyString(text, { previousId: values[index]?.id }),
+        ),
       ),
     [flatInitialValues.join('-')],
   )
