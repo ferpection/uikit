@@ -1,4 +1,4 @@
-import React from 'react'
+import { FC } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import {
@@ -15,7 +15,7 @@ export interface HelpBlockProps {
   className?: string
 }
 
-export const HelpBlock: React.FC<HelpBlockProps> = props => {
+export const HelpBlock: FC<HelpBlockProps> = props => {
   return (
     <aside className={props.className} css={[containerStyles]}>
       <header css={headerStyles}>

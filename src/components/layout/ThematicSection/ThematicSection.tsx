@@ -1,4 +1,4 @@
-import React from 'react'
+import { FC } from 'react'
 import { ReactElementLike } from 'prop-types'
 
 import {
@@ -17,7 +17,7 @@ export interface ThematicSectionProps {
   className?: string
 }
 
-export const ThematicSection: React.FC<ThematicSectionProps> = props => (
+export const ThematicSection: FC<ThematicSectionProps> = props => (
   <div className={props.className} css={[containerStyles]}>
     <header css={[headerStyles]}>
       <div css={[titleStyles]}>

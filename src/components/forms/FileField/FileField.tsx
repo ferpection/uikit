@@ -1,4 +1,4 @@
-import React, { useState, useEffect, SyntheticEvent, Fragment, useRef } from 'react'
+import { useState, useEffect, SyntheticEvent, Fragment, useRef, ChangeEvent } from 'react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
 import { useTheme } from '../../../hooks/useTheme'
@@ -64,7 +64,7 @@ export function FileField(props: FileFieldProps) {
     onFocus: handleFocus = () => {},
   } = props
 
-  const handleChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChanges = (event: ChangeEvent<HTMLInputElement>) => {
     const newFiles = Array.from(fileInput?.current?.files)
     setFiles(newFiles)
     onValueChange(newFiles, event)

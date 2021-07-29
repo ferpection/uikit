@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Color, R400_COLOR } from '../../colors'
 
 import { Button, ButtonProps } from './Button/Button'

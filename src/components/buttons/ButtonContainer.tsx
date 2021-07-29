@@ -1,4 +1,4 @@
-import React, { FC, ButtonHTMLAttributes } from 'react'
+import { FC, ButtonHTMLAttributes } from 'react'
 import { Link } from 'react-router-dom'
 
 interface ButtonContainerProps extends ButtonHTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {

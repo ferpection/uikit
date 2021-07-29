@@ -1,4 +1,4 @@
-import React from 'react'
+import { FC } from 'react'
 
 import { Color } from '../../../colors'
 import { TaskBadgeIcon } from './TaskBadgeIcon'
@@ -34,7 +34,7 @@ export interface FerpectionBadgeIconProps {
     | 'graph'
 }
 
-export const FerpectionBadgeIcon: React.FC<FerpectionBadgeIconProps> = ({ icon: iconName, ...otherProps }) => {
+export const FerpectionBadgeIcon: FC<FerpectionBadgeIconProps> = ({ icon: iconName, ...otherProps }) => {
   switch (iconName) {
     case 'config': {
       return <ConfigBadgeIcon {...otherProps} />

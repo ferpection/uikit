@@ -1,4 +1,4 @@
-import React, { Fragment, SyntheticEvent } from 'react'
+import { Fragment, SyntheticEvent, FC } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconName } from '@fortawesome/fontawesome-svg-core'
 
@@ -20,7 +20,7 @@ interface PlaceholderButtonProps {
   onBlur?: (event?: SyntheticEvent) => void
 }
 
-export const PlaceholderButton: React.FC<PlaceholderButtonProps> = props => {
+export const PlaceholderButton: FC<PlaceholderButtonProps> = props => {
   const theme = useTheme()
   const { children = 'Add an element', isDisabled, icon = 'plus', ...args } = props
 

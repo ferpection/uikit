@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { FileField, UiKitInitializer } from '../../src/components/index.ts'
 
 export default {

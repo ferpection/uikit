@@ -1,11 +1,11 @@
-import React from 'react'
-import { css, jsx } from '@emotion/react'
+import { FC } from 'react'
+import { css } from '@emotion/react'
 
 import { BadgeProps } from './badge-props'
 
 interface GraphBadgeIconProps extends BadgeProps {}
 
-export const GraphBadgeIcon: React.FC<GraphBadgeIconProps> = ({
+export const GraphBadgeIcon: FC<GraphBadgeIconProps> = ({
   borderColor = {
     toHex: () => {},
   },

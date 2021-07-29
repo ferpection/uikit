@@ -1,4 +1,4 @@
-import React, { Children, isValidElement, cloneElement, ReactElement } from 'react'
+import { Children, isValidElement, cloneElement, ReactElement, FC } from 'react'
 
 import { Color, R400_COLOR } from '../../../colors/index'
 
@@ -13,7 +13,7 @@ export interface HeaderProps {
   className?: string
 }
 
-export const Header: React.FC<HeaderProps> = props => {
+export const Header: FC<HeaderProps> = props => {
   const { className, homeUrl = 'https://ferpection.com/', children, isLightVersion } = props
   const BLACK_COLOR = new Color(255, 255, 255)
 

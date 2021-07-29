@@ -1,4 +1,4 @@
-import React from 'react'
+import { FC } from 'react'
 
 import { Color } from '../../colors'
 
@@ -7,7 +7,7 @@ export interface FerpectionLogoProps {
   className?: string
 }
 
-export const FerpectionLogo: React.FC<FerpectionLogoProps> = ({ color, className }) => (
+export const FerpectionLogo: FC<FerpectionLogoProps> = ({ color, className }) => (
   <svg
     className={className}
     xmlns="http://www.w3.org/2000/svg"

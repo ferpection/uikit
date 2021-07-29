@@ -1,6 +1,6 @@
 /* global JSX */
 
-import React, { useState, useEffect, Fragment } from 'react'
+import { useState, useEffect, Fragment } from 'react'
 
 import { DraggableItem } from '../dnd/DraggableItem/DraggableItem'
 import Zone from './Zone/Zone'

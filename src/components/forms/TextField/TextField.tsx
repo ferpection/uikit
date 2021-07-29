@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment, SyntheticEvent, forwardRef, MutableRefObject } from 'react'
+import { useEffect, Fragment, SyntheticEvent, forwardRef, MutableRefObject, ChangeEvent } from 'react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
 
@@ -59,7 +59,7 @@ export const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Text
   )
 
   const theme = useTheme()
-  const handleChanges = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+  const handleChanges = (event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     setValue(event.target.value)
     handleValueChange(event.target.value, event)
   }

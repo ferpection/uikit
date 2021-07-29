@@ -1,4 +1,4 @@
-import React, { Fragment, SyntheticEvent } from 'react'
+import { Fragment, SyntheticEvent, FC } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { findIconDefinition, IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core'
 
@@ -28,7 +28,7 @@ export interface ButtonProps {
   onBlur?: (event?: SyntheticEvent) => void
 }
 
-export const Button: React.FC<ButtonProps> = props => {
+export const Button: FC<ButtonProps> = props => {
   const theme = useTheme()
   const {
     children,

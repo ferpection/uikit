@@ -12,11 +12,12 @@ plugins:
   - '@typescript-eslint'
   - '@emotion'
 rules:
-  react/jsx-uses-react: error
+  react/jsx-uses-react: 'off'
+  react/react-in-jsx-scope: 'off'
   react/jsx-uses-vars: error
   space-before-function-paren: [error, never]
   comma-dangle: [error, always-multiline]
-  '@emotion/jsx-import': error
+  '@emotion/jsx-import': 'off'
   '@emotion/pkg-renaming': error
   '@emotion/no-vanilla': error
   '@emotion/import-from-emotion': error

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, text, number, boolean, select } from '@storybook/addon-knobs'
 
