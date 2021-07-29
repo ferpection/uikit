@@ -24,7 +24,7 @@ specifiers:
   '@jest/fake-timers': ^26.5.2
   '@jest/globals': ^26.5.3
   '@jest/types': ^26.5.2
-  '@rollup/plugin-typescript': ^8.2.3
+  '@rollup/plugin-typescript': ^8.2.4
   '@storybook/addon-a11y': ^6.3.6
   '@storybook/addon-actions': ^6.3.6
   '@storybook/addon-controls': ^6.3.6
@@ -111,7 +111,7 @@ devDependencies:
   '@jest/fake-timers': 26.6.2
   '@jest/globals': 26.6.2
   '@jest/types': 26.6.2
-  '@rollup/plugin-typescript': 8.2.3_20e4c79babcf4a29621ac914959d879e
+  '@rollup/plugin-typescript': 8.2.4_20e4c79babcf4a29621ac914959d879e
   '@storybook/addon-a11y': 6.3.6_6ed7afba42f0472a9770b39da668445f
   '@storybook/addon-actions': 6.3.6_6ed7afba42f0472a9770b39da668445f
   '@storybook/addon-controls': 6.3.6_6ed7afba42f0472a9770b39da668445f
@@ -2657,8 +2657,8 @@ packages:
       react-lifecycles-compat: 3.0.4
     dev: true
 
-  /@rollup/plugin-typescript/8.2.3_20e4c79babcf4a29621ac914959d879e:
-    resolution: {integrity: sha512-bSkd+DD3wP9OLU6lPet59B6jJF29/RlxHkbwvOVOcf1nk8eQYWw24HpldEdrPo/WG0QAPD7TqI7+2y5jtdqjww==}
+  /@rollup/plugin-typescript/8.2.4_20e4c79babcf4a29621ac914959d879e:
+    resolution: {integrity: sha512-rZ19Yv/V8mE+PZgz0P4KoXa/2pMlp2y4o2WryyxLTe1zVr6uWZzmVhITMUg+vxNwti1P5UV+n7yK4HBqmesLbA==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
       rollup: ^2.14.0

@@ -72,7 +72,7 @@
     "@jest/fake-timers": "^26.5.2",
     "@jest/globals": "^26.5.3",
     "@jest/types": "^26.5.2",
-    "@rollup/plugin-typescript": "^8.2.3",
+    "@rollup/plugin-typescript": "^8.2.4",
     "@storybook/addon-a11y": "^6.3.6",
     "@storybook/addon-actions": "^6.3.6",
     "@storybook/addon-controls": "^6.3.6",
