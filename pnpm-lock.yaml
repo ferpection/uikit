@@ -63,7 +63,7 @@ specifiers:
   jest-message-util: ^27.0.6
   jest-mock: ^27.0.6
   prettier: ^2.3.2
-  pretty-format: ^26.4.2
+  pretty-format: ^27.0.6
   prop-types: ^15.7.2
   randomstring: ^1.2.1
   react: ^17.0.2
@@ -72,7 +72,7 @@ specifiers:
   react-is: ^17.0.2
   react-router: ^5.2.0
   react-router-dom: ^5.2.0
-  rollup: ^2.55.0
+  rollup: ^2.55.1
   rollup-plugin-copy: ^3.4.0
   rollup-plugin-svg: ^2.0.0
   source-map: ^0.7.3
@@ -111,7 +111,7 @@ devDependencies:
   '@jest/fake-timers': 27.0.6
   '@jest/globals': 27.0.6
   '@jest/types': 27.0.6
-  '@rollup/plugin-typescript': 8.2.4_20e4c79babcf4a29621ac914959d879e
+  '@rollup/plugin-typescript': 8.2.4_28fe49957e0849e1538fcaddd4c4dd2d
   '@storybook/addon-a11y': 6.3.6_6ed7afba42f0472a9770b39da668445f
   '@storybook/addon-actions': 6.3.6_6ed7afba42f0472a9770b39da668445f
   '@storybook/addon-controls': 6.3.6_6ed7afba42f0472a9770b39da668445f
@@ -149,7 +149,7 @@ devDependencies:
   jest-message-util: 27.0.6
   jest-mock: 27.0.6
   prettier: 2.3.2
-  pretty-format: 26.6.2
+  pretty-format: 27.0.6
   prop-types: 15.7.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -157,7 +157,7 @@ devDependencies:
   react-is: 17.0.2
   react-router: 5.2.0_react@17.0.2
   react-router-dom: 5.2.0_react@17.0.2
-  rollup: 2.55.0
+  rollup: 2.55.1
   rollup-plugin-copy: 3.4.0
   rollup-plugin-svg: 2.0.0
   source-map: 0.7.3
@@ -2442,7 +2442,7 @@ packages:
       react-lifecycles-compat: 3.0.4
     dev: true
 
-  /@rollup/plugin-typescript/8.2.4_20e4c79babcf4a29621ac914959d879e:
+  /@rollup/plugin-typescript/8.2.4_28fe49957e0849e1538fcaddd4c4dd2d:
     resolution: {integrity: sha512-rZ19Yv/V8mE+PZgz0P4KoXa/2pMlp2y4o2WryyxLTe1zVr6uWZzmVhITMUg+vxNwti1P5UV+n7yK4HBqmesLbA==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
@@ -2450,14 +2450,14 @@ packages:
       tslib: '*'
       typescript: '>=3.7.0'
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.55.0
+      '@rollup/pluginutils': 3.1.0_rollup@2.55.1
       resolve: 1.20.0
-      rollup: 2.55.0
+      rollup: 2.55.1
       tslib: 2.3.0
       typescript: 4.3.5
     dev: true
 
-  /@rollup/pluginutils/3.1.0_rollup@2.55.0:
+  /@rollup/pluginutils/3.1.0_rollup@2.55.1:
     resolution: {integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
@@ -2466,7 +2466,7 @@ packages:
       '@types/estree': 0.0.39
       estree-walker: 1.0.1
       picomatch: 2.3.0
-      rollup: 2.55.0
+      rollup: 2.55.1
     dev: true
 
   /@sinonjs/commons/1.8.3:
@@ -10315,16 +10315,6 @@ packages:
       renderkid: 2.0.7
     dev: true
 
-  /pretty-format/26.6.2:
-    resolution: {integrity: sha512-7AeGuCYNGmycyQbCqd/3PWH4eOoX/OiCa0uphp57NVTeAGdJGaAliecxwBDHYQCIvrW7aDBZCYeNTP/WX69mkg==}
-    engines: {node: '>= 10'}
-    dependencies:
-      '@jest/types': 26.6.2
-      ansi-regex: 5.0.0
-      ansi-styles: 4.3.0
-      react-is: 17.0.1
-    dev: true
-
   /pretty-format/27.0.6:
     resolution: {integrity: sha512-8tGD7gBIENgzqA+UBzObyWqQ5B778VIFZA/S66cclyd5YkFLYs2Js7gxDKf0MXtTc9zcS7t1xhdfcElJ3YIvkQ==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
@@ -10716,10 +10706,6 @@ packages:
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-
-  /react-is/17.0.1:
-    resolution: {integrity: sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==}
-    dev: true
 
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
@@ -11240,8 +11226,8 @@ packages:
       minimatch: 3.0.4
     dev: true
 
-  /rollup/2.55.0:
-    resolution: {integrity: sha512-Atc3QqelKzrKwRkqnSdq0d2Mi8e0iGuL+kZebKMZ4ysyWHD5hw9VfVCAuODIW5837RENV8LXcbAEHurYf+ArvA==}
+  /rollup/2.55.1:
+    resolution: {integrity: sha512-1P9w5fpb6b4qroePh8vHKGIvPNxwoCQhjJpIqfZGHLKpZ0xcU2/XBmFxFbc9697/6bmHpmFTLk5R1dAQhFSo0g==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
