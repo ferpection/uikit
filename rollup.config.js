@@ -1,4 +1,4 @@
-import typescript from 'rollup-plugin-typescript2'
+import typescript from '@rollup/plugin-typescript'
 import svg from 'rollup-plugin-svg'
 import copy from 'rollup-plugin-copy'
 
@@ -13,7 +13,9 @@ const globalConf = {
   ],
   plugins: [
     typescript({
+      tsconfig: './tsconfig.json',
       typescript: require('typescript'),
+      declarationDir: '.', // fix an issue with @rollup/plugin-typescript https://github.com/rollup/plugins/issues/934
     }),
     svg({ base64: true }),
     copy({
