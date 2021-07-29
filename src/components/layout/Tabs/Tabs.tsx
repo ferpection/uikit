@@ -1,6 +1,4 @@
-/** @jsxImportSource @emotion/react */
 import { FC, Children, isValidElement, ReactElement } from 'react'
-import { jsx } from '@emotion/react'
 
 import { TabLink } from '../../buttons/TabLink/TabLink'
 import { useTheme } from '../../../hooks/useTheme'

@@ -1,7 +1,3 @@
-/** @jsxImportSource @emotion/react */
-/** @jsx jsx */
-import { jsx } from '@emotion/react'
-
 import { storiesOf } from '@storybook/react'
 
 import {

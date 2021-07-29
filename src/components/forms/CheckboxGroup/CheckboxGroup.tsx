@@ -1,6 +1,4 @@
-/** @jsxImportSource @emotion/react */
 import { FC, Children, cloneElement, useState, isValidElement, ChangeEvent, useEffect, FocusEvent } from 'react'
-import { jsx } from '@emotion/react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
 

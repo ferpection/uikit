@@ -1,6 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { jsx } from '@emotion/react'
-
 import { PickerButton, PickerButtonProps } from '../../PickerButton/PickerButton'
 
 import { cicleButton } from './styles'

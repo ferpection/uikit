@@ -1,6 +1,5 @@
-/** @jsxImportSource @emotion/react */
 import { FC, ChangeEvent, FocusEvent } from 'react'
-import { jsx } from '@emotion/react'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { findIconDefinition, IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core'
 

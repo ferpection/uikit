@@ -1,7 +1,3 @@
-/** @jsxImportSource @emotion/react */
-/** @jsx jsx */
-import { jsx, css } from '@emotion/react'
-
 import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, select, text } from '@storybook/addon-knobs'

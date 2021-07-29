@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { jsx } from '@emotion/react'
 import { useTheme } from '../../../../hooks/useTheme'
 
 import { calendarButtons, calendarButtonsToday, calendarButtonsSelected } from './styles'

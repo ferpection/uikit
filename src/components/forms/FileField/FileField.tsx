@@ -1,6 +1,4 @@
-/** @jsxImportSource @emotion/react */
 import React, { useState, useEffect, SyntheticEvent, Fragment, useRef } from 'react'
-import { jsx } from '@emotion/react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
 import { useTheme } from '../../../hooks/useTheme'

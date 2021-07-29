@@ -1,6 +1,5 @@
-/** @jsxImportSource @emotion/react */
 import { FC, ReactNode } from 'react'
-import { jsx } from '@emotion/react'
+
 import { Props as DayzedProps, useDayzed } from 'dayzed'
 
 import { Button } from '../../../buttons/Button/Button'

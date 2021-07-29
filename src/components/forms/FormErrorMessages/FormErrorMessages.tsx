@@ -1,7 +1,5 @@
-/** @jsxImportSource @emotion/react */
 import { Fragment, FC } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { jsx } from '@emotion/react'
 
 import { FormErrors } from '../form-errors'
 import { useTheme } from '../../../hooks/useTheme'

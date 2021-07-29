@@ -1,6 +1,5 @@
-/** @jsxImportSource @emotion/react */
 import { FC, useContext, isValidElement, Children, cloneElement } from 'react'
-import { jsx } from '@emotion/react'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { DragContext } from '../DragContext'

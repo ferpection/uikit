@@ -1,6 +1,4 @@
-/** @jsxImportSource @emotion/react */
 import { FC, useState, SyntheticEvent, useEffect, Fragment } from 'react'
-import { jsx } from '@emotion/react'
 
 import { removeConsecutiveDuplicate } from '../../../utils/array'
 

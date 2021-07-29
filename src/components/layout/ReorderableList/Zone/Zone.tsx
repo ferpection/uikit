@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { jsx } from '@emotion/react'
 import { FC } from 'react'
 import { useTheme } from '../../../../hooks/useTheme'
 

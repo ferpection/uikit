@@ -1,6 +1,5 @@
-/** @jsxImportSource @emotion/react */
 import { useState, useEffect, SyntheticEvent } from 'react'
-import { jsx } from '@emotion/react'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { Button } from '../../buttons/Button/Button'

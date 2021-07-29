@@ -1,6 +1,4 @@
-/** @jsxImportSource @emotion/react */
 import { FC } from 'react'
-import { jsx } from '@emotion/react'
 
 import { CalendarContainer } from '../CalendarContainer/CalendarContainer'
 import { PickerButton } from '../PickerButton/PickerButton'

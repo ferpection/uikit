@@ -1,6 +1,3 @@
-/** @jsxImportSource @emotion/react */
-/** @jsx jsx */
-import { jsx } from '@emotion/react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import { storiesOf } from '@storybook/react'

@@ -1,7 +1,5 @@
-/** @jsxImportSource @emotion/react */
 import React, { useState, useEffect, Fragment } from 'react'
 import RandomString from 'randomstring'
-import { jsx } from '@emotion/react'
 
 import { useMergedFocusHandlers } from '../../../hooks/useMergedFocusHandlers'
 
