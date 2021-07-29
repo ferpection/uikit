@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 import { FC, ReactChild } from 'react'
 import { jsx } from '@emotion/react'
 

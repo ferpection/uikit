@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 import React, { Children, isValidElement, cloneElement, ReactElement } from 'react'
 import { jsx } from '@emotion/react'
 

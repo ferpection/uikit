@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 import { FC, useEffect, Fragment } from 'react'
 import { jsx, Global, css } from '@emotion/react'
 import WebFontLoader from 'webfontloader'

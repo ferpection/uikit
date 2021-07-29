@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 import React, { useEffect, Fragment, SyntheticEvent, forwardRef, MutableRefObject } from 'react'
 import { jsx } from '@emotion/react'
 

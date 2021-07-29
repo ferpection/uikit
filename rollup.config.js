@@ -9,6 +9,7 @@ const globalConf = {
     ...Object.keys(pkg.dependencies),
     ...Object.keys(pkg.devDependencies),
     '@emotion/css',
+    '@emotion/react/jsx-runtime',
   ],
   plugins: [
     typescript({

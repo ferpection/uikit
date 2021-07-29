@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 import React from 'react'
 import { ReactElementLike } from 'prop-types'
 import { jsx } from '@emotion/react'

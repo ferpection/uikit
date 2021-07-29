@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 import { Children, FC, isValidElement } from 'react'
 import { jsx } from '@emotion/react'
 
@@ -43,7 +43,7 @@ export const OneBlockStack: FC<OneBlockStackProps> = props => {
 
     const customCSS = [innerElementStyles(index, arr.length)]
     // Specific EmotionJS component that need the same CSS rules than raw HTML tags
-    if (['p', 'section', 'div'].includes(((child.type as unknown) as any).__emotion_base)) {
+    if (['p', 'section', 'div'].includes((child.type as unknown as any).__emotion_base)) {
       customCSS.push(innerDivElementStyles(theme, props.isHighlighted))
     }
 

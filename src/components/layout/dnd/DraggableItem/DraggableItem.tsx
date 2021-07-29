@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 import { FC, DragEventHandler, useState, useCallback, MouseEventHandler } from 'react'
 import { jsx } from '@emotion/react'
 
