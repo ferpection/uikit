@@ -34,7 +34,6 @@ specifiers:
   '@storybook/addon-viewport': ^6.3.6
   '@storybook/addons': ^6.3.6
   '@storybook/react': ^6.3.6
-  '@types/dayzed': ^3.2.0
   '@types/prop-types': ^15.7.4
   '@types/randomstring': ^1.1.7
   '@types/react': ^17.0.15
@@ -122,7 +121,6 @@ devDependencies:
   '@storybook/addon-viewport': 6.3.6_6ed7afba42f0472a9770b39da668445f
   '@storybook/addons': 6.3.6_react-dom@17.0.2+react@17.0.2
   '@storybook/react': 6.3.6_8011f32b09b849e6dc8e3c68a09b3f0c
-  '@types/dayzed': 3.2.0_prop-types@15.7.2+react@17.0.2
   '@types/prop-types': 15.7.4
   '@types/randomstring': 1.1.7
   '@types/react': 17.0.15
@@ -3796,16 +3794,6 @@ packages:
     resolution: {integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==}
     dev: true
 
-  /@types/dayzed/3.2.0_prop-types@15.7.2+react@17.0.2:
-    resolution: {integrity: sha512-MvO3YEIEX8KM2EZ5aI2KVgm82XO6QAM+n/2coni9H8A/BCLAlXH0KYB4cph6TKw32Ek83kCKR9TmAX7VjQnGNA==}
-    deprecated: This is a stub types definition. dayzed provides its own type definitions, so you do not need this installed.
-    dependencies:
-      dayzed: 3.2.2_prop-types@15.7.2+react@17.0.2
-    transitivePeerDependencies:
-      - prop-types
-      - react
-    dev: true
-
   /@types/estree/0.0.39:
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
     dev: true
@@ -5968,6 +5956,7 @@ packages:
   /date-fns/2.23.0:
     resolution: {integrity: sha512-5ycpauovVyAk0kXNZz6ZoB9AYMZB4DObse7P3BPWmyEjXNORTI8EJ6X0uaSAq4sCHzM1uajzrkr6HnsLQpxGXA==}
     engines: {node: '>=0.11'}
+    dev: false
 
   /dayzed/3.2.2_prop-types@15.7.2+react@17.0.2:
     resolution: {integrity: sha512-BzNoj+6+er5DPQ0F82Yh1U8MU/jyOo7R+jIlK9FsSjfk4ZIISalygzMcsXTGTFedm5UfTddQnELMVBQUXZDv9Q==}
@@ -5979,6 +5968,7 @@ packages:
       date-fns: 2.23.0
       prop-types: 15.7.2
       react: 17.0.2
+    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
