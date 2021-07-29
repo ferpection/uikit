@@ -21,7 +21,7 @@ export interface ReorderableListProps<T extends ReorderableItem> {
 
 export function ReorderableList<T extends ReorderableItem>(props: ReorderableListProps<T>) {
   const {
-    renderItem = (arg: T) => (arg as unknown) as JSX.Element,
+    renderItem = (arg: T) => arg as unknown as JSX.Element,
     items: data,
     onOrderChange = () => {},
     useExternalDragHandle = false,

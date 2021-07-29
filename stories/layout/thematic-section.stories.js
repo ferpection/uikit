@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 import { jsx, css } from '@emotion/react'
 
 import { storiesOf } from '@storybook/react'
