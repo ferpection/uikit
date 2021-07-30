@@ -1,4 +1,3 @@
-import { withA11y } from '@storybook/addon-a11y'
 import { action } from '@storybook/addon-actions'
 
 import { CheckboxGroup, CheckboxButton, DatePickerField, TextField, UiKitInitializer } from '../../src/components'
@@ -6,12 +5,8 @@ import { CheckboxGroup, CheckboxButton, DatePickerField, TextField, UiKitInitial
 export default {
   title: 'Components/Forms/CheckboxGroup',
   component: CheckboxGroup,
-  decorators: [withA11y],
   args: {
     value: ['three'],
-    onErrors: () => {},
-    onBlur: () => {},
-    onFocus: () => {},
     onValueChange: () => action('value changed'),
   },
   argTypes: {
@@ -43,13 +38,13 @@ export const BasicExemple = args => {
   )
 }
 
-export const SubComponent = () => {
+export const SubComponent = args => {
   return (
     <UiKitInitializer>
       <h2>
         <code>TextField</code>
       </h2>
-      <CheckboxGroup value="three" onValueChange={action('value changed')}>
+      <CheckboxGroup {...args}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">
           Choice Two: <TextField />
@@ -59,7 +54,7 @@ export const SubComponent = () => {
       <h2>
         <code>{DatePickerField.name}</code>
       </h2>
-      <CheckboxGroup value="three" onValueChange={action('value changed')}>
+      <CheckboxGroup {...args}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">
           Choice Two: <DatePickerField />
@@ -69,7 +64,7 @@ export const SubComponent = () => {
       <h2>
         <code>Small {DatePickerField.name}</code>
       </h2>
-      <CheckboxGroup value="three" onValueChange={action('value changed')}>
+      <CheckboxGroup {...args}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">
           Choice Two: <DatePickerField isSmall />
@@ -81,7 +76,7 @@ export const SubComponent = () => {
           {DatePickerField.name} within a <code>div</code>
         </code>
       </h2>
-      <CheckboxGroup value="three" onValueChange={action('value changed')}>
+      <CheckboxGroup {...args}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">
           <div>
@@ -94,10 +89,10 @@ export const SubComponent = () => {
   )
 }
 
-export const ErrorState = () => {
+export const ErrorState = args => {
   return (
     <UiKitInitializer>
-      <CheckboxGroup onValueChange={action('value changed')} onErrors={action('errors thrown')} isRequired>
+      <CheckboxGroup onValueChange={action('value changed')} onErrors={action('errors thrown')} {...args}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">Choice Two</CheckboxButton>
         <CheckboxButton value="three">Choice Three</CheckboxButton>
@@ -106,13 +101,15 @@ export const ErrorState = () => {
   )
 }
 
-export const DisabledState = () => {
+ErrorState.args = { isRequired: true }
+
+export const DisabledState = args => {
   return (
     <UiKitInitializer>
       <h2>
         <code>isDisabled</code> on <code>{CheckboxGroup.name}</code>
       </h2>
-      <CheckboxGroup value="one" isDisabled>
+      <CheckboxGroup {...args}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two">Choice Two</CheckboxButton>
         <CheckboxButton value="three">Choice Three</CheckboxButton>
@@ -120,7 +117,7 @@ export const DisabledState = () => {
       <h2>
         <code>isDisabled</code> on <code>{CheckboxButton.name}</code>
       </h2>
-      <CheckboxGroup value="one">
+      <CheckboxGroup value={['one']}>
         <CheckboxButton value="one">Choice One</CheckboxButton>
         <CheckboxButton value="two" isDisabled>
           Choice Two
@@ -130,3 +127,5 @@ export const DisabledState = () => {
     </UiKitInitializer>
   )
 }
+
+DisabledState.args = { value: ['one'], isDisabled: true }
