@@ -1,34 +1,47 @@
-import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
-import { boolean, withKnobs } from '@storybook/addon-knobs'
 
 import { Header, Button, HeaderLink, UiKitInitializer } from '../../src/components/index.ts'
 
-storiesOf('Components/Layout/Header', module)
-  .addDecorator(withA11y)
-  .addDecorator(withKnobs)
-  .add('with classic buttons', () => (
+export default {
+  title: 'Components/Layout/Header',
+  component: Header,
+  decorators: [withA11y],
+}
+
+export const WithClassicButtons = args => {
+  return (
     <UiKitInitializer>
-      <Header isLightVersion={boolean('light version', false)}>
+      <Header {...args}>
         <Button>Home</Button>
         <Button>Blog</Button>
       </Header>
     </UiKitInitializer>
-  ))
-  .add('with header links', () => (
+  )
+}
+
+export const WithHeaderLinks = args => {
+  return (
     <UiKitInitializer>
-      <Header isLightVersion={boolean('light version', false)}>
+      <Header {...args}>
         <HeaderLink>Home</HeaderLink>
         <HeaderLink>Blog</HeaderLink>
       </Header>
     </UiKitInitializer>
-  ))
-  .add('with mixed buttons', () => (
+  )
+}
+
+export const WithMixedButtons = args => {
+  return (
     <UiKitInitializer>
-      <Header isLightVersion={boolean('light version', true)}>
+      <Header {...args}>
         <HeaderLink icon="home">Home</HeaderLink>
         <HeaderLink>Stats</HeaderLink>
         <Button>Blog</Button>
       </Header>
     </UiKitInitializer>
-  ))
+  )
+}
+
+WithMixedButtons.args = {
+  isLightVersion: true,
+}

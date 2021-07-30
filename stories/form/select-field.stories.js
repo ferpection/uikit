@@ -1,43 +1,60 @@
-import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 
 import { SelectField, UiKitInitializer } from '../../src/components/index.ts'
 
-storiesOf('Components/Forms/SelectField', module)
-  .addDecorator(withA11y)
-  .addDecorator(withKnobs)
-  .add('normal state', () => (
+export default {
+  title: 'Components/Forms/SelectField',
+  component: SelectField,
+  decorators: [withA11y],
+}
+
+export const NormalState = args => {
+  return (
     <UiKitInitializer>
-      <SelectField placeholder="This is an select" />
+      <SelectField {...args} />
     </UiKitInitializer>
-  ))
-  .add('highlighted state', () => (
+  )
+}
+
+NormalState.args = {
+  placeholder: 'This is an select',
+}
+
+export const HighlightedState = args => {
+  return (
     <UiKitInitializer>
-      <SelectField placeholder="This is a highlighted select" isHighlighted />
+      <SelectField {...args} />
     </UiKitInitializer>
-  ))
-  .add('error state', () => (
+  )
+}
+
+HighlightedState.args = {
+  placeholder: 'This is an select',
+  isHighlighted: true,
+}
+
+export const ErrorState = args => {
+  return (
     <UiKitInitializer>
-      <SelectField placeholder="This is a error select" isRequired>
-        <option value="test1">First element</option>
-        <option value="test2">Second element</option>
-      </SelectField>
+      <SelectField {...args} />
     </UiKitInitializer>
-  ))
-  .add('disabled state', () => (
+  )
+}
+
+ErrorState.args = {
+  placeholder: 'This is an select',
+  isRequired: true,
+}
+
+export const DisabledState = args => {
+  return (
     <UiKitInitializer>
-      <SelectField placeholder="This is a disabled select" isDisabled />
+      <SelectField {...args} />
     </UiKitInitializer>
-  ))
-  .add('full example', () => (
-    <UiKitInitializer>
-      <SelectField
-        placeholder={text('placeholder', 'Fill the field')}
-        dataType={select('data type', ['text', 'email'])}
-        isHighlighted={boolean('highlighted', false)}
-        isDisabled={boolean('disabled', false)}
-        isSmall={boolean('is small', false)}
-      />
-    </UiKitInitializer>
-  ))
+  )
+}
+
+DisabledState.args = {
+  placeholder: 'This is an select',
+  isDisabled: true,
+}

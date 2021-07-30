@@ -1,13 +1,15 @@
-import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs } from '@storybook/addon-knobs'
 
 import { ReorderableList, DragHandle, TextField, UiKitInitializer } from '../../src/components/index.ts'
 
-storiesOf('Components/Layout/ReorderableList', module)
-  .addDecorator(withA11y)
-  .addDecorator(withKnobs)
-  .add('simple case', () => (
+export default {
+  title: 'Components/Layout/ReorderableList',
+  component: ReorderableList,
+  decorators: [withA11y],
+}
+
+export const SimpleCase = args => {
+  return (
     <UiKitInitializer>
       <h1>{ReorderableList.name}</h1>
       <p>The components needs two properties:</p>
@@ -20,17 +22,24 @@ storiesOf('Components/Layout/ReorderableList', module)
         </li>
       </ul>
       <ReorderableList
-        items={[
-          { uuid: '0', order: 40 },
-          { uuid: '1', order: 10 },
-          { uuid: '2', order: 30 },
-          { uuid: '3', order: 20 },
-        ]}
         renderItem={item => <div style={{ backgroundColor: '#aaa', padding: '10px' }}>div #{item.uuid}</div>}
+        {...args}
       />
     </UiKitInitializer>
-  ))
-  .add('with drag handle', () => (
+  )
+}
+
+SimpleCase.args = {
+  items: [
+    { uuid: '0', order: 40 },
+    { uuid: '1', order: 10 },
+    { uuid: '2', order: 30 },
+    { uuid: '3', order: 20 },
+  ],
+}
+
+export const WithDragHandle = args => {
+  return (
     <UiKitInitializer>
       <h1>{ReorderableList.name}</h1>
       <p>The components can let you chose how to handle the drag.</p>
@@ -42,31 +51,18 @@ storiesOf('Components/Layout/ReorderableList', module)
         component.
       </p>
       <ReorderableList
-        items={[
-          { uuid: '0', order: 40 },
-          { uuid: '1', order: 10 },
-          { uuid: '2', order: 30 },
-          { uuid: '3', order: 20 },
-        ]}
-        useExternalDragHandle
         renderItem={item => (
           <div style={{ backgroundColor: '#aaa', padding: '10px' }}>
             <DragHandle />
             <TextField isSmall /> (div #{item.uuid})
           </div>
         )}
+        {...args}
       />
       <p>
         Users can customize the <code>DragHandle</code> using the <code>children</code> prop.
       </p>
       <ReorderableList
-        items={[
-          { uuid: '0', order: 40 },
-          { uuid: '1', order: 10 },
-          { uuid: '2', order: 30 },
-          { uuid: '3', order: 20 },
-        ]}
-        useExternalDragHandle
         renderItem={(item, dragStarted) => (
           <div style={{ backgroundColor: dragStarted ? '#F97F51' : '#aaa', padding: '10px' }}>
             <DragHandle>
@@ -75,6 +71,18 @@ storiesOf('Components/Layout/ReorderableList', module)
             <TextField isSmall />
           </div>
         )}
+        {...args}
       />
     </UiKitInitializer>
-  ))
+  )
+}
+
+WithDragHandle.args = {
+  items: [
+    { uuid: '0', order: 40 },
+    { uuid: '1', order: 10 },
+    { uuid: '2', order: 30 },
+    { uuid: '3', order: 20 },
+  ],
+  useExternalDragHandle: true,
+}

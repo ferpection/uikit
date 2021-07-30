@@ -1,17 +1,23 @@
-import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
 import { PlaceholderButton, UiKitInitializer } from '../../src/components/index.ts'
 
-storiesOf('Components/Button/PlaceholderButton', module)
-  .addDecorator(withA11y)
-  .addDecorator(withKnobs)
-  .add('normal state', () => (
+export default {
+  title: 'Components/Button/PlaceholderButton',
+  component: PlaceholderButton,
+  decorators: [withA11y],
+}
+
+export const NormalState = args => {
+  return (
     <UiKitInitializer>
-      <PlaceholderButton onClick={action('clicked')} isDisabled={boolean('disabled', false)}>
-        {text('label', 'Add an element')}
-      </PlaceholderButton>
+      <PlaceholderButton {...args} onClick={action('clicked')} />
     </UiKitInitializer>
-  ))
+  )
+}
+
+NormalState.args = {
+  children: 'Add an element',
+  isDisabled: false,
+}

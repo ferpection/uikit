@@ -1,61 +1,30 @@
-import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs, select } from '@storybook/addon-knobs'
 
 import { FerpectionBadgeIcon, UiKitInitializer } from '../../src/components/index.ts'
 import { FULL_COLORSET } from '../../src/colors/index.ts'
 
-storiesOf('Iconography/FerpectionBadgeIcon', module)
-  .addDecorator(withA11y)
-  .addDecorator(withKnobs)
-  .add('w/ default border color', () => (
+export default {
+  title: 'Iconography/FerpectionBadgeIcon',
+  component: FerpectionBadgeIcon,
+  decorators: [withA11y],
+}
+
+export const WithDefaultBorderColor = args => {
+  return (
     <UiKitInitializer>
-      <FerpectionBadgeIcon
-        icon={select(
-          'icon',
-          [
-            'config',
-            'goals',
-            'incentive',
-            'objectives',
-            'planning',
-            'post-test',
-            'pre-test',
-            'screening',
-            'target',
-            'test',
-            'tasks',
-            'device',
-            'graph',
-          ],
-          'config',
-        )}
-      />
+      <FerpectionBadgeIcon {...args} />
     </UiKitInitializer>
-  ))
-  .add('w/ forced border color', () => (
+  )
+}
+
+WithDefaultBorderColor.args = { icon: 'config' }
+
+export const WithForcedBorderColor = args => {
+  return (
     <UiKitInitializer>
-      <FerpectionBadgeIcon
-        icon={select(
-          'icon',
-          [
-            'config',
-            'goals',
-            'incentive',
-            'objectives',
-            'planning',
-            'post-test',
-            'pre-test',
-            'screening',
-            'target',
-            'test',
-            'tasks',
-            'device',
-            'graph',
-          ],
-          'config',
-        )}
-        borderColor={FULL_COLORSET.CINNABAR}
-      />
+      <FerpectionBadgeIcon {...args} />
     </UiKitInitializer>
-  ))
+  )
+}
+
+WithForcedBorderColor.args = { icon: 'config', borderColor: FULL_COLORSET.CINNABAR }

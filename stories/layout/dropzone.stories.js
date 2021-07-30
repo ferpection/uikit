@@ -1,13 +1,15 @@
-import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs } from '@storybook/addon-knobs'
 
-import { Dropzone, DraggableItem, DragHandle } from '../../src/components/index.ts'
+import { Dropzone, DraggableItem, DragHandle, UiKitInitializer } from '../../src/components/index.ts'
 
-storiesOf('Components/Layout/Drag and Drop/Dropzone', module)
-  .addDecorator(withA11y)
-  .addDecorator(withKnobs)
-  .add('simple case', () => (
+export default {
+  title: 'Components/Layout/Drag and Drop/Dropzone',
+  component: Dropzone,
+  decorators: [withA11y],
+}
+
+export const SimpleCase = args => {
+  return (
     <UiKitInitializer>
       <h1>{Dropzone.name}</h1>
       <p>The components needs two properties:</p>
@@ -35,7 +37,7 @@ storiesOf('Components/Layout/Drag and Drop/Dropzone', module)
       <DraggableItem itemId={30}>
         <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>div #{30}</div>
       </DraggableItem>
-      <Dropzone>
+      <Dropzone {...args}>
         {({ elementIsOver }) => (
           <div style={{ backgroundColor: elementIsOver ? '#CCC' : '#aaa', margin: '10px', padding: '20px' }}>
             dropzone (over: {`${elementIsOver}`})
@@ -43,4 +45,5 @@ storiesOf('Components/Layout/Drag and Drop/Dropzone', module)
         )}
       </Dropzone>
     </UiKitInitializer>
-  ))
+  )
+}

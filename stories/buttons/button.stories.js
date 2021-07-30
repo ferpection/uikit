@@ -1,55 +1,70 @@
-import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
 import { Button, UiKitInitializer } from '../../src/components/index.ts'
 
-storiesOf('Components/Button/Button', module)
-  .addDecorator(withA11y)
-  .addDecorator(withKnobs)
-  .add('with text', () => (
+export default {
+  title: 'Components/Button/Button',
+  component: Button,
+  decorators: [withA11y],
+}
+
+export const WithText = args => {
+  return (
     <UiKitInitializer>
-      <Button onClick={action('clicked')} isDisabled={boolean('disabled', false)} isFilled={boolean('filled', false)}>
-        {text('label', 'Action')}
-      </Button>
+      <Button {...args} onClick={action('clicked')} />
     </UiKitInitializer>
-  ))
-  .add('with text and icon', () => (
+  )
+}
+
+WithText.args = {
+  children: 'Action',
+}
+
+export const WithTextAndIcon = args => {
+  return (
     <UiKitInitializer>
-      <Button
-        icon={text('icon', 'arrow-left')}
-        iconStore={text('icon store', 'fas')}
-        onClick={action('clicked')}
-        isDisabled={boolean('disabled', false)}
-        isFilled={boolean('filled', false)}
-      >
-        {text('label', 'Action')}
-      </Button>
+      <Button {...args} onClick={action('clicked')} />
     </UiKitInitializer>
-  ))
-  .add('with icon only', () => (
+  )
+}
+
+WithTextAndIcon.args = {
+  icon: 'arrow-left',
+  iconStore: 'fas',
+  isDisabled: false,
+  isFilled: false,
+  children: 'Action',
+}
+
+export const WithIconOnly = args => {
+  return (
     <UiKitInitializer>
-      <Button
-        icon={text('icon', 'instagram')}
-        iconStore={text('icon store', 'fab')}
-        onClick={action('clicked')}
-        isDisabled={boolean('disabled', false)}
-        isFilled={boolean('filled', false)}
-      />
+      <Button {...args} onClick={action('clicked')} />
     </UiKitInitializer>
-  ))
-  .add('as row link', () => (
+  )
+}
+
+WithIconOnly.args = {
+  icon: 'instagram',
+  iconStore: 'fab',
+  isDisabled: false,
+  isFilled: false,
+}
+
+export const AsRawLink = args => {
+  return (
     <UiKitInitializer>
-      <Button
-        icon="twitter"
-        iconStore="fab"
-        onClick={action('clicked')}
-        isDisabled={boolean('disabled', false)}
-        isFilled={boolean('filled', false)}
-        isRaw={boolean('raw', true)}
-      >
-        Tweet it!
-      </Button>
+      <Button {...args} onClick={action('clicked')} />
     </UiKitInitializer>
-  ))
+  )
+}
+
+AsRawLink.args = {
+  icon: 'twitter',
+  iconStore: 'fab',
+  isDisabled: false,
+  isFilled: false,
+  isRaw: true,
+  children: 'Tweet it!',
+}

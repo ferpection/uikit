@@ -1,16 +1,18 @@
-import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs, boolean, array } from '@storybook/addon-knobs'
 
 import { FontsLoader, ThematicSection, HelpBlock, UiKitInitializer } from '../../src/components'
 import { SANSSERIF_FONTSET, OPENSANS_FONT } from '../../src/fonts'
 
-storiesOf('Utils/FontsLoader', module)
-  .addDecorator(withA11y)
-  .addDecorator(withKnobs)
-  .add('documentation', () => (
+export default {
+  title: 'Utils/FontsLoader',
+  component: FontsLoader,
+  decorators: [withA11y],
+}
+
+export const Documentation = args => {
+  return (
     <UiKitInitializer>
-      <FontsLoader onlyLoadFonts={boolean('onlyLoadFonts', false)} fontNames={array('fontNames', [OPENSANS_FONT])} />
+      <FontsLoader {...args} />
       <h1>FontsLoader</h1>
       <p>
         The <em>FontsLoader</em> component load the default fonts of the ferpection branding using the webfontloader
@@ -44,4 +46,10 @@ storiesOf('Utils/FontsLoader', module)
         </HelpBlock>
       </ThematicSection>
     </UiKitInitializer>
-  ))
+  )
+}
+
+Documentation.args = {
+  onlyLoadFonts: false,
+  fontNames: [OPENSANS_FONT],
+}

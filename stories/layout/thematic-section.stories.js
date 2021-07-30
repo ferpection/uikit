@@ -1,71 +1,36 @@
-import { storiesOf } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
-import { withKnobs, select, text } from '@storybook/addon-knobs'
-import { css } from '@emotion/react'
 
 import { ThematicSection, Button, TextFieldList, HelpBlock, UiKitInitializer } from '../../src/components/index.ts'
 
-storiesOf('Components/Layout/ThematicSection', module)
-  .addDecorator(withA11y)
-  .addDecorator(withKnobs)
-  .add('with actions buttons', () => (
+export default {
+  title: 'Components/Layout/ThematicSection',
+  component: ThematicSection,
+  decorators: [withA11y],
+}
+
+export const WithActionButtons = args => {
+  return (
     <UiKitInitializer>
-      <ThematicSection
-        title={text('title', 'Questions de qualification')}
-        actions={<Button icon="comment-medical" isDisabled isRaw />}
-        badgeIcon={select(
-          'icon',
-          [
-            'config',
-            'goals',
-            'incentive',
-            'objectives',
-            'planning',
-            'post-test',
-            'pre-test',
-            'screening',
-            'target',
-            'test',
-            'tasks',
-            'device',
-          ],
-          'config',
-        )}
-      />
+      <ThematicSection actions={<Button icon="comment-medical" isDisabled isRaw />} {...args} />
     </UiKitInitializer>
-  ))
-  .add('with form components', () => (
+  )
+}
+
+WithActionButtons.args = { badgeIcon: 'config', title: 'Questions de qualification' }
+
+export const WithFormComponents = args => {
+  return (
     <UiKitInitializer>
-      <ThematicSection
-        title={text('title', 'Questions de qualification')}
-        badgeIcon={select(
-          'icon',
-          [
-            'config',
-            'goals',
-            'incentive',
-            'objectives',
-            'planning',
-            'post-test',
-            'pre-test',
-            'screening',
-            'target',
-            'test',
-            'tasks',
-            'device',
-          ],
-          'config',
-        )}
-      >
+      <ThematicSection {...args}>
         <div
-          css={css`
-            display: flex;
-          `}
+          style={{
+            display: 'flex',
+          }}
         >
           <div
-            css={css`
-              width: 50%;
-            `}
+            style={{
+              width: '50%',
+            }}
           >
             <p>
               Consequat culpa qui enim laboris voluptate proident tempor cillum laboris est ex sint id. Anim tempor
@@ -86,4 +51,7 @@ storiesOf('Components/Layout/ThematicSection', module)
         </div>
       </ThematicSection>
     </UiKitInitializer>
-  ))
+  )
+}
+
+WithFormComponents.args = { title: 'Questions de qualification', badgeIcon: 'config' }

@@ -1,41 +1,47 @@
-import { withKnobs, text } from '@storybook/addon-knobs'
+import { action } from '@storybook/addon-actions'
 
 import { MarkdownField, UiKitInitializer } from '../../src/components/index.ts'
 
 export default {
   title: 'Components/Forms/MarkdownField',
   component: MarkdownField,
-  decorators: [withKnobs],
+  decorators: [],
 }
 
-export const NormalState = () => {
+export const NormalState = args => {
   return (
     <UiKitInitializer>
-      <MarkdownField value={text('value')} onValueChange={value => console.log(value)} />
+      <MarkdownField onValueChange={value => action('Value changed', value)} {...args} />
     </UiKitInitializer>
   )
 }
 
-export const HighlightedState = () => {
+export const HighlightedState = args => {
   return (
     <UiKitInitializer>
-      <MarkdownField isHighlighted />
+      <MarkdownField {...args} />
     </UiKitInitializer>
   )
 }
 
-export const ErrorState = () => {
+HighlightedState.args = { isHighlighted: true }
+
+export const ErrorState = args => {
   return (
     <UiKitInitializer>
-      <MarkdownField isRequired />
+      <MarkdownField {...args} />
     </UiKitInitializer>
   )
 }
 
-export const DisabledState = () => {
+ErrorState.args = { isRequired: true }
+
+export const DisabledState = args => {
   return (
     <UiKitInitializer>
-      <MarkdownField isDisabled />
+      <MarkdownField {...args} />
     </UiKitInitializer>
   )
 }
+
+DisabledState.args = { isDisabled: true }
