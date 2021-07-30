@@ -1,7 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import { action } from '@storybook/addon-actions'
-import { withA11y } from '@storybook/addon-a11y'
 
 import { N75_COLOR, FULL_COLORSET } from '../../src/colors/index.ts'
 import {
@@ -36,7 +35,6 @@ const Preview = props => (
 export default {
   title: 'Contexts/ThemeProvider',
   component: ThemeProvider,
-  decorators: [withA11y],
 }
 
 export const Colors = args => {

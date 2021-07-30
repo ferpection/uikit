@@ -1,11 +1,8 @@
-import { withA11y } from '@storybook/addon-a11y'
-
 import { HelpBlock, UiKitInitializer } from '../src/components/index.ts'
 
 export default {
   title: 'Components/HelpBlock',
   component: HelpBlock,
-  decorators: [withA11y],
 }
 
 export const NormalState = () => {

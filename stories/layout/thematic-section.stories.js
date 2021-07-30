@@ -1,11 +1,8 @@
-import { withA11y } from '@storybook/addon-a11y'
-
 import { ThematicSection, Button, TextFieldList, HelpBlock, UiKitInitializer } from '../../src/components/index.ts'
 
 export default {
   title: 'Components/Layout/ThematicSection',
   component: ThematicSection,
-  decorators: [withA11y],
 }
 
 export const WithActionButtons = args => {

@@ -1,11 +1,9 @@
-import { withA11y } from '@storybook/addon-a11y'
-
 import { ReorderableList, DragHandle, TextField, UiKitInitializer } from '../../src/components/index.ts'
 
 export default {
   title: 'Components/Layout/ReorderableList',
   component: ReorderableList,
-  decorators: [withA11y],
+
   parameters: {
     docs: {
       description: {

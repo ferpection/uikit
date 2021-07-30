@@ -1,11 +1,9 @@
-import { withA11y } from '@storybook/addon-a11y'
-
 import { Dropzone, DraggableItem, DragHandle, UiKitInitializer } from '../../src/components/index.ts'
 
 export default {
   title: 'Components/Layout/Drag and Drop/Dropzone',
   component: Dropzone,
-  decorators: [withA11y],
+
   parameters: {
     docs: {
       description: {

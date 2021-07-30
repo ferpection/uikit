@@ -1,11 +1,9 @@
-import { withA11y } from '@storybook/addon-a11y'
-
 import { DatePickerField } from '../../src/components/index.ts'
 
 export default {
   title: 'Components/Forms/DatePickerField',
   component: DatePickerField,
-  decorators: [withA11y],
+
   argTypes: {
     testLang: {
       options: ['fr', 'en', 'zh_HANS', 'ko'],

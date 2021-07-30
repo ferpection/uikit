@@ -1,11 +1,8 @@
-import { withA11y } from '@storybook/addon-a11y'
-
 import { FormErrorMessages, UiKitInitializer } from '../../src/components/index.ts'
 
 export default {
   title: 'Components/Forms/FormErrorMessages',
   component: FormErrorMessages,
-  decorators: [withA11y],
 }
 
 export const SingleError = args => {

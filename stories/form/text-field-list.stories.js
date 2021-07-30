@@ -1,6 +1,5 @@
 import { useState } from 'react'
 
-import { withA11y } from '@storybook/addon-a11y'
 import { action } from '@storybook/addon-actions'
 
 import { TextFieldList, UiKitInitializer } from '../../src/components/index.ts'
@@ -9,7 +8,7 @@ import { N75_COLOR } from '../../src/colors/index.ts'
 export default {
   title: 'Components/Forms/TextFieldList',
   component: TextFieldList,
-  decorators: [withA11y],
+
   parameters: { controls: { sort: 'requiredFirst' } },
   argTypes: {
     initialFieldCount: 2,

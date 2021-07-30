@@ -1,12 +1,10 @@
-import { withA11y } from '@storybook/addon-a11y'
-
 import { FontsLoader, ThematicSection, HelpBlock, UiKitInitializer } from '../../src/components'
 import { SANSSERIF_FONTSET, OPENSANS_FONT } from '../../src/fonts'
 
 export default {
   title: 'Utils/FontsLoader',
   component: FontsLoader,
-  decorators: [withA11y],
+
   parameters: {
     docs: {
       description: {

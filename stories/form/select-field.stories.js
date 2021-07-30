@@ -1,11 +1,8 @@
-import { withA11y } from '@storybook/addon-a11y'
-
 import { SelectField, UiKitInitializer } from '../../src/components/index.ts'
 
 export default {
   title: 'Components/Forms/SelectField',
   component: SelectField,
-  decorators: [withA11y],
 }
 
 export const NormalState = args => {

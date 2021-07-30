@@ -1,11 +1,8 @@
-import { withA11y } from '@storybook/addon-a11y'
-
 import { Header, Button, HeaderLink, UiKitInitializer } from '../../src/components/index.ts'
 
 export default {
   title: 'Components/Layout/Header',
   component: Header,
-  decorators: [withA11y],
 }
 
 export const WithClassicButtons = args => {

@@ -1,12 +1,10 @@
 import { useState } from 'react'
-import { withA11y } from '@storybook/addon-a11y'
 
 import { TextField, UiKitInitializer } from '../../src/components/index.ts'
 
 export default {
   title: 'Components/Forms/TextField',
   component: TextField,
-  decorators: [withA11y],
 }
 
 export const NormalState = args => {

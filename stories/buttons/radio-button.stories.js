@@ -1,11 +1,8 @@
-import { withA11y } from '@storybook/addon-a11y'
-
 import { RadioButton, TextField, DatePickerField, UiKitInitializer } from '../../src/components'
 
 export default {
   title: 'Components/Button/RadioButton',
   component: RadioButton,
-  decorators: [withA11y],
 }
 
 export const BasicExample = args => {
