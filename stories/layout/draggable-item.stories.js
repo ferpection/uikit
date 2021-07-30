@@ -6,21 +6,19 @@ export default {
   title: 'Components/Layout/Drag and Drop/DraggableItem',
   component: DraggableItem,
   decorators: [withA11y],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Wrapping any component with `DraggableItem` makes it draggable. Could be combined with `DragHandle` to specify which part of the component will trigger the drag event.',
+      },
+    },
+  },
 }
 
 export const SimpleCase = args => {
   return (
     <UiKitInitializer>
-      <h1>{DraggableItem.name}</h1>
-      <p>The components needs two properties:</p>
-      <ul>
-        <li>
-          <code>itemId</code>: A string representing an <code>ID</code>
-        </li>
-        <li>
-          <code>children</code>: The body of a draggable item
-        </li>
-      </ul>
       <DraggableItem itemId={10} {...args}>
         <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>div #{10}</div>
       </DraggableItem>

@@ -6,18 +6,18 @@ export default {
   title: 'Components/Layout/Drag and Drop/Dropzone',
   component: Dropzone,
   decorators: [withA11y],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Wrapping any component with `Dropzone` makes it able to handle drop events.',
+      },
+    },
+  },
 }
 
 export const SimpleCase = args => {
   return (
     <UiKitInitializer>
-      <h1>{Dropzone.name}</h1>
-      <p>The components needs two properties:</p>
-      <ul>
-        <li>
-          <code>children</code>: The body of the dropzone
-        </li>
-      </ul>
       <DraggableItem itemId={20} useExternalDragHandle>
         <div style={{ backgroundColor: '#aaa', margin: '10px', padding: '10px' }}>
           <DragHandle>

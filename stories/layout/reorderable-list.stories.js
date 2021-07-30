@@ -6,21 +6,19 @@ export default {
   title: 'Components/Layout/ReorderableList',
   component: ReorderableList,
   decorators: [withA11y],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Render a list of components based on user data. Supports reordering of the list items. Use `DraggableItem` and `Dropzone` behind the scene.',
+      },
+    },
+  },
 }
 
 export const SimpleCase = args => {
   return (
     <UiKitInitializer>
-      <h1>{ReorderableList.name}</h1>
-      <p>The components needs two properties:</p>
-      <ul>
-        <li>
-          <code>items</code>: A list of items containing a <code>uuid</code> and <code>order</code>
-        </li>
-        <li>
-          <code>renderItem</code>: A render function that takes an item and returns a <code>ReactNode</code>
-        </li>
-      </ul>
       <ReorderableList
         renderItem={item => <div style={{ backgroundColor: '#aaa', padding: '10px' }}>div #{item.uuid}</div>}
         {...args}

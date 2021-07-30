@@ -28,6 +28,14 @@ export default {
     onFocus: { action: 'focused' },
     onBlur: { action: 'blured' },
   },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Wrapping several components with `OneBlockStack` makes them appear like one single component. It handles the focus and blur events for the child components',
+      },
+    },
+  },
 }
 
 export const MainExample = args => {
