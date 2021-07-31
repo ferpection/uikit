@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { jsx, Global, css } from '@emotion/react'
+import { Global, css } from '@emotion/react'
 
 export interface GlobalCSSResetProps {
   fontNames?: string[]
