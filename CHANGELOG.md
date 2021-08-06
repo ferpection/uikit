@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v1.6.0] - 2021-08-06
+
 ### Addded
 
 - New `placeholderPattern` on `TextFieldList`. Works like the `markerPattern` and let you choose placeholder
@@ -730,6 +732,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Setup storybook as documentation
 
 [unreleased]: https://github.com/ferpection/uikit/tree/master
+[v1.6.0]: https://github.com/ferpection/uikit/tree/v1.6.0
 [v1.5.0]: https://github.com/ferpection/uikit/tree/v1.5.0
 [v1.4.0]: https://github.com/ferpection/uikit/tree/v1.4.0
 [v1.3.0]: https://github.com/ferpection/uikit/tree/v1.3.0
