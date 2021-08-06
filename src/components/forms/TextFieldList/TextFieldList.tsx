@@ -138,13 +138,11 @@ export const TextFieldList: FC<TextFieldListProps> = props => {
   let markers: string[] = []
 
   if (isOrdered) {
-    markers = [...Object.keys(values)].map(el => `${Number(el) + 1}.`)
+    markers = Object.keys(values).map(el => `${Number(el) + 1}.`)
   }
 
   if (markerPattern.length > 0) {
-    markers = Array.from({ length: Math.ceil(values.length / markerPattern.length) }, () => 0)
-      .flatMap(() => markerPattern)
-      .slice(0, values.length)
+    markers = Object.keys(values).map(el => markerPattern[Number(el) % markerPattern.length])
   }
 
   const itemsJSX = (
