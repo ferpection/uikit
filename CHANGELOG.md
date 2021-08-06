@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Addded
+
+- New `placeholderPattern` on `TextFieldList`. Works like the `markerPattern` and let you choose placeholder
+  for each sub-`TextField` in the list.
+
+### Changed
+
+- **Deprecating `placeholder` in favor of `placeholderPattern` in `TextFieldList`**. `placeholder` still work for
+  now but will be removed in the next major release.
+
 ## [v1.5.0] - 2021-07-30
 
 ### Changed

@@ -14,7 +14,10 @@ export default {
     initialFieldCount: 2,
     isOrdered: false,
     isDisabled: false,
-    placeholder: 'Add your text here',
+    placeholderPattern: {
+      defaultValue: ['Add your text here'],
+      type: 'object',
+    },
     buttonText: 'Add a list item',
     isEditable: false,
     maxFieldCount: 100,

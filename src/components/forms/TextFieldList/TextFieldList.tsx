@@ -11,6 +11,8 @@ import { FormErrorMessages } from '../FormErrorMessages/FormErrorMessages'
 import { defaultFormProps, FormProps, IdentifiableString } from '../form-props'
 import { FormErrors } from '../form-errors'
 
+import { generateMarkers } from './utils/generateMakers'
+import { generatePlaceholders } from './utils/generatePlaceholders'
 import {
   list,
   hideAndShowIconOnHover,
@@ -24,6 +26,7 @@ import {
 
 export interface TextFieldListProps extends FormProps {
   dataType?: TextFieldProps['dataType']
+  placeholder?: string // @deprecated
   isEditable?: boolean
   isOrdered?: boolean
   initialFieldCount?: number
@@ -36,6 +39,7 @@ export interface TextFieldListProps extends FormProps {
   onFlatValueChange?: (values: string[]) => void
   className?: string
   markerPattern?: string[]
+  placeholderPattern?: string[]
 }
 
 interface GroupedFormErrors {
@@ -86,7 +90,8 @@ export const TextFieldList: FC<TextFieldListProps> = props => {
   const {
     isDisabled,
     isEditable,
-    placeholder,
+    placeholder = '',
+    placeholderPattern = [placeholder],
     dataType,
     initialFieldCount = 1,
     maxFieldCount,
@@ -135,15 +140,8 @@ export const TextFieldList: FC<TextFieldListProps> = props => {
     }
   }
 
-  let markers: string[] = []
-
-  if (isOrdered) {
-    markers = Object.keys(values).map(el => `${Number(el) + 1}.`)
-  }
-
-  if (markerPattern.length > 0) {
-    markers = Object.keys(values).map(el => markerPattern[Number(el) % markerPattern.length])
-  }
+  const markers = generateMarkers(values, { isOrdered, markerPattern })
+  const placeholders = generatePlaceholders(values, { placeholder, placeholderPattern })
 
   const itemsJSX = (
     <Fragment>
@@ -165,7 +163,7 @@ export const TextFieldList: FC<TextFieldListProps> = props => {
           <TextField
             css={[textFieldAdjustments]}
             dataType={dataType}
-            placeholder={placeholder}
+            placeholder={placeholders[index] || ''}
             rowCount={rowCount}
             isDisabled={isDisabled}
             value={value.text}
