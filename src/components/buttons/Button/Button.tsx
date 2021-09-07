@@ -81,9 +81,9 @@ export const Button: FC<ButtonProps> = props => {
       aria-label={ariaLabel || ariaLabelForIcon}
       disabled={isDisabled}
     >
-      {iconExist ? <FontAwesomeIcon icon={icon} size="sm" /> : null}
+      {iconExist && <FontAwesomeIcon icon={icon} size="sm" />}
 
-      {iconExist && childrenExist ? <Fragment>&nbsp;</Fragment> : null}
+      {iconExist && childrenExist && <Fragment>&nbsp;</Fragment>}
 
       {children}
     </ButtonContainer>
