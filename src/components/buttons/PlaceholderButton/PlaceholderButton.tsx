@@ -1,4 +1,4 @@
-import { Fragment, SyntheticEvent, FC } from 'react'
+import { Fragment, SyntheticEvent, FC, ReactNode } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconName } from '@fortawesome/fontawesome-svg-core'
 
@@ -12,7 +12,7 @@ interface PlaceholderButtonProps {
   to?: string
   icon?: IconName | null
   ariaLabel?: string
-  children?: string
+  children?: string | ReactNode
   onClick?: (event: SyntheticEvent) => void
   onMouseUp?: (event?: SyntheticEvent) => void
   onMouseDown?: (event?: SyntheticEvent) => void
@@ -28,7 +28,7 @@ export const PlaceholderButton: FC<PlaceholderButtonProps> = props => {
     <ButtonContainer
       {...args}
       css={[addButtonStyles(theme), isDisabled && disabledStyles]}
-      aria-label={children}
+      aria-label={typeof children === 'string' ? children : null}
       disabled={isDisabled}
     >
       {icon != null ? (
