@@ -11,6 +11,7 @@ interface PlaceholderButtonProps {
   isDisabled?: boolean
   to?: string
   icon?: IconName | null
+  iconStore?: IconPrefix
   ariaLabel?: string
   children?: string | ReactNode
   onClick?: (event: SyntheticEvent) => void
@@ -22,7 +23,7 @@ interface PlaceholderButtonProps {
 
 export const PlaceholderButton: FC<PlaceholderButtonProps> = props => {
   const theme = useTheme()
-  const { children = 'Add an element', isDisabled, icon = 'plus', ariaLabel, ...args } = props
+  const { children = 'Add an element', isDisabled, icon = 'plus', iconStore = 'fas', ariaLabel, ...args } = props
 
   return (
     <ButtonContainer
@@ -33,7 +34,7 @@ export const PlaceholderButton: FC<PlaceholderButtonProps> = props => {
     >
       {icon != null ? (
         <Fragment>
-          <FontAwesomeIcon icon={icon} />
+          <FontAwesomeIcon icon={[iconStore, icon]} />
           &nbsp;
         </Fragment>
       ) : null}
