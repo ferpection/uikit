@@ -24,7 +24,7 @@
     "build:dev": "pnpm run build -- -w",
     "build:storybook": "build-storybook",
     "build:clean": "rm -rf ./{colors,components,index}.js ./index.d.ts ./storybook-static ./dist",
-    "start": "pnpm run build:dev",
+    "start": "pnpm run start:storybook",
     "start:storybook": "start-storybook -p 6006",
     "test:lint": "eslint src/**/*.{ts,tsx} stories/**",
     "test:unit": "jest",
