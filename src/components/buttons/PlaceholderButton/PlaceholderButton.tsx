@@ -22,13 +22,13 @@ interface PlaceholderButtonProps {
 
 export const PlaceholderButton: FC<PlaceholderButtonProps> = props => {
   const theme = useTheme()
-  const { children = 'Add an element', isDisabled, icon = 'plus', ...args } = props
+  const { children = 'Add an element', isDisabled, icon = 'plus', ariaLabel, ...args } = props
 
   return (
     <ButtonContainer
       {...args}
       css={[addButtonStyles(theme), isDisabled && disabledStyles]}
-      aria-label={typeof children === 'string' ? children : null}
+      aria-label={ariaLabel ?? (typeof children === 'string' ? children : null)}
       disabled={isDisabled}
     >
       {icon != null ? (
