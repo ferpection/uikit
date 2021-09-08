@@ -6,7 +6,7 @@ import { ButtonContainer } from '../ButtonContainer'
 import { useTheme } from '../../../hooks/useTheme'
 import { Color } from '../../../colors'
 
-import { prepareBaseState, prepareFilledState, iconOnlyState, rawLinkState } from './styles'
+import { prepareBaseState, prepareFilledState, iconOnlyState, rawLinkState, textPositionStyle } from './styles'
 
 export interface ButtonProps {
   to?: string
@@ -41,7 +41,7 @@ export const Button: FC<ButtonProps> = props => {
     hoverColor,
     icon: iconName,
     iconStore = 'fas',
-    ariaLabel,
+    ariaLabel: userAriaLabel,
     actionType = 'action',
     iconPosition = isRaw ? 'start' : 'start-text',
     textPosition = 'center',
@@ -66,26 +66,20 @@ export const Button: FC<ButtonProps> = props => {
   })
   const contentPosition = textPositionStyle({ textPosition, iconPosition })
 
-  let ariaLabelForIcon = ''
-
+  let ariaLabel = userAriaLabel
   if (typeof children === 'string') {
-    ariaLabelForIcon = children
+    ariaLabel ??= children
   }
 
   if (onlyIconExist) {
-    ariaLabelForIcon = iconName.replace(/-/g, '')
+    ariaLabel ??= iconName.replace(/-/g, '')
   }
 
   return (
     <ButtonContainer
       {...args}
-      css={[
-        baseState,
-        isFilled && !isRaw ? filledState : null,
-        onlyIconExist ? iconOnlyState : null,
-        isRaw ? rawLinkState : null,
-      ]}
-      aria-label={ariaLabel ?? ariaLabelForIcon}
+      css={[baseState, isFilled && !isRaw && filledState, onlyIconExist && iconOnlyState, isRaw && rawLinkState]}
+      aria-label={ariaLabel}
       disabled={isDisabled}
     >
       {iconExist && <FontAwesomeIcon icon={icon} size="sm" />}
