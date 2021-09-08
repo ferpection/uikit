@@ -9,18 +9,20 @@ import { Color } from '../../../colors'
 import { prepareBaseState, prepareFilledState, iconOnlyState, rawLinkState } from './styles'
 
 export interface ButtonProps {
+  to?: string
+  actionType?: 'action' | 'positive' | 'negative'
   className?: string
-  isFilled?: boolean
-  isDisabled?: boolean
-  isRaw?: boolean
   color?: Color
   hoverColor?: Color
   icon?: IconName
   iconStore?: IconPrefix
-  actionType?: 'action' | 'positive' | 'negative'
-  to?: string
   ariaLabel?: string
   tabIndex?: number
+  iconPosition?: 'start' | 'start-text' | 'end-text' | 'end'
+  textPosition?: 'start' | 'center' | 'end'
+  isFilled?: boolean
+  isDisabled?: boolean
+  isRaw?: boolean
   onClick?: (event: SyntheticEvent) => void
   onMouseUp?: (event?: SyntheticEvent) => void
   onMouseDown?: (event?: SyntheticEvent) => void
@@ -41,6 +43,8 @@ export const Button: FC<ButtonProps> = props => {
     iconStore = 'fas',
     ariaLabel,
     actionType = 'action',
+    iconPosition = 'start-text',
+    textPosition = 'center',
     ...args
   } = props
 
@@ -53,11 +57,14 @@ export const Button: FC<ButtonProps> = props => {
   const baseState = prepareBaseState({
     color: mainColor,
     darkerColor: hoverColor,
+    iconPosition,
+    textPosition,
   })
   const filledState = prepareFilledState({
     color: mainColor,
     darkerColor: hoverColor,
   })
+  const contentPosition = textPositionStyle({ textPosition, iconPosition })
 
   let ariaLabelForIcon = ''
 
@@ -78,14 +85,12 @@ export const Button: FC<ButtonProps> = props => {
         onlyIconExist ? iconOnlyState : null,
         isRaw ? rawLinkState : null,
       ]}
-      aria-label={ariaLabel || ariaLabelForIcon}
+      aria-label={ariaLabel ?? ariaLabelForIcon}
       disabled={isDisabled}
     >
       {iconExist && <FontAwesomeIcon icon={icon} size="sm" />}
-
       {iconExist && childrenExist && <Fragment>&nbsp;</Fragment>}
-
-      {children}
+      {childrenExist && <div css={[contentPosition]}>{children}</div>}
     </ButtonContainer>
   )
 }
