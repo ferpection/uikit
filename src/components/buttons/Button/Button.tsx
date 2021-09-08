@@ -43,7 +43,7 @@ export const Button: FC<ButtonProps> = props => {
     iconStore = 'fas',
     ariaLabel,
     actionType = 'action',
-    iconPosition = 'start-text',
+    iconPosition = isRaw ? 'start' : 'start-text',
     textPosition = 'center',
     ...args
   } = props
