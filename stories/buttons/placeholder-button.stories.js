@@ -28,6 +28,9 @@ export const WithJSXChildren = args => {
   return (
     <UiKitInitializer>
       <PlaceholderButton {...args} onClick={action('clicked')} />
+      <section style={{ display: 'flex', flexDirection: 'column', padding: '5px 0' }}>
+        <PlaceholderButton {...args} onClick={action('clicked')} />
+      </section>
     </UiKitInitializer>
   )
 }
@@ -35,7 +38,8 @@ export const WithJSXChildren = args => {
 WithJSXChildren.args = {
   children: (
     <>
-      <FontAwesomeIcon icon="align-left" /> Add text
+      <FontAwesomeIcon icon="align-left" />
+      &nbsp;Add text
     </>
   ),
 }
