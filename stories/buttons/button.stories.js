@@ -23,6 +23,9 @@ export const WithTextAndIcon = args => {
   return (
     <UiKitInitializer>
       <Button {...args} onClick={action('clicked')} />
+      <section style={{ display: 'flex', flexDirection: 'column', padding: '5px 0' }}>
+        <Button {...args} onClick={action('clicked')} />
+      </section>
     </UiKitInitializer>
   )
 }
