@@ -6,9 +6,19 @@ import { C200_COLOR, Color } from '../../../colors'
 export const prepareBaseState = ({
   color = C200_COLOR,
   darkerColor = color.shade(-20),
-}: { color?: Color; darkerColor?: Color } = {}) =>
+  iconPosition = 'start',
+  textPosition = 'start',
+}: {
+  color?: Color
+  darkerColor?: Color
+  iconPosition?: 'start' | 'start-text' | 'end-text' | 'end'
+  textPosition?: 'start' | 'center' | 'end'
+} = {}) =>
   css({
-    display: 'inline-block',
+    display: 'flex',
+    flexDirection: ['end', 'end-text'].includes(iconPosition) ? 'row-reverse' : 'row',
+    justifyContent: ['start', 'end'].includes(iconPosition) ? 'stretch' : textPosition,
+    alignItems: 'center',
     WebkitAppearance: 'none',
     backgroundColor: 'white',
     cursor: 'pointer',
@@ -72,3 +82,16 @@ export const rawLinkState = css({
     boxShadow: 'none',
   },
 })
+
+export const textPositionStyle = ({
+  textPosition,
+  iconPosition,
+}: {
+  textPosition: 'start' | 'center' | 'end'
+  iconPosition: 'start' | 'start-text' | 'end-text' | 'end'
+}) =>
+  css({
+    width: ['start', 'end'].includes(iconPosition) ? '100%' : 'max-content',
+    display: 'inline-flex',
+    justifyContent: textPosition,
+  })
