@@ -3,14 +3,13 @@ import { baseStyles } from './styles'
 
 interface ScaleFieldProps extends FormProps {
   value?: number
+  range?: [number, number]
 }
 
 export function ScaleField(props: ScaleFieldProps) {
-  const { value = 3 } = props
-  const min = -6
-  const max = 6
+  const { value = 5, range: [minValue = 0, maxValue = 10] = [] } = props
 
-  const choices = Array.from({ length: (max - min) + 1 }, (_, k) => min + k)
+  const choices = Array.from({ length: (maxValue - minValue) + 1 }, (_, i) => minValue + i)
 
   return (
     <div css={[baseStyles]}>
