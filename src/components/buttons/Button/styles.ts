@@ -91,7 +91,7 @@ export const textPositionStyle = ({
   iconPosition: 'start' | 'start-text' | 'end-text' | 'end'
 }) =>
   css({
-    width: ['start', 'end'].includes(iconPosition) ? '100%' : 'min-content',
+    width: ['start', 'end'].includes(iconPosition) ? '100%' : 'max-content',
     display: 'inline-flex',
     justifyContent: textPosition,
   })
