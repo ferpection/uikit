@@ -12,6 +12,9 @@ export const NormalState = args => {
   return (
     <UiKitInitializer>
       <PlaceholderButton {...args} onClick={action('clicked')} />
+      <section style={{ display: 'flex', flexDirection: 'column', padding: '5px 0' }}>
+        <PlaceholderButton {...args} onClick={action('clicked')} />
+      </section>
     </UiKitInitializer>
   )
 }
