@@ -24,7 +24,7 @@ export function ScaleField(props: ScaleFieldProps) {
 
   return (
     <div css={[baseStyles]}>
-      {choices.map(choice => <button key={choice} css={[itemStyles(theme, { selected: choice === value, quantity: choices.length })]} onClick={() => setValue(choice)}>{choice}</button>)}
+      {choices.map(choice => <button key={choice} css={[itemStyles(theme, { selected: choice === value })]} onClick={() => setValue(choice)}>{choice}</button>)}
     </div>
   )
 }
