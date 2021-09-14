@@ -1,13 +1,15 @@
 import { css } from '@emotion/react'
 
-import { C100_COLOR, C200_COLOR, N300_COLOR, N75_COLOR } from '../../..'
+import { N300_COLOR, N75_COLOR } from '../../..'
+import { Theme } from '../../../contexts/ThemeContext'
 
 export const baseStyles = css`
   display: flex;
   margin: 5px;
 `
 
-export const itemStyles = ({ selected = false, quantity = 10 }) => css`
+export const itemStyles = (theme: Theme, { selected = false, quantity = 10 }) => css`
+  appareance: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,8 +18,9 @@ export const itemStyles = ({ selected = false, quantity = 10 }) => css`
   padding: 5px;
   border-width: 1px;
   border-style: solid;
-  border-color: ${selected ? C200_COLOR.toRGB() : N75_COLOR.toRGB()};
-  color: ${selected ? C200_COLOR.toRGB() : N300_COLOR.toRGB()};
+  border-color: ${selected ? theme.colors.action.toRGBA(0.5) : N75_COLOR.toRGB()};
+  color: ${selected ? theme.colors.action.toRGB() : N300_COLOR.toRGB()};
+  background-color: ${selected ? theme.colors.action.toRGBA(0.1) : 'white'};
   cursor: pointer;
 
   &:first-of-type {
@@ -26,8 +29,8 @@ export const itemStyles = ({ selected = false, quantity = 10 }) => css`
     border-right-width: 0;
   }
 
-  & + & {
-    border-right-width: 0;
+  button + & {
+    border-right-width: ${selected ? '1px' : 0};
   }
 
   &:last-of-type {
@@ -37,11 +40,11 @@ export const itemStyles = ({ selected = false, quantity = 10 }) => css`
   }
 
   &:hover {
-    border-color: ${C100_COLOR.toRGB()};
+    border-color: ${theme.colors.action.toRGBA(0.5)};
     border-right-width: 1px;
   }
 
-  &:hover + & {
+  &:hover + button {
     border-left-width: 0;
   }
 `
