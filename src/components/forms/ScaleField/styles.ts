@@ -6,15 +6,18 @@ import { Theme } from '../../../contexts/ThemeContext'
 export const baseStyles = css`
   display: flex;
   margin: 5px;
+
+  & > button {
+    min-width: 40px;
+    min-height: 40px;
+  }
 `
 
-export const itemStyles = (theme: Theme, { selected = false, quantity = 10 }) => css`
+export const itemStyles = (theme: Theme, { selected = false }) => css`
   appareance: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: calc(100% / ${quantity});
-  min-width: min-content;
   padding: 5px;
   border-width: 1px;
   border-style: solid;
