@@ -8,8 +8,10 @@ export default {
 export const NormalState = args => {
   return (
     <UiKitInitializer>
-      <ScaleField placeholder="This is an input" {...args} />
-      <ScaleField rowCount={3} placeholder="This is a textarea" {...args} />
+      <ScaleField value={3} {...args} />
+      <section style={{ display: 'flex', flexDirection: 'column', padding: '5px 0' }}>
+        <ScaleField value={3} {...args} />
+      </section>
     </UiKitInitializer>
   )
 }
