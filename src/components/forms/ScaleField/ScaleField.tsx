@@ -13,7 +13,12 @@ interface ScaleFieldProps extends FormProps {
 }
 
 export function ScaleField(props: ScaleFieldProps) {
-  const { value: initialValue, range: [minValue = 0, maxValue = 10] = [], onValueChange = () => {} } = props
+  const {
+    value: initialValue,
+    range: [minValue = 0, maxValue = 10] = [],
+    isDisabled = false,
+    onValueChange = () => {},
+  } = props
   const choices = Array.from({ length: maxValue - minValue + 1 }, (_, i) => minValue + i)
 
   const [value, setValue] = useState(initialValue)
@@ -25,7 +30,13 @@ export function ScaleField(props: ScaleFieldProps) {
   return (
     <div css={[baseStyles]}>
       {choices.map(choice => (
-        <button key={choice} css={[itemStyles(theme)]} data-selected={choice === value} onClick={() => setValue(choice)}>
+        <button
+          key={choice}
+          css={[itemStyles(theme)]}
+          data-selected={choice === value}
+          disabled={isDisabled}
+          onClick={() => setValue(choice)}
+        >
           {choice}
         </button>
       ))}

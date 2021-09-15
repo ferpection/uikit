@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-import { N300_COLOR, N75_COLOR } from '../../..'
+import { N100_COLOR, N300_COLOR, N75_COLOR } from '../../..'
 import { Theme } from '../../../contexts/ThemeContext'
 
 export const baseStyles = css({
@@ -52,6 +52,20 @@ export const itemStyles = (theme: Theme) =>
 
       '& + button': {
         borderLeftColor: theme.colors.action.toRGBA(0.5),
+      },
+    },
+
+    '&[disabled]': {
+      borderColor: N100_COLOR.toString(),
+      backgroundColor: '#f8f8f8',
+      cursor: 'not-allowed',
+
+      '&[data-selected=true]': {
+        backgroundColor: theme.colors.actionLight.toRGBA(0.8),
+      },
+
+      '& + button': {
+        borderColor: N100_COLOR.toString(),
       },
     },
   })
