@@ -8,8 +8,13 @@ export default {
 export const NormalState = args => {
   return (
     <UiKitInitializer>
-      <ScaleField value={3} {...args} />
+      <section style={{ padding: '5px 0' }}>
+        <ScaleField value={3} {...args} />
+      </section>
       <section style={{ display: 'flex', flexDirection: 'column', padding: '5px 0' }}>
+        <ScaleField value={3} {...args} />
+      </section>
+      <section style={{ display: 'flex', flexDirection: 'column', padding: '5px 0', maxWidth: '500px' }}>
         <ScaleField value={3} {...args} />
       </section>
     </UiKitInitializer>

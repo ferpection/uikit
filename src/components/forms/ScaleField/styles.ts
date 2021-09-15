@@ -6,7 +6,6 @@ import { Theme } from '../../../contexts/ThemeContext'
 export const baseStyles = css({
   display: 'inline flex',
   justifyContent: 'stretch',
-  margin: '5px',
 })
 
 export const itemStyles = (theme: Theme) =>
