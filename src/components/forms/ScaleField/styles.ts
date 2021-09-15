@@ -70,8 +70,25 @@ export const itemStyles = (theme: Theme) =>
       borderRightWidth: '1px',
     },
 
+    '&:focus': {
+      borderColor: theme.colors.action.toString(),
+      boxShadow: `0 0 0 8px ${theme.colors.action.toRGBA(0.1)}`,
+      outline: 'none',
+      zIndex: 1,
+
+      '& + button': {
+        borderLeftColor: theme.colors.action.toString(),
+      },
+    },
+
+    '&:active': {
+      boxShadow: `0 0 0 16px ${theme.colors.action.toRGBA(0.1)}`,
+    },
+
     '&:hover': {
       borderColor: theme.colors.action.toRGBA(0.5),
+      boxShadow: `0 0 0 8px ${theme.colors.action.toRGBA(0.1)}`,
+      zIndex: 2,
 
       '& + button': {
         borderLeftColor: theme.colors.action.toRGBA(0.5),
