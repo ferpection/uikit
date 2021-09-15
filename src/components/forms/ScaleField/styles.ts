@@ -73,20 +73,6 @@ export const itemStyles = (theme: Theme) =>
         borderLeftColor: theme.colors.action.toRGBA(0.5),
       },
     },
-
-    '&[disabled]': {
-      borderColor: N100_COLOR.toString(),
-      backgroundColor: '#f8f8f8',
-      cursor: 'not-allowed',
-
-      '&[data-selected=true]': {
-        backgroundColor: theme.colors.actionLight.toRGBA(0.8),
-      },
-
-      '& + button': {
-        borderColor: N100_COLOR.toString(),
-      },
-    },
   })
 
 export const errorItemStyles = (theme: Theme) =>
@@ -106,6 +92,27 @@ export const errorItemStyles = (theme: Theme) =>
         backgroundColor: theme.colors.actionLight.toString(),
         borderColor: theme.colors.action.toString(),
         boxShadow: `0 0 0 8px ${theme.colors.action.toRGBA(0.1)}`,
+      },
+    },
+  })
+
+export const disabledItemState = (theme: Theme) =>
+  css({
+    '&[disabled]': {
+      borderColor: N100_COLOR.toString(),
+      backgroundColor: '#f8f8f8',
+      cursor: 'not-allowed',
+
+      '&[data-selected=true]': {
+        backgroundColor: theme.colors.actionLight.toRGBA(0.8),
+      },
+
+      '& + button': {
+        borderColor: N100_COLOR.toString(),
+      },
+
+      '&:hover': {
+        boxShadow: 'none',
       },
     },
   })

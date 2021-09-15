@@ -4,7 +4,7 @@ import useFormValidation from '../../../hooks/useFormValidation'
 import { useTheme } from '../../../hooks/useTheme'
 import { defaultFormProps, FormProps } from '../form-props'
 
-import { baseStyles, errorItemStyles, itemStyles } from './styles'
+import { baseStyles, disabledItemState, errorItemStyles, itemStyles } from './styles'
 
 interface ScaleFieldProps extends FormProps {
   value?: number
@@ -42,7 +42,7 @@ export function ScaleField(props: ScaleFieldProps) {
       {choices.map(choice => (
         <button
           key={choice}
-          css={[itemStyles(theme), errorItemStyles(theme)]}
+          css={[itemStyles(theme), errorItemStyles(theme), disabledItemState(theme)]}
           data-selected={choice === value}
           data-error={!isValid}
           disabled={isDisabled}
