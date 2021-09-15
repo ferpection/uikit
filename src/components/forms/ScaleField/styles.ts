@@ -6,7 +6,29 @@ import { Theme } from '../../../contexts/ThemeContext'
 export const baseStyles = css({
   display: 'inline flex',
   justifyContent: 'stretch',
+  borderRadius: '3px',
 })
+
+export const errorBaseStyles = (theme: Theme) =>
+  css({
+    '&[data-error=true]': {
+      borderColor: theme.colors.negative.toString(),
+      backgroundColor: theme.colors.negativeLight.toString(),
+      boxShadow: `0 0 0 1px ${theme.colors.negative.toString()}`,
+      zIndex: 2,
+      '& + button': {
+        borderColor: theme.colors.negative.toString(),
+      },
+      '&:hover': {
+        boxShadow: `0 0 0 8px ${theme.colors.negative.toRGBA(0.1)}`,
+      },
+      '&:focus': {
+        backgroundColor: theme.colors.actionLight.toString(),
+        borderColor: theme.colors.action.toString(),
+        boxShadow: `0 0 0 8px ${theme.colors.action.toRGBA(0.1)}`,
+      },
+    },
+  })
 
 export const itemStyles = (theme: Theme) =>
   css({
@@ -25,6 +47,7 @@ export const itemStyles = (theme: Theme) =>
     cursor: 'pointer',
     fontSize: '1em',
     fontWeight: 600,
+    transition: 'all 0.2s ease-in-out',
 
     '&[data-selected=true]': {
       borderColor: theme.colors.action.toRGBA(0.5),
