@@ -15,12 +15,12 @@ export const errorBaseStyles = (theme: Theme) =>
       borderColor: theme.colors.negative.toString(),
       backgroundColor: theme.colors.negativeLight.toString(),
       boxShadow: `0 0 0 1px ${theme.colors.negative.toString()}`,
-      zIndex: 2,
       '& + button': {
         borderColor: theme.colors.negative.toString(),
       },
       '&:hover': {
         boxShadow: `0 0 0 8px ${theme.colors.negative.toRGBA(0.1)}`,
+        zIndex: 2,
       },
       '&:focus': {
         backgroundColor: theme.colors.actionLight.toString(),
