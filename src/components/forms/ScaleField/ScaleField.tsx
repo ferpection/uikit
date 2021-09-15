@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useMergedFocusHandlers } from '../../..'
 import useFormValidation from '../../../hooks/useFormValidation'
 
 import { useTheme } from '../../../hooks/useTheme'
@@ -22,6 +23,9 @@ export function ScaleField(props: ScaleFieldProps) {
     isRequired = false,
     onValueChange = () => {},
     onErrors = () => {},
+    onFocus = () => {},
+    onBlur = () => {},
+    ...otherProps
   } = props
   const choices = Array.from({ length: maxValue - minValue + 1 }, (_, i) => minValue + i)
 
@@ -32,6 +36,10 @@ export function ScaleField(props: ScaleFieldProps) {
     [(v: number) => ({ 'uikit:required': isRequired && (v == null || isNaN(v)) }), ...validators],
     false,
   )
+  const [handleFocus, handleBlur] = useMergedFocusHandlers({
+    onFocus,
+    onBlur,
+  })
 
   useEffect(() => setValue(initialValue), [initialValue])
   useEffect(() => onValueChange(value), [value])
@@ -47,6 +55,9 @@ export function ScaleField(props: ScaleFieldProps) {
           data-error={!isValid}
           disabled={isDisabled}
           onClick={() => setValue(choice)}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          {...otherProps}
         >
           {choice}
         </button>
