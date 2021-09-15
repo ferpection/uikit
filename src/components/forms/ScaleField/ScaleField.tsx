@@ -21,12 +21,13 @@ export function ScaleField(props: ScaleFieldProps) {
     isDisabled = false,
     isRequired = false,
     onValueChange = () => {},
+    onErrors = () => {},
   } = props
   const choices = Array.from({ length: maxValue - minValue + 1 }, (_, i) => minValue + i)
 
   const theme = useTheme()
   const [value, setValue] = useState(initialValue)
-  const { isValid } = useFormValidation(
+  const { isValid, errors } = useFormValidation(
     value,
     [(v: number) => ({ 'uikit:required': isRequired && (v == null || isNaN(v)) }), ...validators],
     false,
@@ -34,6 +35,7 @@ export function ScaleField(props: ScaleFieldProps) {
 
   useEffect(() => setValue(initialValue), [initialValue])
   useEffect(() => onValueChange(value), [value])
+  useEffect(() => onErrors(errors), [errors])
 
   return (
     <div css={[baseStyles]}>
