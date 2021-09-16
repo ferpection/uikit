@@ -18,6 +18,7 @@ export const itemStyles = (theme: Theme) =>
     flexGrow: 1,
     minHeight: '45px',
     padding: '10px 5px',
+    margin: 0,
     borderWidth: '1px 0 1px 1px',
     borderStyle: 'solid',
     borderColor: N75_COLOR.toRGB(),
