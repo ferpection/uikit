@@ -9,8 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- Add an `iconPosition` attribute to allow icon position customisation
-- Add an `textPosition` attribute to allow text position customisation
+- New `iconPosition` attribute to allow icon position customisation on `Button`.
+- New `textPosition` attribute to allow text position customisation on `Button`.
+- New `ScaleField` which given a range let the user select a value in a scale.
 
 ## [v1.6.0] - 2021-08-06
 
