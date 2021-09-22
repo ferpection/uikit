@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v1.7.0] - 2021-09-23
+
 ### Added
 
 - New `iconPosition` attribute to allow icon position customisation on `Button`.
@@ -738,6 +740,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Setup storybook as documentation
 
 [unreleased]: https://github.com/ferpection/uikit/tree/master
+[v1.7.0]: https://github.com/ferpection/uikit/tree/v1.7.0
 [v1.6.0]: https://github.com/ferpection/uikit/tree/v1.6.0
 [v1.5.0]: https://github.com/ferpection/uikit/tree/v1.5.0
 [v1.4.0]: https://github.com/ferpection/uikit/tree/v1.4.0
