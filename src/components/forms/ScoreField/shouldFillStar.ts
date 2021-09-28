@@ -4,8 +4,9 @@ export function shouldFillStar(
   choiceOvered: number,
   { componentDisabled = false, alwaysShowSelected = false } = {},
 ): boolean {
-  return (
-    (currentChoice <= choiceSelected && (currentChoice > choiceOvered || componentDisabled)) ||
-    (currentChoice === choiceSelected && alwaysShowSelected)
-  )
+  if (currentChoice > choiceSelected) return false
+
+  if (currentChoice <= choiceOvered && !componentDisabled && !alwaysShowSelected) return false
+
+  return true
 }
