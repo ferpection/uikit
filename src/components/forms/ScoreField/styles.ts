@@ -43,7 +43,7 @@ export const disabledItemState = (theme: Theme) =>
         color: theme.colors.negative.toRGBA(0.8),
 
         '&[data-color=best]': {
-          color: theme.colors.positive.toString(),
+          color: theme.colors.positive.toRGBA(0.8),
         },
       },
 
