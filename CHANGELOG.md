@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v1.8.0] - 2021-09-28
+
 ### Added
 
 - New `ScoreField` which given a range let the user select an amount of stars.
@@ -744,6 +746,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Setup storybook as documentation
 
 [unreleased]: https://github.com/ferpection/uikit/tree/master
+[v1.8.0]: https://github.com/ferpection/uikit/tree/v1.8.0
 [v1.7.0]: https://github.com/ferpection/uikit/tree/v1.7.0
 [v1.6.0]: https://github.com/ferpection/uikit/tree/v1.6.0
 [v1.5.0]: https://github.com/ferpection/uikit/tree/v1.5.0
