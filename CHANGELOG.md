@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- New `ScoreField` which given a range let the user select an amount of stars.
+
 ## [v1.7.0] - 2021-09-23
 
 ### Added
