@@ -5,7 +5,9 @@ import useFormValidation from '../../../hooks/useFormValidation'
 
 import { useTheme } from '../../../hooks/useTheme'
 import { defaultFormProps, FormProps } from '../form-props'
+import { shouldColorStar } from './shouldColorStar'
 
+import { shouldFillStar } from './shouldFillStar'
 import { baseStyles, disabledItemState, itemStyles } from './styles'
 
 interface ScoreFieldProps extends FormProps {
@@ -14,18 +16,6 @@ interface ScoreFieldProps extends FormProps {
   placeholder?: never
   onValueChange?: (value: number) => void
   alwaysShowSelected?: boolean
-}
-
-function shouldFillStar(
-  currentChoice: number,
-  choiceSelected: number,
-  choiceOvered: number,
-  { componentDisabled = false, alwaysShowSelected = false } = {},
-): boolean {
-  return (
-    (currentChoice <= choiceSelected && (currentChoice > choiceOvered || componentDisabled)) ||
-    (currentChoice === choiceSelected && alwaysShowSelected)
-  )
 }
 
 export function ScoreField(props: ScoreFieldProps) {
@@ -68,10 +58,7 @@ export function ScoreField(props: ScoreFieldProps) {
           key={choice}
           css={[itemStyles(theme), disabledItemState(theme)]}
           data-error={!isValid}
-          data-colored={
-            (choice <= choiceOvered && choiceOvered > -1 && !isDisabled) ||
-            (choice <= value && (choiceOvered === -1 || isDisabled))
-          }
+          data-colored={shouldColorStar(choice, value, choiceOvered, { componentDisabled: isDisabled })}
           disabled={isDisabled}
           onClick={() => setValue(choice)}
           onMouseOver={() => setChoiceOver(choice)}
