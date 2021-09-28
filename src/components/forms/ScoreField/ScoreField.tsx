@@ -59,6 +59,7 @@ export function ScoreField(props: ScoreFieldProps) {
           css={[itemStyles(theme), disabledItemState(theme)]}
           data-error={!isValid}
           data-colored={shouldColorStar(choice, value, choiceOvered, { componentDisabled: isDisabled })}
+          data-color={value >= choices[choices.length - 1] ? 'best' : 'regular'}
           disabled={isDisabled}
           onClick={() => setValue(choice)}
           onMouseOver={() => setChoiceOver(choice)}

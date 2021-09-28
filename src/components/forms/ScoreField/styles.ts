@@ -25,11 +25,11 @@ export const itemStyles = (theme: Theme) =>
 
     '&[data-colored=true]': {
       color: theme.colors.negative.toString(),
-    },
 
-    '&[data-colored=true]:last-of-type': {
-      color: theme.colors.positive.toString(),
-      textShadow: `0 0 20px ${theme.colors.positive.toString()}`,
+      '&[data-color=best]': {
+        color: theme.colors.positive.toString(),
+        textShadow: `0 0 20px ${theme.colors.positive.toString()}`,
+      },
     },
   })
 
@@ -41,10 +41,10 @@ export const disabledItemState = (theme: Theme) =>
 
       '&[data-colored=true]': {
         color: theme.colors.negative.toRGBA(0.8),
-      },
 
-      '&:last-of-type': {
-        color: N100_COLOR.toString(),
+        '&[data-color=best]': {
+          color: theme.colors.positive.toString(),
+        },
       },
 
       '&:hover': {
