@@ -10,7 +10,7 @@ export const addButtonStyles = (
     textPosition = 'start',
   }: { iconPosition?: 'start' | 'start-text' | 'end-text' | 'end'; textPosition?: 'start' | 'center' | 'end' },
 ) => css`
-  display: flex;
+  display: inline flex;
   flex-direction: ${['end', 'end-text'].includes(iconPosition) ? 'row-reverse' : 'row'};
   justify-content: ${['start', 'end'].includes(iconPosition) ? 'stretch' : textPosition};
   align-items: center;

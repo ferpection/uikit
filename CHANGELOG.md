@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v1.8.1] - 2021-10-14
+
+### Fixed
+
+- Buttons acted like block components. They are inline again.
+
 ## [v1.8.0] - 2021-09-28
 
 ### Added
@@ -746,6 +752,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Setup storybook as documentation
 
 [unreleased]: https://github.com/ferpection/uikit/tree/master
+[v1.8.1]: https://github.com/ferpection/uikit/tree/v1.8.1
 [v1.8.0]: https://github.com/ferpection/uikit/tree/v1.8.0
 [v1.7.0]: https://github.com/ferpection/uikit/tree/v1.7.0
 [v1.6.0]: https://github.com/ferpection/uikit/tree/v1.6.0
