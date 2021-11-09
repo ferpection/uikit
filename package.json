@@ -34,6 +34,9 @@
     "prepublishOnly": "pnpm run format && pnpm run test:lint -- --fix && pnpm run build",
     "postpublish": "pnpm run build:clean && echo \"Don't forget to publish the storybook for ${npm_package_name}@v${npm_package_version}\""
   },
+  "engines": {
+    "node": ">=16.0.0 <17.0.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-common-types": "^0.2.36",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
