@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v2.0.0] - 2021-11-09
+
+### Changed
+
+- Dependencies has been upgraded.
+- **[BREAKING]** React Router v6: Due to API changes, React Router's version lower than 6 isn't supported anymore.
+- **[BREAKING]** ESLint v8: ESLint only supports version of NodeJS upper than v16.
+
 ## [v1.8.1] - 2021-10-14
 
 ### Fixed
@@ -752,6 +760,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Setup storybook as documentation
 
 [unreleased]: https://github.com/ferpection/uikit/tree/master
+[v2.0.0]: https://github.com/ferpection/uikit/tree/v2.0.0
 [v1.8.1]: https://github.com/ferpection/uikit/tree/v1.8.1
 [v1.8.0]: https://github.com/ferpection/uikit/tree/v1.8.0
 [v1.7.0]: https://github.com/ferpection/uikit/tree/v1.7.0
