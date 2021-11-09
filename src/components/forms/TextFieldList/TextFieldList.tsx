@@ -195,6 +195,7 @@ export const TextFieldList: FC<TextFieldListProps> = props => {
           <PlaceholderButton
             css={[addButton]}
             icon={isOrdered ? null : 'plus'}
+            textPosition="start"
             isDisabled={isDisabled}
             onFocus={() => handleFocus()}
             onMouseDown={() => handleFocus()}
