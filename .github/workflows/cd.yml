@@ -52,7 +52,7 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: 12.x
+        node-version: 16.x
         registry-url: https://registry.npmjs.org/
     - name: Use PNPM
       run: curl -L https://unpkg.com/@pnpm/self-installer | node
@@ -84,7 +84,7 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: 12.x
+        node-version: 16.x
     - name: Use PNPM
       run: curl -L https://unpkg.com/@pnpm/self-installer | node
     - name: Install dependencies
