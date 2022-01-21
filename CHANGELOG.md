@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v2.0.1] - 2022-01-21
+
 ### Fixed
 
 - Move text in the add button of the `TextFieldList` to the left
@@ -765,6 +767,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Setup storybook as documentation
 
 [unreleased]: https://github.com/ferpection/uikit/tree/master
+[v2.0.1]: https://github.com/ferpection/uikit/tree/v2.0.1
 [v2.0.0]: https://github.com/ferpection/uikit/tree/v2.0.0
 [v1.8.1]: https://github.com/ferpection/uikit/tree/v1.8.1
 [v1.8.0]: https://github.com/ferpection/uikit/tree/v1.8.0
