@@ -15,7 +15,7 @@ export const prepareBaseState = ({
   textPosition?: 'start' | 'center' | 'end'
 } = {}) =>
   css({
-    display: 'inline flex',
+    display: 'inline-flex',
     flexDirection: ['end', 'end-text'].includes(iconPosition) ? 'row-reverse' : 'row',
     justifyContent: ['start', 'end'].includes(iconPosition) ? 'stretch' : textPosition,
     alignItems: 'center',

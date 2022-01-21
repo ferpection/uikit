@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Chrome weird behavior fixed: Make the Button inline using `inline-flex` intead of `inline flex`.
+
 ## [v2.0.1] - 2022-01-21
 
 ### Fixed
