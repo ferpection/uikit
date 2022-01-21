@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - Move text in the add button of the `TextFieldList` to the left
+- Make `TabLink` able to handle active page
 
 ## [v2.0.0] - 2021-11-09
 
