@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, PropsWithChildren, useState } from 'react'
 
 import { CalendarContainer } from '../CalendarContainer/CalendarContainer'
 import { PickerButton } from '../PickerButton/PickerButton'
@@ -16,14 +16,14 @@ interface YearPickerProps {
   title?: string
 }
 
-export const YearPicker: FC<YearPickerProps> = ({
+export function YearPicker({
   isSmall,
   selected,
   onYearSelected = () => {},
   previousButtonLabel,
   nextButtonLabel,
   title = 'Years',
-}) => {
+}: PropsWithChildren<YearPickerProps>) {
   const [firstYear, setFirstYear] = useState((selected ?? CURRENT_YEAR) - Math.trunc(BUTTONS_QUANTITY / 2))
 
   const years = new Array(BUTTONS_QUANTITY).fill(firstYear).map((year, index) => year + index)

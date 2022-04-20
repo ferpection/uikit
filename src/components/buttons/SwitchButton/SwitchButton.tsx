@@ -1,4 +1,4 @@
-import { FC, ChangeEvent, FocusEvent } from 'react'
+import { FC, ChangeEvent, FocusEvent, PropsWithChildren } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { findIconDefinition, IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core'
@@ -22,7 +22,7 @@ export interface SwitchButtonProps {
   onFocus?: (event: FocusEvent) => void
 }
 
-export const SwitchButton: FC<SwitchButtonProps> = props => {
+export function SwitchButton(props: PropsWithChildren<SwitchButtonProps>) {
   const theme = useTheme()
 
   const { actionType, isFilled } = props

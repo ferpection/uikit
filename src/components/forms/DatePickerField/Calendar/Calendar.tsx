@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import { FC, PropsWithChildren, ReactNode } from 'react'
 
 import { Props as DayzedProps, useDayzed } from 'dayzed'
 
@@ -29,7 +29,7 @@ export interface CalendarProps extends DayzedProps {
   nextButtonLabel?: string
 }
 
-export const Calendar: FC<CalendarProps> = props => {
+export function Calendar(props: PropsWithChildren<CalendarProps>) {
   const {
     isSmall,
     enableOtherDateComponentSelection,

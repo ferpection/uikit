@@ -1,4 +1,4 @@
-import { FC, useState, SyntheticEvent, useEffect, Fragment } from 'react'
+import { FC, useState, SyntheticEvent, useEffect, Fragment, PropsWithChildren } from 'react'
 
 import { removeConsecutiveDuplicate } from '../../../utils/array'
 
@@ -40,7 +40,7 @@ export interface DatePickerFieldProps extends FormProps {
   monthComponentTitle?: string
 }
 
-export const DatePickerField: FC<DatePickerFieldProps> = props => {
+export function DatePickerField(props: PropsWithChildren<DatePickerFieldProps>) {
   const {
     value: initialValue,
     isSmall,
@@ -172,7 +172,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
             language={dateLanguage}
             isSmall={isSmall}
             selected={value?.getMonth()}
-            onMonthSelected={month => {
+            onMonthSelected={(month: any) => {
               const date = value ?? new Date()
               date.setMonth(month)
 
@@ -188,7 +188,7 @@ export const DatePickerField: FC<DatePickerFieldProps> = props => {
             title={yearComponentTitle}
             isSmall={isSmall}
             selected={value?.getFullYear()}
-            onYearSelected={year => {
+            onYearSelected={(year: any) => {
               const date = value ?? new Date()
               date.setFullYear(year)
 

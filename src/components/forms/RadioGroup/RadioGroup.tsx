@@ -1,4 +1,14 @@
-import { FC, Children, cloneElement, useState, isValidElement, ChangeEvent, useEffect, FocusEvent } from 'react'
+import {
+  FC,
+  Children,
+  cloneElement,
+  useState,
+  isValidElement,
+  ChangeEvent,
+  useEffect,
+  FocusEvent,
+  PropsWithChildren,
+} from 'react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
 
@@ -26,7 +36,7 @@ export interface RadioGroupProps extends FormProps {
   onFocus?: (event: FocusEvent<HTMLUListElement>) => void
 }
 
-export const RadioGroup: FC<RadioGroupProps> = props => {
+export function RadioGroup(props: PropsWithChildren<RadioGroupProps>) {
   const theme = useTheme()
   const [value, setValue] = useState(props.value || '')
   const {

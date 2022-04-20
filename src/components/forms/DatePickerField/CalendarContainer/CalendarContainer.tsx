@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import { FC, PropsWithChildren, ReactNode } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -16,7 +16,7 @@ interface CalendarContainerProps {
   nextButtonLabel?: string
 }
 
-export const CalendarContainer: FC<CalendarContainerProps> = ({
+export function CalendarContainer({
   isSmall,
   children,
   previousButtonArgs,
@@ -24,7 +24,7 @@ export const CalendarContainer: FC<CalendarContainerProps> = ({
   nextButtonArgs,
   nextButtonLabel = 'Next',
   title,
-}) => {
+}: PropsWithChildren<CalendarContainerProps>) {
   const theme = useTheme()
 
   return (

@@ -1,4 +1,4 @@
-import { FC, Children, isValidElement, ReactElement } from 'react'
+import { Children, isValidElement, ReactElement, PropsWithChildren } from 'react'
 
 import { TabLink } from '../../buttons/TabLink/TabLink'
 import { useTheme } from '../../../hooks/useTheme'
@@ -9,7 +9,7 @@ export interface TabsProps {
   className?: string
 }
 
-export const Tabs: FC<TabsProps> = props => {
+export function Tabs(props: PropsWithChildren<TabsProps>) {
   const theme = useTheme()
   const children = Children.toArray(props.children)
     .filter(child => child != null)

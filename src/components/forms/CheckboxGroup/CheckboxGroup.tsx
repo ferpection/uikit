@@ -1,4 +1,14 @@
-import { FC, Children, cloneElement, useState, isValidElement, ChangeEvent, useEffect, FocusEvent } from 'react'
+import {
+  FC,
+  Children,
+  cloneElement,
+  useState,
+  isValidElement,
+  ChangeEvent,
+  useEffect,
+  FocusEvent,
+  PropsWithChildren,
+} from 'react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
 
@@ -26,7 +36,7 @@ export interface CheckboxGroupProps extends FormProps {
   onFocus?: (event: FocusEvent<HTMLUListElement>) => void
 }
 
-export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
+export function CheckboxGroup(props: PropsWithChildren<CheckboxGroupProps>) {
   const theme = useTheme()
   const [values, setValues] = useState(props.value || [])
   const {

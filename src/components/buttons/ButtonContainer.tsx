@@ -1,11 +1,11 @@
-import { FC, ButtonHTMLAttributes } from 'react'
+import { FC, ButtonHTMLAttributes, PropsWithChildren } from 'react'
 import { Link } from 'react-router-dom'
 
 interface ButtonContainerProps extends ButtonHTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
   to?: string
 }
 
-export const ButtonContainer: FC<ButtonContainerProps> = props => {
+export function ButtonContainer(props: PropsWithChildren<ButtonContainerProps>) {
   const { to, ...args } = props
 
   if (typeof to !== 'string') {

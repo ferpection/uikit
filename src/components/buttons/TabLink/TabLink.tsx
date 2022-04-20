@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
 import { useMatch, useResolvedPath } from 'react-router'
 
@@ -9,7 +9,7 @@ import { useTheme } from '../../../hooks/useTheme'
 
 export interface TabLinkProps extends ButtonProps {}
 
-export const TabLink: FC<TabLinkProps> = props => {
+export function TabLink(props: PropsWithChildren<TabLinkProps>) {
   const theme = useTheme()
   const { children, ...otherProps } = props
   const { to } = otherProps

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { PropsWithChildren } from 'react'
 
 import { ThemeProvider, ThemeProviderProps } from '../contexts/ThemeProvider'
 
@@ -9,7 +9,7 @@ export interface UiKitInitializerProps {
   theme?: ThemeProviderProps['theme']
 }
 
-export const UiKitInitializer: FC<UiKitInitializerProps> = props => {
+export function UiKitInitializer(props: PropsWithChildren<UiKitInitializerProps>) {
   return (
     <ThemeProvider theme={props.theme}>
       <GlobalCSSReset />

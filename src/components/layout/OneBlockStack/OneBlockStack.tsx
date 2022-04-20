@@ -1,4 +1,4 @@
-import { Children, FC, isValidElement } from 'react'
+import { Children, FC, isValidElement, PropsWithChildren } from 'react'
 import { jsx } from '@emotion/react'
 
 import { containerStyles, innerDivElementStyles, innerElementStyles } from './styles'
@@ -11,7 +11,7 @@ interface OneBlockStackProps {
   onBlur?: () => void
 }
 
-export const OneBlockStack: FC<OneBlockStackProps> = props => {
+export function OneBlockStack(props: PropsWithChildren<OneBlockStackProps>) {
   const [handleFocus, handleBlur] = useMergedFocusHandlers({ onBlur: props.onBlur, onFocus: props.onFocus })
   const theme = useTheme()
 

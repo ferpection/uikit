@@ -1,4 +1,4 @@
-import { FC, DragEventHandler, useState, useCallback, MouseEventHandler } from 'react'
+import { FC, DragEventHandler, useState, useCallback, MouseEventHandler, PropsWithChildren } from 'react'
 
 import { DragContext } from '../DragContext'
 
@@ -10,7 +10,7 @@ export interface DraggableItemProps {
   onDragStatusChange?: (status: string) => void
 }
 
-export const DraggableItem: FC<DraggableItemProps> = props => {
+export function DraggableItem(props: PropsWithChildren<DraggableItemProps>) {
   const { useExternalDragHandle = false, onDragStatusChange = () => {} } = props
   const [draggable, setDraggable] = useState(!useExternalDragHandle)
 

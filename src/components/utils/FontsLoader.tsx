@@ -1,4 +1,4 @@
-import { FC, useEffect, Fragment } from 'react'
+import { FC, useEffect, Fragment, PropsWithChildren } from 'react'
 import { Global, css } from '@emotion/react'
 import WebFontLoader from 'webfontloader'
 
@@ -9,7 +9,10 @@ export interface FontsLoaderProps {
   onlyLoadFonts?: boolean
 }
 
-export const FontsLoader: FC<FontsLoaderProps> = ({ fontNames = [OPENSANS_FONT], onlyLoadFonts = false }) => {
+export function FontsLoader({
+  fontNames = [OPENSANS_FONT],
+  onlyLoadFonts = false,
+}: PropsWithChildren<FontsLoaderProps>) {
   useEffect(() => {
     WebFontLoader.load({
       google: {

@@ -1,4 +1,4 @@
-import { FC, useContext, isValidElement, Children, cloneElement } from 'react'
+import { FC, useContext, isValidElement, Children, cloneElement, PropsWithChildren } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -6,7 +6,7 @@ import { DragContext } from '../DragContext'
 
 import { defaultHandle, draggingStyle } from './styles'
 
-export const DragHandle: FC = props => {
+export function DragHandle(props: PropsWithChildren<{}>) {
   const { enableDragEvent, dragEventEnabled, disableDragEvent } = useContext(DragContext)
   const dragHandleProps = {
     role: 'button',

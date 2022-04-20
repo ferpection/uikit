@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
 import { CalendarContainer } from '../CalendarContainer/CalendarContainer'
 import { PickerButton } from '../PickerButton/PickerButton'
@@ -20,7 +20,7 @@ interface MonthPickerProps {
   title?: string
 }
 
-export const MonthPicker: FC<MonthPickerProps> = ({
+export function MonthPicker({
   isSmall,
   selected,
   onMonthSelected = () => {},
@@ -28,7 +28,7 @@ export const MonthPicker: FC<MonthPickerProps> = ({
   nextButtonLabel,
   title = 'Months',
   language,
-}) => {
+}: PropsWithChildren<MonthPickerProps>) {
   const months = new Array(12).fill(0).map((_, i) => composeMonthName(i, language))
 
   return (

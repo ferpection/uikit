@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment, ChangeEvent, SyntheticEvent, FC } from 'react'
+import { useState, useEffect, Fragment, ChangeEvent, SyntheticEvent, FC, PropsWithChildren } from 'react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
 import { useTheme } from '../../../hooks/useTheme'
@@ -17,7 +17,7 @@ export interface SelectFieldProps extends FormProps {
   onValueChange?: (value: string, event: SyntheticEvent) => void
 }
 
-export const SelectField: FC<SelectFieldProps> = props => {
+export function SelectField(props: PropsWithChildren<SelectFieldProps>) {
   const theme = useTheme()
   const { value: externalValue } = props
   const [value, setValue] = useState(externalValue || '')

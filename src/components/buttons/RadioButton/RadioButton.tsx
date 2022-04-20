@@ -1,4 +1,4 @@
-import { FC, ChangeEvent, FocusEvent } from 'react'
+import { FC, ChangeEvent, FocusEvent, PropsWithChildren } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -26,7 +26,7 @@ export interface RadioButtonProps {
   onFocus?: (event: FocusEvent) => void
 }
 
-export const RadioButton: FC<RadioButtonProps> = props => {
+export function RadioButton(props: PropsWithChildren<RadioButtonProps>) {
   const theme = useTheme()
 
   const hoverColorKey = `${props.actionType}Light` as 'positiveLight' | 'negativeLight' | 'actionLight'

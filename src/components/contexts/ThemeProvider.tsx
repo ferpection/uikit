@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, PropsWithChildren, useState } from 'react'
 
 import { Theme, ThemeContext, defaultTheme, ThemeMutationContext, ThemeInput } from '../../contexts/ThemeContext'
 
@@ -17,7 +17,7 @@ function mergeTheme(theme: Theme, input: ThemeInput): Theme {
   }
 }
 
-export const ThemeProvider: FC<ThemeProviderProps> = props => {
+export function ThemeProvider(props: PropsWithChildren<ThemeProviderProps>) {
   const { theme: initialTheme = {}, ...moreProps } = props
   const [theme, setTheme] = useState(mergeTheme(defaultTheme, initialTheme))
 

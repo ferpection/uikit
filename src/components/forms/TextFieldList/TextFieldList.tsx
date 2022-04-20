@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment, FC } from 'react'
+import { useState, useEffect, Fragment, FC, PropsWithChildren } from 'react'
 import RandomString from 'randomstring'
 
 import { useMergedFocusHandlers } from '../../../hooks/useMergedFocusHandlers'
@@ -60,7 +60,7 @@ function identifyString(
   return text
 }
 
-export const TextFieldList: FC<TextFieldListProps> = props => {
+export function TextFieldList(props: PropsWithChildren<TextFieldListProps>) {
   const flatInitialValues = props.value || []
   const intialValues = flatInitialValues.map((value: string | IdentifiableString) => identifyString(value))
 

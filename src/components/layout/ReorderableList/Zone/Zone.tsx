@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 import { useTheme } from '../../../../hooks/useTheme'
 
 import { Dropzone, DropzoneProps } from '../../dnd/Dropzone/Dropzone'
@@ -11,7 +11,7 @@ interface ZoneProps {
   onDragOver?: DropzoneProps['onDragOver']
 }
 
-export const Zone: FC<ZoneProps> = props => {
+export function Zone(props: PropsWithChildren<ZoneProps>) {
   const { droppable, ...dropzoneProps } = props
   const theme = useTheme()
 

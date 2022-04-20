@@ -1,4 +1,4 @@
-import { Fragment, FC } from 'react'
+import { Fragment, FC, PropsWithChildren } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { FormErrors } from '../form-errors'
@@ -13,7 +13,7 @@ export interface FormErrorMessagesProps {
   translatorFn?: (translationKey: string, variables?: { [variableName: string]: any }) => string
 }
 
-export const FormErrorMessages: FC<FormErrorMessagesProps> = props => {
+export function FormErrorMessages(props: PropsWithChildren<FormErrorMessagesProps>) {
   const { errors = {}, translatedErrors = [], className, translatorFn = value => value } = props
   const theme = useTheme()
 

@@ -1,4 +1,4 @@
-import { FC, ReactChild } from 'react'
+import { FC, PropsWithChildren, ReactChild } from 'react'
 
 import { useDropzone } from './useDropzone'
 import { container } from './styles'
@@ -13,7 +13,7 @@ export interface DropzoneProps {
   children: (options: RenderFunctionOptions) => ReactChild
 }
 
-export const Dropzone: FC<DropzoneProps> = props => {
+export function Dropzone(props: DropzoneProps) {
   const { children, onDragOver = () => {}, onDrop = () => {} } = props
   const [events, isOver] = useDropzone({ onDragOver, onDrop })
 

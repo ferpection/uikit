@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 import { ReactElementLike } from 'prop-types'
 
 import {
@@ -17,17 +17,19 @@ export interface ThematicSectionProps {
   className?: string
 }
 
-export const ThematicSection: FC<ThematicSectionProps> = props => (
-  <div className={props.className} css={[containerStyles]}>
-    <header css={[headerStyles]}>
-      <div css={[titleStyles]}>
-        <div css={[logoStyles]}>
-          <FerpectionBadgeIcon icon={props.badgeIcon} borderColor={props.badgeColor} />
+export function ThematicSection(props: PropsWithChildren<ThematicSectionProps>) {
+  return (
+    <div className={props.className} css={[containerStyles]}>
+      <header css={[headerStyles]}>
+        <div css={[titleStyles]}>
+          <div css={[logoStyles]}>
+            <FerpectionBadgeIcon icon={props.badgeIcon} borderColor={props.badgeColor} />
+          </div>
+          <h2 css={[titleTextStyles]}>{props.title}</h2>
         </div>
-        <h2 css={[titleTextStyles]}>{props.title}</h2>
-      </div>
-      <div>{props.actions}</div>
-    </header>
-    <section css={[sectionStyles]}>{props.children}</section>
-  </div>
-)
+        <div>{props.actions}</div>
+      </header>
+      <section css={[sectionStyles]}>{props.children}</section>
+    </div>
+  )
+}

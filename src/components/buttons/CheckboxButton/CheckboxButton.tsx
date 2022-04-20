@@ -1,4 +1,4 @@
-import { FC, ChangeEvent, FocusEvent } from 'react'
+import { FC, ChangeEvent, FocusEvent, PropsWithChildren } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -26,7 +26,7 @@ export interface CheckboxButtonProps {
   onFocus?: (event: FocusEvent) => void
 }
 
-export const CheckboxButton: FC<CheckboxButtonProps> = props => {
+export function CheckboxButton(props: PropsWithChildren<CheckboxButtonProps>) {
   const theme = useTheme()
 
   const hoverColorKey = `${props.actionType}Light` as 'positiveLight' | 'negativeLight' | 'actionLight'

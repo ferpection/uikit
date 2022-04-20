@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
 import { Color, R400_COLOR } from '../../colors'
 
@@ -8,7 +8,7 @@ export interface HeaderLinkProps extends ButtonProps {
   headerLigthVersion?: boolean
 }
 
-export const HeaderLink: FC<HeaderLinkProps> = props => {
+export function HeaderLink(props: PropsWithChildren<HeaderLinkProps>) {
   const { headerLigthVersion, children, ...otherProps } = props
   const WHITE_COLOR = new Color(255, 255, 255)
 
