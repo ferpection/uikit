@@ -33,8 +33,8 @@ export function CalendarContainer({
         <Button isFilled icon="arrow-left" isDisabled={previousButtonArgs == null} {...previousButtonArgs}>
           {previousButtonLabel}
         </Button>
-        <Button isFilled isDisabled={nextButtonArgs == null} {...nextButtonArgs}>
-          {nextButtonLabel} <FontAwesomeIcon size="sm" icon={{ prefix: 'fas', iconName: 'arrow-right' }} />
+        <Button isFilled icon="arrow-right" iconPosition="end" isDisabled={nextButtonArgs == null} {...nextButtonArgs}>
+          {nextButtonLabel}
         </Button>
       </div>
       {title != null && <div css={[header]}>{title}</div>}
