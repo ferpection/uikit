@@ -34,7 +34,7 @@ export const container = css`
 
 export const helpButtonStyle = css`
   float: right;
-  margin: 0 5px;
+  margin: 7px 5px;
 `
 
 export const buttonStyle = (theme: Theme) => css`
