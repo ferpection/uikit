@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
-import { useMergedFocusHandlers } from '../../..'
-import useFormValidation from '../../../hooks/useFormValidation'
 
-import { useTheme } from '../../../hooks/useTheme'
+import { useMergedFocusHandlers, useFormValidation, useTheme } from '../../../hooks'
 import { defaultFormProps, FormProps } from '../form-props'
 
 import { baseStyles, disabledItemState, errorItemStyles, itemStyles } from './styles'

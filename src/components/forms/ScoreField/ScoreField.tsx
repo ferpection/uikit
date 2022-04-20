@@ -1,14 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect } from 'react'
-import { useMergedFocusHandlers } from '../../..'
-import useFormValidation from '../../../hooks/useFormValidation'
 
-import { useTheme } from '../../../hooks/useTheme'
+import { useMergedFocusHandlers, useFormValidation, useTheme } from '../../../hooks'
 import { defaultFormProps, FormProps } from '../form-props'
-import { shouldColorStar } from './shouldColorStar'
 
-import { shouldFillStar } from './shouldFillStar'
 import { baseStyles, disabledItemState, itemStyles } from './styles'
+import { shouldColorStar } from './shouldColorStar'
+import { shouldFillStar } from './shouldFillStar'
 
 interface ScoreFieldProps extends FormProps {
   value?: number

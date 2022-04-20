@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-import { N100_COLOR } from '../../..'
+import { N100_COLOR } from '../../../colors/colors'
 import { Theme } from '../../../contexts/ThemeContext'
 
 export const baseStyles = css({
