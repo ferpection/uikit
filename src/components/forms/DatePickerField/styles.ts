@@ -14,11 +14,11 @@ export const datePickerContainerSmall = css`
 export const calendarButton = css`
   position: absolute;
   right: 5px;
-  top: 9px;
+  top: 15px;
   z-index: 2;
 `
 
 export const calendarButtonSmall = css`
   right: 0;
-  top: 0;
+  top: 5px;
 `
