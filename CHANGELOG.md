@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - Fix buttons positioning in other components (DatePickerField, MarkdownField)
+- Fix buttons's code semantic. Improve rendering and browser support
 
 ## [v2.0.2] - 2022-01-21
 

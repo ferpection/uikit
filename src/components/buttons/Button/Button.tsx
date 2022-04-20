@@ -84,7 +84,7 @@ export function Button(props: PropsWithChildren<ButtonProps>) {
     >
       {iconExist && <FontAwesomeIcon icon={icon} size="sm" />}
       {iconExist && childrenExist && <Fragment>&nbsp;</Fragment>}
-      {childrenExist && <div css={[contentPosition]}>{children}</div>}
+      {childrenExist && <span css={[contentPosition]}>{children}</span>}
     </ButtonContainer>
   )
 }
