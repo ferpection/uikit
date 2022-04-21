@@ -1,12 +1,6 @@
-import { PropsWithChildren } from 'react'
 import { Global, css } from '@emotion/react'
 
-export interface GlobalCSSResetProps {
-  fontNames?: string[]
-  onlyLoadFonts?: boolean
-}
-
-export function GlobalCSSReset(props: PropsWithChildren<GlobalCSSResetProps>) {
+export function GlobalCSSReset() {
   return (
     <Global
       styles={css`

@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactChild } from 'react'
+import { ReactChild } from 'react'
 
 import { useDropzone } from './useDropzone'
 import { container } from './styles'

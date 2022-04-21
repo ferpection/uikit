@@ -1,7 +1,5 @@
 import { PropsWithChildren, ReactNode } from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import { Button } from '../../../buttons/Button/Button'
 import { useTheme } from '../../../../hooks/useTheme'
 
