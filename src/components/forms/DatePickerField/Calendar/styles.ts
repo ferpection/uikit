@@ -6,6 +6,7 @@ const buttonWidth = 40
 export const calendarBoard = css`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 `
 
 export const headerWeekday = css`
@@ -29,6 +30,11 @@ export const headerWeekday = css`
     background-color: transparent;
     color: ${`${N500_COLOR}`};
   }
+
+  @media (max-width: 400px) {
+    font-size: 0.8em;
+    width: ${buttonWidth / 1.3}px;
+  }
 `
 
 export const emptyButtonSpace = css`
@@ -48,5 +54,10 @@ export const emptyButtonSpace = css`
   &:focus {
     background-color: transparent;
     color: ${`${N500_COLOR}`};
+  }
+
+  @media (max-width: 400px) {
+    height: ${buttonWidth / 1.3}px;
+    width: ${buttonWidth / 1.3}px;
   }
 `

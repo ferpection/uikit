@@ -26,6 +26,15 @@ export const calendarContainer = (theme: Theme) => css`
     box-shadow: 0 0 0 8px ${theme.colors.action.toRGBA(0.1)};
   }
   z-index: 3;
+
+  @media (max-width: 400px) {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    top: 0;
+    padding: 0;
+    justify-content: space-around;
+  }
 `
 
 export const smallCalendarContainer = (theme: Theme) => css`

@@ -4,6 +4,10 @@ export const datePickerContainer = css`
   position: relative;
   display: inline-block;
   width: 100%;
+
+  @media (max-width: 400px) {
+    position: unset;
+  }
 `
 
 export const datePickerContainerSmall = css`

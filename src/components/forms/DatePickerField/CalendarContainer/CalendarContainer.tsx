@@ -12,8 +12,10 @@ interface CalendarContainerProps {
   isSmall?: boolean
   previousButtonArgs?: Record<string, any>
   nextButtonArgs?: Record<string, any>
+  cancelButtonArgs?: Record<string, any>
   previousButtonLabel?: string
   nextButtonLabel?: string
+  cancelButtonLabel?: string
 }
 
 export function CalendarContainer({
@@ -23,6 +25,8 @@ export function CalendarContainer({
   previousButtonLabel = 'Previous',
   nextButtonArgs,
   nextButtonLabel = 'Next',
+  cancelButtonArgs,
+  cancelButtonLabel = 'Cancel',
   title,
 }: PropsWithChildren<CalendarContainerProps>) {
   const theme = useTheme()
@@ -39,6 +43,9 @@ export function CalendarContainer({
       </div>
       {title != null && <div css={[header]}>{title}</div>}
       <div css={calendarBoard}>{children}</div>
+      <Button actionType="negative" isFilled icon="times" isDisabled={nextButtonArgs == null} {...cancelButtonArgs}>
+        {cancelButtonLabel}
+      </Button>
     </div>
   )
 }
