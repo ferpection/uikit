@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment, ChangeEvent, SyntheticEvent, FC, PropsWithChildren } from 'react'
+import { useState, useEffect, Fragment, ChangeEvent, SyntheticEvent, PropsWithChildren } from 'react'
 
 import useFormValidation from '../../../hooks/useFormValidation'
 import { useTheme } from '../../../hooks/useTheme'

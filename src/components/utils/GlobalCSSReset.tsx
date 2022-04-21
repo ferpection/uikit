@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react'
 import { Global, css } from '@emotion/react'
 
 export interface GlobalCSSResetProps {

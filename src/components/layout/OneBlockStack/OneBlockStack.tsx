@@ -1,4 +1,4 @@
-import { Children, FC, isValidElement, PropsWithChildren } from 'react'
+import { Children, isValidElement, PropsWithChildren } from 'react'
 import { jsx } from '@emotion/react'
 
 import { containerStyles, innerDivElementStyles, innerElementStyles } from './styles'

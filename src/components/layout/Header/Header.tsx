@@ -1,4 +1,4 @@
-import { Children, isValidElement, cloneElement, ReactElement, FC, PropsWithChildren } from 'react'
+import { Children, isValidElement, cloneElement, ReactElement, PropsWithChildren } from 'react'
 
 import { Color, R400_COLOR } from '../../../colors/index'
 

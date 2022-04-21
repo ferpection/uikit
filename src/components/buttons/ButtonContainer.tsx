@@ -1,4 +1,4 @@
-import { FC, ButtonHTMLAttributes, PropsWithChildren } from 'react'
+import { ButtonHTMLAttributes, PropsWithChildren } from 'react'
 import { Link } from 'react-router-dom'
 
 interface ButtonContainerProps extends ButtonHTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {

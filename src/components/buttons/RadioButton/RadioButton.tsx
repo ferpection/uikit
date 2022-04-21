@@ -1,4 +1,4 @@
-import { FC, ChangeEvent, FocusEvent, PropsWithChildren } from 'react'
+import { ChangeEvent, FocusEvent, PropsWithChildren } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 

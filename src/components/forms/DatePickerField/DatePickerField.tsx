@@ -1,4 +1,4 @@
-import { FC, useState, SyntheticEvent, useEffect, Fragment, PropsWithChildren } from 'react'
+import { useState, SyntheticEvent, useEffect, Fragment, PropsWithChildren } from 'react'
 
 import { removeConsecutiveDuplicate } from '../../../utils/array'
 

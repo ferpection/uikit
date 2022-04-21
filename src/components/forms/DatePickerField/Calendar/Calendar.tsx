@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, ReactNode } from 'react'
+import { PropsWithChildren, ReactNode } from 'react'
 
 import { Props as DayzedProps, useDayzed } from 'dayzed'
 

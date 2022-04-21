@@ -1,4 +1,4 @@
-import { FC, DragEventHandler, useState, useCallback, MouseEventHandler, PropsWithChildren } from 'react'
+import { DragEventHandler, useState, useCallback, MouseEventHandler, PropsWithChildren } from 'react'
 
 import { DragContext } from '../DragContext'
 
