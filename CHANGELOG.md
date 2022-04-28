@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- `DatePickerField` is now fully responsive. On smallest screen it shows the date picker modal in full screen mode to ease selection.
+
 ### Changed
 
 - **[BREAKING]** React v18. The major upgrade to React v18 might make UiKit incompatible with projects using lower version of react.
