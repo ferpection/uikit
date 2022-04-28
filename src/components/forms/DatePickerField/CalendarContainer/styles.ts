@@ -28,11 +28,13 @@ export const calendarContainer = (theme: Theme) => css`
   z-index: 3;
 
   @media (max-width: 400px) {
+    position: fixed;
+    box-sizing: border-box;
     width: 100%;
-    max-width: 100%;
-    height: 100%;
+    max-width: 100vw;
+    height: 100vh;
     top: 0;
-    padding: 0;
+    padding: 5px;
     justify-content: space-around;
   }
 `
