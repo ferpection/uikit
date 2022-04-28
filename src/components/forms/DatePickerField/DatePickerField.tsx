@@ -1,4 +1,4 @@
-import { FC, useState, SyntheticEvent, useEffect, Fragment, PropsWithChildren } from 'react'
+import { useState, SyntheticEvent, useEffect, Fragment, PropsWithChildren } from 'react'
 
 import { removeConsecutiveDuplicate } from '../../../utils/array'
 
@@ -36,6 +36,7 @@ export interface DatePickerFieldProps extends FormProps {
   dateLanguage?: string
   previousButtonLabel?: string
   nextButtonLabel?: string
+  cancelButtonLabel?: string
   yearComponentTitle?: string
   monthComponentTitle?: string
 }
@@ -55,6 +56,7 @@ export function DatePickerField(props: PropsWithChildren<DatePickerFieldProps>) 
     dateLanguage = 'en',
     previousButtonLabel,
     nextButtonLabel,
+    cancelButtonLabel,
     yearComponentTitle,
     monthComponentTitle,
     ...otherProps
@@ -145,6 +147,7 @@ export function DatePickerField(props: PropsWithChildren<DatePickerFieldProps>) 
           <Calendar
             previousButtonLabel={previousButtonLabel}
             nextButtonLabel={nextButtonLabel}
+            cancelButtonLabel={cancelButtonLabel}
             language={dateLanguage}
             onDateSelected={({ date }) => {
               setValue(date)
@@ -156,6 +159,7 @@ export function DatePickerField(props: PropsWithChildren<DatePickerFieldProps>) 
 
               moveToNextSelector()
             }}
+            onClose={() => (modalState == null ? moveToSelector(0) : closeModal())}
             date={value || new Date()}
             selected={[value]}
             firstDayOfWeek={1}

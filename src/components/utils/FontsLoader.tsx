@@ -1,4 +1,4 @@
-import { FC, useEffect, Fragment, PropsWithChildren } from 'react'
+import { useEffect, Fragment, PropsWithChildren } from 'react'
 import { Global, css } from '@emotion/react'
 import WebFontLoader from 'webfontloader'
 

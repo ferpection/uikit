@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, useState } from 'react'
+import { PropsWithChildren, useState } from 'react'
 
 import { CalendarContainer } from '../CalendarContainer/CalendarContainer'
 import { PickerButton } from '../PickerButton/PickerButton'

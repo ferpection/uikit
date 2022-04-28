@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, ReactNode } from 'react'
+import { PropsWithChildren, ReactNode } from 'react'
 
 import { Props as DayzedProps, useDayzed } from 'dayzed'
 
@@ -27,6 +27,8 @@ export interface CalendarProps extends DayzedProps {
   language: string
   previousButtonLabel?: string
   nextButtonLabel?: string
+  cancelButtonLabel?: string
+  onClose?: () => void
 }
 
 export function Calendar(props: PropsWithChildren<CalendarProps>) {
@@ -37,6 +39,8 @@ export function Calendar(props: PropsWithChildren<CalendarProps>) {
     language,
     previousButtonLabel,
     nextButtonLabel,
+    cancelButtonLabel,
+    onClose = () => {},
   } = props
   const { calendars, getBackProps, getDateProps, getForwardProps } = useDayzed(props)
 
@@ -59,10 +63,15 @@ export function Calendar(props: PropsWithChildren<CalendarProps>) {
       isSmall={isSmall}
       previousButtonArgs={getBackProps({ calendars })}
       nextButtonArgs={getForwardProps({ calendars })}
+      cancelButtonArgs={{ onClick: onClose }}
       previousButtonLabel={previousButtonLabel}
       nextButtonLabel={nextButtonLabel}
+      cancelButtonLabel={cancelButtonLabel}
     >
-      <div key={`${calendar.month}${calendar.year}`}>
+      <div
+        key={`${calendar.month}${calendar.year}`}
+        style={{ display: 'inline-flex', justifyContent: 'space-between', flexWrap: 'wrap' }}
+      >
         {weekdayNamesShort.map(weekday => (
           <div key={`${calendar.month}${calendar.year}${weekday}`} css={[headerWeekday]}>
             {weekday}

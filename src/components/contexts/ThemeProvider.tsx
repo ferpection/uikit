@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, useState } from 'react'
+import { PropsWithChildren, useState } from 'react'
 
 import { Theme, ThemeContext, defaultTheme, ThemeMutationContext, ThemeInput } from '../../contexts/ThemeContext'
 

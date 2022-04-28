@@ -1,5 +1,4 @@
 import {
-  FC,
   Children,
   cloneElement,
   useState,

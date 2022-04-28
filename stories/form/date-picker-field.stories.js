@@ -18,24 +18,28 @@ const labels = {
   en: {
     buttonNext: 'Next',
     buttonPrevious: 'Previous',
+    buttonCancel: 'Cancel',
     years: 'Years',
     months: 'Months',
   },
   fr: {
     buttonNext: 'Suivant',
     buttonPrevious: 'Précédent',
+    buttonCancel: 'Annuler',
     years: 'Années',
     months: 'Mois',
   },
   zh_HANS: {
     buttonNext: '下一个',
     buttonPrevious: '上一个',
+    buttonCancel: '取消',
     years: '年',
     months: '月',
   },
   ko: {
     buttonNext: '다음',
     buttonPrevious: '이전',
+    buttonCancel: '취소',
     years: '연령',
     months: '개월',
     datePlaceholder: 'dd/mm/yyyy',
@@ -49,6 +53,7 @@ export const NormalState = ({ testLang, ...args }) => {
       dateLanguage={testLang}
       nextButtonLabel={labels[testLang].buttonNext}
       previousButtonLabel={labels[testLang].buttonPrevious}
+      cancelButtonLabel={labels[testLang].buttonCancel}
       monthComponentTitle={labels[testLang].months}
       yearComponentTitle={labels[testLang].years}
       {...args}
@@ -67,6 +72,7 @@ export const ErrorState = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -76,6 +82,7 @@ export const ErrorState = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -96,6 +103,7 @@ export const DisabledState = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -124,6 +132,7 @@ export const BirthDateExample = ({ testLang, ...args }) => {
       dateLanguage={testLang}
       nextButtonLabel={labels[testLang].buttonNext}
       previousButtonLabel={labels[testLang].buttonPrevious}
+      cancelButtonLabel={labels[testLang].buttonCancel}
       monthComponentTitle={labels[testLang].months}
       yearComponentTitle={labels[testLang].years}
       {...args}
@@ -145,6 +154,7 @@ export const OneDateComponentBehavior = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -155,6 +165,7 @@ export const OneDateComponentBehavior = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -165,6 +176,7 @@ export const OneDateComponentBehavior = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -186,6 +198,7 @@ export const TwoDateComponentsBehavior = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -196,6 +209,7 @@ export const TwoDateComponentsBehavior = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -206,6 +220,7 @@ export const TwoDateComponentsBehavior = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -216,6 +231,7 @@ export const TwoDateComponentsBehavior = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -226,6 +242,7 @@ export const TwoDateComponentsBehavior = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -236,6 +253,7 @@ export const TwoDateComponentsBehavior = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -257,6 +275,7 @@ export const ThreeDateComponentsBehavior = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -267,6 +286,7 @@ export const ThreeDateComponentsBehavior = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -277,6 +297,7 @@ export const ThreeDateComponentsBehavior = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -287,6 +308,7 @@ export const ThreeDateComponentsBehavior = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -297,6 +319,7 @@ export const ThreeDateComponentsBehavior = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}
@@ -307,6 +330,7 @@ export const ThreeDateComponentsBehavior = ({ testLang, ...args }) => {
         dateLanguage={testLang}
         nextButtonLabel={labels[testLang].buttonNext}
         previousButtonLabel={labels[testLang].buttonPrevious}
+        cancelButtonLabel={labels[testLang].buttonCancel}
         monthComponentTitle={labels[testLang].months}
         yearComponentTitle={labels[testLang].years}
         {...args}

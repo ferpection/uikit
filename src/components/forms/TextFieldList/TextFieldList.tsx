@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment, FC, PropsWithChildren } from 'react'
+import { useState, useEffect, Fragment, PropsWithChildren } from 'react'
 import RandomString from 'randomstring'
 
 import { useMergedFocusHandlers } from '../../../hooks/useMergedFocusHandlers'

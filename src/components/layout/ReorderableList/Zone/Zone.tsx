@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react'
 import { useTheme } from '../../../../hooks/useTheme'
 
 import { Dropzone, DropzoneProps } from '../../dnd/Dropzone/Dropzone'

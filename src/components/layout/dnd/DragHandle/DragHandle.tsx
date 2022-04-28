@@ -1,4 +1,4 @@
-import { FC, useContext, isValidElement, Children, cloneElement, PropsWithChildren } from 'react'
+import { useContext, isValidElement, Children, cloneElement, PropsWithChildren } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
