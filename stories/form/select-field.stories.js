@@ -8,7 +8,10 @@ export default {
 export const NormalState = args => {
   return (
     <UiKitInitializer>
-      <SelectField {...args} />
+      <SelectField {...args}>
+        <option value="1">first choice</option>
+        <option value="2">second choice</option>
+      </SelectField>
     </UiKitInitializer>
   )
 }

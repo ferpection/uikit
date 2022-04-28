@@ -47,7 +47,7 @@ export function SelectField(props: PropsWithChildren<SelectFieldProps>) {
   useEffect(() => onErrors(errors), [errors])
 
   const { className, isSmall = false, placeholder, isHighlighted = false, isDisabled, children } = props
-  const isEmpty = Boolean(errors['uikit:required'])
+  const isEmpty = value == null || value === ''
   const canDisplayEmptyError = Boolean(showableErrors['uikit:required'])
 
   return (
@@ -68,7 +68,9 @@ export function SelectField(props: PropsWithChildren<SelectFieldProps>) {
         onBlur={event => handleBlur(event)}
         onFocus={event => handleFocus(event)}
       >
-        <option disabled={!isEmpty}>{placeholder}</option>
+        <option value="" disabled={!isEmpty} selected hidden>
+          {placeholder}
+        </option>
         {children}
       </select>
       {canDisplayEmptyError && <FormErrorMessages translatedErrors={['Please fill the field.']} />}

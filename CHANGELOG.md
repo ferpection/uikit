@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Fix buttons positioning in other components (DatePickerField, MarkdownField)
 - Fix buttons's code semantic. Improve rendering and browser support
 - Fix trash button and marker position on TextFieldList when the row count of the TextFields are greater than 1
+- Make the placeholder display correctly on SelectField
 
 ## [v2.0.2] - 2022-01-21
 
