@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v3.0.0] - 2022-04-28
+
 ### Added
 
 - `DatePickerField` is now fully responsive. On smallest screen it shows the date picker modal in full screen mode to ease selection.
@@ -788,6 +790,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Setup storybook as documentation
 
 [unreleased]: https://github.com/ferpection/uikit/tree/master
+[v3.0.0]: https://github.com/ferpection/uikit/tree/v3.0.0
 [v2.0.2]: https://github.com/ferpection/uikit/tree/v2.0.2
 [v2.0.1]: https://github.com/ferpection/uikit/tree/v2.0.1
 [v2.0.0]: https://github.com/ferpection/uikit/tree/v2.0.0
