@@ -14,7 +14,7 @@ export const NormalState = args => {
 }
 
 NormalState.args = {
-  placeholder: 'This is an select',
+  placeholder: 'This is a select',
 }
 
 export const HighlightedState = args => {
@@ -26,7 +26,7 @@ export const HighlightedState = args => {
 }
 
 HighlightedState.args = {
-  placeholder: 'This is an select',
+  placeholder: 'This is a select',
   isHighlighted: true,
 }
 
@@ -39,7 +39,7 @@ export const ErrorState = args => {
 }
 
 ErrorState.args = {
-  placeholder: 'This is an select',
+  placeholder: 'This is a select',
   isRequired: true,
 }
 
@@ -52,6 +52,6 @@ export const DisabledState = args => {
 }
 
 DisabledState.args = {
-  placeholder: 'This is an select',
+  placeholder: 'This is a select',
   isDisabled: true,
 }
