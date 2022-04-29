@@ -55,9 +55,9 @@ export function SwitchButton(props: PropsWithChildren<SwitchButtonProps>) {
 SwitchButton.defaultProps = {
   isDisabled: false,
   isFilled: false,
-  actionType: 'action',
-  icon: 'circle',
-  iconStore: 'fas',
+  actionType: 'action' as ActionType,
+  icon: 'circle' as IconName,
+  iconStore: 'fas' as IconPrefix,
   onValueChange: () => {},
   onBlur: () => {},
   onFocus: () => {},

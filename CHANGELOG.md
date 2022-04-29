@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Force type definition on SwitchButton to improve build compatility with react 18
+
 ## [v3.0.0] - 2022-04-28
 
 ### Added
