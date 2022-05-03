@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### Fixed
+## [v3.1.0] - 2022-05-03
+
+### Changed
 
 - Force type definition on SwitchButton to improve build compatility with react 18
 
@@ -794,7 +796,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Setup storybook as documentation
 
 [unreleased]: https://github.com/ferpection/uikit/tree/master
-[v3.0.0]: https://github.com/ferpection/uikit/tree/v3.0.0
+[v3.1.0]: https://github.com/ferpection/uikit/tree/v3.1.0
 [v2.0.2]: https://github.com/ferpection/uikit/tree/v2.0.2
 [v2.0.1]: https://github.com/ferpection/uikit/tree/v2.0.1
 [v2.0.0]: https://github.com/ferpection/uikit/tree/v2.0.0
