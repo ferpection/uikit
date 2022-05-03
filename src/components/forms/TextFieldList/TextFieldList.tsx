@@ -1,5 +1,5 @@
 import { useState, useEffect, Fragment, PropsWithChildren } from 'react'
-import RandomString from 'randomstring'
+import RandomString from 'crypto-random-string'
 
 import { useMergedFocusHandlers } from '../../../hooks/useMergedFocusHandlers'
 
@@ -52,7 +52,7 @@ function identifyString(
 ): IdentifiableString {
   if (typeof text === 'string') {
     return {
-      id: previousId ?? RandomString.generate(20),
+      id: previousId ?? RandomString({ length: 20, type: 'url-safe' }),
       text,
     }
   }
