@@ -26,12 +26,13 @@
     "build:clean": "rm -rf ./{colors,components,index}.js ./index.d.ts ./storybook-static ./dist",
     "start": "pnpm run start:storybook",
     "start:storybook": "start-storybook -p 6006",
-    "test:lint": "eslint src/**/*.{ts,tsx} stories/**",
-    "test:unit": "jest",
     "test": "pnpm run test:lint && pnpm run test:unit",
+    "test:lint": "eslint src/**/*.{ts,tsx} stories/**",
+    "test:lint:fix": "pnpm run test:lint --fix",
+    "test:unit": "jest",
     "format": "prettier --write '{src,stories,.storybook}/**/*.{js,ts,tsx}'",
     "publish:storybook": "pnpm run build:storybook && gh-pages -d storybook-static",
-    "prepublishOnly": "pnpm run format && pnpm run test:lint -- --fix && pnpm run build",
+    "prepublishOnly": "pnpm run format && pnpm run test:lint:fix && pnpm run build",
     "postpublish": "pnpm run build:clean && echo \"Don't forget to publish the storybook for ${npm_package_name}@v${npm_package_version}\""
   },
   "engines": {
