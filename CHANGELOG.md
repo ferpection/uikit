@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [v3.1.1] - 2022-05-03
+## [v3.1.2] - 2022-05-03
+
+# Fixed
+
+- Drop usage of 'crypto-random-string' in favor of a handmade solution to support webpack v5+ in the context of CRA
+
+## [v3.1.1] - 2022-05-03 [YANKED]
 
 # Fixed
 
@@ -802,6 +808,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Setup storybook as documentation
 
 [unreleased]: https://github.com/ferpection/uikit/tree/master
+[v3.1.2]: https://github.com/ferpection/uikit/tree/v3.1.2
 [v3.1.1]: https://github.com/ferpection/uikit/tree/v3.1.1
 [v3.1.0]: https://github.com/ferpection/uikit/tree/v3.1.0
 [v2.0.2]: https://github.com/ferpection/uikit/tree/v2.0.2
