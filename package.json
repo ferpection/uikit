@@ -45,7 +45,6 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
-    "crypto-random-string": "^4.0.0",
     "dayzed": "^3.2.2",
     "tslib": "^2.3.1",
     "webfontloader": "^1.6.28"

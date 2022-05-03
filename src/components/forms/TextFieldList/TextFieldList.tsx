@@ -1,7 +1,7 @@
 import { useState, useEffect, Fragment, PropsWithChildren } from 'react'
-import RandomString from 'crypto-random-string'
 
 import { useMergedFocusHandlers } from '../../../hooks/useMergedFocusHandlers'
+import { generateRandomString } from '../../../utils/string'
 
 import { PlaceholderButton } from '../../buttons/PlaceholderButton/PlaceholderButton'
 import { Button } from '../../buttons/Button/Button'
@@ -52,7 +52,7 @@ function identifyString(
 ): IdentifiableString {
   if (typeof text === 'string') {
     return {
-      id: previousId ?? RandomString({ length: 20, type: 'url-safe' }),
+      id: previousId ?? generateRandomString({ length: 20 }),
       text,
     }
   }
@@ -103,7 +103,7 @@ export function TextFieldList(props: PropsWithChildren<TextFieldListProps>) {
     markerPattern = [],
   } = props
 
-  const handleAddition = () => setValues([...values, { id: RandomString.generate(20), text: '' }])
+  const handleAddition = () => setValues([...values, { id: generateRandomString({ length: 20 }), text: '' }])
   const handleDeletion = (index: string) => {
     setValues(values.filter(values => values.id !== index))
     setInputErrors(
