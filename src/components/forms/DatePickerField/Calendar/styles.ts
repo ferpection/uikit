@@ -55,9 +55,4 @@ export const emptyButtonSpace = css`
     background-color: transparent;
     color: ${`${N500_COLOR}`};
   }
-
-  @media (max-width: 400px) {
-    height: ${buttonWidth / 1.3}px;
-    width: ${buttonWidth / 1.3}px;
-  }
 `

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v3.1.3] - 2022-05-03
+
+### Fixed
+
+- Make DatePickerField button bigger on small screem to improve readability
+
 ## [v3.1.2] - 2022-05-03
 
 # Fixed
@@ -808,6 +814,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Setup storybook as documentation
 
 [unreleased]: https://github.com/ferpection/uikit/tree/master
+[v3.1.3]: https://github.com/ferpection/uikit/tree/v3.1.3
 [v3.1.2]: https://github.com/ferpection/uikit/tree/v3.1.2
 [v3.1.1]: https://github.com/ferpection/uikit/tree/v3.1.1
 [v3.1.0]: https://github.com/ferpection/uikit/tree/v3.1.0
